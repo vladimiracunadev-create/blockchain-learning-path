@@ -79,10 +79,10 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 | 34 | ERC-721 y metadatos | profesional | contrato | [08](../curriculum/08-tokens/README.md) | [ver](guides/04-professional-security.md) |
 | 35 | Indexador de eventos | profesional | servicio | [10](../curriculum/10-oraculos-indexacion/README.md) | [ver](guides/04-professional-security.md) |
 | 36 | Oráculo y dato obsoleto | profesional | pruebas | [10](../curriculum/10-oraculos-indexacion/README.md) | [ver](guides/04-professional-security.md) |
-| 37 | Reentrancia | profesional | exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
-| 38 | Control de acceso | profesional | exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
-| 39 | Manipulación de oráculo | profesional | exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
-| 40 | Repetición de firmas | profesional | exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
+| 37 | Reentrancia | profesional | **auto** · exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
+| 38 | Control de acceso | profesional | **auto** · exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
+| 39 | Manipulación de oráculo | profesional | **auto** · exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
+| 40 | Repetición de firmas | profesional | **auto** · exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
 
 ## Prácticas 41–50 · Avanzado y capstone
 
@@ -90,8 +90,8 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 
 | # | Práctica | Nivel | Evidencia | Módulo | Resolución |
 |---:|---|---|---|---|---|
-| 41 | Front-running y commit-reveal | profesional | simulación | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
-| 42 | Colisión de storage en proxy | profesional | informe | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
+| 41 | Front-running y commit-reveal | profesional | **auto** · commit-reveal | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
+| 42 | Colisión de storage en proxy | profesional | **auto** · storage layout | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 43 | Auditoría completa del Vault | profesional | reporte | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 44 | Multisig y timelock | profesional | política | [11](../curriculum/11-dao-gobernanza/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 45 | Propuesta y voto DAO | profesional | simulación | [11](../curriculum/11-dao-gobernanza/README.md) | [ver](guides/05-advanced-capstone.md) |

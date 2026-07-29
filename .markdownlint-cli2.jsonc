@@ -22,6 +22,8 @@
     "dist",
     "out",
     "cache",
+    "lib",
+    "**/lib/**",
     "site",
     "LICENSE",
     "LICENSE-CONTENT"

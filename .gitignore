@@ -6,6 +6,8 @@ dist/
 out/
 cache/
 broadcast/
+lib/
+foundry.lock
 coverage/
 site/
 manual/manual.html

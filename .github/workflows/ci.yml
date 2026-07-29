@@ -57,7 +57,7 @@ jobs:
       - run: forge test -vv
 
   security-contracts:
-    name: Retos de seguridad (build)
+    name: Retos de seguridad (exploit + fix)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -65,7 +65,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: foundry-rs/foundry-toolchain@v1
-      - run: forge build
+      - run: forge install foundry-rs/forge-std
+      - run: forge test -vv
 
   web:
     name: dApp (build)

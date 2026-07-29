@@ -46,7 +46,7 @@ console.log("Catálogo: 50 prácticas. Diagnóstico: válido.");
 async function markdownFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const nested = await Promise.all(entries
-    .filter((entry) => ![".git", "node_modules", "dist"].includes(entry.name))
+    .filter((entry) => ![".git", "node_modules", "dist", "lib", "site"].includes(entry.name))
     .map(async (entry) => {
       const path = join(directory, entry.name);
       return entry.isDirectory() ? markdownFiles(path) : extname(path) === ".md" ? [path] : [];

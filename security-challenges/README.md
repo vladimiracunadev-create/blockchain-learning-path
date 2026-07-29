@@ -65,11 +65,25 @@ flowchart LR
 Desde este directorio, con Foundry instalado:
 
 ```bash
-forge build
-forge test
+forge install foundry-rs/forge-std
+forge test -vv
 ```
 
-Escribe cada PoC como un test en la carpeta de pruebas del reto y ejecútalo con `forge test --match-contract <NombreDelTest>`. Registra la evidencia (prueba que falla, causa raíz, corrección) en tu bitácora sin incluir claves ni secretos.
+Cada reto trae una **suite de tests ejecutable** en `test/` que **demuestra el exploit**
+sobre el contrato vulnerable y **verifica que la versión corregida lo resiste**. Estos
+tests corren en la CI (job *Retos de seguridad (exploit + fix)*):
+
+| Reto | Test | Qué demuestra |
+|---:|---|---|
+| 01 | `test/01-Reentrancy.t.sol` | Un atacante drena el vault vulnerable; el `FixedReentrancy` con guarda revierte |
+| 02 | `test/02-AccessControl.t.sol` | Cualquiera toma la propiedad; `FixedAccess` exige dueño y transferencia en dos pasos |
+| 03 | `test/03-Oracle.t.sol` | El precio spot se manipula sin límite; el consumidor con guardas rechaza precio obsoleto |
+| 04 | `test/04-SignatureReplay.t.sol` | El digest sin dominio es reutilizable; el `boundedDigest` + `consume` lo impide |
+| 05 | `test/05-FrontRunning.t.sol` | La respuesta en texto plano es robable; commit-reveal la ata al remitente |
+| 06 | `test/06-StorageCollision.t.sol` | Un layout desplazado corrompe `owner`; agregar al final preserva los slots |
+
+Ejecuta uno solo con `forge test --match-contract ReentrancyTest`. Registra la evidencia
+(prueba que falla, causa raíz, corrección) en tu bitácora, sin claves ni secretos.
 
 ## Criterios de revisión
 
