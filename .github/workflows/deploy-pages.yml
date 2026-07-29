@@ -1,9 +1,8 @@
 name: Deploy Pages
 
-# Publica la landing page (site/index.html) en GitHub Pages. El sitio se genera
-# a partir de los datos reales del repositorio, así que el filtro de rutas cubre
-# lo que cambia esos datos: el currículo, el catálogo de prácticas, el generador
-# y los metadatos del programa.
+# Publica en GitHub Pages la portada (site/index.html) y el sitio navegable
+# generado a partir de todos los .md del repositorio. El filtro de rutas cubre
+# todo lo que acaba renderizado en el sitio.
 
 on:
   push:
@@ -11,11 +10,22 @@ on:
     paths:
       - "curriculum/**"
       - "industria/**"
-      - "labs/CATALOG.md"
+      - "labs/**"
       - "adrs/**"
       - "docs/**"
+      - "capstone/**"
+      - "learning-paths/**"
+      - "instructor/**"
+      - "student/**"
+      - "solutions/**"
+      - "security-challenges/**"
+      - "assessments/**"
+      - "apps/**/README.md"
+      - "projects/**/README.md"
+      - "*.md"
       - "package.json"
       - "scripts/build-landing.mjs"
+      - "scripts/build-site.mjs"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -38,18 +48,31 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Generar site/index.html
-        run: node scripts/build-landing.mjs
+      - name: Instalar dependencia del generador (marked)
+        run: npm install marked@12 --no-save
+
+      - name: Generar portada y sitio navegable
+        run: |
+          node scripts/build-landing.mjs
+          node scripts/build-site.mjs
 
       - name: Comprobar que el sitio salió completo
         run: |
           set -euo pipefail
           [ -s site/index.html ] || { echo "::error::falta o está vacío site/index.html"; exit 1; }
           for needle in "Blockchain Learning Path" "Qué incluye" "Cómo se aprende"; do
-            grep -q "$needle" site/index.html || { echo "::error::el sitio no contiene: $needle"; exit 1; }
+            grep -q "$needle" site/index.html || { echo "::error::la portada no contiene: $needle"; exit 1; }
           done
-          bytes=$(wc -c < site/index.html)
-          echo "Landing generada: ${bytes} bytes" >> "$GITHUB_STEP_SUMMARY"
+          for f in site/curriculum/README.html site/curriculum/01-criptografia/README.html \
+                   site/labs/CATALOG.html site/industria/README.html; do
+            [ -s "$f" ] || { echo "::error::falta o está vacío: $f"; exit 1; }
+          done
+          paginas=$(find site -name '*.html' | wc -l)
+          [ "$paginas" -ge 60 ] || { echo "::error::solo $paginas páginas HTML, esperaba 60+"; exit 1; }
+          {
+            echo "### 🌐 Sitio generado"
+            echo "- Páginas HTML: **$paginas**"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/configure-pages@v5
         with:

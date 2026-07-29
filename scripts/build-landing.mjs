@@ -63,6 +63,10 @@ const features = [
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+// Enlace interno al sitio navegable (.html) generado por build-site.mjs.
+// Un directorio (sin extensión) apunta a su README.html.
+const local = (href) => href.endsWith(".md") ? href.replace(/\.md$/, ".html") : `${href}/README.html`;
+
 const html = `<!doctype html>
 <html lang="es">
 <head>
@@ -164,7 +168,7 @@ footer a{color:var(--acento);font-weight:600}
     <span class="chip">🏛️ DAO &amp; arquitectura</span>
   </div>
   <div class="cta">
-    <a class="btn btn-1" href="${REPO}#primeros-pasos">🚀 Empezar</a>
+    <a class="btn btn-1" href="curriculum/README.html">🚀 Empezar</a>
     <a class="btn btn-2" href="${REPO}">⭐ Ver en GitHub</a>
   </div>
 </header>
@@ -178,12 +182,12 @@ footer a{color:var(--acento);font-weight:600}
 
   <h2 class="sec">Qué incluye</h2>
   <div class="grid">
-    ${features.map(([ic, t, d, href]) => `<a class="feat" href="${REPO}/blob/main/${href}"><div class="ic">${ic}</div><h3>${t}</h3><p>${esc(d)}</p></a>`).join("\n    ")}
+    ${features.map(([ic, t, d, href]) => `<a class="feat" href="${local(href)}"><div class="ic">${ic}</div><h3>${t}</h3><p>${esc(d)}</p></a>`).join("\n    ")}
   </div>
 
   <h2 class="sec">Los ${modules.length} módulos</h2>
   <div class="parts">
-    ${modules.map((m) => `<a class="part" href="${REPO}/blob/main/${m.href}"><div class="num">${m.emoji}</div><div><div class="t">${esc(m.title)}</div><div class="c">Módulo ${m.num}</div></div></a>`).join("\n    ")}
+    ${modules.map((m) => `<a class="part" href="${local(m.href)}"><div class="num">${m.emoji}</div><div><div class="t">${esc(m.title)}</div><div class="c">Módulo ${m.num}</div></div></a>`).join("\n    ")}
   </div>
 
   <h2 class="sec">Cómo se aprende</h2>
@@ -199,7 +203,7 @@ footer a{color:var(--acento);font-weight:600}
 <footer>
   <div class="wrap">
     <p><strong>Blockchain Learning Path</strong> · v${version} · Código <a href="${REPO}/blob/main/LICENSE">MIT</a> · Contenido <a href="${REPO}/blob/main/LICENSE-CONTENT">CC BY 4.0</a></p>
-    <p>Hecho por <a href="https://github.com/vladimiracunadev-create">Vladimir Acuña</a> · <a href="${REPO}">Repositorio</a> · <a href="${REPO}/blob/main/ROADMAP.md">Roadmap</a> · <a href="${REPO}/blob/main/CONTRIBUTING.md">Contribuir</a></p>
+    <p>Hecho por <a href="https://github.com/vladimiracunadev-create">Vladimir Acuña</a> · <a href="${REPO}">Repositorio</a> · <a href="ROADMAP.html">Roadmap</a> · <a href="industria/README.html">Industria</a> · <a href="labs/CATALOG.html">Laboratorios</a></p>
   </div>
 </footer>
 
