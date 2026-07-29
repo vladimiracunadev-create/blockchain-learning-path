@@ -8,4 +8,5 @@ cache/
 broadcast/
 coverage/
 site/
+manual/manual.html
 .DS_Store

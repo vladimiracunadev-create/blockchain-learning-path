@@ -1,6 +1,6 @@
 {
   "name": "blockchain-learning-path",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "description": "Ruta práctica en español para aprender blockchain desde nivel inicial hasta producción",
   "packageManager": "pnpm@10.13.1",
@@ -10,6 +10,8 @@
   "scripts": {
     "check": "node scripts/check-repository.mjs",
     "build:landing": "node scripts/build-landing.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "build:manual": "node scripts/build-manual.mjs && node scripts/render-manual-pdf.mjs",
     "lab:hash": "node labs/01-cryptography/hash-chain.mjs",
     "lab:merkle": "node labs/01-cryptography/merkle-tree.mjs",
     "lab:pow": "node labs/02-consensus/proof-of-work.mjs",
@@ -23,5 +25,9 @@
     "course:status": "node scripts/course-status.mjs",
     "course:diagnostic": "node scripts/run-diagnostic.mjs",
     "course:certificate": "node scripts/generate-certificate.mjs"
+  },
+  "devDependencies": {
+    "marked": "^12.0.2",
+    "puppeteer-core": "^23.11.1"
   }
 }

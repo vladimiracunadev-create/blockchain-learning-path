@@ -7,7 +7,7 @@
 //
 // Uso: node scripts/build-site.mjs   (requiere el paquete `marked`).
 
-import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync, existsSync, copyFileSync } from "node:fs";
 import { join, dirname, relative, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -41,8 +41,11 @@ const modTitle = (slug) => {
 const curriculumSlugs = readdirSync(join(ROOT, "curriculum")).filter((d) => /^\d{2}-/.test(d)).sort();
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 
+const hasManual = existsSync(join(ROOT, "manual", "MANUAL.pdf"));
+
 const NAV = [
   { t: "🏠 Inicio", href: "index.html" },
+  ...(hasManual ? [{ t: "📕 Manual (PDF)", href: "manual/MANUAL.pdf" }] : []),
   {
     t: "📚 Currículo", href: "curriculum/README.html",
     children: curriculumSlugs.map((s) => ({ t: modTitle(s), href: `curriculum/${s}/README.html` })),
@@ -224,5 +227,11 @@ for (const rel of mdFiles) {
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, page(title, html, outHref), "utf8");
   count++;
+}
+// Copiar el manual PDF al sitio si existe (para servirlo en GitHub Pages).
+if (hasManual) {
+  mkdirSync(join(ROOT, "site", "manual"), { recursive: true });
+  copyFileSync(join(ROOT, "manual", "MANUAL.pdf"), join(ROOT, "site", "manual", "MANUAL.pdf"));
+  console.log("site/manual/MANUAL.pdf copiado.");
 }
 console.log(`site: ${count} páginas de contenido generadas (menú + Mermaid + tema).`);

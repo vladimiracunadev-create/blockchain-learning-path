@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.4.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versión-0.5.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
 [![Módulos](https://img.shields.io/badge/módulos-19-7c5cff?style=for-the-badge)](curriculum/README.md)
 [![Prácticas](https://img.shields.io/badge/prácticas-50-2e8b57?style=for-the-badge)](labs/CATALOG.md)
 [![Nivel](https://img.shields.io/badge/nivel-inicial%20→%20producción-e67e22?style=for-the-badge)](ROADMAP.md)
@@ -25,7 +25,7 @@
 [![viem](https://img.shields.io/badge/viem-dApps-2e8b57?style=flat-square)](apps/community-funding-web)
 [![TypeScript](https://img.shields.io/badge/TypeScript-dApp%20%26%20indexer-3178C6?style=flat-square&logo=typescript&logoColor=white)](apps)
 
-[🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
+[🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](manual/MANUAL.pdf) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
 
 </div>
 
@@ -63,6 +63,14 @@ Cada etapa se apoya explícitamente en la literatura de referencia del sector; e
 | **Empresa e infraestructura** | BIS · World Economic Forum · documentación de clientes de nodo y de nube |
 
 > Referencias completas en la [bibliografía central](docs/bibliografia.md), que también recoge los **hitos recientes** del ecosistema (Merge, Dencun/EIP-4844, Pectra/EIP-7702).
+
+## 📕 Manual completo (todo el curso en un PDF)
+
+Todo el contenido del programa —los 19 módulos, la sección de industria, los laboratorios, los ADR, la documentación de referencia y el proyecto final— compilado en un único documento de ~310 páginas con diagramas incluidos, para leer de corrido o estudiar sin conexión:
+
+- 📥 **[Manual del usuario (PDF)](manual/MANUAL.pdf)** — también disponible en el [sitio del programa](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf).
+
+Se regenera desde el propio repositorio con `pnpm build:manual` (requiere Chrome/Edge instalado para renderizar los diagramas).
 
 ## 🗂️ Los 19 módulos en seis etapas
 

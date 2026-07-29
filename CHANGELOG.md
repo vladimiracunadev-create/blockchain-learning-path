@@ -3,6 +3,25 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.5.0] · 2026-07-29
+
+Manual del usuario en PDF con todo el contenido del curso.
+
+### Añadido
+
+- **Manual del usuario en PDF** (`manual/MANUAL.pdf`, ~310 páginas): compila todo el
+  contenido del programa —19 módulos, industria, laboratorios con su resolución, ADR,
+  documentación de referencia y proyecto final— en un único documento con portada,
+  índice y los **diagramas Mermaid renderizados**. Se genera con `pnpm build:manual`
+  (`scripts/build-manual.mjs` + `scripts/render-manual-pdf.mjs`, vía Chrome headless).
+- Enlace al manual desde el **README**, la **portada** y el **menú del sitio**; el PDF
+  se publica también en GitHub Pages (`/manual/MANUAL.pdf`).
+
+### Cambiado
+
+- El workflow de Pages usa **pnpm** (no npm) e instala `marked` y `puppeteer-core` como
+  devDependencies; copia el manual versionado al sitio publicado.
+
 ## [0.4.0] · 2026-07-29
 
 Sitio navegable en GitHub Pages y navegación clara en todo el sistema.
@@ -123,6 +142,7 @@ Primera versión pública del programa.
 - Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
   seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
+[0.5.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.5.0
 [0.4.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.4.0
 [0.3.1]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.3.1
 [0.3.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.3.0

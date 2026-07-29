@@ -44,17 +44,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.13.1
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: pnpm
 
-      - name: Instalar dependencia del generador (marked)
-        run: npm install marked@12 --no-save
+      - name: Instalar dependencias (pnpm)
+        run: pnpm install --frozen-lockfile
 
       - name: Generar portada y sitio navegable
         run: |
-          node scripts/build-landing.mjs
-          node scripts/build-site.mjs
+          pnpm build:landing
+          pnpm build:site
 
       - name: Comprobar que el sitio salió completo
         run: |
@@ -67,11 +71,13 @@ jobs:
                    site/labs/CATALOG.html site/industria/README.html; do
             [ -s "$f" ] || { echo "::error::falta o está vacío: $f"; exit 1; }
           done
+          [ -s site/manual/MANUAL.pdf ] || { echo "::error::falta el manual: site/manual/MANUAL.pdf"; exit 1; }
           paginas=$(find site -name '*.html' | wc -l)
           [ "$paginas" -ge 60 ] || { echo "::error::solo $paginas páginas HTML, esperaba 60+"; exit 1; }
           {
             echo "### 🌐 Sitio generado"
             echo "- Páginas HTML: **$paginas**"
+            echo "- Manual PDF: **$(du -h site/manual/MANUAL.pdf | cut -f1)**"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/configure-pages@v5

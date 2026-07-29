@@ -20,6 +20,7 @@ paths = [
   '''^docs/.*\.md$''',
   '''^\.env\.example$''',
   '''^site/.*''',
+  '''^manual/.*''',
 ]
 # Claves privadas de Anvil/Hardhat de dominio público, usadas en ejemplos.
 regexes = [
