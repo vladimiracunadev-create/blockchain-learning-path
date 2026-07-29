@@ -53,7 +53,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: foundry-rs/foundry-toolchain@v1
-      - run: forge install foundry-rs/forge-std --no-commit
+      - run: forge install foundry-rs/forge-std
       - run: forge test -vv
 
   security-contracts:
