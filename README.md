@@ -31,118 +31,122 @@
 
 ---
 
-> **Blockchain no es sinónimo de criptomoneda.** En este recorrido aprenderás cuándo una cadena de bloques aporta valor, cuándo una base de datos tradicional es mejor y cómo construir sistemas descentralizados de forma responsable.
+> **Blockchain no es sinónimo de criptomoneda.** En este recorrido aprenderás cuándo una cadena de bloques aporta valor, cuándo una base de datos tradicional es mejor y cómo construir —y llevar a producción— sistemas descentralizados de forma responsable.
 
-## Qué aprenderás
+## 🎯 Qué es esto
 
-- Fundamentos: hash, firmas digitales, Merkle trees, bloques, redes P2P y consenso.
-- Bitcoin: UTXO, transacciones, minería, nodos, Lightning y modelo de seguridad.
-- Ethereum/EVM: cuentas, gas, ABI, eventos, almacenamiento y llamadas.
-- Solidity con buenas prácticas, pruebas, análisis estático y seguridad.
-- dApps con TypeScript, `pnpm` y viem.
-- Tokens, NFT, oráculos, indexación, multisig, DAO y gobernanza.
-- Escalabilidad: canales, sidechains, rollups optimistas y ZK.
-- Arquitectura, tokenomics, privacidad, interoperabilidad y auditoría.
-- Comparación informada con Solana, Cosmos, Polkadot, Hyperledger y otras tecnologías.
-- Bitcoin Core en `regtest`, desafíos de seguridad y un proyecto transversal de financiamiento comunitario.
-- Rutas especializadas para desarrollo, arquitectura, auditoría, producto, investigación y empresa.
-- Token, oráculo, DAO con timelock, despliegue Foundry e indexador de eventos.
-- **La industria por dentro:** cómo se construye una red, el stack real del ecosistema, cómo trabajan y se comunican los equipos, casos empresariales (éxitos y fracasos) y modelos de negocio — en la sección [Industria](industria/README.md).
+Un currículo modular y **secuencial** que cubre el espectro completo de blockchain, paso a paso, en **19 módulos numerados (00→18)** agrupados en seis etapas, más un proyecto final. Cada módulo es una carpeta con un `README.md` que incluye:
 
-## Requisitos
+- 🎯 **Objetivos** medibles y **resultados de aprendizaje** verificables.
+- 🗺️ **Temas** con el porqué de cada uno y **conceptos** con definiciones.
+- 🧩 **Esquema visual** (diagramas Mermaid que GitHub renderiza nativamente).
+- 🧠 **Modelo mental** con su analogía y los **límites** de la analogía.
+- 🔬 **Profundización** con ejemplos numéricos y casos reales verificables.
+- 🧪 **Laboratorio guiado** ejecutable y un **reto verificable** con criterio de aceptación.
+- ⚠️ **Errores frecuentes** (síntoma → causa) y 🛡️ **seguridad y ética**.
+- 🔗 **Referencias** a los libros y fuentes primarias del área.
 
-- Git y una terminal.
-- Node.js LTS y [pnpm](https://pnpm.io/installation).
-- [Foundry](https://book.getfoundry.sh/getting-started/installation) para los laboratorios Solidity.
-- Docker es opcional para ejecutar nodos y servicios de apoyo.
+No enseña a especular: enseña a decidir **cuándo** usar la tecnología, a **construirla** con pruebas y a **llevarla a una empresa** con infraestructura, costos y casos reales.
 
-No necesitas experiencia previa en blockchain. Para la etapa de desarrollo conviene conocer variables, funciones, pruebas y Git.
+## 📚 Pauta derivada de los mejores libros
 
-## Ruta recomendada
+Cada etapa se apoya explícitamente en la literatura de referencia del sector; el contenido es **original en su redacción** y **no reproduce** las obras.
 
-| Nivel | Módulos | Resultado |
-|---|---:|---|
-| 0. Orientación | 00 | Distinguir blockchain de una base de datos |
-| 1. Fundamentos | 01–03 | Entender criptografía, bloques, consenso y Bitcoin |
-| 2. Desarrollo | 04–07 | Crear y probar contratos y una dApp |
-| 3. Profesional | 08–11 | Diseñar protocolos seguros, L2, oráculos y DAO |
-| 4. Avanzado | 12–15 | Auditar, investigar y tomar decisiones arquitectónicas |
-| 5. Producción | 16–18 | Infraestructura real, caso de negocio e implementación empresarial |
-| Proyecto final | `capstone` | Protocolo documentado, probado y desplegable |
+| Área | Libros y fuentes de referencia |
+|---|---|
+| **Fundamentos y panorama** | Bashir — *Mastering Blockchain* · Narayanan et al. — *Bitcoin and Cryptocurrency Technologies* · Werbach — *The Blockchain and the New Architecture of Trust* |
+| **Criptografía** | Aumasson — *Serious Cryptography* · Katz, Lindell — *Introduction to Modern Cryptography* · Ferguson/Schneier/Kohno — *Cryptography Engineering* |
+| **Sistemas distribuidos y consenso** | Cachin, Guerraoui, Rodrigues — *Reliable and Secure Distributed Programming* · Nakamoto (whitepaper) · Castro, Liskov — *PBFT* |
+| **Bitcoin y Ethereum** | Antonopoulos — *Mastering Bitcoin* · Antonopoulos, Wood — *Mastering Ethereum* · Wood — *Yellow Paper* |
+| **Contratos y seguridad** | Docs de Solidity · The Foundry Book · Trail of Bits — *Building Secure Contracts* · ConsenSys — *Smart Contract Best Practices* |
+| **Escalabilidad, ZK y arquitectura** | Buterin — *An Incomplete Guide to Rollups* · Thaler — *Proofs, Arguments, and Zero-Knowledge* · ERC-4337 · Flashbots |
+| **Empresa e infraestructura** | BIS · World Economic Forum · documentación de clientes de nodo y de nube |
 
-Consulta [ROADMAP.md](ROADMAP.md) para el plan de 26 semanas o [docs/ruta-rapida.md](docs/ruta-rapida.md) para una ruta intensiva.
+> Referencias completas en la [bibliografía central](docs/bibliografia.md), que también recoge los **hitos recientes** del ecosistema (Merge, Dencun/EIP-4844, Pectra/EIP-7702).
 
-También puedes elegir una [ruta por perfil profesional](learning-paths/README.md).
+## 🗂️ Los 19 módulos en seis etapas
 
-Cada módulo cita sus fuentes; la [bibliografía central](docs/bibliografia.md) reúne los libros de referencia por área y los hitos recientes del ecosistema.
+Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visual. Estúdialos **en orden**: cada módulo asume el anterior.
 
-## Estructura
+| Etapa | Módulos | Foco | Resultado |
+|---|---|---|---|
+| **Orientación** | [00](curriculum/00-orientacion/README.md) | ¿Necesito blockchain? | Distinguir blockchain de una base de datos |
+| **Fundamentos** | [01](curriculum/01-criptografia/README.md)–[03](curriculum/03-consenso/README.md) | Criptografía, redes P2P, consenso | Entender qué hace verificable a una cadena |
+| **Desarrollo** | [04](curriculum/04-bitcoin/README.md)–[07](curriculum/07-dapps/README.md) | Bitcoin, EVM, Solidity, dApps | Crear y probar contratos y una dApp |
+| **Profesional** | [08](curriculum/08-tokens/README.md)–[11](curriculum/11-dao-gobernanza/README.md) | Tokens, seguridad, oráculos, DAO | Diseñar protocolos seguros y gobernados |
+| **Avanzado** | [12](curriculum/12-escalabilidad/README.md)–[15](curriculum/15-arquitectura-avanzada/README.md) | L2, interoperabilidad, ZK, arquitectura | Auditar, investigar y decidir arquitectura |
+| **Producción** | [16](curriculum/16-infraestructura-nodos/README.md)–[18](curriculum/18-implementacion-empresarial/README.md) | Infraestructura, empresa, implementación | Llevar la tecnología a una empresa real |
+| **Proyecto final** | [capstone](capstone/README.md) | Integración | Protocolo documentado, probado y desplegable |
 
-```text
-curriculum/       19 módulos progresivos con esquemas visuales
-industria/        construcción, stack, equipos, empresas y modelos de negocio
-labs/             ejercicios ejecutables
-solutions/        criterios de revisión, no respuestas para copiar
-security-challenges/ contratos vulnerables y correcciones
-apps/              panel visual y dApp integradora
-assessments/       diagnósticos, checkpoints y rúbricas
-adrs/              decisiones de arquitectura
-instructor/        programa y material docente
-projects/         proyectos de portafolio
-capstone/         especificación del proyecto final
-docs/             glosario, bibliografía, buenas prácticas, recursos y rutas
-scripts/          validaciones del repositorio
-.github/          CI, plantilla de issues y PR
-```
+## 🧪 Laboratorios y proyectos ejecutables
 
-## Primeros pasos
+- **50 prácticas** guiadas con actividad, evidencia y criterio de aceptación ([catálogo](labs/CATALOG.md)).
+- **Contratos con Foundry**: vault, protocolos, token, oráculo y gobernador con timelock, con pruebas, fuzzing e invariantes.
+- **Retos de seguridad**: contratos vulnerables y sus correcciones ([security-challenges](security-challenges/README.md)).
+- **dApp** de financiamiento comunitario (viem/TypeScript), **indexador** de eventos y **panel** de progreso.
+- **Bitcoin Core en `regtest`** y un **nodo Geth real en Docker** para operar infraestructura.
 
 ```bash
-git clone <URL-DEL-REPOSITORIO>
+git clone https://github.com/vladimiracunadev-create/blockchain-learning-path.git
 cd blockchain-learning-path
-corepack enable
-pnpm install
-pnpm check
-pnpm test
-pnpm lab:hash
-pnpm serve
-pnpm build:web
+corepack enable && pnpm install
+pnpm check      # valida estructura, enlaces y conteos
+pnpm test       # pruebas de Node y de scripts
+pnpm lab:hash   # tu primer laboratorio
+pnpm serve      # panel de seguimiento
 ```
 
-Luego estudia [curriculum/00-orientacion/README.md](curriculum/00-orientacion/README.md).
-Cada práctica tiene instrucciones y aceptación en el [cuaderno de laboratorios](labs/guides/README.md).
+Luego empieza por [curriculum/00-orientacion](curriculum/00-orientacion/README.md). Cada práctica tiene su guía en el [cuaderno de laboratorios](labs/guides/README.md).
 
-## Método de aprendizaje
+## 🏭 La industria por dentro
 
-Cada módulo sigue el ciclo:
+Además del currículo, la sección [Industria](industria/README.md) es la lectura profesional extendida: cómo se **construye** una red, el **stack** real del ecosistema, cómo trabajan y se **comunican** los equipos, **casos empresariales** (éxitos y fracasos) y **modelos de negocio**. Y para llevarlo a la práctica, los módulos 16–18 lo convierten en laboratorios: infraestructura real, caso de negocio con costos e implementación end-to-end. Incluye una guía dedicada de [**cómo explicar blockchain a clientes y personas no técnicas**](docs/explicar-blockchain-a-no-tecnicos.md): discurso de 30 segundos, traducción de jerga y manejo de objeciones.
 
-1. **Comprender:** conceptos y modelo mental.
-2. **Experimentar:** laboratorio pequeño.
-3. **Explicar:** registra qué ocurrió y por qué.
-4. **Construir:** aplica el concepto en un proyecto.
-5. **Verificar:** pruebas, amenazas y revisión.
+## 👩‍🏫 Para instructores
 
-No uses fondos reales ni claves privadas reales. Todos los laboratorios deben ejecutarse primero en local o testnet. Registra resultados en una copia de [student/progress.example.json](student/progress.example.json).
+El programa está listo para el aula: [guía del instructor](instructor/README.md), [syllabus de 26 semanas](instructor/syllabus.md), [checklist de laboratorios](instructor/lab-checklist.md) y [rúbricas de evaluación](docs/evaluacion.md). Los archivos de [`solutions/`](solutions/conceptual-guide.md) son **criterios de revisión, no respuestas para copiar**. El estudiante lleva su avance en una copia de `student/progress.example.json`.
 
-## Evaluación
+## 🚀 Cómo usar el programa
 
-- Cuestionarios y preguntas de razonamiento: 20%.
-- Laboratorios y bitácora: 30%.
-- Proyectos de nivel: 30%.
-- Proyecto final con defensa técnica: 20%.
+1. **Sigue el orden.** La numeración 00→18 es secuencial por diseño: cada módulo asume el anterior.
+2. **Aplica el ciclo** de cada módulo: comprender → experimentar → explicar → construir → verificar.
+3. **Ejecuta los laboratorios** en local (Anvil) o testnet; registra la evidencia en tu bitácora de progreso.
+4. **Haz el reto verificable** de cada módulo: ahí se fija el aprendizaje con un criterio de aceptación explícito.
+5. **Usa los libros de referencia** de cada área para profundizar.
 
-La rúbrica completa está en [docs/evaluacion.md](docs/evaluacion.md).
+Plan completo en el [ROADMAP de 26 semanas](ROADMAP.md) · ruta intensiva en [docs/ruta-rapida.md](docs/ruta-rapida.md).
 
-## Estado y alcance
+## 🧭 Rutas por perfil profesional
 
-Este repositorio enseña principios duraderos y señala explícitamente qué herramientas cambian con rapidez. No ofrece asesoría financiera, tributaria o legal ni promete rentabilidad. Las versiones se fijan en el lockfile al instalar y deben actualizarse mediante PR revisadas.
+Recorridos ordenados para **desarrollo, arquitectura, auditoría, producto, investigación y empresa**: elige el tuyo en [learning-paths](learning-paths/README.md).
 
-## 🤝 Contribuir y seguridad
+## ✅ Calidad y CI
 
-Lee la [guía de contribución](CONTRIBUTING.md) y la [política de seguridad](SECURITY.md). El repositorio valida su estructura (`pnpm check`), ejecuta pruebas de Node y de contratos con Foundry, hace lint de Markdown y escanea secretos con `gitleaks` en cada push.
+- **CI**: lint de Markdown, validación de estructura y enlaces (`pnpm check`), pruebas de Node y de contratos con Foundry.
+- **Security**: escaneo de secretos con `gitleaks` en cada push y semanalmente.
+- **Deploy Pages**: la [landing](https://vladimiracunadev-create.github.io/blockchain-learning-path/) se genera desde los datos del repo y se publica automáticamente.
+- **Dependabot** mantiene al día las dependencias y las GitHub Actions.
 
-No uses fondos ni claves privadas reales: todos los laboratorios se ejecutan primero en local (Anvil) o testnet.
+Consulta la [guía de contribución](CONTRIBUTING.md) y la [política de seguridad](SECURITY.md).
 
-## Licencia
+## 🎯 Qué es y qué no es este programa
+
+### ✅ Lo que sí es
+
+- Un currículo para **entender, construir y llevar a producción** blockchain de forma responsable.
+- Material **original**, con fuentes citadas y actualizado a los hitos recientes del ecosistema.
+- Laboratorios **ejecutables** en local/testnet, con criterios de aceptación verificables.
+
+### ❌ Lo que no es
+
+- **No es asesoría** financiera, tributaria ni legal, ni promete rentabilidad alguna.
+- **No es una guía para especular** con criptomonedas ni para operar con fondos reales.
+- **No sustituye** una auditoría profesional ni la operación real de una infraestructura.
+
+## 💡 Idea fuerza
+
+La madurez técnica no se demuestra usando blockchain en todo, sino sabiendo **cuándo aporta valor, cuándo una base de datos es mejor, y cómo llevar a producción con seguridad** aquello que sí lo justifica.
+
+## 📄 Licencia
 
 Código bajo [MIT](LICENSE). Contenido educativo bajo [CC BY 4.0](LICENSE-CONTENT).

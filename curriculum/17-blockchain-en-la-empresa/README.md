@@ -146,7 +146,8 @@ presupuestar solo el desarrollo y descubrir auditoría y cumplimiento a mitad de
 ## 🗣️ Cómo explicarlo a clientes y personas que no conocen el tema
 
 El mejor caso de negocio muere si la contraparte no lo entiende. Reglas de comunicación
-probadas en el sector:
+probadas en el sector (versión ampliada y para imprimir en la
+[guía de comunicación](../../docs/explicar-blockchain-a-no-tecnicos.md)):
 
 ### El discurso de 30 segundos
 

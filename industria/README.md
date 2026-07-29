@@ -50,6 +50,7 @@ laboratorios y retos verificables vive en el currículo: los módulos
 - **Si eres decisor o consultor:** empieza por [04 · Blockchain para empresas](04-blockchain-para-empresas.md) y [05 · Modelos de negocio](05-modelos-de-negocio.md).
 - **Si buscas empleo en el sector:** [03 · Equipos y roles](03-equipos-roles-y-metodologia.md) mapea los puestos y sus habilidades; el [currículo](../curriculum/README.md) te da la ruta técnica.
 - **Si vas a lanzar un protocolo:** [06 · Ciclo de vida](06-ciclo-de-vida-de-un-proyecto.md) es tu checklist, junto al [capstone](../capstone/README.md).
+- **Si tienes que vender o explicar la idea:** la [guía para explicar blockchain a personas no técnicas](../docs/explicar-blockchain-a-no-tecnicos.md) te da el discurso, la traducción de jerga y el manejo de objeciones.
 
 ---
 
