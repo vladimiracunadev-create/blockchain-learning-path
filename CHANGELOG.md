@@ -3,6 +3,28 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.3.1] · 2026-07-29
+
+Barrido de calidad de la documentación y **resolución explicada de los laboratorios**.
+
+### Añadido
+
+- **Resolución explicada de las 50 prácticas**: las 5 guías de `labs/guides/` se
+  reescribieron leyendo el código real de cada laboratorio; ahora cada práctica trae
+  objetivo, **cómo se resuelve** (pasos), el comando, la **salida esperada explicada** y
+  el error común.
+- **Guía de comunicación** `docs/explicar-blockchain-a-no-tecnicos.md` (discurso de 30 s,
+  traducción de jerga, manejo de objeciones), enlazada desde README, industria y módulo 17.
+
+### Cambiado
+
+- README principal con la estructura de los programas educativos hermanos.
+- Desarrollados ~24 documentos que seguían pobres: 7 ADRs, glosario, evaluación, ruta
+  rápida, incidentes, recursos, kit de instructor, estudiante, capstone, rutas por perfil,
+  diseño pedagógico, mejores prácticas, planes de clase, tecnologías, threat model,
+  despliegue local, estado del repo, READMEs de apps/proyectos/labs, assessments y las
+  soluciones de los retos de seguridad (patrón de arreglo, no exploits).
+
 ## [0.3.0] · 2026-07-29
 
 La etapa de **producción** del currículo: el programa ahora termina llevando la
@@ -82,6 +104,7 @@ Primera versión pública del programa.
 - Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
   seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
+[0.3.1]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.3.1
 [0.3.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.3.0
 [0.2.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.2.0
 [0.1.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.1.0
