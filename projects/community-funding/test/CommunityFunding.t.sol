@@ -30,7 +30,7 @@ contract CommunityFundingTest is Test {
         assertEq(creator.balance - beforeBalance, 5 ether);
     }
 
-    function testFailedCampaignRefunds() public {
+    function testRefundsWhenCampaignFails() public {
         uint256 id = _create(5 ether);
         vm.prank(backer);
         funding.contribute{value: 2 ether}(id);
