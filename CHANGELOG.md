@@ -3,6 +3,25 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.4.0] · 2026-07-29
+
+Sitio navegable en GitHub Pages y navegación clara en todo el sistema.
+
+### Añadido
+
+- **Sitio navegable** (`scripts/build-site.mjs`): GitHub Pages pasó de ser una portada
+  que rebotaba a los `.md` crudos a un sitio con **menú lateral** por secciones (Currículo
+  00–18, Industria, Laboratorios, ADR, Documentación, Capstone y rutas), **diagramas
+  Mermaid renderizados**, tablas y código con estilo, **tema claro/oscuro** y diseño
+  responsive. Reescribe los enlaces `.md → .html` y deja los de código/directorios hacia
+  GitHub. La portada ahora entra al sitio en vez de a GitHub crudo.
+
+### Cambiado
+
+- **`labs/CATALOG.md` navegable**: de una tabla sin enlaces a un catálogo agrupado por
+  bloque donde cada práctica enlaza a su **módulo** y a su **resolución explicada**.
+- Los **19 módulos** enlazan desde su laboratorio al catálogo y su resolución.
+
 ## [0.3.1] · 2026-07-29
 
 Barrido de calidad de la documentación y **resolución explicada de los laboratorios**.
@@ -104,6 +123,7 @@ Primera versión pública del programa.
 - Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
   seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
+[0.4.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.4.0
 [0.3.1]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.3.1
 [0.3.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.3.0
 [0.2.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.2.0
