@@ -45,7 +45,7 @@ jobs:
         run: |
           set -euo pipefail
           [ -s site/index.html ] || { echo "::error::falta o está vacío site/index.html"; exit 1; }
-          for needle in "Blockchain Learning Path" "Los 16 módulos" "Qué incluye"; do
+          for needle in "Blockchain Learning Path" "Qué incluye" "Cómo se aprende"; do
             grep -q "$needle" site/index.html || { echo "::error::el sitio no contiene: $needle"; exit 1; }
           done
           bytes=$(wc -c < site/index.html)

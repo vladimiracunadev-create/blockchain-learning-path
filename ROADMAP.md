@@ -1,4 +1,4 @@
-# 🗺️ Roadmap de 24 semanas
+# 🗺️ Roadmap de 26 semanas
 
 > [⬅️ Volver al programa](README.md) · [📚 Currículo](curriculum/README.md) · [🧪 Laboratorios](labs/CATALOG.md)
 
@@ -19,7 +19,9 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 | 21 | DAO y gobernanza | Propuesta y simulación |
 | 22 | L2, puentes e interoperabilidad | Comparación arquitectónica |
 | 23 | Privacidad, ZK y tokenomics | Documento de decisiones |
-| 24 | Proyecto final | Demo, pruebas y defensa |
+| 24 | Infraestructura y nodos (módulo 16) | Topología y presupuesto de despliegue |
+| 25 | Empresa e implementación (módulos 17–18) | Caso de negocio y documento de arquitectura |
+| 26 | Proyecto final | Demo, pruebas y defensa |
 
 ## Criterios para avanzar
 
@@ -34,8 +36,9 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 | Versión | Alcance | Estado |
 |---|---|---|
 | 0.1.0 | currículo de 16 módulos, 50 prácticas, contratos Foundry, dApp, indexador, seguridad, evaluaciones y landing | completada |
-| 0.2.0 | sección de industria (construcción, stack, equipos, empresas, modelos de negocio, ciclo de vida), esquemas Mermaid y profundización en los 16 módulos | actual |
-| 0.3.0 | guías individuales ampliadas, más retos de seguridad y panel de progreso enriquecido | planificada |
+| 0.2.0 | sección de industria (construcción, stack, equipos, empresas, modelos de negocio, ciclo de vida), esquemas Mermaid y profundización en los 16 módulos | completada |
+| 0.3.0 | etapa de producción del currículo: módulos 16 (infraestructura y nodos), 17 (empresa: valor, casos, costos y cómo explicarlo) y 18 (implementación end-to-end) | actual |
+| 0.4.0 | guías individuales ampliadas, más retos de seguridad y panel de progreso enriquecido | planificada |
 | 1.0.0 | programa completo estabilizado con manual en PDF y sitio de contenido navegable | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

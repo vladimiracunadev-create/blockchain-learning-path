@@ -3,74 +3,303 @@
   "startedAt": "YYYY-MM-DD",
   "profile": "desarrollo",
   "modules": {
-    "00": { "status": "pending", "score": null, "evidence": [] },
-    "01": { "status": "pending", "score": null, "evidence": [] },
-    "02": { "status": "pending", "score": null, "evidence": [] },
-    "03": { "status": "pending", "score": null, "evidence": [] },
-    "04": { "status": "pending", "score": null, "evidence": [] },
-    "05": { "status": "pending", "score": null, "evidence": [] },
-    "06": { "status": "pending", "score": null, "evidence": [] },
-    "07": { "status": "pending", "score": null, "evidence": [] },
-    "08": { "status": "pending", "score": null, "evidence": [] },
-    "09": { "status": "pending", "score": null, "evidence": [] },
-    "10": { "status": "pending", "score": null, "evidence": [] },
-    "11": { "status": "pending", "score": null, "evidence": [] },
-    "12": { "status": "pending", "score": null, "evidence": [] },
-    "13": { "status": "pending", "score": null, "evidence": [] },
-    "14": { "status": "pending", "score": null, "evidence": [] },
-    "15": { "status": "pending", "score": null, "evidence": [] }
+    "00": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "01": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "02": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "03": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "04": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "05": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "06": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "07": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "08": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "09": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "10": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "11": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "12": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "13": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "14": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "15": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "16": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "17": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "18": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    }
   },
   "labs": {
-    "01": { "status": "pending", "evidence": "" },
-    "02": { "status": "pending", "evidence": "" },
-    "03": { "status": "pending", "evidence": "" },
-    "04": { "status": "pending", "evidence": "" },
-    "05": { "status": "pending", "evidence": "" },
-    "06": { "status": "pending", "evidence": "" },
-    "07": { "status": "pending", "evidence": "" },
-    "08": { "status": "pending", "evidence": "" },
-    "09": { "status": "pending", "evidence": "" },
-    "10": { "status": "pending", "evidence": "" },
-    "11": { "status": "pending", "evidence": "" },
-    "12": { "status": "pending", "evidence": "" },
-    "13": { "status": "pending", "evidence": "" },
-    "14": { "status": "pending", "evidence": "" },
-    "15": { "status": "pending", "evidence": "" },
-    "16": { "status": "pending", "evidence": "" },
-    "17": { "status": "pending", "evidence": "" },
-    "18": { "status": "pending", "evidence": "" },
-    "19": { "status": "pending", "evidence": "" },
-    "20": { "status": "pending", "evidence": "" },
-    "21": { "status": "pending", "evidence": "" },
-    "22": { "status": "pending", "evidence": "" },
-    "23": { "status": "pending", "evidence": "" },
-    "24": { "status": "pending", "evidence": "" },
-    "25": { "status": "pending", "evidence": "" },
-    "26": { "status": "pending", "evidence": "" },
-    "27": { "status": "pending", "evidence": "" },
-    "28": { "status": "pending", "evidence": "" },
-    "29": { "status": "pending", "evidence": "" },
-    "30": { "status": "pending", "evidence": "" },
-    "31": { "status": "pending", "evidence": "" },
-    "32": { "status": "pending", "evidence": "" },
-    "33": { "status": "pending", "evidence": "" },
-    "34": { "status": "pending", "evidence": "" },
-    "35": { "status": "pending", "evidence": "" },
-    "36": { "status": "pending", "evidence": "" },
-    "37": { "status": "pending", "evidence": "" },
-    "38": { "status": "pending", "evidence": "" },
-    "39": { "status": "pending", "evidence": "" },
-    "40": { "status": "pending", "evidence": "" },
-    "41": { "status": "pending", "evidence": "" },
-    "42": { "status": "pending", "evidence": "" },
-    "43": { "status": "pending", "evidence": "" },
-    "44": { "status": "pending", "evidence": "" },
-    "45": { "status": "pending", "evidence": "" },
-    "46": { "status": "pending", "evidence": "" },
-    "47": { "status": "pending", "evidence": "" },
-    "48": { "status": "pending", "evidence": "" },
-    "49": { "status": "pending", "evidence": "" },
-    "50": { "status": "pending", "evidence": "" }
+    "01": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "02": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "03": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "04": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "05": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "06": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "07": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "08": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "09": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "10": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "11": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "12": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "13": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "14": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "15": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "16": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "17": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "18": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "19": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "20": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "21": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "22": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "23": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "24": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "25": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "26": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "27": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "28": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "29": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "30": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "31": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "32": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "33": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "34": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "35": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "36": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "37": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "38": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "39": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "40": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "41": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "42": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "43": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "44": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "45": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "46": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "47": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "48": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "49": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "50": {
+      "status": "pending",
+      "evidence": ""
+    }
   },
   "capstone": {
     "title": "",

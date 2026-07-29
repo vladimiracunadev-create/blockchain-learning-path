@@ -4,7 +4,7 @@
 
 ## Incluido
 
-- Currículo completo (16 módulos con esquemas Mermaid, profundización con casos reales, fuentes y navegación) y rutas por perfil.
+- Currículo completo (19 módulos con esquemas Mermaid, profundización con casos reales, fuentes y navegación, incluida la etapa de producción: infraestructura, empresa e implementación) y rutas por perfil.
 - Sección de industria: construcción de una red, stack, equipos, empresas, modelos de negocio y ciclo de vida.
 - Cincuenta prácticas con aceptación.
 - Laboratorios automáticos sin dependencia y laboratorios Foundry.

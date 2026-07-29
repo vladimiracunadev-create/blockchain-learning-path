@@ -3,6 +3,33 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.3.0] · 2026-07-29
+
+La etapa de **producción** del currículo: el programa ahora termina llevando la
+tecnología a la práctica real de una empresa.
+
+### Añadido
+
+- **Módulo 16 · Infraestructura y operación de nodos**: hardware real por tipo de nodo
+  (CPU, RAM, NVMe, IOPS), casa vs. colocation vs. nube vs. gestionado, instancias y
+  costos de nube, laboratorio con un nodo Geth real en Docker + `cast`, topología
+  redundante y dónde viven físicamente las claves (HSM, MPC, multisig).
+- **Módulo 17 · Blockchain en la empresa**: qué ganan las empresas
+  (beneficio→mecanismo→evidencia), usos por sector, casos de estudio de éxito (Kinexys,
+  BEI/Siemens, BUIDL) y fracaso (TradeLens, Libra/Diem, ASX) con su lección, mapa de
+  servicios del mercado, presupuesto completo por partidas y **cómo explicarlo a
+  clientes y personas no técnicas** (discurso de 30 segundos, traducción de jerga,
+  manejo de objeciones).
+- **Módulo 18 · Implementación empresarial end-to-end**: arquitectura de siete capas
+  (del usuario al bloque), build vs. buy por componente, ambientes y ceremonias, plan de
+  seis meses con entregables, y laboratorio que ensambla la maqueta completa con las
+  piezas del repo (Anvil + Foundry + indexador + web).
+
+### Cambiado
+
+- El currículo pasa de 16 a **19 módulos (00–18)** con la nueva etapa "Producción";
+  mapa, índice, rutas, roadmap de 26 semanas, certificado y progreso actualizados.
+
 ## [0.2.0] · 2026-07-29
 
 Dimensión profesional del programa: industria, profundización y esquemas visuales.
@@ -55,5 +82,6 @@ Primera versión pública del programa.
 - Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
   seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
+[0.3.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.3.0
 [0.2.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.2.0
 [0.1.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.1.0

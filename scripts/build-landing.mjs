@@ -17,7 +17,7 @@ const read = (p) => readFileSync(join(ROOT, p), "utf8");
 // --- Datos reales del repositorio ---------------------------------------------
 
 // Módulos: cada carpeta curriculum/NN-* con el H1 de su README como título.
-const MODULE_EMOJI = ["🧭","🔐","🌐","🤝","₿","⟠","📜","🖥️","🪙","🛡️","🔮","🏛️","⚡","🔗","🕶️","🏗️"];
+const MODULE_EMOJI = ["🧭","🔐","🌐","🤝","₿","⟠","📜","🖥️","🪙","🛡️","🔮","🏛️","⚡","🔗","🕶️","🏗️","⚙️","🏦","🏢"];
 const modules = readdirSync(join(ROOT, "curriculum"))
   .filter((d) => /^\d{2}-/.test(d))
   .sort()
@@ -49,7 +49,7 @@ const stats = [
 ];
 
 const features = [
-  ["📚", "Currículo completo", `${modules.length} módulos progresivos, de criptografía a arquitectura avanzada, cada uno con teoría, laboratorio y verificación.`, "curriculum/README.md"],
+  ["📚", "Currículo completo", `${modules.length} módulos progresivos, de criptografía a la implementación empresarial, cada uno con teoría, laboratorio y verificación.`, "curriculum/README.md"],
   ["🧪", "Laboratorios ejecutables", `${practiceCount} prácticas guiadas con actividad, evidencia y criterio de aceptación. Corren en local o testnet.`, "labs/CATALOG.md"],
   ["🧭", "Rutas por perfil", "Recorridos ordenados para desarrollo, arquitectura, auditoría, producto, investigación y empresa.", "learning-paths/README.md"],
   ["📜", "Solidity + Foundry", "Contratos con pruebas, fuzzing e invariantes. Vault, protocolos, token, oráculo y gobernador con timelock.", "labs/06-solidity-vault"],
@@ -69,9 +69,9 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Blockchain Learning Path — programa educativo en español</title>
-<meta name="description" content="Programa educativo en español para aprender blockchain de cero a nivel avanzado: ${modules.length} módulos, ${practiceCount} prácticas, laboratorios ejecutables, evaluaciones y proyecto integrador.">
+<meta name="description" content="Programa educativo en español para aprender blockchain de cero a producción: ${modules.length} módulos, ${practiceCount} prácticas, laboratorios ejecutables, evaluaciones y proyecto integrador.">
 <meta property="og:title" content="Blockchain Learning Path">
-<meta property="og:description" content="${modules.length} módulos · ${practiceCount} prácticas · de cero a nivel avanzado. Criptografía, Bitcoin, Ethereum/EVM, Solidity, dApps, seguridad, L2, DAO y arquitectura.">
+<meta property="og:description" content="${modules.length} módulos · ${practiceCount} prácticas · de cero a producción. Criptografía, Bitcoin, Ethereum/EVM, Solidity, dApps, seguridad, L2, DAO, infraestructura y empresa.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%93%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <style>
@@ -154,7 +154,7 @@ footer a{color:var(--acento);font-weight:600}
   <div class="escudo">⛓️</div>
   <div class="ver">v${version}</div>
   <h1>Blockchain Learning Path</h1>
-  <p class="sub">Programa educativo en español para aprender blockchain <strong>de cero a nivel avanzado</strong>: criptografía, Bitcoin, Ethereum/EVM, Solidity, dApps, tokens, seguridad, L2, DAO y arquitectura.</p>
+  <p class="sub">Programa educativo en español para aprender blockchain <strong>de cero a producción</strong>: criptografía, Bitcoin, Ethereum/EVM, Solidity, dApps, tokens, seguridad, L2, DAO y arquitectura.</p>
   <div class="chips">
     <span class="chip">🔐 Fundamentos</span>
     <span class="chip">₿ Bitcoin</span>

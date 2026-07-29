@@ -189,4 +189,4 @@ Entrega un documento de arquitectura del proyecto integrador que incluya: proble
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice del currículo](../README.md)
+⬅️ [Módulo 14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 16 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md)

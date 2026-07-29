@@ -2,10 +2,10 @@
 
 > [⬅️ Volver al programa](../README.md) · [📖 Bibliografía y fuentes](../docs/bibliografia.md) · [🧪 Laboratorios](../labs/CATALOG.md) · [🗺️ Roadmap](../ROADMAP.md)
 
-16 módulos progresivos (00–15), de los fundamentos criptográficos a la arquitectura
-avanzada. Cada módulo enlaza al siguiente y trae su **fuente de referencia**, un
-**esquema visual**, un laboratorio y un reto verificable. Estúdialos **en orden**:
-cada uno asume el anterior.
+19 módulos progresivos (00–18), de los fundamentos criptográficos a llevar la
+tecnología a producción en una empresa. Cada módulo enlaza al siguiente y trae su
+**fuente de referencia**, un **esquema visual**, un laboratorio y un reto verificable.
+Estúdialos **en orden**: cada uno asume el anterior.
 
 ## Mapa del programa
 
@@ -26,11 +26,15 @@ flowchart LR
     subgraph N4["Avanzado"]
         M12["12 L2"] --> M13["13 Interop"] --> M14["14 ZK"] --> M15["15 Arquitectura"]
     end
+    subgraph N5["Producción"]
+        M16["16 Infraestructura"] --> M17["17 Empresa"] --> M18["18 Implementación"]
+    end
     M00 --> M01
     M03 --> M04
     M07 --> M08
     M11 --> M12
-    M15 --> CAP["🎓 Capstone"]
+    M15 --> M16
+    M18 --> CAP["🎓 Capstone"]
 ```
 
 ## Índice
@@ -53,6 +57,9 @@ flowchart LR
 | 13 | [Interoperabilidad](13-interoperabilidad/README.md) | ¿Cómo se conectan ecosistemas? | Cosmos IBC · Polkadot |
 | 14 | [Privacidad y ZK](14-privacidad-zk/README.md) | ¿Qué se demuestra sin revelar? | Thaler · ZKProof |
 | 15 | [Arquitectura avanzada](15-arquitectura-avanzada/README.md) | ¿Cómo llega un protocolo a producción? | ERC-4337 · Flashbots |
+| 16 | [Infraestructura y nodos](16-infraestructura-nodos/README.md) | ¿Qué máquinas y nube necesita esto? | ethereum.org · EthStaker |
+| 17 | [Blockchain en la empresa](17-blockchain-en-la-empresa/README.md) | ¿Qué gana la empresa, con qué casos y costos? | BIS · WEF · Werbach |
+| 18 | [Implementación empresarial](18-implementacion-empresarial/README.md) | ¿Cómo se integra con los sistemas existentes? | Prácticas del sector financiero |
 
 ## Cómo está construido cada módulo
 
@@ -80,6 +87,7 @@ Pectra/EIP-7702) para mantener el material al día.
 | Desarrollo | 04–07 | Bitcoin, EVM, contratos y una dApp |
 | Profesional | 08–11 | Tokens, seguridad, oráculos y DAO |
 | Avanzado | 12–15 | L2, interoperabilidad, ZK y arquitectura |
+| Producción | 16–18 | Infraestructura real, caso de negocio e implementación en la empresa |
 
 Empieza por el [Módulo 00 · Orientación](00-orientacion/README.md).
 

@@ -40,6 +40,12 @@ flowchart LR
 
 ## Cómo usar esta sección
 
+Esta sección es la **lectura profesional extendida** del programa. La versión con
+laboratorios y retos verificables vive en el currículo: los módulos
+[16 · Infraestructura y nodos](../curriculum/16-infraestructura-nodos/README.md),
+[17 · Blockchain en la empresa](../curriculum/17-blockchain-en-la-empresa/README.md) y
+[18 · Implementación empresarial](../curriculum/18-implementacion-empresarial/README.md).
+
 - **Si vienes del currículo:** léela tras el módulo 09 (Seguridad); da contexto de industria a los módulos avanzados.
 - **Si eres decisor o consultor:** empieza por [04 · Blockchain para empresas](04-blockchain-para-empresas.md) y [05 · Modelos de negocio](05-modelos-de-negocio.md).
 - **Si buscas empleo en el sector:** [03 · Equipos y roles](03-equipos-roles-y-metodologia.md) mapea los puestos y sus habilidades; el [currículo](../curriculum/README.md) te da la ruta técnica.

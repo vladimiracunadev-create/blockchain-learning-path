@@ -2,18 +2,18 @@
 
 # ⛓️ Blockchain Learning Path
 
-## **16 módulos · 50 prácticas · de cero a nivel avanzado**
+## **19 módulos · 50 prácticas · de cero a producción**
 
-**Programa educativo en español para aprender blockchain desde los fundamentos hasta la auditoría — criptografía, Bitcoin, Ethereum/EVM, Solidity, dApps, tokens, seguridad, L2, DAO y arquitectura, con laboratorios ejecutables, evaluaciones y un proyecto integrador.**
+**Programa educativo en español para aprender blockchain desde los fundamentos hasta llevarla a producción en una empresa — criptografía, Bitcoin, Ethereum/EVM, Solidity, dApps, seguridad, L2, DAO, infraestructura, casos de negocio e implementación, con laboratorios ejecutables y un proyecto integrador.**
 
 [![CI](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/ci.yml)
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.2.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
-[![Módulos](https://img.shields.io/badge/módulos-16-7c5cff?style=for-the-badge)](curriculum/README.md)
+[![Versión](https://img.shields.io/badge/versión-0.3.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Módulos](https://img.shields.io/badge/módulos-19-7c5cff?style=for-the-badge)](curriculum/README.md)
 [![Prácticas](https://img.shields.io/badge/prácticas-50-2e8b57?style=for-the-badge)](labs/CATALOG.md)
-[![Nivel](https://img.shields.io/badge/nivel-inicial%20→%20avanzado-e67e22?style=for-the-badge)](ROADMAP.md)
+[![Nivel](https://img.shields.io/badge/nivel-inicial%20→%20producción-e67e22?style=for-the-badge)](ROADMAP.md)
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![License](https://img.shields.io/badge/code-MIT-3fb950?style=for-the-badge)](LICENSE)
 [![Content](https://img.shields.io/badge/contenido-CC%20BY%204.0-3fb950?style=for-the-badge)](LICENSE-CONTENT)
@@ -67,9 +67,10 @@ No necesitas experiencia previa en blockchain. Para la etapa de desarrollo convi
 | 2. Desarrollo | 04–07 | Crear y probar contratos y una dApp |
 | 3. Profesional | 08–11 | Diseñar protocolos seguros, L2, oráculos y DAO |
 | 4. Avanzado | 12–15 | Auditar, investigar y tomar decisiones arquitectónicas |
+| 5. Producción | 16–18 | Infraestructura real, caso de negocio e implementación empresarial |
 | Proyecto final | `capstone` | Protocolo documentado, probado y desplegable |
 
-Consulta [ROADMAP.md](ROADMAP.md) para el plan de 24 semanas o [docs/ruta-rapida.md](docs/ruta-rapida.md) para una ruta intensiva.
+Consulta [ROADMAP.md](ROADMAP.md) para el plan de 26 semanas o [docs/ruta-rapida.md](docs/ruta-rapida.md) para una ruta intensiva.
 
 También puedes elegir una [ruta por perfil profesional](learning-paths/README.md).
 
@@ -78,7 +79,7 @@ Cada módulo cita sus fuentes; la [bibliografía central](docs/bibliografia.md) 
 ## Estructura
 
 ```text
-curriculum/       16 módulos progresivos con esquemas visuales
+curriculum/       19 módulos progresivos con esquemas visuales
 industria/        construcción, stack, equipos, empresas y modelos de negocio
 labs/             ejercicios ejecutables
 solutions/        criterios de revisión, no respuestas para copiar
