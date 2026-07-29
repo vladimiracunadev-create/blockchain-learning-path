@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Blockchain Learning Path</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p class="eyebrow">CURSO PROFESIONAL · V2.0</p>
+    <h1>Blockchain Learning Path</h1>
+    <p>Comprende. Experimenta. Construye. Verifica.</p>
+  </header>
+  <main>
+    <section class="summary">
+      <article><strong id="done">0</strong><span>módulos completados</span></article>
+      <article><strong>50</strong><span>prácticas progresivas</span></article>
+      <article><strong id="score">—</strong><span>diagnóstico</span></article>
+    </section>
+    <section>
+      <div class="section-title"><h2>Tu recorrido</h2></div>
+      <div id="modules" class="grid"></div>
+      <div class="progress-actions">
+        <button id="export">Exportar progreso</button>
+        <label class="file-button">Importar progreso<input id="import" type="file" accept="application/json"></label>
+        <button id="reset">Reiniciar</button>
+      </div>
+    </section>
+    <section class="quiz">
+      <h2>Diagnóstico</h2>
+      <p>Responde cinco preguntas. Con 80% puedes considerar la ruta rápida, pero seguridad sigue siendo obligatoria.</p>
+      <form id="quiz"></form>
+      <button id="grade">Evaluar diagnóstico</button>
+      <output id="quizResult">Sin responder.</output>
+    </section>
+    <section class="simulator">
+      <h2>Simulador de integridad</h2>
+      <p>Cambia el contenido y observa cómo cambia su huella. Una huella detecta alteración; no prueba que el dato original fuera verdadero.</p>
+      <label>Contenido <input id="message" value="A paga 2 a B"></label>
+      <output id="hash"></output>
+    </section>
+  </main>
+  <footer>El progreso se guarda solo en este navegador y puede exportarse. Usa únicamente redes locales o testnets. Nunca ingreses una seed phrase.</footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

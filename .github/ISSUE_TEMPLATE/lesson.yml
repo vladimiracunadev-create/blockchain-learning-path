@@ -1,0 +1,23 @@
+name: Proponer una lección
+description: Sugiere una mejora educativa verificable
+title: "[Lección]: "
+labels: ["contenido"]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo de aprendizaje
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Fuentes oficiales o evidencia
+    validations:
+      required: true
+  - type: textarea
+    id: practice
+    attributes:
+      label: Práctica propuesta
+    validations:
+      required: true

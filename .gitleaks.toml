@@ -1,0 +1,26 @@
+# Configuración de gitleaks para Blockchain Learning Path.
+#
+# Se usan las reglas por defecto de gitleaks sobre todo el repositorio
+# (scripts, workflows, laboratorios, contratos). Se excluye el texto didáctico:
+# varios README y contratos de ejemplo muestran claves privadas de prueba,
+# direcciones y mnemónicos ficticios con fines pedagógicos. Nunca son secretos
+# reales — provienen de redes locales (Anvil) o testnets.
+
+title = "gitleaks — Blockchain Learning Path"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Contenido didáctico con valores de ejemplo (nunca reales): clases, laboratorios y contratos"
+paths = [
+  '''^curriculum/.*\.md$''',
+  '''^labs/.*''',
+  '''^security-challenges/.*''',
+  '''^docs/.*\.md$''',
+  '''^\.env\.example$''',
+]
+# Claves privadas de Anvil/Hardhat de dominio público, usadas en ejemplos.
+regexes = [
+  '''0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80''',
+]

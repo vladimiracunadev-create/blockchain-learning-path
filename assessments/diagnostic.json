@@ -1,0 +1,46 @@
+{
+  "title": "Diagnóstico inicial",
+  "passingScore": 80,
+  "questions": [
+    {
+      "id": "d1",
+      "type": "multiple-choice",
+      "prompt": "¿Qué propiedad aporta directamente un hash?",
+      "options": ["Confidencialidad", "Integridad verificable", "Identidad legal"],
+      "answer": 1,
+      "explanation": "Un hash ayuda a detectar cambios; no cifra ni prueba identidad legal."
+    },
+    {
+      "id": "d2",
+      "type": "multiple-choice",
+      "prompt": "¿Dónde guarda una wallet los activos?",
+      "options": ["En el archivo de la app", "En la seed phrase", "Los activos son estado de la red; la wallet gestiona claves"],
+      "answer": 2,
+      "explanation": "La wallet administra claves para autorizar cambios de estado."
+    },
+    {
+      "id": "d3",
+      "type": "multiple-choice",
+      "prompt": "¿Una auditoría garantiza ausencia de vulnerabilidades?",
+      "options": ["Sí", "No"],
+      "answer": 1,
+      "explanation": "Reduce riesgo dentro de un alcance y momento, pero no ofrece garantía absoluta."
+    },
+    {
+      "id": "d4",
+      "type": "multiple-choice",
+      "prompt": "¿Cuándo suele ser preferible una base tradicional?",
+      "options": ["Cuando una autoridad confiable controla escritura y se requiere corrección eficiente", "Siempre que haya varias tablas", "Nunca"],
+      "answer": 0,
+      "explanation": "Blockchain necesita una justificación de coordinación y confianza."
+    },
+    {
+      "id": "d5",
+      "type": "multiple-choice",
+      "prompt": "¿Qué debe ocurrir antes de una llamada externa en CEI?",
+      "options": ["Actualizar efectos internos", "Emitir un NFT", "Cambiar la red"],
+      "answer": 0,
+      "explanation": "Checks-effects-interactions reduce oportunidades de reentrancia."
+    }
+  ]
+}

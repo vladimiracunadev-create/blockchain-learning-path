@@ -1,0 +1,13 @@
+{
+  "name": "@blockchain-course/event-indexer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node --test src/*.test.mjs"
+  },
+  "dependencies": {
+    "viem": "^2.33.0"
+  }
+}
