@@ -1,14 +1,124 @@
 # 13 · Interoperabilidad y ecosistemas
 
-Explora puentes lock-and-mint, burn-and-mint, light clients, mensajería y atomic swaps. Compara EVM con Solana, Cosmos/IBC, Polkadot y redes empresariales como Hyperledger Fabric.
+> **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** documentación de Cosmos IBC y de Polkadot (XCM)
+> [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 
-## Modelo de amenazas de un puente
+---
 
-- validadores o guardianes comprometidos;
-- mensajes repetidos;
-- verificación incompleta;
-- actualización administrativa;
-- diferencia de finalidad entre cadenas;
-- liquidez insuficiente.
+## 🎯 Objetivos
 
-Los puentes concentran riesgos. Modela explícitamente cada confianza añadida.
+- Distinguir los mecanismos de puente (lock-and-mint, burn-and-mint), los light clients, la mensajería y los atomic swaps (HTLC).
+- Comparar los modelos de interoperabilidad de EVM, Solana, Cosmos/IBC, Polkadot/XCM y redes empresariales como Hyperledger Fabric.
+- Construir el modelo de amenazas de un puente identificando cada confianza añadida.
+- Explicar por qué los puentes concentran riesgo y han sido el mayor vector de pérdidas del sector.
+- Situar enfoques de mensajería como CCIP y LayerZero dentro del espectro confianza/verificación.
+
+## 📚 Resultados de aprendizaje
+
+Al finalizar, el estudiante podrá:
+
+1. **Clasificar** un puente según su mecanismo de custodia y su método de verificación de mensajes.
+2. **Comparar** IBC (verificación por light client) con puentes basados en un conjunto externo de validadores.
+3. **Enumerar** los vectores de ataque de un puente y asociarlos a controles concretos.
+4. **Evaluar** cómo la diferencia de finalidad entre cadenas habilita ataques de reorganización o replay.
+5. **Justificar** cuándo conviene mensajería genérica frente a puentes de activos dedicados.
+6. **Modelar** la confianza añadida de una arquitectura cross-chain y proponer su reducción.
+
+## 🗺️ Temas
+
+| # | Tema | Por qué importa |
+|---|------|-----------------|
+| 1 | Lock-and-mint vs. burn-and-mint | Definen dónde queda la custodia y cómo se conserva el suministro |
+| 2 | Light clients y verificación nativa | Sustituyen la confianza en terceros por verificación criptográfica |
+| 3 | Message passing (IBC, XCM) | Permiten transferir datos, no solo activos, entre cadenas |
+| 4 | Atomic swaps y HTLC | Intercambian valor sin custodio, con garantías de atomicidad |
+| 5 | Diferencia de finalidad entre cadenas | Una cadena reorganizable puede invalidar mensajes ya aceptados |
+| 6 | Validadores/guardianes de puente | Su compromiso es el mayor riesgo histórico del sector |
+| 7 | Replay y verificación incompleta | Mensajes repetidos o mal validados permiten acuñar de más |
+| 8 | Interoperabilidad empresarial (Fabric) | Muestra otro modelo: permisos, canales y confianza acotada |
+
+## 🧠 Modelo mental
+
+Un puente es como una casa de cambio entre dos países con leyes distintas: deposita moneda en un país y recibe un pagaré canjeable en el otro. La seguridad no depende de la moneda, sino de quién custodia el depósito y de cómo se verifica que el pagaré es legítimo. Un light client es un notario que revisa por sí mismo las pruebas del país de origen; un conjunto de validadores externos es un grupo de firmantes en quien hay que confiar. Cuanto más se parezca el puente a "confiar en firmantes" y menos a "verificar pruebas", más superficie de ataque introduce.
+
+La analogía se rompe en dos puntos: los países no se reorganizan, pero una cadena con finalidad probabilística sí puede revertir bloques, invalidando un pagaré ya emitido; y un pagaré físico no se puede "reproducir", mientras que un mensaje mal protegido puede reejecutarse (replay) para acuñar de más. Por eso modelar interoperabilidad es, ante todo, enumerar cada confianza añadida y cada supuesto de finalidad.
+
+## 📖 Conceptos y definiciones
+
+- **Lock-and-mint**: bloquea el activo en la cadena de origen y acuña una representación en destino; el custodio del bloqueo es el punto crítico.
+- **Burn-and-mint**: quema la representación en una cadena y acuña la equivalente en otra, conservando el suministro total sin custodia acumulada.
+- **Light client**: verificador ligero que comprueba pruebas de consenso de otra cadena sin confiar en intermediarios; base de IBC.
+- **Message passing**: transporte verificable de datos arbitrarios entre cadenas; IBC en Cosmos y XCM en Polkadot son ejemplos.
+- **Atomic swap (HTLC)**: intercambio condicionado por un secreto y un tiempo límite que garantiza que ambas partes cumplen o ninguna lo hace.
+- **Replay**: reejecución de un mensaje válido para obtener un efecto repetido, como acuñar dos veces; se evita con nonces y pruebas de consumo.
+- **Finalidad**: momento en que un bloque se considera irreversible; su diferencia entre cadenas condiciona cuándo es seguro actuar sobre un mensaje.
+- **Guardianes/validadores de puente**: conjunto externo que atestigua mensajes; su compromiso permite falsificar acuñaciones.
+- **CCIP**: protocolo de mensajería de Chainlink con verificación y una red de riesgo independiente para transferencias cross-chain.
+- **LayerZero**: enfoque de mensajería que separa el envío del mensaje de su verificación mediante componentes configurables.
+
+## 🧪 Laboratorio guiado
+
+Este módulo es un ejercicio de modelado de amenazas, sin código de repositorio. Consulta el índice de prácticas del curso en [laboratorios](../../labs/CATALOG.md).
+
+1. Elige un puente real o de referencia y describe su flujo: origen, custodia, atestación del mensaje y acuñación en destino.
+2. Dibuja el diagrama de actores y confía cada paso a alguien; marca dónde aparece una confianza añadida.
+
+```text
+Vector                        | ¿Aplica? | Control / mitigación
+------------------------------+----------+---------------------
+Validadores comprometidos     | ...      | ...
+Replay de mensajes            | ...      | ...
+Verificación incompleta       | ...      | ...
+Actualización administrativa  | ...      | ...
+Diferencia de finalidad       | ...      | ...
+Liquidez insuficiente         | ...      | ...
+```
+
+3. Para cada vector, indica cómo se detectaría un ataque y quién asume la pérdida.
+4. Contrasta el diseño con uno basado en light client (IBC) y señala qué confianza desaparece.
+5. Redacta una recomendación de un párrafo sobre si usar mensajería genérica (CCIP/LayerZero) o un puente dedicado.
+
+## 📝 Reto verificable
+
+Entrega el modelo de amenazas de un puente concreto: diagrama de flujo, tabla de los seis vectores con su mitigación y una conclusión que compare el diseño con una alternativa verificada por light client.
+
+**Criterio de aceptación:** la tabla cubre los seis vectores (validadores comprometidos, replay, verificación incompleta, actualización administrativa, diferencia de finalidad y liquidez insuficiente), cada uno con un control explícito, y la conclusión identifica al menos una confianza añadida que la alternativa elimina.
+
+## ⚠️ Errores frecuentes
+
+| Síntoma | Causa y cómo comprobarlo |
+|---------|--------------------------|
+| Suponer que todos los puentes son igual de seguros | Se ignora el método de verificación; comprueba si usa light client o firmantes externos |
+| Olvidar la protección anti-replay | Falta de nonce o de prueba de consumo; revisa si el mensaje puede reejecutarse |
+| Actuar sobre un mensaje antes de la finalidad | La cadena de origen se reorganiza; verifica el tipo de finalidad de cada extremo |
+| Confiar en una clave administrativa "temporal" | El upgrade admin permite drenar fondos; audita quién controla el proxy |
+| Confundir liquidez con seguridad | Un puente con fondos puede seguir siendo vulnerable; separa TVL de modelo de confianza |
+| Asumir que "cross-chain" equivale a "sin confianza" | Todo puente añade supuestos; enumera cada uno explícitamente |
+
+## 🛡️ Seguridad y ética
+
+- Realiza todo el análisis en local o testnet; no transfieras fondos reales ni utilices claves privadas reales.
+- No conectes wallets con activos a puentes o dApps durante el estudio, ni firmes mensajes que no comprendas.
+- Reconoce que los puentes han causado las mayores pérdidas del sector; comunica el riesgo con honestidad, sin minimizarlo.
+- Documenta cada supuesto de confianza; ocultarlo es una omisión ética, no un detalle técnico.
+- Respeta las licencias y avisos de las cadenas empresariales (por ejemplo Fabric) al modelar escenarios permisionados.
+
+## 🔗 Referencias
+
+- Cosmos, documentación de IBC (Inter-Blockchain Communication) — <https://ibc.cosmos.network/>
+- Polkadot Wiki, XCM (Cross-Consensus Messaging) — <https://wiki.polkadot.network/docs/learn-xcm>
+- Chainlink, documentación de CCIP — <https://docs.chain.link/ccip>
+- Hyperledger Fabric, documentación oficial — <https://hyperledger-fabric.readthedocs.io/>
+- Fuente primaria: Cosmos IBC, especificación del protocolo y su verificación por light client — <https://ibc.cosmos.network/>
+
+## ✅ Criterio de dominio
+
+- Reconstruyes el flujo de un puente y señalas cada confianza añadida sin ayuda.
+- Explicas cómo la finalidad y el replay afectan la seguridad de un mensaje cross-chain.
+- Justificas cuándo un diseño por light client reduce riesgo frente a un conjunto de validadores externos.
+
+---
+
+## 🧭 Navegación
+
+⬅️ [Módulo 12 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)

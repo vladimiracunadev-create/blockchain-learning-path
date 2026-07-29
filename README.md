@@ -72,6 +72,8 @@ Consulta [ROADMAP.md](ROADMAP.md) para el plan de 24 semanas o [docs/ruta-rapida
 
 También puedes elegir una [ruta por perfil profesional](learning-paths/README.md).
 
+Cada módulo cita sus fuentes; la [bibliografía central](docs/bibliografia.md) reúne los libros de referencia por área y los hitos recientes del ecosistema.
+
 ## Estructura
 
 ```text
@@ -85,7 +87,7 @@ adrs/              decisiones de arquitectura
 instructor/        programa y material docente
 projects/         proyectos de portafolio
 capstone/         especificación del proyecto final
-docs/             glosario, buenas prácticas, recursos y rutas
+docs/             glosario, bibliografía, buenas prácticas, recursos y rutas
 scripts/          validaciones del repositorio
 .github/          CI, plantilla de issues y PR
 ```

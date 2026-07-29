@@ -10,7 +10,12 @@ Primera versión pública del programa.
 ### Añadido
 
 - **Currículo** de 16 módulos progresivos (00–15), de criptografía y consenso a
-  arquitectura avanzada, cada uno con teoría, laboratorio y verificación.
+  arquitectura avanzada, cada uno con teoría, laboratorio y verificación, con el
+  formato de clase completo (objetivos, temas, conceptos, reto verificable y errores
+  frecuentes), **navegación entre módulos** y **referencias a libros y fuentes primarias**.
+- **Bibliografía central** ([`docs/bibliografia.md`](docs/bibliografia.md)) con las obras
+  de referencia por área y los hitos recientes del ecosistema (Merge, Dencun/EIP-4844,
+  Pectra/EIP-7702).
 - **50 prácticas** ejecutables con actividad, evidencia y criterio de aceptación,
   catalogadas en `labs/CATALOG.md`.
 - **Contratos con Foundry**: vault, protocolos, token, oráculo y gobernador con

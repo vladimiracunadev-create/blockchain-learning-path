@@ -12,6 +12,7 @@
     "MD026": false, // puntuación al final de encabezados
     "MD012": false, // líneas en blanco consecutivas
     "MD040": false, // lenguaje en bloques de código
+    "MD029": false, // prefijo de listas ordenadas (pasos intercalados con código)
     "MD060": false, // estilo de columnas de tabla (tablas compactas)
     "MD010": { "code_blocks": false } // Solidity/Go usan tabs; permitirlas dentro de bloques
   },

@@ -1,52 +1,74 @@
-# NN · Nombre
+# NN · Nombre del módulo
 
-## Ficha
+> **Nivel:** … · ⏱️ **Duración estimada:** … · **Fuente:** *Libro* (Autor) y *Libro* (Autor)
+>
+> Cabecera: un enlace **⬅️ Currículo** hacia `../README.md` y un enlace **📚 Bibliografía**
+> hacia `../../docs/bibliografia.md` (rutas relativas desde `curriculum/NN-slug/`).
 
-- Duración:
-- Prerrequisitos:
-- Evidencia:
-- Competencias:
+---
 
-## Diagnóstico
+## 🎯 Objetivos
 
-Tres preguntas que revelen conocimientos previos.
+- Objetivo medible 1.
+- Objetivo medible 2.
+- Objetivo medible 3.
 
-## Objetivos medibles
+## 📚 Resultados de aprendizaje
 
-Al finalizar, el estudiante puede...
+Al finalizar, el estudiante podrá:
 
-## Modelo mental
+1. **Verbo medible** …
+2. **Verbo medible** …
 
-Explicación central, analogía y límites de la analogía.
+## 🗺️ Temas
 
-## Conceptos
+| # | Tema | Por qué importa |
+|---|------|-----------------|
+| 1 | … | … |
 
-Definiciones, relaciones, ejemplo y contraejemplo.
+## 🧠 Modelo mental
 
-## Demostración
+Explicación central, analogía y **límites de la analogía**.
 
-Procedimiento reproducible con resultado esperado.
+## 📖 Conceptos y definiciones
 
-## Laboratorio guiado
+- **Término**: definición, característica clave, ejemplo y contraejemplo.
 
-Pasos, observaciones y preguntas.
+## 🧪 Laboratorio guiado
 
-## Reto independiente
+Pasos reproducibles con resultado esperado (reutiliza los `pnpm lab:*` del repo cuando exista uno).
 
-Requisitos, restricciones y pruebas de aceptación.
+## 📝 Reto verificable
 
-## Errores frecuentes
+Enunciado con **criterio de aceptación** explícito.
 
-Síntoma, causa y forma de comprobarlo.
+## ⚠️ Errores frecuentes
 
-## Seguridad y ética
+| Síntoma | Causa y cómo comprobarlo |
+|---------|--------------------------|
+| … | … |
 
-Activos, actores, riesgos y mitigaciones.
+## 🛡️ Seguridad y ética
 
-## Evaluación
+Activos, actores, riesgos y mitigaciones. Reglas de laboratorio (local/testnet, sin fondos reales).
 
-Cuestionario, prueba automática y rúbrica.
+## 🔗 Referencias
 
-## Criterio de dominio
+- Autor, *Libro*, cap. … — <https://…>
+- Fuente primaria (whitepaper / EIP) — <https://…>
 
-Evidencias necesarias para avanzar.
+## ✅ Criterio de dominio
+
+Evidencias necesarias para avanzar al siguiente módulo.
+
+---
+
+## 🧭 Navegación
+
+Cierra con una fila de navegación que enlace, con los slugs reales:
+
+- **⬅️ Módulo anterior** → `../<slug-anterior>/README.md`
+- **📚 Índice del currículo** → `../README.md`
+- **➡️ Módulo siguiente** → `../<slug-siguiente>/README.md`
+
+El primer módulo omite el enlace anterior y el último omite el siguiente.
