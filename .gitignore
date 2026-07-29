@@ -7,4 +7,5 @@ out/
 cache/
 broadcast/
 coverage/
+site/
 .DS_Store

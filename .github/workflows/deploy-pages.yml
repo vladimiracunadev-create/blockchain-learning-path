@@ -1,0 +1,69 @@
+name: Deploy Pages
+
+# Publica la landing page (site/index.html) en GitHub Pages. El sitio se genera
+# a partir de los datos reales del repositorio, así que el filtro de rutas cubre
+# lo que cambia esos datos: el currículo, el catálogo de prácticas, el generador
+# y los metadatos del programa.
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "curriculum/**"
+      - "labs/CATALOG.md"
+      - "adrs/**"
+      - "docs/**"
+      - "package.json"
+      - "scripts/build-landing.mjs"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Generar landing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generar site/index.html
+        run: node scripts/build-landing.mjs
+
+      - name: Comprobar que el sitio salió completo
+        run: |
+          set -euo pipefail
+          [ -s site/index.html ] || { echo "::error::falta o está vacío site/index.html"; exit 1; }
+          for needle in "Blockchain Learning Path" "Los 16 módulos" "Qué incluye"; do
+            grep -q "$needle" site/index.html || { echo "::error::el sitio no contiene: $needle"; exit 1; }
+          done
+          bytes=$(wc -c < site/index.html)
+          echo "Landing generada: ${bytes} bytes" >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    name: Publicar
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

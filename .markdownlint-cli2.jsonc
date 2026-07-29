@@ -21,6 +21,7 @@
     "dist",
     "out",
     "cache",
+    "site",
     "LICENSE",
     "LICENSE-CONTENT"
   ]

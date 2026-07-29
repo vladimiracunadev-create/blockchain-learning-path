@@ -33,10 +33,9 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 
 | Versión | Alcance | Estado |
 |---|---|---|
-| 1.0 | mapa curricular y laboratorios base | completada |
-| 2.0 | 50 prácticas, perfiles, regtest, dApp, seguridad y panel | completada |
-| 2.1 | guías individuales, protocolos, indexador, despliegue y kit docente | actual |
-| 3.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
-| 4.0 | especializaciones certificadas y laboratorios de investigación | futuro |
+| 0.1.0 | currículo de 16 módulos, 50 prácticas, contratos Foundry, dApp, indexador, seguridad, evaluaciones y landing | actual |
+| 0.2.0 | guías individuales ampliadas, más retos de seguridad y panel de progreso enriquecido | planificada |
+| 1.0.0 | programa completo estabilizado con manual en PDF y sitio de contenido navegable | planificada |
+| 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 
-La versión 2.0 funciona localmente y mantiene los ejercicios peligrosos aislados. Las versiones futuras requieren infraestructura, identidad y decisiones institucionales que no deben simularse dentro del repositorio.
+La versión actual funciona localmente y mantiene los ejercicios peligrosos aislados (Anvil o testnet). Las versiones futuras requieren infraestructura, identidad y decisiones institucionales que no deben simularse dentro del repositorio.

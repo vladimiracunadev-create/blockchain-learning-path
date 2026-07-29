@@ -1,19 +1,31 @@
 # Historial de cambios
 
-## 2.1.0 · 2026-07-28
+El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
+y el versionado [SemVer](https://semver.org/lang/es/).
 
-- Cincuenta prácticas con actividad, evidencia y aceptación.
-- Kit docente, syllabus y criterios conceptuales.
-- Token, oráculo y gobernador con pruebas Foundry.
-- Script de despliegue del proyecto integrador.
-- Indexador de eventos con checkpoint y pruebas.
-- Panel con diagnóstico e importación/exportación de progreso.
-- Validaciones de completitud ampliadas.
+## [0.1.0] · 2026-07-29
 
-## 2.0.0 · 2026-07-28
+Primera versión pública del programa.
 
-- Rutas profesionales, Bitcoin regtest, dApp viem, seguridad, evaluaciones y panel visual.
+### Añadido
 
-## 1.0.0 · 2026-07-28
+- **Currículo** de 16 módulos progresivos (00–15), de criptografía y consenso a
+  arquitectura avanzada, cada uno con teoría, laboratorio y verificación.
+- **50 prácticas** ejecutables con actividad, evidencia y criterio de aceptación,
+  catalogadas en `labs/CATALOG.md`.
+- **Contratos con Foundry**: vault, protocolos, token, oráculo y gobernador con
+  timelock, con pruebas, fuzzing e invariantes.
+- **Retos de seguridad**: contratos vulnerables y sus correcciones con criterios
+  de revisión.
+- **dApp** de financiamiento comunitario (viem/TypeScript) e **indexador** de
+  eventos con checkpoint.
+- **Evaluaciones**: diagnóstico, checkpoints, banco de preguntas y plantilla de
+  informe de auditoría.
+- **6 ADR** de decisiones de arquitectura y material docente (syllabus, checklist).
+- **Rutas por perfil** (desarrollo, arquitectura, auditoría, producto,
+  investigación, empresa) y **proyecto integrador** (capstone).
+- **Landing page** publicada en GitHub Pages, generada desde los datos del repo.
+- Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
+  seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
-- Mapa curricular, laboratorios iniciales y proyecto final.
+[0.1.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.1.0

@@ -1,6 +1,6 @@
 {
   "name": "blockchain-learning-path",
-  "version": "2.1.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Ruta práctica en español para aprender blockchain desde nivel inicial a avanzado",
   "packageManager": "pnpm@10.13.1",
@@ -9,6 +9,7 @@
   },
   "scripts": {
     "check": "node scripts/check-repository.mjs",
+    "build:landing": "node scripts/build-landing.mjs",
     "lab:hash": "node labs/01-cryptography/hash-chain.mjs",
     "lab:merkle": "node labs/01-cryptography/merkle-tree.mjs",
     "lab:pow": "node labs/02-consensus/proof-of-work.mjs",
