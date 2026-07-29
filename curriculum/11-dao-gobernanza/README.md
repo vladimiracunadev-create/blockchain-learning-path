@@ -43,6 +43,37 @@ Una DAO bien diseñada se parece a un parlamento con reglas de procedimiento: no
 
 El límite de la analogía: en un parlamento tradicional el poder de voto no se puede alquilar por diez segundos, pero en cadena sí. Un atacante puede pedir prestado un capital enorme vía flash loan, votar y devolverlo en la misma transacción. Por eso el snapshot de poder en un bloque anterior y el timelock no son adornos, sino defensas centrales: separan el momento en que se mide el poder del momento en que se vota, y el momento en que se decide del momento en que se ejecuta.
 
+## 🧩 Esquema visual
+
+El ciclo de vida de una propuesta en un Governor de OpenZeppelin impone etapas obligatorias entre la creación y la ejecución.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pending
+    Pending --> Active: abre el periodo de voto
+    Pending --> Canceled: el proponente la retira
+    Active --> Succeeded: logra quorum y apoyo suficiente
+    Active --> Defeated: sin quorum o con rechazo
+    Succeeded --> Queued: entra en cola del timelock
+    Queued --> Executed: cumple la demora y se ejecuta
+    Queued --> Canceled: se detecta un abuso y se cancela
+    Executed --> [*]
+    Defeated --> [*]
+    Canceled --> [*]
+```
+
+La arquitectura separa quién mide el poder de voto, quién decide y quién ejecuta: solo el timelock es dueño de los contratos administrados.
+
+```mermaid
+flowchart LR
+    T["Token con ERC-20Votes"] --> D["Delegación y checkpoints"]
+    D --> G["Contrato Governor"]
+    G --> TL["TimelockController"]
+    TL --> TS["Tesorería de la DAO"]
+    TL --> PC["Parámetros del protocolo"]
+    TL --> UP["Actualizaciones de contratos"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Propuesta**: conjunto de acciones que la DAO somete a votación y, si se aprueba, ejecuta de forma verificable.
@@ -54,6 +85,38 @@ El límite de la analogía: en un parlamento tradicional el poder de voto no se 
 - **Tesorería multisig**: fondo gobernado por varias firmas, típicamente con un Safe, para evitar un único punto de control.
 - **Flash-loan governance**: ataque que toma poder de voto prestado por instantes para forzar una decisión.
 - **ERC-6372**: estándar de reloj que permite a un Governor usar bloques o marcas de tiempo para sus checkpoints.
+
+## 🔬 Profundización
+
+### Anatomía de un ataque de gobernanza: Beanstalk (2022)
+
+En abril de 2022, el protocolo Beanstalk perdió unos 182 M USD en el mayor ataque de gobernanza con préstamo relámpago registrado. El atacante había creado una propuesta maliciosa días antes (disfrazada, con ironía, de donación benéfica) y luego, en una sola transacción, pidió prestados cientos de millones de dólares en stablecoins vía flash loan, los depositó para obtener la supermayoría de poder de voto, ejecutó la propuesta mediante un mecanismo de *emergency commit* que no exigía demora, transfirió la tesorería a su propia dirección y devolvió el préstamo. Beneficio neto para el atacante: alrededor de 76 M USD.
+
+El ataque funcionó porque fallaron a la vez las tres defensas canónicas:
+
+- **Snapshot de voto en bloque pasado**: si el poder se mide con `getPastVotes` en un bloque anterior a la propuesta, los tokens prestados dentro de la misma transacción valen cero votos.
+- **Timelock obligatorio**: una demora entre aprobación y ejecución impide que voto y ejecución convivan en una transacción, y da a la comunidad tiempo de auditar la propuesta y reaccionar.
+- **Quorum y umbral de propuesta**: elevan el capital que hay que reunir y hacen que el ataque sea visible antes de consumarse.
+
+Ninguna defensa aislada basta: el snapshot sin timelock deja pasar propuestas maliciosas votadas con poder legítimo comprado barato, y el timelock sin snapshot solo retrasa el saqueo.
+
+### Parámetros de diseño de un Governor
+
+| Parámetro | Qué protege | Trade-off al subirlo |
+|-----------|-------------|----------------------|
+| Voting delay (entre propuesta e inicio de votación) | Da tiempo a delegar, informarse y detectar propuestas hostiles | Retrasa decisiones urgentes legítimas |
+| Voting period (duración de la votación) | Participación real en distintas zonas horarias y contextos | Alarga todo el ciclo; más exposición a campañas de compra de votos |
+| Proposal threshold (poder mínimo para proponer) | Filtra spam y propuestas triviales de atacantes sin capital | Concentra la iniciativa en ballenas y grandes delegados |
+| Quorum (participación mínima) | Impide que una minoría diminuta decida por todos | Con apatía alta, ningún cambio legítimo alcanza el umbral |
+| Timelock delay (demora antes de ejecutar) | Ventana de reacción y salida ante una propuesta aprobada maliciosa | Ralentiza correcciones de emergencia; exige un mecanismo de guardián acotado |
+
+No existen valores universales: un protocolo con tesorería enorme y comunidad madura tolera ciclos largos; uno joven que necesita iterar rápido suele empezar con parámetros bajos y endurecerlos a medida que crece el valor en juego.
+
+### veTokens y delegación líquida
+
+El modelo *vote-escrowed* (veToken), popularizado por Curve con veCRV, ataca dos males crónicos: el capital mercenario que vota hoy y se va mañana, y la apatía del votante pequeño. El titular bloquea sus tokens por un plazo elegido (hasta 4 años en Curve) y recibe poder de voto proporcional al monto y al tiempo restante de bloqueo, que decae linealmente: quien más se compromete a largo plazo, más pesa. La delegación líquida (el patrón de ERC-20Votes) resuelve el otro flanco: permite ceder el poder de voto a delegados activos sin transferir la propiedad, elevando la participación efectiva.
+
+Las críticas también son serias: el bloqueo prolongado ilíquido concentra el poder en quienes pueden permitirse inmovilizar capital años; alrededor de los veTokens surgieron mercados de sobornos de voto (*bribes*) y capas como Convex que re-concentran el poder que el diseño quería dispersar; y la delegación líquida tiende a oligarquías de delegados profesionales con baja rendición de cuentas. La lección de diseño: ningún mecanismo de tokenomics sustituye a una comunidad que vigila la concentración de poder — solo cambia dónde hay que mirar.
 
 ## 🧪 Laboratorio guiado
 

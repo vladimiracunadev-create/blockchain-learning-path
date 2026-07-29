@@ -43,6 +43,41 @@ Un estándar de token es como el formato de un enchufe eléctrico: no dice qué 
 
 El límite de la analogía es importante: el enchufe no juzga la calidad del aparato. Que un contrato implemente correctamente `transfer` y `balanceOf` no dice nada sobre si su suministro está concentrado en una dirección, si el dueño puede mintar sin tope o si el token tiene alguna utilidad real. Crear un token es trivial; crear utilidad, seguridad y gobernanza responsable es el trabajo difícil.
 
+## 🧩 Esquema visual
+
+El mapa de estándares parte de dos preguntas: si las unidades son intercambiables entre sí y qué extensiones exige el caso de uso.
+
+```mermaid
+flowchart TD
+    R["Estándares de token"] --> E20["ERC-20 fungible"]
+    R --> E721["ERC-721 no fungible"]
+    R --> E1155["ERC-1155 multi-token"]
+    R --> AA["Abstracción de cuenta"]
+    E20 --> P["ERC-2612 permit"]
+    E20 --> V["ERC-20Votes para gobernanza"]
+    E20 --> B["ERC-4626 bóvedas"]
+    E721 --> M["Metadata por URI"]
+    E721 --> RY["ERC-2981 royalties"]
+    AA --> A1["ERC-4337 UserOperations"]
+    AA --> A2["EIP-7702 EOA con código delegado"]
+```
+
+El patrón `approve` + `transferFrom` requiere dos transacciones y deja viva una autorización que conviene acotar en monto y en tiempo.
+
+```mermaid
+sequenceDiagram
+    participant U as "Usuario"
+    participant T as "Token"
+    participant P as "Protocolo"
+    U->>T: approve al protocolo por 100 unidades
+    T-->>U: evento Approval
+    U->>P: solicita depositar 100 unidades
+    P->>T: transferFrom del usuario al protocolo
+    T->>T: verifica la allowance y descuenta 100
+    T-->>P: evento Transfer
+    P-->>U: acredita el depósito
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Allowance**: monto que una dirección autoriza a que otra gaste en su nombre; el approve infinito lo fija en el máximo y expone todo el saldo si el gastador se ve comprometido.
@@ -54,6 +89,32 @@ El límite de la analogía es importante: el enchufe no juzga la calidad del apa
 - **Bóveda ERC-4626**: estándar que tokeniza depósitos en un activo subyacente unificando `deposit`, `mint`, `withdraw` y `redeem` y su contabilidad de `shares`.
 - **Abstracción de cuenta**: capacidad de que una cuenta ejecute lógica programable; ERC-4337 usa UserOperations y EIP-7702 permite a una EOA delegar temporalmente en código.
 - **Hook**: función que se ejecuta antes o después de una transferencia para añadir lógica como pausas o listas de bloqueo.
+
+## 🔬 Profundización
+
+### Contabilidad de una bóveda ERC-4626: shares vs. assets
+
+Una bóveda ERC-4626 no guarda "saldos en USDC" por usuario: emite *shares* que representan una fracción proporcional del total de activos. El tipo de cambio es `assets / shares` y crece cuando la bóveda gana rendimiento. Ejemplo numérico: una bóveda con 12 500 USDC y 10 000 shares tiene un tipo de cambio de 1.25; si depositas 500 USDC recibes `500 / 1.25 = 400` shares, y si más tarde el total sube a 15 000 USDC, tus 400 shares valen `400 × 1.5 = 600` USDC.
+
+Esa aritmética habilita el **ataque de inflación del primer depósito**: en una bóveda vacía, el atacante deposita 1 unidad mínima y recibe 1 share; luego "dona" 10 000 USDC transfiriéndolos directamente al contrato, sin pasar por `deposit`. Cuando la víctima deposita 19 999 USDC, la fórmula `shares = 19 999 × 1 / 10 000` redondea hacia abajo a 1 share: víctima y atacante quedan con la mitad de una bóveda de casi 30 000 USDC, y el atacante retira ~15 000 USDC habiendo aportado ~10 000. Las mitigaciones estándar son los *virtual shares/assets* (un offset interno que usa OpenZeppelin desde la versión 4.9 y encarece el ataque hasta hacerlo antieconómico) o un depósito inicial del propio protocolo cuyas shares se queman o quedan bloqueadas.
+
+### El riesgo real de las approvals: del approve infinito a Permit2
+
+El `approve` por el máximo (`type(uint256).max`) es cómodo, pero convierte cada allowance en una llave permanente: si el contrato aprobado se ve comprometido, o si el usuario firma ante un *drainer* de phishing, todo el saldo queda expuesto sin necesidad de robar la clave privada. Los kits de drenado que operan desde 2022 explotan justamente firmas de `approve`, `permit` y `Permit2` obtenidas con interfaces engañosas, y han causado pérdidas acumuladas de cientos de millones de dólares; la cifra exacta varía por informe, consúltala en vivo.
+
+| Mecanismo | Cómo autoriza | Ventaja | Riesgo característico |
+|-----------|---------------|---------|-----------------------|
+| `approve` clásico | Transacción on-chain por gastador | Universal, soportado por todo ERC-20 | Allowances infinitas olvidadas durante años |
+| `permit` (ERC-2612) | Firma off-chain EIP-712 con `nonce` y `deadline` | Sin transacción previa; caducidad explícita | Solo lo implementan tokens que adoptaron el estándar; una firma robada vale hasta su `deadline` |
+| Permit2 (Uniswap) | Un `approve` único a Permit2 + firmas por protocolo con monto y expiración | Lleva `permit` a cualquier ERC-20; permisos granulares y revocables | Permit2 se vuelve punto de concentración: una firma engañosa autoriza a un tercero |
+
+La higiene mínima: aprobar montos acotados, revisar y revocar allowances periódicamente y desconfiar de cualquier firma cuyo contenido la interfaz no muestre con claridad.
+
+### Decimales y aritmética: por qué USDC usa 6 y casi todo lo demás 18
+
+`decimals` es solo metadato de presentación: el contrato opera siempre con enteros. USDC y USDT usan 6 decimales por herencia de sus sistemas contables originales, mientras que ETH (18) fijó la convención que la mayoría de tokens copia. Mezclarlos sin normalizar produce errores de factor 10¹²: 1 USDC son `1 000 000` unidades base, pero 1 DAI son `1 000 000 000 000 000 000`. Un contrato que compara ambos crudos concluiría que 1 DAI "vale" un billón de veces más que 1 USDC.
+
+Además, la división entera siempre trunca: convertir 1 unidad base de USDC a un token de 18 decimales y de vuelta puede perder el resto del redondeo. La regla profesional es redondear siempre en contra del usuario que retira y a favor del protocolo (como exige ERC-4626 en `previewWithdraw` y `previewRedeem`), porque los restos acumulados a favor del usuario son exactamente la grieta que explota el ataque de inflación descrito arriba.
 
 ## 🧪 Laboratorio guiado
 

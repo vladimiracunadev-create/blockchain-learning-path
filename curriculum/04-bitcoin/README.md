@@ -43,6 +43,29 @@ Piensa en los UTXO como billetes físicos en una billetera: cada uno tiene un va
 
 La analogía tiene límites. Los billetes no llevan condiciones de gasto programables, mientras que un UTXO se bloquea con un script que puede exigir una firma, varias firmas o una condición temporal. Además, el cambio no vuelve mágicamente a "tu bolsillo": va a una nueva salida que tú controlas, y confundirla con un pago real es una fuente clásica de errores de análisis.
 
+## 🧩 Esquema visual
+
+El flujo típico de una transacción UTXO: dos entradas se consumen por completo, se crea una salida de pago y otra de cambio, y la diferencia no asignada es la comisión que cobra el minero.
+
+```mermaid
+flowchart LR
+    U1["UTXO A - 6 000 sat"] --> TX["Transaccion"]
+    U2["UTXO B - 4 000 sat"] --> TX
+    TX --> P["Salida de pago - 7 000 sat"]
+    TX --> C["Salida de cambio - 2 800 sat"]
+    TX -. "comision implicita 200 sat" .-> M["Minero"]
+```
+
+Cada bloque referencia el hash del anterior y resume sus transacciones en una raíz de Merkle, lo que encadena la historia y permite pruebas de inclusión eficientes.
+
+```mermaid
+flowchart TD
+    A["Bloque N-1"] -->|"hash previo"| B["Bloque N"]
+    B -->|"hash previo"| C["Bloque N+1"]
+    B --> MR["Merkle root del bloque N"]
+    MR --> TXS["Resumen de todas sus transacciones"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **UTXO**: salida de transacción no gastada; representa fondos disponibles con una condición de gasto asociada.
@@ -56,6 +79,44 @@ La analogía tiene límites. Los billetes no llevan condiciones de gasto program
 - **SPV**: verificación de pago simplificada; confía en cabeceras y pruebas de inclusión sin validar toda la cadena.
 - **Seed phrase (BIP-39)**: lista de palabras que codifica la semilla de la que derivan todas las claves; quien la posee controla los fondos.
 - **Taproot/Schnorr (2021)**: actualización que introdujo firmas Schnorr y scripts más privados y eficientes.
+
+## 🔬 Profundización
+
+### Evolución de los tipos de script
+
+Los formatos de salida de Bitcoin han evolucionado para reducir tamaño, mejorar la privacidad y habilitar nuevas criptografías, siempre mediante soft forks compatibles hacia atrás.
+
+| Tipo | Año | Qué aportó |
+|---|---|---|
+| P2PKH | 2009 | Pago a hash de clave pública; el formato "clásico" con direcciones que empiezan por 1. |
+| P2SH | 2012 (BIP-16) | Pago a hash de script; permite multisig y condiciones complejas sin revelarlas hasta el gasto. |
+| P2WPKH | 2017 (SegWit, BIP-141) | Mueve las firmas al *witness*, corrige la maleabilidad y abarata el peso de la transacción. |
+| P2TR | 2021 (Taproot, BIP-341) | Firmas Schnorr agregables; un gasto cooperativo multisig se ve idéntico a uno simple, ganando privacidad. |
+
+Con Schnorr, una multifirma agregada ocupa lo mismo que una firma individual (64 bytes), mientras que un multisig ECDSA tradicional publica todas las firmas por separado.
+
+### El mercado de comisiones: vbytes, RBF y CPFP
+
+Desde SegWit el tamaño relevante es el **tamaño virtual** (vbytes): los datos de witness pesan una cuarta parte que el resto. La prioridad en el mempool se mide en **sat/vB**.
+
+Ejemplo numérico orientativo: una transacción con 1 entrada P2WPKH y 2 salidas P2WPKH ocupa ≈ 141 vB (≈ 10,5 vB de estructura + ≈ 68 vB la entrada + ≈ 31 vB cada salida). Si el mercado pide 20 sat/vB:
+
+```text
+comisión ≈ 141 vB × 20 sat/vB = 2 820 sat
+```
+
+Si la transacción queda atascada hay dos salidas estándar:
+
+- **RBF (BIP-125)**: el emisor la reemplaza por otra con el mismo UTXO de entrada y mayor tasa.
+- **CPFP**: el receptor gasta la salida sin confirmar con una transacción hija de tasa alta; el minero debe incluir ambas y evalúa la tasa del paquete completo.
+
+Las tasas de mercado cambian por hora: consúltalo en vivo en un estimador de comisiones antes de emitir.
+
+### Emisión: halvings y el límite de 21 millones
+
+El subsidio por bloque se reduce a la mitad cada 210 000 bloques (≈ 4 años): 50 BTC en 2009, 25 tras el halving de noviembre de 2012, 12,5 en julio de 2016, 6,25 en mayo de 2020 y **3,125 BTC desde abril de 2024**, el subsidio vigente. El siguiente halving se espera hacia 2028.
+
+Como cada término de la serie es la mitad del anterior, la suma converge: 210 000 × 50 × (1 + 1/2 + 1/4 + …) ≈ 21 millones de BTC, que nunca se alcanzan exactamente por el redondeo a satoshis. Más del 94 % del suministro ya fue emitido; la emisión restante se extiende hasta aproximadamente el año 2140, cuando la seguridad dependerá solo de las comisiones.
 
 ## 🧪 Laboratorio guiado
 

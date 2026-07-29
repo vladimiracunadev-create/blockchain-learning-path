@@ -43,6 +43,35 @@ Auditar un contrato se parece a inspeccionar un edificio antes de abrirlo al pú
 
 El límite de la analogía: un edificio es estático y su inspector confía en normas maduras, mientras que un contrato opera en un entorno adversarial y componible donde otros contratos pueden llamarlo en cualquier orden y un atacante puede pedir prestado capital enorme por unos segundos. Por eso la seguridad no termina en una lista de comprobación: exige razonar sobre invariantes que deben cumplirse pase lo que pase.
 
+## 🧩 Esquema visual
+
+La reentrancia clásica explota que el contrato envía valor antes de actualizar su estado: el fallback del atacante reingresa mientras el saldo sigue intacto.
+
+```mermaid
+sequenceDiagram
+    participant A as "Atacante"
+    participant V as "Vault"
+    A->>V: withdraw
+    V->>A: call externo que envia ETH
+    Note over A: se ejecuta el fallback del atacante
+    A->>V: withdraw de nuevo
+    V->>A: call externo que envia ETH otra vez
+    Note over V: el saldo aun no se habia actualizado
+    V->>V: actualiza el saldo demasiado tarde
+```
+
+Una auditoría profesional es un ciclo con verificación final, no una lectura única del código.
+
+```mermaid
+flowchart LR
+    A["Definir alcance e invariantes"] --> B["Revisión manual del código"]
+    B --> C["Pruebas, fuzzing e invariantes"]
+    C --> D["Hallazgos clasificados por severidad"]
+    D --> E["Corrección por el equipo"]
+    E --> F["Verificación del fix"]
+    F --> B
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Invariante**: propiedad que siempre debe ser cierta (por ejemplo, la suma de saldos igual al suministro); es la base de las pruebas de invariantes.
@@ -53,6 +82,45 @@ El límite de la analogía: un edificio es estático y su inspector confía en n
 - **Fuzzing**: generación de entradas aleatorias para violar una propiedad; Echidna y el fuzzer de Foundry son herramientas habituales.
 - **Análisis estático**: inspección del código sin ejecutarlo para detectar patrones peligrosos; Slither y Mythril son ejemplos.
 - **Impacto y probabilidad**: dimensiones para clasificar un hallazgo y priorizar su corrección.
+
+## 🔬 Profundización
+
+### Severidad: la matriz impacto × probabilidad
+
+Las firmas de auditoría no reportan "bugs" sueltos: clasifican cada hallazgo cruzando cuánto daño causaría (fondos perdidos, protocolo congelado, dato incorrecto) con qué tan plausible es que ocurra (¿lo dispara cualquiera, o exige condiciones improbables y capital enorme?). Una matriz típica:
+
+| Impacto \ Probabilidad | Alta | Media | Baja |
+|------------------------|------|-------|------|
+| **Alto** (pérdida de fondos) | Crítica | Alta | Media |
+| **Medio** (funcionalidad degradada) | Alta | Media | Baja |
+| **Bajo** (molestia o gas extra) | Media | Baja | Informativa |
+
+Trail of Bits, OpenZeppelin y las plataformas de concursos como Code4rena o Sherlock usan variantes de este esquema; lo importante no es la etiqueta exacta sino que la clasificación sea argumentada y reproducible. Un hallazgo "crítico pero teórico" mal justificado destruye la credibilidad de un informe tanto como uno real que se pasó por alto.
+
+### Mini-casos históricos: la misma lección, distinta década
+
+| Caso | Año | Pérdida histórica | Causa raíz | Lección |
+|------|-----|-------------------|------------|---------|
+| The DAO | 2016 | ~3.6 M ETH | Reentrancia: enviaba ETH antes de actualizar el saldo | Checks-effects-interactions no es opcional; el incidente motivó el fork que separó Ethereum de Ethereum Classic |
+| Ronin Bridge | 2022 | ~624 M USD | Claves de 5 de 9 validadores comprometidas vía ingeniería social | La criptografía perfecta no protege un quorum de confianza demasiado pequeño y mal custodiado |
+| Wormhole | 2022 | ~326 M USD | Verificación de firma defectuosa: aceptaba una función de validación obsoleta | Todo lo que "verifica" debe probarse con entradas hostiles, no solo con las válidas |
+| Euler Finance | 2023 | ~197 M USD | Una función de donación rompía el invariante de solvencia usado por la liquidación | Cada función nueva debe evaluarse contra los invariantes de todo el sistema; los fondos fueron devueltos tras negociación |
+
+Nótese el patrón: solo uno de los cuatro es "un bug de Solidity" clásico. Los otros tres son fallos de diseño, de custodia de claves o de interacción entre módulos correctos por separado.
+
+### Qué detecta cada técnica (y qué no)
+
+Ninguna herramienta cubre todo el espectro; una auditoría seria las apila porque sus puntos ciegos son complementarios:
+
+| Clase de bug | Análisis estático (Slither) | Fuzzing (Foundry/Echidna) | Invariantes | Revisión manual |
+|--------------|------------------------------|---------------------------|-------------|-----------------|
+| Reentrancia por patrón de código | ✅ detecta el patrón | ⚠️ solo si la prueba lo ejercita | ✅ si el invariante de saldos está definido | ✅ |
+| Control de acceso faltante | ✅ parcial | ✅ con llamadas desde cuentas aleatorias | ✅ | ✅ |
+| Redondeo y precisión | ❌ | ✅ excelente con entradas extremas | ✅ | ⚠️ fácil de pasar por alto |
+| Lógica económica multi-contrato | ❌ | ⚠️ requiere entorno completo | ✅ la técnica más fuerte | ✅ |
+| Error de diseño del protocolo | ❌ | ❌ | ❌ | ✅ única técnica que lo ve |
+
+La consecuencia práctica: un `slither .` limpio y un fuzzing en verde acotan clases enteras de errores, pero el caso Euler demuestra que el fallo puede vivir en la interacción entre funciones individualmente correctas, territorio exclusivo de los invariantes bien elegidos y de la revisión humana.
 
 ## 🧪 Laboratorio guiado
 

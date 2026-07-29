@@ -43,6 +43,39 @@ Un puente es como una casa de cambio entre dos países con leyes distintas: depo
 
 La analogía se rompe en dos puntos: los países no se reorganizan, pero una cadena con finalidad probabilística sí puede revertir bloques, invalidando un pagaré ya emitido; y un pagaré físico no se puede "reproducir", mientras que un mensaje mal protegido puede reejecutarse (replay) para acuñar de más. Por eso modelar interoperabilidad es, ante todo, enumerar cada confianza añadida y cada supuesto de finalidad.
 
+## 🧩 Esquema visual
+
+Flujo completo de un puente lock-and-mint: el activo queda bloqueado en origen y una representación se acuña en destino.
+
+```mermaid
+sequenceDiagram
+    participant U as "Usuario"
+    participant A as "ChainA"
+    participant B as "BridgeContract"
+    participant R as "Relayer"
+    participant C as "ChainB"
+    U->>A: Envía 10 tokens al contrato del puente
+    A->>B: Lock de los 10 tokens
+    B-->>R: Emite evento de depósito
+    R->>C: Transmite el mensaje con la prueba
+    C->>C: Verifica el mensaje según su modelo
+    C->>U: Mint de 10 wrapped tokens
+```
+
+Espectro de verificación de los puentes, ordenado de mayor a menor confianza requerida en terceros:
+
+```mermaid
+flowchart TD
+    T["Espectro de verificación de puentes"] --> M["Multisig o comité externo"]
+    T --> O["Verificación optimista"]
+    T --> LC["Light client on-chain"]
+    M --> M1["Confías en k de n firmantes"]
+    O --> O1["Confías en que exista un vigilante honesto durante la ventana de disputa"]
+    LC --> L1["Verificas el consenso de origen con criptografía"]
+    M1 --> X["Más confianza requerida"]
+    L1 --> Y["Menos confianza requerida"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Lock-and-mint**: bloquea el activo en la cadena de origen y acuña una representación en destino; el custodio del bloqueo es el punto crítico.
@@ -55,6 +88,36 @@ La analogía se rompe en dos puntos: los países no se reorganizan, pero una cad
 - **Guardianes/validadores de puente**: conjunto externo que atestigua mensajes; su compromiso permite falsificar acuñaciones.
 - **CCIP**: protocolo de mensajería de Chainlink con verificación y una red de riesgo independiente para transferencias cross-chain.
 - **LayerZero**: enfoque de mensajería que separa el envío del mensaje de su verificación mediante componentes configurables.
+
+## 🔬 Profundización
+
+### Los grandes hacks de puentes: anatomía de un patrón común
+
+Los tres mayores incidentes de puentes de 2022 suman más de mil millones de dólares y comparten diagnóstico: la verificación del mensaje se degradó, en la práctica, a confiar en muy pocas partes o en ninguna.
+
+| Incidente | Año | Pérdida aprox. | Fallo raíz | Lección |
+|-----------|-----|----------------|------------|---------|
+| Ronin (Axie Infinity) | 2022 | ~624 M USD | El atacante comprometió 5 de las 9 claves de validadores (4 de Sky Mavis más una delegada) y firmó retiros falsos | Un multisig pequeño y correlacionado es un punto único de fallo; el hack tardó días en detectarse |
+| Wormhole | 2022 | ~326 M USD | La verificación de firmas en Solana usaba una función deprecada que permitió falsificar la comprobación y acuñar 120 000 wETH sin respaldo | La verificación es tan fuerte como su implementación; una dependencia obsoleta anula todo el diseño |
+| Nomad | 2022 | ~190 M USD | Una actualización dejó la raíz de confianza inicializada en cero, de modo que cualquier mensaje se daba por probado; cientos de imitadores copiaron el exploit | Un valor por defecto inseguro convirtió la verificación en un "acepta todo"; los errores de configuración también son criptográficos |
+
+El patrón común: en los tres casos el sistema *decía* verificar mensajes, pero la verificación efectiva se había reducido a un puñado de claves (Ronin), a una comprobación falsificable (Wormhole) o a nada (Nomad). Al modelar un puente, la pregunta correcta no es "¿verifica?" sino "¿qué es lo mínimo que hay que comprometer para que acepte un mensaje falso?".
+
+### Verificación por light client: el sync committee de Ethereum
+
+Un light client on-chain sustituye a los firmantes externos por la verificación directa del consenso de la cadena de origen. En Ethereum, el mecanismo práctico es el *sync committee* introducido en Altair: un comité de 512 validadores seleccionados aleatoriamente que rota cada ~27 horas y firma cada cabecera de bloque con firmas BLS agregables. Un contrato light client desplegado en la cadena destino guarda el comité vigente, verifica la firma agregada de cada nueva cabecera (basta con que firmen 2/3 del comité) y actualiza el comité siguiente a partir de la propia cabecera firmada. Con una cabecera verificada, cualquier hecho de la cadena de origen —un depósito, un evento— se demuestra con una prueba de Merkle contra su raíz de estado.
+
+El coste es real: verificar firmas BLS y mantener el estado del light client en cadena consume mucho más gas que comprobar k firmas de un multisig, y por eso varios proyectos comprimen esa verificación dentro de una prueba ZK (los llamados *ZK light clients*). A cambio, el supuesto de confianza se reduce de "estos n firmantes del puente son honestos" a "el consenso de Ethereum es honesto", que es exactamente el supuesto que el usuario ya aceptaba al usar Ethereum. IBC en Cosmos aplica el mismo principio entre cadenas Tendermint, donde la finalidad instantánea hace los light clients especialmente baratos.
+
+### Clasificación de la mensajería cross-chain
+
+| Protocolo | Quién verifica el mensaje | Supuesto de confianza | Madurez y ámbito |
+|-----------|---------------------------|------------------------|------------------|
+| IBC (Cosmos) | Light client on-chain de la cadena de origen | El consenso de origen es honesto; sin terceros añadidos | En producción desde 2021 entre decenas de cadenas Tendermint; expansión fuera de Cosmos en curso |
+| CCIP (Chainlink) | Redes de oráculos descentralizadas más una Risk Management Network independiente | Honestidad de mayorías en dos redes separadas entre sí | En producción desde 2023, orientado a adopción institucional y transferencias de valor |
+| LayerZero | Componentes configurables por la aplicación (DVNs en v2) que atestiguan el mensaje | Depende de la configuración elegida: desde un solo verificador hasta comités múltiples | En producción y ampliamente integrado; la seguridad efectiva varía por aplicación |
+
+La tabla deja una conclusión incómoda: no existe "el estándar" de interoperabilidad, sino un espectro donde cada diseño intercambia coste, generalidad y confianza. La verificación por light client es el patrón oro en minimización de confianza, pero su coste y su acoplamiento al consenso de origen explican por qué los modelos intermedios dominan el mercado. El estado de adopción de cada protocolo cambia rápido: consúltalo en vivo en sus documentaciones y en agregadores independientes.
 
 ## 🧪 Laboratorio guiado
 

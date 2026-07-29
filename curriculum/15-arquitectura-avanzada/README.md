@@ -43,6 +43,40 @@ Piensa en la arquitectura avanzada como el plano de un edificio, no como el ladr
 
 La analogía se queda corta en un punto esencial: a diferencia de un edificio, aquí muchas veces la mejor decisión de diseño es construir menos. Añadir un componente blockchain introduce costes, superficie de ataque y rigidez de actualización; la madurez técnica se demuestra sabiendo cuándo una base de datos, una firma o un servicio convencional resuelven el problema con menos riesgo. El plano correcto puede ser el que retira ladrillos.
 
+## 🧩 Esquema visual
+
+Flujo de una UserOperation en ERC-4337, con patrocinio de gas por un paymaster:
+
+```mermaid
+sequenceDiagram
+    participant U as "Usuario"
+    participant B as "Bundler"
+    participant E as "EntryPoint"
+    participant SA as "SmartAccount"
+    participant PM as "Paymaster"
+    U->>B: Envía la UserOperation firmada
+    B->>E: Empaqueta y llama handleOps
+    E->>SA: validateUserOp comprueba la firma
+    E->>PM: validatePaymasterUserOp acepta pagar el gas
+    E->>SA: Ejecuta la llamada de la cuenta
+    E->>PM: Cobra el gas al depósito del paymaster
+    B-->>U: La operación queda incluida en el bloque
+```
+
+La cadena de suministro del MEV bajo PBS: cada eslabón compite por capturar valor del orden de las transacciones.
+
+```mermaid
+flowchart LR
+    U["Usuario"] --> MP["Mempool público"]
+    U --> PO["Private orderflow"]
+    MP --> SE["Searcher detecta oportunidades"]
+    PO --> BU["Builder construye el bloque"]
+    SE --> BU
+    BU --> RE["Relay valida y subasta"]
+    RE --> PR["Proposer elige la mejor oferta"]
+    PR --> BL["Bloque final en la cadena"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Abstracción de cuenta**: capacidad de que la lógica de validación de una cuenta sea programable, en lugar de fija como en una EOA clásica.
@@ -55,6 +89,46 @@ La analogía se queda corta en un punto esencial: a diferencia de un edificio, a
 - **mev-boost**: software que implementa un mercado de construcción de bloques externo para validadores de Ethereum.
 - **Invariante**: propiedad que el sistema debe cumplir siempre (por ejemplo "el suministro total nunca disminuye salvo por quema").
 - **Tokenomics**: diseño económico del token (emisión, distribución, incentivos) que determina la sostenibilidad del sistema.
+
+## 🔬 Profundización
+
+### ERC-4337 frente a EIP-7702: dos caminos hacia la cuenta programable
+
+ERC-4337 (2023) construyó la abstracción de cuenta *sin tocar el protocolo*: un mempool alternativo de UserOperations, bundlers que las empaquetan y un contrato EntryPoint que orquesta validación y ejecución. EIP-7702 (Pectra, mayo de 2025) atacó el problema desde el protocolo: una EOA existente puede firmar una autorización de delegación que hace que su dirección ejecute el código de un contrato, conservando su clave y su dirección de siempre.
+
+| Dimensión | ERC-4337 | EIP-7702 |
+|-----------|----------|----------|
+| Tipo de cuenta | Contrato smart account nuevo, con dirección propia | La EOA de siempre, con código delegado |
+| Cambio de protocolo | Ninguno; infraestructura fuera del protocolo | Sí; nuevo tipo de transacción en Pectra (2025) |
+| Migración del usuario | Debe mover activos a la cuenta nueva | Ninguna; conserva dirección e historial |
+| Batching de llamadas | Sí, nativo en la cuenta | Sí, vía el código delegado |
+| Session keys y políticas | Sí, con lógica de validación arbitraria | Sí, según el contrato delegado |
+| Sponsorship de gas | Paymasters vía EntryPoint | Compatible: una 7702-EOA puede actuar como cuenta 4337 |
+| Riesgo característico | Complejidad del EntryPoint y de los bundlers | Delegar en un contrato malicioso entrega la cuenta entera |
+
+No son rivales sino complementarios: el diseño previsto es que las EOA con 7702 deleguen en implementaciones de smart account compatibles con 4337, unificando ambos mundos. Las cifras de adopción (cuentas 4337 activas, delegaciones 7702) cambian mes a mes: consúltalo en vivo en paneles como los de BundleBear en [Dune](https://dune.com/).
+
+### MEV en números: anatomía de un sandwich
+
+Un sandwich explota la tolerancia al deslizamiento (slippage) de un swap visible en el mempool. Ejemplo numérico simplificado:
+
+1. Alicia envía un swap de 100 000 USDC por ETH en un AMM, con un slippage máximo del 1%: acepta recibir como mínimo el 99% del precio actual.
+2. Un searcher lo ve en el mempool y compra ETH justo antes (front-run), empujando el precio al alza dentro del margen que Alicia toleró.
+3. El swap de Alicia se ejecuta al peor precio permitido: recibe ~1% menos de ETH, es decir, hasta ~1 000 USDC de valor cedido.
+4. El searcher vende inmediatamente después (back-run) el ETH comprado, capturando la diferencia menos el gas y el pago al builder por la posición en el bloque.
+
+El valor no aparece de la nada: sale del slippage de Alicia. Las mitigaciones atacan cada eslabón: el *private orderflow* (enviar la transacción directamente a un builder o a un RPC protegido) evita exponerla en el mempool público; las *batch auctions* tipo CoW Protocol liquidan muchas órdenes a un precio uniforme por lote, eliminando la ventaja del orden intra-bloque; y MEV-Share invierte el juego devolviendo al usuario parte del valor que su flujo genera. En paralelo, PBS con mev-boost no elimina el MEV, pero lo saca de las manos del validador individual y lo convierte en un mercado competitivo de builders, más observable y menos discrecional.
+
+### Runbook de un upgrade seguro
+
+Un upgrade de contrato es una operación de producción con usuarios y fondos en juego; improvisar es la principal causa de incidentes autoinfligidos. Secuencia mínima:
+
+1. **Proponer**: publicar el código nuevo, su auditoría o revisión, el diff del storage layout y la motivación del cambio; abrir la propuesta a la gobernanza correspondiente.
+2. **Timelock público**: encolar la ejecución en un timelock en cadena (por ejemplo, de 48 horas a varios días) para que el cambio sea inevitablemente visible antes de aplicarse.
+3. **Comunicar**: anunciar por los canales oficiales qué cambia, cuándo y qué debe hacer un usuario que no esté de acuerdo; el silencio convierte un upgrade legítimo en indistinguible de un ataque.
+4. **Ventana de salida**: garantizar que durante el timelock los usuarios pueden retirar fondos o revocar aprobaciones si rechazan el cambio; sin salida real, la gobernanza es cosmética.
+5. **Ejecución multisig**: ejecutar desde un multisig con umbral y firmantes públicos, verificando que el calldata ejecutado coincide byte a byte con lo propuesto y encolado.
+6. **Verificación post-upgrade**: comprobar en cadena la nueva dirección de implementación, correr los invariantes sobre el estado migrado, verificar el código en el explorador y monitorizar métricas y eventos anómalos durante las primeras horas, con un plan de contención listo por si algo falla.
 
 ## 🧪 Laboratorio guiado
 

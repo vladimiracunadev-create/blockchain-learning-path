@@ -1,5 +1,7 @@
 # Mapa de tecnologías
 
+> [⬅️ Volver al programa](../README.md) · análisis completo del stack por capas en [Industria · Stack tecnológico](../industria/02-stack-tecnologico.md)
+
 | Necesidad | Tecnología principal | Alternativas para comparar |
 |---|---|---|
 | Contratos EVM | Solidity + Foundry | Vyper, Hardhat |

@@ -43,6 +43,38 @@ Piensa en la capa 1 como un juzgado lento pero incorruptible y en cada capa 2 co
 
 La analogía tiene límites: el "juzgado" no revisa cada caso, solo verifica pruebas o espera impugnaciones, y su garantía se evapora si los datos no están disponibles. Por eso la disponibilidad de datos es el eje del diseño, y por eso comparar cadenas solo por TPS es como juzgar un tribunal por cuántos papeles archiva sin mirar si sus sentencias son ejecutables.
 
+## 🧩 Esquema visual
+
+El ciclo de vida de una transacción en un rollup, desde que el usuario la envía hasta que alcanza finalidad en la capa 1:
+
+```mermaid
+flowchart LR
+    U["Usuario"] --> S["Sequencer L2"]
+    S --> E["Ejecución fuera de cadena"]
+    E --> B["Batch de transacciones"]
+    B --> DA["Blob en L1 vía EIP-4844"]
+    DA --> V{"Verificación"}
+    V -->|"Optimistic"| FP["Fraud proof si hay disputa"]
+    V -->|"ZK"| VP["Validity proof por lote"]
+    FP --> F["Finalidad en L1"]
+    VP --> F
+```
+
+Taxonomía de las estrategias de escalado según dónde ejecutan y dónde publican los datos:
+
+```mermaid
+flowchart TD
+    R["Escalado de blockchains"] --> L1["Escalar la L1"]
+    R --> OFF["Ejecutar fuera de cadena"]
+    L1 --> SH["Sharding de datos y bloques mayores"]
+    OFF --> CA["Canales de estado"]
+    OFF --> SC["Sidechains con consenso propio"]
+    OFF --> RU["Rollups con datos en L1"]
+    OFF --> VA["Validium con datos externos"]
+    RU --> OP["Optimistic con fraud proofs"]
+    RU --> ZK["ZK con validity proofs"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Rollup**: esquema que ejecuta transacciones fuera de la L1 y publica en ella datos y compromisos de estado; hereda seguridad si los datos están disponibles.
@@ -55,6 +87,32 @@ La analogía tiene límites: el "juzgado" no revisa cada caso, solo verifica pru
 - **Challenge period**: ventana durante la cual se pueden impugnar transiciones de un optimistic rollup; retrasa los retiros hacia la L1.
 - **Forced inclusion / escape hatch**: rutas que permiten al usuario incluir transacciones o retirar fondos aun si el operador se niega a cooperar.
 - **Appchain**: cadena dedicada a una aplicación; gana control y capacidad a cambio de componibilidad y, a veces, de seguridad compartida.
+
+## 🔬 Profundización
+
+### El impacto medible de EIP-4844: blobs frente a calldata
+
+Antes de Dencun (marzo de 2024), los rollups publicaban sus datos como *calldata* en transacciones normales de Ethereum, compitiendo por gas con todas las demás transacciones: cada byte distinto de cero costaba 16 gas y ese coste dominaba la factura de un rollup, llegando a representar más del 90% de sus gastos operativos. EIP-4844 introdujo las *blob-carrying transactions*: cada blob aporta ~128 KB de datos con un mercado de tarifas propio e independiente (fee market separado con su propio precio base), y los blobs se podan de los nodos tras ~18 días, porque solo necesitan estar disponibles durante la ventana de verificación, no para siempre.
+
+El efecto fue inmediato y medible: en las semanas posteriores a Dencun, las comisiones de usuario en los principales L2 cayeron en más de un orden de magnitud (reducciones superiores a 10x fue el patrón general; en varios rollups una transacción pasó de decenas de centavos a fracciones de centavo). Un ejemplo numérico orientativo del mecanismo: si un batch de 100 000 bytes costaba en calldata unos 1 600 000 gas solo en datos, con blobs ese mismo volumen se paga en un mercado que, cuando hay poca demanda de blobs, tiende al precio mínimo (1 wei por gas de blob), es decir, prácticamente gratis en términos relativos. Las cifras actuales de tarifas por L2 son volátiles: consúltalo en vivo en [L2BEAT](https://l2beat.com/) y en [Dune](https://dune.com/). El siguiente paso del roadmap, el danksharding completo, ampliará el número de blobs por bloque con *data availability sampling*; a 2025 sigue siendo trabajo en curso.
+
+### Las etapas de madurez de L2BEAT: Stage 0, 1 y 2
+
+L2BEAT clasifica los rollups por cuánto dependen todavía de sus operadores, no por su rendimiento. La pregunta de fondo es: ¿puede el usuario salir con sus fondos aunque el equipo del rollup desaparezca o se vuelva hostil?
+
+| Etapa | Exigencia principal | Qué significa para el usuario |
+|-------|---------------------|-------------------------------|
+| Stage 0 | Publica datos en L1 y existe software para reconstruir el estado | La seguridad descansa casi por completo en el operador |
+| Stage 1 | Sistema de pruebas activo (fraud o validity), salidas sin el operador, y un consejo de seguridad con umbral alto solo para emergencias | El usuario puede salir por sí mismo salvo bug crítico |
+| Stage 2 | Pruebas totalmente permissionless, ventana de salida amplia ante upgrades y consejo limitado a errores demostrables en cadena | La confianza en el operador es residual |
+
+La mayoría de los rollups en producción aún no alcanza Stage 2 por razones prácticas: mantener un consejo de seguridad con poderes amplios es un seguro frente a bugs en sistemas de prueba jóvenes, los fraud proofs permissionless son difíciles de blindar contra ataques de espameo y griefing, y renunciar al upgrade rápido implica que un fallo crítico no se puede parchear de inmediato. Es un compromiso deliberado entre inmadurez del software y minimización de confianza; el estado de cada rollup cambia con el tiempo, consúltalo en vivo en L2BEAT.
+
+### Fraud proof interactiva frente a validity proof
+
+Los dos modelos de prueba responden a la misma pregunta —¿es válida esta transición de estado?— con filosofías opuestas. La *fraud proof* interactiva (el diseño de bisección usado por los optimistic rollups modernos) no verifica nada por defecto: solo si un retador afirma que el resultado es incorrecto, retador y operador juegan un protocolo de bisección sobre la traza de ejecución. Si la traza tiene, por ejemplo, 2^30 pasos (~mil millones de instrucciones), cada ronda divide el rango en disputa por la mitad: en unas 30 rondas las partes quedan en desacuerdo sobre una única instrucción, y la L1 solo ejecuta esa instrucción para decidir quién miente. El coste en cadena es minúsculo, pero el proceso exige que exista al menos un verificador honesto y vigilante, y justifica el challenge period de ~7 días.
+
+La *validity proof* invierte la carga: el operador demuestra criptográficamente la validez de cada lote antes de que la L1 lo acepte, sin depender de vigilantes ni de plazos de disputa. El contrato verificador comprueba la prueba (SNARK o STARK) en un solo paso, con coste de verificación casi constante aunque el lote contenga miles de transacciones. El precio se paga fuera de la cadena: generar la prueba requiere hardware y tiempo significativos. En resumen: la fraud proof es barata mientras nadie ataque y lenta para salir; la validity proof es cara de producir y rápida para finalizar.
 
 ## 🧪 Laboratorio guiado
 

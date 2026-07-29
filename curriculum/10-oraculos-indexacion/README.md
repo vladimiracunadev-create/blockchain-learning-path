@@ -43,6 +43,34 @@ Un contrato inteligente es como una persona encerrada en una habitación sin ven
 
 El límite de la analogía: un solo mensajero es un punto único de fallo, así que en la práctica se usan varios mensajeros y se descartan los que llegan tarde o con cifras fuera de rango. Además, distinguir estado de evento es clave: los eventos son como las notas que el mensajero deja apiladas fuera de la habitación (útiles para reconstruir la historia desde afuera), pero el ocupante no puede leerlas ni actuar sobre ellas; solo el estado en cadena está dentro de la habitación.
 
+## 🧩 Esquema visual
+
+En un oráculo *push*, varios nodos independientes leen múltiples fuentes, agregan el valor y lo publican en un contrato feed que el protocolo consume con sus propias validaciones.
+
+```mermaid
+flowchart LR
+    F1["Fuente de datos A"] --> N1["Nodo operador 1"]
+    F2["Fuente de datos B"] --> N2["Nodo operador 2"]
+    F3["Fuente de datos C"] --> N3["Nodo operador 3"]
+    N1 --> AG["Agregación con mediana"]
+    N2 --> AG
+    N3 --> AG
+    AG --> FC["Contrato feed on-chain"]
+    FC --> PR["Protocolo consumidor"]
+    PR --> VA["Valida antigüedad, rango y ronda"]
+```
+
+La indexación recorre el camino inverso: convierte eventos emitidos en cadena en datos consultables fuera de ella.
+
+```mermaid
+flowchart TD
+    C["Contrato emite un evento"] --> N["Nodo de la red"]
+    N --> I["Indexador o subgraph"]
+    I --> DB["Base de datos consultable"]
+    DB --> API["API GraphQL"]
+    API --> FE["Frontend de la dapp"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Oráculo**: mecanismo que introduce datos externos en la cadena; su seguridad depende del modelo de confianza que impone.
@@ -55,6 +83,34 @@ El límite de la analogía: un solo mensajero es un punto único de fallo, así 
 - **CID**: identificador de contenido de IPFS derivado del hash; garantiza integridad pero no que alguien conserve el archivo.
 - **Pinning**: acción de mantener un contenido disponible en IPFS; alternativas de persistencia incluyen Arweave y Filecoin.
 - **VRF**: función aleatoria verificable que aporta azar con prueba criptográfica de imparcialidad.
+
+## 🔬 Profundización
+
+### Parámetros reales de un feed: heartbeat y deviation threshold
+
+Un feed push de Chainlink no publica un precio nuevo en cada bloque: se actualiza cuando se cumple cualquiera de dos condiciones. El *deviation threshold* dispara una actualización si el precio observado off-chain se desvía del último publicado más de un porcentaje dado; el *heartbeat* fuerza una actualización si pasó demasiado tiempo desde la anterior, aunque el precio no se haya movido. Un feed mayor como ETH/USD en Ethereum mainnet opera típicamente con una desviación de ±0.5 % y un heartbeat de 3600 s, mientras que feeds de activos menos líquidos usan umbrales más laxos — verifica siempre los parámetros del feed concreto en vivo, porque cambian por activo y por red.
+
+La consecuencia para el consumidor es directa: tu validación de antigüedad debe tolerar al menos el heartbeat (un dato de 50 minutos puede ser normal en un feed de 3600 s), y tu lógica debe asumir que el precio on-chain puede diferir del de mercado hasta el umbral de desviación. Un contrato que trate esa banda como error se detendrá en operación normal; uno que la ignore por completo subestima su margen de error económico.
+
+### Manipulación de precio spot con flash loan: los números
+
+Supón un pool AMM de producto constante con 100 ETH y 200 000 USDC (`k = 20 000 000`), es decir, un precio spot de 2000 USDC/ETH. Un atacante pide un flash loan de 200 000 USDC y los mete al pool: las reservas pasan a 400 000 USDC y 50 ETH, y el precio spot instantáneo salta a 8000 USDC/ETH — se cuadruplicó dentro de una sola transacción. Si un protocolo de préstamos lee ese spot como oráculo, el atacante deposita ETH "valorado" a 8000, pide prestado contra ese colateral inflado, deshace el swap, devuelve el flash loan y se queda con la diferencia.
+
+Un TWAP encarece esto radicalmente: si la ventana es de 1800 s y un bloque dura ~12 s, un pico de un solo bloque pesa apenas `12 / 1800 ≈ 0.7 %` del promedio, así que sostener un precio falso exige mantener el capital en riesgo durante muchos bloques, expuesto al arbitraje. El caso ilustrativo es Mango Markets (octubre de 2022, ~114 M USD): el atacante infló el precio del token MNGO —de baja liquidez— en los mercados que alimentaban el oráculo y usó su posición revalorizada como colateral para vaciar la plataforma. La lección no es "los oráculos fallan", sino que el coste de manipular la fuente debe superar siempre al botín alcanzable con ella.
+
+### Oráculos push vs. pull
+
+El modelo push (Chainlink Data Feeds) publica proactivamente en cadena y todos los consumidores leen el mismo valor; el modelo pull u on-demand (Pyth) mantiene los precios firmados off-chain y es el usuario quien los sube en la misma transacción que los consume.
+
+| Dimensión | Push (Chainlink feeds) | Pull (Pyth on-demand) |
+|-----------|------------------------|-----------------------|
+| Quién paga el gas de actualizar | Los operadores del feed, de forma continua | El consumidor, solo cuando necesita el dato |
+| Frescura | Limitada por heartbeat y deviation | Precio de hace segundos, firmado off-chain |
+| Coste para el protocolo | Lectura barata de un valor ya publicado | Verificación de la firma y publicación en cada uso |
+| Riesgo característico | Dato añejo dentro de la banda permitida | El consumidor puede elegir qué actualización sube; hay que validar el timestamp |
+| Encaja mejor en | Préstamos y colateral en L1 | Perps y trading de alta frecuencia en L2 |
+
+Ninguno domina: el push amortiza el coste entre todos los usuarios y simplifica el consumo; el pull ofrece latencia mínima a cambio de trasladar validaciones al integrador.
 
 ## 🧪 Laboratorio guiado
 

@@ -1,8 +1,11 @@
 # Estado de completitud
 
+> [⬅️ Volver al programa](../README.md) · [🗺️ Roadmap](../ROADMAP.md)
+
 ## Incluido
 
-- Currículum completo y rutas por perfil.
+- Currículo completo (16 módulos con esquemas Mermaid, profundización con casos reales, fuentes y navegación) y rutas por perfil.
+- Sección de industria: construcción de una red, stack, equipos, empresas, modelos de negocio y ciclo de vida.
 - Cincuenta prácticas con aceptación.
 - Laboratorios automáticos sin dependencia y laboratorios Foundry.
 - Bitcoin regtest.
@@ -10,7 +13,8 @@
 - dApp, indexador y panel educativo.
 - Seguridad ofensiva autorizada y auditoría.
 - Evaluaciones, progreso, certificado y kit docente.
-- CI, documentación de despliegue y operación.
+- Bibliografía central con libros de referencia por área e hitos del ecosistema.
+- CI (lint, pruebas, Foundry), escaneo de secretos, landing en GitHub Pages y documentación de despliegue y operación.
 
 ## Requiere infraestructura externa
 

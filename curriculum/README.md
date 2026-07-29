@@ -4,7 +4,34 @@
 
 16 módulos progresivos (00–15), de los fundamentos criptográficos a la arquitectura
 avanzada. Cada módulo enlaza al siguiente y trae su **fuente de referencia**, un
-laboratorio y un reto verificable. Estúdialos **en orden**: cada uno asume el anterior.
+**esquema visual**, un laboratorio y un reto verificable. Estúdialos **en orden**:
+cada uno asume el anterior.
+
+## Mapa del programa
+
+```mermaid
+flowchart LR
+    subgraph N0["Orientación"]
+        M00["00"]
+    end
+    subgraph N1["Fundamentos"]
+        M01["01 Cripto"] --> M02["02 Distribuidos"] --> M03["03 Consenso"]
+    end
+    subgraph N2["Desarrollo"]
+        M04["04 Bitcoin"] --> M05["05 EVM"] --> M06["06 Solidity"] --> M07["07 dApps"]
+    end
+    subgraph N3["Profesional"]
+        M08["08 Tokens"] --> M09["09 Seguridad"] --> M10["10 Oráculos"] --> M11["11 DAO"]
+    end
+    subgraph N4["Avanzado"]
+        M12["12 L2"] --> M13["13 Interop"] --> M14["14 ZK"] --> M15["15 Arquitectura"]
+    end
+    M00 --> M01
+    M03 --> M04
+    M07 --> M08
+    M11 --> M12
+    M15 --> CAP["🎓 Capstone"]
+```
 
 ## Índice
 
@@ -31,9 +58,14 @@ laboratorio y un reto verificable. Estúdialos **en orden**: cada uno asume el a
 
 Todos siguen la misma estructura (ver [`MODULE_TEMPLATE.md`](MODULE_TEMPLATE.md)):
 objetivos medibles, resultados de aprendizaje, tabla de temas, modelo mental,
-conceptos con definiciones, laboratorio guiado, reto verificable con criterio de
-aceptación, errores frecuentes, seguridad y ética, **referencias a libros y fuentes
-primarias**, y navegación al módulo anterior y siguiente.
+**esquema visual** (diagramas Mermaid), conceptos con definiciones, **profundización**
+con casos reales y ejemplos numéricos, laboratorio guiado, reto verificable con
+criterio de aceptación, errores frecuentes, seguridad y ética, **referencias a libros
+y fuentes primarias**, y navegación al módulo anterior y siguiente.
+
+Para la dimensión profesional del ecosistema —cómo se construye una red, el stack,
+los equipos, las empresas y los modelos de negocio— consulta la sección
+[Industria](../industria/README.md).
 
 Las fuentes se detallan en la [bibliografía central](../docs/bibliografia.md), que
 también recoge los **hitos recientes del ecosistema** (Merge, Dencun/EIP-4844,

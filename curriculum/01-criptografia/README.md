@@ -41,6 +41,38 @@ Imagina un sello de lacre sobre un sobre. El hash es como una huella del conteni
 
 El límite de la analogía es que ninguna de estas primitivas decide qué historia es la verdadera. El hash detecta cambios pero no dice cuál versión debe prevalecer; la firma prueba quién autorizó un mensaje pero no si ese mensaje es la transacción correcta del sistema. Ordenar y validar el historial es tarea del consenso (módulo 03), no de la criptografía por sí sola.
 
+## 🧩 Esquema visual
+
+Árbol de Merkle de cuatro hojas: para probar que Tx1 está incluida basta con revelar H2 y H34 (la ruta de prueba, resaltada) y recomputar hacia la raíz.
+
+```mermaid
+flowchart TD
+    R["Raíz de Merkle"] --> H12["H12 = hash de H1 y H2"]
+    R --> H34["H34 = hash de H3 y H4"]
+    H12 --> H1["H1 = hash de Tx1"]
+    H12 --> H2["H2 = hash de Tx2"]
+    H34 --> H3["H3 = hash de Tx3"]
+    H34 --> H4["H4 = hash de Tx4"]
+    H1 --> T1["Tx1 — elemento a probar"]
+    style T1 stroke-width:3px
+    style H2 stroke-dasharray:5 5,stroke-width:3px
+    style H34 stroke-dasharray:5 5,stroke-width:3px
+```
+
+Flujo de firma y verificación: la clave privada nunca viaja; el verificador solo necesita el mensaje, la firma y la clave pública.
+
+```mermaid
+sequenceDiagram
+    participant F as "Firmante"
+    participant V as "Verificador"
+    F->>F: Calcula el hash del mensaje
+    F->>F: Firma el hash con su clave privada
+    F->>V: Envia mensaje mas firma
+    V->>V: Recalcula el hash del mensaje recibido
+    V->>V: Verifica la firma con la clave publica del firmante
+    V-->>F: Acepta si coincide, rechaza si no
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Función hash criptográfica**: transforma datos de longitud arbitraria en un valor fijo; ejemplo: SHA-256, Keccak-256.
@@ -53,6 +85,41 @@ El límite de la analogía es que ninguna de estas primitivas decide qué histor
 - **Árbol de Merkle**: árbol binario de hashes cuya raíz resume todo el conjunto de hojas.
 - **Prueba de inclusión**: conjunto mínimo de hashes que demuestra que un elemento pertenece al árbol.
 - **KDF (Argon2, bcrypt)**: función lenta y con sal para derivar claves de contraseñas y frenar la fuerza bruta.
+
+## 🔬 Profundización
+
+### De clave pública a dirección Ethereum: Keccak-256 y checksum EIP-55
+
+Una dirección Ethereum no es la clave pública, sino un resumen de ella. El proceso exacto:
+
+1. De la clave privada (32 bytes) se deriva por multiplicación en la curva secp256k1 la clave pública sin comprimir: 64 bytes (coordenadas X e Y, sin el prefijo `0x04`).
+2. Se calcula **Keccak-256** de esos 64 bytes (ojo: Keccak-256 original, no el SHA-3 estandarizado por NIST en FIPS 202, que difiere en el padding).
+3. Se toman los **últimos 20 bytes** del hash: esa es la dirección.
+4. Para el formato con checksum **EIP-55** se calcula Keccak-256 de la dirección en hexadecimal minúscula y se pone en mayúscula cada letra cuyo nibble correspondiente del hash sea ≥ 8.
+
+Ejemplo verificable (vector de prueba del propio EIP-55): la dirección en minúsculas `0x5aaeb6053f3e94c9b9a09f33669435e7ef1beaed` se convierte con checksum en `0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed`. Un error de tipeo en una sola letra hace que el patrón de mayúsculas no cuadre, y cualquier wallet moderna rechaza la dirección: el checksum detecta erratas sin necesitar ningún registro central. Especificación: <https://eips.ethereum.org/EIPS/eip-55>.
+
+### Aleatoriedad débil en ECDSA: el caso Sony PlayStation 3
+
+Cada firma ECDSA requiere un número efímero secreto, el **nonce k**, que debe ser único e impredecible por firma. Si k se repite en dos firmas con la misma clave, un observador puede plantear dos ecuaciones con dos incógnitas (k y la clave privada) y **despejar la clave privada con álgebra elemental**.
+
+Caso real: en diciembre de 2010, el grupo fail0verflow mostró en el congreso 27C3 que Sony firmaba el software de la PlayStation 3 usando un k **constante** en todas las firmas. Con dos firmas cualesquiera bastó para recuperar la clave privada maestra de la consola, lo que permitió firmar software arbitrario como si fuera oficial. El mismo fallo ha drenado fondos reales en Bitcoin y Ethereum cuando wallets generaron nonces con mala entropía.
+
+La defensa estándar es **RFC 6979**: derivar k de forma determinista a partir de la clave privada y del hash del mensaje mediante HMAC. Así, k es único por mensaje, reproducible y no depende de la calidad del generador aleatorio del dispositivo. Especificación: <https://www.rfc-editor.org/rfc/rfc6979>.
+
+### Hashes rápidos vs. KDF: cada primitiva tiene su propósito
+
+Que SHA-256 sea velocísimo es una virtud para integridad y una catástrofe para contraseñas: un atacante con GPU prueba miles de millones de candidatos por segundo. Las KDF modernas se diseñan deliberadamente lentas y con consumo de memoria configurable.
+
+| Propiedad | Hash rápido (SHA-256, Keccak-256) | KDF (Argon2id, scrypt, bcrypt) |
+|-----------|-----------------------------------|--------------------------------|
+| Objetivo | Integridad, punteros, Merkle, PoW | Derivar claves desde contraseñas |
+| Velocidad deseada | Máxima | Deliberadamente lenta y ajustable |
+| Uso de memoria | Mínimo | Alto y configurable (Argon2id, scrypt) para frenar GPU y ASIC |
+| Sal | No aplica de serie | Obligatoria y única por usuario |
+| Uso en blockchain | Bloques, transacciones, direcciones | Cifrado de keystores de wallets (scrypt en los keystore de Ethereum) |
+
+Regla práctica: si la entrada es de baja entropía (una contraseña humana), nunca un hash rápido a secas; siempre una KDF con sal y parámetros de costo actualizados (OWASP publica recomendaciones vigentes para Argon2id).
 
 ## 🧪 Laboratorio guiado
 

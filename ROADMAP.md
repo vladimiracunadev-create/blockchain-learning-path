@@ -33,8 +33,9 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 
 | Versión | Alcance | Estado |
 |---|---|---|
-| 0.1.0 | currículo de 16 módulos, 50 prácticas, contratos Foundry, dApp, indexador, seguridad, evaluaciones y landing | actual |
-| 0.2.0 | guías individuales ampliadas, más retos de seguridad y panel de progreso enriquecido | planificada |
+| 0.1.0 | currículo de 16 módulos, 50 prácticas, contratos Foundry, dApp, indexador, seguridad, evaluaciones y landing | completada |
+| 0.2.0 | sección de industria (construcción, stack, equipos, empresas, modelos de negocio, ciclo de vida), esquemas Mermaid y profundización en los 16 módulos | actual |
+| 0.3.0 | guías individuales ampliadas, más retos de seguridad y panel de progreso enriquecido | planificada |
 | 1.0.0 | programa completo estabilizado con manual en PDF y sitio de contenido navegable | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

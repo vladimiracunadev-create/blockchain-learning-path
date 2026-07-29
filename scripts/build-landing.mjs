@@ -32,6 +32,7 @@ const catalog = read("labs/CATALOG.md");
 const practiceCount = (catalog.match(/^\| \d+/gm) || []).length;
 const adrCount = readdirSync(join(ROOT, "adrs")).filter((f) => /^\d{3}-.*\.md$/.test(f)).length;
 const docCount = readdirSync(join(ROOT, "docs")).filter((f) => f.endsWith(".md")).length;
+const industryCount = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).length;
 const pkg = JSON.parse(read("package.json"));
 const version = pkg.version;
 
@@ -42,7 +43,7 @@ const REPO = "https://github.com/vladimiracunadev-create/blockchain-learning-pat
 const stats = [
   [modules.length, "módulos"],
   [practiceCount, "prácticas"],
-  ["16→", "de cero a avanzado"],
+  [industryCount, "docs de industria"],
   [adrCount, "decisiones (ADR)"],
   [docCount, "documentos"],
 ];
@@ -55,6 +56,7 @@ const features = [
   ["🛡️", "Retos de seguridad", "Contratos vulnerables y sus correcciones: reentrancy, control de acceso, overflow y más, con criterios de revisión.", "security-challenges/README.md"],
   ["🧩", "dApp e indexador", "Aplicación de financiamiento comunitario con viem/TypeScript e indexador de eventos con checkpoint.", "apps/community-funding-web"],
   ["📝", "Evaluaciones", "Diagnóstico, checkpoints, banco de preguntas y plantilla de informe de auditoría para medir tu avance.", "assessments/checkpoints.md"],
+  ["🏭", "Industria y negocio", "Cómo se construye una red, el stack real, los equipos, casos empresariales con éxitos y fracasos, y modelos de negocio.", "industria/README.md"],
   ["🏛️", "Decisiones de arquitectura", `${adrCount} ADR que comparan blockchain vs. base de datos, pública vs. permisionada, on/off-chain, L1/L2 y más.`, "adrs/README.md"],
   ["🎓", "Proyecto integrador", "Un capstone documentado, probado y desplegable con Foundry: del diseño a la defensa técnica.", "capstone/README.md"],
 ];

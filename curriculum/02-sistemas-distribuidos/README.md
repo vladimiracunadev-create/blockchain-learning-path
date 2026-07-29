@@ -41,6 +41,39 @@ Imagina una red de corresponsales que se envían cartas por correo postal sin un
 
 El límite de la analogía es que los corresponsales humanos pueden llamarse por teléfono para desempatar; en un sistema abierto no existe ese canal privilegiado ni una autoridad central. Además, "descentralizado" no significa ausencia de gobierno: siempre hay reglas de protocolo, incentivos y procesos sociales que gobiernan el sistema, aunque no haya un administrador único.
 
+## 🧩 Esquema visual
+
+Propagación por gossip en una red de ocho nodos: cada nodo reenvía a sus pares, pero el enlace caído entre los nodos 4 y 5 parte la red en dos mitades que dejan de verse.
+
+```mermaid
+flowchart LR
+    subgraph GA["Partición A"]
+        N1["Nodo 1"] --- N2["Nodo 2"]
+        N1 --- N3["Nodo 3"]
+        N2 --- N4["Nodo 4"]
+        N3 --- N4
+    end
+    subgraph GB["Partición B"]
+        N5["Nodo 5"] --- N6["Nodo 6"]
+        N5 --- N7["Nodo 7"]
+        N6 --- N8["Nodo 8"]
+        N7 --- N8
+    end
+    N4 -.-|"Enlace caído: partición"| N5
+```
+
+El triángulo CAP: las tres propiedades deseables y la elección forzada cuando la partición ocurre de verdad.
+
+```mermaid
+flowchart TD
+    C["Consistencia: todos leen el mismo valor"] --- A["Disponibilidad: toda petición recibe respuesta"]
+    A --- P["Tolerancia a particiones: la red puede dividirse"]
+    P --- C
+    P --> D["Durante una partición real hay que elegir"]
+    D --> CP["CP: rechazar peticiones para no divergir"]
+    D --> AP["AP: responder siempre y reconciliar después"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Seguridad (safety)**: nada malo ocurre; nunca se acepta un estado inválido o contradictorio.
@@ -53,6 +86,38 @@ El límite de la analogía es que los corresponsales humanos pueden llamarse por
 - **Ataque Sybil**: un atacante crea muchas identidades falsas para ganar influencia.
 - **Finalidad probabilística**: la reversión es cada vez menos probable con el tiempo (Bitcoin).
 - **Finalidad económica**: revertir implica una pérdida económica prohibitiva (Ethereum PoS).
+
+## 🔬 Profundización
+
+### ¿Qué elige una blockchain en términos CAP?
+
+Una blockchain pública de tipo Nakamoto elige, en la práctica, **disponibilidad con consistencia eventual**: durante una partición, cada mitad de la red sigue produciendo bloques sobre su propia vista, y al reunificarse la regla de elección de cadena descarta una de las ramas — eso es un **reorg**. Los nodos que consideraban confirmadas las transacciones de la rama perdedora ven cómo vuelven al mempool. Por eso la finalidad de Bitcoin es probabilística: más profundidad, menos probabilidad de reversión, pero nunca cero.
+
+Caso real verificable: el 25 de mayo de 2022, la Beacon Chain de Ethereum sufrió un **reorg de 7 bloques** — siete bloques ya propuestos fueron descartados de la cadena canónica. No hubo ataque: fue una consecuencia de la propagación desigual entre clientes actualizados y no actualizados en la implementación del boost del fork choice. La lección de sistemas distribuidos es doble: (1) incluso sin adversarios, la latencia y la heterogeneidad de clientes bastan para producir divergencias temporales; (2) el protocolo se diseña para que esas divergencias se resuelvan solas — la capa de finalidad (checkpoints de Casper FFG, módulo 03) marca el punto tras el cual un reorg ya no es una molestia sino una catástrofe económica. Análisis técnico: <https://barnabe.substack.com/p/pos-ethereum-reorg>.
+
+### Modelos de sincronía y por qué FLP no condena el consenso
+
+El resultado FLP (Fischer, Lynch y Paterson, 1985) prueba que en un sistema **asíncrono puro** — sin ninguna cota en los retrasos de mensajes — no existe un algoritmo determinista que garantice consenso si un solo proceso puede fallar. Suena letal, pero se aplica a un modelo extremo. Los tres modelos habituales:
+
+| Modelo | Supuesto sobre los retrasos | Consecuencia práctica |
+|--------|----------------------------|----------------------|
+| Síncrono | Existe una cota conocida para todo retraso | Protocolos simples, pero el supuesto es irreal en Internet |
+| Parcialmente síncrono | La cota existe pero se desconoce, o rige solo tras un instante GST | El estándar de diseño real: PBFT, Tendermint y Gasper operan aquí |
+| Asíncrono | Ningún límite en los retrasos | Aplica FLP: imposibilidad de consenso determinista |
+
+Las salidas de la trampa FLP son tres, y todas se usan: **sincronía parcial** (esperar timeouts y reintentar rondas, como PBFT), **aleatorización** (el sorteo del líder en PoW y PoS rompe la simetría que FLP explota) y **relajar la garantía** (aceptar finalidad probabilística en vez de acuerdo instantáneo). FLP dice que no puedes tener siempre terminación garantizada en el peor caso adversarial; no dice que el consenso falle en las redes reales, donde los periodos de buen comportamiento abundan.
+
+### Resistencia Sybil: qué recurso encarece las identidades
+
+Crear una identidad en una red P2P abierta es gratis; por eso el voto "un nodo, un voto" es inviable. Cada mecanismo anti-Sybil ancla el peso del voto a un recurso costoso:
+
+| Mecanismo | Recurso escaso | Costo de ataque | Límite práctico |
+|-----------|---------------|-----------------|-----------------|
+| Proof of Work | Cómputo y energía | Adquirir u alquilar más hash que la red honesta, de forma sostenida | Hardware y electricidad tienen mercados observables; el costo es externo y recurrente |
+| Proof of Stake | Capital bloqueado en el protocolo | Comprar y arriesgar una fracción grande del stake, expuesta a slashing | El propio ataque destruye el valor del capital atacante; costo interno |
+| Identidad (PoA, consorcios) | Autorización verificada fuera de cadena | Corromper o suplantar a los miembros autorizados | No sirve para redes abiertas; reintroduce una autoridad de admisión |
+
+La conclusión conecta con el módulo 03: el mecanismo de consenso no "elige al mejor", solo hace que fingir ser muchos resulte más caro que el beneficio esperado del ataque.
 
 ## 🧪 Laboratorio guiado
 

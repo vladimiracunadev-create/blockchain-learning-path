@@ -43,6 +43,41 @@ Piensa en la dApp como el mostrador de un banco y en la blockchain como la bóve
 
 La analogía tiene un límite importante: en la banca tradicional confías en una sola sucursal, mientras que aquí el "cajero" consulta a través de un proveedor RPC que podría estar equivocado o ser malicioso. Por eso la interfaz debe tratar sus propios datos como provisionales, simular antes de enviar y, cuando importa, contrastar con más de una fuente en lugar de creer ciegamente a un único RPC.
 
+## 🧩 Esquema visual
+
+Arquitectura de una dApp en producción: el frontend nunca habla "directo" con la cadena, sino a través de una librería y RPC redundantes, con indexer y oráculo como fuentes laterales y monitoreo transversal.
+
+```mermaid
+flowchart TD
+    U["Usuario"] --> FE["Frontend"]
+    FE --> V["Libreria viem"]
+    V --> R1["RPC primario"]
+    V --> R2["RPC de respaldo"]
+    R1 --> SC["Contrato en cadena"]
+    R2 --> SC
+    IDX["Indexer - historico consultable"] --> FE
+    OR["Oraculo - datos externos"] --> SC
+    MON["Monitoreo"] -.-> FE
+    MON -.-> R1
+    MON -.-> SC
+```
+
+Estados por los que pasa una transacción desde que la interfaz la construye; nota que un reorg puede devolver una transacción confirmada a pending.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Construida
+    Construida --> Firmada: la wallet firma
+    Firmada --> Pending: difundida al mempool
+    Pending --> Confirmed: incluida y exitosa
+    Pending --> Replaced: mismo nonce con mayor fee
+    Pending --> Reverted: incluida pero fallida
+    Confirmed --> Pending: reorg
+    Confirmed --> [*]
+    Replaced --> [*]
+    Reverted --> [*]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Proveedor RPC**: servicio que la dApp consulta para leer estado y difundir transacciones; puede ser no confiable.
@@ -55,6 +90,35 @@ La analogía tiene un límite importante: en la banca tradicional confías en un
 - **Approval**: permiso que autoriza a un contrato a mover tus tokens; un límite abierto es un riesgo.
 - **Decimales y unidades**: los tokens usan enteros escalados; confundir unidades altera el monto real.
 - **EIP-712**: estándar de firma de datos estructurados que hace legible para el usuario qué está firmando.
+
+## 🔬 Profundización
+
+### Reorgs y finalidad: qué mostrar al usuario
+
+Antes de The Merge la única defensa contra reorganizaciones era esperar N confirmaciones y cruzar los dedos. Desde 2022 el consenso Proof of Stake de Ethereum ofrece garantías explícitas que la interfaz puede consultar por el tag del bloque:
+
+- **latest**: la cabeza de la cadena; puede reorganizarse en los siguientes slots.
+- **safe**: bloque justificado por la mayoría de validadores; un reorg es ya muy improbable.
+- **finalized**: bloque finalizado tras dos épocas (≈ 12,8 minutos, con épocas de 6,4 minutos); revertirlo exigiría destruir al menos un tercio del stake total.
+
+Una UX honesta refleja esto en capas: "incluida" al ver el recibo sobre `latest`, "confirmada" tras algunos bloques o al alcanzar `safe`, y "definitiva" solo en `finalized` para montos altos. Un mini-caso real: en mayo de 2022 la beacon chain sufrió un reorg de 7 bloques; toda interfaz que hubiera marcado como definitiva una transacción con 5 confirmaciones habría mentido al usuario. Para pagos pequeños, `safe` suele ser el equilibrio razonable entre latencia y riesgo.
+
+### EIP-1193 y EIP-6963: cómo la dApp encuentra la wallet
+
+**EIP-1193** define la interfaz estándar del provider inyectado: un objeto con `request({ method, params })` y eventos como `accountsChanged` y `chainChanged`. Gracias a ese contrato único, viem o wagmi funcionan con cualquier wallet que lo implemente.
+
+Su punto débil era el descubrimiento: todas las wallets peleaban por el mismo `window.ethereum` y la última en inyectarse "ganaba". **EIP-6963** (2023) lo resuelve con un protocolo de anuncio por eventos del DOM: cada wallet emite `eip6963:announceProvider` con sus metadatos (nombre, icono, identificador) y la dApp las lista todas, dejando elegir al usuario. Toda interfaz moderna debería soportar EIP-6963 con EIP-1193 como respaldo.
+
+### Patrones de robustez RPC
+
+| Patrón | Problema que resuelve |
+|---|---|
+| Fallback transport de viem | Un RPC caído o lento no tumba la dApp; las peticiones rotan al siguiente proveedor configurado |
+| Multicall (lecturas agregadas) | Cien `eth_call` individuales saturan el rate limit; un solo contrato multicall las resuelve en una petición |
+| Simulación con `eth_call` previa | Enviar sin simular quema gas en reverts previsibles; la simulación anticipa el fallo gratis |
+| Verificación cruzada de datos críticos | Un RPC único puede mentir u ofrecer estado desactualizado; contrastar dos proveedores lo detecta |
+
+En viem, el fallback se declara al crear el cliente (`fallback([http(rpcA), http(rpcB)])`) y el multicall está integrado como batching automático de lecturas de contrato: activarlo suele ser un cambio de configuración, no una reescritura. La regla operativa: toda escritura pasa antes por una simulación, y toda lectura que dispare decisiones de dinero se verifica contra más de una fuente.
 
 ## 🧪 Laboratorio guiado
 

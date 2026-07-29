@@ -43,6 +43,31 @@ Trata el contrato como la caja fuerte de un banco con reglas grabadas en acero: 
 
 El límite de la analogía está en el force-send: alguien puede empujar ether al contrato sin pasar por la puerta (por ejemplo, mediante selfdestruct), de modo que el saldo real puede superar la contabilidad interna. Por eso una invariante nunca debe confiar en que `address(this).balance` iguale la suma contable; hay que separar lo que el contrato registra de lo que físicamente contiene.
 
+## 🧩 Esquema visual
+
+Pipeline profesional de un contrato: las invariantes se escriben antes que el código y cada etapa de prueba amplía la cobertura de la anterior.
+
+```mermaid
+flowchart LR
+    S["Especificacion"] --> I["Invariantes escritas"]
+    I --> IMP["Implementacion"]
+    IMP --> U["Pruebas unitarias"]
+    U --> F["Fuzzing"]
+    F --> INV["Invariant testing"]
+    INV --> A["Auditoria externa"]
+    A --> D["Deploy con multisig y timelock"]
+```
+
+El patrón checks-effects-interactions ordena cada función que mueve fondos para que una reentrada tardía ya no encuentre estado desactualizado.
+
+```mermaid
+flowchart TD
+    F["Funcion que mueve fondos"] --> CK["Checks - valida condiciones y permisos"]
+    CK --> EF["Effects - actualiza el estado interno"]
+    EF --> IN["Interactions - llama a contratos externos"]
+    IN --> OK["Una reentrada ve el estado ya actualizado"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Visibilidad**: `public`, `external`, `internal` o `private`; define quién puede invocar una función o leer una variable.
@@ -55,6 +80,42 @@ El límite de la analogía está en el force-send: alguien puede empujar ether a
 - **Layout de storage**: disposición de variables en ranuras de 32 bytes; un orden incorrecto encarece o rompe upgrades.
 - **Invariante**: propiedad que debe mantenerse cierta en todo estado alcanzable, verificada por Foundry.
 - **checks-effects-interactions**: patrón que valida primero, actualiza el estado después e interactúa con el exterior al final.
+
+## 🔬 Profundización
+
+### Inmutable vs. upgradeable: trade-offs reales
+
+Un contrato inmutable es la promesa más fuerte que puedes dar; un proxy la relaja a cambio de poder corregir errores. Elegir es una decisión de gobernanza, no solo técnica.
+
+| Estrategia | Ventaja principal | Riesgo principal |
+|---|---|---|
+| Inmutable | Garantías máximas; sin admin que comprometer | Un bug es permanente; solo queda migrar a un contrato nuevo |
+| Transparent Proxy | Patrón maduro; separa admin de usuarios | Más gas por llamada; el admin es un punto de confianza |
+| UUPS | Lógica de upgrade en la implementación; llamadas más baratas | Si una versión olvida `_authorizeUpgrade`, el contrato queda congelado o secuestrable |
+
+El riesgo transversal de cualquier proxy es la **colisión de storage**: la implementación nueva debe respetar exactamente el orden y tipo de las variables previas (solo añadir al final). Cambiar `uint256 total` por `address owner` en el mismo slot reinterpreta bytes existentes como otro tipo, corrompiendo el estado sin ningún error de compilación. Por eso los patrones modernos usan slots deterministas separados (ERC-1967) y herramientas que comparan layouts entre versiones.
+
+### Fuzzing e invariantes en Foundry
+
+En una prueba fuzz, Foundry genera cientos de valores para los argumentos de la función de test. Sin acotar, la mayoría de entradas revierten por triviales (montos absurdos, direcciones cero) y el fuzzing pierde potencia; con `bound(monto, 1, saldoMaximo)` concentras las corridas en el rango interesante.
+
+Para invariantes, el **handler** es un contrato intermedio que envuelve a la bóveda y expone solo secuencias de acciones válidas (depositar, retirar, forzar envío de ether), además de llevar contadores fantasma. La invariante contable típica de un vault:
+
+```solidity
+function invariant_contabilidadCuadra() public view {
+    // el balance real puede EXCEDER lo registrado (force-send),
+    // pero nunca ser menor que la suma de depósitos netos
+    assertGe(address(vault).balance, handler.sumaDepositos() - handler.sumaRetiros());
+}
+```
+
+Nota el `>=` en lugar de `==`: es exactamente la lección del force-send aplicada a una invariante ejecutable.
+
+### Gas y errores: custom errors y el optimizador
+
+Un `require(cond, "mensaje largo de error")` incrusta la cadena en el bytecode (cada 32 bytes de string son bytecode adicional en el deploy) y al revertir codifica `Error(string)` con su overhead de memoria. Un custom error (`error Unauthorized();` + `revert Unauthorized();`) viaja como un selector de 4 bytes: como cifras orientativas, ahorra cientos de gas por revert y reduce el tamaño de despliegue en decenas de bytes por cada mensaje reemplazado, además de permitir parámetros tipados (`error InsufficientBalance(uint256 pedido, uint256 disponible)`).
+
+El optimizador de Solidity se configura con `runs`: es una estimación de cuántas veces se ejecutará cada función a lo largo de la vida del contrato. `runs = 1` minimiza el tamaño del bytecode (deploy barato, llamadas algo más caras); `runs = 1000000` hace lo contrario. El valor por defecto de 200 es un compromiso; para un contrato que recibirá millones de llamadas, subir `runs` suele pagarse solo.
 
 ## 🧪 Laboratorio guiado
 

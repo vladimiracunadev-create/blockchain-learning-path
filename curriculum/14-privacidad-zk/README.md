@@ -43,6 +43,37 @@ Una prueba de conocimiento cero es como demostrar que conoces la contraseña de 
 
 La analogía tiene un límite crucial: aunque no digas la contraseña, el testigo ve a qué hora llegaste, cuántas veces lo intentaste y qué puerta usaste. Igual ocurre con ZK: protege el contenido del enunciado, pero los metadatos —quién emitió la credencial, cuándo se usó, desde qué dirección— pueden seguir revelando información. Además, el sistema hereda un problema del mundo real: alguien debe certificar honestamente el dato inicial, y ZK no verifica esa verdad de origen.
 
+## 🧩 Esquema visual
+
+El recorrido de una prueba de conocimiento cero, desde el enunciado hasta el veredicto del verifier:
+
+```mermaid
+flowchart LR
+    SP["Statement público"] --> C["Circuito de restricciones"]
+    W["Witness privado"] --> C
+    C --> P["Prover"]
+    P --> PR["Proof compacta"]
+    PR --> V["Verifier"]
+    SP --> V
+    V --> OK["Acepta"]
+    V --> KO["Rechaza"]
+```
+
+Esquema de nullifier para gastar una nota privada exactamente una vez, sin revelar cuál nota se gasta:
+
+```mermaid
+flowchart TD
+    N["Nota privada con secreto"] --> CM["Commitment de la nota"]
+    CM --> AR["Árbol de Merkle de commitments"]
+    AR --> PM["Prueba ZK de pertenencia al árbol"]
+    N --> NF["Nullifier derivado del secreto"]
+    PM --> TX["Transacción de gasto"]
+    NF --> TX
+    TX --> CH{"El nullifier ya existe en la lista pública"}
+    CH -->|"No"| AC["Gasto aceptado y nullifier registrado"]
+    CH -->|"Sí"| RJ["Rechazado por doble gasto"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **Zero knowledge**: propiedad por la cual una prueba convence de la verdad de un enunciado sin revelar nada más allá de su validez.
@@ -55,6 +86,40 @@ La analogía tiene un límite crucial: aunque no digas la contraseña, el testig
 - **Setup universal/transparente**: alternativas que reutilizan el setup para muchos circuitos o lo eliminan usando solo aleatoriedad pública.
 - **SNARK**: prueba sucinta y de verificación rápida; suele requerir setup y apoyarse en supuestos de curvas elípticas, no post-cuánticos.
 - **STARK**: prueba transparente y post-cuántica basada en hashes, con pruebas mayores pero sin trusted setup.
+
+## 🔬 Profundización
+
+### SNARK vs. STARK en números orientativos
+
+Las cifras exactas dependen del esquema concreto (Groth16, PLONK, FRI...), del circuito y del hardware, pero los órdenes de magnitud marcan la decisión de diseño:
+
+| Dimensión | SNARK (p. ej. Groth16, PLONK) | STARK |
+|-----------|-------------------------------|-------|
+| Tamaño de prueba | Cientos de bytes (Groth16: ~128-200 bytes) | Decenas a cientos de KB |
+| Verificación | Milisegundos; barata en cadena (unos pocos pairings) | Milisegundos a decenas de ms; más gas en cadena por el tamaño |
+| Setup | Confiable por circuito (Groth16) o universal actualizable (PLONK, KZG) | Transparente: solo aleatoriedad pública, sin ceremonia |
+| Supuestos criptográficos | Curvas elípticas con pairings; supuestos no estándar | Funciones hash resistentes a colisiones; supuestos mínimos |
+| Resistencia post-cuántica | No: un computador cuántico rompería la curva | Sí, en la medida en que el hash resista |
+| Coste del prover | Alto, pero pruebas pequeñas | Alto, con mejor paralelización y sin setup |
+
+Regla práctica: si la verificación en cadena debe ser lo más barata posible y se acepta una ceremonia, un SNARK con setup universal es la opción común; si la transparencia y el post-cuántico pesan más que el tamaño de prueba, un STARK (o un STARK envuelto en un SNARK final para abaratar la verificación, patrón usado por varios rollups) es la elección. Los sistemas de producción evolucionan rápido: contrasta los números del esquema concreto en su documentación.
+
+### Ceremonias de trusted setup: Powers of Tau y el modelo 1-de-N
+
+Un trusted setup genera parámetros públicos a partir de un secreto que debe destruirse; si alguien lo conserva (el llamado *toxic waste*), puede falsificar pruebas indistinguibles de las válidas, sin romper nada más del sistema. Las ceremonias multi-participante mitigan este riesgo transformándolo en un supuesto *1-de-N honesto*: cada participante aporta su propia aleatoriedad secreta y la mezcla secuencialmente con la contribución acumulada; para comprometer el resultado, un atacante necesitaría que **todos** los participantes coludieran o fueran comprometidos, mientras que basta **uno solo** que destruya su secreto para que los parámetros sean seguros.
+
+Powers of Tau es la ceremonia genérica más conocida: produce parámetros reutilizables por muchos circuitos (la "fase 1" común, seguida de una fase 2 específica por circuito en esquemas como Groth16). Ejemplos reales verificables: la ceremonia perpetua de Powers of Tau iniciada por la comunidad de Zcash y Ethereum acumuló cientos de contribuciones públicas y auditables, con participantes que llegaron a usar residuos radiactivos o rituales físicos de destrucción de hardware como evidencia teatral pero ilustrativa; la ceremonia KZG de Ethereum para EIP-4844 (2023) superó las 140 000 contribuciones, el mayor N de la historia, precisamente para que el supuesto "al menos uno fue honesto" resultara socialmente creíble. Los setups universales (PLONK) amortizan una sola ceremonia entre todos los circuitos futuros, y los sistemas transparentes (STARK) la eliminan por completo.
+
+### El nullifier: anti doble gasto sin revelar qué se gasta
+
+En un protocolo de privacidad, las notas no se marcan como "gastadas" —hacerlo revelaría cuál se gastó—. El nullifier resuelve el dilema: es un valor determinista derivado del secreto de la nota, imposible de vincular con su commitment sin conocer ese secreto, pero único por nota. Ejemplo conceptual numerado:
+
+1. Alicia crea una nota con secreto `s` y publica su commitment `C = H(s, valor)` en el árbol de Merkle del protocolo; nadie sabe que `C` es de Alicia.
+2. Para gastar, Alicia calcula el nullifier `NF = H'(s)` con una función distinta, y genera una prueba ZK de que conoce un `s` tal que su commitment está en el árbol **y** que `NF` se deriva de ese mismo `s`.
+3. El contrato verifica la prueba, comprueba que `NF` no figura en la lista pública de nullifiers, lo añade y libera el gasto. La prueba no revela cuál de los miles de commitments del árbol se usó.
+4. Si Alicia intenta gastar la misma nota otra vez, el circuito la obliga a producir el mismo `NF = H'(s)`, que ya está registrado: la transacción se rechaza. El doble gasto se detecta sin haber desanonimizado ningún gasto legítimo.
+
+El mismo patrón aparece fuera de la privacidad de pagos: los rollups ZK y los sistemas de identidad (por ejemplo, votación anónima o airdrops de un solo uso) usan nullifiers para garantizar "una sola vez por secreto" sin correlacionar acciones con identidades. El diseño fino importa: si el nullifier se deriva también de un contexto (un identificador de votación), la misma credencial puede usarse una vez *por contexto* sin que dos usos en contextos distintos sean vinculables.
 
 ## 🧪 Laboratorio guiado
 

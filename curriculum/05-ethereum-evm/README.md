@@ -43,6 +43,41 @@ Imagina la EVM como una calculadora mundial compartida en la que cada operación
 
 La analogía se rompe en un punto clave: a diferencia de una calculadora aislada, aquí miles de nodos reejecutan la misma operación para acordar el resultado, y el precio por ficha varía en cada bloque según la demanda (la base fee). Por eso la estimación de gas es una previsión, no una garantía: el consumo real depende del estado en el momento exacto de la ejecución.
 
+## 🧩 Esquema visual
+
+Ciclo de vida de una transacción, desde la firma en la wallet hasta el cambio de estado, con el revert como camino alternativo.
+
+```mermaid
+sequenceDiagram
+    participant W as Wallet
+    participant R as NodoRPC
+    participant M as Mempool
+    participant V as Validador
+    participant B as Bloque
+    participant E as Estado
+    W->>R: eth_sendRawTransaction firmada
+    R->>M: difunde la transaccion
+    M->>V: seleccion por priority fee
+    V->>B: incluye en el bloque propuesto
+    alt ejecucion exitosa
+        B->>E: aplica los cambios de estado
+    else revert
+        B->>E: descarta cambios pero cobra el gas usado
+    end
+```
+
+Áreas de datos de la EVM durante una ejecución: cada una tiene un ciclo de vida y un coste distintos.
+
+```mermaid
+flowchart TD
+    TX["Transaccion entrante"] --> CD["Calldata - argumentos de solo lectura"]
+    CD --> EVM["Ejecucion en la EVM"]
+    EVM --> ST["Stack - operandos de 32 bytes"]
+    EVM --> MEM["Memory - temporal, vive solo durante la llamada"]
+    EVM --> STO["Storage - persistente, lo mas caro"]
+    EVM --> LOG["Logs - eventos para observadores externos"]
+```
+
 ## 📖 Conceptos y definiciones
 
 - **EOA**: cuenta controlada por una clave privada; es la única que puede iniciar y firmar transacciones.
@@ -56,6 +91,46 @@ La analogía se rompe en un punto clave: a diferencia de una calculadora aislada
 - **Evento (log)**: registro barato e indexable que un contrato emite para señalar un cambio de estado.
 - **Storage / memory / stack**: almacenamiento persistente por contrato, memoria temporal por llamada y pila de trabajo de la EVM.
 - **Revert**: aborto de una ejecución que deshace los cambios de estado pero consume el gas gastado.
+
+## 🔬 Profundización
+
+### Costos de gas reales: frío vs. caliente
+
+Desde EIP-2929 (hard fork Berlín, 2021) el primer acceso a una cuenta o a un slot de storage dentro de una transacción es "frío" y paga un recargo; los accesos siguientes son "calientes" y resultan mucho más baratos. Cifras orientativas post-Berlín:
+
+| Operación | Coste en gas |
+|---|---|
+| SLOAD frío (primer acceso al slot en la tx) | 2 100 |
+| SLOAD caliente (accesos posteriores) | 100 |
+| SSTORE de cero a distinto de cero, slot frío | 22 100 |
+| SSTORE actualizando un valor no nulo, slot frío | 5 000 |
+| SSTORE actualizando un valor no nulo, slot caliente | 2 900 |
+
+De ahí la asimetría clásica: escribir por primera vez un contador cuesta ≈ 22 100 gas (20 000 del SSTORE inicial + 2 100 del acceso frío), mientras que incrementarlo en una transacción posterior cuesta ≈ 5 000 (2 900 + 2 100). Poner un slot de vuelta a cero genera además un reembolso parcial, limitado desde EIP-3529 (Londres, 2021).
+
+### Layout de storage: slots, packing y mappings
+
+El storage de un contrato es un arreglo direccionable de slots de 32 bytes. El compilador asigna variables de estado en orden de declaración y **empaqueta** en un mismo slot las que quepan juntas:
+
+```solidity
+uint128 a; // slot 0, bytes bajos
+uint128 b; // slot 0, bytes altos: comparte slot con a
+uint256 c; // slot 1: necesita los 32 bytes completos
+```
+
+Leer `a` y `b` en la misma transacción toca un solo slot, así que declarar variables pequeñas contiguas ahorra gas real. Los mappings no ocupan su slot de forma secuencial: el valor de `m[k]`, con el mapping declarado en el slot `p`, vive en `keccak256(abi.encode(k, p))`, lo que dispersa las claves por todo el espacio de storage sin colisiones prácticas.
+
+### EIP-1559 en números
+
+Cada bloque tiene un **objetivo de 15 millones de gas** y un **límite de 30 millones**. La base fee se ajusta según la ocupación del bloque anterior: hasta **+12,5 %** si vino completamente lleno y hasta **−12,5 %** si vino vacío. Con seis bloques llenos consecutivos la base fee aproximadamente se duplica (1,125⁶ ≈ 2,03), lo que hace muy caro sostener congestión artificial.
+
+La base fee se **quema** (sale de circulación) y solo la priority fee llega al validador. El coste total por unidad de gas es:
+
+```text
+precio efectivo = min(max fee, base fee + priority fee)
+```
+
+Los valores vigentes de base fee cambian bloque a bloque: consúltalo en vivo antes de estimar costes.
 
 ## 🧪 Laboratorio guiado
 

@@ -18,7 +18,9 @@ const required = [
   "labs/guides/README.md",
   "apps/event-indexer/src/index.mjs",
   "instructor/syllabus.md",
-  "docs/despliegue-local.md"
+  "docs/despliegue-local.md",
+  "docs/bibliografia.md",
+  "industria/README.md"
 ];
 
 for (const file of required) await access(join(process.cwd(), file));
