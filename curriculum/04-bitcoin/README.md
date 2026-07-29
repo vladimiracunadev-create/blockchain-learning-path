@@ -120,6 +120,8 @@ Como cada término de la serie es la mitad del anterior, la suma converge: 210 0
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 1. Ejecuta la selección de UTXO del repositorio para observar cómo se eligen entradas ante distintos objetivos de pago.
 
 ```bash

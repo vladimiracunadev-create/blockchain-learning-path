@@ -121,6 +121,8 @@ La conclusión conecta con el módulo 03: el mecanismo de consenso no "elige al 
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 Este módulo es un ejercicio de diseño y simulación en papel; no requiere código específico. Puedes usar `pnpm test` para correr las pruebas del repositorio si tu diseño incluye un componente verificable.
 
 1. Dibuja una red de cinco nodos conectados como pares (P2P) e indica sus canales.

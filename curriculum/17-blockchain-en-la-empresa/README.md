@@ -192,6 +192,8 @@ legales.
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 Análisis de caso con plantilla, sobre fuentes primarias:
 
 1. Elige un caso de la tabla (éxito o fracaso) y localiza dos fuentes primarias (anuncio oficial, informe del regulador, documentación del producto).

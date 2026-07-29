@@ -134,6 +134,8 @@ Los valores vigentes de base fee cambian bloque a bloque: consúltalo en vivo an
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 1. Inicia un nodo local de desarrollo con Foundry en una terminal aparte.
 
 ```bash

@@ -134,6 +134,8 @@ métricas vivas en <https://clientdiversity.org/>.
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 El laboratorio usa un nodo real en **modo desarrollo** (cadena efímera, sin sincronizar
 terabytes) para practicar la operación exacta de producción. Requiere Docker y Foundry.
 

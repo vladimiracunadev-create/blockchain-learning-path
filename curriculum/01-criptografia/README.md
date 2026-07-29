@@ -123,6 +123,8 @@ Regla práctica: si la entrada es de baja entropía (una contraseña humana), nu
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 1. Ejecuta el laboratorio de hashing y observa el efecto avalancha al cambiar un byte:
 
 ```bash

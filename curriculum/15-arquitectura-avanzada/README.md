@@ -132,6 +132,8 @@ Un upgrade de contrato es una operación de producción con usuarios y fondos en
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 Ejecuta el simulador de suministro para la parte de tokenomics y luego integra los hallazgos en el documento de arquitectura. El proyecto integrador vive en `capstone` y en `projects/community-funding`.
 
 1. Lanza el simulador de tokenomics y registra las curvas de emisión y suministro resultantes.

@@ -114,6 +114,8 @@ Ninguno domina: el push amortiza el coste entre todos los usuarios y simplifica 
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 1. Revisa el indexador de eventos del repositorio, ubicado en `apps/event-indexer`, y observa cómo transforma eventos en datos consultables.
 
 2. Ejecuta su suite de pruebas para validar que la indexación reproduce el historial esperado.

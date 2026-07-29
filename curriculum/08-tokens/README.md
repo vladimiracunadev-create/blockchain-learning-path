@@ -118,6 +118,8 @@ Además, la división entera siempre trunca: convertir 1 unidad base de USDC a u
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 1. Explora el simulador de suministro para ver el efecto de distintas políticas de emisión.
 
 ```bash

@@ -106,6 +106,8 @@ La separación importa: si más de 1/3 del stake se desconecta, LMD-GHOST mantie
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 1. Ejecuta el laboratorio pedagógico de Proof of Work:
 
 ```bash

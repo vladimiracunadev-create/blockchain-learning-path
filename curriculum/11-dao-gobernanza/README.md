@@ -120,6 +120,8 @@ Las críticas también son serias: el bloqueo prolongado ilíquido concentra el 
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 1. Abre los contratos de gobernanza y timelock del módulo, ubicados en `labs/08-protocols`, y revisa cómo se enlaza el Governor con el `TimelockController`.
 
 2. Ejecuta la suite de pruebas con trazas para seguir una propuesta desde su creación hasta su ejecución.

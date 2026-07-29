@@ -135,6 +135,8 @@ Las fases 1-2 son las más baratas y las más determinantes: los fracasos del m�
 
 ## 🧪 Laboratorio guiado
 
+> 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
+
 Ensambla la arquitectura de referencia **en miniatura y ejecutable**, con las piezas
 reales del repositorio (guía detallada en [despliegue local](../../docs/despliegue-local.md)):
 
