@@ -55,7 +55,7 @@ const features = [
   ["📜", "Solidity + Foundry", "Contratos con pruebas, fuzzing e invariantes. Vault, protocolos, token, oráculo y gobernador con timelock.", "labs/06-solidity-vault"],
   ["🛡️", "Retos de seguridad", "Contratos vulnerables y sus correcciones: reentrancy, control de acceso, overflow y más, con criterios de revisión.", "security-challenges/README.md"],
   ["🧩", "dApp e indexador", "Aplicación de financiamiento comunitario con viem/TypeScript e indexador de eventos con checkpoint.", "apps/community-funding-web"],
-  ["📝", "Evaluaciones", "Diagnóstico, checkpoints, banco de preguntas y plantilla de informe de auditoría para medir tu avance.", "assessments/checkpoints.md"],
+  ["🧠", "Autoevaluación interactiva", "Un quiz de razonamiento sobre todo el currículo, con puntuación y explicación de cada respuesta.", "autoevaluacion.html"],
   ["🏭", "Industria y negocio", "Cómo se construye una red, el stack real, los equipos, casos empresariales con éxitos y fracasos, y modelos de negocio.", "industria/README.md"],
   ["🏛️", "Decisiones de arquitectura", `${adrCount} ADR que comparan blockchain vs. base de datos, pública vs. permisionada, on/off-chain, L1/L2 y más.`, "adrs/README.md"],
   ["🎓", "Proyecto integrador", "Un capstone documentado, probado y desplegable con Foundry: del diseño a la defensa técnica.", "capstone/README.md"],
@@ -65,7 +65,7 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, 
 
 // Enlace interno al sitio navegable (.html) generado por build-site.mjs.
 // Un directorio (sin extensión) apunta a su README.html.
-const local = (href) => href.endsWith(".md") ? href.replace(/\.md$/, ".html") : `${href}/README.html`;
+const local = (href) => href.endsWith(".html") ? href : href.endsWith(".md") ? href.replace(/\.md$/, ".html") : `${href}/README.html`;
 
 const html = `<!doctype html>
 <html lang="es">

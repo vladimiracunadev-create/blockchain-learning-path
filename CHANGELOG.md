@@ -22,6 +22,8 @@ Laboratorios ejecutables, CI reforzada, entorno reproducible y sitio con buscado
 - **Buscador** y **seguimiento de progreso** en el sitio: búsqueda instantánea sobre
   todo el contenido y marca de módulos leídos (con barra de progreso) guardada en el
   navegador.
+- **Autoevaluación interactiva** en el sitio: un quiz de 24 preguntas de razonamiento
+  sobre todo el currículo, con puntuación y explicación de cada respuesta.
 
 ### Cambiado
 

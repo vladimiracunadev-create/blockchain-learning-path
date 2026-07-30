@@ -66,6 +66,7 @@ const NAV = [
       { t: "05 · Avanzado y capstone", href: "labs/guides/05-advanced-capstone.html" },
     ],
   },
+  { t: "🧠 Autoevaluación", href: "autoevaluacion.html" },
   {
     t: "🏛️ Decisiones (ADR)", href: "adrs/README.html",
     children: readdirSync(join(ROOT, "adrs")).filter((f) => /^\d{3}-.*\.md$/.test(f)).sort()
@@ -305,6 +306,82 @@ for (const rel of mdFiles) {
   count++;
 }
 writeFileSync(join(ROOT, "site", "busqueda.json"), JSON.stringify(searchIndex), "utf8");
+
+// Página de autoevaluación interactiva a partir del banco de preguntas.
+if (existsSync(join(ROOT, "assessments", "quiz.json"))) {
+  const quiz = JSON.parse(readFileSync(join(ROOT, "assessments", "quiz.json"), "utf8"));
+  const quizBody = `<h1>🧠 ${esc(quiz.title)}</h1>
+<p>${esc(quiz.description)}</p>
+<div id="quiz-app"></div>
+<script>
+var QUIZ = ${JSON.stringify(quiz.questions)};
+(function(){
+  var app = document.getElementById("quiz-app");
+  var form = document.createElement("form");
+  QUIZ.forEach(function(q, i){
+    var fs = document.createElement("fieldset");
+    fs.style.cssText = "border:1px solid var(--borde);border-radius:12px;padding:1rem;margin:0 0 1rem";
+    var lg = document.createElement("legend");
+    lg.style.cssText = "font-weight:600;padding:0 .4rem";
+    lg.textContent = (i+1) + ". [" + q.etapa + "] " + q.prompt;
+    fs.appendChild(lg);
+    q.options.forEach(function(opt, j){
+      var id = "q" + i + "o" + j;
+      var lab = document.createElement("label");
+      lab.id = "lab-" + id;
+      lab.style.cssText = "display:block;padding:.35rem .5rem;border-radius:8px;cursor:pointer";
+      var inp = document.createElement("input");
+      inp.type = "radio"; inp.name = "q" + i; inp.value = j; inp.id = id;
+      inp.style.marginRight = ".5rem";
+      lab.appendChild(inp);
+      lab.appendChild(document.createTextNode(opt));
+      fs.appendChild(lab);
+    });
+    var exp = document.createElement("div");
+    exp.id = "exp-" + i;
+    exp.style.cssText = "display:none;margin-top:.5rem;font-size:.9rem;color:var(--muted);border-left:3px solid var(--acento);padding-left:.6rem";
+    fs.appendChild(exp);
+    form.appendChild(fs);
+  });
+  var btn = document.createElement("button");
+  btn.type = "button"; btn.className = "readbtn"; btn.textContent = "Corregir";
+  var out = document.createElement("div");
+  out.style.cssText = "font-size:1.1rem;font-weight:700;margin:1rem 0";
+  form.appendChild(btn); form.appendChild(out);
+  app.appendChild(form);
+
+  btn.addEventListener("click", function(){
+    var score = 0, answered = 0;
+    QUIZ.forEach(function(q, i){
+      var sel = form.querySelector('input[name="q'+i+'"]:checked');
+      var exp = document.getElementById("exp-" + i);
+      q.options.forEach(function(_, j){
+        var lab = document.getElementById("lab-q"+i+"o"+j);
+        lab.style.background = ""; lab.style.color = "";
+        if (j === q.answer){ lab.style.background = "rgba(46,139,87,.18)"; }
+      });
+      if (sel){
+        answered++;
+        var pick = parseInt(sel.value, 10);
+        if (pick === q.answer){ score++; }
+        else { var bad = document.getElementById("lab-q"+i+"o"+pick); bad.style.background = "rgba(220,70,70,.18)"; }
+      }
+      exp.style.display = "block";
+      exp.textContent = "✔ " + q.explanation;
+    });
+    var pct = Math.round(100 * score / QUIZ.length);
+    out.textContent = "Puntuación: " + score + "/" + QUIZ.length + " (" + pct + "%)" + (pct >= 80 ? " — ¡aprobado!" : " — repasa lo marcado.");
+    out.style.color = pct >= 80 ? "#2e8b57" : "var(--acento)";
+    try {
+      var best = parseInt(localStorage.getItem("blp-quiz-best") || "0", 10);
+      if (score > best){ localStorage.setItem("blp-quiz-best", String(score)); }
+    } catch(e){}
+    out.scrollIntoView({ block: "center" });
+  });
+})();
+</script>`;
+  writeFileSync(join(ROOT, "site", "autoevaluacion.html"), page(quiz.title, quizBody, "autoevaluacion.html"), "utf8");
+}
 // Copiar el manual PDF al sitio si existe (para servirlo en GitHub Pages).
 if (hasManual) {
   mkdirSync(join(ROOT, "site", "manual"), { recursive: true });
