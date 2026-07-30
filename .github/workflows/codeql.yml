@@ -1,0 +1,36 @@
+name: CodeQL
+
+# Análisis de seguridad del código JavaScript/TypeScript del repositorio
+# (scripts, dApp, indexador, panel). Los hallazgos se publican en la pestaña
+# Security del repositorio; no bloquea el build.
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    name: Analizar (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["javascript-typescript"]
+    steps:
+      - uses: actions/checkout@v7
+      - name: Inicializar CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-and-quality
+      - name: Analizar
+        uses: github/codeql-action/analyze@v3

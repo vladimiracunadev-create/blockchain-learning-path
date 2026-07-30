@@ -55,6 +55,33 @@ jobs:
       - uses: foundry-rs/foundry-toolchain@v1
       - run: forge install foundry-rs/forge-std
       - run: forge test -vv
+      - name: Resumen de cobertura (informativo)
+        run: forge coverage --report summary || true
+
+  static-analysis:
+    # El módulo 09 enseña Slither; aquí la CI lo ejecuta sobre los contratos de
+    # producción. Es informativo (no bloquea): los hallazgos se revisan, no se
+    # convierten en un muro que impida avanzar. Los retos de seguridad son
+    # vulnerables a propósito y se analizan en su propio laboratorio.
+    name: Análisis estático (Slither)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - labs/06-solidity-vault
+          - labs/08-protocols
+          - projects/community-funding
+    steps:
+      - uses: actions/checkout@v7
+      - uses: foundry-rs/foundry-toolchain@v1
+      - run: forge install foundry-rs/forge-std
+        working-directory: ${{ matrix.project }}
+      - uses: crytic/slither-action@v0.4.1
+        with:
+          target: ${{ matrix.project }}
+          fail-on: none
 
   security-contracts:
     name: Retos de seguridad (exploit + fix)

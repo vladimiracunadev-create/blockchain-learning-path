@@ -3,6 +3,30 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.6.0] · 2026-07-29
+
+Laboratorios ejecutables, CI reforzada, entorno reproducible y sitio con buscador.
+
+### Añadido
+
+- **Suite exploit + fix de los retos de seguridad**: 12 tests Foundry que demuestran el
+  ataque y verifican la corrección de cada reto (reentrancia, control de acceso, oráculo,
+  replay de firma, front-running/commit-reveal, storage collision). Las prácticas 37–42
+  pasan a **auto** (21/50 auto-verificadas, antes 15).
+- **CI reforzada** (el módulo 09 lo enseña, ahora la CI lo corre): análisis estático con
+  **Slither** sobre los contratos de producción, resumen de **cobertura** de Foundry, y
+  el job de retos pasa de `forge build` a `forge test`.
+- **CodeQL** para el código JavaScript/TypeScript (panel Security).
+- **Entorno reproducible** con `.devcontainer/` — abre el repo en GitHub Codespaces con
+  Node, pnpm, Foundry y Docker listos.
+- **Buscador** y **seguimiento de progreso** en el sitio: búsqueda instantánea sobre
+  todo el contenido y marca de módulos leídos (con barra de progreso) guardada en el
+  navegador.
+
+### Cambiado
+
+- Versiones de GitHub Actions normalizadas entre workflows.
+
 ## [0.5.0] · 2026-07-29
 
 Manual del usuario en PDF con todo el contenido del curso.
@@ -142,6 +166,7 @@ Primera versión pública del programa.
 - Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
   seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
+[0.6.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.6.0
 [0.5.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.5.0
 [0.4.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.4.0
 [0.3.1]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.3.1

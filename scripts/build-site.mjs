@@ -19,7 +19,7 @@ const BASE = `/${REPO}/`;
 const GH = `https://github.com/${OWNER}/${REPO}`;
 
 // --- Descubrir todos los .md a renderizar (espejo del árbol del repo) ----------
-const SKIP_DIRS = new Set(["node_modules", "site", ".git", "dist", "out", "cache"]);
+const SKIP_DIRS = new Set(["node_modules", "site", ".git", "dist", "out", "cache", "lib", "broadcast"]);
 function walk(dir) {
   const out = [];
   for (const name of readdirSync(dir)) {
@@ -39,6 +39,7 @@ const modTitle = (slug) => {
   return h1.replace(/^#\s*/, "").trim();
 };
 const curriculumSlugs = readdirSync(join(ROOT, "curriculum")).filter((d) => /^\d{2}-/.test(d)).sort();
+const curriculumHrefs = curriculumSlugs.map((s) => `curriculum/${s}/README.html`);
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 
 const hasManual = existsSync(join(ROOT, "manual", "MANUAL.pdf"));
@@ -182,7 +183,26 @@ main blockquote{margin:1rem 0;padding:.4rem 1rem;border-left:4px solid var(--ace
 main img{max-width:100%}
 main a{word-break:break-word}
 .toggle{margin-left:.4rem;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;width:34px;height:34px;font-size:1rem;cursor:pointer}
+/* Buscador */
+.search{position:relative}
+.search input{width:210px;max-width:42vw;padding:.4rem .7rem;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.15);color:#fff;font-size:.9rem}
+.search input::placeholder{color:rgba(255,255,255,.75)}
+.results{position:absolute;top:2.4rem;right:0;width:min(420px,80vw);max-height:60vh;overflow-y:auto;background:var(--card);border:1px solid var(--borde);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.25);display:none;z-index:30}
+.results.open{display:block}
+.results a{display:block;padding:.55rem .8rem;border-bottom:1px solid var(--borde);color:var(--txt)}
+.results a:hover{background:var(--bg2);text-decoration:none}
+.results .rt{font-weight:600;font-size:.92rem}
+.results .rx{font-size:.8rem;color:var(--muted);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.results .empty{padding:.7rem .8rem;color:var(--muted);font-size:.88rem}
+/* Progreso */
+.prog{margin:.2rem .4rem .8rem;padding:.5rem .6rem;background:var(--card);border:1px solid var(--borde);border-radius:10px;font-size:.82rem;color:var(--muted)}
+.prog .bar{height:7px;background:var(--bg);border-radius:99px;overflow:hidden;margin-top:.35rem;border:1px solid var(--borde)}
+.prog .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--acento),#2e8b57);width:0}
+nav.side a .done{color:#2e8b57;font-weight:700}
+.readbtn{display:inline-flex;align-items:center;gap:.4rem;margin:.2rem 0 1rem;padding:.4rem .9rem;border-radius:999px;border:1px solid var(--borde);background:var(--bg2);color:var(--txt);font-size:.9rem;cursor:pointer}
+.readbtn.on{background:#2e8b57;color:#fff;border-color:#2e8b57}
 @media (max-width:860px){
+  .search input{width:130px}
   nav.side{position:fixed;left:0;top:52px;transform:translateX(-100%);transition:transform .2s;z-index:15}
   nav.side.open{transform:translateX(0)}
   header.top .burger{display:block}
@@ -200,19 +220,72 @@ mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"
   <button class="burger" onclick="document.querySelector('nav.side').classList.toggle('open')">☰</button>
   <a href="${BASE}index.html">⛓️ Blockchain Learning Path</a>
   <span class="sp"></span>
+  <div class="search">
+    <input id="q" type="search" placeholder="🔎 Buscar…" autocomplete="off" aria-label="Buscar en el sitio">
+    <div class="results" id="results"></div>
+  </div>
   <a href="${GH}" title="Ver en GitHub">GitHub</a>
   <button class="toggle" title="Tema" onclick="var r=document.documentElement,d=(r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));r.setAttribute('data-theme',d==='dark'?'light':'dark');location.reload()">🌓</button>
 </header>
 <div class="layout">
-<nav class="side">${navHtml(currentHref)}</nav>
-<main>${bodyHtml}</main>
+<nav class="side"><div class="prog" id="prog" hidden>📈 Progreso del currículo: <b id="progn">0/${curriculumHrefs.length}</b><div class="bar"><i id="progbar"></i></div></div>${navHtml(currentHref)}</nav>
+<main><button class="readbtn" id="readbtn" hidden>Marcar como leído</button>${bodyHtml}</main>
 </div>
+<script>
+(function(){
+  var BASE=${JSON.stringify(BASE)}, CURR=${JSON.stringify(curriculumHrefs)}, HERE=${JSON.stringify(currentHref)};
+  var KEY="blp-progress";
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch(e){ return []; } }
+  function save(a){ localStorage.setItem(KEY, JSON.stringify(a)); }
+  var done=load();
+  // Marca en el menú lo ya leído y actualiza la barra de progreso.
+  function refresh(){
+    document.querySelectorAll('nav.side a').forEach(function(a){
+      var h=a.getAttribute('href')||""; h=h.replace(BASE,"");
+      var old=a.querySelector('.done'); if(old) old.remove();
+      if(done.indexOf(h)>=0 && h!=="index.html"){ var s=document.createElement('span'); s.className='done'; s.textContent=' ✓'; a.appendChild(s); }
+    });
+    var n=CURR.filter(function(h){return done.indexOf(h)>=0;}).length;
+    var p=document.getElementById('prog'); if(p){ p.hidden=false; document.getElementById('progn').textContent=n+"/"+CURR.length; document.getElementById('progbar').style.width=(100*n/CURR.length)+"%"; }
+  }
+  // Botón "leído" en páginas de contenido (no en la portada).
+  var btn=document.getElementById('readbtn');
+  if(btn && HERE!=="index.html"){
+    btn.hidden=false;
+    function paint(){ var on=done.indexOf(HERE)>=0; btn.classList.toggle('on',on); btn.textContent=on?"✓ Leído":"Marcar como leído"; }
+    paint();
+    btn.addEventListener('click',function(){ var i=done.indexOf(HERE); if(i>=0) done.splice(i,1); else done.push(HERE); save(done); paint(); refresh(); });
+  }
+  refresh();
+  // Buscador sobre busqueda.json.
+  var q=document.getElementById('q'), box=document.getElementById('results'), idx=null;
+  function esc(s){ return s.replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function run(){
+    var t=q.value.trim().toLowerCase();
+    if(t.length<2){ box.classList.remove('open'); box.innerHTML=""; return; }
+    if(!idx){ box.classList.add('open'); box.innerHTML='<div class="empty">Cargando índice…</div>'; return; }
+    var hits=idx.map(function(d){
+      var hay=(d.t+" "+d.x).toLowerCase(); var s=0; t.split(/\s+/).forEach(function(w){ if(d.t.toLowerCase().indexOf(w)>=0)s+=3; else if(hay.indexOf(w)>=0)s+=1; });
+      return {d:d,s:s};
+    }).filter(function(h){return h.s>0;}).sort(function(a,b){return b.s-a.s;}).slice(0,12);
+    if(!hits.length){ box.classList.add('open'); box.innerHTML='<div class="empty">Sin resultados para "'+esc(t)+'"</div>'; return; }
+    box.innerHTML=hits.map(function(h){ return '<a href="'+BASE+h.d.u+'"><span class="rt">'+esc(h.d.t)+'</span><span class="rx">'+esc(h.d.x.slice(0,110))+'…</span></a>'; }).join("");
+    box.classList.add('open');
+  }
+  if(q){
+    q.addEventListener('focus',function(){ if(!idx){ fetch(BASE+'busqueda.json').then(function(r){return r.json();}).then(function(j){ idx=j; run(); }).catch(function(){}); } });
+    q.addEventListener('input',run);
+    document.addEventListener('click',function(e){ if(!e.target.closest('.search')) box.classList.remove('open'); });
+  }
+})();
+</script>
 </body>
 </html>`;
 }
 
 // --- Render -------------------------------------------------------------------
 marked.setOptions({ gfm: true, breaks: false });
+const searchIndex = [];
 let count = 0;
 for (const rel of mdFiles) {
   const raw = readFileSync(join(ROOT, rel), "utf8");
@@ -226,8 +299,12 @@ for (const rel of mdFiles) {
   const outPath = join(ROOT, "site", outHref);
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, page(title, html, outHref), "utf8");
+  // Índice de búsqueda: título + texto plano (sin HTML, recortado).
+  const plain = html.replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim();
+  searchIndex.push({ t: title, u: outHref, x: plain.slice(0, 600) });
   count++;
 }
+writeFileSync(join(ROOT, "site", "busqueda.json"), JSON.stringify(searchIndex), "utf8");
 // Copiar el manual PDF al sitio si existe (para servirlo en GitHub Pages).
 if (hasManual) {
   mkdirSync(join(ROOT, "site", "manual"), { recursive: true });
