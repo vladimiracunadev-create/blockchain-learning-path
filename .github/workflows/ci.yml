@@ -78,7 +78,7 @@ jobs:
       - uses: foundry-rs/foundry-toolchain@v1
       - run: forge install foundry-rs/forge-std
         working-directory: ${{ matrix.project }}
-      - uses: crytic/slither-action@v0.4.1
+      - uses: crytic/slither-action@v0.4.2
         with:
           target: ${{ matrix.project }}
           fail-on: none
