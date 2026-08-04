@@ -1,3 +1,5 @@
+import { ejecutadoDirectamente } from "../run-directo.mjs";
+
 export function selectUtxos(utxos, target, fee) {
   if (target <= 0 || fee < 0) throw new RangeError("Montos inválidos");
   const selected = [];
@@ -12,7 +14,7 @@ export function selectUtxos(utxos, target, fee) {
   throw new Error("Fondos insuficientes");
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (ejecutadoDirectamente(import.meta.url)) {
   console.log(selectUtxos(
     [{ id: "a:0", value: 8_000 }, { id: "b:1", value: 12_000 }, { id: "c:0", value: 30_000 }],
     17_000,

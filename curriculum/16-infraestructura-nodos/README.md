@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado-Producción · ⏱️ **Duración estimada:** 180 min · **Fuente:** documentación de clientes de nodo (ethereum.org, Geth, Lighthouse) y guías de operación de EthStaker
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [17 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md)
 
 ---
 

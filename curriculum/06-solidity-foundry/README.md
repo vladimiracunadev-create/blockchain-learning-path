@@ -2,6 +2,7 @@
 
 > **Nivel:** Intermedio-Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** documentación de Solidity y *The Foundry Book*
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [05 · Ethereum y EVM](../05-ethereum-evm/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [07 · Aplicaciones descentralizadas](../07-dapps/README.md)
 
 ---
 

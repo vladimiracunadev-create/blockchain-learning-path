@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Blockchain Learning Path">
+  <!--
+    Icono del programa. Tres bloques encadenados en diagonal ascendente: la
+    cadena de bloques y, a la vez, la progresión del aprendizaje. Cada bloque
+    lleva su enlace al anterior, que es literalmente lo que enseña el módulo 01.
+
+    Se dibuja con formas grandes y sin detalle fino a propósito: a 48 px en un
+    lanzador de Android tiene que seguir leyéndose.
+  -->
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c5cff"/>
+      <stop offset="55%" stop-color="#5b3fd6"/>
+      <stop offset="100%" stop-color="#2e1d78"/>
+    </linearGradient>
+    <linearGradient id="cara" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dcd6ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#fondo)"/>
+
+  <!-- Trama sutil: la retícula de una red de nodos, apenas insinuada. -->
+  <g stroke="#ffffff" stroke-opacity="0.07" stroke-width="2">
+    <path d="M0 128h512M0 256h512M0 384h512M128 0v512M256 0v512M384 0v512"/>
+  </g>
+
+  <!-- Enlaces entre bloques (se dibujan debajo de los bloques). -->
+  <g stroke="url(#cara)" stroke-width="18" stroke-linecap="round" stroke-opacity="0.85">
+    <path d="M170 330 L214 286"/>
+    <path d="M298 226 L342 182"/>
+  </g>
+
+  <!-- Tres bloques: pasado, presente, destino. -->
+  <g fill="url(#cara)">
+    <rect x="86" y="330" width="104" height="104" rx="26"/>
+    <rect x="204" y="204" width="104" height="104" rx="26"/>
+    <rect x="322" y="78" width="104" height="104" rx="26"/>
+  </g>
+
+  <!-- Hash marcado en cada bloque: dos barras, como un dígito resumido. -->
+  <g fill="#5b3fd6" fill-opacity="0.55">
+    <rect x="108" y="360" width="60" height="12" rx="6"/>
+    <rect x="108" y="386" width="38" height="12" rx="6"/>
+    <rect x="226" y="234" width="60" height="12" rx="6"/>
+    <rect x="226" y="260" width="38" height="12" rx="6"/>
+    <rect x="344" y="108" width="60" height="12" rx="6"/>
+    <rect x="344" y="134" width="38" height="12" rx="6"/>
+  </g>
+</svg>

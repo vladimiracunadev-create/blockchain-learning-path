@@ -1,3 +1,5 @@
+import { ejecutadoDirectamente } from "../run-directo.mjs";
+
 export function simulate({ initial, annualInflation, years, allocations }) {
   const totalAllocation = Object.values(allocations).reduce((sum, value) => sum + value, 0);
   if (Math.abs(totalAllocation - 1) > 1e-9) throw new Error("Las asignaciones deben sumar 1");
@@ -13,7 +15,7 @@ export function simulate({ initial, annualInflation, years, allocations }) {
   });
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (ejecutadoDirectamente(import.meta.url)) {
   console.table(simulate({
     initial: 1_000_000,
     annualInflation: 0.03,

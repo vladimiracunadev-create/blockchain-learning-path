@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 export function sha256(value) {
   return createHash("sha256").update(value).digest("hex");
@@ -26,7 +27,7 @@ export function verifyHashChain(chain) {
   });
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (ejecutadoDirectamente(import.meta.url)) {
   const chain = buildHashChain(["A paga 2 a B", "B paga 1 a C"]);
   console.table(chain);
   console.log("Cadena válida:", verifyHashChain(chain));

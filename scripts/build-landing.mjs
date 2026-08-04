@@ -12,6 +12,8 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+// Destino configurable: el sitio de Pages va a site/, el bundle de las apps a otro sitio.
+const OUT = process.env.SITE_OUT ?? "site";
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
 
 // --- Datos reales del repositorio ---------------------------------------------
@@ -222,6 +224,6 @@ footer a{color:var(--acento);font-weight:600}
 </html>
 `;
 
-mkdirSync(join(ROOT, "site"), { recursive: true });
-writeFileSync(join(ROOT, "site", "index.html"), html, "utf8");
-console.log(`site/index.html generado — ${modules.length} módulos, ${practiceCount} prácticas, v${version}`);
+mkdirSync(join(ROOT, OUT), { recursive: true });
+writeFileSync(join(ROOT, OUT, "index.html"), html, "utf8");
+console.log(`${OUT}/index.html generado — ${modules.length} módulos, ${practiceCount} prácticas, v${version}`);

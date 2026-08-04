@@ -37,9 +37,13 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 |---|---|---|
 | 0.1.0 | currículo de 16 módulos, 50 prácticas, contratos Foundry, dApp, indexador, seguridad, evaluaciones y landing | completada |
 | 0.2.0 | sección de industria (construcción, stack, equipos, empresas, modelos de negocio, ciclo de vida), esquemas Mermaid y profundización en los 16 módulos | completada |
-| 0.3.0 | etapa de producción del currículo: módulos 16 (infraestructura y nodos), 17 (empresa: valor, casos, costos y cómo explicarlo) y 18 (implementación end-to-end) | actual |
-| 0.4.0 | guías individuales ampliadas, más retos de seguridad y panel de progreso enriquecido | planificada |
-| 1.0.0 | programa completo estabilizado con manual en PDF y sitio de contenido navegable | planificada |
+| 0.3.0 | etapa de producción del currículo: módulos 16 (infraestructura y nodos), 17 (empresa: valor, casos, costos y cómo explicarlo) y 18 (implementación end-to-end) | completada |
+| 0.3.1 | resolución explicada de las 50 prácticas y barrido de calidad | completada |
+| 0.4.0 | sitio navegable en GitHub Pages con menú lateral, Mermaid y tema claro/oscuro | completada |
+| 0.5.0 | manual del usuario en PDF (~310 páginas) con todo el curso | completada |
+| 0.6.0 | CI reforzada, Codespaces, buscador, progreso y autoevaluación global en el sitio | completada |
+| 0.7.0 | autoevaluación por módulo (19 quizzes), app de escritorio para Windows y app Android, ambas offline; enlaces externos vigilados y lint de código | actual |
+| 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 
 La versión actual funciona localmente y mantiene los ejercicios peligrosos aislados (Anvil o testnet). Las versiones futuras requieren infraestructura, identidad y decisiones institucionales que no deben simularse dentro del repositorio.

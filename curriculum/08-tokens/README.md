@@ -2,6 +2,7 @@
 
 > **Nivel:** Intermedio-Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** EIPs de Ethereum y OpenZeppelin Contracts
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [07 · Aplicaciones descentralizadas](../07-dapps/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [09 · Seguridad y auditoría](../09-seguridad/README.md)
 
 ---
 

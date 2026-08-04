@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** OpenZeppelin Governor y Compound Governance
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [12 · Escalabilidad y capas 2](../12-escalabilidad/README.md)
 
 ---
 

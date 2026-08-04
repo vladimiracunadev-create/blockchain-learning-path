@@ -2,6 +2,7 @@
 
 > **Nivel:** Inicial · ⏱️ **Duración estimada:** 90 min · **Fuente:** *Mastering Blockchain* (Bashir) y *The Blockchain and the New Architecture of Trust* (Werbach)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [🏠 Programa](../../README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [01 · Criptografía aplicada](../01-criptografia/README.md)
 
 ---
 
@@ -156,4 +157,4 @@ Redacta una recomendación de una página por cada uno de los tres casos, respon
 
 ## 🧭 Navegación
 
-[📚 Índice del currículo](../README.md) · ➡️ [Módulo 01 · Criptografía aplicada](../01-criptografia/README.md)
+⬅️ [🏠 Inicio del programa](../../README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 01 · Criptografía aplicada](../01-criptografia/README.md)

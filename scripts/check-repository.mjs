@@ -79,3 +79,75 @@ if (guidedPractices.length !== 50) {
   throw new Error(`Se esperaban 50 guías prácticas y existen ${guidedPractices.length}`);
 }
 console.log("Guías prácticas: 50/50.");
+
+// --- Autoevaluación por módulo -----------------------------------------------
+// Un quiz con una respuesta correcta fuera de rango o con opciones repetidas no
+// falla al construir el sitio: falla en la cara del alumno, que no entiende por
+// qué acertando le dice que no. Aquí se comprueba antes de publicar.
+const quizzes = JSON.parse(await readFile("assessments/module-quizzes.json", "utf8"));
+const moduleSlugs = (await readdir("curriculum", { withFileTypes: true }))
+  .filter((entry) => entry.isDirectory() && /^\d{2}-/.test(entry.name))
+  .map((entry) => entry.name)
+  .sort();
+
+const quizErrors = [];
+let preguntas = 0;
+for (const slug of moduleSlugs) {
+  const quiz = quizzes.modules[slug];
+  if (!quiz) {
+    quizErrors.push(`${slug}: no tiene autoevaluación`);
+    continue;
+  }
+  if (quiz.preguntas.length < 3) {
+    quizErrors.push(`${slug}: solo ${quiz.preguntas.length} preguntas (mínimo 3)`);
+  }
+  quiz.preguntas.forEach((pregunta, indice) => {
+    preguntas += 1;
+    const donde = `${slug} · pregunta ${indice + 1}`;
+    if (!Number.isInteger(pregunta.answer) || pregunta.answer < 0 || pregunta.answer >= pregunta.options.length) {
+      quizErrors.push(`${donde}: la respuesta correcta apunta fuera de las opciones`);
+    }
+    if (new Set(pregunta.options).size !== pregunta.options.length) {
+      quizErrors.push(`${donde}: opciones repetidas`);
+    }
+    if (!pregunta.explanation) {
+      quizErrors.push(`${donde}: sin explicación (fallar sin saber por qué no enseña nada)`);
+    }
+  });
+}
+for (const slug of Object.keys(quizzes.modules)) {
+  if (!moduleSlugs.includes(slug)) quizErrors.push(`${slug}: hay quiz pero no existe el módulo`);
+}
+if (quizErrors.length) throw new Error(`Autoevaluación por módulo:\n${quizErrors.join("\n")}`);
+console.log(`Autoevaluación: ${moduleSlugs.length}/${moduleSlugs.length} módulos, ${preguntas} preguntas.`);
+
+// --- Cadena anterior/siguiente entre módulos ---------------------------------
+// El curso es secuencial: si un módulo apunta al vecino equivocado (o a ninguno),
+// el alumno se salta contenido sin enterarse. Insertar un módulo nuevo en medio
+// rompe esta cadena en silencio, así que se comprueba en cada `pnpm check`.
+const cadenaErrores = [];
+for (const [indice, slug] of moduleSlugs.entries()) {
+  const texto = await readFile(join("curriculum", slug, "README.md"), "utf8");
+  const anterior = indice > 0 ? `../${moduleSlugs[indice - 1]}/README.md` : "../../README.md";
+  const siguiente = indice < moduleSlugs.length - 1
+    ? `../${moduleSlugs[indice + 1]}/README.md`
+    : "../../capstone/README.md";
+
+  const cabecera = texto.split("\n").find((linea) => linea.startsWith("> 🧭 "));
+  if (!cabecera) {
+    cadenaErrores.push(`${slug}: falta la línea de navegación (> 🧭 …) en la cabecera`);
+  } else {
+    if (!cabecera.includes(anterior)) cadenaErrores.push(`${slug}: la cabecera no enlaza al anterior (${anterior})`);
+    if (!cabecera.includes(siguiente)) cadenaErrores.push(`${slug}: la cabecera no enlaza al siguiente (${siguiente})`);
+  }
+
+  const pie = texto.split(/\n## [^\n]*Navegación[^\n]*\n/)[1];
+  if (!pie) {
+    cadenaErrores.push(`${slug}: falta la sección de navegación al pie`);
+  } else {
+    if (!pie.includes(anterior)) cadenaErrores.push(`${slug}: el pie no enlaza al anterior (${anterior})`);
+    if (!pie.includes(siguiente)) cadenaErrores.push(`${slug}: el pie no enlaza al siguiente (${siguiente})`);
+  }
+}
+if (cadenaErrores.length) throw new Error(`Cadena de módulos rota:\n${cadenaErrores.join("\n")}`);
+console.log(`Cadena anterior/siguiente: ${moduleSlugs.length} módulos encadenados.`);

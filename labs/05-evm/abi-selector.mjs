@@ -1,3 +1,5 @@
+import { ejecutadoDirectamente } from "../run-directo.mjs";
+
 const knownSelectors = new Map([
   ["transfer(address,uint256)", "a9059cbb"],
   ["balanceOf(address)", "70a08231"],
@@ -11,7 +13,7 @@ export function selectorFor(signature) {
   return `0x${selector}`;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (ejecutadoDirectamente(import.meta.url)) {
   for (const [signature] of knownSelectors) console.log(signature, selectorFor(signature));
   console.log("EVM usa Keccak-256, que no es idéntico al SHA3-256 estandarizado.");
 }

@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado-Producción · ⏱️ **Duración estimada:** 150 min · **Fuente:** informes del BIS y el WEF, casos públicos documentados y *The Blockchain and the New Architecture of Trust* (Werbach)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [16 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [18 · Implementación empresarial end-to-end](../18-implementacion-empresarial/README.md)
 
 ---
 

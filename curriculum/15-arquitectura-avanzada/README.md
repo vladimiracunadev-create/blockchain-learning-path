@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** ERC-4337 / EIP-7702 (abstracción de cuenta) e investigación de Flashbots (MEV)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [16 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md)
 
 ---
 

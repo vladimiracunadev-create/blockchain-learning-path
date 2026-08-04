@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** Trail of Bits *Building Secure Contracts* y ConsenSys *Smart Contract Best Practices*
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [08 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)
 
 ---
 

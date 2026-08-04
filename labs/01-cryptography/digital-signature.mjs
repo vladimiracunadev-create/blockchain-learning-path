@@ -1,4 +1,5 @@
 import { generateKeyPairSync, sign, verify } from "node:crypto";
+import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 export function signMessage(message) {
   const { privateKey, publicKey } = generateKeyPairSync("ed25519");
@@ -10,7 +11,7 @@ export function signMessage(message) {
   };
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (ejecutadoDirectamente(import.meta.url)) {
   const signed = signMessage("Autorizo la práctica local");
   console.log("Mensaje original:", signed.verify("Autorizo la práctica local"));
   console.log("Mensaje alterado:", signed.verify("Autorizo otra operación"));

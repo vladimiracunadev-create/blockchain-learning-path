@@ -4,5 +4,8 @@ packages:
 
 onlyBuiltDependencies:
   - esbuild
+  # Electron descarga su binario en un script de postinstalación; sin permitirlo,
+  # `electron .` falla con un ejecutable inexistente.
+  - electron
 allowBuilds:
   esbuild: set this to true or false

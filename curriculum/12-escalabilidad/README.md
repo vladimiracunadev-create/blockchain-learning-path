@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** *An Incomplete Guide to Rollups* (Buterin) y L2BEAT
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [11 · DAO y gobernanza](../11-dao-gobernanza/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [13 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md)
 
 ---
 

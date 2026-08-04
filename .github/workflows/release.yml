@@ -1,0 +1,185 @@
+name: Release
+
+# Publica una release con los tres artefactos del programa: el manual en PDF, la
+# app de escritorio para Windows y el APK de Android.
+#
+# Cada artefacto se VERIFICA antes de subirse. La regla es explícita: si el
+# binario no contiene el curso, la release falla en vez de publicar algo que se
+# instala y abre en blanco.
+#
+# Se dispara al empujar una etiqueta v* (por ejemplo v0.7.0).
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      etiqueta:
+        description: "Etiqueta a publicar (por ejemplo v0.7.0)"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  manual:
+    name: Manual en PDF
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.13.1
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Generar el manual
+        run: pnpm build:manual
+      - name: Comprobar que el PDF tiene contenido
+        run: |
+          tamaño=$(stat -c%s manual/MANUAL.pdf)
+          if [ "$tamaño" -lt 3000000 ]; then
+            echo "El PDF solo pesa $tamaño bytes: no se generó completo." >&2
+            exit 1
+          fi
+          echo "Manual: $((tamaño / 1048576)) MB" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: manual
+          path: manual/MANUAL.pdf
+          if-no-files-found: error
+
+  escritorio:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.13.1
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build:icons
+      - run: pnpm build:bundle
+      - name: Verificar el contenido antes de empaquetar
+        run: pnpm app:windows:verify
+      - name: Empaquetar
+        run: pnpm --filter @blockchain-course/desktop dist
+      - name: Verificar que el empaquetado CONTIENE el curso
+        shell: pwsh
+        run: |
+          $empaquetada = "apps/desktop/dist/win-unpacked/resources/bundle"
+          if (-not (Test-Path "$empaquetada/index.html")) { throw "El empaquetado no lleva el curso" }
+          $modulos = (Get-ChildItem "$empaquetada/curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
+          if ($modulos -ne 19) { throw "La app empaquetada tiene $modulos módulos, se esperaban 19" }
+          "✅ Windows: $modulos módulos empaquetados" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: apps/desktop/dist/*.exe
+          if-no-files-found: error
+
+  android:
+    name: Android
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.13.1
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: android-actions/setup-android@v3
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build:icons
+      - run: pnpm build:bundle
+      - name: Construir el APK
+        run: |
+          cd apps/android
+          node preparar.mjs
+          npx cap add android
+          node personalizar.mjs
+          cd android && chmod +x gradlew && ./gradlew assembleDebug --no-daemon
+      - name: Verificar que el APK CONTIENE el curso
+        run: node apps/android/verificar-apk.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Renombrar
+        run: |
+          versión=$(node -p "require('./package.json').version")
+          mkdir -p apk
+          cp apps/android/android/app/build/outputs/apk/debug/app-debug.apk \
+             "apk/BlockchainLearningPath-${versión}.apk"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android
+          path: apk/*.apk
+          if-no-files-found: error
+
+  publicar:
+    name: Publicar release
+    needs: [manual, escritorio, android]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v5
+        with:
+          path: artefactos
+          merge-multiple: true
+
+      - name: Checksums
+        run: |
+          cd artefactos
+          sha256sum * > SHA256SUMS.txt
+          {
+            echo "### Artefactos publicados"
+            echo
+            echo "| Archivo | Tamaño |"
+            echo "|---|---|"
+            for f in *; do
+              [ "$f" = "SHA256SUMS.txt" ] && continue
+              echo "| \`$f\` | $(du -h "$f" | cut -f1) |"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+          cat SHA256SUMS.txt
+
+      - name: Crear la release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.etiqueta || github.ref_name }}
+          name: ${{ github.event.inputs.etiqueta || github.ref_name }}
+          body: |
+            Programa completo de blockchain en español: 19 módulos, 50 prácticas y proyecto final.
+
+            ## Descargas
+
+            | Archivo | Qué es |
+            |---|---|
+            | `BlockchainLearningPath-Setup-*.exe` | Instalador para Windows |
+            | `BlockchainLearningPath-Portable-*.exe` | Windows portable, sin instalar |
+            | `BlockchainLearningPath-*.apk` | App Android |
+            | `MANUAL.pdf` | Manual del curso (~310 páginas) |
+            | `SHA256SUMS.txt` | Checksums para verificar las descargas |
+
+            Las apps traen **todo el contenido dentro** y funcionan sin conexión.
+            Cada binario se verifica en CI abriéndolo y contando módulos, páginas y
+            preguntas antes de publicarse.
+
+            > Los binarios **no están firmados** con certificado de código: Windows
+            > SmartScreen y Android avisarán del origen desconocido. Compara el
+            > SHA256 antes de ejecutar.
+
+            El detalle de los cambios está en el [CHANGELOG](CHANGELOG.md).
+          files: artefactos/*
+          fail_on_unmatched_files: true

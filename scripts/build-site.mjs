@@ -15,7 +15,13 @@ import { marked } from "marked";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OWNER = "vladimiracunadev-create";
 const REPO = "blockchain-learning-path";
-const BASE = `/${REPO}/`;
+// En GitHub Pages el sitio cuelga de /blockchain-learning-path/. Dentro de las
+// apps de escritorio y Android el contenido se sirve desde la raíz, así que la
+// base se puede cambiar por entorno:
+//   SITE_BASE=/ node scripts/build-site.mjs   → bundle para las apps
+const BASE = process.env.SITE_BASE ?? `/${REPO}/`;
+// Y el destino también, para no pisar el sitio de Pages al generar el bundle.
+const OUT = process.env.SITE_OUT ?? "site";
 const GH = `https://github.com/${OWNER}/${REPO}`;
 
 // --- Descubrir todos los .md a renderizar (espejo del árbol del repo) ----------
@@ -118,7 +124,7 @@ function rewriteLinks(md, srcRel) {
       return `](${target.replace(/\.md(#|$)/, ".html$1")}${title})`;
     }
     // No se renderiza (código, dir, yml…): apuntar a GitHub.
-    let ghPath = resolved;
+    const ghPath = resolved;
     const isDir = !posix.basename(resolved).includes(".");
     const url = `${GH}/${isDir ? "tree" : "blob"}/main/${ghPath}${anchorPart}`;
     return `](${url}${title})`;
@@ -202,6 +208,25 @@ main a{word-break:break-word}
 nav.side a .done{color:#2e8b57;font-weight:700}
 .readbtn{display:inline-flex;align-items:center;gap:.4rem;margin:.2rem 0 1rem;padding:.4rem .9rem;border-radius:999px;border:1px solid var(--borde);background:var(--bg2);color:var(--txt);font-size:.9rem;cursor:pointer}
 .readbtn.on{background:#2e8b57;color:#fff;border-color:#2e8b57}
+.qm{border:1px solid var(--borde);border-radius:12px;padding:.9rem 1rem;margin:0 0 .9rem;background:var(--card)}
+.qm legend{font-weight:600;padding:0 .4rem;line-height:1.4}
+.qm-op{display:block;padding:.45rem .6rem;margin:.25rem 0;border:1px solid var(--borde);border-radius:8px;cursor:pointer;background:var(--bg)}
+.qm-op:hover{border-color:var(--acento)}
+.qm-op.qm-ok{background:rgba(46,139,87,.16);border-color:#2e8b57}
+.qm-op.qm-mal{background:rgba(220,70,70,.16);border-color:#dc4646}
+.qm-exp{margin:.6rem 0 0;padding:.55rem .7rem;border-left:3px solid var(--acento);background:var(--bg2);border-radius:0 8px 8px 0;color:var(--muted);font-size:.92rem}
+.qm-btn{padding:.5rem 1.1rem;border-radius:999px;border:1px solid var(--acento);background:var(--acento);color:#fff;font-size:.95rem;cursor:pointer}
+.qm-btn.qm-reset{background:transparent;color:var(--txt);border-color:var(--borde)}
+.qm-out{font-weight:600;margin:.4rem 0}
+.qm-out.qm-aprob{color:#2e8b57}
+.qm-out.qm-susp{color:#dc4646}
+.qm-previo{font-size:.88rem;color:var(--muted);margin:.2rem 0 .8rem}
+.modnav{display:flex;gap:.6rem;justify-content:space-between;align-items:stretch;margin:2rem 0 .5rem;flex-wrap:wrap}
+.modnav a{flex:1 1 240px;display:flex;flex-direction:column;gap:.15rem;padding:.7rem .9rem;border:1px solid var(--borde);border-radius:12px;background:var(--card);color:var(--txt)}
+.modnav a:hover{border-color:var(--acento)}
+.modnav a.next{text-align:right;align-items:flex-end}
+.modnav .dir{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.modnav .ttl{font-weight:600;line-height:1.3}
 @media (max-width:860px){
   .search input{width:130px}
   nav.side{position:fixed;left:0;top:52px;transform:translateX(-100%);transition:transform .2s;z-index:15}
@@ -266,7 +291,7 @@ mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"
     if(t.length<2){ box.classList.remove('open'); box.innerHTML=""; return; }
     if(!idx){ box.classList.add('open'); box.innerHTML='<div class="empty">Cargando índice…</div>'; return; }
     var hits=idx.map(function(d){
-      var hay=(d.t+" "+d.x).toLowerCase(); var s=0; t.split(/\s+/).forEach(function(w){ if(d.t.toLowerCase().indexOf(w)>=0)s+=3; else if(hay.indexOf(w)>=0)s+=1; });
+      var hay=(d.t+" "+d.x).toLowerCase(); var s=0; t.split(/\\s+/).forEach(function(w){ if(d.t.toLowerCase().indexOf(w)>=0)s+=3; else if(hay.indexOf(w)>=0)s+=1; });
       return {d:d,s:s};
     }).filter(function(h){return h.s>0;}).sort(function(a,b){return b.s-a.s;}).slice(0,12);
     if(!hits.length){ box.classList.add('open'); box.innerHTML='<div class="empty">Sin resultados para "'+esc(t)+'"</div>'; return; }
@@ -284,6 +309,126 @@ mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"
 </html>`;
 }
 
+// --- Autoevaluación al cierre de cada módulo ----------------------------------
+// Cada página de módulo termina con sus propias preguntas. La corrección ocurre
+// en el navegador y el resultado se guarda en localStorage por módulo, así que
+// el sitio sigue siendo estático y funciona igual dentro de las apps offline.
+const QUIZZES = existsSync(join(ROOT, "assessments", "module-quizzes.json"))
+  ? JSON.parse(readFileSync(join(ROOT, "assessments", "module-quizzes.json"), "utf8"))
+  : { modules: {}, aprobado: 75 };
+
+// Barra "anterior / siguiente" al pie de cada módulo. Se genera a partir del
+// orden real de las carpetas, así que añadir un módulo reenlaza la cadena sola:
+// no hay que acordarse de editar los vecinos.
+function navDeModulo(rel) {
+  const match = /^curriculum\/(\d{2}-[a-z0-9-]+)\/README\.md$/.exec(rel);
+  if (!match) return "";
+  const i = curriculumSlugs.indexOf(match[1]);
+  if (i === -1) return "";
+
+  const anterior = i > 0
+    ? { href: `${BASE}curriculum/${curriculumSlugs[i - 1]}/README.html`, t: modTitle(curriculumSlugs[i - 1]) }
+    : { href: `${BASE}index.html`, t: "Inicio del programa" };
+  const siguiente = i < curriculumSlugs.length - 1
+    ? { href: `${BASE}curriculum/${curriculumSlugs[i + 1]}/README.html`, t: modTitle(curriculumSlugs[i + 1]) }
+    : { href: `${BASE}capstone/README.html`, t: "Proyecto final" };
+
+  return `
+<nav class="modnav" aria-label="Navegación entre módulos">
+  <a class="prev" href="${anterior.href}" rel="prev"><span class="dir">⬅️ Anterior</span><span class="ttl">${esc(anterior.t)}</span></a>
+  <a class="next" href="${siguiente.href}" rel="next"><span class="dir">Siguiente ➡️</span><span class="ttl">${esc(siguiente.t)}</span></a>
+</nav>`;
+}
+
+function quizDelModulo(rel) {
+  const match = /^curriculum\/(\d{2}-[a-z0-9-]+)\/README\.md$/.exec(rel);
+  const quiz = match && QUIZZES.modules[match[1]];
+  if (!quiz) return "";
+  // Escapamos "<" dentro del JSON para que ningún texto pueda cerrar el <script>.
+  const datos = JSON.stringify(quiz.preguntas).replace(/</g, "\\u003c");
+  return `
+<hr>
+<h2 id="autoevaluacion">🧠 Autoevaluación del módulo</h2>
+<p>Responde sin volver atrás. Cada opción incorrecta corresponde a un error frecuente
+documentado en este mismo módulo: si fallas, la explicación te dice qué releer.</p>
+<div class="quiz-mod" id="quiz-mod"></div>
+<script>
+(function(){
+  var PREGUNTAS = ${datos};
+  var CLAVE = "blp-quiz-${match[1]}";
+  var APROBADO = ${Number(QUIZZES.aprobado) || 75};
+  var caja = document.getElementById("quiz-mod");
+  if (!caja) return;
+
+  var html = "";
+  for (var i = 0; i < PREGUNTAS.length; i++) {
+    var p = PREGUNTAS[i];
+    html += '<fieldset class="qm"><legend>' + (i + 1) + ". " + escapar(p.prompt) + "</legend>";
+    for (var o = 0; o < p.options.length; o++) {
+      var id = "qm" + i + "o" + o;
+      html += '<label class="qm-op" id="lbl-' + id + '"><input type="radio" name="qm' + i + '" value="' + o + '"> ' + escapar(p.options[o]) + "</label>";
+    }
+    html += '<p class="qm-exp" id="qm-exp' + i + '" hidden></p></fieldset>';
+  }
+  html += '<p><button type="button" class="qm-btn" id="qm-check">Comprobar respuestas</button> <button type="button" class="qm-btn qm-reset" id="qm-reset" hidden>Intentar de nuevo</button></p><p class="qm-out" id="qm-out" role="status"></p>';
+  caja.innerHTML = html;
+
+  function escapar(t){ return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  document.getElementById("qm-check").addEventListener("click", function(){
+    var aciertos = 0, sinResponder = 0;
+    for (var i = 0; i < PREGUNTAS.length; i++) {
+      var p = PREGUNTAS[i];
+      var sel = caja.querySelector('input[name="qm' + i + '"]:checked');
+      var exp = document.getElementById("qm-exp" + i);
+      for (var o = 0; o < p.options.length; o++) {
+        var lbl = document.getElementById("lbl-qm" + i + "o" + o);
+        lbl.classList.remove("qm-ok", "qm-mal");
+        if (o === p.answer) lbl.classList.add("qm-ok");
+      }
+      if (!sel) { sinResponder++; }
+      else {
+        var elegida = parseInt(sel.value, 10);
+        if (elegida === p.answer) aciertos++;
+        else document.getElementById("lbl-qm" + i + "o" + elegida).classList.add("qm-mal");
+      }
+      exp.textContent = p.explanation;
+      exp.hidden = false;
+    }
+    var pct = Math.round(100 * aciertos / PREGUNTAS.length);
+    var salida = document.getElementById("qm-out");
+    salida.textContent = aciertos + "/" + PREGUNTAS.length + " (" + pct + "%) — " +
+      (pct >= APROBADO ? "módulo superado." : "repasa lo marcado antes de seguir.") +
+      (sinResponder ? " Dejaste " + sinResponder + " sin responder." : "");
+    salida.className = "qm-out " + (pct >= APROBADO ? "qm-aprob" : "qm-susp");
+    document.getElementById("qm-reset").hidden = false;
+    try {
+      var previo = JSON.parse(localStorage.getItem(CLAVE) || "null");
+      if (!previo || pct > previo.pct) localStorage.setItem(CLAVE, JSON.stringify({ pct: pct, de: PREGUNTAS.length }));
+    } catch (e) {}
+  });
+
+  document.getElementById("qm-reset").addEventListener("click", function(){
+    caja.querySelectorAll('input[type="radio"]').forEach(function(r){ r.checked = false; });
+    caja.querySelectorAll(".qm-op").forEach(function(l){ l.classList.remove("qm-ok","qm-mal"); });
+    caja.querySelectorAll(".qm-exp").forEach(function(e){ e.hidden = true; });
+    document.getElementById("qm-out").textContent = "";
+    document.getElementById("qm-reset").hidden = true;
+  });
+
+  try {
+    var guardado = JSON.parse(localStorage.getItem(CLAVE) || "null");
+    if (guardado) {
+      var aviso = document.createElement("p");
+      aviso.className = "qm-previo";
+      aviso.textContent = "Tu mejor resultado en este módulo: " + guardado.pct + "%.";
+      caja.parentNode.insertBefore(aviso, caja);
+    }
+  } catch (e) {}
+})();
+</script>`;
+}
+
 // --- Render -------------------------------------------------------------------
 marked.setOptions({ gfm: true, breaks: false });
 const searchIndex = [];
@@ -297,15 +442,17 @@ for (const rel of mdFiles) {
     (m, code) => `<pre class="mermaid">${code}</pre>`);
   const title = (raw.split("\n").find((l) => l.startsWith("# ")) || rel).replace(/^#\s*/, "").trim();
   const outHref = rel.replace(/\.md$/, ".html");
-  const outPath = join(ROOT, "site", outHref);
+  const outPath = join(ROOT, OUT, outHref);
   mkdirSync(dirname(outPath), { recursive: true });
-  writeFileSync(outPath, page(title, html, outHref), "utf8");
-  // Índice de búsqueda: título + texto plano (sin HTML, recortado).
+  writeFileSync(outPath, page(title, html + quizDelModulo(rel) + navDeModulo(rel), outHref), "utf8");
+  // Índice de búsqueda: título + texto plano (sin HTML, recortado). Se calcula
+  // ANTES de añadir la autoevaluación: si no, buscar un término del temario
+  // devolvería la pregunta —y su respuesta— en vez del contenido.
   const plain = html.replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim();
   searchIndex.push({ t: title, u: outHref, x: plain.slice(0, 600) });
   count++;
 }
-writeFileSync(join(ROOT, "site", "busqueda.json"), JSON.stringify(searchIndex), "utf8");
+writeFileSync(join(ROOT, OUT, "busqueda.json"), JSON.stringify(searchIndex), "utf8");
 
 // Página de autoevaluación interactiva a partir del banco de preguntas.
 if (existsSync(join(ROOT, "assessments", "quiz.json"))) {
@@ -380,12 +527,12 @@ var QUIZ = ${JSON.stringify(quiz.questions)};
   });
 })();
 </script>`;
-  writeFileSync(join(ROOT, "site", "autoevaluacion.html"), page(quiz.title, quizBody, "autoevaluacion.html"), "utf8");
+  writeFileSync(join(ROOT, OUT, "autoevaluacion.html"), page(quiz.title, quizBody, "autoevaluacion.html"), "utf8");
 }
 // Copiar el manual PDF al sitio si existe (para servirlo en GitHub Pages).
 if (hasManual) {
-  mkdirSync(join(ROOT, "site", "manual"), { recursive: true });
-  copyFileSync(join(ROOT, "manual", "MANUAL.pdf"), join(ROOT, "site", "manual", "MANUAL.pdf"));
-  console.log("site/manual/MANUAL.pdf copiado.");
+  mkdirSync(join(ROOT, OUT, "manual"), { recursive: true });
+  copyFileSync(join(ROOT, "manual", "MANUAL.pdf"), join(ROOT, OUT, "manual", "MANUAL.pdf"));
+  console.log(`${OUT}/manual/MANUAL.pdf copiado.`);
 }
-console.log(`site: ${count} páginas de contenido generadas (menú + Mermaid + tema).`);
+console.log(`${OUT}: ${count} páginas de contenido generadas (menú + Mermaid + tema).`);

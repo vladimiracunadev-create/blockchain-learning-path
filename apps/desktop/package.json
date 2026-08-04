@@ -1,0 +1,54 @@
+{
+  "name": "@blockchain-course/desktop",
+  "productName": "Blockchain Learning Path",
+  "version": "0.7.0",
+  "private": true,
+  "description": "Curso completo de blockchain para leer sin conexión en Windows",
+  "author": "Vladimir Acuña",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "dev.vladimiracuna.blockchainlearningpath",
+    "productName": "Blockchain Learning Path",
+    "copyright": "Código MIT · Contenido CC BY 4.0 · Vladimir Acuña",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": ["main.js", "servidor.mjs", "build/icon.png"],
+    "extraResources": [
+      {
+        "from": "../bundle",
+        "to": "bundle"
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Blockchain Learning Path",
+      "artifactName": "BlockchainLearningPath-Setup-${version}.${ext}",
+      "uninstallDisplayName": "Blockchain Learning Path ${version}"
+    },
+    "portable": {
+      "artifactName": "BlockchainLearningPath-Portable-${version}.${ext}"
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 > **Nivel:** Inicial-Intermedio · ⏱️ **Duración estimada:** 120 min · **Fuente:** *Introduction to Reliable and Secure Distributed Programming* (Cachin, Guerraoui, Rodrigues) y *Distributed Systems* (Tanenbaum, van Steen)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [01 · Criptografía aplicada](../01-criptografia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [03 · Consenso](../03-consenso/README.md)
 
 ---
 

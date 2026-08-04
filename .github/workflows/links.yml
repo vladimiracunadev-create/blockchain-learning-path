@@ -1,0 +1,58 @@
+name: Enlaces
+
+# Un curso se degrada por link rot: las fuentes oficiales cambian de URL y el
+# material queda apuntando al vacío sin que nadie lo note. Este workflow revisa
+# los ~240 enlaces externos del repositorio.
+#
+# Es INFORMATIVO a propósito: que un servidor externo esté caído un martes no
+# puede romper la CI de un pull request de contenido. Cuando encuentra enlaces
+# rotos abre (o actualiza) un issue con la lista.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "docs/recursos-oficiales.md"
+      - "docs/bibliografia.md"
+      - ".github/workflows/links.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  externos:
+    name: Enlaces externos
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Revisar enlaces
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-concurrency 8
+            --timeout 30
+            --max-retries 2
+            --accept 200,206,403,429
+            --exclude-path node_modules
+            --exclude-path site
+            --exclude-mail
+            "**/*.md"
+          output: informe-enlaces.md
+          fail: false
+
+      - name: Abrir issue si hay enlaces rotos
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "🔗 Enlaces rotos detectados en el material"
+          content-filepath: informe-enlaces.md
+          labels: mantenimiento, documentación

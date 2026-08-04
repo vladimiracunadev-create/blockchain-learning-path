@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** documentación de Cosmos IBC y de Polkadot (XCM)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [12 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)
 
 ---
 

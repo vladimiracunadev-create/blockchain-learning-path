@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** documentación de Chainlink y de The Graph
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [09 · Seguridad y auditoría](../09-seguridad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [11 · DAO y gobernanza](../11-dao-gobernanza/README.md)
 
 ---
 

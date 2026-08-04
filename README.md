@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.6.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versión-0.7.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
 [![Módulos](https://img.shields.io/badge/módulos-19-7c5cff?style=for-the-badge)](curriculum/README.md)
 [![Prácticas](https://img.shields.io/badge/prácticas-50-2e8b57?style=for-the-badge)](labs/CATALOG.md)
 [![Nivel](https://img.shields.io/badge/nivel-inicial%20→%20producción-e67e22?style=for-the-badge)](ROADMAP.md)
@@ -25,7 +25,7 @@
 [![viem](https://img.shields.io/badge/viem-dApps-2e8b57?style=flat-square)](apps/community-funding-web)
 [![TypeScript](https://img.shields.io/badge/TypeScript-dApp%20%26%20indexer-3178C6?style=flat-square&logo=typescript&logoColor=white)](apps)
 
-[🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](manual/MANUAL.pdf) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
+[🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
 
 </div>
 
@@ -64,13 +64,22 @@ Cada etapa se apoya explícitamente en la literatura de referencia del sector; e
 
 > Referencias completas en la [bibliografía central](docs/bibliografia.md), que también recoge los **hitos recientes** del ecosistema (Merge, Dencun/EIP-4844, Pectra/EIP-7702).
 
-## 📕 Manual completo (todo el curso en un PDF)
+## 📥 Llévate el curso: apps y manual
 
-Todo el contenido del programa —los 19 módulos, la sección de industria, los laboratorios, los ADR, la documentación de referencia y el proyecto final— compilado en un único documento de ~310 páginas con diagramas incluidos, para leer de corrido o estudiar sin conexión:
+Todo el contenido —los 19 módulos, la industria, los laboratorios, los ADR y el proyecto final— viaja contigo. **Las apps funcionan sin conexión**: sirven para estudiar en el metro o en un aula sin wifi.
 
-- 📥 **[Manual del usuario (PDF)](manual/MANUAL.pdf)** — también disponible en el [sitio del programa](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf).
+| Formato | Descarga | Notas |
+|---|---|---|
+| 🖥️ **Windows** | [Instalador o portable](https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/latest) | Curso completo dentro del ejecutable · [cómo está hecha](apps/desktop/README.md) |
+| 📱 **Android** | [APK (~8,5 MB)](https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/latest) | Curso completo dentro del APK · [cómo está hecha](apps/android/README.md) |
+| 📕 **Manual PDF** | [MANUAL.pdf (~310 páginas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) | También adjunto en cada release |
+| 🌐 **Web** | [Sitio del programa](https://vladimiracunadev-create.github.io/blockchain-learning-path/) | Con buscador, progreso y autoevaluación |
 
-Se regenera desde el propio repositorio con `pnpm build:manual` (requiere Chrome/Edge instalado para renderizar los diagramas).
+Las tres versiones salen del **mismo build**, así que ninguna se queda atrás. Cada binario se verifica en CI abriéndolo y contando los módulos, las páginas y las preguntas que lleva dentro: un build en verde no prueba que el artefacto contenga el curso.
+
+> Los binarios **no están firmados** con certificado de código (cuesta cientos de dólares al año), así que Windows SmartScreen y Android avisarán del origen desconocido. Compara el `SHA256` publicado en la release antes de ejecutarlos.
+
+Para generarlo todo desde el repositorio: `pnpm build:manual`, `pnpm app:windows`, `pnpm app:android`.
 
 ## 🗂️ Los 19 módulos en seis etapas
 

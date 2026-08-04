@@ -2,6 +2,7 @@
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** *Proofs, Arguments, and Zero-Knowledge* (Thaler) y ZKProof Community Reference
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [13 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
 
 ---
 

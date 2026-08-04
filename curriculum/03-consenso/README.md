@@ -2,6 +2,7 @@
 
 > **Nivel:** Intermedio · ⏱️ **Duración estimada:** 120 min · **Fuente:** whitepaper de Bitcoin (Nakamoto) y *Practical Byzantine Fault Tolerance* (Castro, Liskov)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [02 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [04 · Bitcoin](../04-bitcoin/README.md)
 
 ---
 

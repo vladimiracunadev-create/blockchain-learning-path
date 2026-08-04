@@ -3,6 +3,63 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.7.0] · 2026-08-04
+
+El curso sale del navegador: aplicación de escritorio para Windows y app Android,
+ambas con todo el contenido offline. Autoevaluación en cada módulo y corrección de
+tres fallos que rompían el curso en Windows.
+
+### Añadido
+
+- **App de escritorio para Windows** (Electron): instalador NSIS y versión portable
+  con los 19 módulos, las 50 prácticas, los ADR y el manual PDF dentro del ejecutable.
+  Funciona sin conexión. Ver [apps/desktop](apps/desktop/README.md).
+- **App Android** (Capacitor): APK de ~8,5 MB con el mismo contenido offline.
+  Ver [apps/android](apps/android/README.md).
+- **Icono propio** para ambas apps, generado desde un único SVG
+  ([apps/icono.svg](apps/icono.svg)) a ICO multi-tamaño y a los mipmaps de Android,
+  incluido el icono adaptativo.
+- **Autoevaluación por módulo**: 76 preguntas nuevas (4 por módulo) al cierre de cada
+  uno. Cada opción incorrecta es un error frecuente documentado en ese mismo módulo,
+  así que fallar indica qué releer. Se corrige en el navegador y guarda el mejor
+  resultado por módulo.
+- **Navegación anterior/siguiente** en la cabecera de cada módulo, además del pie, y
+  como barra de tarjetas en el sitio y en las apps.
+- **Verificación de contenido de los binarios**: `smoke.js` abre la app de escritorio y
+  `verificar-apk.mjs` abre el APK para contar módulos, páginas y preguntas *dentro* del
+  artefacto. Un build en verde no prueba que el binario tenga el curso; esto sí.
+- **Vigilancia de enlaces externos** (lychee, semanal): los ~240 enlaces del material
+  se revisan y abren un issue si se rompen.
+- **ESLint** sobre el JavaScript del repositorio y `forge fmt --check` sobre Solidity.
+- **CODE_OF_CONDUCT.md** y **CODEOWNERS**.
+- Validación permanente en `pnpm check` de la autoevaluación (respuestas dentro de
+  rango, sin opciones repetidas, con explicación) y de la cadena de módulos.
+
+### Corregido
+
+- **`pnpm test` se colgaba indefinidamente en Windows.** El servidor del panel calculaba
+  su raíz con `.pathname`, que en Windows devuelve `/C:/…`; el guard anti-traversal
+  rechazaba entonces *todas* las peticiones con 403, el assert fallaba y el servidor
+  nunca se cerraba. La suite ahora termina en menos de un segundo.
+- **Los laboratorios no imprimían nada en Windows.** Los 7 puntos de entrada usaban
+  ``import.meta.url === `file://${process.argv[1]}` ``, comparación que nunca es cierta
+  en Windows. `pnpm lab:hash` y compañía funcionaban en Linux y no hacían nada aquí.
+- **El buscador del sitio partía las consultas por la letra «s».** El `\s` del patrón
+  estaba dentro de un template literal y se generaba como `split(/s+/)`.
+- La CI instalaba con `--frozen-lockfile=false`, de modo que el lockfile no garantizaba
+  nada en el job que ejecuta las pruebas.
+- El test del panel se llamaba «bloquea traversal» pero no probaba traversal: `fetch`
+  normaliza los `..` en el cliente. Ahora se comprueba con peticiones crudas.
+
+### Cambiado
+
+- **El manual en PDF (10 MB) deja de versionarse** y pasa a publicarse como artefacto de
+  cada release. Seguía sumando ~10 MB permanentes al historial en cada regeneración.
+- Node unificado en **22** entre `engines`, CI, Pages y devcontainer, con `.nvmrc`.
+- El ROADMAP volvía a marcar 0.3.0 como versión actual; ahora refleja el historial real.
+- Sitio y apps comparten el mismo build: `SITE_BASE` y `SITE_OUT` permiten generarlo
+  para GitHub Pages o para empaquetarlo offline.
+
 ## [0.6.0] · 2026-07-29
 
 Laboratorios ejecutables, CI reforzada, entorno reproducible y sitio con buscador.
@@ -168,6 +225,7 @@ Primera versión pública del programa.
 - Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
   seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
+[0.7.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.7.0
 [0.6.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.6.0
 [0.5.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.5.0
 [0.4.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.4.0

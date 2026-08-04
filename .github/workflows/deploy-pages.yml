@@ -49,11 +49,17 @@ jobs:
           version: 10.13.1
       - uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "22"
           cache: pnpm
 
       - name: Instalar dependencias (pnpm)
         run: pnpm install --frozen-lockfile
+
+      # El manual ya no se versiona (pesaba 10 MB y crecía el historial en cada
+      # regeneración): se construye aquí y en cada release. Debe ir ANTES del
+      # sitio, porque build:site lo enlaza en el menú y lo copia a site/manual/.
+      - name: Generar el manual en PDF
+        run: pnpm build:manual
 
       - name: Generar portada y sitio navegable
         run: |
@@ -80,10 +86,10 @@ jobs:
             echo "- Manual PDF: **$(du -h site/manual/MANUAL.pdf | cut -f1)**"
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
         with:
           enablement: true
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
@@ -96,4 +102,4 @@ jobs:
     needs: build
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

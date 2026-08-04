@@ -1,0 +1,862 @@
+{
+  "title": "Autoevaluación por módulo",
+  "description": "Cuatro preguntas de comprobación al cierre de cada módulo. Los distractores no son inventados: cada uno es un error frecuente documentado en el propio módulo, para que fallar te señale exactamente qué releer.",
+  "aprobado": 75,
+  "modules": {
+    "00-orientacion": {
+      "titulo": "Orientación",
+      "preguntas": [
+        {
+          "prompt": "¿Qué diferencia esencial hay entre una blockchain y una base de datos replicada de toda la vida?",
+          "options": [
+            "La blockchain es más rápida escribiendo",
+            "La blockchain permite que partes que no confían entre sí validen sin una autoridad central",
+            "La base de datos no puede replicarse entre varios servidores"
+          ],
+          "answer": 1,
+          "explanation": "La pregunta no es de rendimiento: una base de datos casi siempre escribe más rápido. Lo que aporta la blockchain es replicación sin una autoridad única que decida qué es válido."
+        },
+        {
+          "prompt": "Un token y una criptomoneda nativa se diferencian en que…",
+          "options": [
+            "El token lo define un contrato sobre una red existente; la criptomoneda es nativa del protocolo",
+            "El token siempre vale menos",
+            "Son sinónimos: dos nombres para lo mismo"
+          ],
+          "answer": 0,
+          "explanation": "ETH es nativo de Ethereum y paga las comisiones; un token vive en un contrato desplegado sobre esa red. Confundirlos es el error más común al empezar."
+        },
+        {
+          "prompt": "Si un contrato registra en cadena que una entrega llegó en buen estado, ¿qué garantiza la blockchain?",
+          "options": [
+            "Que la entrega efectivamente llegó en buen estado",
+            "Que ese registro no se ha alterado desde que se escribió, sin decir nada sobre si era cierto",
+            "Nada: los datos on-chain también se pueden editar"
+          ],
+          "answer": 1,
+          "explanation": "Es el problema del oráculo. La cadena protege la integridad del registro, no la veracidad del dato que alguien introdujo. Un dato falso queda inmutablemente falso."
+        },
+        {
+          "prompt": "\"Descentralizado\" es una propiedad que conviene tratar como…",
+          "options": [
+            "Un sí o un no: o lo es o no lo es",
+            "Un conjunto de dimensiones que se miden (técnica, política, arquitectónica)",
+            "Un término de marketing sin contenido técnico"
+          ],
+          "answer": 1,
+          "explanation": "Una red puede tener miles de nodos (descentralización arquitectónica) y aun así que tres personas decidan sus cambios (centralización política). Se mide por dimensiones, no se afirma."
+        }
+      ]
+    },
+    "01-criptografia": {
+      "titulo": "Criptografía aplicada",
+      "preguntas": [
+        {
+          "prompt": "¿Qué propiedad aporta directamente una función hash criptográfica?",
+          "options": [
+            "Confidencialidad del contenido",
+            "Integridad verificable",
+            "Identidad legal del emisor"
+          ],
+          "answer": 1,
+          "explanation": "El hash permite detectar cualquier alteración. No cifra (no oculta nada) ni prueba quién es alguien: eso son cifrado y firma, primitivas distintas."
+        },
+        {
+          "prompt": "Para almacenar contraseñas de usuarios, SHA-256 \"a secas\" es mala idea porque…",
+          "options": [
+            "Es demasiado lento y el login tardaría",
+            "Es rápido y sin sal, así que permite fuerza bruta masiva y tablas precalculadas",
+            "No es resistente a colisiones"
+          ],
+          "answer": 1,
+          "explanation": "Justamente su velocidad juega en contra. Una KDF como Argon2 o bcrypt es lenta y usa sal a propósito, para que probar millones de candidatas resulte caro."
+        },
+        {
+          "prompt": "En un árbol de Merkle de 8 hojas, una prueba de inclusión necesita…",
+          "options": [
+            "8 hashes",
+            "3 hashes",
+            "1 hash: solo la raíz"
+          ],
+          "answer": 1,
+          "explanation": "Se necesita un hash hermano por nivel, y con 8 hojas el árbol tiene log₂(8) = 3 niveles. Esa compresión logarítmica es lo que hace útiles las pruebas."
+        },
+        {
+          "prompt": "Reutilizar el mismo nonce al firmar dos mensajes distintos con ECDSA tiene como consecuencia que…",
+          "options": [
+            "Las firmas quedan inválidas y se rechazan",
+            "Se puede derivar matemáticamente la clave privada a partir de las dos firmas",
+            "No pasa nada: el nonce es un valor público"
+          ],
+          "answer": 1,
+          "explanation": "Con dos firmas que comparten nonce, el álgebra despeja la clave privada. Es un fallo real que ha vaciado carteras y consolas por generadores de aleatoriedad débiles."
+        }
+      ]
+    },
+    "02-sistemas-distribuidos": {
+      "titulo": "Sistemas distribuidos",
+      "preguntas": [
+        {
+          "prompt": "Durante una partición de red, el teorema CAP obliga a elegir entre…",
+          "options": [
+            "Consistencia y disponibilidad",
+            "Velocidad y seguridad",
+            "Nada: se pueden conservar las tres propiedades"
+          ],
+          "answer": 0,
+          "explanation": "La tolerancia a particiones no es opcional en una red real: las particiones ocurren. Lo que se elige es si seguir respondiendo (disponibilidad) o negarse a responder para no contradecirse (consistencia)."
+        },
+        {
+          "prompt": "La diferencia entre un fallo por caída y un fallo bizantino es que…",
+          "options": [
+            "El bizantino es más lento de detectar, pero ambos son el mismo modelo",
+            "Un nodo caído deja de responder; uno bizantino puede mentir de forma arbitraria",
+            "El bizantino solo ocurre en redes permisionadas"
+          ],
+          "answer": 1,
+          "explanation": "Un nodo caído es silencio; uno bizantino manda información falsa, distinta a cada par, y en el peor momento. Diseñar contra el primero no protege del segundo."
+        },
+        {
+          "prompt": "¿Qué distingue la finalidad probabilística de la económica?",
+          "options": [
+            "La probabilística nunca llega a ser definitiva; la económica hace la reversión ruinosamente cara",
+            "La económica es más rápida pero menos segura",
+            "Son el mismo concepto con distinto nombre según la red"
+          ],
+          "answer": 0,
+          "explanation": "En Bitcoin cada bloque hace la reversión menos probable, sin llegar nunca a cero. En Ethereum PoS revertir un bloque finalizado implica perder el capital depositado por slashing."
+        },
+        {
+          "prompt": "Para ordenar eventos entre nodos, confiar en el reloj del sistema es un error porque…",
+          "options": [
+            "Los relojes derivan y no hay reloj global: hace falta el orden del protocolo o relojes lógicos",
+            "Los relojes del sistema no tienen precisión de milisegundos",
+            "Los timestamps ocupan demasiado espacio en el bloque"
+          ],
+          "answer": 0,
+          "explanation": "Sin reloj global compartido, dos nodos pueden discrepar sobre qué pasó antes. El orden lo fija el protocolo, no la hora de cada máquina."
+        }
+      ]
+    },
+    "03-consenso": {
+      "titulo": "Mecanismos de consenso",
+      "preguntas": [
+        {
+          "prompt": "Desde The Merge (2022), Ethereum funciona con…",
+          "options": [
+            "Proof of Work",
+            "Proof of Stake",
+            "Proof of Authority"
+          ],
+          "answer": 1,
+          "explanation": "La transición ocurrió en septiembre de 2022. Encontrar material que hable de \"minería de Ethereum\" en presente es una señal fiable de que está desactualizado."
+        },
+        {
+          "prompt": "¿Cuál es el recurso anti-Sybil en Proof of Stake?",
+          "options": [
+            "Cómputo: hay que resolver un puzle de hash",
+            "Capital depositado y expuesto a slashing",
+            "Una identidad autorizada por el consorcio"
+          ],
+          "answer": 1,
+          "explanation": "Cada mecanismo ancla el peso a un bien escaso distinto: PoW en cómputo, PoS en capital, PoA en identidad autorizada. Crear mil validadores no da poder si no hay mil depósitos detrás."
+        },
+        {
+          "prompt": "PBFT tolera f nodos bizantinos si el total de participantes es al menos…",
+          "options": [
+            "2f + 1",
+            "3f + 1",
+            "f + 1"
+          ],
+          "answer": 1,
+          "explanation": "Con 3f+1 participantes, los honestos (2f+1) siempre superan a la coalición maliciosa incluso descontando los que no responden. Por eso da finalidad inmediata, a costa de escalar mal en número de nodos."
+        },
+        {
+          "prompt": "Afirmar que Proof of Stake elimina la centralización es incorrecto porque…",
+          "options": [
+            "El capital puede concentrarse en pocos operadores o pools de staking",
+            "PoS necesita más energía que PoW",
+            "En PoS un solo validador decide todos los bloques"
+          ],
+          "answer": 0,
+          "explanation": "Cambia el recurso, no la posibilidad de que se acumule. La distribución real de validadores es un dato que hay que mirar, no suponer."
+        }
+      ]
+    },
+    "04-bitcoin": {
+      "titulo": "Bitcoin y el modelo UTXO",
+      "preguntas": [
+        {
+          "prompt": "Una transacción tiene entradas por 10 000 sat y salidas por 9 800 sat. La comisión es…",
+          "options": [
+            "200 sat",
+            "9 800 sat",
+            "No se puede saber sin conocer la tasa en sat/vB"
+          ],
+          "answer": 0,
+          "explanation": "La comisión no se declara en ningún campo: es lo que sobra entre entradas y salidas, y el minero se lo queda. Por eso una salida de cambio olvidada regala fondos."
+        },
+        {
+          "prompt": "Al comparar el coste de dos transacciones, la tasa correcta se expresa en…",
+          "options": [
+            "Satoshis totales",
+            "sat/vB, usando el tamaño virtual",
+            "Satoshis por entrada"
+          ],
+          "answer": 1,
+          "explanation": "El tamaño virtual descuenta el testigo segregado, que pesa menos en el bloque. Comparar por bytes crudos hace que transacciones SegWit parezcan más caras de lo que son."
+        },
+        {
+          "prompt": "¿Por qué una sola confirmación no debería tratarse como definitiva para un monto alto?",
+          "options": [
+            "Porque la comisión aún puede cambiar",
+            "Porque una reorganización de la cadena puede sustituir bloques recientes",
+            "Porque la transacción sigue en el mempool"
+          ],
+          "answer": 1,
+          "explanation": "Un bloque reciente puede quedar huérfano si aparece una cadena competidora con más trabajo. Cada confirmación adicional hace ese escenario menos probable."
+        },
+        {
+          "prompt": "Decir que una cartera \"contiene\" bitcoins es impreciso porque…",
+          "options": [
+            "Los bitcoins están en el banco emisor",
+            "La cartera guarda claves; los fondos son UTXOs registrados en la cadena",
+            "Los bitcoins solo existen mientras el nodo está encendido"
+          ],
+          "answer": 1,
+          "explanation": "Perder la cartera no borra los UTXOs: siguen en la cadena. Lo que se pierde es la capacidad de firmar el gasto, que es exactamente lo que hace la seed phrase tan crítica."
+        }
+      ]
+    },
+    "05-ethereum-evm": {
+      "titulo": "Ethereum y la EVM",
+      "preguntas": [
+        {
+          "prompt": "¿Qué tipo de cuenta puede iniciar y firmar una transacción?",
+          "options": [
+            "Solo una EOA (cuenta controlada por clave privada)",
+            "Cualquiera de las dos, EOA o contrato",
+            "Solo una cuenta de contrato"
+          ],
+          "answer": 0,
+          "explanation": "Un contrato solo actúa cuando alguien lo invoca; no despierta solo. Toda cadena de llamadas arranca en la firma de una EOA."
+        },
+        {
+          "prompt": "Bajo EIP-1559, la base fee de cada bloque…",
+          "options": [
+            "Va íntegra al validador",
+            "Se quema, y solo la priority fee retribuye al validador",
+            "Se reparte entre todos los nodos de la red"
+          ],
+          "answer": 1,
+          "explanation": "La base fee se destruye y se ajusta según la ocupación del bloque anterior. Mezclarla con la propina es el error más habitual al calcular el coste de una transacción."
+        },
+        {
+          "prompt": "Para saber el valor actual de una variable de un contrato hay que mirar…",
+          "options": [
+            "Los eventos que emitió",
+            "El storage del contrato",
+            "El calldata de la última transacción"
+          ],
+          "answer": 1,
+          "explanation": "El evento describe que algo pasó y es barato e indexable, pero no es el estado. Además, otro contrato no puede leer eventos: solo se consumen off-chain."
+        },
+        {
+          "prompt": "Cuando una transacción revierte…",
+          "options": [
+            "Se deshacen los cambios de estado, pero el gas consumido no se devuelve",
+            "Se devuelve todo el gas porque no se hizo nada",
+            "Los cambios quedan aplicados a medias"
+          ],
+          "answer": 0,
+          "explanation": "El trabajo de cómputo se hizo y hay que pagarlo; lo que se deshace es el efecto. No existe un estado \"a medias\": una transacción se aplica entera o nada."
+        }
+      ]
+    },
+    "06-solidity-foundry": {
+      "titulo": "Solidity y Foundry",
+      "preguntas": [
+        {
+          "prompt": "El patrón checks-effects-interactions ordena una función así:",
+          "options": [
+            "Interactuar con el exterior, validar y luego actualizar estado",
+            "Validar, actualizar el estado y solo al final llamar al exterior",
+            "Actualizar estado, interactuar y validar el resultado"
+          ],
+          "answer": 1,
+          "explanation": "La llamada externa va al final porque cede el control a código ajeno. Si el estado ya está actualizado, un reingreso encuentra la puerta cerrada."
+        },
+        {
+          "prompt": "Basar la contabilidad de una bóveda en `address(this).balance` es frágil porque…",
+          "options": [
+            "Esa función no existe en Solidity",
+            "El balance puede alterarse por vías que la contabilidad interna no registra (por ejemplo, `selfdestruct`)",
+            "Consume demasiado gas al leerse"
+          ],
+          "answer": 1,
+          "explanation": "Es posible forzar ether dentro de un contrato sin pasar por sus funciones. El registro interno debe ser la fuente de verdad, y el fuzzing de invariantes es lo que destapa la diferencia."
+        },
+        {
+          "prompt": "Al actualizar un contrato tras un proxy, cambiar el ORDEN de las variables de estado…",
+          "options": [
+            "Es indiferente: el compilador lo resuelve",
+            "Corrompe los datos, porque cada variable se lee de la ranura de storage que le tocaba",
+            "Solo afecta al coste de gas"
+          ],
+          "answer": 1,
+          "explanation": "El storage se direcciona por número de ranura, no por nombre. Si insertas una variable en medio, el resto se desplaza y cada una lee el dato de otra."
+        },
+        {
+          "prompt": "Frente a `require` con cadena de texto, un custom error…",
+          "options": [
+            "Es más barato en gas y describe el fallo de forma tipada",
+            "Es más caro pero más legible",
+            "Solo funciona en librerías"
+          ],
+          "answer": 0,
+          "explanation": "La cadena de texto se almacena y se transmite en el revert; el custom error se reduce a un selector de 4 bytes y sus parámetros."
+        }
+      ]
+    },
+    "07-dapps": {
+      "titulo": "dApps y wallets",
+      "preguntas": [
+        {
+          "prompt": "Una transacción desaparece del explorador y aparece otra con el mismo nonce y más comisión. Su estado es…",
+          "options": [
+            "reverted",
+            "replaced",
+            "pending para siempre"
+          ],
+          "answer": 1,
+          "explanation": "Dos transacciones con el mismo nonce no pueden coexistir: la de mayor comisión sustituye a la otra. Por eso una interfaz seria sigue el nonce, no solo el hash."
+        },
+        {
+          "prompt": "Conceder un approval por el máximo posible (\"approve infinito\") es peligroso porque…",
+          "options": [
+            "Consume mucho más gas que uno acotado",
+            "Si ese contrato resulta malicioso o es comprometido, puede vaciar todo tu saldo del token",
+            "Impide volver a usar el token en otras aplicaciones"
+          ],
+          "answer": 1,
+          "explanation": "La autorización sobrevive a la operación que la motivó. Acotar el monto y revocar después limita el daño de un contrato que se vuelva hostil más tarde."
+        },
+        {
+          "prompt": "Antes de pedir una firma, la dApp debe validar el chain id porque…",
+          "options": [
+            "El usuario podría estar en otra red y la operación iría a un contrato distinto o inexistente",
+            "El chain id determina el precio del gas",
+            "Sin él la wallet no puede mostrar el saldo"
+          ],
+          "answer": 0,
+          "explanation": "La misma dirección puede tener contratos completamente distintos en cada red. Bloquear la acción hasta que el usuario cambie de red evita una firma irreversible en el sitio equivocado."
+        },
+        {
+          "prompt": "El estándar EIP-712 sirve para…",
+          "options": [
+            "Reducir el gas de las transferencias",
+            "Firmar datos estructurados de forma legible, para que el usuario vea qué autoriza",
+            "Comprimir el calldata"
+          ],
+          "answer": 1,
+          "explanation": "Sin él, la wallet enseña un blob hexadecimal y el usuario firma a ciegas. Con dominio y tipos, ve el contenido real de lo que autoriza."
+        }
+      ]
+    },
+    "08-tokens": {
+      "titulo": "Tokens y estándares",
+      "preguntas": [
+        {
+          "prompt": "Un token sin `cap` (suministro máximo verificable) implica que…",
+          "options": [
+            "No puede listarse en mercados",
+            "La escasez declarada depende de la voluntad de quien tenga el rol de mint",
+            "Su suministro es infinito por definición"
+          ],
+          "answer": 1,
+          "explanation": "La escasez tiene que estar en el código y probada con un test que intente superar el tope y espere un revert. Prometerla en el whitepaper no la hace verificable."
+        },
+        {
+          "prompt": "Una llamada a `permit` (ERC-2612) falla siempre. Los dos sospechosos principales son…",
+          "options": [
+            "`deadline` vencido o `nonce` ya usado",
+            "Saldo insuficiente o token pausado",
+            "Falta de aprobación previa con `approve`"
+          ],
+          "answer": 0,
+          "explanation": "La gracia de `permit` es evitar el `approve` previo. Su firma lleva un plazo y un contador de un solo uso: si cualquiera de los dos no cuadra, la verificación falla."
+        },
+        {
+          "prompt": "Que un NFT implemente ERC-2981 significa que…",
+          "options": [
+            "El contrato retiene y paga la regalía automáticamente en cada venta",
+            "Señala beneficiario y porcentaje, pero el pago depende de que el mercado lo respete",
+            "Las regalías quedan garantizadas por el protocolo"
+          ],
+          "answer": 1,
+          "explanation": "Es una interfaz de consulta, no de cobro. Un mercado puede leerla y ordenar el pago, o ignorarla por completo — y varios lo han hecho."
+        },
+        {
+          "prompt": "En una bóveda ERC-4626, confundir `shares` con activos lleva a errores porque…",
+          "options": [
+            "Las shares siempre valen la mitad",
+            "La proporción entre ambos cambia según el rendimiento acumulado de la bóveda",
+            "Las shares no son transferibles"
+          ],
+          "answer": 1,
+          "explanation": "Cien shares no son cien activos salvo al inicio. Las conversiones se hacen con `convertToAssets` y `convertToShares`, nunca a ojo."
+        }
+      ]
+    },
+    "09-seguridad": {
+      "titulo": "Seguridad y auditoría",
+      "preguntas": [
+        {
+          "prompt": "En un ataque de reentrancia clásico, la línea que habilita el drenaje es…",
+          "options": [
+            "La llamada externa que se hace ANTES de actualizar el saldo",
+            "La comprobación de saldo suficiente",
+            "La emisión del evento de retiro"
+          ],
+          "answer": 0,
+          "explanation": "Al enviar ether antes de poner el saldo a cero, el contrato receptor reingresa mientras el registro aún dice que tiene fondos, y repite el retiro."
+        },
+        {
+          "prompt": "Un `delegatecall` es especialmente peligroso porque el código llamado…",
+          "options": [
+            "Se ejecuta sobre el almacenamiento del contrato que llama",
+            "No consume gas y puede repetirse sin límite",
+            "Se ejecuta siempre con permisos de administrador"
+          ],
+          "answer": 0,
+          "explanation": "Es lo que permite los proxies actualizables y, a la vez, lo que hace que una colisión de layout o una implementación hostil pueda reescribir el estado entero."
+        },
+        {
+          "prompt": "Que Slither no reporte hallazgos significa que…",
+          "options": [
+            "El contrato es seguro",
+            "No se detectaron patrones conocidos; las invariantes de negocio siguen sin verificarse",
+            "El análisis falló y hay que repetirlo"
+          ],
+          "answer": 1,
+          "explanation": "El análisis estático busca patrones catalogados. Que tu lógica de negocio permita que alguien retire el doble de lo que depositó no es un patrón: es una invariante que hay que escribir y probar."
+        },
+        {
+          "prompt": "Para que una firma no pueda reutilizarse en otra cadena o contrato hace falta incluir…",
+          "options": [
+            "Un timestamp",
+            "chainId y nonce (dominio EIP-712)",
+            "La dirección del receptor"
+          ],
+          "answer": 1,
+          "explanation": "Sin el chainId, la misma firma vale en cualquier red donde exista el contrato; sin nonce, vale infinitas veces. El dominio EIP-712 ata la firma a un contexto único."
+        }
+      ]
+    },
+    "10-oraculos-indexacion": {
+      "titulo": "Oráculos e indexación",
+      "preguntas": [
+        {
+          "prompt": "Un contrato debe rechazar un precio del oráculo más viejo que cierto `maxAge` porque…",
+          "options": [
+            "Los datos antiguos consumen más gas",
+            "Un dato congelado puede ser tan dañino como uno falso si el mercado ya se movió",
+            "El oráculo cobra por dato antiguo"
+          ],
+          "answer": 1,
+          "explanation": "Si el feed dejó de actualizarse, el contrato sigue liquidando con un precio que ya no existe. Validar el timestamp de la última ronda es tan importante como validar el valor."
+        },
+        {
+          "prompt": "Frente al precio spot, un TWAP es más resistente porque…",
+          "options": [
+            "Se actualiza más a menudo",
+            "Promedia en el tiempo, así que mover el precio un solo bloque apenas lo altera",
+            "Lo publica una autoridad regulada"
+          ],
+          "answer": 1,
+          "explanation": "Manipular un spot cuesta un bloque de liquidez prestada; mover un TWAP exige sostener el precio muchos bloques, lo que multiplica el costo del ataque."
+        },
+        {
+          "prompt": "¿Puede un contrato leer un evento emitido por otro contrato?",
+          "options": [
+            "Sí, con la ABI adecuada",
+            "No: los logs no son accesibles desde la EVM, solo se consumen off-chain",
+            "Sí, pero solo dentro de la misma transacción"
+          ],
+          "answer": 1,
+          "explanation": "Los eventos son baratos precisamente porque viven fuera del estado accesible. Si otro contrato necesita el dato, tiene que estar en storage."
+        },
+        {
+          "prompt": "Un CID de IPFS garantiza…",
+          "options": [
+            "Que el contenido no ha cambiado, pero no que alguien lo siga alojando",
+            "Que el archivo estará disponible para siempre",
+            "Que el autor del contenido está identificado"
+          ],
+          "answer": 0,
+          "explanation": "El CID deriva del hash del contenido: integridad, sí. La permanencia depende del pinning o de pagar persistencia en Arweave o Filecoin."
+        }
+      ]
+    },
+    "11-dao-gobernanza": {
+      "titulo": "DAO y gobernanza",
+      "preguntas": [
+        {
+          "prompt": "Leer el poder de voto con `getPastVotes` en un bloque anterior sirve para evitar…",
+          "options": [
+            "Que se vote dos veces la misma propuesta",
+            "Que alguien tome tokens prestados por un instante y vote con ellos",
+            "Que el quorum se calcule mal"
+          ],
+          "answer": 1,
+          "explanation": "Es la defensa contra la gobernanza por flash loan: si el poder se mide en un bloque ya pasado, comprar influencia justo antes de votar deja de funcionar."
+        },
+        {
+          "prompt": "El timelock entre aprobación y ejecución existe para…",
+          "options": [
+            "Dar tiempo a que se sumen más votos",
+            "Dar a quien esté en desacuerdo margen para reaccionar o salir antes de que se ejecute",
+            "Reducir el coste de gas de la ejecución"
+          ],
+          "answer": 1,
+          "explanation": "Sin demora, una propuesta hostil aprobada por sorpresa se ejecuta antes de que nadie pueda mirarla. El timelock convierte la decisión en algo observable."
+        },
+        {
+          "prompt": "Un titular de tokens ERC-20Votes no ve su poder de voto reflejado. La causa más probable es…",
+          "options": [
+            "No ha delegado, ni siquiera a sí mismo",
+            "Sus tokens están bloqueados por el timelock",
+            "No alcanza el quorum mínimo individual"
+          ],
+          "answer": 0,
+          "explanation": "ERC-20Votes exige delegación explícita; tener el saldo no basta. Es la causa número uno de participación baja en DAOs recién lanzadas."
+        },
+        {
+          "prompt": "Un voto en Snapshot (off-chain) se diferencia del voto on-chain en que…",
+          "options": [
+            "Es vinculante pero más lento",
+            "Señaliza la preferencia sin ejecutar nada por sí mismo",
+            "Requiere más gas"
+          ],
+          "answer": 1,
+          "explanation": "Ahorra gas y facilita participar, pero alguien tiene que llevar el resultado a la cadena. Ese paso es exactamente donde se cuela la discrecionalidad."
+        }
+      ]
+    },
+    "12-escalabilidad": {
+      "titulo": "Escalabilidad y L2",
+      "preguntas": [
+        {
+          "prompt": "Un optimistic rollup retrasa los retiros hacia L1 porque…",
+          "options": [
+            "La L1 va saturada",
+            "Existe un challenge period (~7 días) durante el cual se puede impugnar la transición",
+            "Hay que generar una prueba criptográfica, que es lenta"
+          ],
+          "answer": 1,
+          "explanation": "El modelo asume validez salvo prueba en contra, así que necesita una ventana para que alguien presente el fraud proof. Los ZK rollups no la necesitan porque la prueba viaja con el lote."
+        },
+        {
+          "prompt": "Lo que separa un validium de un ZK rollup es…",
+          "options": [
+            "El tipo de prueba criptográfica",
+            "Dónde viven los datos: fuera de la L1 en el validium, con un supuesto extra de disponibilidad",
+            "La velocidad de generación de bloques"
+          ],
+          "answer": 1,
+          "explanation": "Ambos usan validity proofs. Si los datos no están en L1 y el comité que los guarda se niega a entregarlos, nadie puede reconstruir el estado para retirar sus fondos."
+        },
+        {
+          "prompt": "Sobre el estado actual del danksharding, lo correcto es decir que…",
+          "options": [
+            "Está completo desde Dencun (2024)",
+            "Hoy existen blobs (EIP-4844); el sharding de datos completo sigue en roadmap",
+            "Fue descartado del roadmap de Ethereum"
+          ],
+          "answer": 1,
+          "explanation": "Dencun trajo espacio de datos efímero y barato para rollups, que es el primer paso. Confundir el paso con el destino es un error muy repetido en material divulgativo."
+        },
+        {
+          "prompt": "Un secuenciador único es un riesgo porque puede…",
+          "options": [
+            "Censurar o reordenar transacciones, salvo que exista inclusión forzada",
+            "Robar directamente los fondos de la L2",
+            "Cambiar las reglas de consenso de la L1"
+          ],
+          "answer": 0,
+          "explanation": "No puede falsificar estado si la prueba y los datos están bien, pero sí decidir qué entra y en qué orden. El escape hatch es lo que devuelve al usuario la salida."
+        }
+      ]
+    },
+    "13-interoperabilidad": {
+      "titulo": "Interoperabilidad y puentes",
+      "preguntas": [
+        {
+          "prompt": "Comparado con lock-and-mint, el esquema burn-and-mint…",
+          "options": [
+            "No acumula un pozo custodiado en la cadena de origen",
+            "Es más rápido pero menos seguro",
+            "No necesita verificación de mensajes"
+          ],
+          "answer": 0,
+          "explanation": "El contrato que bloquea fondos en lock-and-mint concentra todo el valor del puente en un punto: es el objetivo de los mayores robos del sector."
+        },
+        {
+          "prompt": "Verificar mensajes con un light client, en vez de con un conjunto externo de firmantes, aporta…",
+          "options": [
+            "Menor coste de gas",
+            "Verificación del consenso de la otra cadena, sin confiar en un grupo de guardianes",
+            "Compatibilidad con más cadenas"
+          ],
+          "answer": 1,
+          "explanation": "Es más caro y más difícil de implementar, pero el supuesto de confianza baja a la seguridad de la propia cadena en vez de a \"que la mayoría de N firmantes sea honesta\"."
+        },
+        {
+          "prompt": "Actuar sobre un mensaje cross-chain antes de que la cadena de origen alcance finalidad expone a…",
+          "options": [
+            "Comisiones más altas",
+            "Que la cadena de origen se reorganice y el mensaje deje de ser válido, tras haber acuñado en destino",
+            "Un fallo de codificación de la ABI"
+          ],
+          "answer": 1,
+          "explanation": "Cada cadena tiene su propio tipo y tiempo de finalidad. Acuñar contra un bloque que luego desaparece crea tokens sin respaldo."
+        },
+        {
+          "prompt": "Que un puente tenga mucho TVL indica…",
+          "options": [
+            "Que es seguro: el mercado lo ha validado",
+            "Cuánto valor hay en juego, no qué modelo de confianza tiene",
+            "Que ha sido auditado"
+          ],
+          "answer": 1,
+          "explanation": "Los puentes más atacados de la historia tenían TVL alto justo antes del robo. Liquidez y seguridad son ejes distintos."
+        }
+      ]
+    },
+    "14-privacidad-zk": {
+      "titulo": "Privacidad y ZK",
+      "preguntas": [
+        {
+          "prompt": "Una prueba de conocimiento cero demuestra…",
+          "options": [
+            "Que un enunciado es cierto, sin revelar nada más allá de su validez",
+            "Que quien la genera es una persona autorizada",
+            "Que los datos de entrada son verdaderos en el mundo real"
+          ],
+          "answer": 0,
+          "explanation": "Prueba una relación matemática. Si el dato de partida era falso pero satisface el circuito, la prueba sale válida igual: hay que mirar quién certificó la entrada."
+        },
+        {
+          "prompt": "La diferencia práctica entre SNARK y STARK más relevante al elegir es…",
+          "options": [
+            "El STARK es transparente (sin trusted setup) y post-cuántico, con pruebas más grandes",
+            "El SNARK no necesita verificador on-chain",
+            "El STARK solo funciona en Ethereum"
+          ],
+          "answer": 0,
+          "explanation": "El SNARK suele dar pruebas pequeñas y verificación barata a cambio de un setup y de supuestos sobre curvas elípticas. Es una decisión de requisitos, no de moda."
+        },
+        {
+          "prompt": "El \"toxic waste\" de un trusted setup es peligroso porque, si no se destruye…",
+          "options": [
+            "Se pueden descifrar los witness de otros usuarios",
+            "Se pueden fabricar pruebas válidas de enunciados falsos",
+            "El verificador deja de funcionar"
+          ],
+          "answer": 1,
+          "explanation": "Quien conserve esos secretos puede convencer al verificador de cualquier cosa. Por eso las ceremonias son multiparte: basta que un participante haya sido honesto."
+        },
+        {
+          "prompt": "Usar ZK en una aplicación NO oculta automáticamente…",
+          "options": [
+            "El witness privado",
+            "Los metadatos: momentos, direcciones que interactúan, importes agregados",
+            "El contenido del circuito"
+          ],
+          "answer": 1,
+          "explanation": "El patrón de uso sigue siendo público. Un conjunto de anonimato pequeño y unos horarios regulares reidentifican a un usuario sin romper ni una sola prueba."
+        }
+      ]
+    },
+    "15-arquitectura-avanzada": {
+      "titulo": "Arquitectura avanzada",
+      "preguntas": [
+        {
+          "prompt": "La diferencia entre ERC-4337 y EIP-7702 es que…",
+          "options": [
+            "ERC-4337 usa UserOperations vía EntryPoint; EIP-7702 permite a una EOA delegar en código de contrato",
+            "Son el mismo estándar con distinto número",
+            "EIP-7702 sustituyó por completo a ERC-4337"
+          ],
+          "answer": 0,
+          "explanation": "Conviven: uno construye la smart account desde fuera del protocolo, el otro (Pectra, 2025) da capacidades de contrato a la EOA que ya tienes."
+        },
+        {
+          "prompt": "Un paymaster sin límites de patrocinio es explotable porque…",
+          "options": [
+            "Consume el gas del usuario igualmente",
+            "Cualquiera puede quemar sus fondos generando operaciones que él paga",
+            "Impide que la UserOperation llegue al EntryPoint"
+          ],
+          "answer": 1,
+          "explanation": "Patrocinar gas es regalar dinero bajo condiciones. Si las condiciones no se validan y no hay cuotas, el saldo dura lo que tarde alguien en automatizar el abuso."
+        },
+        {
+          "prompt": "PBS (proposer-builder separation) busca…",
+          "options": [
+            "Acelerar la propagación de bloques",
+            "Separar quién construye el bloque de quién lo propone, para limitar la extracción de MEV",
+            "Eliminar la necesidad de validadores"
+          ],
+          "answer": 1,
+          "explanation": "No elimina el MEV: reconoce que existe y lo canaliza a un mercado, de modo que un validador doméstico no quede en desventaja frente a uno sofisticado."
+        },
+        {
+          "prompt": "Definir invariantes de tokenomics y probarlas sirve para…",
+          "options": [
+            "Cumplir con la regulación",
+            "Detectar que un incentivo se rompió, en vez de descubrirlo cuando el sistema ya se vació",
+            "Reducir el coste de gas de la emisión"
+          ],
+          "answer": 1,
+          "explanation": "\"El suministro nunca disminuye salvo por quema\" es comprobable con fuzzing. Sin esa red, el fallo económico solo se ve cuando ya ocurrió."
+        }
+      ]
+    },
+    "16-infraestructura-nodos": {
+      "titulo": "Infraestructura y nodos",
+      "preguntas": [
+        {
+          "prompt": "Un nodo \"nunca termina de sincronizar\". El sospechoso número uno es…",
+          "options": [
+            "Ancho de banda insuficiente",
+            "Un disco sin IOPS suficientes (HDD o SSD de red lento)",
+            "Poca memoria RAM"
+          ],
+          "answer": 1,
+          "explanation": "La sincronización son millones de lecturas aleatorias pequeñas. Es el patrón que peor tolera un disco mecánico o un volumen de red, y por eso NVMe no es una recomendación sino un requisito."
+        },
+        {
+          "prompt": "El puerto RPC (8545) expuesto a internet es un error porque…",
+          "options": [
+            "Consume demasiado ancho de banda",
+            "Permite a cualquiera consultar y, según la configuración, operar contra el nodo; solo el P2P debe ser público",
+            "Impide que el nodo alcance sus pares"
+          ],
+          "answer": 1,
+          "explanation": "El P2P necesita ser alcanzable para participar en la red; el RPC es la puerta de administración y va por red interna o autenticado."
+        },
+        {
+          "prompt": "Si se pierde por completo la máquina de un nodo, lo irrecuperable es…",
+          "options": [
+            "El estado de la cadena, que habría que reconstruir manualmente",
+            "Las claves de firma, si no estaban en HSM/MPC o hardware wallet",
+            "La configuración de los pares"
+          ],
+          "answer": 1,
+          "explanation": "El nodo es reconstruible: se vuelve a sincronizar. Las claves no. Por eso nunca deben vivir en el mismo sitio que el servicio."
+        },
+        {
+          "prompt": "Una factura de nube muy por encima de lo presupuestado suele explicarse por…",
+          "options": [
+            "El egreso de datos y los snapshots, que no aparecen en la calculadora de la VM",
+            "El precio de la CPU",
+            "Las licencias del cliente de ejecución"
+          ],
+          "answer": 0,
+          "explanation": "Servir RPC público es tráfico saliente, y se factura aparte. Es la partida que convierte un presupuesto razonable en una sorpresa mensual."
+        }
+      ]
+    },
+    "17-blockchain-en-la-empresa": {
+      "titulo": "Blockchain en la empresa",
+      "preguntas": [
+        {
+          "prompt": "El beneficio empresarial más medible de una red compartida entre organizaciones suele ser…",
+          "options": [
+            "La eliminación del trabajo de conciliación entre sus registros",
+            "El ahorro en servidores",
+            "La velocidad de las transacciones"
+          ],
+          "answer": 0,
+          "explanation": "Si cada parte mantiene su propia versión de la verdad, alguien paga por cuadrarlas. Un estado compartido borra ese trabajo, y eso sí se puede cuantificar en horas y euros."
+        },
+        {
+          "prompt": "La lección principal del cierre de TradeLens es que…",
+          "options": [
+            "La tecnología no estaba madura",
+            "Faltó modelo de negocio y gobernanza: no bastaba con que funcionara",
+            "La red era demasiado lenta para el volumen"
+          ],
+          "answer": 1,
+          "explanation": "El proyecto funcionaba técnicamente. Murió porque los competidores no quisieron sumarse a una red gobernada por un rival: el salto de piloto a producción es de gobernanza, no de código."
+        },
+        {
+          "prompt": "Un presupuesto que solo contempla el desarrollo omite, como mínimo…",
+          "options": [
+            "Auditoría, infraestructura, cumplimiento y operación continua",
+            "El coste de las licencias de software",
+            "La formación del equipo comercial"
+          ],
+          "answer": 0,
+          "explanation": "La auditoría de un contrato serio y la operación 24/7 pesan tanto como construirlo. El TCO es lo que decide si el caso de negocio se sostiene."
+        },
+        {
+          "prompt": "En Chile, el marco que hay que considerar desde el diseño de un proyecto con activos digitales es…",
+          "options": [
+            "Únicamente la normativa tributaria del SII",
+            "La Ley Fintech 21.521 y la supervisión de la CMF",
+            "No existe marco aplicable todavía"
+          ],
+          "answer": 1,
+          "explanation": "Incorporar al regulador al final es la lección de Libra/Diem. En el caso chileno la Ley Fintech define qué actividades requieren registro y autorización."
+        }
+      ]
+    },
+    "18-implementacion-empresarial": {
+      "titulo": "Implementación empresarial",
+      "preguntas": [
+        {
+          "prompt": "Las pantallas de una aplicación empresarial deben leer el estado desde…",
+          "options": [
+            "Un `eth_call` en cada clic del usuario",
+            "Una base de datos de lectura alimentada por el indexador",
+            "El mempool del nodo"
+          ],
+          "answer": 1,
+          "explanation": "Consultar la cadena por cada interacción es lento, caro y frágil ante la caída del RPC. El indexador convierte eventos en datos consultables con latencia de base de datos."
+        },
+        {
+          "prompt": "Un guarded launch consiste en…",
+          "options": [
+            "Lanzar en testnet durante seis meses",
+            "Salir a producción con límites por transacción y por día, que se amplían con evidencia",
+            "Contratar un seguro contra hackeos"
+          ],
+          "answer": 1,
+          "explanation": "Acota cuánto puede perderse mientras el sistema todavía no tiene historial. Los caps se fijan antes de mainnet, no después del primer susto."
+        },
+        {
+          "prompt": "La separación de deberes en la operación implica que…",
+          "options": [
+            "Quien despliega el contrato no es quien firma los movimientos de fondos",
+            "Cada equipo tiene su propia red",
+            "El auditor externo custodia una de las claves"
+          ],
+          "answer": 0,
+          "explanation": "Ninguna persona sola debe poder mover fondos. La política M-de-N convierte un error individual o una coacción en algo insuficiente por sí mismo."
+        },
+        {
+          "prompt": "El middleware simula la transacción con `eth_call` antes de firmarla para…",
+          "options": [
+            "Ahorrar gas en la transacción real",
+            "Detectar que fallaría, y aplicar reglas de negocio y cumplimiento antes de comprometer la firma",
+            "Acelerar su inclusión en el bloque"
+          ],
+          "answer": 1,
+          "explanation": "Una transacción que revierte cuesta gas y ensucia la operación. Simular primero convierte un fallo en producción en una validación previa barata."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "appId": "dev.vladimiracuna.blockchainlearningpath",
+  "appName": "Blockchain Learning Path",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

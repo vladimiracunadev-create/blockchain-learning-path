@@ -1,0 +1,20 @@
+# Propietarios por defecto de todo el repositorio.
+# GitHub pide su revisión automáticamente en cada pull request.
+*                       @vladimiracunadev-create
+
+# El contenido pedagógico y la evaluación definen el producto: cualquier cambio
+# ahí altera lo que aprende el alumno, no solo cómo está escrito.
+/curriculum/            @vladimiracunadev-create
+/assessments/           @vladimiracunadev-create
+/labs/                  @vladimiracunadev-create
+
+# Contratos y retos de seguridad: código deliberadamente vulnerable conviviendo
+# con código de referencia. Una edición descuidada aquí enseña lo contrario.
+/security-challenges/   @vladimiracunadev-create
+/projects/              @vladimiracunadev-create
+
+# Cadena de construcción y publicación: CI, sitio, manual y binarios.
+/.github/               @vladimiracunadev-create
+/scripts/               @vladimiracunadev-create
+/apps/desktop/          @vladimiracunadev-create
+/apps/android/          @vladimiracunadev-create

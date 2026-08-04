@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 const hash = (value) => createHash("sha256").update(value).digest("hex");
 
@@ -14,7 +15,7 @@ export function merkleRoot(values) {
   return level[0];
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (ejecutadoDirectamente(import.meta.url)) {
   const transactions = ["A→B:2", "B→C:1", "C→D:0.5"];
   console.log({ transactions, root: merkleRoot(transactions) });
 }

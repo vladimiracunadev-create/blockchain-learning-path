@@ -1,0 +1,19 @@
+{
+  "name": "@blockchain-course/android",
+  "version": "0.7.0",
+  "private": true,
+  "description": "Curso completo de blockchain para leer sin conexión en Android",
+  "type": "module",
+  "scripts": {
+    "sync": "node preparar.mjs && cap sync android",
+    "abrir": "cap open android",
+    "apk": "cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/core": "^7.4.4"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.4"
+  }
+}

@@ -2,6 +2,7 @@
 
 > **Nivel:** Inicial · ⏱️ **Duración estimada:** 120 min · **Fuente:** *Serious Cryptography* (Aumasson) y *Introduction to Modern Cryptography* (Katz, Lindell)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
+> 🧭 ⬅️ **Anterior:** [00 · Orientación](../00-orientacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [02 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)
 
 ---
 
