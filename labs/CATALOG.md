@@ -30,8 +30,8 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 | 06 | Prueba de inclusión Merkle | inicial | **auto** | [01](../curriculum/01-criptografia/README.md) | [ver](guides/01-foundations.md) |
 | 07 | Firma y verificación Ed25519 | inicial | **auto** | [01](../curriculum/01-criptografia/README.md) | [ver](guides/01-foundations.md) |
 | 08 | Amenazas de custodia de claves | inicial | threat model | [01](../curriculum/01-criptografia/README.md) | [ver](guides/01-foundations.md) |
-| 09 | Propagación P2P con retrasos | inicial | simulación | [02](../curriculum/02-sistemas-distribuidos/README.md) | [ver](guides/01-foundations.md) |
-| 10 | Partición y reconciliación | inicial | informe | [02](../curriculum/02-sistemas-distribuidos/README.md) | [ver](guides/01-foundations.md) |
+| 09 | Propagación P2P con retrasos | inicial | **auto** | [02](../curriculum/02-sistemas-distribuidos/README.md) | [ver](guides/01-foundations.md) |
+| 10 | Partición y reconciliación | inicial | **auto** | [02](../curriculum/02-sistemas-distribuidos/README.md) | [ver](guides/01-foundations.md) |
 
 ## Prácticas 11–20 · Consenso y Bitcoin
 
@@ -41,7 +41,7 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 |---:|---|---|---|---|---|
 | 11 | Proof of Work y dificultad | inicial | **auto** | [03](../curriculum/03-consenso/README.md) | [ver](guides/02-consensus-bitcoin.md) |
 | 12 | Comparación PoW, PoS y BFT | inicial | matriz | [03](../curriculum/03-consenso/README.md) | [ver](guides/02-consensus-bitcoin.md) |
-| 13 | Construcción de una mini blockchain | intermedio | proyecto | [03](../curriculum/03-consenso/README.md) | [ver](guides/02-consensus-bitcoin.md) |
+| 13 | Construcción de una mini blockchain | intermedio | **auto** | [03](../curriculum/03-consenso/README.md) | [ver](guides/02-consensus-bitcoin.md) |
 | 14 | Detección de bloque alterado | intermedio | **auto** | [03](../curriculum/03-consenso/README.md) | [ver](guides/02-consensus-bitcoin.md) |
 | 15 | Selección de UTXO | intermedio | **auto** | [04](../curriculum/04-bitcoin/README.md) | [ver](guides/02-consensus-bitcoin.md) |
 | 16 | Comisión y cambio Bitcoin | intermedio | **auto** | [04](../curriculum/04-bitcoin/README.md) | [ver](guides/02-consensus-bitcoin.md) |
@@ -62,9 +62,9 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 | 24 | Eventos y topics | intermedio | **auto** | [05](../curriculum/05-ethereum-evm/README.md) | [ver](guides/03-evm-development.md) |
 | 25 | Storage, memory y calldata | intermedio | medición | [05](../curriculum/05-ethereum-evm/README.md) | [ver](guides/03-evm-development.md) |
 | 26 | Estimación y comparación de gas | intermedio | tabla | [05](../curriculum/05-ethereum-evm/README.md) | [ver](guides/03-evm-development.md) |
-| 27 | Vault: depósito y retiro | intermedio | Foundry | [06](../curriculum/06-solidity-foundry/README.md) | [ver](guides/03-evm-development.md) |
-| 28 | Vault: fuzzing e invariantes | intermedio | Foundry | [06](../curriculum/06-solidity-foundry/README.md) | [ver](guides/03-evm-development.md) |
-| 29 | Cliente de lectura con viem | intermedio | TypeScript | [07](../curriculum/07-dapps/README.md) | [ver](guides/03-evm-development.md) |
+| 27 | Vault: depósito y retiro | intermedio | **auto** | [06](../curriculum/06-solidity-foundry/README.md) | [ver](guides/03-evm-development.md) |
+| 28 | Vault: fuzzing e invariantes | intermedio | **auto** | [06](../curriculum/06-solidity-foundry/README.md) | [ver](guides/03-evm-development.md) |
+| 29 | Cliente de lectura con viem | intermedio | **auto** | [07](../curriculum/07-dapps/README.md) | [ver](guides/03-evm-development.md) |
 | 30 | Flujo seguro de conexión de wallet | intermedio | interfaz | [07](../curriculum/07-dapps/README.md) | [ver](guides/03-evm-development.md) |
 
 ## Prácticas 31–40 · Profesional y seguridad
@@ -73,12 +73,12 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 
 | # | Práctica | Nivel | Evidencia | Módulo | Resolución |
 |---:|---|---|---|---|---|
-| 31 | Estados de una transacción | intermedio | máquina de estados | [07](../curriculum/07-dapps/README.md) | [ver](guides/04-professional-security.md) |
-| 32 | ERC-20 con roles | profesional | Foundry | [08](../curriculum/08-tokens/README.md) | [ver](guides/04-professional-security.md) |
-| 33 | Allowance y permit | profesional | threat model | [08](../curriculum/08-tokens/README.md) | [ver](guides/04-professional-security.md) |
+| 31 | Estados de una transacción | intermedio | **auto** | [07](../curriculum/07-dapps/README.md) | [ver](guides/04-professional-security.md) |
+| 32 | ERC-20 con roles | profesional | **auto** | [08](../curriculum/08-tokens/README.md) | [ver](guides/04-professional-security.md) |
+| 33 | Allowance y permit | profesional | **auto** | [08](../curriculum/08-tokens/README.md) | [ver](guides/04-professional-security.md) |
 | 34 | ERC-721 y metadatos | profesional | contrato | [08](../curriculum/08-tokens/README.md) | [ver](guides/04-professional-security.md) |
-| 35 | Indexador de eventos | profesional | servicio | [10](../curriculum/10-oraculos-indexacion/README.md) | [ver](guides/04-professional-security.md) |
-| 36 | Oráculo y dato obsoleto | profesional | pruebas | [10](../curriculum/10-oraculos-indexacion/README.md) | [ver](guides/04-professional-security.md) |
+| 35 | Indexador de eventos | profesional | **auto** | [10](../curriculum/10-oraculos-indexacion/README.md) | [ver](guides/04-professional-security.md) |
+| 36 | Oráculo y dato obsoleto | profesional | **auto** | [10](../curriculum/10-oraculos-indexacion/README.md) | [ver](guides/04-professional-security.md) |
 | 37 | Reentrancia | profesional | **auto** · exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
 | 38 | Control de acceso | profesional | **auto** · exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
 | 39 | Manipulación de oráculo | profesional | **auto** · exploit + fix | [09](../curriculum/09-seguridad/README.md) | [ver](guides/04-professional-security.md) |
@@ -94,7 +94,7 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 | 42 | Colisión de storage en proxy | profesional | **auto** · storage layout | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 43 | Auditoría completa del Vault | profesional | reporte | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 44 | Multisig y timelock | profesional | política | [11](../curriculum/11-dao-gobernanza/README.md) | [ver](guides/05-advanced-capstone.md) |
-| 45 | Propuesta y voto DAO | profesional | simulación | [11](../curriculum/11-dao-gobernanza/README.md) | [ver](guides/05-advanced-capstone.md) |
+| 45 | Propuesta y voto DAO | profesional | **auto** | [11](../curriculum/11-dao-gobernanza/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 46 | Comparación de rollups | avanzado | ADR | [12](../curriculum/12-escalabilidad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 47 | Modelo de amenazas de puente | avanzado | threat model | [13](../curriculum/13-interoperabilidad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 48 | Prueba ZK conceptual | avanzado | diseño | [14](../curriculum/14-privacidad-zk/README.md) | [ver](guides/05-advanced-capstone.md) |

@@ -29,6 +29,7 @@ Cada vulnerabilidad se demuestra dos veces: un PoC que la explota y un parche co
 - **Estructura de la respuesta:** máquina de estados con transiciones etiquetadas.
 - **Criterio de aceptación:** incluye reemplazo (RBF) y revertido como caminos distintos de confirmado.
 - **Error común:** tratar "enviado" como final → aún puede reemplazarse o revertir.
+- **Verificación ejecutable:** `pnpm lab:tx` imprime la máquina de estados y `node --test labs/07-dapps/tx-lifecycle.test.mjs` comprueba que desde `pendiente` hay cuatro finales posibles y que ningún estado se queda sin salida.
 
 ## 32 · ERC-20 con roles
 
@@ -51,6 +52,7 @@ Cada vulnerabilidad se demuestra dos veces: un PoC que la explota y un parche co
 - **Estructura de la respuesta:** threat model con activo, amenaza (allowance persistente) y los tres controles.
 - **Criterio de aceptación:** propone aprobación exacta, revocación y permit con nonce/deadline.
 - **Error común:** aprobar ilimitado "por comodidad" → la allowance sobrevive a la operación.
+- **Verificación ejecutable:** `node --test labs/07-dapps/token-amounts.test.mjs` comprueba que una allowance infinita expone el saldo entero y que lo recomendable es autorizar exactamente lo necesario.
 
 ## 34 · ERC-721 y metadatos
 

@@ -166,6 +166,7 @@ La firma autentica una clave, no una identidad legal.
 - **Estructura de la respuesta:** tabla de orden de recepción por nodo + una frase que separe propagación de consenso.
 - **Criterio de aceptación:** diferencia propagación (llegar a todos) de consenso (acordar un orden).
 - **Error común:** creer que recibir el mensaje ya es acordarlo → falta la regla de decisión.
+- **Verificación ejecutable:** `pnpm lab:p2p` simula la red con latencias y `node --test labs/02-consensus/p2p-propagation.test.mjs` comprueba que cada nodo se queda con el camino más rápido y que dos bloques simultáneos parten la red.
 
 ## 10 · Partición y reconciliación
 
@@ -177,6 +178,7 @@ La firma autentica una clave, no una identidad legal.
 - **Estructura de la respuesta:** informe con las dos ramas, la regla de reconciliación y la decisión seguridad/vivacidad.
 - **Criterio de aceptación:** explica cuándo una rama puede descartarse sin violar seguridad.
 - **Error común:** descartar la rama minoritaria sin regla → reorganización arbitraria, no consenso.
+- **Verificación ejecutable:** `pnpm lab:particion` reproduce el corte y la reconciliación; `node --test labs/02-consensus/partition-reconciliation.test.mjs` comprueba que gana la cadena con más trabajo (aunque sea más corta) y que las transacciones del lado perdedor quedan huérfanas.
 
 ## 🧭 Navegación
 

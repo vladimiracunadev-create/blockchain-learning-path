@@ -151,6 +151,7 @@ Traza: Deposit(usuario, monto) → balance += monto ; Withdraw → balance -= mo
 - **Estructura de la respuesta:** script TypeScript con los tres caminos de error controlados.
 - **Criterio de aceptación:** lee el dato y degrada con un mensaje claro en cada fallo.
 - **Error común:** asumir que el RPC siempre responde → sin manejo, la app se rompe en silencio.
+- **Verificación ejecutable:** `pnpm lab:montos` y `node --test labs/07-dapps/token-amounts.test.mjs` comprueban la conversión según los `decimals` reales del token y que nunca se trunca en silencio.
 
 ## 30 · Flujo seguro de conexión de wallet
 

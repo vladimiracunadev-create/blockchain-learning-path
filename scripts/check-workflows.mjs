@@ -13,7 +13,9 @@ import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const DIRECTORIO = ".github/workflows";
-const IDENTIFICADOR_INVALIDO = /^\s*([A-Za-z_][A-Za-z0-9_]*[^\x00-\x7F][A-Za-z0-9_À-ɏ]*)=/;
+// Un nombre que empieza como identificador válido pero contiene algún carácter
+// fuera del ASCII imprimible: `versión`, `tamaño`, `año`…
+const IDENTIFICADOR_INVALIDO = /^\s*([A-Za-z_][A-Za-z0-9_]*[^ -~][A-Za-z0-9_À-ɏ]*)=/;
 const problemas = [];
 
 for (const archivo of await readdir(DIRECTORIO)) {

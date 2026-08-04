@@ -228,6 +228,30 @@ if (Number(declarado[1]) !== total || Number(declarado[2]) !== pruebas.node || N
 }
 console.log(`Pruebas: ${total} (${pruebas.node} Node + ${pruebas.foundry} Foundry) — coincide con lo documentado.`);
 
+// --- Prácticas con verificación ejecutable ------------------------------------
+// El catálogo marca **auto** las prácticas que traen comprobación automática. Es
+// la promesa que más importa a quien estudia sin instructor, así que el número no
+// puede vivir suelto en el README: se cuenta del catálogo y se contrasta.
+// Se cuentan FILAS de práctica, no apariciones del texto: la leyenda y el párrafo
+// introductorio también dicen "**auto**" y antes inflaban el total.
+const catalogo = await readFile("labs/CATALOG.md", "utf8");
+const filasPractica = catalogo.match(/^\| \d+ \|.*$/gm) ?? [];
+const practicasAuto = filasPractica.filter((fila) => fila.includes("**auto**")).length;
+if (filasPractica.length !== 50) {
+  throw new Error(`El catálogo tiene ${filasPractica.length} prácticas y deberían ser 50.`);
+}
+const readmeAuto = /(\d+) de las 50 prácticas traen verificación ejecutable/
+  .exec(await readFile("README.md", "utf8"));
+if (!readmeAuto) {
+  throw new Error("El README ya no declara cuántas prácticas son auto-verificables.");
+}
+if (Number(readmeAuto[1]) !== practicasAuto) {
+  throw new Error(
+    `El README declara ${readmeAuto[1]} prácticas auto-verificadas y el catálogo marca ${practicasAuto}.`
+  );
+}
+console.log(`Prácticas auto-verificadas: ${practicasAuto}/50, coincide con el README.`);
+
 // --- Coherencia de versión ----------------------------------------------------
 // La versión vive en el package.json raíz. Cualquier otro sitio que la declare
 // es una copia que se desincroniza sola: un bump que olvide uno publica un
