@@ -3,6 +3,7 @@
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** *Proofs, Arguments, and Zero-Knowledge* (Thaler) y ZKProof Community Reference
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [13 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -121,6 +122,49 @@ En un protocolo de privacidad, las notas no se marcan como "gastadas" —hacerlo
 4. Si Alicia intenta gastar la misma nota otra vez, el circuito la obliga a producir el mismo `NF = H'(s)`, que ya está registrado: la transacción se rechaza. El doble gasto se detecta sin haber desanonimizado ningún gasto legítimo.
 
 El mismo patrón aparece fuera de la privacidad de pagos: los rollups ZK y los sistemas de identidad (por ejemplo, votación anónima o airdrops de un solo uso) usan nullifiers para garantizar "una sola vez por secreto" sin correlacionar acciones con identidades. El diseño fino importa: si el nullifier se deriva también de un contexto (un identificador de votación), la misma credencial puede usarse una vez *por contexto* sin que dos usos en contextos distintos sean vinculables.
+
+### Una prueba ZK contada sin matemáticas
+
+La idea suena imposible: *demostrar que sabes algo sin revelar qué sabes*. La analogía clásica —la cueva de Ali Babá— explica el mecanismo mejor que cualquier fórmula.
+
+**La cueva.** Un túnel circular con una puerta cerrada al fondo que solo se abre con una palabra secreta. Desde la entrada, el túnel se bifurca en dos caminos, A y B, que se juntan en la puerta.
+
+**El protocolo:**
+
+1. Tú entras y tomas el camino que quieras. La otra persona **no ve cuál**.
+2. Desde la entrada, grita al azar: "¡sal por A!".
+3. Si sabes la palabra, sales por A siempre — cruzando la puerta si hiciera falta. Si no la sabes, solo puedes salir por donde entraste.
+
+Con una ronda, alguien sin el secreto acierta con probabilidad **1/2**. Repítelo:
+
+```text
+ 1 ronda  → 1/2      = 50 %      de engañar
+10 rondas → 1/2^10   ≈ 0,1 %
+20 rondas → 1/2^20   ≈ 0,0001 %
+```
+
+Y ahí están las tres propiedades, sin una sola fórmula:
+
+- **Completitud:** si sabes la palabra, siempre pasas la prueba.
+- **Solidez:** si no la sabes, la probabilidad de colar se hace despreciable con las repeticiones. No cero: *despreciable*. Toda prueba ZK es probabilística.
+- **Conocimiento cero:** quien observa ve salidas correctas por caminos aleatorios. **Podría haber grabado ese mismo vídeo sin conocer el secreto**, poniéndose de acuerdo de antemano — por eso la transcripción no le sirve para convencer a un tercero, y por eso no filtra nada.
+
+**Qué cambia en la versión real.** Los SNARK sustituyen las rondas interactivas por una sola prueba (la transformación de Fiat–Shamir, que usa un hash como si fuera el gritador aleatorio) y el "secreto" es un **witness** que satisface un circuito de restricciones.
+
+**Y el límite que hay que tener presente:** la prueba demuestra que *conoces un valor que satisface el circuito*. Si el circuito dice "esta fecha de nacimiento está firmada por una autoridad y es anterior a 2007", la prueba no garantiza que la fecha sea cierta: garantiza que **alguien la certificó**. La confianza no desaparece, se traslada al certificador.
+
+> 💡 **En una frase:** una prueba ZK convence de que una afirmación es cierta sin revelar por qué. No convierte en verdad un dato falso: solo prueba que satisface el circuito que escribiste.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — donde se decide el diseño</summary>
+
+- **La asimetría prover/verifier es el punto entero.** Generar la prueba puede tardar segundos o minutos y consumir mucha memoria; verificarla en cadena cuesta un gas casi constante. Toda la arquitectura de los ZK rollups sale de ese desequilibrio.
+- **El trusted setup no es un ritual: es un riesgo con nombre.** Si el "toxic waste" sobrevive, se fabrican pruebas de enunciados falsos. Las ceremonias multiparte lo mitigan porque basta **un** participante honesto; PLONK aporta un setup universal reutilizable entre circuitos, y los STARK lo eliminan usando solo aleatoriedad pública.
+- **Los bugs de circuito son el riesgo real, no la criptografía.** Una restricción que falta ("under-constrained") permite pruebas válidas de cosas falsas, y el sistema criptográfico funciona perfectamente mientras eso ocurre. Es el equivalente ZK de una invariante mal escrita.
+- **El conjunto de anonimato manda sobre la criptografía.** Ser uno entre diez usuarios de un mezclador no te oculta; ser uno entre cien mil, sí. Los patrones temporales, los importes redondos y la reutilización de direcciones reidentifican sin romper una sola prueba.
+- **STARK es post-cuántico porque solo se apoya en hashes**; los SNARK sobre curvas elípticas no lo son. Si el horizonte del sistema son décadas, eso deja de ser un detalle académico.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

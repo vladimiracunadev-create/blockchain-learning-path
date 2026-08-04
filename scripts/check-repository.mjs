@@ -56,6 +56,10 @@ async function markdownFiles(directory) {
 
 const broken = [];
 for (const file of await markdownFiles(process.cwd())) {
+  // La plantilla de módulo se excluye a propósito: sus rutas están escritas
+  // para el sitio donde acabará copiada (curriculum/NN-slug/), no para su
+  // ubicación actual, y sus destinos son marcadores de posición.
+  if (file.endsWith("MODULE_TEMPLATE.md")) continue;
   const content = await readFile(file, "utf8");
   for (const match of content.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)) {
     const target = match[1].split("#")[0];
@@ -141,6 +145,15 @@ for (const [indice, slug] of moduleSlugs.entries()) {
     if (!cabecera.includes(siguiente)) cadenaErrores.push(`${slug}: la cabecera no enlaza al siguiente (${siguiente})`);
   }
 
+  // Glosario y guía de novatos accesibles desde CUALQUIER módulo: quien se atasca
+  // en el módulo 12 no debería tener que volver al README para encontrarlos.
+  if (!texto.includes("../../docs/glosario.md")) {
+    cadenaErrores.push(`${slug}: no enlaza el glosario`);
+  }
+  if (!texto.includes("../../docs/empieza-aqui.md")) {
+    cadenaErrores.push(`${slug}: no enlaza la guía para novatos`);
+  }
+
   const pie = texto.split(/\n## [^\n]*Navegación[^\n]*\n/)[1];
   if (!pie) {
     cadenaErrores.push(`${slug}: falta la sección de navegación al pie`);
@@ -185,6 +198,19 @@ for (const slug of moduleSlugs) {
     fuentesErrores.push(`${slug}: no aparece en la tabla de obras de docs/bibliografia.md`);
   }
 }
+// Suelo de profundidad. No mide calidad —eso no se automatiza— pero sí impide la
+// regresión silenciosa: un módulo cuya profundización se queda en cuatro líneas
+// deja de enseñar el "por qué" y vuelve a ser una lista de definiciones.
+const MINIMO_PROFUNDIZACION = 400;
+for (const slug of moduleSlugs) {
+  const texto = await readFile(join("curriculum", slug, "README.md"), "utf8");
+  const seccion = texto.split(/\n## [^\n]*Profundización[^\n]*\n/)[1]?.split("\n## ")[0] ?? "";
+  const palabras = seccion.trim().split(/\s+/).filter(Boolean).length;
+  if (palabras < MINIMO_PROFUNDIZACION) {
+    fuentesErrores.push(`${slug}: la profundización tiene ${palabras} palabras (mínimo ${MINIMO_PROFUNDIZACION})`);
+  }
+}
+
 if (fuentesErrores.length) throw new Error(`Fuentes no trazables:\n${fuentesErrores.join("\n")}`);
 console.log(`Fuentes: ${moduleSlugs.length} módulos con fuente declarada y referencias enlazadas.`);
 

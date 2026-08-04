@@ -3,6 +3,7 @@
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** OpenZeppelin Governor y Compound Governance
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [12 · Escalabilidad y capas 2](../12-escalabilidad/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -118,6 +119,50 @@ No existen valores universales: un protocolo con tesorería enorme y comunidad m
 El modelo *vote-escrowed* (veToken), popularizado por Curve con veCRV, ataca dos males crónicos: el capital mercenario que vota hoy y se va mañana, y la apatía del votante pequeño. El titular bloquea sus tokens por un plazo elegido (hasta 4 años en Curve) y recibe poder de voto proporcional al monto y al tiempo restante de bloqueo, que decae linealmente: quien más se compromete a largo plazo, más pesa. La delegación líquida (el patrón de ERC-20Votes) resuelve el otro flanco: permite ceder el poder de voto a delegados activos sin transferir la propiedad, elevando la participación efectiva.
 
 Las críticas también son serias: el bloqueo prolongado ilíquido concentra el poder en quienes pueden permitirse inmovilizar capital años; alrededor de los veTokens surgieron mercados de sobornos de voto (*bribes*) y capas como Convex que re-concentran el poder que el diseño quería dispersar; y la delegación líquida tiende a oligarquías de delegados profesionales con baja rendición de cuentas. La lección de diseño: ningún mecanismo de tokenomics sustituye a una comunidad que vigila la concentración de poder — solo cambia dónde hay que mirar.
+
+### Un ataque de gobernanza, y por qué cada defensa existe
+
+Las piezas de un Governor (snapshot, quorum, timelock) parecen burocracia hasta que se ve el ataque que cada una impide. Sigamos uno completo.
+
+**El objetivo:** una DAO con una tesorería de 50 millones y un token de gobernanza que cotiza en mercado.
+
+**Sin ninguna defensa, el ataque cuesta una transacción:**
+
+```text
+1. Flash loan de 20 millones          ← sin colateral, se devuelve al final
+2. Comprar tokens de gobernanza
+3. Crear la propuesta "transferir la tesorería a esta dirección"
+4. Votar a favor con los tokens recién comprados
+5. Ejecutar
+6. Vender los tokens, devolver el préstamo
+```
+
+Todo en un bloque. Y ahora, dónde se rompe la cadena según qué defensa esté puesta:
+
+| Defensa | En qué paso muerde | Qué impide exactamente |
+|---|---|---|
+| **Snapshot en bloque pasado** (`getPastVotes`) | 4 | Los tokens comprados en el paso 2 tienen **cero** poder de voto: el peso se leyó de un bloque anterior a la compra. Mata el ataque entero |
+| **Retraso de votación** | 3→4 | Entre crear la propuesta y poder votar pasan bloques, así que ninguna operación atómica los abarca |
+| **Periodo de votación** (días) | 4 | Sostener un préstamo relámpago durante días es imposible por definición |
+| **Quorum** | 4 | Obliga a movilizar una fracción real del suministro, no solo mayoría de los que votaron |
+| **Timelock** | 5 | Aunque todo lo anterior fallara, la ejecución se retrasa: da tiempo a ver la propuesta y salir |
+
+**Lo importante:** el snapshot solo por sí mismo ya cierra este ataque. Las demás no son redundancia inútil: cada una cubre un camino distinto (compra progresiva, colusión de delegados, propuesta maliciosa disfrazada). Un diseño con snapshot pero sin timelock es vulnerable a un ataque más lento y más difícil de detectar.
+
+**La consecuencia práctica que sorprende:** con `ERC20Votes`, tener tokens **no da poder de voto**. Hay que delegar explícitamente, aunque sea a uno mismo. Es la causa número uno de participación baja en DAOs recién lanzadas, y no es un bug: es lo que permite que el snapshot funcione.
+
+> 💡 **En una frase:** cada pieza de un Governor existe porque alguien ya ejecutó el ataque que impide. El snapshot es la que hace inviable comprar la votación en el último segundo.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — donde la gobernanza se rompe de verdad</summary>
+
+- **El voto ponderado por tokens es plutocracia con pasos extra.** Quien más capital tiene, más decide. La votación cuadrática mitiga la concentración pero es vulnerable a Sybil sin identidad, lo que traslada el problema a "cómo pruebas que eres una persona" — que no está resuelto.
+- **La apatía es el estado por defecto y es racional.** Votar cuesta tiempo y gas; el efecto de un voto pequeño es nulo. Por eso la delegación es la solución de facto, y por eso los delegados profesionales concentran poder de forma silenciosa: revisa la distribución del voto delegado, no solo la del token.
+- **La ejecución en varias cadenas rompe la atomicidad de la decisión.** Una propuesta aprobada en L1 que debe aplicarse en varias L2 puede quedar a medias si un mensaje falla. Hay que diseñar la reversión antes que la ejecución.
+- **El timelock protege y expone a la vez.** La ventana que da a los usuarios para salir se la da también a un atacante para preparar la explotación de un cambio que ya conoce. La duración correcta equilibra ambas cosas; copiarla de otro protocolo sin ese análisis es copiar su modelo de amenazas.
+- **ERC-6372 permite anclar los checkpoints al tiempo en vez de al número de bloque.** Es lo correcto en L2 con tiempos de bloque variables, donde "dentro de 40 320 bloques" puede significar cualquier cosa.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

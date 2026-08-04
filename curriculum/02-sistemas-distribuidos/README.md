@@ -3,6 +3,7 @@
 > **Nivel:** Inicial-Intermedio · ⏱️ **Duración estimada:** 120 min · **Fuente:** *Introduction to Reliable and Secure Distributed Programming* (Cachin, Guerraoui, Rodrigues) y *Distributed Systems* (Tanenbaum, van Steen)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [01 · Criptografía aplicada](../01-criptografia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [03 · Consenso](../03-consenso/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -119,6 +120,44 @@ Crear una identidad en una red P2P abierta es gratis; por eso el voto "un nodo, 
 | Identidad (PoA, consorcios) | Autorización verificada fuera de cadena | Corromper o suplantar a los miembros autorizados | No sirve para redes abiertas; reintroduce una autoridad de admisión |
 
 La conclusión conecta con el módulo 03: el mecanismo de consenso no "elige al mejor", solo hace que fingir ser muchos resulte más caro que el beneficio esperado del ataque.
+
+### CAP con un ejemplo que se puede seguir a mano
+
+CAP suena abstracto hasta que se ve el instante de la decisión. Dos centros de datos, uno en Santiago y otro en Madrid, replican el mismo saldo: **100 €**. Se corta el enlace entre ambos y siguen recibiendo peticiones.
+
+Llega una retirada de 80 € a cada lado, casi a la vez. Los dos caminos posibles:
+
+**Opción CP (priorizar consistencia):** cada centro se pregunta si puede confirmar con la mitad de la red incomunicada. La respuesta es no.
+
+```text
+Santiago → "no puedo confirmar" → el cliente no puede sacar dinero
+Madrid   → "no puedo confirmar" → el cliente no puede sacar dinero
+Saldo al reconectar: 100 €. Correcto, pero el servicio estuvo caído.
+```
+
+**Opción AP (priorizar disponibilidad):** cada centro responde con lo que sabe.
+
+```text
+Santiago → entrega 80 € → apunta saldo 20 €
+Madrid   → entrega 80 € → apunta saldo 20 €
+Al reconectar: se entregaron 160 € de una cuenta que tenía 100.
+```
+
+Ese descubierto de 60 € **no es un bug del código**: es el precio explícito de haber elegido responder durante la partición. Alguien lo asumirá —el banco, el comercio o el cliente—, y esa decisión se toma en el diseño, no en el incidente.
+
+Aquí es donde encaja una blockchain pública: **elige CP**. Durante una partición no confirma nada de forma definitiva, y de ahí sale la recomendación de esperar confirmaciones. Cuando alguien dice "la transacción tarda", en realidad está describiendo el precio de no permitir jamás un doble gasto.
+
+> 💡 **En una frase:** en una partición no eliges entre bueno y malo, sino entre negarte a responder o arriesgarte a contradecirte. No hay tercera opción, y elegir por omisión es elegir igual.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — las precisiones que suelen faltar</summary>
+
+- **CAP está mal enunciado en su versión popular.** No se eligen dos de tres: la P no es opcional en una red real, así que la elección solo aparece *durante* una partición. Brewer lo matizó doce años después y el modelo **PACELC** lo completa: si hay partición (P) eliges entre A y C, y si no la hay (E, "else") eliges entre latencia (L) y consistencia (C). La segunda mitad describe el día a día, que es el 99,9 % del tiempo.
+- **FLP es un resultado más fuerte y menos citado.** Dice que en un sistema **asíncrono** ningún algoritmo determinista garantiza consenso si un solo proceso puede fallar. Los sistemas reales lo esquivan añadiendo supuestos: temporizadores (sincronía parcial) o aleatoriedad. Bitcoin usa lo segundo: la lotería del PoW es lo que rompe la simetría que FLP demuestra irrompible de forma determinista.
+- **"Eventualmente consistente" no dice cuándo.** Sin una cota temporal es una promesa sin contenido operativo. Los CRDT convierten la reconciliación en algo automático y sin conflictos, pero solo para operaciones conmutativas: "sumar 5" se puede reconciliar, "poner el saldo a 20" no.
+- **La finalidad económica de Ethereum es una cota, no una certeza.** Revertir un bloque finalizado exige que se destruya al menos un tercio del ETH depositado. Eso hace la reversión ruinosa, no imposible — y por eso se habla de finalidad *económica* y no *absoluta*.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

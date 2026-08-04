@@ -3,6 +3,7 @@
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** *An Incomplete Guide to Rollups* (Buterin) y L2BEAT
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [11 · DAO y gobernanza](../11-dao-gobernanza/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [13 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -114,6 +115,44 @@ La mayoría de los rollups en producción aún no alcanza Stage 2 por razones pr
 Los dos modelos de prueba responden a la misma pregunta —¿es válida esta transición de estado?— con filosofías opuestas. La *fraud proof* interactiva (el diseño de bisección usado por los optimistic rollups modernos) no verifica nada por defecto: solo si un retador afirma que el resultado es incorrecto, retador y operador juegan un protocolo de bisección sobre la traza de ejecución. Si la traza tiene, por ejemplo, 2^30 pasos (~mil millones de instrucciones), cada ronda divide el rango en disputa por la mitad: en unas 30 rondas las partes quedan en desacuerdo sobre una única instrucción, y la L1 solo ejecuta esa instrucción para decidir quién miente. El coste en cadena es minúsculo, pero el proceso exige que exista al menos un verificador honesto y vigilante, y justifica el challenge period de ~7 días.
 
 La *validity proof* invierte la carga: el operador demuestra criptográficamente la validez de cada lote antes de que la L1 lo acepte, sin depender de vigilantes ni de plazos de disputa. El contrato verificador comprueba la prueba (SNARK o STARK) en un solo paso, con coste de verificación casi constante aunque el lote contenga miles de transacciones. El precio se paga fuera de la cadena: generar la prueba requiere hardware y tiempo significativos. En resumen: la fraud proof es barata mientras nadie ataque y lenta para salir; la validity proof es cara de producir y rápida para finalizar.
+
+### De dónde sale realmente el ahorro de una L2
+
+"Las L2 son más baratas" es cierto, pero la razón que suele darse —"porque procesan fuera de la cadena"— es incompleta. El ahorro tiene dos fuentes de tamaño muy distinto, y saber cuál es cuál explica por qué las comisiones de L2 bajaron de golpe en marzo de 2024.
+
+**El coste de una transacción en un rollup son dos partidas:**
+
+```text
+coste total = ejecución en L2  +  parte proporcional de publicar el lote en L1
+              (baratísima)        (la que domina la factura)
+```
+
+La ejecución en L2 es barata porque la hace un secuenciador con hardware normal, sin miles de nodos replicando. Pero eso es la parte pequeña. **Lo que de verdad se paga es el espacio en L1**, y ahí está la clave: el coste se reparte entre todas las transacciones del lote.
+
+| Transacciones en el lote | Coste de publicar por transacción |
+|---:|---|
+| 1 | el lote entero |
+| 100 | 1/100 |
+| 1 000 | 1/1 000 |
+
+De ahí sale una propiedad contraintuitiva: **una L2 es más barata cuanto más se usa**. Con poca actividad, cada usuario carga con una porción mayor del coste fijo de publicar.
+
+**Y por eso EIP-4844 cambió tanto las cosas.** Antes de Dencun (marzo de 2024), los rollups publicaban sus datos como `calldata`, compitiendo por el mismo espacio de bloque que todas las transacciones de L1. Los *blobs* crearon un espacio de datos separado, con su propio mercado de precios y **efímero** (se borra a las pocas semanas, que es tiempo de sobra para que cualquiera descargue y verifique). Resultado: el coste de publicar cayó de forma drástica y las comisiones de L2 se desacoplaron de la congestión de L1.
+
+**La pregunta que hay que saber responder:** si los blobs se borran, ¿sigue siendo seguro? Sí, y por una razón concreta: la disponibilidad de datos solo necesita ser suficiente para que **cualquiera pueda descargarlos y reconstruir el estado o impugnar un fraude**. Pasada la ventana de disputa, guardar esos datos para siempre en todos los nodos ya no aporta seguridad, solo coste.
+
+> 💡 **En una frase:** en un rollup no pagas por computar, pagas por publicar; por eso se abarata al llenarse y por eso los blobs cambiaron la ecuación entera.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — lo que separa un rollup de algo que se llama rollup</summary>
+
+- **La pregunta que ordena la taxonomía es "¿dónde viven los datos?".** Rollup = en L1; validium = fuera, con un comité; optimium = fuera, con pruebas de fraude. Si los datos no están en L1, la seguridad depende de que alguien te los entregue, y eso es un supuesto de confianza adicional que hay que enunciar.
+- **Casi todas las L2 conservan claves de actualización.** L2BEAT las clasifica por etapas (0, 1, 2) según cuánta capacidad tiene el usuario de salir sin permiso del operador. Una "L2" en etapa 0 con un multisig que puede cambiar la lógica del puente es, en la práctica, un sistema custodiado con muy buena criptografía.
+- **La descentralización del secuenciador está sin resolver.** Casi todas operan uno solo, lo que permite censurar y extraer MEV. La mitigación es la **inclusión forzada** desde L1: comprueba si existe y con qué retraso, porque es la diferencia entre poder salir y depender de la buena voluntad del operador.
+- **Los puentes de liquidez no son el puente canónico.** Salir "al instante" de un optimistic rollup significa que alguien te adelanta fondos en L1 y se queda esperando el retiro real: pagas una prima y asumes el riesgo de ese tercero, no el del protocolo.
+- **Comparar cadenas por TPS es comparar por la métrica equivocada.** El TPS depende del límite de gas y del tipo de transacción, y no dice nada del modelo de seguridad. Dos números honestos: coste por transacción y qué hace falta para que te roben.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

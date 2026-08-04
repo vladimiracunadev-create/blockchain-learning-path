@@ -3,6 +3,7 @@
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** documentación de Cosmos IBC y de Polkadot (XCM)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [12 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -119,6 +120,45 @@ El coste es real: verificar firmas BLS y mantener el estado del light client en 
 | LayerZero | Componentes configurables por la aplicación (DVNs en v2) que atestiguan el mensaje | Depende de la configuración elegida: desde un solo verificador hasta comités múltiples | En producción y ampliamente integrado; la seguridad efectiva varía por aplicación |
 
 La tabla deja una conclusión incómoda: no existe "el estándar" de interoperabilidad, sino un espectro donde cada diseño intercambia coste, generalidad y confianza. La verificación por light client es el patrón oro en minimización de confianza, pero su coste y su acoplamiento al consenso de origen explican por qué los modelos intermedios dominan el mercado. El estado de adopción de cada protocolo cambia rápido: consúltalo en vivo en sus documentaciones y en agregadores independientes.
+
+### Por qué los puentes concentran los mayores robos del sector
+
+No es casualidad ni mala suerte: es estructural. Un puente reúne tres condiciones que, juntas, lo convierten en el objetivo más rentable del ecosistema.
+
+1. **Acumula valor en un punto.** En el esquema *lock-and-mint*, todo lo que se ha movido a la otra cadena está bloqueado en un contrato. Ese contrato es un solo objetivo con el valor de miles de usuarios.
+2. **Suele verificar con firmantes, no con criptografía de consenso.** Si el puente acepta un mensaje porque *k* de *n* guardianes lo firmaron, comprometer esas *k* claves basta para acuñar de la nada.
+3. **Es código nuevo y complejo** en un sitio donde el resto está muy auditado. La lógica de mensajería cross-chain no tiene décadas de escrutinio detrás.
+
+**Los tres patrones que se repiten en los incidentes públicos:**
+
+| Patrón | Qué falla | Cómo se ve en el código |
+|---|---|---|
+| **Claves comprometidas** | El atacante consigue las firmas necesarias del conjunto verificador | Umbral bajo, o firmantes que comparten infraestructura y por tanto no son independientes |
+| **Verificación defectuosa** | El contrato acepta como válida una prueba que no lo es | La comprobación no valida todos los campos, o hay un valor por defecto que pasa el filtro |
+| **Falta de anti-replay** | Un mensaje legítimo se reejecuta y acuña dos veces | No hay `nonce` consumido, o el registro de mensajes procesados se puede reiniciar |
+
+**La pregunta que ordena el análisis de cualquier puente**, y que reemplaza a "¿es seguro?":
+
+> ¿Qué tendría que ocurrir para que se acuñe un token en destino sin que exista el bloqueo correspondiente en origen?
+
+La respuesta es su modelo de seguridad, dicho en una frase:
+
+- *"Que se rompa el consenso de la cadena de origen"* → verificación por **light client**. El puente hereda la seguridad de la cadena, que es lo máximo alcanzable.
+- *"Que se coludan k de n firmantes"* → verificación **externa**. La seguridad es la de esas k claves, sin importar el TVL ni la marca.
+- *"Que el administrador del proxy lo decida"* → hay una **clave de actualización** que puede reemplazar toda la lógica. Es el escenario que hay que auditar primero, y el que más veces se pasa por alto.
+
+> 💡 **En una frase:** todo puente añade supuestos de confianza; el análisis honesto consiste en enumerarlos, no en preguntar si es seguro.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — el detalle operativo</summary>
+
+- **La diferencia de finalidad entre extremos es un fallo silencioso.** Actuar sobre un mensaje antes de la finalidad de la cadena de origen permite acuñar contra un bloque que luego desaparece. Cada extremo necesita su propio número de confirmaciones, derivado de su tipo de finalidad, no un valor único copiado.
+- **Los HTLC resuelven el intercambio, no la mensajería.** Sirven para un swap atómico entre dos partes con un secreto y un plazo, pero no transportan datos arbitrarios ni escalan a un puente de uso general. Confundirlos lleva a diseños que no cierran.
+- **IBC funciona porque exige finalidad instantánea.** Los light clients de Tendermint pueden verificar el consenso ajeno de forma barata precisamente porque no hay finalidad probabilística. Trasladar el modelo a cadenas con finalidad probabilística es mucho más caro, y esa es la razón técnica de que no sea universal.
+- **La representación acuñada no es fungible con el activo original.** Un "USDC puenteado" es un pagaré del puente. Si el puente cae, ese token vale lo que valga la recuperación de sus fondos, no un dólar. Los incidentes lo demuestran cada vez.
+- **La mensajería con verificación configurable traslada la decisión al integrador.** Cuando el protocolo permite elegir quién verifica, la seguridad del puente pasa a depender de una configuración que el desarrollador puede dejar en su valor por defecto sin entenderla.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

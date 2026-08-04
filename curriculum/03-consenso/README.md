@@ -3,6 +3,7 @@
 > **Nivel:** Intermedio · ⏱️ **Duración estimada:** 120 min · **Fuente:** whitepaper de Bitcoin (Nakamoto) y *Practical Byzantine Fault Tolerance* (Castro, Liskov)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [02 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [04 · Bitcoin](../04-bitcoin/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -104,6 +105,44 @@ En PoS los umbrales son distintos: con **1/3 del stake** un atacante puede imped
 | Casper FFG | ¿Qué historia es ya irreversible? | Votos de checkpoint por épocas; justificación y finalización con 2/3 del stake | Seguridad económica: revertir lo finalizado cuesta al menos 1/3 del stake slasheado |
 
 La separación importa: si más de 1/3 del stake se desconecta, LMD-GHOST mantiene la cadena viva pero Casper FFG deja de finalizar; el protocolo activa entonces la **fuga de inactividad** (inactivity leak), que drena el depósito de los validadores ausentes hasta que los activos vuelven a superar los 2/3 y la finalidad se recupera. Especificación y análisis: Buterin et al., *Combining GHOST and Casper* — <https://arxiv.org/abs/2003.03052>.
+
+### Cuánto cuesta de verdad un ataque del 51 %
+
+"Con la mayoría del poder se puede reescribir la cadena" es cierto y poco útil sin el número. Pongámoslo, porque el resultado explica por qué unas redes se atacan y otras no.
+
+**Lo que un atacante puede y no puede hacer.** Es más limitado de lo que sugiere el titular:
+
+| Puede | No puede |
+|---|---|
+| Excluir transacciones (censurar) | Robar monedas de otras direcciones: no tiene las claves |
+| Revertir sus **propias** transacciones recientes (doble gasto) | Crear monedas de la nada: las reglas las validan todos los nodos |
+| Reordenar transacciones dentro de su ventana | Alterar bloques antiguos y profundos |
+
+El ataque real, entonces, es concreto: **depositar en un exchange, cambiar por otra moneda, retirar, y luego reescribir la cadena para recuperar el depósito**.
+
+**Qué lo hace rentable.** Su viabilidad depende de una relación:
+
+```text
+beneficio  =  lo que consigues retirar antes de que lo detecten
+coste      =  alquiler de hashrate × horas  +  hardware  +  reputación
+```
+
+Y aquí está la clave que decide todo: **si existe un mercado donde alquilar hashrate, el coste del hardware desaparece de la ecuación**. Por eso las cadenas pequeñas que comparten algoritmo con una grande son las que se atacan: hay potencia de sobra apuntando a otra cadena, y desviarla un rato es barato. Ethereum Classic sufrió varias reorganizaciones profundas en 2019 y 2020 exactamente así, mientras Bitcoin —cuyo hashrate no se puede alquilar en volumen suficiente— nunca lo ha sufrido.
+
+**La defensa real no es solo técnica.** Un exchange que exige 100 confirmaciones para una cadena barata está subiendo el coste del ataque de forma lineal: revertir 100 bloques cuesta cien veces más que revertir uno. Por eso los requisitos de confirmación varían tanto entre monedas: no es arbitrario, es una función del coste de atacarlas.
+
+> 💡 **En una frase:** el consenso no hace imposible el ataque; lo hace más caro que el beneficio. Cuando esa desigualdad se invierte —cadena pequeña, hashrate alquilable— el ataque ocurre.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — donde el modelo simple se queda corto</summary>
+
+- **La minería egoísta baja el umbral por debajo del 50 %.** Eyal y Sirer demostraron que reteniendo bloques y publicándolos estratégicamente, un minero con menos de la mitad puede obtener una fracción de recompensas superior a su hashrate. El 51 % es el umbral del ataque garantizado, no el de la ganancia anómala.
+- **En PoS el ataque cambia de naturaleza.** No se alquila hashrate: hay que **adquirir** una fracción enorme del capital depositado, con la salvedad de que atacar destruye tu propio depósito vía slashing. El coste pasa de ser operativo (electricidad) a ser de capital en riesgo, y esa diferencia es el argumento central a favor de PoS.
+- **La finalidad de Gasper tiene dos niveles.** Justificado (una época con 2/3 de atestaciones) y finalizado (dos épocas consecutivas justificadas). Un bloque finalizado solo se revierte destruyendo al menos un tercio del ETH depositado, lo que sitúa el coste en el orden de decenas de miles de millones.
+- **PBFT no escala por su coste de mensajes.** Requiere O(n²) comunicación por ronda, lo que lo hace impracticable con miles de validadores y perfecto para consorcios de decenas. HotStuff lo reduce a O(n) con un líder rotatorio, que es la línea que siguen los BFT modernos.
+- **El "nothing at stake" original quedó resuelto.** La objeción clásica a PoS —que apostar en todas las bifurcaciones sale gratis— la cierra el slashing por doble voto: firmar dos cadenas es una infracción detectable y castigada. Citarla hoy como problema abierto es citar el estado del arte de 2014.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

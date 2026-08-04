@@ -3,6 +3,7 @@
 > **Nivel:** Avanzado-Producción · ⏱️ **Duración estimada:** 180 min · **Fuente:** prácticas públicas de integración del sector financiero y documentación de los componentes citados
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [17 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [🎓 Proyecto final](../../capstone/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -133,6 +134,73 @@ flowchart LR
 
 Las fases 1-2 son las más baratas y las más determinantes: los fracasos del módulo 17
 (TradeLens, ASX) se gestaron ahí, no en el código.
+
+### Una operación real, paso a paso, y dónde se rompe cada una
+
+La lista de comprobación dice "usa un middleware". Aquí se ve **qué pasa exactamente si no lo usas**, siguiendo una operación de negocio corriente: *un cliente solicita el rescate de 10 000 unidades de un fondo tokenizado*.
+
+```mermaid
+sequenceDiagram
+    participant N as Sistema de negocio
+    participant M as Middleware
+    participant F as Servicio de firma
+    participant C as Cadena
+    participant I as Indexador
+    participant L as Base de lectura
+    N->>M: solicitud de rescate (id interno)
+    M->>M: reglas de negocio y cumplimiento
+    M->>C: eth_call (simulación)
+    C-->>M: resultado previsto
+    M->>F: pedir firma (política M-de-N)
+    F-->>M: transacción firmada
+    M->>C: enviar
+    C-->>I: evento Rescate
+    I->>L: proyectar estado
+    L-->>N: la pantalla ya lo muestra
+```
+
+Y ahora el mismo recorrido, con lo que falla al saltarse cada paso:
+
+| Paso | Qué aporta | Si te lo saltas |
+|---|---|---|
+| **Reglas antes de firmar** | Aplica límites, listas y horarios en un solo sitio | La regla acaba duplicada en cada pantalla que puede iniciar la operación, y basta olvidarla en una para que se escape |
+| **Simulación (`eth_call`)** | Predice el resultado sin gastar | Se firman transacciones que revierten: se paga el gas, no hay efecto, y el usuario ve un cobro sin resultado |
+| **Cola de transacciones** | Desacopla el negocio de la red | Si el gas se dispara o el RPC cae, la petición del cliente falla en su cara en vez de esperar y reintentar |
+| **Servicio de firma con política** | Ninguna persona sola mueve fondos | La clave acaba en una variable de entorno de un servidor, y quien acceda a ese servidor es dueño del fondo |
+| **Indexador + base de lectura** | Las pantallas leen a velocidad de base de datos | Cada clic dispara un `eth_call`; la interfaz va lenta y se cae entera cuando cae el proveedor RPC |
+| **Idempotencia por id interno** | La misma solicitud no se ejecuta dos veces | Un reintento tras un timeout ejecuta el rescate **dos veces**. La cadena no tiene forma de saber que era el mismo |
+
+El último es el más caro y el menos citado. En un sistema clásico, un doble apunte se corrige con un asiento inverso. Aquí, la segunda transferencia es tan válida y tan definitiva como la primera: **la corrección exige que la contraparte colabore**.
+
+> 💡 **En una frase:** el middleware no es una capa de arquitectura por elegancia — es el sitio donde se decide, se simula y se registra *una sola vez* lo que en la cadena no se puede deshacer.
+
+### Los números de un lanzamiento con límites
+
+"Guarded launch" suena a consigna hasta que se le ponen cifras. La idea es simple: **acotar cuánto puedes perder mientras el sistema todavía no tiene historial**, y ampliar los límites con evidencia, no con optimismo.
+
+| Fase | Duración típica | Tope por operación | Tope diario | Qué la cierra |
+|---|---|---:|---:|---|
+| Piloto interno | 2–4 semanas | 1 000 | 5 000 | Cero incidentes y el runbook ensayado de verdad |
+| Clientes seleccionados | 4–8 semanas | 10 000 | 100 000 | Volumen real sostenido sin intervención manual |
+| Apertura | — | según negocio | según negocio | Auditoría cerrada y monitorización con alertas probadas |
+
+Dos reglas que hacen que esto funcione y sin las cuales es teatro:
+
+1. **Los topes viven en el contrato, no en la interfaz.** Un límite en la pantalla lo esquiva cualquiera que llame al contrato directamente. Si el tope no está en el código, no es un tope: es una sugerencia.
+2. **Ampliar exige evidencia escrita**, no la sensación de que va bien. Fija de antemano qué métrica autoriza el siguiente escalón (operaciones sin incidente, tiempo desde el último fallo, cobertura de la auditoría) para que la decisión no dependa de la presión comercial del momento.
+
+El cálculo que convence a un comité: si el tope diario es 100 000 y el peor caso es un fallo que drena el máximo antes de que alguien reaccione, **la pérdida máxima está acotada a esa cifra**. Sin topes, la respuesta a "¿cuánto podemos perder?" es "todo lo que haya en el contrato", y esa respuesta no se puede llevar a un consejo.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — lo que se descubre en el primer incidente</summary>
+
+- **La pausa de emergencia también es un riesgo.** Quien puede pausar puede congelar los fondos de los usuarios. Un `pause` sin límite temporal ni gobernanza es un punto único de confianza tan grave como el que intenta mitigar; acótalo con caducidad automática.
+- **El nonce es un recurso compartido y un cuello de botella.** Si dos procesos firman con la misma cuenta, se pisan el nonce y una transacción reemplaza a la otra. La cola debe ser la única dueña del nonce, con asignación estrictamente secuencial y reconciliación tras cada reinicio.
+- **Ensaya la ceremonia antes de necesitarla.** La primera firma multisig en producción con un directivo de viaje y un firmante que perdió su dispositivo es el escenario real. La pre-producción con la misma política M-de-N y las mismas personas es lo que evita descubrirlo el día del lanzamiento.
+- **La reorganización rompe la idempotencia ingenua.** Marcar "hecho" al ver el evento y no al alcanzar finalidad significa que una reorg deja el sistema afirmando algo que la cadena ya no dice. Espera confirmaciones y guarda el número de bloque para poder revisar.
+- **El coste de cumplimiento crece con el volumen, no con el código.** KYT, informes y conservación de registros escalan con las operaciones. Un piloto barato puede volverse caro en producción sin que cambie una línea del contrato — y ese es el salto donde mueren la mayoría de los proyectos.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

@@ -3,6 +3,7 @@
 > **Nivel:** Avanzado-Producción · ⏱️ **Duración estimada:** 180 min · **Fuente:** documentación de clientes de nodo (ethereum.org, Geth, Lighthouse) y guías de operación de EthStaker
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [17 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -132,6 +133,64 @@ Si un solo cliente de ejecución concentra la supermayoría y tiene un bug, la r
 puede finalizar un estado inválido. Elegir cliente minoritario (Nethermind, Besu, Reth;
 Lighthouse, Teku, Nimbus) es una decisión de ingeniería **y** de salud de la red —
 métricas vivas en <https://clientdiversity.org/>.
+
+### Qué pasa, minuto a minuto, cuando un validador se cae
+
+La lista de comprobación dice "ten un SAI". Esta sección explica **qué te cuesta no tenerlo**, que es lo que hace que la gente lo compre.
+
+Un validador de Ethereum tiene un trabajo continuo: **atestiguar** en cada época (unos 6,4 minutos) que ve la cadena correcta. Si está apagado, no atestigua.
+
+| Tiempo caído | Qué ocurre | Coste aproximado |
+|---|---|---|
+| Un corte de segundos entre épocas | Nada: no había atestación en juego | 0 |
+| Minutos | Se pierden atestaciones. La penalización por *no* atestiguar es **similar en magnitud** a la recompensa que habrías ganado | Dejas de ganar y pierdes algo parecido: el doble de daño que "solo no cobrar" |
+| Horas o días | Sigue el goteo, pero la cadena finaliza igual porque la mayoría está en línea | Pérdida lineal y lenta; recuperable |
+| Caída masiva (>1/3 de la red a la vez) | Se activa la **fuga de inactividad**: la penalización crece de forma cuadrática hasta que los ausentes pierden peso suficiente para que la cadena vuelva a finalizar | Aquí sí se destruye capital rápido |
+
+La lección que cambia decisiones: **para un validador doméstico, estar caído no es una emergencia**. Pierdes poco a poco y lo recuperas al volver. Lo que sí destruye capital es el **doble voto** — dos máquinas firmando con la misma clave a la vez — porque eso es *slashing*, se penaliza deliberadamente y no se recupera.
+
+De ahí la regla que parece contraintuitiva y es la correcta:
+
+> Ante la duda, **apaga**. Nunca arranques un segundo validador "por si acaso el primero está caído". Un validador apagado pierde céntimos; dos validadores encendidos con la misma clave pierden el depósito.
+
+Esto reordena la lista de prioridades: la contingencia no es "tener otra máquina lista para arrancar", es "tener la certeza de que solo una está firmando".
+
+### El presupuesto que casi nadie calcula bien
+
+Comparemos nodo propio contra RPC gestionado con números, porque la intuición falla en las dos direcciones.
+
+**Nodo de ejecución + consenso en la nube, uso interno:**
+
+| Partida | Estimación mensual | Nota |
+|---|---:|---|
+| VM (8 vCPU, 32 GB) | 150–250 USD | El cálculo que todo el mundo hace |
+| Disco NVMe de 4 TB | 300–500 USD | La partida que se subestima: el disco cuesta más que la máquina |
+| Egreso de datos | 20–200 USD | **La sorpresa**: no aparece en la calculadora de la VM |
+| Snapshots / respaldo | 40–80 USD | |
+| **Total** | **≈ 500–1 000 USD** | Sin contar el tiempo de la persona que lo opera |
+
+**RPC gestionado:** desde gratis (con límites de tasa) hasta 50–500 USD/mes según volumen.
+
+La conclusión honesta no es "el nodo propio es caro", sino: **el nodo propio casi nunca se paga por precio; se paga por lo que compra.**
+
+- **Soberanía:** nadie puede censurar tus consultas ni cerrarte la cuenta.
+- **Privacidad:** un proveedor externo ve todas tus consultas, y de ahí se deduce qué direcciones te importan y cuándo.
+- **Verificación propia:** un nodo completo comprueba las reglas por sí mismo. Confiar en un RPC es confiar en que quien te responde no miente.
+
+Si tu proyecto no necesita ninguna de las tres, el RPC gestionado es la decisión racional, y decirlo así es más profesional que montar infraestructura por costumbre. Lo que **no** es defendible es depender de un único proveedor sin plan B: eso no es ahorrar, es tener un punto único de fallo que no controlas.
+
+> 💡 **En una frase:** el disco y el egreso, no la CPU, deciden la factura; y el nodo propio se justifica por soberanía, privacidad y verificación, no por precio.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — lo que decide en operación real</summary>
+
+- **IOPS aleatorios, no MB/s secuenciales.** Un disco de red que anuncia 500 MB/s puede rendir peor que un NVMe local para sincronizar, porque la carga son millones de lecturas pequeñas dispersas. La cifra a exigir al proveedor es IOPS 4K aleatorios y latencia p99, no ancho de banda.
+- **Erigon y Reth cambian la ecuación de disco.** Su modelo de base de datos plana reduce un nodo de archivo de cifras de dos dígitos de TB a ~2,5–3 TB, lo que convierte "nodo de archivo" de proyecto de infraestructura a partida de presupuesto normal.
+- **Checkpoint sync no es hacer trampa.** Arrancar el cliente de consenso desde un estado finalizado confiable es la práctica recomendada: reduce días a minutos y el nodo sigue verificando todo hacia adelante. Lo que hereda es el supuesto de que ese punto de partida era correcto, y por eso conviene contrastar el checkpoint con dos fuentes.
+- **La diversidad de clientes es riesgo sistémico, no preferencia.** Si un cliente con más de 1/3 de la red tiene un bug de consenso, la cadena deja de finalizar; si supera 2/3, puede finalizar una cadena incorrecta. Elegir el cliente minoritario es una decisión de red, no de gusto.
+- **El JWT de la Engine API es el enlace crítico.** Ejecución y consenso se autentican con ese secreto compartido; si se regenera en uno y no en otro, el nodo queda mudo con un error que no menciona el JWT por ningún lado.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

@@ -3,6 +3,44 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.8.0] · 2026-08-04
+
+Profundización de los 19 módulos y puerta de entrada para quien llega sin base.
+
+### Añadido
+
+- **Guía [Empieza aquí](docs/empieza-aqui.md)**, primera parada del programa en el
+  README, en la portada del sitio y en el menú lateral: qué necesitas antes de arrancar,
+  qué instalar y en qué momento, cómo se lee un módulo, qué hacer cuando te atasques, y
+  salida directa al módulo 00. Escrita para quien abre el repositorio y no entiende la
+  mitad de las palabras.
+- **Glosario enlazado desde los 19 módulos** (ya existía con 120 términos y no lo
+  enlazaba ninguno). Ahora está en la cabecera de cada uno y `pnpm check` lo exige.
+- **Profundización en los 19 módulos**, que pasa de ~11 900 a **24 218 palabras**. Entre
+  otros: la comisión de Bitcoin calculada de principio a fin, el desglose de gas de una
+  transacción, cómo leer una traza de Foundry, el storage por ranuras, el ciclo de vida
+  real de una transacción, el coste de un ataque del 51 %, cómo se vacía una cartera con
+  una firma, un ataque de gobernanza y sus defensas, de dónde sale el ahorro de una L2,
+  un sándwich de MEV con números, y un caso de negocio que **termina en «no»**.
+- **Contenido en cuatro capas** para servir a la vez a quien no sabe nada y a quien ya
+  domina el tema: idea en llano → cálculo trabajado → bloque plegable *«🎓 Si ya dominas
+  esto»* → *«💡 En una frase»*. La convención y sus reglas quedan en
+  [docs/diseno-pedagogico.md](docs/diseno-pedagogico.md) y en la plantilla de módulo.
+- **Cuatro laboratorios ejecutables nuevos**: propagación P2P con latencias, partición y
+  reconciliación, ciclo de vida de una transacción y montos de token con allowances.
+- Comprobaciones nuevas en `pnpm check`: suelo de 400 palabras de profundización por
+  módulo, enlaces obligatorios a glosario y guía de novatos, y conteo de prácticas
+  auto-verificadas contrastado con el README.
+
+### Corregido
+
+- **Las prácticas auto-verificadas estaban mal contadas.** El README, el About y el
+  CHANGELOG decían 21 cuando el catálogo marcaba 19, y además 7 prácticas con tests
+  ejecutables figuraban como evidencia manual. Con los 4 laboratorios nuevos, la cifra
+  real y comprobada es **31 de 50**.
+- La plantilla de módulo no incluía la sección de Profundización, así que un módulo
+  nuevo nacía sin ella.
+
 ## [0.7.0] · 2026-08-04
 
 El curso sale del navegador: aplicación de escritorio para Windows y app Android,
@@ -225,6 +263,7 @@ Primera versión pública del programa.
 - Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
   seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
+[0.8.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.8.0
 [0.7.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.7.0
 [0.6.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.6.0
 [0.5.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.5.0

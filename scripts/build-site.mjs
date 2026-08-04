@@ -52,6 +52,10 @@ const hasManual = existsSync(join(ROOT, "manual", "MANUAL.pdf"));
 
 const NAV = [
   { t: "🏠 Inicio", href: "index.html" },
+  // Primera parada real del sitio: quien llega sin base necesita esta página
+  // antes que el índice del currículo.
+  { t: "🌱 Empieza aquí", href: "docs/empieza-aqui.html" },
+  { t: "📖 Glosario", href: "docs/glosario.html" },
   ...(hasManual ? [{ t: "📕 Manual (PDF)", href: "manual/MANUAL.pdf" }] : []),
   {
     t: "📚 Currículo", href: "curriculum/README.html",

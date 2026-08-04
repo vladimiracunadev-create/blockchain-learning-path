@@ -3,6 +3,7 @@
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** Trail of Bits *Building Secure Contracts* y ConsenSys *Smart Contract Best Practices*
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [08 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)
+> 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
@@ -122,6 +123,51 @@ Ninguna herramienta cubre todo el espectro; una auditoría seria las apila porqu
 | Error de diseño del protocolo | ❌ | ❌ | ❌ | ✅ única técnica que lo ve |
 
 La consecuencia práctica: un `slither .` limpio y un fuzzing en verde acotan clases enteras de errores, pero el caso Euler demuestra que el fallo puede vivir en la interacción entre funciones individualmente correctas, territorio exclusivo de los invariantes bien elegidos y de la revisión humana.
+
+### Anatomía de un ataque de préstamo relámpago
+
+Los retos de este módulo se entienden mejor viendo cómo se combinan. Un *flash loan* no es una vulnerabilidad: es una herramienta que **elimina el capital como barrera de entrada**. Quien no tiene un millón puede operar como si lo tuviera, siempre que lo devuelva en la misma transacción.
+
+Eso convierte ataques que eran teóricos en ataques que cualquiera puede ejecutar.
+
+**El ataque completo, en una sola transacción atómica:**
+
+```text
+1. Pedir prestados 10 000 000 USDC          ← sin colateral: se devuelve al final o revierte todo
+2. Comprar TOKEN en un pool pequeño         ← el precio spot de ese pool se dispara
+3. Depositar TOKEN como garantía en el      ← el protocolo lee el precio del pool manipulado
+   protocolo víctima, que lo valora caro       y concede un préstamo desproporcionado
+4. Retirar el préstamo en USDC
+5. Deshacer la compra: el precio vuelve
+6. Devolver los 10 000 000 + comisión
+7. Quedarse la diferencia
+```
+
+**Lo que hay que ver:** el atacante no rompió ninguna criptografía ni encontró un desbordamiento. **Usó cada contrato exactamente como estaba escrito.** El fallo está en un supuesto: que el precio de un pool refleja el valor de mercado. Es cierto en condiciones normales y falso durante un bloque con liquidez prestada.
+
+**Por qué la atomicidad lo hace posible:** si algo sale mal en cualquier paso, toda la transacción revierte y el préstamo nunca existió. El atacante no arriesga capital, solo gas. Un intento fallido cuesta unos céntimos.
+
+**Las tres defensas, por orden de eficacia:**
+
+| Defensa | Qué logra | Límite |
+|---|---|---|
+| **TWAP** en lugar de spot | Manipular la media exige sostener el precio muchos bloques, lo que multiplica el coste | Reacciona con retraso: en un movimiento real de mercado, va por detrás |
+| **Agregar varias fuentes** | Un solo pool manipulado no mueve la mediana | Añade dependencia de más proveedores, cada uno con su riesgo |
+| **Circuit breaker** | Detiene la operación si el precio se sale de rango | Alguien tiene que definir "rango razonable", y ese alguien es un punto de confianza |
+
+> 💡 **En una frase:** los ataques caros de verdad no rompen el código, rompen un supuesto. Escribe los supuestos de tu contrato antes de escribir el contrato.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — método de auditoría, más allá del catálogo de bugs</summary>
+
+- **Empieza por las invariantes, no por el código.** "La suma de saldos iguala el suministro", "nadie retira más de lo que depositó". Un catálogo de vulnerabilidades encuentra lo conocido; una invariante bien escrita encuentra lo que nadie ha catalogado todavía.
+- **La reentrancia entre funciones distintas evade el guard ingenuo.** `nonReentrant` en `retirar()` no protege si el reingreso ocurre por `transferir()`. Hay que razonar sobre el estado compartido, no sobre la función.
+- **La reentrancia de solo lectura fue la sorpresa de 2022.** Una función `view` consultada a mitad de una transferencia devuelve un estado inconsistente; un tercero que confía en ese `view` toma decisiones sobre datos que no representan ningún estado real. No hay escritura, y aun así hay agujero.
+- **`tx.origin` no es control de acceso.** Distingue quién inició la cadena de llamadas de quién llama directamente; usarlo para autorizar permite que un contrato intermedio actúe en nombre de la víctima. Se usa `msg.sender`, siempre.
+- **La severidad no es una etiqueta, es impacto × probabilidad.** Un fallo que drena todo con una condición irrepetible puede ser menos urgente que uno que filtra poco de forma continua. Un informe que no argumenta ambos ejes no ayuda a priorizar.
+- **Ninguna herramienta sustituye la revisión manual.** Slither y Echidna encuentran patrones y violaciones de propiedades que tú definiste. Que la lógica de negocio permita retirar el doble no es un patrón: es una propiedad que solo detecta quien entendió el negocio.
+
+</details>
 
 ## 🧪 Laboratorio guiado
 

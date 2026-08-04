@@ -112,6 +112,7 @@ a{color:inherit;text-decoration:none}
 .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;
   padding:.28rem .8rem;font-size:.85rem;font-weight:600;backdrop-filter:blur(4px)}
 .cta{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+.cta-nota{text-align:center;color:var(--muted);font-size:.92rem;margin:.9rem auto 0;max-width:56ch}
 .btn{display:inline-block;padding:.7rem 1.3rem;border-radius:10px;font-weight:700;font-size:1rem;transition:transform .08s ease,box-shadow .2s}
 .btn:hover{transform:translateY(-2px)}
 .btn-1{background:#fff;color:#3a2a8f;box-shadow:0 6px 20px rgba(0,0,0,.28)}
@@ -170,10 +171,12 @@ footer a{color:var(--acento);font-weight:600}
     <span class="chip">🏛️ DAO &amp; arquitectura</span>
   </div>
   <div class="cta">
-    <a class="btn btn-1" href="curriculum/README.html">🚀 Empezar</a>
+    <a class="btn btn-1" href="docs/empieza-aqui.html">🌱 Empieza aquí</a>
+    <a class="btn btn-2" href="curriculum/README.html">📚 Ver el currículo</a>
     <a class="btn btn-2" href="manual/MANUAL.pdf">📕 Manual (PDF)</a>
-    <a class="btn btn-2" href="${REPO}">⭐ Ver en GitHub</a>
+    <a class="btn btn-2" href="${REPO}">⭐ GitHub</a>
   </div>
+  <p class="cta-nota">¿No sabes nada del tema? Esa primera página te explica qué necesitas, en qué orden y qué hacer cuando te atasques.</p>
 </header>
 
 <div class="aviso"><div class="wrap">⚠️ Material educativo. No uses fondos ni claves privadas reales: todos los laboratorios se ejecutan en local (Anvil) o testnet. No es asesoría financiera, tributaria ni legal.</div></div>
