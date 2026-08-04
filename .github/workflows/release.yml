@@ -39,12 +39,15 @@ jobs:
         run: pnpm build:manual
       - name: Comprobar que el PDF tiene contenido
         run: |
-          tamaño=$(stat -c%s manual/MANUAL.pdf)
-          if [ "$tamaño" -lt 3000000 ]; then
-            echo "El PDF solo pesa $tamaño bytes: no se generó completo." >&2
+          # Nombre de variable en ASCII a propósito: bash no admite identificadores
+          # con tilde ni eñe, y falla con "command not found" en vez de con algo
+          # que se parezca a un error de sintaxis.
+          bytes=$(stat -c%s manual/MANUAL.pdf)
+          if [ "$bytes" -lt 3000000 ]; then
+            echo "El PDF solo pesa $bytes bytes: no se generó completo." >&2
             exit 1
           fi
-          echo "Manual: $((tamaño / 1048576)) MB" >> "$GITHUB_STEP_SUMMARY"
+          echo "Manual: $((bytes / 1048576)) MB" >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with:
           name: manual

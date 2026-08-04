@@ -92,6 +92,42 @@ no en pelear con el entorno.
 - **Fragmentación:** se construyen "trozos" reutilizables (hash, cuenta, invariante)
   que luego se combinan en sistemas.
 
+## Contenido en capas: servir al principiante y al experto a la vez
+
+Un curso que va de cero a producción tiene un problema estructural: el mismo texto lo
+lee alguien que nunca escribió un contrato y alguien que lleva años en el sector. Bajar
+el nivel aburre al segundo; subirlo expulsa al primero.
+
+La solución en este programa **no** es escribir dos cursos, sino escribir cada bloque
+denso en **cuatro capas visibles**, para que cada lector sepa dónde entrar y qué puede
+saltarse sin perder el hilo:
+
+| Capa | Qué contiene | Para quién |
+|---|---|---|
+| 1 · **La idea en llano** | El concepto en lenguaje corriente, con una analogía y sin jerga sin glosar | Quien llega sin base. Nadie debería tener que buscar un término fuera para seguir leyendo |
+| 2 · **El cálculo trabajado** | El ejemplo completo, con números reales y cada paso a la vista | Quien está aprendiendo haciendo. Aquí es donde se resuelve el atasco |
+| 3 · **🎓 Si ya dominas esto** | Bordes, excepciones y detalle fino, en un bloque **plegable** | Quien ya conoce el tema. Plegado, no intimida a quien no lo necesita |
+| 4 · **💡 En una frase** | La idea que hay que retener si solo se retiene una | Todos. Fija el aprendizaje y sirve de repaso |
+
+Reglas de aplicación:
+
+- **La capa 3 va siempre plegada** (`<details>`). Que exista no debe aumentar la carga
+  cognitiva de quien no la abre.
+- **Ningún término de la capa 1 se usa sin glosar.** Si aparece "vbyte" o "calldata",
+  se explica en la misma frase, no en un enlace.
+- **La capa 2 usa números concretos, no símbolos.** "209 vB × 12 sat/vB = 2 508 sat"
+  enseña más que "tamaño × tasa = comisión".
+- **La capa 4 nunca introduce información nueva.** Si algo solo aparece ahí, está en el
+  sitio equivocado.
+- **Un bloque puede omitir la capa 3** si el tema no tiene profundidad extra honesta.
+  Inventar detalle para rellenar la plantilla es peor que no tenerla.
+
+Ejemplos aplicados: la comisión de Bitcoin en el
+[módulo 04](../curriculum/04-bitcoin/README.md), el desglose de gas en el
+[módulo 05](../curriculum/05-ethereum-evm/README.md), la lectura de trazas en el
+[módulo 06](../curriculum/06-solidity-foundry/README.md) y los decimales en el
+[módulo 07](../curriculum/07-dapps/README.md).
+
 ## Evaluación formativa y sumativa
 
 Ambas conviven; ver [Evaluación](evaluacion.md) para rúbricas y umbrales.

@@ -121,6 +121,73 @@ Su punto débil era el descubrimiento: todas las wallets peleaban por el mismo `
 
 En viem, el fallback se declara al crear el cliente (`fallback([http(rpcA), http(rpcB)])`) y el multicall está integrado como batching automático de lecturas de contrato: activarlo suele ser un cambio de configuración, no una reescritura. La regla operativa: toda escritura pasa antes por una simulación, y toda lectura que dispare decisiones de dinero se verifica contra más de una fuente.
 
+### El ciclo de vida de una transacción, y qué mostrar en cada estado
+
+La mayoría de las dApps que confunden al usuario cometen el mismo error: tratan "enviada" como "hecha". Una transacción atraviesa estados que la interfaz debe distinguir, porque cada uno exige una acción distinta.
+
+```mermaid
+flowchart LR
+    A[Simulada<br/>eth_call] -->|revierte| A2[Bloquear y explicar]
+    A -->|pasa| B[Firmada]
+    B --> C[Pending<br/>en el mempool]
+    C --> D[Confirmada]
+    C --> E[Reverted<br/>incluida, falló]
+    C --> F[Replaced<br/>mismo nonce, más fee]
+    C --> G[Dropped<br/>expulsada del mempool]
+```
+
+| Estado | Qué pasó | Qué debe hacer la interfaz |
+|---|---|---|
+| **Simulada** | `eth_call` con el mismo calldata, sin enviar | Si revierte, **no pedir la firma**: mostrar el motivo. Firmar algo que sabes que falla es cobrarle gas al usuario por nada |
+| **Pending** | Difundida, sin bloque | Mostrar el hash y que se puede acelerar o cancelar. **No** decir "completado" |
+| **Confirmada** | En un bloque, `status = 1` | Releer el estado desde el RPC, no asumirlo |
+| **Reverted** | En un bloque, `status = 0` | Se pagó el gas y no pasó nada. Decirlo así: el usuario ve el cobro y no ve el efecto |
+| **Replaced** | Otra transacción con el mismo nonce y más comisión ocupó su lugar | Seguir el **nonce**, no el hash. Si sigues el hash, la transacción "desaparece" |
+| **Dropped** | El mempool la descartó (llevaba demasiado tiempo o subió el mínimo) | Ofrecer reenviar. No se quedará pendiente para siempre |
+
+La regla que se deriva: **la fuente de verdad es la cadena, no tu estado local**. Tras confirmar, vuelve a leer el saldo desde el RPC. Si la interfaz suma el monto a su copia en memoria, cualquier divergencia (un revert, otra transacción del mismo usuario en otra pestaña) deja al usuario mirando un número que no existe.
+
+### Decimales: el error de tres ceros
+
+Es el fallo más caro que comete un principiante y el más fácil de evitar. **Los tokens no tienen decimales: tienen enteros y un número que dice dónde imaginar la coma.**
+
+```text
+USDC  → decimals = 6      1 USDC  = 1 000 000 unidades
+WETH  → decimals = 18     1 WETH  = 1 000 000 000 000 000 000 unidades
+WBTC  → decimals = 8      1 WBTC  = 100 000 000 unidades
+```
+
+Si asumes 18 porque "todos usan 18" y el token es USDC, enviar "5" da:
+
+```text
+lo que pretendías:  5 USDC     =         5 000 000 unidades
+lo que enviaste:    5×10¹⁸     = 5 000 000 000 000 000 000 unidades
+                                = 5 000 000 000 000 USDC
+```
+
+Un factor de 10¹². No hay confirmación que te salve: la transacción es válida y el token se movió.
+
+Tres reglas que lo cierran:
+
+1. **Nunca escribas el factor a mano.** `parseUnits("5", decimals)` y `formatUnits(valor, decimals)`; el `parseEther` de viem asume 18 y solo vale para ETH.
+2. **Lee `decimals()` del contrato**, no de una lista. Un token puede tener el `decimals` que quiera.
+3. **Nada de flotantes.** `0.1 + 0.2 !== 0.3` en JavaScript, y aquí eso es dinero. Los montos van en `BigInt` de punta a punta; el formateo a texto es lo último que se hace, solo para mostrar.
+
+El mismo razonamiento aplica a los feeds de precio: un oráculo con `decimals = 8` que devuelve `312450000000` son 3 124,50, no 312 450 000 000. Normaliza antes de comparar cualquier cosa con cualquier cosa.
+
+> 💡 **En una frase:** los tokens solo manejan enteros, y `decimals` dice dónde imaginar la coma. Lee ese número del contrato, convierte con `parseUnits`/`formatUnits` y no dejes que un flotante toque un monto.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — el detalle que rompe integraciones</summary>
+
+- **`decimals()` es opcional en el ERC-20.** Está en la extensión de metadatos, no en el estándar obligatorio. Un token puede no implementarlo, y tu código debe decidir si asume 18 o se niega a operar — negarse suele ser lo correcto.
+- **Hay tokens que mienten en el retorno.** USDT no devuelve `bool` en `transfer` pese a la firma del estándar; por eso existe `SafeERC20`, que trata "sin retorno" como éxito y "retorno false" como fallo.
+- **Los tokens con comisión de transferencia rompen la aritmética ingenua.** Envías 100 y llegan 98. Si tu contrato apunta 100, la contabilidad queda descuadrada desde el primer día: mide el saldo antes y después, no confíes en el argumento.
+- **`approve` tiene una condición de carrera conocida.** Cambiar una allowance no nula por otra permite al gastador consumir ambas si se adelanta. La mitigación clásica es poner a cero primero; la moderna, usar `permit` con su nonce.
+- **Los rebasing tokens (stETH y similares) cambian el saldo sin ninguna transferencia.** Cachear un balance y asumirlo estable produce diferencias que parecen un bug de tu código y son el comportamiento del token.
+
+</details>
+
 ## 🧪 Laboratorio guiado
 
 > 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).

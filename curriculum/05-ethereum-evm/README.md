@@ -133,6 +133,84 @@ precio efectivo = min(max fee, base fee + priority fee)
 
 Los valores vigentes de base fee cambian bloque a bloque: consúltalo en vivo antes de estimar costes.
 
+### El coste de una transacción, desglosado
+
+"¿Por qué me costó eso?" es la pregunta más repetida del módulo, y tiene respuesta exacta: se suma.
+
+Antes de los números, la idea. En Ethereum hay **dos cosas separadas** que se suelen confundir en una:
+
+- **El gas** mide *cuánto trabajo* pide tu transacción. Es una cantidad fija para una operación dada: escribir en el estado siempre cuesta lo mismo, esté la red vacía o saturada.
+- **El precio del gas** es *cuánto vale ese trabajo ahora mismo*, y sí cambia con la demanda.
+
+> Analogía: el gas son los kilómetros del viaje; el precio del gas, lo que cuesta el litro hoy. La factura es el producto de ambos. Si la red está cara, no es que tu transacción haga más trabajo: es que el litro subió.
+
+El trabajo (el gas) se reparte en tres partidas: **base**, **datos** y **estado**. Vamos con una transferencia ERC-20 corriente.
+
+**1. Coste base.** Toda transacción paga **21 000 gas** por existir, aunque no haga nada. Es el precio de verificar la firma, actualizar el nonce y mover el saldo.
+
+**2. Calldata.** Los datos de entrada se cobran por byte, y **no todos los bytes cuestan igual**: un byte cero vale 4 gas y uno distinto de cero vale 16 (EIP-2028). El calldata de un `transfer(address,uint256)` son 68 bytes: 4 de selector + 32 de dirección + 32 de monto.
+
+```text
+selector  a9059cbb                          →  4 bytes, ninguno cero      = 4 × 16 =  64
+dirección 000…0d8dA6BF26964aF9D7eEd9e03E53415D37aA96045 → 32 bytes, 12 en cero
+                                                → 12×4 + 20×16 = 48 + 320 = 368
+monto     000…00000000000000000000000f4240  → 32 bytes, 29 en cero
+                                                → 29×4 + 3×16 = 116 + 48   = 164
+                                                                      ──────────
+                                                                calldata ≈ 596 gas
+```
+
+Esto explica una rareza que se ve en la práctica: **las direcciones con muchos ceros al principio son literalmente más baratas de usar**, y por eso existen contratos con direcciones "vanity" llenas de ceros en protocolos de alto volumen.
+
+**3. Estado.** Es la parte cara, y depende de algo que no controlas: si el destinatario **ya tenía** saldo de ese token.
+
+¿Por qué importa tanto? Porque escribir un dato **nuevo** obliga a cada uno de los miles de nodos de la red a guardarlo para siempre; sobrescribir uno que ya existía solo cambia un valor que ya ocupaba sitio. La EVM cobra esa diferencia de forma explícita:
+
+| Operación | Cuándo | Gas |
+|---|---|---:|
+| `SSTORE` de slot que pasa de 0 a distinto de 0 | el destinatario recibe el token por primera vez | 20 000 |
+| `SSTORE` de slot que ya era distinto de 0 | el destinatario ya tenía saldo | 2 900 |
+| Acceso "frío" a un slot (primera vez en la transacción) | siempre, la primera lectura | 2 100 |
+| Acceso "templado" (ya tocado en esta transacción) | lecturas siguientes | 100 |
+
+De ahí sale la horquilla que verás en cualquier explorador: el mismo `transfer` consume **≈ 65 000 gas** cuando el destinatario estrena saldo y **≈ 51 000** cuando ya lo tenía. No es que la red esté más cara: es que escribir un cero donde no había nada obliga a la red a guardar una entrada nueva para siempre.
+
+**4. Y ahora el precio.** El gas es *trabajo*; el precio de ese trabajo se fija aparte, y desde EIP-1559 son dos números:
+
+```text
+coste total = gas usado × (base fee + priority fee)
+
+  65 000 gas × (12 gwei base + 1 gwei propina)
+= 65 000 × 13 gwei
+= 845 000 gwei
+= 0,000845 ETH
+```
+
+De esos, `65 000 × 12 = 780 000 gwei` **se queman** (desaparecen de la circulación) y solo `65 000 × 1 = 65 000 gwei` van al validador. Mezclar ambas es el error tabulado en este módulo: si sumas la base fee al ingreso del validador, te sale un número que no corresponde a nadie.
+
+El `maxFeePerGas` que fija tu cartera es un **techo**, no un precio: si la base fee sube por encima, la transacción espera; si baja, pagas menos de lo autorizado y te devuelven la diferencia.
+
+### Por qué la estimación no es una promesa
+
+`eth_estimateGas` ejecuta la transacción contra el estado **actual** y te dice cuánto consumió. Pero se incluirá en un bloque futuro, con otro estado.
+
+El caso canónico: estimas un `transfer` a una dirección que ya tiene saldo → 51 000. Antes de que te incluyan, esa dirección retira todo y su saldo queda en cero. Tu transacción ahora hace un `SSTORE` de 0 a distinto de 0 → necesita 65 000, y con un límite de 51 000 revierte por *out of gas*… **consumiendo igualmente todo el gas del límite**.
+
+Por eso las carteras añaden un margen sobre la estimación, y por eso un revert cuesta dinero: el trabajo de cómputo se hizo y hay que pagarlo; lo que se deshace son los efectos, no el gasto.
+
+> 💡 **En una frase:** el gas mide trabajo y no cambia; el precio del gas mide la demanda y sí cambia. Escribir un dato nuevo cuesta ~7 veces más que sobrescribir uno existente, y esa diferencia explica casi toda la variación que verás.
+
+<details>
+<summary><strong>🎓 Si ya dominas esto</strong> — lo que suele fallar en producción</summary>
+
+- **El reembolso por liberar estado tiene tope.** Poner un slot a cero devuelve gas, pero desde EIP-3529 el reembolso está limitado al 20 % del gas consumido. Los patrones de "gas token" que explotaban esto dejaron de funcionar en Londres.
+- **Las listas de acceso (EIP-2930) pre-pagan lo frío.** Declarar de antemano las direcciones y slots que tocarás convierte accesos de 2 100 en 100 gas, pagando 1 900 por adelantado. Merece la pena cuando el contrato toca muchos slots conocidos; es contraproducente si te sobra la lista.
+- **`gasUsed` no es `gasLimit`.** Lo no consumido se devuelve, salvo en un revert por *out of gas*, donde se pierde todo el límite. Por eso un límite exageradamente alto es gratis si la transacción va bien y caro si se queda sin gas.
+- **El blob gas de EIP-4844 es un mercado aparte**, con su propia base fee y su propio ajuste. Un rollup no compite por el gas de ejecución para publicar sus datos, y por eso el coste por transacción de L2 se desacopló de la congestión de L1 en Dencun.
+- **La base fee se ajusta ±12,5 % por bloque** según la desviación respecto al objetivo (la mitad del límite). Eso acota la velocidad a la que puede subir: de un pico a otro hay varios bloques de margen, que es justo lo que hace viable fijar un `maxFeePerGas` razonable.
+
+</details>
+
 ## 🧪 Laboratorio guiado
 
 > 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).

@@ -5,10 +5,10 @@
   "description": "Ruta práctica en español para aprender blockchain desde nivel inicial hasta producción",
   "packageManager": "pnpm@10.13.1",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
-    "check": "node scripts/check-repository.mjs",
+    "check": "node scripts/check-repository.mjs && node scripts/check-workflows.mjs",
     "lint:js": "eslint .",
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "build:landing": "node scripts/build-landing.mjs",
