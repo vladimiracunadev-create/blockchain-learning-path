@@ -152,6 +152,82 @@ for (const [indice, slug] of moduleSlugs.entries()) {
 if (cadenaErrores.length) throw new Error(`Cadena de módulos rota:\n${cadenaErrores.join("\n")}`);
 console.log(`Cadena anterior/siguiente: ${moduleSlugs.length} módulos encadenados.`);
 
+// --- Trazabilidad de las fuentes ----------------------------------------------
+// El contenido de los módulos es original, pero se apoya en obras concretas. Esa
+// afirmación solo vale algo si el lector PUEDE IR A COMPROBARLA: cada módulo debe
+// declarar su fuente y ofrecer enlaces a fuente primaria, y la bibliografía debe
+// decir dónde se usa cada obra.
+//
+// Sin esto, un módulo podría afirmar cualquier cosa "según Antonopoulos" y nadie
+// tendría forma de contrastarlo. El workflow de enlaces comprueba además, cada
+// semana, que esas URL siguen vivas.
+const MINIMO_REFERENCIAS = 3;
+const bibliografia = await readFile("docs/bibliografia.md", "utf8");
+const fuentesErrores = [];
+
+for (const slug of moduleSlugs) {
+  const texto = await readFile(join("curriculum", slug, "README.md"), "utf8");
+
+  if (!/\*\*Fuente:\*\*/.test(texto)) {
+    fuentesErrores.push(`${slug}: la cabecera no declara **Fuente:**`);
+  }
+
+  const referencias = texto.split(/\n## [^\n]*Referencias[^\n]*\n/)[1]?.split("\n## ")[0] ?? "";
+  const enlaces = referencias.match(/https?:\/\//g) ?? [];
+  if (enlaces.length < MINIMO_REFERENCIAS) {
+    fuentesErrores.push(
+      `${slug}: solo ${enlaces.length} enlaces en Referencias (mínimo ${MINIMO_REFERENCIAS}); ` +
+      `una fuente que no se puede consultar no es una fuente`
+    );
+  }
+
+  if (!bibliografia.includes(`../curriculum/${slug}/README.md`)) {
+    fuentesErrores.push(`${slug}: no aparece en la tabla de obras de docs/bibliografia.md`);
+  }
+}
+if (fuentesErrores.length) throw new Error(`Fuentes no trazables:\n${fuentesErrores.join("\n")}`);
+console.log(`Fuentes: ${moduleSlugs.length} módulos con fuente declarada y referencias enlazadas.`);
+
+// --- Recuento de pruebas declarado en la documentación ------------------------
+// La bibliografía afirma que buena parte del contenido "se comprueba ejecutándolo"
+// y da una cifra. Una cifra escrita a mano envejece al primer test que se añada, y
+// entonces el argumento de validez pasa a ser falso. Se cuenta y se contrasta.
+const IGNORAR_AL_CONTAR = new Set(["node_modules", "dist", "out", "cache", "lib", "build", "www", "android", "site", ".git", "bundle"]);
+
+async function contarPruebas(directorio) {
+  let node = 0;
+  let foundry = 0;
+  for (const entrada of await readdir(directorio, { withFileTypes: true })) {
+    if (IGNORAR_AL_CONTAR.has(entrada.name)) continue;
+    const ruta = join(directorio, entrada.name);
+    if (entrada.isDirectory()) {
+      const anidado = await contarPruebas(ruta);
+      node += anidado.node;
+      foundry += anidado.foundry;
+    } else if (entrada.name.endsWith(".test.mjs")) {
+      node += ((await readFile(ruta, "utf8")).match(/^test\(/gm) ?? []).length;
+    } else if (entrada.name.endsWith(".t.sol")) {
+      foundry += ((await readFile(ruta, "utf8")).match(/function test/g) ?? []).length;
+    }
+  }
+  return { node, foundry };
+}
+
+const pruebas = await contarPruebas(".");
+const total = pruebas.node + pruebas.foundry;
+const declarado = /\*\*(\d+) pruebas automatizadas\*\* \((\d+) de Node y (\d+) de Foundry\)/.exec(bibliografia);
+if (!declarado) {
+  throw new Error("docs/bibliografia.md ya no declara el recuento de pruebas: actualiza el texto o esta comprobación.");
+}
+if (Number(declarado[1]) !== total || Number(declarado[2]) !== pruebas.node || Number(declarado[3]) !== pruebas.foundry) {
+  throw new Error(
+    `El recuento de pruebas de docs/bibliografia.md está obsoleto.\n` +
+    `  declara: ${declarado[1]} (${declarado[2]} Node + ${declarado[3]} Foundry)\n` +
+    `  reales:  ${total} (${pruebas.node} Node + ${pruebas.foundry} Foundry)`
+  );
+}
+console.log(`Pruebas: ${total} (${pruebas.node} Node + ${pruebas.foundry} Foundry) — coincide con lo documentado.`);
+
 // --- Coherencia de versión ----------------------------------------------------
 // La versión vive en el package.json raíz. Cualquier otro sitio que la declare
 // es una copia que se desincroniza sola: un bump que olvide uno publica un

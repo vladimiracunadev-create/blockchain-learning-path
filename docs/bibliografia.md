@@ -12,6 +12,62 @@ rápido y las ediciones nuevas corrigen detalles de protocolo. Las fechas de las
 especificaciones (EIPs, upgrades) están indicadas para que distingas lo estable de lo
 que aún evoluciona.
 
+## 🧪 Cómo se valida este contenido (y qué NO garantiza)
+
+Pregunta legítima: si el material es original y no reproduce los libros, **¿cómo
+sabes que lo que afirma es cierto?** La respuesta honesta es que hay dos tipos de
+afirmación en el programa y **se validan de forma distinta**.
+
+### 1. Lo que se demuestra ejecutando
+
+La mayor parte del contenido técnico no te pide que confíes en nadie: **lo puedes
+correr**. Si el módulo 01 afirma que una prueba de Merkle de 8 hojas necesita 3
+hashes, hay un test que lo comprueba; si el módulo 09 afirma que cierta línea
+habilita una reentrancia, hay un exploit que drena el contrato y un fix que lo
+resiste.
+
+| Afirmación de | Se comprueba con |
+|---|---|
+| Hashes, Merkle, firmas | `pnpm test` — pruebas de `labs/01-cryptography` |
+| Prueba de trabajo y dificultad | `pnpm test` — `labs/02-consensus` |
+| Conservación de valor en UTXO | `pnpm test` — `labs/04-bitcoin` |
+| Codificación ABI y selectores | `pnpm test` — `labs/05-evm` |
+| Reentrancia, control de acceso, oráculo, replay, front-running, colisión de storage | `forge test` en [`security-challenges/`](../security-challenges/README.md) — cada reto trae su **exploit** y su **fix** |
+| Contratos de bóveda, gobernanza y financiamiento | `forge test` en `labs/` y `projects/` |
+
+Son **44 pruebas automatizadas** (24 de Node y 20 de Foundry) que la CI ejecuta en
+cada cambio. Una afirmación que se contradiga con el código hace fallar el build.
+Eso es más fuerte que una cita: no apela a la autoridad de un autor, se comprueba.
+
+Ese número tampoco es una promesa: `pnpm check` cuenta las pruebas del repositorio
+y falla si esta página deja de coincidir con la realidad.
+
+### 2. Lo que se apoya en fuentes
+
+El resto —historia, decisiones de diseño, cifras del ecosistema, casos de empresa,
+regulación— no se puede ejecutar. Ahí la garantía es la **trazabilidad**:
+
+- Cada módulo **declara su fuente** en la cabecera (`**Fuente:**`).
+- Cada módulo cierra con **Referencias** enlazando a la fuente primaria (mínimo 3
+  enlaces; los módulos van de 3 a 9).
+- `pnpm check` **falla** si un módulo no declara fuente, no tiene referencias
+  enlazadas o no aparece en la tabla de abajo.
+- Un workflow revisa **semanalmente** que esos enlaces siguen vivos y abre un issue
+  si alguno muere. Una fuente que ya no se puede consultar deja de ser una fuente.
+
+### Qué NO garantiza esto
+
+Sé explícito sobre el límite: que el material cite una obra **no significa que un
+tercero haya certificado que la interpretación sea fiel a ella**. Este programa no
+tiene revisión académica por pares. Si vas a apoyar una decisión técnica o de
+negocio en algo que leas aquí:
+
+- **Contrástalo con la fuente primaria enlazada** — para eso están los enlaces.
+- Desconfía especialmente de **cifras y estados del ecosistema**: cambian rápido.
+  El material marca las fechas de cada hito por esa razón.
+- Si encuentras un error, [abre un issue](https://github.com/vladimiracunadev-create/blockchain-learning-path/issues):
+  corregir el material es una contribución tan válida como añadirlo.
+
 ## 🔗 Qué obra sustenta cada módulo
 
 Cada módulo declara su fuente en la cabecera. Esta tabla invierte esa relación: te
