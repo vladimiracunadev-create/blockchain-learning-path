@@ -151,3 +151,28 @@ for (const [indice, slug] of moduleSlugs.entries()) {
 }
 if (cadenaErrores.length) throw new Error(`Cadena de módulos rota:\n${cadenaErrores.join("\n")}`);
 console.log(`Cadena anterior/siguiente: ${moduleSlugs.length} módulos encadenados.`);
+
+// --- Coherencia de versión ----------------------------------------------------
+// La versión vive en el package.json raíz. Cualquier otro sitio que la declare
+// es una copia que se desincroniza sola: un bump que olvide uno publica un
+// instalador y un APK que dicen versiones distintas del mismo curso.
+const version = JSON.parse(await readFile("package.json", "utf8")).version;
+const versionErrores = [];
+
+for (const app of ["apps/desktop/package.json", "apps/android/package.json"]) {
+  const suya = JSON.parse(await readFile(app, "utf8")).version;
+  if (suya !== version) versionErrores.push(`${app} declara ${suya} y la raíz ${version} — ejecuta: pnpm sync:versions`);
+}
+
+const readme = await readFile("README.md", "utf8");
+if (!readme.includes(`versión-${version}-`)) {
+  versionErrores.push(`el badge del README no está en ${version}`);
+}
+
+const changelog = await readFile("CHANGELOG.md", "utf8");
+if (!changelog.includes(`## [${version}]`)) {
+  versionErrores.push(`CHANGELOG.md no tiene una entrada para ${version}`);
+}
+
+if (versionErrores.length) throw new Error(`Versión incoherente:\n${versionErrores.join("\n")}`);
+console.log(`Versión: ${version} coherente en raíz, apps, README y CHANGELOG.`);

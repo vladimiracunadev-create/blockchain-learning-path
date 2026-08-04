@@ -53,7 +53,9 @@ for (const carpeta of ["mipmap-anydpi-v26"]) {
 const valores = join(RES, "values");
 mkdirSync(valores, { recursive: true });
 
-const version = JSON.parse(readFileSync(join(AQUI, "package.json"), "utf8")).version;
+// La versión sale del package.json RAÍZ: es la única fuente de verdad del
+// programa, y así el APK nunca declara una versión distinta a la del curso.
+const version = JSON.parse(readFileSync(join(AQUI, "..", "..", "package.json"), "utf8")).version;
 writeFileSync(join(valores, "ic_launcher_background.xml"), `<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="ic_launcher_background">#5B3FD6</color>

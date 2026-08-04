@@ -3,7 +3,11 @@ pragma solidity 0.8.26;
 
 contract VulnerableReentrancy {
     mapping(address => uint256) public balance;
-    function deposit() external payable { balance[msg.sender] += msg.value; }
+
+    function deposit() external payable {
+        balance[msg.sender] += msg.value;
+    }
+
     function withdraw() external {
         uint256 amount = balance[msg.sender];
         (bool ok,) = msg.sender.call{value: amount}("");
@@ -15,7 +19,11 @@ contract VulnerableReentrancy {
 contract FixedReentrancy {
     mapping(address => uint256) public balance;
     bool private entered;
-    function deposit() external payable { balance[msg.sender] += msg.value; }
+
+    function deposit() external payable {
+        balance[msg.sender] += msg.value;
+    }
+
     function withdraw() external {
         require(!entered);
         entered = true;

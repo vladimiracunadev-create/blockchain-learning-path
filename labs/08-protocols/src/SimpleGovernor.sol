@@ -39,18 +39,13 @@ contract SimpleGovernor {
         uint256 period,
         uint256 delay
     ) {
-        if (
-            voters.length == 0 ||
-            voters.length != weights.length ||
-            requiredQuorum == 0 ||
-            period == 0
-        ) revert InvalidConfiguration();
+        if (voters.length == 0 || voters.length != weights.length || requiredQuorum == 0 || period == 0) {
+            revert InvalidConfiguration();
+        }
         for (uint256 i; i < voters.length; ++i) {
             if (
-                voters[i] == address(0) ||
-                weights[i] == 0 ||
-                weights[i] > type(uint128).max ||
-                votingPower[voters[i]] != 0
+                voters[i] == address(0) || weights[i] == 0 || weights[i] > type(uint128).max
+                    || votingPower[voters[i]] != 0
             ) {
                 revert InvalidConfiguration();
             }

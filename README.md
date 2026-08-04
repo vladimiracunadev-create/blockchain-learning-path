@@ -62,7 +62,9 @@ Cada etapa se apoya explícitamente en la literatura de referencia del sector; e
 | **Escalabilidad, ZK y arquitectura** | Buterin — *An Incomplete Guide to Rollups* · Thaler — *Proofs, Arguments, and Zero-Knowledge* · ERC-4337 · Flashbots |
 | **Empresa e infraestructura** | BIS · World Economic Forum · documentación de clientes de nodo y de nube |
 
-> Referencias completas en la [bibliografía central](docs/bibliografia.md), que también recoge los **hitos recientes** del ecosistema (Merge, Dencun/EIP-4844, Pectra/EIP-7702).
+> **¿Dónde se usa cada libro?** La bibliografía incluye la tabla [qué obra sustenta cada módulo](docs/bibliografia.md#-qué-obra-sustenta-cada-módulo): enlaza cada obra con su fuente oficial y con el módulo concreto que la usa, así que puedes ir del libro al módulo o del módulo al libro. Varias de las obras clave —*Mastering Bitcoin*, *Mastering Ethereum*, *Proofs, Arguments, and Zero-Knowledge*— tienen **edición legalmente gratuita**: el programa completo se puede seguir sin comprar un solo libro.
+>
+> La bibliografía recoge además los **hitos recientes** del ecosistema (Merge, Dencun/EIP-4844, Pectra/EIP-7702).
 
 ## 📥 Llévate el curso: apps y manual
 
@@ -131,7 +133,8 @@ El programa está listo para el aula: [guía del instructor](instructor/README.m
 2. **Aplica el ciclo** de cada módulo: comprender → experimentar → explicar → construir → verificar.
 3. **Ejecuta los laboratorios** en local (Anvil) o testnet; registra la evidencia en tu bitácora de progreso.
 4. **Haz el reto verificable** de cada módulo: ahí se fija el aprendizaje con un criterio de aceptación explícito.
-5. **Usa los libros de referencia** de cada área para profundizar.
+5. **Cierra con la autoevaluación** del módulo (4 preguntas al final de cada uno, también en el sitio y en las apps). Cada opción incorrecta es un error frecuente documentado en ese mismo módulo: si fallas, la explicación te dice exactamente qué releer. Al terminar el programa, el [quiz global](https://vladimiracunadev-create.github.io/blockchain-learning-path/autoevaluacion.html) repasa las 19 etapas.
+6. **Usa los libros de referencia** de cada área para profundizar.
 
 Plan completo en el [ROADMAP de 26 semanas](ROADMAP.md) · ruta intensiva en [docs/ruta-rapida.md](docs/ruta-rapida.md).
 
@@ -141,12 +144,14 @@ Recorridos ordenados para **desarrollo, arquitectura, auditoría, producto, inve
 
 ## ✅ Calidad y CI
 
-- **CI**: lint de Markdown, validación de estructura y enlaces (`pnpm check`), pruebas de Node y de contratos con Foundry.
-- **Security**: escaneo de secretos con `gitleaks` en cada push y semanalmente.
-- **Deploy Pages**: la [landing](https://vladimiracunadev-create.github.io/blockchain-learning-path/) se genera desde los datos del repo y se publica automáticamente.
+- **CI**: lint de Markdown, JavaScript (ESLint) y Solidity (`forge fmt`), validación de estructura, enlaces, autoevaluación y cadena de módulos (`pnpm check`), pruebas de Node y de contratos con Foundry, y análisis estático con Slither.
+- **Security**: escaneo de secretos con `gitleaks` en cada push y semanalmente, más CodeQL sobre el JavaScript.
+- **Enlaces**: revisión semanal de los ~240 enlaces externos del material; si alguno muere, se abre un issue.
+- **Apps**: cada binario se construye y se **abre** en CI para contar los módulos, las páginas y las preguntas que lleva dentro. Compilar no es evidencia de que el artefacto contenga el curso.
+- **Deploy Pages**: el [sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) y el manual en PDF se generan desde el repo y se publican automáticamente.
 - **Dependabot** mantiene al día las dependencias y las GitHub Actions.
 
-Consulta la [guía de contribución](CONTRIBUTING.md) y la [política de seguridad](SECURITY.md).
+Consulta la [guía de contribución](CONTRIBUTING.md), el [código de conducta](CODE_OF_CONDUCT.md) y la [política de seguridad](SECURITY.md).
 
 ## 🎯 Qué es y qué no es este programa
 

@@ -65,6 +65,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:icons
+      - run: pnpm build:manual
       - run: pnpm build:bundle
       - name: Verificar el contenido antes de empaquetar
         run: pnpm app:windows:verify
@@ -103,6 +104,7 @@ jobs:
       - uses: android-actions/setup-android@v3
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:icons
+      - run: pnpm build:manual
       - run: pnpm build:bundle
       - name: Construir el APK
         run: |
@@ -115,10 +117,10 @@ jobs:
         run: node apps/android/verificar-apk.mjs | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Renombrar
         run: |
-          versión=$(node -p "require('./package.json').version")
+          version=$(node -p "require('./package.json').version")
           mkdir -p apk
           cp apps/android/android/app/build/outputs/apk/debug/app-debug.apk \
-             "apk/BlockchainLearningPath-${versión}.apk"
+             "apk/BlockchainLearningPath-${version}.apk"
       - uses: actions/upload-artifact@v4
         with:
           name: android

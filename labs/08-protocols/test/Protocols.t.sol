@@ -8,7 +8,10 @@ import {SimpleGovernor} from "../src/SimpleGovernor.sol";
 
 contract GovernedTarget {
     uint256 public value;
-    function setValue(uint256 next) external { value = next; }
+
+    function setValue(uint256 next) external {
+        value = next;
+    }
 }
 
 contract ProtocolsTest is Test {

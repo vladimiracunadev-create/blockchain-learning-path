@@ -12,6 +12,40 @@ rápido y las ediciones nuevas corrigen detalles de protocolo. Las fechas de las
 especificaciones (EIPs, upgrades) están indicadas para que distingas lo estable de lo
 que aún evoluciona.
 
+## 🔗 Qué obra sustenta cada módulo
+
+Cada módulo declara su fuente en la cabecera. Esta tabla invierte esa relación: te
+dice **dónde se usa cada obra**, para que puedas ir del libro al módulo o del módulo
+al libro. Los enlaces apuntan a la fuente oficial —cuando la obra tiene una edición
+legalmente gratuita, se enlaza esa.
+
+| Módulo | Obra que lo sustenta |
+|---|---|
+| [00 · Orientación](../curriculum/00-orientacion/README.md) | Bashir — *Mastering Blockchain* · Werbach — [*The Blockchain and the New Architecture of Trust*](https://mitpress.mit.edu/9780262038935/the-blockchain-and-the-new-architecture-of-trust/) |
+| [01 · Criptografía](../curriculum/01-criptografia/README.md) | Aumasson — [*Serious Cryptography*](https://nostarch.com/serious-cryptography-2nd-edition) · Katz, Lindell — [*Introduction to Modern Cryptography*](http://www.cs.umd.edu/~jkatz/imc.html) |
+| [02 · Sistemas distribuidos](../curriculum/02-sistemas-distribuidos/README.md) | Cachin, Guerraoui, Rodrigues — [*Reliable and Secure Distributed Programming*](https://link.springer.com/book/10.1007/978-3-642-15260-3) · Tanenbaum, van Steen — [*Distributed Systems*](https://www.distributed-systems.net/index.php/books/ds4/) (PDF gratuito) |
+| [03 · Consenso](../curriculum/03-consenso/README.md) | Nakamoto — [whitepaper de Bitcoin](https://bitcoin.org/bitcoin.pdf) · Castro, Liskov — [*Practical Byzantine Fault Tolerance*](https://pmg.csail.mit.edu/papers/osdi99.pdf) |
+| [04 · Bitcoin](../curriculum/04-bitcoin/README.md) | Antonopoulos — [*Mastering Bitcoin*](https://github.com/bitcoinbook/bitcoinbook) (libre) · [*Mastering the Lightning Network*](https://github.com/lnbook/lnbook) (libre) |
+| [05 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md) | Antonopoulos, Wood — [*Mastering Ethereum*](https://github.com/ethereumbook/ethereumbook) (libre) · Wood — [*Yellow Paper*](https://ethereum.github.io/yellowpaper/paper.pdf) |
+| [06 · Solidity y Foundry](../curriculum/06-solidity-foundry/README.md) | [Documentación de Solidity](https://docs.soliditylang.org/) · [The Foundry Book](https://book.getfoundry.sh/) |
+| [07 · dApps](../curriculum/07-dapps/README.md) | [ethereum.org — Developers](https://ethereum.org/developers/docs/) · [documentación de viem](https://viem.sh/) |
+| [08 · Tokens](../curriculum/08-tokens/README.md) | [EIPs de Ethereum](https://eips.ethereum.org/) · [OpenZeppelin Contracts](https://docs.openzeppelin.com/contracts/) |
+| [09 · Seguridad](../curriculum/09-seguridad/README.md) | Trail of Bits — [*Building Secure Contracts*](https://secure-contracts.com/) · ConsenSys — [*Smart Contract Best Practices*](https://consensysdiligence.github.io/smart-contract-best-practices/) |
+| [10 · Oráculos e indexación](../curriculum/10-oraculos-indexacion/README.md) | [Chainlink docs](https://docs.chain.link/) · [The Graph docs](https://thegraph.com/docs/) |
+| [11 · DAO y gobernanza](../curriculum/11-dao-gobernanza/README.md) | [OpenZeppelin Governor](https://docs.openzeppelin.com/contracts/governance) · [Compound Governance](https://docs.compound.finance/) |
+| [12 · Escalabilidad](../curriculum/12-escalabilidad/README.md) | Buterin — [*An Incomplete Guide to Rollups*](https://vitalik.eth.limo/general/2021/01/05/rollup.html) · [L2BEAT](https://l2beat.com/) |
+| [13 · Interoperabilidad](../curriculum/13-interoperabilidad/README.md) | [Cosmos IBC](https://ibc.cosmos.network/) · [Polkadot XCM](https://wiki.polkadot.network/) |
+| [14 · Privacidad y ZK](../curriculum/14-privacidad-zk/README.md) | Thaler — [*Proofs, Arguments, and Zero-Knowledge*](https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.html) (libre) · [ZKProof Community Reference](https://zkproof.org/) |
+| [15 · Arquitectura avanzada](../curriculum/15-arquitectura-avanzada/README.md) | [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337) y [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702) · [Flashbots — investigación](https://writings.flashbots.net/) |
+| [16 · Infraestructura y nodos](../curriculum/16-infraestructura-nodos/README.md) | [ethereum.org — Nodos y clientes](https://ethereum.org/developers/docs/nodes-and-clients/) · [EthStaker](https://ethstaker.org/) |
+| [17 · Empresa](../curriculum/17-blockchain-en-la-empresa/README.md) | Informes del [BIS](https://www.bis.org/) y del [WEF](https://www.weforum.org/) · Werbach — *The Blockchain and the New Architecture of Trust* |
+| [18 · Implementación](../curriculum/18-implementacion-empresarial/README.md) | Prácticas públicas de integración del sector financiero y documentación de cada componente citado |
+
+> **Obras libres.** *Mastering Bitcoin*, *Mastering Ethereum*, *Mastering the Lightning
+> Network*, *Distributed Systems*, *Proofs, Arguments, and Zero-Knowledge* y el
+> *MoonMath Manual* tienen edición legalmente gratuita: puedes seguir el programa
+> completo sin comprar un solo libro.
+
 ## Libros de referencia por área
 
 | Área | Obras de referencia |

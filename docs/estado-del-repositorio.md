@@ -22,8 +22,11 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | dApp y datos | Interfaz, indexador y panel educativo | ✅ |
 | Seguridad | Ofensiva autorizada y auditoría | ✅ |
 | Evaluación | Evaluaciones, progreso, certificado y kit docente | ✅ |
+| Autoevaluación | Quiz global de 24 preguntas + 76 preguntas repartidas en los 19 módulos | ✅ |
+| Apps offline | App de escritorio para Windows y APK de Android con todo el curso dentro | ✅ |
+| Manual en PDF | ~310 páginas con todo el contenido; se genera en cada publicación | ✅ |
 | Bibliografía | Libros de referencia por área e hitos del ecosistema | ✅ |
-| CI y publicación | Lint, pruebas Foundry, escaneo de secretos, landing en GitHub Pages, docs de despliegue y operación | ✅ |
+| CI y publicación | Lint (Markdown, JS y Solidity), pruebas Node y Foundry, escaneo de secretos, CodeQL, vigilancia de enlaces externos, sitio en GitHub Pages y binarios verificados por contenido | ✅ |
 
 ## Etapas del programa
 
@@ -43,12 +46,14 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | `curriculum/` | Módulos 00–18 y plantilla | ✅ | Abrir `curriculum/README.md` |
 | `labs/` | Laboratorios con guía y catálogo | ✅ | Revisar `labs/CATALOG.md` |
 | `projects/` | Contratos Foundry de ejemplo | ✅ | `forge test` en el proyecto |
-| `apps/` | dApp web e indexador | ✅ | Ver [despliegue local](despliegue-local.md) |
+| `apps/` | dApp web, indexador, panel y las dos apps offline | ✅ | Ver [despliegue local](despliegue-local.md) |
+| `apps/desktop/` | App de Windows (Electron) | ✅ | `pnpm app:windows:verify` |
+| `apps/android/` | App Android (Capacitor) | ✅ | `pnpm app:android:verify` |
 | `capstone/` | Proyecto integrador | ✅ | Abrir `capstone/README.md` |
 | `assessments/` | Evaluaciones y progreso | ✅ | Revisar rúbricas y criterios |
 | `instructor/` | Kit docente y syllabus | ✅ | Abrir `instructor/README.md` |
 | `industria/` | Análisis de la industria | ✅ | Abrir `industria/README.md` |
-| CI / workflows | Lint, pruebas, escaneo de secretos | ✅ | Revisar estado de Actions en verde |
+| CI / workflows | Lint, pruebas, secretos, CodeQL, enlaces y binarios | ✅ | Revisar estado de Actions en verde |
 
 ## Requiere infraestructura externa
 
@@ -63,6 +68,7 @@ ellas, sin afirmar que una instalación local equivale a producción.
 | Testnets operadas | RPC financiado y monitoreo | 🚧 |
 | Certificados institucionales | Emisión reconocida | 🚧 |
 | Auditoría externa | Revisión independiente | 🚧 |
+| Firma de los binarios | Certificado de firma de código y cuenta de Play Store; sin ellos Windows y Android avisan del origen desconocido | 🚧 |
 | Asesoría legal/tributaria | Producto real conforme a normativa | 🚧 |
 | Publicación institucional | Organización y dominio propios | 🚧 |
 
