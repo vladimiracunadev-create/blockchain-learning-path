@@ -1,6 +1,6 @@
 {
   "name": "blockchain-learning-path",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "description": "Ruta práctica en español para aprender blockchain desde nivel inicial hasta producción",
   "packageManager": "pnpm@10.13.1",

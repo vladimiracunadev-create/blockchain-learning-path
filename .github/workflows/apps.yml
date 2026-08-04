@@ -53,6 +53,9 @@ jobs:
       - name: Generar el manual en PDF
         run: pnpm build:manual
 
+      - name: Comprobar que el manual tiene el tamaño anunciado
+        run: node scripts/check-manual.mjs
+
       - name: Generar el bundle del curso
         run: pnpm build:bundle
 
@@ -112,6 +115,9 @@ jobs:
       # sin él y el verificador lo rechaza (que es justo lo que debe hacer).
       - name: Generar el manual en PDF
         run: pnpm build:manual
+
+      - name: Comprobar que el manual tiene el tamaño anunciado
+        run: node scripts/check-manual.mjs
 
       - name: Generar el bundle del curso
         run: pnpm build:bundle

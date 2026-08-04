@@ -3,6 +3,28 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.8.1] · 2026-08-04
+
+El manual en PDF crece con el contenido: incluye la guía de entrada y las 24 218
+palabras de profundización de la 0.8.0.
+
+### Corregido
+
+- **El manual no incluía [«Empieza aquí»](docs/empieza-aqui.md).** La guía es la primera
+  parada en el README, en el sitio y en las apps, pero el manifiesto del manual no la
+  recogía: quien imprimía el PDF y lo abría por el principio no la encontraba.
+- **El PDF pasa de ~310 a 341 páginas** y la documentación lo dice: README y
+  `docs/estado-del-repositorio.md` anunciaban una cifra que dejó de ser cierta al crecer
+  el currículo. Las referencias históricas del CHANGELOG y del ROADMAP se conservan.
+- El ROADMAP seguía marcando 0.7.0 como versión actual.
+
+### Añadido
+
+- `scripts/check-manual.mjs`: cuenta las páginas del PDF generado y falla si se desvían
+  más de un 12 % de lo que anuncia el README. Se ejecuta en los tres workflows que
+  generan el manual. El PDF ya no se versiona, así que sin esto nada sujetaba la cifra.
+- `pnpm check` verifica que el ROADMAP marque como actual la versión del `package.json`.
+
 ## [0.8.0] · 2026-08-04
 
 Profundización de los 19 módulos y puerta de entrada para quien llega sin base.
@@ -263,6 +285,7 @@ Primera versión pública del programa.
 - Tooling del repositorio: CI (Node, Foundry, markdownlint), workflow de
   seguridad (gitleaks), Dependabot, `.gitleaks.toml` y `.markdownlint-cli2.jsonc`.
 
+[0.8.1]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.8.1
 [0.8.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.8.0
 [0.7.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.7.0
 [0.6.0]: https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/tag/v0.6.0

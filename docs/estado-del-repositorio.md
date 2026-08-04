@@ -24,7 +24,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | Evaluación | Evaluaciones, progreso, certificado y kit docente | ✅ |
 | Autoevaluación | Quiz global de 24 preguntas + 76 preguntas repartidas en los 19 módulos | ✅ |
 | Apps offline | App de escritorio para Windows y APK de Android con todo el curso dentro | ✅ |
-| Manual en PDF | ~310 páginas con todo el contenido; se genera en cada publicación | ✅ |
+| Manual en PDF | ~340 páginas con todo el contenido; se genera en cada publicación | ✅ |
 | Bibliografía | Libros de referencia por área e hitos del ecosistema | ✅ |
 | CI y publicación | Lint (Markdown, JS y Solidity), pruebas Node y Foundry, escaneo de secretos, CodeQL, vigilancia de enlaces externos, sitio en GitHub Pages y binarios verificados por contenido | ✅ |
 

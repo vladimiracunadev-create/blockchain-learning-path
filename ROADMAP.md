@@ -42,7 +42,9 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 | 0.4.0 | sitio navegable en GitHub Pages con menú lateral, Mermaid y tema claro/oscuro | completada |
 | 0.5.0 | manual del usuario en PDF (~310 páginas) con todo el curso | completada |
 | 0.6.0 | CI reforzada, Codespaces, buscador, progreso y autoevaluación global en el sitio | completada |
-| 0.7.0 | autoevaluación por módulo (19 quizzes), app de escritorio para Windows y app Android, ambas offline; enlaces externos vigilados y lint de código | actual |
+| 0.7.0 | autoevaluación por módulo (19 quizzes), app de escritorio para Windows y app Android, ambas offline; enlaces externos vigilados y lint de código | completada |
+| 0.8.0 | profundización de los 19 módulos (11 900 → 24 218 palabras) en cuatro capas para principiante y experto, guía «Empieza aquí», glosario enlazado en todos los módulos y 31 de 50 prácticas auto-verificadas | completada |
+| 0.8.1 | manual en PDF con la guía de entrada incluida (341 páginas) y cifras del manual verificadas en CI | actual |
 | 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

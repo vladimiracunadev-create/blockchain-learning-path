@@ -300,5 +300,15 @@ if (!changelog.includes(`## [${version}]`)) {
   versionErrores.push(`CHANGELOG.md no tiene una entrada para ${version}`);
 }
 
+// La tabla de evolución del ROADMAP marca una versión como "actual". Ya se quedó
+// una vez tres versiones por detrás sin que nada lo detectara.
+const roadmap = await readFile("ROADMAP.md", "utf8");
+const actual = /^\| ([0-9.]+) \|.*\| actual \|/m.exec(roadmap);
+if (!actual) {
+  versionErrores.push("ROADMAP.md no marca ninguna versión como actual");
+} else if (actual[1] !== version) {
+  versionErrores.push(`ROADMAP.md marca ${actual[1]} como actual y la versión es ${version}`);
+}
+
 if (versionErrores.length) throw new Error(`Versión incoherente:\n${versionErrores.join("\n")}`);
 console.log(`Versión: ${version} coherente en raíz, apps, README y CHANGELOG.`);

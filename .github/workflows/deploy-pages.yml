@@ -61,6 +61,9 @@ jobs:
       - name: Generar el manual en PDF
         run: pnpm build:manual
 
+      - name: Comprobar que el manual tiene el tamaño anunciado
+        run: node scripts/check-manual.mjs
+
       - name: Generar portada y sitio navegable
         run: |
           pnpm build:landing

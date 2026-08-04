@@ -22,7 +22,10 @@ const adrDocs = readdirSync(join(ROOT, "adrs")).filter((f) => /^\d{3}-.*\.md$/.t
 
 // Manifiesto ordenado del manual: partes → capítulos (rutas .md del repo).
 const PARTS = [
-  ["Introducción", ["README.md"]],
+  // La guía de entrada va justo después del README y antes del currículo: quien
+  // imprime el manual y lo abre por el principio tiene que encontrarla ahí, igual
+  // que en el sitio y en las apps.
+  ["Introducción", ["README.md", "docs/empieza-aqui.md"]],
   ["Currículo", ["curriculum/README.md", ...curriculumSlugs.map((s) => `curriculum/${s}/README.md`)]],
   ["Industria", ["industria/README.md", ...industriaDocs.map((f) => `industria/${f}`)]],
   ["Laboratorios", ["labs/CATALOG.md", "labs/guides/01-foundations.md", "labs/guides/02-consensus-bitcoin.md",

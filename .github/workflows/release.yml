@@ -37,6 +37,9 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Generar el manual
         run: pnpm build:manual
+
+      - name: Comprobar que el manual tiene el tamaño anunciado
+        run: node scripts/check-manual.mjs
       - name: Comprobar que el PDF tiene contenido
         run: |
           # Nombre de variable en ASCII a propósito: bash no admite identificadores
@@ -69,6 +72,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:icons
       - run: pnpm build:manual
+      - run: node scripts/check-manual.mjs
       - run: pnpm build:bundle
       - name: Verificar el contenido antes de empaquetar
         run: pnpm app:windows:verify
@@ -108,6 +112,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:icons
       - run: pnpm build:manual
+      - run: node scripts/check-manual.mjs
       - run: pnpm build:bundle
       - name: Construir el APK
         run: |
@@ -174,7 +179,7 @@ jobs:
             | `BlockchainLearningPath-Setup-*.exe` | Instalador para Windows |
             | `BlockchainLearningPath-Portable-*.exe` | Windows portable, sin instalar |
             | `BlockchainLearningPath-*.apk` | App Android |
-            | `MANUAL.pdf` | Manual del curso (~310 páginas) |
+            | `MANUAL.pdf` | Manual del curso (~340 páginas) |
             | `SHA256SUMS.txt` | Checksums para verificar las descargas |
 
             Las apps traen **todo el contenido dentro** y funcionan sin conexión.
