@@ -51,7 +51,7 @@ jobs:
 
       - name: Abrir issue si hay enlaces rotos
         if: steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: "🔗 Enlaces rotos detectados en el material"
           content-filepath: informe-enlaces.md
