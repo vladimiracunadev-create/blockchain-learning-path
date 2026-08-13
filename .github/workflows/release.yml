@@ -181,7 +181,7 @@ jobs:
             | `BlockchainLearningPath-Setup-*.exe` | Instalador para Windows |
             | `BlockchainLearningPath-Portable-*.exe` | Windows portable, sin instalar |
             | `BlockchainLearningPath-*.apk` | App Android |
-            | `MANUAL.pdf` | Manual del curso (~478 páginas) |
+            | `MANUAL.pdf` | Manual del curso (~520 páginas) |
             | `SHA256SUMS.txt` | Checksums para verificar las descargas |
 
             Las apps traen **todo el contenido dentro** y funcionan sin conexión.

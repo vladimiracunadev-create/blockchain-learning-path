@@ -53,7 +53,7 @@ repetirse. Ninguna comprobación de la CI se relajó para que entrara el conteni
   el 19; el 27 cierra contra el capstone.
 - **Catálogo: 50 → 70 prácticas**, con 42 auto-verificables (antes 31).
 - **Pruebas: 80 → 186** (148 de Node y 38 de Foundry), contadas y contrastadas por `pnpm check`.
-- **Manual en PDF: 341 → 478 páginas**, ahora con las partes de regulación y casos reales.
+- **Manual en PDF: 341 → 520 páginas**, ahora con las partes de regulación y casos reales.
 - El sitio, la landing, el manual y las apps recogen los módulos nuevos **sin cambios en la
   tubería de publicación**: ya descubrían el currículo por directorio.
 - `pnpm check` verifica siete documentos esenciales más y las cifras nuevas.
