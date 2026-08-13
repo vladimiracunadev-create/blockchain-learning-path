@@ -15,6 +15,19 @@ const RAIZ_CONTENIDO = app.isPackaged
   ? path.join(process.resourcesPath, "bundle")
   : path.join(__dirname, "..", "bundle");
 
+// El número esperado se CUENTA del repositorio, no se escribe a mano: una cifra
+// fija aquí obliga a recordar actualizarla cada vez que crece el currículo, y el
+// día que se olvida el verificador miente en la dirección peligrosa.
+// En la app empaquetada no hay repositorio, así que se cuenta el propio bundle:
+// ahí la comprobación que importa es que el manifiesto y el contenido coincidan.
+const RAIZ_CURRICULO = app.isPackaged
+  ? path.join(RAIZ_CONTENIDO, "curriculum")
+  : path.join(__dirname, "..", "..", "curriculum");
+const MODULOS_ESPERADOS = fs.existsSync(RAIZ_CURRICULO)
+  ? fs.readdirSync(RAIZ_CURRICULO, { withFileTypes: true })
+      .filter((entrada) => entrada.isDirectory() && /^\d{2}-/.test(entrada.name)).length
+  : 0;
+
 const fallos = [];
 function comprobar(condicion, mensaje) {
   if (condicion) console.log(`  ✔ ${mensaje}`);
@@ -32,7 +45,10 @@ app.whenReady().then(async () => {
     manifiesto = JSON.parse(fs.readFileSync(path.join(RAIZ_CONTENIDO, "contenido.json"), "utf8"));
   } catch { /* se reporta abajo */ }
   comprobar(manifiesto !== null, "contenido.json presente");
-  comprobar(manifiesto?.modulos === 19, `el manifiesto declara 19 módulos (declara ${manifiesto?.modulos})`);
+  comprobar(
+    manifiesto?.modulos === MODULOS_ESPERADOS,
+    `el manifiesto declara ${MODULOS_ESPERADOS} módulos (declara ${manifiesto?.modulos})`
+  );
   comprobar(manifiesto?.manual === true, "el manual PDF viaja dentro de la app");
 
   const servidor = crearServidorDeContenido(RAIZ_CONTENIDO);

@@ -72,9 +72,10 @@ jobs:
           if (-not (Test-Path "$empaquetada/index.html")) {
             throw "El instalador no lleva el curso dentro ($empaquetada)"
           }
+          $esperados = (Get-ChildItem "curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
           $modulos = (Get-ChildItem "$empaquetada/curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
           $paginas = (Get-ChildItem $empaquetada -Recurse -Filter *.html).Count
-          if ($modulos -ne 19) { throw "La app empaquetada tiene $modulos módulos, se esperaban 19" }
+          if ($modulos -ne $esperados) { throw "La app empaquetada tiene $modulos módulos, se esperaban $esperados" }
           if ($paginas -lt 80) { throw "La app empaquetada tiene $paginas páginas, se esperaban 80 o más" }
           "✅ App empaquetada: $modulos módulos, $paginas páginas" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
           Get-ChildItem apps/desktop/dist/*.exe | ForEach-Object {
