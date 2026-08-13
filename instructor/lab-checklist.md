@@ -39,7 +39,7 @@ Lista operativa para cada sesión de laboratorio. El objetivo es que toda práct
 | Seguridad | `forge test` (en `security-challenges/`) | PoC demuestra impacto; el fix pasa la prueba de regresión |
 | Tokenomics | `pnpm lab:tokenomics` | Emisión, oferta y supuestos de sostenibilidad |
 
-El detalle de cada práctica y su evidencia esperada está en el [catálogo de 50 prácticas](../labs/CATALOG.md).
+El detalle de cada práctica y su evidencia esperada está en el [catálogo de 70 prácticas](../labs/CATALOG.md).
 
 ## Flujo de una sesión
 

@@ -19,6 +19,9 @@ const version = JSON.parse(read("package.json")).version;
 const curriculumSlugs = readdirSync(join(ROOT, "curriculum")).filter((d) => /^\d{2}-/.test(d)).sort();
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 const adrDocs = readdirSync(join(ROOT, "adrs")).filter((f) => /^\d{3}-.*\.md$/.test(f)).sort();
+// Las cifras de la portada se calculan de los archivos reales: escritas a mano
+// envejecen al primer módulo o práctica que se añada.
+const practiceCount = (read("labs/CATALOG.md").match(/^\| \d+ \|/gm) ?? []).length;
 
 // Manifiesto ordenado del manual: partes → capítulos (rutas .md del repo).
 const PARTS = [
@@ -29,13 +32,21 @@ const PARTS = [
   ["Currículo", ["curriculum/README.md", ...curriculumSlugs.map((s) => `curriculum/${s}/README.md`)]],
   ["Industria", ["industria/README.md", ...industriaDocs.map((f) => `industria/${f}`)]],
   ["Laboratorios", ["labs/CATALOG.md", "labs/guides/01-foundations.md", "labs/guides/02-consensus-bitcoin.md",
-    "labs/guides/03-evm-development.md", "labs/guides/04-professional-security.md", "labs/guides/05-advanced-capstone.md"]],
+    "labs/guides/03-evm-development.md", "labs/guides/04-professional-security.md", "labs/guides/05-advanced-capstone.md",
+    "labs/guides/06-finanzas-onchain.md", "labs/22-cbdc-mercado-tokenizado/README.md"]],
+  ["Regulación", ["regulation/README.md", "regulation/chile/README.md", "regulation/european-union/README.md",
+    "regulation/united-states/README.md", "regulation/latin-america/README.md", "regulation/international/README.md",
+    "regulation/comparison/README.md"]],
+  ["Casos reales", ["docs/casos-reales/README.md", "docs/casos-reales/terra-ust.md",
+    "docs/casos-reales/ftx-custodia.md", "docs/casos-reales/ronin-puente.md",
+    "docs/casos-reales/el-salvador-bitcoin.md"]],
   ["Decisiones de arquitectura (ADR)", ["adrs/README.md", ...adrDocs.map((f) => `adrs/${f}`)]],
   ["Documentación de referencia", [
     "docs/bibliografia.md", "docs/glosario.md", "docs/explicar-blockchain-a-no-tecnicos.md",
     "docs/mejores-practicas.md", "docs/tecnologias.md", "docs/despliegue-local.md",
     "docs/operacion-incidentes.md", "docs/threat-model-project.md", "docs/recursos-oficiales.md",
-    "docs/diseno-pedagogico.md", "docs/evaluacion.md", "docs/ruta-rapida.md", "docs/chile-regulacion-tributacion.md"]],
+    "docs/diseno-pedagogico.md", "docs/evaluacion.md", "docs/ruta-rapida.md", "docs/chile-regulacion-tributacion.md",
+    "docs/skills-matrix.md"]],
   ["Evaluación y proyecto final", ["assessments/checkpoints.md", "assessments/module-question-bank.md",
     "assessments/audit-report-template.md", "learning-paths/README.md", "capstone/README.md"]],
 ];
@@ -133,7 +144,7 @@ window.__mermaidDone = true;
   <h1>Blockchain Learning Path</h1>
   <div class="sub">Manual del usuario · Programa educativo en español para aprender blockchain de cero a producción</div>
   <div class="ver">v${version}</div>
-  <div class="foot">19 módulos · 50 prácticas · ${GH}</div>
+  <div class="foot">${curriculumSlugs.length} módulos · ${practiceCount} prácticas · ${GH}</div>
 </div>
 <div class="toc"><h2>Índice</h2><ul>${toc}</ul></div>
 ${body}

@@ -45,6 +45,32 @@ Además del protocolo de financiamiento comunitario que sirve de hilo conductor 
 
 Cualquier otra idea es válida si cabe en las fases siguientes y el instructor aprueba la propuesta. Regla práctica de alcance: si no puedes enumerar las invariantes críticas en cinco líneas, el proyecto es demasiado grande.
 
+## Ideas de proyecto de finanzas on-chain (módulos 19–27)
+
+Alternativas para quien haya cursado la etapa financiera. Mismas puertas de calidad, mismo
+alcance acotado — y una exigencia añadida: **el documento debe responder qué NO cambia**
+respecto de la alternativa tradicional.
+
+| Proyecto | Qué construyes | Qué demuestra |
+|---|---|---|
+| **Mercado de bono tokenizado** | Emisión, cupón por reclamación y DvP atómico sobre Anvil | Módulos 24–25: liquidación atómica y eventos corporativos |
+| **Prototipo de pago transfronterizo** | Corredor con dos patas y PvP, con su análisis de coste completo | Módulo 23: prefondeo, última milla y riesgo de principal |
+| **Stablecoin educativa sobrecolateralizada** | Emisión, oráculo, liquidación y subasta de deuda | Módulos 19 y 21: colateral, paridad y procíclica |
+| **Simulación de MDBC mayorista** | Dinero de liquidación restringido a participantes + DvP | Módulo 22: acceso, emisión y redención |
+| **Plataforma de custodia institucional** | Política M-de-N con escalones, retardos y recuperación probada | Módulo 26: cuórum frente a compromiso **y** a pérdida |
+| **Motor de cumplimiento** | Cribado por riesgo, Regla de Viaje y trazas auditables | Módulo 27: enfoque basado en riesgo, sin datos personales reales |
+
+**Requisitos adicionales para estos proyectos:**
+
+1. **Sección de qué no cambia**, explícita: qué riesgo, coste o función permanece igual que
+   en el sistema tradicional.
+2. **Análisis regulatorio** con las cinco preguntas del [módulo 27](../curriculum/27-regulacion-cumplimiento/README.md),
+   fuente oficial en cada afirmación y una sección de incertidumbres que no esté vacía.
+3. **Etiqueta de simulación educativa** visible: sin fondos reales, sin mainnet, sin datos
+   personales, y sin sugerir que reproduce un sistema en producción de ninguna entidad.
+4. **Ninguna proyección de rentabilidad.** Un capstone que prometa rendimientos no aprueba,
+   por bien construido que esté.
+
 ## Fases y entregables
 
 | Fase | Entregable | Criterio de salida |

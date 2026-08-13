@@ -2,7 +2,7 @@
 
 > [⬅️ Volver al programa](../../README.md) · [🖥️ App de Windows](../desktop/README.md) · [📚 Currículo](../../curriculum/README.md)
 
-El curso completo en el teléfono: **19 módulos, 84 páginas, las 50 prácticas, los
+El curso completo en el teléfono: **28 módulos, las 70 prácticas, los
 ADR, el manual en PDF y la autoevaluación de cada módulo**, todo dentro del APK.
 Una vez instalada **no necesita conexión**, que es justo lo que hace falta para
 estudiar en el metro o en un aula sin wifi.
@@ -68,7 +68,8 @@ pnpm app:android:verify
 ```
 
 Abre el APK como el ZIP que es y comprueba **dentro**: que `assets/public/` no
-está vacío, que están los 19 módulos, que el manual PDF viaja, y que una página
+está vacío, que están todos los módulos del currículo (el número se cuenta del
+repositorio, no se escribe a mano), que el manual PDF viaja, y que una página
 concreta conserva su título, sus 4 preguntas y sus enlaces anterior/siguiente.
 
 Existe porque el fallo característico de estos empaquetados no es que fallen al

@@ -857,6 +857,411 @@
           "explanation": "Una transacción que revierte cuesta gas y ensucia la operación. Simular primero convierte un fallo en producción en una validación previa barata."
         }
       ]
+    },
+    "19-defi": {
+      "titulo": "DeFi: mercados, préstamo y riesgo on-chain",
+      "preguntas": [
+        {
+          "prompt": "En un pool de producto constante con 100 ETH y 200 000 USDC, compras 1 ETH. ¿Por qué pagas más de 2 000 USDC aunque el precio marcado sea ese?",
+          "options": [
+            "Porque el protocolo cobra una comisión del 1 %",
+            "Porque tu propia operación mueve el precio a lo largo de la curva: es impacto en precio, no comisión",
+            "Porque el oráculo actualiza el precio antes de ejecutar"
+          ],
+          "answer": 1,
+          "explanation": "La curva x·y=k obliga a que la reserva de USDC suba hasta mantener k: pagas 2 020,20. Ese 1,01 % es impacto de la curva y es independiente de la comisión, que se cobra aparte."
+        },
+        {
+          "prompt": "Depositaste 10 ETH y 20 000 USDC. El precio de ETH se duplica y tu posición vale más que al principio. ¿Por qué se dice que has tenido pérdida impermanente?",
+          "options": [
+            "Porque el pool te ha cobrado comisiones de retirada",
+            "Porque tu posición vale menos que si simplemente hubieras mantenido los dos activos sin depositarlos",
+            "Porque el valor en dólares de tu posición ha bajado"
+          ],
+          "answer": 1,
+          "explanation": "Ganar dinero y perder frente a no hacer nada son compatibles: 56 568 en el pool frente a 60 000 manteniendo. Proveer liquidez es vender volatilidad, y las comisiones pueden compensarlo o no."
+        },
+        {
+          "prompt": "Tienes 1 ETH de colateral a 2 000 USD, deuda de 1 200 y umbral de liquidación del 80 %. ¿A qué precio de ETH pasa a ser liquidable tu posición?",
+          "options": [
+            "1 200 USD",
+            "1 500 USD",
+            "1 600 USD"
+          ],
+          "answer": 1,
+          "explanation": "El factor de salud es (colateral × umbral) / deuda. Vale 1 cuando el precio es deuda / (umbral × cantidad) = 1 200 / 0,8 = 1 500. Esa cifra se calcula, no se recibe por notificación."
+        },
+        {
+          "prompt": "Un protocolo tiene un TVL muy alto. ¿Qué te permite concluir eso sobre su seguridad?",
+          "options": [
+            "Que es seguro: mucha gente ha depositado tras auditarlo",
+            "Nada: el TVL mide tamaño, y además sube solo con que suba el precio de los activos depositados",
+            "Que tiene liquidez suficiente para cubrir cualquier fallo de contrato"
+          ],
+          "answer": 1,
+          "explanation": "El TVL es reflexivo y mide tamaño, no solvencia ni seguridad. Un protocolo con mucho TVL y una función de actualización sin timelock es grande y frágil a la vez."
+        }
+      ]
+    },
+    "20-dinero-banca-liquidacion": {
+      "titulo": "Dinero, banca y liquidación",
+      "preguntas": [
+        {
+          "prompt": "¿Qué es exactamente el saldo que ves en la aplicación de tu banco?",
+          "options": [
+            "Billetes que el banco guarda en su bóveda a tu nombre",
+            "Un pasivo del banco contigo: eres su acreedor, no dueño de un objeto depositado",
+            "Reservas del banco central asignadas a tu persona"
+          ],
+          "answer": 1,
+          "explanation": "Al depositar dejas de ser dueño del efectivo y pasas a ser acreedor del banco. De ahí el riesgo de contraparte, el seguro de depósito y la posibilidad de un pánico bancario."
+        },
+        {
+          "prompt": "Tres bancos se envían pagos durante el día por 260 unidades brutas, que netean a 70. ¿Qué compra ese ahorro de liquidez?",
+          "options": [
+            "Nada: el neteo es gratis y siempre preferible",
+            "Se paga con exposición: entre que se compensa y se liquida, cada participante está expuesto a que otro falle",
+            "Se paga con comisiones más altas de la cámara de compensación"
+          ],
+          "answer": 1,
+          "explanation": "Liquidez contra riesgo es el intercambio central de los sistemas de pago. El neto diferido ahorra liquidez y crea una ventana de exposición; el LBTR la elimina inmovilizando reservas."
+        },
+        {
+          "prompt": "Una transacción tiene 100 confirmaciones en una cadena pública. ¿Qué tipo de finalidad tiene?",
+          "options": [
+            "Finalidad jurídica: es irrevocable y oponible frente a terceros",
+            "Finalidad técnica y económica muy sólidas, pero por sí sola ninguna finalidad jurídica",
+            "Ninguna: la finalidad solo existe en sistemas del banco central"
+          ],
+          "answer": 1,
+          "explanation": "La firmeza jurídica la declara una norma, no el protocolo. Confundirlas produce las dos afirmaciones más falsas del sector sobre liquidación instantánea y sobre lentitud tecnológica."
+        },
+        {
+          "prompt": "El riesgo Herstatt aparece cuando un banco entrega su pata de una operación en divisas y no recibe la otra. ¿Qué se pierde en ese caso?",
+          "options": [
+            "El margen de la operación",
+            "El importe íntegro entregado: es riesgo de principal",
+            "Solo el coste de oportunidad hasta que se resuelva el concurso"
+          ],
+          "answer": 1,
+          "explanation": "Por eso el sector construyó mecanismos de pago contra pago y de entrega contra pago: no se protege un margen, se protege el principal completo."
+        }
+      ]
+    },
+    "21-stablecoins": {
+      "titulo": "Stablecoins",
+      "preguntas": [
+        {
+          "prompt": "Una stablecoin cotiza a 0,98 y su respaldo está intacto. ¿De qué depende que el precio vuelva a la par?",
+          "options": [
+            "De que el respaldo siga siendo del 100 %",
+            "De que alguien pueda redimir efectivamente a la par: sin redención abierta el arbitraje no existe",
+            "De que haya suficiente liquidez en los pools donde cotiza"
+          ],
+          "answer": 1,
+          "explanation": "La paridad no la sostiene el respaldo, la sostiene la posibilidad real de redimir. Si el usuario no puede redimir y los participantes autorizados no lo hacen, el descuento se queda."
+        },
+        {
+          "prompt": "Un emisor publica una atestación mensual de sus reservas. ¿Qué es lo que NO puedes concluir de ese documento?",
+          "options": [
+            "Cuál era el saldo declarado en la fecha del informe",
+            "Que equivale a una auditoría con opinión sobre los estados financieros del emisor",
+            "Quién firma el informe y con qué alcance"
+          ],
+          "answer": 1,
+          "explanation": "Atestación y auditoría tienen alcance y opinión distintos. Una atestación mensual no es una auditoría anual, y tratarlas como equivalentes es el error más común al evaluar un emisor."
+        },
+        {
+          "prompt": "Bloqueas 2 ETH a 2 000 USD con ratio mínimo del 150 % y emites la deuda máxima posible. ¿Qué le ocurre a tu posición?",
+          "options": [
+            "Es la opción más eficiente: maximizas el capital disponible",
+            "Nace liquidable ante el primer movimiento adverso: su precio de liquidación es el precio actual",
+            "Queda protegida porque el sistema ajusta el ratio automáticamente"
+          ],
+          "answer": 1,
+          "explanation": "Emitiendo 2 666,67 el precio de liquidación sube a 2 000, el precio de hoy. Emitir el máximo no es agresivo: es inviable."
+        },
+        {
+          "prompt": "Las reservas de un emisor cubren el 100 % del circulante, pero un tercio está depositado en un banco que ha entrado en resolución. ¿Cuál es la lectura correcta?",
+          "options": [
+            "El respaldo está completo, así que el token no debería desanclarse",
+            "La calidad del respaldo incluye dónde está depositado y con qué disponibilidad: hoy no puede atender la redención total",
+            "El problema es del banco, no afecta al emisor ni al token"
+          ],
+          "answer": 1,
+          "explanation": "Es un riesgo bancario clásico apareciendo intacto dentro de un instrumento que se presenta como ajeno a la banca. Cobertura contable y cobertura accesible no son lo mismo."
+        }
+      ]
+    },
+    "22-deposito-tokenizado-cbdc": {
+      "titulo": "Depósitos tokenizados y CBDC/MDBC",
+      "preguntas": [
+        {
+          "prompt": "¿Qué distingue de forma esencial un depósito tokenizado de una stablecoin?",
+          "options": [
+            "El depósito tokenizado usa una cadena permisionada y la stablecoin una pública",
+            "El emisor: el depósito sigue siendo un pasivo del banco, con su régimen, supervisión y seguro de depósito",
+            "El depósito tokenizado no se puede transferir entre entidades"
+          ],
+          "answer": 1,
+          "explanation": "Tokenizar no cambia de quién es el pasivo. Y de ahí se deriva la singularidad del dinero: los depósitos tokenizados de dos bancos se mantienen a la par porque se liquidan en dinero de banco central."
+        },
+        {
+          "prompt": "¿Por qué casi todos los diseños de MDBC minorista incluyen límites de tenencia?",
+          "options": [
+            "Por una limitación técnica de las redes distribuidas",
+            "Para frenar la desintermediación: sin ellos, un pánico bancario podría convertirse en un clic",
+            "Para cumplir con la Regla de Viaje del GAFI"
+          ],
+          "answer": 1,
+          "explanation": "Los límites y la remuneración nula son frenos deliberados de política, no restricciones tecnológicas. Un diseño de MDBC sin ellos está incompleto."
+        },
+        {
+          "prompt": "¿Cuál es la forma correcta de referirse hoy al trabajo del Banco Central de Chile sobre MDBC?",
+          "options": [
+            "Chile emitió una MDBC y está en circulación",
+            "El Banco Central ha analizado su eventual emisión y publicado documentos; no hay decisión de emitir ni MDBC en circulación",
+            "El Banco Central descartó definitivamente emitir una MDBC"
+          ],
+          "answer": 1,
+          "explanation": "Hay análisis publicado, no decisión adoptada. Convertir un análisis en una decisión al citarlo es desinformar, y el estado vigente debe verificarse en bcentral.cl."
+        },
+        {
+          "prompt": "Un pago sin conexión con MDBC transfiere saldo entre dispositivos sin red. ¿Qué implica eso necesariamente?",
+          "options": [
+            "Que el doble gasto es imposible gracias al elemento seguro",
+            "Que existe una ventana de riesgo de doble gasto que se acota con topes de importe y de operaciones, no se elimina",
+            "Que la operación queda registrada en la cadena en tiempo real"
+          ],
+          "answer": 1,
+          "explanation": "Sin conexión no hay comprobación contra un registro común. Se limita cuánto se puede perder, y así lo plantean los proyectos piloto que han publicado resultados."
+        }
+      ]
+    },
+    "23-pagos-fx-onchain": {
+      "titulo": "Pagos, cross-border y FX on-chain",
+      "preguntas": [
+        {
+          "prompt": "Envías 200 USD y el destinatario recibe 188. La empresa anuncia 5 USD de comisión. ¿Dónde está el resto?",
+          "options": [
+            "En impuestos del país de destino",
+            "Principalmente en el margen de cambio, más comisiones intermedias y el coste de retirada",
+            "En la comisión de la red blockchain utilizada"
+          ],
+          "answer": 1,
+          "explanation": "El margen de cambio suele ser la segunda partida más grande y la menos visible. Comparar corredores mirando solo la comisión explícita es comparar mal."
+        },
+        {
+          "prompt": "¿Cuál es el mayor coste oculto de la banca corresponsal?",
+          "options": [
+            "El coste por mensaje de la red de mensajería financiera",
+            "El prefondeo: capital inmovilizado en cuentas nostro, dimensionado para el pico y repartido entre las operaciones",
+            "Las comisiones de los bancos intermedios"
+          ],
+          "answer": 1,
+          "explanation": "10 millones inmovilizados al 6 % son 600 000 al año que alguien paga. Como es un coste fijo repartido, los corredores de poco volumen resultan desproporcionadamente caros."
+        },
+        {
+          "prompt": "Diseñas un intercambio atómico donde una moneda está tokenizada y la otra sigue en el sistema bancario clásico. ¿Tienes PvP?",
+          "options": [
+            "Sí, siempre que el contrato retenga ambas patas",
+            "No: sin ambas patas en el mismo entorno de ejecución hay un puente, y con él vuelve el riesgo de principal",
+            "Sí, porque la irreversibilidad de la cadena garantiza la entrega"
+          ],
+          "answer": 1,
+          "explanation": "La atomicidad exige que todas las patas se ejecuten o reviertan juntas. Una pata fuera del entorno rompe esa garantía por mucho que el contrato esté bien escrito."
+        },
+        {
+          "prompt": "¿Cuál de estas fricciones del G20 NO mejora un corredor de pago on-chain?",
+          "options": [
+            "El capital inmovilizado en cuentas nostro",
+            "El cumplimiento, las sanciones y la conversión a moneda local en destino",
+            "Las ventanas horarias y los días hábiles"
+          ],
+          "answer": 1,
+          "explanation": "El corredor on-chain mueve el problema de sitio: elimina prefondeo y horarios, y deja intactos cumplimiento y última milla. En corredores pequeños, esa última milla decide el resultado."
+        }
+      ]
+    },
+    "24-tokenizacion-rwa": {
+      "titulo": "Tokenización y activos del mundo real",
+      "preguntas": [
+        {
+          "prompt": "El registro de la propiedad y la cadena dicen cosas distintas sobre quién posee un inmueble tokenizado. ¿Cuál prevalece?",
+          "options": [
+            "La cadena, porque es inmutable y verificable",
+            "El registro oficial: por eso los diseños que funcionan tokenizan participaciones de un vehículo, no el inmueble",
+            "El que tenga la marca de tiempo más reciente"
+          ],
+          "answer": 1,
+          "explanation": "La cadena no es fuente de titularidad de un inmueble. El SPV acota la divergencia a un ámbito donde el token sí es autoritativo."
+        },
+        {
+          "prompt": "Vas a tokenizar un valor con inversores elegibles y restricciones de reventa. ¿Por qué no basta un ERC-20?",
+          "options": [
+            "Porque el ERC-20 no admite decimales",
+            "Porque permite transferir a cualquiera: es incumplimiento normativo por diseño",
+            "Porque no es compatible con oráculos de precio"
+          ],
+          "answer": 1,
+          "explanation": "Los estándares de valor comprueban la elegibilidad en la propia transferencia. La contrapartida es que un token restringido no es libremente componible en DeFi."
+        },
+        {
+          "prompt": "Un promotor afirma que tokenizar su edificio creará liquidez. ¿Qué le respondes?",
+          "options": [
+            "Es correcto: fraccionar convierte un activo ilíquido en uno líquido",
+            "Fraccionar amplía el universo de compradores potenciales, pero si nadie quiere el activo tampoco querrá una milésima parte",
+            "Depende únicamente del estándar de token elegido"
+          ],
+          "answer": 1,
+          "explanation": "La liquidez la dan compradores dispuestos. El descuento sobre NAV en secundarios de activos ilíquidos tokenizados es la evidencia práctica."
+        },
+        {
+          "prompt": "De los cinco puntos de fallo de la junta entre activo y token, ¿cuántos resuelve un contrato inteligente?",
+          "options": [
+            "Los cinco, si está bien auditado",
+            "Ninguno: el contrato reparte con exactitud el dinero que llegue, pero no obliga a un registro, a un custodio ni a un tribunal",
+            "Solo el de custodia"
+          ],
+          "answer": 1,
+          "explanation": "Titularidad, custodia, atestación, servicio y ejecución viven fuera. El contrato aporta reparto exacto y auditable, que es valioso pero es la parte fácil del problema."
+        }
+      ]
+    },
+    "25-mercados-capitales-onchain": {
+      "titulo": "Mercados de capitales on-chain",
+      "preguntas": [
+        {
+          "prompt": "Una mesa negocia 500 millones al día con liquidación T+2. ¿Cuánta exposición pendiente genera ese ciclo?",
+          "options": [
+            "500 millones",
+            "Hasta 1 000 millones",
+            "Ninguna: la operación ya está pactada"
+          ],
+          "answer": 1,
+          "explanation": "Dos días de operaciones pactadas y no liquidadas. Esa exposición se cubre con garantías y capital, y es lo que la liquidación atómica elimina."
+        },
+        {
+          "prompt": "¿Qué compra realmente la liquidación atómica de valores, y con qué la paga?",
+          "options": [
+            "Compra rapidez y la paga con comisiones más altas",
+            "Elimina la exposición entre pacto y liquidación, y lo paga suprimiendo el neteo: exige el importe íntegro en cada momento",
+            "Compra ambas cosas sin contrapartida: es estrictamente mejor que T+2"
+          ],
+          "answer": 1,
+          "explanation": "Mil operaciones que netean al 92 % necesitan 12,5 veces más liquidez si se liquidan brutas. Por eso los diseños serios reintroducen neteo, financiación intradía o préstamo de valores."
+        },
+        {
+          "prompt": "En un mercado tokenizado desaparece la conciliación entre registros. ¿Qué NO desaparece?",
+          "options": [
+            "El descubrimiento de precio, el cumplimiento y la responsabilidad ante error",
+            "La necesidad de un registro de titularidad",
+            "El reparto de eventos corporativos"
+          ],
+          "answer": 0,
+          "explanation": "Se eliminan copias, no funciones. Los diseños que suprimen intermediarios sin reasignar sus funciones descubren tarde que esas funciones eran necesarias."
+        },
+        {
+          "prompt": "Vas a repartir un cupón entre 8 000 titulares. ¿Qué patrón usas y por qué?",
+          "options": [
+            "Reparto activo: el contrato itera sobre los titulares y transfiere a cada uno",
+            "Patrón de reclamación: el contrato reserva el importe y cada titular retira, porque iterar no cabe en un bloque",
+            "Reparto fuera de la cadena, porque los eventos corporativos no se pueden automatizar"
+          ],
+          "answer": 1,
+          "explanation": "Es una restricción de ingeniería con solución conocida. Además, la retención fiscal depende de la residencia del titular, que no está en la cadena."
+        }
+      ]
+    },
+    "26-custodia-identidad": {
+      "titulo": "Custodia, wallets institucionales e identidad digital",
+      "preguntas": [
+        {
+          "prompt": "Una tesorería usa multifirma 5 de 5. ¿Cuál es su riesgo principal?",
+          "options": [
+            "Que un atacante comprometa a un firmante",
+            "Que la pérdida de una sola llave congele los fondos definitivamente",
+            "Que las comisiones de firma sean demasiado altas"
+          ],
+          "answer": 1,
+          "explanation": "Con M = N no se tolera ninguna pérdida. Ese fallo ha causado pérdidas comparables al robo y recibe una fracción de la atención."
+        },
+        {
+          "prompt": "Cinco claves de un esquema 3 de 5 están en cinco servidores administrados por la misma persona. ¿Qué política de firma tienes en realidad?",
+          "options": [
+            "Una política 3 de 5 correcta: hay cinco claves distintas",
+            "Una llave con cinco copias: sin independencia real, el cuórum no aporta seguridad",
+            "Una política 1 de 5, porque cualquiera puede firmar"
+          ],
+          "answer": 1,
+          "explanation": "La independencia se cuenta por personas, dispositivos, ubicaciones y organizaciones, no por número de claves. Es el fallo que se repite en los incidentes de custodia."
+        },
+        {
+          "prompt": "¿Qué diferencia esencial hay entre multifirma on-chain y MPC?",
+          "options": [
+            "MPC es más seguro criptográficamente en todos los casos",
+            "En MPC la clave completa no existe nunca y la política no es visible on-chain; en multifirma la política vive en el contrato y es auditable por cualquiera",
+            "Multifirma sirve para una sola cadena y MPC para todas"
+          ],
+          "answer": 1,
+          "explanation": "Cambian las preguntas de auditoría: con multifirma se audita el contrato y quién cambia los firmantes; con MPC, quién implementó el protocolo y qué pasa si el proveedor desaparece."
+        },
+        {
+          "prompt": "Un usuario autoriza a una aplicación mediante el consentimiento de un sistema de finanzas abiertas. ¿Qué le ha concedido?",
+          "options": [
+            "El control de sus claves privadas y de sus activos on-chain",
+            "Autorización revocable para acceder a datos o iniciar pagos en su nombre dentro del sistema financiero",
+            "Lo mismo que si le hubiera dado su frase semilla"
+          ],
+          "answer": 1,
+          "explanation": "Consentimiento delegado y revocable frente a control directo e irrevocable de una llave. Confundirlos al describirlos ante un usuario es un problema serio."
+        }
+      ]
+    },
+    "27-regulacion-cumplimiento": {
+      "titulo": "Regulación y cumplimiento",
+      "preguntas": [
+        {
+          "prompt": "Un equipo afirma: «solo publicamos software, la regulación financiera no nos aplica». ¿Cómo se comprueba si es cierto?",
+          "options": [
+            "Revisando dónde están alojados los servidores",
+            "Aplicando las cinco preguntas: si custodias claves de terceros o conviertes moneda, estás realizando actividades reguladas",
+            "Comprobando si el código es de fuente abierta"
+          ],
+          "answer": 1,
+          "explanation": "Se regula la actividad, no la tecnología. «Solo somos software» es una afirmación jurídica que rara vez resiste cuando hay claves de terceros o conversión de moneda."
+        },
+        {
+          "prompt": "Un token está referido a una sola moneda oficial y quieres saber su régimen europeo. ¿Cuál es la PRIMERA pregunta?",
+          "options": [
+            "¿Es una ficha de dinero electrónico o una ficha referenciada a activos?",
+            "¿Es un instrumento financiero? Si lo es, aplica normativa de valores y MiCA no lo cubre",
+            "¿En qué cadena está desplegado?"
+          ],
+          "answer": 1,
+          "explanation": "MiCA excluye lo que ya es instrumento financiero. Empezar por las categorías de MiCA sin haber descartado que sea un valor es empezar por el final."
+        },
+        {
+          "prompt": "Vas a enviar fondos a una wallet autoalojada por encima del umbral. ¿Qué ocurre con la Regla de Viaje?",
+          "options": [
+            "No aplica: solo rige entre proveedores registrados",
+            "Aplica, pero no hay proveedor receptor al que transmitir la información: se usan controles parciales como prueba de titularidad y límites",
+            "Aplica igual y se envía la información a la dirección de destino"
+          ],
+          "answer": 1,
+          "explanation": "Es el límite práctico más conocido del estándar. Las respuestas del sector son parciales y presentar el problema como resuelto es incorrecto."
+        },
+        {
+          "prompt": "Citas un documento de una consulta pública de un supervisor como fundamento de una obligación. ¿Qué error cometes?",
+          "options": [
+            "Ninguno: los supervisores no publican consultas sin intención de aplicarlas",
+            "Presentar una propuesta como derecho vigente: una consulta pública no obliga a nadie",
+            "Citar una fuente secundaria en lugar de una primaria"
+          ],
+          "answer": 1,
+          "explanation": "Ley, norma, circular, guía, consulta y propuesta tienen efectos distintos. Declarar el rango es lo que separa informar de desinformar."
+        }
+      ]
     }
   }
 }

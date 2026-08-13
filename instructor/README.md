@@ -6,7 +6,7 @@ Esta guía explica cómo llevar el programa a un aula real: cómo planificarlo s
 
 ## Cómo usar el programa
 
-El material está diseñado para dos formatos. Ambos cubren los 19 módulos (00–18) y el proyecto final; cambia el ritmo, no el alcance.
+El material está diseñado para dos formatos. Ambos cubren los módulos 00–18 y el proyecto final; cambia el ritmo, no el alcance. La etapa de finanzas on-chain e institucional (módulos 19–27) se imparte como [extensión optativa de ocho semanas](syllabus.md).
 
 - **Semestre largo (24–26 semanas).** Una sesión conceptual y una de laboratorio por semana. Es el formato de referencia del [programa académico](syllabus.md). Deja espacio para checkpoints, retroalimentación y una defensa amplia del capstone.
 - **Intensivo (8 semanas).** Dos o tres módulos por semana, laboratorios seleccionados y capstone reducido en alcance. Prioriza fundamentos (00–06), seguridad (09) y un proyecto acotado; convierte los módulos avanzados (12–18) en lecturas guiadas.

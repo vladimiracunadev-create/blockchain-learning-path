@@ -3,8 +3,9 @@
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [🗺️ Roadmap](../ROADMAP.md)
 
 Estado honesto de lo que el repositorio entrega hoy y de lo que requiere infraestructura
-externa. El programa cubre **19 módulos (00–18)** organizados en **6 etapas**:
-Orientación, Fundamentos, Desarrollo, Profesional, Avanzado y Producción.
+externa. El programa cubre **28 módulos (00–27)** organizados en **8 etapas**:
+Orientación, Fundamentos, Desarrollo, Profesional, Avanzado, Producción,
+Finanzas on-chain e Institucional y regulación.
 
 Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
@@ -12,19 +13,21 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 | Área | Qué incluye | Estado |
 |---|---|:---:|
-| Currículo | 19 módulos (00–18) con esquemas Mermaid, casos reales, fuentes y navegación | ✅ |
+| Currículo | 28 módulos (00–27) con esquemas Mermaid, casos reales, fuentes y navegación | ✅ |
 | Rutas por perfil | Itinerarios según objetivo del estudiante | ✅ |
 | Industria | Construcción de una red, stack, equipos, empresas, negocio y ciclo de vida | ✅ |
-| Prácticas | Cincuenta prácticas con criterios de aceptación | ✅ |
+| Prácticas | Setenta prácticas con criterios de aceptación (42 auto-verificables) | ✅ |
 | Laboratorios | Automáticos sin dependencias y laboratorios Foundry | ✅ |
 | Bitcoin regtest | Entorno de práctica UTXO | ✅ |
 | Contratos de ejemplo | Token, oráculo, gobernanza, Vault y financiamiento | ✅ |
 | dApp y datos | Interfaz, indexador y panel educativo | ✅ |
 | Seguridad | Ofensiva autorizada y auditoría | ✅ |
 | Evaluación | Evaluaciones, progreso, certificado y kit docente | ✅ |
-| Autoevaluación | Quiz global de 24 preguntas + 76 preguntas repartidas en los 19 módulos | ✅ |
+| Autoevaluación | Quiz global + 112 preguntas repartidas en los 28 módulos | ✅ |
 | Apps offline | App de escritorio para Windows y APK de Android con todo el curso dentro | ✅ |
-| Manual en PDF | ~340 páginas con todo el contenido; se genera en cada publicación | ✅ |
+| Manual en PDF | ~478 páginas con todo el contenido; se genera en cada publicación | ✅ |
+| Regulación | Chile, MiCA, EE. UU., LatAm y estándares internacionales, con rango normativo y fuente | ✅ |
+| Casos reales | Terra/UST, FTX, puente Ronin y El Salvador, con estructura fija de análisis | ✅ |
 | Bibliografía | Libros de referencia por área e hitos del ecosistema | ✅ |
 | CI y publicación | Lint (Markdown, JS y Solidity), pruebas Node y Foundry, escaneo de secretos, CodeQL, vigilancia de enlaces externos, sitio en GitHub Pages y binarios verificados por contenido | ✅ |
 
@@ -43,7 +46,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 | Área | Qué incluye | Estado | Cómo verificar |
 |---|---|:---:|---|
-| `curriculum/` | Módulos 00–18 y plantilla | ✅ | Abrir `curriculum/README.md` |
+| `curriculum/` | Módulos 00–27 y plantilla | ✅ | Abrir `curriculum/README.md` |
 | `labs/` | Laboratorios con guía y catálogo | ✅ | Revisar `labs/CATALOG.md` |
 | `projects/` | Contratos Foundry de ejemplo | ✅ | `forge test` en el proyecto |
 | `apps/` | dApp web, indexador, panel y las dos apps offline | ✅ | Ver [despliegue local](despliegue-local.md) |

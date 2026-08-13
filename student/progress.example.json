@@ -97,6 +97,51 @@
       "status": "pending",
       "score": null,
       "evidence": []
+    },
+    "19": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "20": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "21": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "22": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "23": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "24": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "25": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "26": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
+    },
+    "27": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
     }
   },
   "labs": {
@@ -297,6 +342,86 @@
       "evidence": ""
     },
     "50": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "51": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "52": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "53": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "54": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "55": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "56": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "57": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "58": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "59": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "60": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "61": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "62": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "63": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "64": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "65": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "66": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "67": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "68": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "69": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "70": {
       "status": "pending",
       "evidence": ""
     }

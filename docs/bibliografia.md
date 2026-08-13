@@ -34,8 +34,15 @@ resiste.
 | Codificación ABI y selectores | `pnpm test` — `labs/05-evm` |
 | Reentrancia, control de acceso, oráculo, replay, front-running, colisión de storage | `forge test` en [`security-challenges/`](../security-challenges/README.md) — cada reto trae su **exploit** y su **fix** |
 | Contratos de bóveda, gobernanza y financiamiento | `forge test` en `labs/` y `projects/` |
+| AMM, pérdida impermanente, factor de salud y liquidación | `pnpm test` — `labs/19-defi` |
+| Colateral, paridad y cobertura accesible de reservas | `pnpm test` — `labs/21-stablecoins` |
+| Coste de una remesa, prefondeo y pago contra pago atómico | `pnpm test` — `labs/23-pagos-fx` |
+| Entrega contra pago, liquidez del neteo y ciclo de un bono | `pnpm test` — `labs/25-mercados-capitales` |
+| Política de cuórum M-de-N frente a compromiso y a pérdida | `pnpm test` — `labs/26-custodia` |
+| Enfoque basado en riesgo y Regla de Viaje | `pnpm test` — `labs/27-cumplimiento` |
+| Mercado tokenizado: dinero mayorista simulado, bono y DvP atómico | `forge test` en [`labs/22-cbdc-mercado-tokenizado/`](../labs/22-cbdc-mercado-tokenizado/README.md) |
 
-Son **80 pruebas automatizadas** (60 de Node y 20 de Foundry) que la CI ejecuta en
+Son **186 pruebas automatizadas** (148 de Node y 38 de Foundry) que la CI ejecuta en
 cada cambio. Una afirmación que se contradiga con el código hace fallar el build.
 Eso es más fuerte que una cita: no apela a la autoridad de un autor, se comprueba.
 
@@ -96,6 +103,15 @@ legalmente gratuita, se enlaza esa.
 | [16 · Infraestructura y nodos](../curriculum/16-infraestructura-nodos/README.md) | [ethereum.org — Nodos y clientes](https://ethereum.org/developers/docs/nodes-and-clients/) · [EthStaker](https://ethstaker.org/) |
 | [17 · Empresa](../curriculum/17-blockchain-en-la-empresa/README.md) | Informes del [BIS](https://www.bis.org/) y del [WEF](https://www.weforum.org/) · Werbach — *The Blockchain and the New Architecture of Trust* |
 | [18 · Implementación](../curriculum/18-implementacion-empresarial/README.md) | Prácticas públicas de integración del sector financiero y documentación de cada componente citado |
+| [19 · DeFi](../curriculum/19-defi/README.md) | Documentación de [Uniswap](https://docs.uniswap.org/), [Aave](https://aave.com/docs) y [Sky/MakerDAO](https://docs.makerdao.com/) · investigación del [BIS](https://www.bis.org/) sobre finanzas descentralizadas |
+| [20 · Dinero, banca y liquidación](../curriculum/20-dinero-banca-liquidacion/README.md) | [CPMI-BIS](https://www.bis.org/cpmi/) — sistemas de pago y [PFMI](https://www.bis.org/cpmi/publ/d101.htm) · Banco de Inglaterra — [*Money creation in the modern economy*](https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy) |
+| [21 · Stablecoins](../curriculum/21-stablecoins/README.md) | [BIS](https://www.bis.org/) y [FSB](https://www.fsb.org/) sobre stablecoins · [Reglamento (UE) 2023/1114 (MiCA)](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32023R1114) |
+| [22 · Depósitos tokenizados y CBDC/MDBC](../curriculum/22-deposito-tokenizado-cbdc/README.md) | [BIS Innovation Hub](https://www.bis.org/about/bisih/) · [Banco Central de Chile](https://www.bcentral.cl/) · [BCE — euro digital](https://www.ecb.europa.eu/euro/digital_euro/html/index.es.html) |
+| [23 · Pagos, cross-border y FX](../curriculum/23-pagos-fx-onchain/README.md) | [FSB — hoja de ruta del G20 para pagos transfronterizos](https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/cross-border-payments/) · [Banco Mundial — *Remittance Prices Worldwide*](https://remittanceprices.worldbank.org/) |
+| [24 · Tokenización y RWA](../curriculum/24-tokenizacion-rwa/README.md) | [BIS](https://www.bis.org/) e [IOSCO](https://www.iosco.org/) sobre tokenización · estándares [ERC](https://eips.ethereum.org/) y [ERC-3643](https://www.erc3643.org/) |
+| [25 · Mercados de capitales on-chain](../curriculum/25-mercados-capitales-onchain/README.md) | [CPMI-IOSCO — *Principles for Financial Market Infrastructures*](https://www.bis.org/cpmi/publ/d101.htm) · [BCE — T2S](https://www.ecb.europa.eu/paym/target/t2s/html/index.en.html) |
+| [26 · Custodia e identidad](../curriculum/26-custodia-identidad/README.md) | [BIPs 32/39/44](https://github.com/bitcoin/bips) · [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337) · [W3C — DID](https://www.w3.org/TR/did-core/) y [credenciales verificables](https://www.w3.org/TR/vc-data-model-2.0/) · [NIST SP 800-57](https://csrc.nist.gov/projects/key-management) |
+| [27 · Regulación y cumplimiento](../curriculum/27-regulacion-cumplimiento/README.md) | [MiCA](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32023R1114) · [GAFI/FATF](https://www.fatf-gafi.org/) · [Comité de Basilea](https://www.bis.org/bcbs/) · [IOSCO](https://www.iosco.org/) · [CMF](https://www.cmfchile.cl/) y [Ley Chile](https://www.bcn.cl/leychile) |
 
 > **Obras libres.** *Mastering Bitcoin*, *Mastering Ethereum*, *Mastering the Lightning
 > Network*, *Distributed Systems*, *Proofs, Arguments, and Zero-Knowledge* y el

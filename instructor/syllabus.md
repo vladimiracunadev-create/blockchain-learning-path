@@ -4,7 +4,7 @@
 
 ## Descripción del curso
 
-Curso práctico e integral de tecnología blockchain que va de los fundamentos criptográficos al desarrollo profesional, la seguridad y la implementación en la empresa. El estudiante construye, prueba y despliega software real en redes locales y de prueba, y aprende a justificar decisiones de arquitectura con evidencia. El curso cubre los módulos 00–18 del [currículo](../curriculum/README.md) y culmina en un [proyecto final](../capstone/README.md).
+Curso práctico e integral de tecnología blockchain que va de los fundamentos criptográficos al desarrollo profesional, la seguridad y la implementación en la empresa. El estudiante construye, prueba y despliega software real en redes locales y de prueba, y aprende a justificar decisiones de arquitectura con evidencia. El curso cubre los módulos 00–18 del [currículo](../curriculum/README.md) y culmina en un [proyecto final](../capstone/README.md). Los módulos 19–27 (finanzas on-chain, custodia y regulación) se imparten como extensión optativa de ocho semanas, detallada más abajo.
 
 ## Prerrequisitos
 
@@ -56,6 +56,29 @@ Al finalizar, el estudiante será capaz de:
 | 24 | 16–17 | Infraestructura de nodos y empresa | Módulos 16–17 | Plan + caso de negocio |
 | 25 | 18 | Implementación empresarial | Módulo 18 | Documento de arquitectura |
 | 26 | Capstone | Proyecto final | [Capstone](../capstone/README.md) | Demo y defensa |
+
+## Módulo optativo: finanzas on-chain e institucional (semanas 27–34)
+
+Ocho semanas adicionales que cubren los módulos 19–27. Se pueden impartir como continuación
+del curso o como asignatura independiente para perfiles del sector financiero, que en tal
+caso necesitan al menos los módulos 00–08 como prerrequisito.
+
+| Semana | Módulo | Tema | Lectura | Entregable |
+|---|---|---|---|---|
+| 27 | 19 | DeFi: AMM, préstamo, liquidación y riesgo | Módulo 19 | Labs 51–54 |
+| 28 | 20 | Dinero, banca, compensación y liquidación | Módulo 20 | Labs 55–57 + informe |
+| 29 | 21 | Stablecoins: respaldo, redención y desanclaje | Módulo 21 | Labs 58–59 |
+| 30 | 22 | Depósitos tokenizados y CBDC/MDBC | Módulo 22 | Lab 60 + lab 68 (Foundry) |
+| 31 | 23 | Pagos, cross-border y FX on-chain | Módulo 23 | Labs 61–63 |
+| 32 | 24 | Tokenización y activos del mundo real | Módulo 24 | Labs 64–65 |
+| 33 | 25 | Mercados de capitales on-chain | Módulo 25 | Labs 66–67 + arquitectura |
+| 34 | 26–27 | Custodia, identidad, regulación y cumplimiento | Módulos 26–27 | Labs 69–70 + análisis regulatorio |
+
+**Nota para el instructor.** El módulo 20 es la bisagra de todo el bloque: sin él, los
+siguientes se aprenden como vocabulario. Si hay que recortar, recorta en cualquier otro
+sitio. Y advierte desde la primera sesión que el material **no es asesoría financiera,
+legal ni tributaria**, y que toda afirmación regulatoria debe verificarse en su fuente
+oficial vigente ([regulación](../regulation/README.md)).
 
 En formato intensivo de 8 semanas, agrupa las filas conceptuales y reduce el alcance del capstone; consulta el [kit del instructor](README.md).
 

@@ -50,6 +50,7 @@ jobs:
         project:
           - labs/06-solidity-vault
           - labs/08-protocols
+          - labs/22-cbdc-mercado-tokenizado
           - projects/community-funding
     defaults:
       run:
@@ -78,6 +79,7 @@ jobs:
         project:
           - labs/06-solidity-vault
           - labs/08-protocols
+          - labs/22-cbdc-mercado-tokenizado
           - projects/community-funding
     steps:
       - uses: actions/checkout@v7

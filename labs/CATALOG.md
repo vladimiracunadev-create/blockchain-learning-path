@@ -1,8 +1,8 @@
-# 🧪 Catálogo de 50 prácticas
+# 🧪 Catálogo de 70 prácticas
 
 > [⬅️ Cuaderno de laboratorios](guides/README.md) · [📚 Currículo](../curriculum/README.md) · [🏠 Programa](../README.md)
 
-Las 50 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
+Las 70 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
 del currículo que la sustenta y a su **resolución explicada** (cómo se resuelve, el
 comando, la salida esperada y el error común).
 
@@ -100,6 +100,35 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 | 48 | Prueba ZK conceptual | avanzado | diseño | [14](../curriculum/14-privacidad-zk/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 49 | Simulación de emisión y concentración | avanzado | **auto** | [15](../curriculum/15-arquitectura-avanzada/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 50 | Capstone y defensa técnica | avanzado | producto | [Capstone](../capstone/README.md) | [ver](guides/05-advanced-capstone.md) |
+
+## Prácticas 51–70 · Finanzas on-chain, institucional y regulación
+
+📖 Resolución explicada del bloque: [06-finanzas-onchain.md](guides/06-finanzas-onchain.md) · Teoría: módulos 19–27.
+
+Todas son **simulaciones locales**: sin red, sin claves y sin fondos.
+
+| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+|---:|---|---|---|---|---|
+| 51 | Curva, impacto y deslizamiento en un AMM | profesional | **auto** | [19](../curriculum/19-defi/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 52 | Pérdida impermanente y su compensación | profesional | **auto** | [19](../curriculum/19-defi/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 53 | Factor de salud y precio de liquidación | profesional | **auto** | [19](../curriculum/19-defi/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 54 | Ficha de riesgo de un protocolo DeFi | profesional | informe | [19](../curriculum/19-defi/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 55 | Compensación frente a liquidación bruta | profesional | cálculo | [20](../curriculum/20-dinero-banca-liquidacion/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 56 | El circuito de tu propio pago | profesional | mapa | [20](../curriculum/20-dinero-banca-liquidacion/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 57 | Las siete formas de dinero digital | profesional | matriz | [20](../curriculum/20-dinero-banca-liquidacion/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 58 | Colateral, paridad y desanclaje | profesional | **auto** | [21](../curriculum/21-stablecoins/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 59 | Ficha comparada de dos stablecoins | profesional | informe | [21](../curriculum/21-stablecoins/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 60 | Opciones de diseño de una MDBC | avanzado | documento | [22](../curriculum/22-deposito-tokenizado-cbdc/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 61 | Coste real de una remesa | profesional | **auto** | [23](../curriculum/23-pagos-fx-onchain/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 62 | Pago contra pago atómico | profesional | **auto** | [23](../curriculum/23-pagos-fx-onchain/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 63 | Análisis de un corredor de pagos | avanzado | informe | [23](../curriculum/23-pagos-fx-onchain/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 64 | Mapa de la junta off-chain / on-chain | avanzado | informe | [24](../curriculum/24-tokenizacion-rwa/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 65 | Memorando de tokenización | avanzado | documento | [24](../curriculum/24-tokenizacion-rwa/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 66 | Entrega contra pago y coste de liquidez | avanzado | **auto** | [25](../curriculum/25-mercados-capitales-onchain/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 67 | Ciclo de vida de un bono tokenizado | avanzado | **auto** | [25](../curriculum/25-mercados-capitales-onchain/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 68 | Mercado tokenizado en contratos | avanzado | **auto** · Foundry | [22](../curriculum/22-deposito-tokenizado-cbdc/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 69 | Política de custodia M-de-N | avanzado | **auto** | [26](../curriculum/26-custodia-identidad/README.md) | [ver](guides/06-finanzas-onchain.md) |
+| 70 | Cribado por riesgo y Regla de Viaje | avanzado | **auto** | [27](../curriculum/27-regulacion-cumplimiento/README.md) | [ver](guides/06-finanzas-onchain.md) |
 
 ---
 

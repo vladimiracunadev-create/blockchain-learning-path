@@ -1,8 +1,8 @@
 # Cuaderno de prácticas
 
-El cuaderno de laboratorios reúne las **50 prácticas** del programa, organizadas en **5 cuadernos por etapa** que acompañan el avance por los 19 módulos del currículo. Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
+El cuaderno de laboratorios reúne las **70 prácticas** del programa, organizadas en **6 cuadernos por etapa** que acompañan el avance por los 28 módulos del currículo. Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
 
-## Los cinco cuadernos
+## Los seis cuadernos
 
 | Cuaderno | Prácticas | Módulos que acompaña |
 |---|---|---|
@@ -11,6 +11,7 @@ El cuaderno de laboratorios reúne las **50 prácticas** del programa, organizad
 | [EVM y desarrollo](03-evm-development.md) | 21–30 | 05–07 (EVM, Solidity/Foundry, dApps) |
 | [Profesional y seguridad](04-professional-security.md) | 31–40 | 08–11 (tokens, seguridad, oráculos, DAO) |
 | [Avanzado y capstone](05-advanced-capstone.md) | 41–50 | 12–18 y proyecto final |
+| [Finanzas on-chain](06-finanzas-onchain.md) | 51–70 | 19–27 (DeFi, dinero, stablecoins, MDBC, pagos, tokenización, mercados, custodia, regulación) |
 
 ## Qué contiene cada guía
 

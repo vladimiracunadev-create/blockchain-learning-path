@@ -74,7 +74,29 @@ const NAV = [
       { t: "03 · Desarrollo EVM", href: "labs/guides/03-evm-development.html" },
       { t: "04 · Profesional y seguridad", href: "labs/guides/04-professional-security.html" },
       { t: "05 · Avanzado y capstone", href: "labs/guides/05-advanced-capstone.html" },
+      { t: "06 · Finanzas on-chain", href: "labs/guides/06-finanzas-onchain.html" },
+      { t: "Mercado tokenizado (Foundry)", href: "labs/22-cbdc-mercado-tokenizado/README.html" },
     ],
+  },
+  {
+    t: "⚖️ Regulación", href: "regulation/README.html",
+    children: [
+      ["Chile", "regulation/chile/README.html"],
+      ["Unión Europea (MiCA)", "regulation/european-union/README.html"],
+      ["Estados Unidos", "regulation/united-states/README.html"],
+      ["América Latina", "regulation/latin-america/README.html"],
+      ["Estándares internacionales", "regulation/international/README.html"],
+      ["Comparación", "regulation/comparison/README.html"],
+    ].map(([t, href]) => ({ t, href })),
+  },
+  {
+    t: "📁 Casos reales", href: "docs/casos-reales/README.html",
+    children: [
+      ["Terra/UST", "docs/casos-reales/terra-ust.html"],
+      ["FTX y la custodia", "docs/casos-reales/ftx-custodia.html"],
+      ["Puente Ronin", "docs/casos-reales/ronin-puente.html"],
+      ["El Salvador y bitcoin", "docs/casos-reales/el-salvador-bitcoin.html"],
+    ].map(([t, href]) => ({ t, href })),
   },
   { t: "🧠 Autoevaluación", href: "autoevaluacion.html" },
   {
@@ -94,7 +116,10 @@ const NAV = [
       ["Operación e incidentes", "docs/operacion-incidentes.html"],
       ["Recursos oficiales", "docs/recursos-oficiales.html"],
       ["Evaluación", "docs/evaluacion.html"],
+      ["Matriz de competencias", "docs/skills-matrix.html"],
       ["Ruta rápida", "docs/ruta-rapida.html"],
+      ["Chile · regulación y tributación", "docs/chile-regulacion-tributacion.html"],
+      ["Auditoría del programa", "docs/audit/README.html"],
     ].map(([t, href]) => ({ t, href })),
   },
   {

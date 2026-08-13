@@ -1,6 +1,6 @@
 # Rutas por perfil profesional
 
-Todas las rutas parten del tronco común 00–05 (orientación, criptografía, sistemas distribuidos, consenso, Bitcoin y EVM). A partir de ahí, cada perfil prioriza módulos, laboratorios y un entregable de portafolio distinto. Elige la ruta que mejor describa el rol al que apuntas; puedes cambiar de ruta sin perder avance, porque el registro de progreso es el mismo.
+Todas las rutas parten del tronco común 00–05 (orientación, criptografía, sistemas distribuidos, consenso, Bitcoin y EVM). A partir de ahí, cada perfil prioriza módulos, laboratorios y un entregable de portafolio distinto. Elige la ruta que mejor describa el rol al que apuntas; puedes cambiar de ruta sin perder avance, porque el registro de progreso es el mismo. Comprueba tu nivel en cada competencia con la [matriz de competencias](../docs/skills-matrix.md), que exige **evidencia reproducible** para cada casilla.
 
 ```mermaid
 flowchart TD
@@ -10,15 +10,21 @@ flowchart TD
   T --> P["Producto y negocio"]
   T --> I["Investigación"]
   T --> E["Empresa y consultoría"]
+  T --> F["Finanzas on-chain"]
+  T --> K["Banca y activos digitales"]
+  T --> R["Cumplimiento"]
   D --> C["Capstone y portafolio"]
   A --> C
   S --> C
   P --> C
   I --> C
   E --> C
+  F --> C
+  K --> C
+  R --> C
 ```
 
-## Resumen de las seis rutas
+## Resumen de las nueve rutas
 
 | Perfil | Módulos prioritarios | Laboratorios clave | Entregable de portafolio | Salida laboral típica |
 |---|---|---|---|---|
@@ -28,6 +34,9 @@ flowchart TD
 | Producto y negocio | 00, 04, 07–08, 11–15, 17–18 | 01–05, 11–15 | Validación de caso y tokenomics | Product manager / analista Web3 |
 | Investigación | 01–03, 12–15 | 01–10, 41–48 | Réplica comentada de un paper | Investigador / protocol engineer junior |
 | Empresa y consultoría | 00, 02, 10–13, 15–18 | 01–10, 46–50 | Diseño de red permisionada con ADR | Consultor / líder técnico enterprise |
+| Finanzas on-chain (DeFi) | 06–10, 19, 21, 23 | 51–54, 58, 61–62 | Ficha de riesgo de un protocolo con cálculos | Ingeniero DeFi / analista de riesgo on-chain |
+| Banca y activos digitales | 08, 18, 20–26 | 55–57, 60, 64–69 | Arquitectura de un mercado de bonos tokenizados | Especialista en tokenización / blockchain bancario |
+| Cumplimiento y regulación | 00, 09, 20–22, 26–27 | 59, 63, 69–70 | Análisis regulatorio en dos jurisdicciones | Compliance officer de activos digitales |
 
 ## Desarrollo
 
@@ -83,6 +92,36 @@ flowchart TD
 - **Entregable de portafolio:** el diseño de una red permisionada o híbrida con ADR, modelo de gobernanza, plan de operación y análisis de cumplimiento estilo módulo 18.
 - **Salida laboral:** consultor blockchain, líder técnico de proyectos enterprise, arquitecto de integraciones.
 
+## Finanzas on-chain (DeFi)
+
+- **A quién le sirve:** quien va a construir o analizar protocolos financieros descentralizados y necesita entender el riesgo, no solo el código.
+- **Secuencia recomendada:** tronco común → [06](../curriculum/06-solidity-foundry/README.md)–[10](../curriculum/10-oraculos-indexacion/README.md) → [19-defi](../curriculum/19-defi/README.md) a fondo → [21-stablecoins](../curriculum/21-stablecoins/README.md) y [23-pagos-fx-onchain](../curriculum/23-pagos-fx-onchain/README.md) para el contexto monetario.
+- **Puede aligerar:** 16–18 (infraestructura y empresa) y 24–25 a lectura de síntesis.
+- **Laboratorios clave:** 51–54 (AMM, pérdida impermanente, factor de salud, ficha de riesgo), 58 (paridad) y 61–62 (coste real y PvP).
+- **Entregable de portafolio:** la ficha de riesgo de un protocolo real con los seis riesgos estructurales, su evidencia observable y el cálculo del precio de liquidación de una posición.
+- **Salida laboral:** ingeniero DeFi, analista de riesgo on-chain, integrador de protocolos.
+- **Advertencia de la ruta:** nada de este material es asesoría de inversión, y el criterio de evaluación penaliza presentar rendimientos como esperables.
+
+## Banca y activos digitales
+
+- **A quién le sirve:** perfiles del sector financiero —o que quieren entrar en él— que necesitan el puente completo entre las finanzas tradicionales y las on-chain.
+- **Secuencia recomendada:** tronco común → [08-tokens](../curriculum/08-tokens/README.md) → [18-implementacion-empresarial](../curriculum/18-implementacion-empresarial/README.md) → **[20-dinero-banca-liquidacion](../curriculum/20-dinero-banca-liquidacion/README.md) sin saltárselo** → [21](../curriculum/21-stablecoins/README.md), [22](../curriculum/22-deposito-tokenizado-cbdc/README.md), [24](../curriculum/24-tokenizacion-rwa/README.md), [25](../curriculum/25-mercados-capitales-onchain/README.md) y [26](../curriculum/26-custodia-identidad/README.md).
+- **Puede aligerar:** 12–14 (L2, interoperabilidad y ZK) a lectura de síntesis.
+- **Laboratorios clave:** 55–57 (neteo, circuito del pago, formas de dinero), 60 (diseño de MDBC), 64–68 (junta, memorando, DvP, bono, mercado en contratos) y 69 (custodia).
+- **Entregable de portafolio:** la arquitectura de un mercado de bonos tokenizados con modelo DvP justificado por liquidez y **ninguna función tradicional huérfana**.
+- **Salida laboral:** especialista en tokenización, blockchain bancario, infraestructura de mercado.
+- **Advertencia de la ruta:** el módulo 20 es la bisagra. Saltárselo convierte los seis siguientes en vocabulario memorizado.
+
+## Cumplimiento y regulación
+
+- **A quién le sirve:** quien tiene que responder «¿esto se puede hacer y bajo qué condiciones?» y necesita saber leer una norma, no memorizarla.
+- **Secuencia recomendada:** [00-orientacion](../curriculum/00-orientacion/README.md) → [09-seguridad](../curriculum/09-seguridad/README.md) para el vocabulario de riesgo → [20](../curriculum/20-dinero-banca-liquidacion/README.md)–[22](../curriculum/22-deposito-tokenizado-cbdc/README.md) → [26](../curriculum/26-custodia-identidad/README.md) y [27-regulacion-cumplimiento](../curriculum/27-regulacion-cumplimiento/README.md) a fondo, con la carpeta [`regulation/`](../regulation/README.md).
+- **Puede aligerar:** 06–07 hasta poder leer un contrato y entender qué hace; no hace falta escribirlos.
+- **Laboratorios clave:** 59 (ficha comparada), 63 (corredor de pagos), 69–70 (custodia y cribado con Regla de Viaje).
+- **Entregable de portafolio:** el análisis regulatorio de un producto en **dos jurisdicciones** (una de ellas Chile), con fuente oficial y fecha en cada afirmación y una sección de incertidumbres que no esté vacía.
+- **Salida laboral:** compliance officer de activos digitales, analista regulatorio fintech.
+- **Advertencia de la ruta:** el objetivo es saber preguntar y dónde buscar. Nada de esto sustituye asesoría legal profesional.
+
 ## Nivelación
 
 - Sin programación previa: completa ejercicios de terminal y JavaScript básico antes del módulo 05.
@@ -92,7 +131,7 @@ flowchart TD
 ## Navegación
 
 - [Inicio del programa](../README.md)
-- [Currículo completo (19 módulos)](../curriculum/README.md)
+- [Currículo completo (28 módulos)](../curriculum/README.md)
 - [Catálogo de laboratorios](../labs/CATALOG.md)
 - [Evaluación](../docs/evaluacion.md) · [Checkpoints](../assessments/checkpoints.md)
 - [Sección de industria](../industria/README.md) · [Roadmap](../ROADMAP.md)

@@ -23,6 +23,22 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 | 25 | Empresa e implementación (módulos 17–18) | Caso de negocio y documento de arquitectura |
 | 26 | Proyecto final | Demo, pruebas y defensa |
 
+## Extensión: finanzas on-chain e institucional (semanas 27–34)
+
+La etapa que lleva del token al sistema financiero. Se puede cursar seguida del roadmap
+principal o de forma independiente por quien ya domine la parte técnica.
+
+| Semanas | Contenido | Evidencia |
+|---|---|---|
+| 27 | DeFi: AMM, préstamo y riesgo (módulo 19) | Ficha de riesgo de un protocolo real |
+| 28 | Dinero, banca y liquidación (módulo 20) | Informe «Qué se mueve cuando pago» |
+| 29 | Stablecoins (módulo 21) | Ficha comparada de dos emisores |
+| 30 | Depósitos tokenizados y CBDC/MDBC (módulo 22) | Documento de opciones de diseño |
+| 31 | Pagos, cross-border y FX on-chain (módulo 23) | Análisis de un corredor de pagos |
+| 32 | Tokenización y RWA (módulo 24) | Memorando de tokenización |
+| 33 | Mercados de capitales on-chain (módulo 25) | Arquitectura de un mercado de bonos |
+| 34 | Custodia, identidad y regulación (módulos 26–27) | Política de custodia y análisis regulatorio |
+
 ## Criterios para avanzar
 
 - Puedes explicar el tema sin recurrir a definiciones memorizadas.
@@ -44,7 +60,8 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 | 0.6.0 | CI reforzada, Codespaces, buscador, progreso y autoevaluación global en el sitio | completada |
 | 0.7.0 | autoevaluación por módulo (19 quizzes), app de escritorio para Windows y app Android, ambas offline; enlaces externos vigilados y lint de código | completada |
 | 0.8.0 | profundización de los 19 módulos (11 900 → 24 218 palabras) en cuatro capas para principiante y experto, guía «Empieza aquí», glosario enlazado en todos los módulos y 31 de 50 prácticas auto-verificadas | completada |
-| 0.8.1 | manual en PDF con la guía de entrada incluida (341 páginas) y cifras del manual verificadas en CI | actual |
+| 0.8.1 | manual en PDF con la guía de entrada incluida (341 páginas) y cifras del manual verificadas en CI | completada |
+| 0.9.0 | etapa de finanzas on-chain e institucional: 9 módulos nuevos (19–27) sobre DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización y RWA, mercados de capitales, custodia e identidad y regulación; 20 prácticas nuevas, laboratorio de mercado tokenizado en Solidity, carpeta `regulation/`, casos reales y auditoría del programa | actual |
 | 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

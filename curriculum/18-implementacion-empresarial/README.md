@@ -2,7 +2,7 @@
 
 > **Nivel:** Avanzado-Producción · ⏱️ **Duración estimada:** 180 min · **Fuente:** prácticas públicas de integración del sector financiero y documentación de los componentes citados
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [17 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [🎓 Proyecto final](../../capstone/README.md)
+> 🧭 ⬅️ **Anterior:** [17 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [19 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -289,4 +289,4 @@ lanzamiento tienen números concretos.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 17 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [🎓 Proyecto final](../../capstone/README.md)
+⬅️ [Módulo 17 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 19 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md)

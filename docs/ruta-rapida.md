@@ -2,7 +2,7 @@
 
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [🗺️ Hoja de ruta completa](../ROADMAP.md)
 
-Ruta intensiva para quien ya tiene experiencia sólida de programación (idealmente backend) y puede dedicar **15-20 horas semanales durante 8 semanas**. Es una compresión honesta: cubre los módulos 00-18 sacrificando profundidad de práctica, no temas de seguridad.
+Ruta intensiva para quien ya tiene experiencia sólida de programación (idealmente backend) y puede dedicar **15-20 horas semanales durante 8 semanas**. Es una compresión honesta: cubre los módulos 00-18 sacrificando profundidad de práctica, no temas de seguridad. La etapa de finanzas on-chain (19-27) no entra en esta ruta: se hace después, con el ritmo del [ROADMAP](../ROADMAP.md).
 
 **Advertencia clara**: la ruta recomendada del programa es la completa de 26 semanas descrita en [ROADMAP.md](../ROADMAP.md). Elige esta ruta solo si de verdad tienes la experiencia previa y las horas; si no, la compresión produce lagunas que se pagan caras en los módulos de seguridad y en el capstone.
 

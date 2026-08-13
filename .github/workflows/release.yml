@@ -83,8 +83,9 @@ jobs:
         run: |
           $empaquetada = "apps/desktop/dist/win-unpacked/resources/bundle"
           if (-not (Test-Path "$empaquetada/index.html")) { throw "El empaquetado no lleva el curso" }
+          $esperados = (Get-ChildItem "curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
           $modulos = (Get-ChildItem "$empaquetada/curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
-          if ($modulos -ne 19) { throw "La app empaquetada tiene $modulos módulos, se esperaban 19" }
+          if ($modulos -ne $esperados) { throw "La app empaquetada tiene $modulos módulos, se esperaban $esperados" }
           "✅ Windows: $modulos módulos empaquetados" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         with:

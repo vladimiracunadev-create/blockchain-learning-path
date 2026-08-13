@@ -2,7 +2,7 @@
 
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📖 Bibliografía](bibliografia.md)
 
-Glosario de referencia de los términos que usan los módulos 00-18, los laboratorios y el capstone. Se privilegia el término en español con el anglicismo entre paréntesis cuando el sector lo usa de forma dominante. Para profundizar en cada tema, consulta [recursos-oficiales.md](recursos-oficiales.md).
+Glosario de referencia de los términos que usan los módulos 00-27, los laboratorios y el capstone. Se privilegia el término en español con el anglicismo entre paréntesis cuando el sector lo usa de forma dominante. Para profundizar en cada tema, consulta [recursos-oficiales.md](recursos-oficiales.md).
 
 ## Fundamentos y criptografía
 
@@ -22,7 +22,7 @@ Glosario de referencia de los términos que usan los módulos 00-18, los laborat
 - **Consenso**: reglas para acordar el estado válido entre participantes que no confían entre sí.
 - **Prueba de trabajo (proof of work, PoW)**: consenso que exige gasto computacional verificable para proponer bloques.
 - **Prueba de participación (proof of stake, PoS)**: consenso que selecciona proponentes según capital depositado en garantía, con penalizaciones (slashing).
-- **Finalidad (finality)**: garantía de que un bloque no será revertido; puede ser probabilística (PoW) o económica/absoluta (PoS con checkpoints).
+- **Finalidad (finality)**: garantía de que una operación no será revertida. Tiene **tres acepciones que no deben mezclarse**: *técnica* (la probabilidad de reversión es despreciable: probabilística en PoW, con checkpoints en PoS), *económica* (revertir costaría más de lo que se gana) y **jurídica o firmeza** (una norma declara la orden irrevocable y oponible a terceros, incluso en concurso del participante). Una transacción con 100 confirmaciones tiene las dos primeras y, por sí sola, ninguna de la tercera.
 - **Tolerancia a fallas bizantinas (BFT)**: capacidad de un sistema de acordar estado correcto aunque una fracción de nodos actúe de forma arbitraria o maliciosa.
 
 ## Bitcoin
@@ -149,10 +149,77 @@ Glosario de referencia de los términos que usan los módulos 00-18, los laborat
 - **IOPS**: operaciones de entrada/salida por segundo; el disco (NVMe) suele ser el cuello de botella real al operar nodos, más que la CPU.
 - **Nodo de archivo (archive node)**: nodo que conserva todos los estados históricos, con requisitos de disco muy superiores a un nodo completo.
 - **SLA / observabilidad**: compromisos de disponibilidad y la instrumentación (métricas, logs, alertas) para cumplirlos; ver [operacion-incidentes.md](operacion-incidentes.md).
-- **MiCA**: reglamento europeo de mercados de criptoactivos, en aplicación plena desde diciembre de 2024; referencia regulatoria para emisores y proveedores de servicios.
+- **MiCA**: Reglamento (UE) 2023/1114 sobre mercados de criptoactivos; marco europeo para emisores y proveedores de servicios, desarrollado en [regulación · Unión Europea](../regulation/european-union/README.md).
+
+## Dinero, pagos y liquidación
+
+- **Dinero de banco central**: pasivo del banco central. Efectivo (para todos) y reservas (solo entidades con cuenta); el único activo de liquidación sin riesgo de crédito.
+- **Dinero bancario**: saldo en cuenta. Es un **pasivo del banco comercial** contigo, no un objeto guardado; su seguridad depende de la solvencia del banco y del seguro de depósito.
+- **Dinero electrónico**: pasivo de un emisor no bancario, con obligación de respaldo y segregación; redimible a la par, pero no es un depósito.
+- **Compensación (clearing)**: cálculo de cuánto debe cada participante a cada uno, normalmente neteando. **No mueve dinero.**
+- **Liquidación (settlement)**: transferencia efectiva del activo de liquidación. Aquí sí se mueve.
+- **LBTR (liquidación bruta en tiempo real)**: cada orden se liquida individualmente y al instante en dinero de banco central. Máxima seguridad, máxima necesidad de liquidez.
+- **Neto diferido (SNLD)**: se netea durante el día y se liquida el saldo al cierre. Mínima liquidez, exposición hasta liquidar.
+- **Firmeza**: ver *finalidad*, acepción jurídica. La declara la norma del sistema de pagos, no el protocolo.
+- **Riesgo de contraparte**: que la otra parte no cumpla. **Riesgo de liquidación**: que entregues tu pata y no recibas la suya.
+- **Riesgo Herstatt**: riesgo de liquidación en divisas por desfase horario; se pierde el **principal íntegro**, no el margen.
+- **DvP (delivery versus payment)**: entrega del activo condicionada al pago, de forma que ocurren ambas o ninguna.
+- **PvP (payment versus payment)**: lo mismo entre dos monedas: la entrega de una ocurre si y solo si ocurre la de la otra.
+- **Banca corresponsal**: acuerdo por el que un banco mantiene cuentas y presta servicios a otro en su jurisdicción o moneda.
+- **Nostro / vostro**: «nuestra cuenta en su banco» / «su cuenta en nuestro banco»; son la misma cuenta vista desde cada lado.
+- **Prefondeo**: saldo mantenido por adelantado en la cuenta nostro para poder pagar; capital inmovilizado dimensionado para el pico. Es el mayor coste oculto de un pago transfronterizo.
+- **Margen de cambio (FX spread)**: diferencia entre el tipo aplicado al cliente y el tipo medio de mercado. En remesas suele ser el mayor componente del coste y el menos visible.
+- **Intercambio atómico**: operación en la que todas las patas se ejecutan o ninguna, garantizado por el propio mecanismo de ejecución.
+- **Contracargo (chargeback)**: reversión de un pago a instancia del pagador; función de protección al consumidor, no un defecto técnico.
+
+## Dinero digital y activos tokenizados
+
+- **Stablecoin**: token que busca mantener un valor estable. Clasifícalo siempre por **respaldo** (fiat, cripto, materia prima, algorítmica, sintética), **emisor** y **derecho de redención**.
+- **Paridad (peg) / desanclaje (depeg)**: el valor objetivo y su separación sostenida del precio de mercado.
+- **Participante autorizado**: entidad con derecho contractual a emitir y redimir directamente con el emisor. De ella depende el arbitraje que sostiene la paridad.
+- **Atestación (attestation)**: informe de un tercero sobre el saldo de las reservas en una fecha. **No es una auditoría**, que emite opinión sobre los estados financieros.
+- **Depósito tokenizado**: representación en un registro distribuido de un depósito bancario; sigue siendo pasivo del banco emisor, con su régimen y su supervisión.
+- **Singularidad del dinero**: propiedad por la que un peso vale un peso esté en el banco que esté; la sostienen la convertibilidad a la par y la liquidación en dinero de banco central.
+- **CBDC / MDBC**: moneda digital de banco central. **Minorista** (público general) o **mayorista** (solo entidades con cuenta en el banco central).
+- **Modelo de dos niveles**: el banco central emite y liquida; intermediarios privados distribuyen e identifican clientes.
+- **Límite de tenencia**: tope de MDBC que una persona puede mantener; freno explícito a la fuga de depósitos, no una restricción técnica.
+- **Dinero programable vs. pagos programables**: la regla vive en el dinero (puede restringir su uso) o en la aplicación (el dinero sigue siendo fungible). La distinción ordena casi todo el debate público.
+- **Tokenizar**: representar en un registro un **derecho** sobre un activo. No se tokeniza una cosa: se tokeniza un derecho sobre ella.
+- **Envoltorio jurídico (legal wrapper)**: estructura que vincula el token con el derecho; sin ella el token no significa nada.
+- **SPV (vehículo de propósito especial)**: sociedad creada para aislar un activo y sus riesgos; aporta separación patrimonial y añade riesgo de gobierno del propio vehículo.
+- **RWA (real world assets)**: activos del mundo real representados on-chain; su riesgo dominante vive en la junta entre ambos mundos.
+- **NAV (valor liquidativo)**: activos menos pasivos por participación. **No es** el precio de mercado del token ni el precio al que puedes vender hoy.
+- **Transferencia restringida**: capacidad del token de rechazar transferencias a direcciones no autorizadas; requisito habitual cuando el instrumento es un valor (ERC-1400, ERC-3643).
+- **CSD (depositario central de valores)**: entidad que mantiene el registro autoritativo de titularidad de los valores.
+- **CCP (contraparte central)**: se interpone entre comprador y vendedor; netea y **concentra** el riesgo, por eso está fuertemente regulada.
+- **T+n**: días hábiles entre operación y liquidación. Cada día es un día de exposición.
+- **Fecha de registro (record date)**: momento que determina quién cobra un evento corporativo; en un registro compartido, un bloque concreto.
+- **Eventos corporativos**: hechos del emisor que afectan al valor — cupón, dividendo, amortización, canje.
+
+## Custodia, identidad y cumplimiento
+
+- **Autocustodia / custodia de tercero / custodia calificada**: quién controla la clave y quién responde ante pérdida; la última la presta una entidad autorizada con requisitos de segregación y auditoría.
+- **MPC (computación multiparte)**: varias partes calculan una firma sin que la clave completa exista nunca; la cadena ve una firma normal y la política no es visible on-chain.
+- **HSM**: módulo criptográfico que genera y usa claves sin exponerlas, con control de acceso y registro de uso.
+- **Política M-de-N**: hacen falta M firmas de N firmantes. Tolera **M−1** compromisos y **N−M** pérdidas: los dos fallos son opuestos y ambos hay que dimensionarlos.
+- **Ceremonia de claves**: procedimiento presencial documentado para generar o rotar claves, con testigos, acta y respaldo verificado.
+- **Solo lectura (watch-only)**: seguimiento de saldos con la clave pública, sin capacidad de firma; imprescindible para conciliación y contabilidad.
+- **Abstracción de cuenta (ERC-4337)**: la cuenta es un contrato con reglas propias — límites diarios, sesiones, recuperación social, pago de comisiones por un tercero.
+- **DID (identificador descentralizado)**: identificador controlado por su titular, resoluble a un documento con sus claves públicas.
+- **Credencial verificable**: afirmación firmada por un emisor sobre un sujeto. **Divulgación selectiva**: presentar solo el atributo necesario.
+- **Open Finance / finanzas abiertas**: marco de interfaces y **consentimiento** para que terceros autorizados accedan a datos o inicien pagos en tu nombre. No es blockchain, y no confiere control de llaves.
+- **AML / KYC / KYB / KYT**: prevención de lavado, conocer al cliente, conocer al negocio y **monitorizar la transacción** (el específico de este entorno).
+- **GAFI / FATF**: organismo que fija los estándares globales de prevención. Sus Recomendaciones **no son derecho directo**: obligan a los países a incorporarlas.
+- **VASP / CASP**: proveedor de servicios sobre activos virtuales (terminología GAFI) y proveedor de servicios de criptoactivos (terminología MiCA).
+- **Regla de Viaje (travel rule)**: obligación de que la información de ordenante y beneficiario acompañe a la transferencia entre proveedores. **No tiene destinatario cuando el destino es una wallet autoalojada.**
+- **Wallet autoalojada**: la que controla directamente su titular, sin intermediario.
+- **ART / EMT**: bajo MiCA, ficha referenciada a activos (cesta o varias monedas) y ficha de dinero electrónico (una sola moneda oficial), con regímenes distintos.
+- **Enfoque basado en riesgo**: asignar controles en proporción al riesgo evaluado. Aplicar el máximo a todos es caro, excluyente y desplaza la atención.
+- **Jerarquía normativa**: ley → reglamento/norma → circular → guía → consulta pública → propuesta. Solo las tres primeras obligan; confundirlas es el error más frecuente del sector.
 
 ## Cómo usar este glosario
 
 - Los cuestionarios de [evaluación](evaluacion.md) asumen que manejas estos términos al nivel de la definición dada.
 - Si un término te resulta opaco, el módulo correspondiente del [currículo](../curriculum/README.md) lo desarrolla con laboratorios.
+- Los términos regulatorios se desarrollan, con su rango y su fuente oficial, en [regulación](../regulation/README.md).
 - Las cifras asociadas (tarifas, TVL, número de validadores) cambian constantemente: consúltalas en vivo en las fuentes de [recursos-oficiales.md](recursos-oficiales.md).

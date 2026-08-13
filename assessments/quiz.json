@@ -5,170 +5,387 @@
     {
       "etapa": "Fundamentos",
       "prompt": "¿Qué propiedad aporta directamente una función hash criptográfica?",
-      "options": ["Confidencialidad del mensaje", "Integridad verificable", "Identidad legal del emisor"],
+      "options": [
+        "Confidencialidad del mensaje",
+        "Integridad verificable",
+        "Identidad legal del emisor"
+      ],
       "answer": 1,
       "explanation": "El hash permite detectar cualquier cambio (integridad); no cifra ni prueba identidad."
     },
     {
       "etapa": "Fundamentos",
       "prompt": "En un árbol de Merkle, ¿qué necesitas para probar que una hoja pertenece a la raíz?",
-      "options": ["Todas las hojas del árbol", "Solo la rama de hashes hasta la raíz", "La clave privada del emisor"],
+      "options": [
+        "Todas las hojas del árbol",
+        "Solo la rama de hashes hasta la raíz",
+        "La clave privada del emisor"
+      ],
       "answer": 1,
       "explanation": "La prueba de inclusión es la ruta de hashes hermanos hasta la raíz: tamaño logarítmico."
     },
     {
       "etapa": "Fundamentos",
       "prompt": "¿Por qué un hash rápido como SHA-256 es mala elección para almacenar contraseñas?",
-      "options": ["Porque no es determinista", "Porque permite fuerza bruta masiva y barata", "Porque cifra de forma reversible"],
+      "options": [
+        "Porque no es determinista",
+        "Porque permite fuerza bruta masiva y barata",
+        "Porque cifra de forma reversible"
+      ],
       "answer": 1,
       "explanation": "Para contraseñas se usan KDF lentas con sal (Argon2, scrypt); un hash rápido facilita el crackeo."
     },
     {
       "etapa": "Consenso",
       "prompt": "¿Qué recurso usa Proof of Stake como defensa anti-Sybil?",
-      "options": ["Cómputo y energía", "Capital bloqueado en garantía", "Un conjunto permisionado de identidades"],
+      "options": [
+        "Cómputo y energía",
+        "Capital bloqueado en garantía",
+        "Un conjunto permisionado de identidades"
+      ],
       "answer": 1,
       "explanation": "En PoS el validador arriesga capital (stake) sujeto a slashing; en PoW se gasta energía."
     },
     {
       "etapa": "Consenso",
       "prompt": "Desde The Merge (2022), Ethereum alcanza su seguridad mediante…",
-      "options": ["Proof of Work", "Proof of Stake", "Proof of Authority"],
+      "options": [
+        "Proof of Work",
+        "Proof of Stake",
+        "Proof of Authority"
+      ],
       "answer": 1,
       "explanation": "Ethereum opera bajo Proof of Stake (Gasper: Casper FFG + LMD-GHOST) desde The Merge."
     },
     {
       "etapa": "Bitcoin",
       "prompt": "En el modelo UTXO, una transacción gasta…",
-      "options": ["Un saldo de cuenta como en un banco", "Salidas no gastadas previas, creando nuevas salidas", "Directamente el balance de una dirección"],
+      "options": [
+        "Un saldo de cuenta como en un banco",
+        "Salidas no gastadas previas, creando nuevas salidas",
+        "Directamente el balance de una dirección"
+      ],
       "answer": 1,
       "explanation": "Bitcoin no tiene 'saldos': consume UTXOs como entradas y crea nuevas salidas (incluido el cambio)."
     },
     {
       "etapa": "Bitcoin",
       "prompt": "¿Qué NO puedes afirmar al analizar una transacción pública?",
-      "options": ["Qué UTXO consume", "La comisión pagada", "Que una dirección equivale a una persona"],
+      "options": [
+        "Qué UTXO consume",
+        "La comisión pagada",
+        "Que una dirección equivale a una persona"
+      ],
       "answer": 2,
       "explanation": "Una dirección no es una identidad; inferir a la persona es especulación, no un hecho on-chain."
     },
     {
       "etapa": "Ethereum/EVM",
       "prompt": "Bajo EIP-1559, ¿qué ocurre con la base fee de cada bloque?",
-      "options": ["Va íntegra al validador", "Se quema", "Se reparte entre los usuarios"],
+      "options": [
+        "Va íntegra al validador",
+        "Se quema",
+        "Se reparte entre los usuarios"
+      ],
       "answer": 1,
       "explanation": "La base fee se quema; la priority fee (propina) es la que incentiva al validador."
     },
     {
       "etapa": "Ethereum/EVM",
       "prompt": "¿Dónde debe buscar una interfaz el resultado de un cambio de estado de un contrato?",
-      "options": ["En los eventos/logs, que describen el cambio", "En el storage, que guarda el estado", "Solo en la memoria de la transacción"],
+      "options": [
+        "En los eventos/logs, que describen el cambio",
+        "En el storage, que guarda el estado",
+        "Solo en la memoria de la transacción"
+      ],
       "answer": 1,
       "explanation": "El evento describe y es barato de indexar, pero el estado autoritativo vive en storage."
     },
     {
       "etapa": "Solidity",
       "prompt": "¿Qué patrón mitiga la reentrancia en un retiro?",
-      "options": ["Interactions-Effects-Checks", "Checks-Effects-Interactions", "Enviar primero y validar después"],
+      "options": [
+        "Interactions-Effects-Checks",
+        "Checks-Effects-Interactions",
+        "Enviar primero y validar después"
+      ],
       "answer": 1,
       "explanation": "Checks-Effects-Interactions: valida, actualiza el estado y solo entonces llama al exterior."
     },
     {
       "etapa": "Solidity",
       "prompt": "¿Qué demuestra el fuzzing/invariantes frente a las pruebas unitarias?",
-      "options": ["Que el gas es óptimo", "Que una propiedad se mantiene ante entradas aleatorias", "Que el contrato está auditado"],
+      "options": [
+        "Que el gas es óptimo",
+        "Que una propiedad se mantiene ante entradas aleatorias",
+        "Que el contrato está auditado"
+      ],
       "answer": 1,
       "explanation": "Los invariantes verifican propiedades ('los retiros nunca superan el saldo') bajo muchas entradas."
     },
     {
       "etapa": "Tokens",
       "prompt": "El riesgo del approve infinito de un ERC-20 es que…",
-      "options": ["El token deja de ser transferible", "Un gasto ilimitado queda a merced del contrato aprobado", "Se pierde el suministro máximo"],
+      "options": [
+        "El token deja de ser transferible",
+        "Un gasto ilimitado queda a merced del contrato aprobado",
+        "Se pierde el suministro máximo"
+      ],
       "answer": 1,
       "explanation": "Un allowance ilimitado permite drenar el saldo si el gastador se vuelve malicioso; de ahí permit/Permit2."
     },
     {
       "etapa": "Tokens",
       "prompt": "En una bóveda ERC-4626, ¿qué relación describe la contabilidad?",
-      "options": ["1 share = 1 token siempre", "shares que se convierten a assets según el total gestionado", "El suministro es fijo e inmutable"],
+      "options": [
+        "1 share = 1 token siempre",
+        "shares que se convierten a assets según el total gestionado",
+        "El suministro es fijo e inmutable"
+      ],
       "answer": 1,
       "explanation": "Las shares representan una fracción de los assets; la conversión depende de los fondos gestionados."
     },
     {
       "etapa": "Seguridad",
       "prompt": "Un oráculo que toma el precio spot de un pool de baja liquidez es vulnerable a…",
-      "options": ["Reentrancia", "Manipulación con préstamo relámpago", "Colisión de storage"],
+      "options": [
+        "Reentrancia",
+        "Manipulación con préstamo relámpago",
+        "Colisión de storage"
+      ],
       "answer": 1,
       "explanation": "Un flash loan mueve el spot un instante; por eso se usan TWAP o agregación de fuentes."
     },
     {
       "etapa": "Seguridad",
       "prompt": "¿Qué añade una firma para evitar un ataque de repetición (replay)?",
-      "options": ["Mayor tamaño de clave", "Dominio (chainid/contrato), nonce y expiración", "Un gas más alto"],
+      "options": [
+        "Mayor tamaño de clave",
+        "Dominio (chainid/contrato), nonce y expiración",
+        "Un gas más alto"
+      ],
       "answer": 1,
       "explanation": "Atar la firma a chainid, contrato, nonce y deadline impide reusarla en otro contexto (EIP-712)."
     },
     {
       "etapa": "Oráculos",
       "prompt": "Antes de usar un precio de oráculo, un contrato prudente valida…",
-      "options": ["Solo que el precio sea > 0", "Antigüedad (staleness), rango y ronda completa", "Que provenga de una única fuente"],
+      "options": [
+        "Solo que el precio sea > 0",
+        "Antigüedad (staleness), rango y ronda completa",
+        "Que provenga de una única fuente"
+      ],
       "answer": 1,
       "explanation": "Se valida frescura, rango razonable y consistencia; una única fuente puntual es frágil."
     },
     {
       "etapa": "DAO",
       "prompt": "¿Qué defensa evita que un préstamo relámpago decida una votación?",
-      "options": ["Ejecutar la propuesta de inmediato", "Snapshot del poder de voto en un bloque previo + timelock", "Bajar el quorum"],
+      "options": [
+        "Ejecutar la propuesta de inmediato",
+        "Snapshot del poder de voto en un bloque previo + timelock",
+        "Bajar el quorum"
+      ],
       "answer": 1,
       "explanation": "Contar votos por un snapshot anterior y demorar la ejecución con timelock frustra el poder prestado."
     },
     {
       "etapa": "Escalabilidad",
       "prompt": "¿Qué introdujo EIP-4844 (Dencun, 2024) para abaratar los rollups?",
-      "options": ["Sharding de ejecución completo", "Blobs de datos temporales para la disponibilidad", "Proof of Work para L2"],
+      "options": [
+        "Sharding de ejecución completo",
+        "Blobs de datos temporales para la disponibilidad",
+        "Proof of Work para L2"
+      ],
       "answer": 1,
       "explanation": "Los blobs abarataron drásticamente publicar datos en L1 (proto-danksharding)."
     },
     {
       "etapa": "Escalabilidad",
       "prompt": "La diferencia esencial entre un optimistic rollup y un ZK rollup es…",
-      "options": ["El lenguaje de contratos", "Cómo prueban la validez del estado (fraude vs. validez)", "El token de gas"],
+      "options": [
+        "El lenguaje de contratos",
+        "Cómo prueban la validez del estado (fraude vs. validez)",
+        "El token de gas"
+      ],
       "answer": 1,
       "explanation": "El optimistic asume validez y permite pruebas de fraude; el ZK adjunta una prueba de validez por lote."
     },
     {
       "etapa": "Interoperabilidad",
       "prompt": "¿Por qué los puentes concentran tanto riesgo?",
-      "options": ["Porque usan demasiado gas", "Porque a menudo degradan la verificación a confiar en pocas partes", "Porque no emiten eventos"],
+      "options": [
+        "Porque usan demasiado gas",
+        "Porque a menudo degradan la verificación a confiar en pocas partes",
+        "Porque no emiten eventos"
+      ],
       "answer": 1,
       "explanation": "Muchos hacks (Ronin, Wormhole, Nomad) nacen de verificación débil o claves comprometidas."
     },
     {
       "etapa": "Privacidad/ZK",
       "prompt": "Una prueba de conocimiento cero permite…",
-      "options": ["Cifrar toda la cadena", "Demostrar que una afirmación es cierta sin revelar el dato", "Eliminar todos los metadatos automáticamente"],
+      "options": [
+        "Cifrar toda la cadena",
+        "Demostrar que una afirmación es cierta sin revelar el dato",
+        "Eliminar todos los metadatos automáticamente"
+      ],
       "answer": 1,
       "explanation": "ZK prueba la validez sin revelar el testigo; los metadatos externos pueden seguir filtrando información."
     },
     {
       "etapa": "Arquitectura",
       "prompt": "En un proxy actualizable, la 'colisión de storage' ocurre cuando…",
-      "options": ["Se acaba el gas", "La nueva versión desalinea los slots respecto de la anterior", "El token pierde decimales"],
+      "options": [
+        "Se acaba el gas",
+        "La nueva versión desalinea los slots respecto de la anterior",
+        "El token pierde decimales"
+      ],
       "answer": 1,
       "explanation": "Insertar variables al inicio desplaza los slots y corrompe el estado; se agregan solo al final."
     },
     {
       "etapa": "Producción",
       "prompt": "¿Por qué las pantallas de una dApp NO deben leer el estado con un eth_call por cada clic?",
-      "options": ["Porque es ilegal", "Porque no escala ni es robusto; se usa un indexador y una base de lectura", "Porque revela la clave privada"],
+      "options": [
+        "Porque es ilegal",
+        "Porque no escala ni es robusto; se usa un indexador y una base de lectura",
+        "Porque revela la clave privada"
+      ],
       "answer": 1,
       "explanation": "El estado para las vistas se sirve desde un indexador; la cadena no es la base de datos de lectura."
     },
     {
       "etapa": "Empresa",
       "prompt": "Al explicar blockchain a un cliente no técnico, la mejor apertura es…",
-      "options": ["Detallar el mecanismo de consenso", "El problema de negocio y el resultado, sin jerga", "El precio de las criptomonedas"],
+      "options": [
+        "Detallar el mecanismo de consenso",
+        "El problema de negocio y el resultado, sin jerga",
+        "El precio de las criptomonedas"
+      ],
       "answer": 1,
       "explanation": "Primero el dolor y el resultado; nunca prometas rentabilidad ni uses el precio como argumento."
+    },
+    {
+      "etapa": "DeFi",
+      "prompt": "¿Qué mide realmente el TVL de un protocolo?",
+      "options": [
+        "Su solvencia",
+        "Su tamaño, y sube solo con que suba el precio de lo depositado",
+        "La calidad de su auditoría"
+      ],
+      "answer": 1,
+      "explanation": "El TVL es reflexivo: mide tamaño, no seguridad. Un protocolo grande con una función de actualización sin timelock es grande y frágil a la vez."
+    },
+    {
+      "etapa": "Dinero y liquidación",
+      "prompt": "¿Qué es el saldo de tu cuenta bancaria?",
+      "options": [
+        "Billetes guardados a tu nombre",
+        "Un pasivo del banco contigo: eres su acreedor",
+        "Reservas del banco central asignadas a ti"
+      ],
+      "answer": 1,
+      "explanation": "Al depositar dejas de ser dueño del efectivo y pasas a ser acreedor del banco. De ahí el riesgo de contraparte y el seguro de depósito."
+    },
+    {
+      "etapa": "Dinero y liquidación",
+      "prompt": "Compensar y liquidar, ¿son lo mismo?",
+      "options": [
+        "Sí, son sinónimos",
+        "No: compensar calcula cuánto debe cada uno, liquidar mueve el activo de liquidación",
+        "No: compensar es de valores y liquidar de dinero"
+      ],
+      "answer": 1,
+      "explanation": "Confundirlos impide entender dónde aparece la exposición: entre que se compensa y se liquida, cada participante está expuesto a que otro falle."
+    },
+    {
+      "etapa": "Stablecoins",
+      "prompt": "Una stablecoin cotiza bajo la par con su respaldo intacto. ¿De qué depende que vuelva?",
+      "options": [
+        "De que el respaldo siga completo",
+        "De que alguien pueda redimir efectivamente a la par",
+        "De la liquidez del pool donde cotiza"
+      ],
+      "answer": 1,
+      "explanation": "La paridad la sostiene la posibilidad real de redimir. Sin redención abierta no hay arbitraje, y el descuento persiste aunque las reservas estén enteras."
+    },
+    {
+      "etapa": "Dinero digital",
+      "prompt": "¿Qué distingue un depósito tokenizado de una stablecoin?",
+      "options": [
+        "La cadena en la que vive",
+        "El emisor: el depósito sigue siendo un pasivo del banco, con su régimen y su supervisión",
+        "Que no se puede transferir"
+      ],
+      "answer": 1,
+      "explanation": "Tokenizar no cambia de quién es el pasivo. De ahí la singularidad del dinero: los depósitos tokenizados de dos bancos se mantienen a la par, dos stablecoins no."
+    },
+    {
+      "etapa": "Pagos y FX",
+      "prompt": "¿Cuál es el mayor coste oculto de un pago transfronterizo por corresponsalía?",
+      "options": [
+        "El coste por mensaje de la red de mensajería",
+        "El prefondeo: capital inmovilizado en cuentas nostro",
+        "El impuesto del país de destino"
+      ],
+      "answer": 1,
+      "explanation": "Es un coste fijo repartido entre las operaciones del corredor, y explica por qué los corredores de poco volumen resultan desproporcionadamente caros."
+    },
+    {
+      "etapa": "Tokenización",
+      "prompt": "El registro oficial y la cadena discrepan sobre un inmueble tokenizado. ¿Cuál prevalece?",
+      "options": [
+        "La cadena, por ser inmutable",
+        "El registro oficial: por eso se tokenizan participaciones de un vehículo, no el inmueble",
+        "El más reciente"
+      ],
+      "answer": 1,
+      "explanation": "La cadena no es fuente de titularidad de un inmueble. El SPV acota la divergencia a un ámbito donde el token sí es autoritativo."
+    },
+    {
+      "etapa": "Mercados de capitales",
+      "prompt": "¿Qué cuesta la liquidación atómica de valores frente a T+2?",
+      "options": [
+        "Comisiones más altas",
+        "Suprime el neteo: exige el importe íntegro en cada operación",
+        "Nada, es estrictamente mejor"
+      ],
+      "answer": 1,
+      "explanation": "Mil operaciones que netean al 92 % necesitan 12,5 veces más liquidez si se liquidan brutas. Es un intercambio: riesgo de contraparte por liquidez."
+    },
+    {
+      "etapa": "Custodia",
+      "prompt": "Una tesorería usa una política 5 de 5. ¿Cuál es su riesgo principal?",
+      "options": [
+        "Que comprometan a un firmante",
+        "Que perder una sola llave congele los fondos para siempre",
+        "El coste de las firmas"
+      ],
+      "answer": 1,
+      "explanation": "Con M = N no se tolera ninguna pérdida. Ese fallo ha causado pérdidas comparables al robo y recibe una fracción de la atención."
+    },
+    {
+      "etapa": "Regulación",
+      "prompt": "Un equipo afirma que «solo publica software» y que la regulación financiera no le aplica. ¿Cómo se comprueba?",
+      "options": [
+        "Mirando dónde están los servidores",
+        "Aplicando las cinco preguntas: se regula la actividad, no la tecnología",
+        "Comprobando si el código es abierto"
+      ],
+      "answer": 1,
+      "explanation": "Si custodias claves de terceros o conviertes moneda, realizas actividades reguladas con independencia de dónde corra el código."
+    },
+    {
+      "etapa": "Regulación",
+      "prompt": "Envías fondos por encima del umbral a una wallet autoalojada. ¿Qué pasa con la Regla de Viaje?",
+      "options": [
+        "No aplica",
+        "Aplica, pero no hay proveedor receptor al que transmitir: los controles son parciales",
+        "Se envía la información a la dirección de destino"
+      ],
+      "answer": 1,
+      "explanation": "Es el límite práctico más conocido del estándar. Prueba de titularidad, análisis de riesgo y límites son respuestas parciales, no equivalentes."
     }
   ]
 }

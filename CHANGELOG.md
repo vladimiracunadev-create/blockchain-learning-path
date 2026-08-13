@@ -3,6 +3,76 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [0.9.0] · 2026-08-12
+
+De programa de blockchain a **programa de ingeniería blockchain y sistemas financieros
+digitales**. Nueve módulos nuevos (19–27) construyen el puente que faltaba entre las finanzas
+tradicionales y las finanzas on-chain, con veinte prácticas nuevas —todas simulaciones
+locales sin red, sin claves y sin fondos— y la trazabilidad regulatoria que el terreno exige.
+
+**No se renumeró ni se reescribió nada de lo existente**: la numeración 00–18 se conserva
+intacta y todo lo que ya trataba un tema se enlaza desde el módulo nuevo en lugar de
+repetirse. Ninguna comprobación de la CI se relajó para que entrara el contenido nuevo.
+
+### Añadido
+
+- **9 módulos nuevos** en dos etapas: *Finanzas on-chain* (19 DeFi · 20 Dinero, banca y
+  liquidación · 21 Stablecoins · 22 Depósitos tokenizados y CBDC/MDBC · 23 Pagos, cross-border
+  y FX on-chain · 24 Tokenización y RWA · 25 Mercados de capitales on-chain) e *Institucional y
+  regulación* (26 Custodia, wallets institucionales e identidad digital · 27 Regulación y
+  cumplimiento). El módulo 20 es la bisagra: sin él, los seis siguientes son vocabulario.
+- **20 prácticas nuevas** (51–70) con su [cuaderno de resolución](labs/guides/06-finanzas-onchain.md)
+  paso a paso. 18 de ellas con verificación ejecutable.
+- **9 laboratorios ejecutables**: AMM con impacto y pérdida impermanente, factor de salud y
+  liquidación, colateral y paridad de una stablecoin, coste real de una remesa con prefondeo,
+  pago contra pago atómico, entrega contra pago con su coste de liquidez, ciclo de vida de un
+  bono, política de cuórum M-de-N y cribado de cumplimiento con Regla de Viaje.
+- **Laboratorio integrado en Solidity** ([`labs/22-cbdc-mercado-tokenizado/`](labs/22-cbdc-mercado-tokenizado/README.md)):
+  dinero mayorista simulado, bono tokenizado con transferencia restringida y liquidación
+  atómica, con 18 pruebas incluida una invariante de conservación con fuzzing. Etiquetado como
+  **simulación educativa**: no reproduce ningún sistema real de ningún banco central.
+- **Carpeta [`regulation/`](regulation/README.md)**: Chile (Ley 21.521, CMF, UAF, Sistema de
+  Finanzas Abiertas y estado real del trabajo sobre MDBC), Unión Europea (MiCA), Estados
+  Unidos, América Latina, estándares internacionales (GAFI, Basilea, IOSCO, FSB) y una tabla
+  comparada de siete ejes. Cada afirmación declara **rango normativo**, fuente oficial y fecha.
+- **Biblioteca de [casos reales](docs/casos-reales/README.md)** con estructura fija: Terra/UST,
+  FTX, puente Ronin y El Salvador. Cada uno responde qué falló, en qué orden y **qué control
+  habría cambiado el resultado**.
+- **[Auditoría del programa](docs/audit/README.md)**: estado inicial medido con comandos,
+  análisis de brechas con criterio explícito, duplicaciones evitadas, contenido obsoleto,
+  arquitectura propuesta y plan de migración.
+- **[Matriz de competencias](docs/skills-matrix.md)**: nivel, módulos y —lo que la hace útil—
+  la evidencia reproducible que demuestra cada uno.
+- **36 preguntas de autoevaluación** nuevas (4 por módulo), con distractores que son errores
+  frecuentes documentados en el propio módulo.
+- 9 comandos `pnpm lab:*` nuevos para los laboratorios financieros.
+
+### Cambiado
+
+- **Currículo: 19 → 28 módulos** (00–27) en **ocho** etapas. El módulo 18 encadena ahora con
+  el 19; el 27 cierra contra el capstone.
+- **Catálogo: 50 → 70 prácticas**, con 42 auto-verificables (antes 31).
+- **Pruebas: 80 → 186** (148 de Node y 38 de Foundry), contadas y contrastadas por `pnpm check`.
+- **Manual en PDF: 341 → 478 páginas**, ahora con las partes de regulación y casos reales.
+- El sitio, la landing, el manual y las apps recogen los módulos nuevos **sin cambios en la
+  tubería de publicación**: ya descubrían el currículo por directorio.
+- `pnpm check` verifica siete documentos esenciales más y las cifras nuevas.
+
+### Corregido
+
+- **Verificadores de las apps con cifras escritas a mano.** `apps/android/verificar-apk.mjs`
+  y el paso de empaquetado de `release.yml` fijaban 19 módulos; ahora **cuentan** los del
+  repositorio. Una cifra fija ahí falla en la dirección peligrosa el día que se olvida.
+- **El pie de portada del manual** anunciaba «19 módulos · 50 prácticas» a mano; ahora se
+  calcula de los archivos reales.
+- **Numeración repetida** en «Cómo usar el programa» del README (dos ítems como `6.`).
+- **Cifras aproximadas sin mecanismo que las sostenga** («~240 enlaces», «120 términos»,
+  tamaño del APK): reformuladas para no prometer números que nadie recalcula.
+- **«Finalidad» solo en sentido técnico.** El material definía finalidad probabilística y
+  económica, pero no la **firmeza jurídica**, que es la que usa la banca y la que hace falsa
+  la afirmación «en blockchain la liquidación es instantánea y final». Precisado en el módulo
+  20 y unificado en el glosario.
+
 ## [0.8.1] · 2026-08-04
 
 El manual en PDF crece con el contenido: incluye la guía de entrada y las 24 218

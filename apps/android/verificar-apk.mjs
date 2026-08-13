@@ -8,7 +8,7 @@
 //
 // Uso: node apps/android/verificar-apk.mjs [ruta-al-apk]
 
-import { existsSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { inflateRawSync } from "node:zlib";
@@ -71,6 +71,12 @@ function comprobar(condicion, mensaje) {
   else { console.error(`  ✘ ${mensaje}`); fallos.push(mensaje); }
 }
 
+// El número esperado se CUENTA del repositorio, no se escribe a mano: una cifra
+// fija aquí obliga a recordar actualizarla cada vez que crece el currículo, y el
+// día que se olvida el verificador miente en la dirección peligrosa.
+const MODULOS_ESPERADOS = readdirSync(new URL("../../curriculum", import.meta.url))
+  .filter((nombre) => /^\d{2}-/.test(nombre)).length;
+
 const RAIZ = "assets/public/";
 const contenido = entradas.filter((e) => e.nombre.startsWith(RAIZ));
 const paginas = contenido.filter((e) => e.nombre.endsWith(".html"));
@@ -87,7 +93,10 @@ comprobar(entradas.some((e) => e.nombre === "AndroidManifest.xml"), "es un APK c
 comprobar(entradas.some((e) => e.nombre === "classes.dex"), "incluye el código compilado (classes.dex)");
 comprobar(contenido.length > 0, `el curso está empaquetado en ${RAIZ} (${contenido.length} archivos)`);
 comprobar(paginas.length >= 80, `trae las páginas del curso (${paginas.length} HTML)`);
-comprobar(modulos.size === 19, `trae los 19 módulos del currículo (${modulos.size} encontrados)`);
+comprobar(
+  modulos.size === MODULOS_ESPERADOS,
+  `trae los ${MODULOS_ESPERADOS} módulos del currículo (${modulos.size} encontrados)`
+);
 comprobar(
   entradas.some((e) => e.nombre === `${RAIZ}manual/MANUAL.pdf` && e.sinComprimir > 1_000_000),
   "el manual PDF viaja dentro del APK"
@@ -104,7 +113,10 @@ const entradaManifiesto = entradas.find((e) => e.nombre === `${RAIZ}contenido.js
 comprobar(Boolean(entradaManifiesto), "incluye el manifiesto de contenido");
 if (entradaManifiesto) {
   const manifiesto = JSON.parse(leerEntrada(entradaManifiesto).toString("utf8"));
-  comprobar(manifiesto.modulos === 19, `el manifiesto declara 19 módulos (declara ${manifiesto.modulos})`);
+  comprobar(
+    manifiesto.modulos === MODULOS_ESPERADOS,
+    `el manifiesto declara ${MODULOS_ESPERADOS} módulos (declara ${manifiesto.modulos})`
+  );
   comprobar(manifiesto.manual === true, "el manifiesto confirma el manual incluido");
   console.log(`\n  Versión empaquetada: ${manifiesto.version}`);
 }
