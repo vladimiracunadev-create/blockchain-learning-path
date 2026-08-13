@@ -171,7 +171,8 @@ jobs:
           tag_name: ${{ github.event.inputs.etiqueta || github.ref_name }}
           name: ${{ github.event.inputs.etiqueta || github.ref_name }}
           body: |
-            Programa completo de blockchain en español: 19 módulos, 50 prácticas y proyecto final.
+            Programa completo en español, de los fundamentos de blockchain a la
+            infraestructura financiera programable: 28 módulos, 70 prácticas y proyecto final.
 
             ## Descargas
 
@@ -180,7 +181,7 @@ jobs:
             | `BlockchainLearningPath-Setup-*.exe` | Instalador para Windows |
             | `BlockchainLearningPath-Portable-*.exe` | Windows portable, sin instalar |
             | `BlockchainLearningPath-*.apk` | App Android |
-            | `MANUAL.pdf` | Manual del curso (~340 páginas) |
+            | `MANUAL.pdf` | Manual del curso (~478 páginas) |
             | `SHA256SUMS.txt` | Checksums para verificar las descargas |
 
             Las apps traen **todo el contenido dentro** y funcionan sin conexión.
