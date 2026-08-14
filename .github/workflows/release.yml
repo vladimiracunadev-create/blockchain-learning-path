@@ -23,7 +23,7 @@ permissions:
 
 jobs:
   manual:
-    name: Manual en PDF
+    name: Manual y presentación en PDF
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -55,6 +55,18 @@ jobs:
         with:
           name: manual
           path: manual/MANUAL.pdf
+          if-no-files-found: error
+
+      # La muestra del programa viaja con la release: quien la descarga se lleva
+      # también con qué presentarlo (diapositivas) y cómo exponerlo (pauta).
+      - name: Generar la presentación y la pauta
+        run: pnpm build:presentacion
+      - name: Comprobar que la presentación coincide con lo anunciado
+        run: node scripts/check-presentation.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: presentacion
+          path: presentacion/*.pdf
           if-no-files-found: error
 
   escritorio:
@@ -182,6 +194,8 @@ jobs:
             | `BlockchainLearningPath-Portable-*.exe` | Windows portable, sin instalar |
             | `BlockchainLearningPath-*.apk` | App Android |
             | `MANUAL.pdf` | Manual del curso (~520 páginas) |
+            | `PRESENTACION.pdf` | Presentación del programa (20 diapositivas) |
+            | `PAUTA.pdf` | Pauta del expositor: guion y tiempos de la charla |
             | `SHA256SUMS.txt` | Checksums para verificar las descargas |
 
             Las apps traen **todo el contenido dentro** y funcionan sin conexión.

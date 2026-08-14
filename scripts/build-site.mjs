@@ -49,6 +49,10 @@ const curriculumHrefs = curriculumSlugs.map((s) => `curriculum/${s}/README.html`
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 
 const hasManual = existsSync(join(ROOT, "manual", "MANUAL.pdf"));
+// La muestra del programa: diapositivas para proyectar y pauta del expositor.
+// Como el manual, son artefactos generados: si no se han construido, el menú
+// sencillamente no los enlaza en vez de dejar enlaces al vacío.
+const hasDeck = existsSync(join(ROOT, "presentacion", "PRESENTACION.pdf"));
 
 const NAV = [
   { t: "🏠 Inicio", href: "index.html" },
@@ -57,6 +61,17 @@ const NAV = [
   { t: "🌱 Empieza aquí", href: "docs/empieza-aqui.html" },
   { t: "📖 Glosario", href: "docs/glosario.html" },
   ...(hasManual ? [{ t: "📕 Manual (PDF)", href: "manual/MANUAL.pdf" }] : []),
+  {
+    t: "🎤 Presentación", href: "docs/presentacion.html",
+    children: [
+      ...(hasDeck ? [
+        { t: "Diapositivas (ver)", href: "presentacion/presentacion.html" },
+        { t: "Diapositivas (PDF)", href: "presentacion/PRESENTACION.pdf" },
+        { t: "Pauta del expositor (PDF)", href: "presentacion/PAUTA.pdf" },
+      ] : []),
+      { t: "Guion y contenidos", href: "docs/presentacion.html" },
+    ],
+  },
   {
     t: "📚 Currículo", href: "curriculum/README.html",
     children: curriculumSlugs.map((s) => ({ t: modTitle(s), href: `curriculum/${s}/README.html` })),
@@ -563,5 +578,14 @@ if (hasManual) {
   mkdirSync(join(ROOT, OUT, "manual"), { recursive: true });
   copyFileSync(join(ROOT, "manual", "MANUAL.pdf"), join(ROOT, OUT, "manual", "MANUAL.pdf"));
   console.log(`${OUT}/manual/MANUAL.pdf copiado.`);
+}
+// Y la muestra del programa: diapositivas (para ver y para proyectar) y pauta.
+if (hasDeck) {
+  mkdirSync(join(ROOT, OUT, "presentacion"), { recursive: true });
+  for (const archivo of ["presentacion.html", "PRESENTACION.pdf", "PAUTA.pdf"]) {
+    const origen = join(ROOT, "presentacion", archivo);
+    if (existsSync(origen)) copyFileSync(origen, join(ROOT, OUT, "presentacion", archivo));
+  }
+  console.log(`${OUT}/presentacion/ copiado (diapositivas + pauta).`);
 }
 console.log(`${OUT}: ${count} páginas de contenido generadas (menú + Mermaid + tema).`);

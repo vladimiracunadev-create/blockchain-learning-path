@@ -27,6 +27,8 @@ on:
       - "package.json"
       - "scripts/build-landing.mjs"
       - "scripts/build-site.mjs"
+      - "scripts/build-presentation.mjs"
+      - "scripts/render-presentation-pdf.mjs"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -65,6 +67,14 @@ jobs:
       - name: Comprobar que el manual tiene el tamaño anunciado
         run: node scripts/check-manual.mjs
 
+      # La muestra del programa (diapositivas + pauta del expositor). También antes
+      # del sitio: build:site las enlaza en el menú y las copia a site/presentacion/.
+      - name: Generar la presentación y la pauta
+        run: pnpm build:presentacion
+
+      - name: Comprobar que la presentación coincide con lo anunciado
+        run: node scripts/check-presentation.mjs
+
       - name: Generar portada y sitio navegable
         run: |
           pnpm build:landing
@@ -82,12 +92,17 @@ jobs:
             [ -s "$f" ] || { echo "::error::falta o está vacío: $f"; exit 1; }
           done
           [ -s site/manual/MANUAL.pdf ] || { echo "::error::falta el manual: site/manual/MANUAL.pdf"; exit 1; }
+          for f in site/presentacion/PRESENTACION.pdf site/presentacion/PAUTA.pdf \
+                   site/presentacion/presentacion.html site/docs/presentacion.html; do
+            [ -s "$f" ] || { echo "::error::falta o está vacío: $f"; exit 1; }
+          done
           paginas=$(find site -name '*.html' | wc -l)
           [ "$paginas" -ge 60 ] || { echo "::error::solo $paginas páginas HTML, esperaba 60+"; exit 1; }
           {
             echo "### 🌐 Sitio generado"
             echo "- Páginas HTML: **$paginas**"
             echo "- Manual PDF: **$(du -h site/manual/MANUAL.pdf | cut -f1)**"
+            echo "- Presentación: **$(du -h site/presentacion/PRESENTACION.pdf | cut -f1)** · Pauta: **$(du -h site/presentacion/PAUTA.pdf | cut -f1)**"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/configure-pages@v6

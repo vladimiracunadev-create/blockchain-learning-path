@@ -25,7 +25,7 @@
 [![viem](https://img.shields.io/badge/viem-dApps-2e8b57?style=flat-square)](apps/community-funding-web)
 [![TypeScript](https://img.shields.io/badge/TypeScript-dApp%20%26%20indexer-3178C6?style=flat-square&logo=typescript&logoColor=white)](apps)
 
-[🌱 Empieza aquí](docs/empieza-aqui.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
+[🌱 Empieza aquí](docs/empieza-aqui.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-diapositivas-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
 
 </div>
 
@@ -96,6 +96,19 @@ Las tres versiones salen del **mismo build**, así que ninguna se queda atrás. 
 > Los binarios **no están firmados** con certificado de código (cuesta cientos de dólares al año), así que Windows SmartScreen y Android avisarán del origen desconocido. Compara el `SHA256` publicado en la release antes de ejecutarlos.
 
 Para generarlo todo desde el repositorio: `pnpm build:manual`, `pnpm app:windows`, `pnpm app:android`.
+
+## 🎤 Presenta el programa: diapositivas y pauta
+
+¿Tienes que **mostrar el programa** en una clase, un comité o una charla? Está todo hecho: una presentación de 20 diapositivas con letra grande y los contenidos importantes del recorrido, y una **pauta del expositor** con el guion hablado, el tiempo de cada lámina y qué se ve en pantalla. La charla completa dura **≈46 minutos** y cabe en una sesión de 45 con preguntas.
+
+| Documento | Descarga | Para qué sirve |
+|---|---|---|
+| 🎞️ **Diapositivas (PDF)** | [PRESENTACION.pdf (20 diapositivas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PRESENTACION.pdf) | Proyectar sin conexión y repartir como material |
+| 🧾 **Pauta del expositor (PDF)** | [PAUTA.pdf](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PAUTA.pdf) | Guion, tiempos y qué decir en cada diapositiva |
+| 🖥️ **Diapositivas en el navegador** | [Ver online](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/presentacion.html) | Proyectar desde el navegador, sin instalar nada |
+| ✍️ **Guion editable** | [docs/presentacion.md](docs/presentacion.md) | La fuente: edítala y regenera los tres formatos |
+
+Los tres formatos salen del **mismo archivo** ([docs/presentacion.md](docs/presentacion.md)), así que el guion y las láminas no se separan a la segunda edición. Para regenerarlos: `pnpm build:presentacion`.
 
 ## 🗂️ Los 28 módulos en ocho etapas
 
@@ -232,6 +245,7 @@ citados pertenecen a sus autores, organismos emisores y titulares.
 [🌐 Sitio de estudio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) ·
 [📖 Glosario](docs/glosario.md) ·
 [📕 Programa completo en PDF](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) ·
+[🎤 Presentación y pauta](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PRESENTACION.pdf) ·
 [🗺️ Roadmap](ROADMAP.md)
 
 <br>

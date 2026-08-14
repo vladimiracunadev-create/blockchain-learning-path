@@ -14,6 +14,7 @@
     "build:landing": "node scripts/build-landing.mjs",
     "build:site": "node scripts/build-site.mjs",
     "build:manual": "node scripts/build-manual.mjs && node scripts/render-manual-pdf.mjs",
+    "build:presentacion": "node scripts/build-presentation.mjs && node scripts/render-presentation-pdf.mjs",
     "build:icons": "node scripts/build-icons.mjs",
     "sync:versions": "node scripts/sync-app-versions.mjs",
     "build:bundle": "node scripts/sync-app-versions.mjs && node scripts/build-app-bundle.mjs",

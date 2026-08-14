@@ -19,3 +19,6 @@ apps/android/android/
 apps/android/www/
 .DS_Store
 manual/MANUAL.pdf
+# La muestra del programa (diapositivas y pauta) se genera desde docs/presentacion.md
+# en cada publicación: el HTML y los PDF son artefactos, no fuente.
+presentacion/

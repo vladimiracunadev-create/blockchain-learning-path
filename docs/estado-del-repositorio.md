@@ -26,6 +26,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | Autoevaluación | Quiz global + 112 preguntas repartidas en los 28 módulos | ✅ |
 | Apps offline | App de escritorio para Windows y APK de Android con todo el curso dentro | ✅ |
 | Manual en PDF | ~520 páginas con todo el contenido; se genera en cada publicación | ✅ |
+| Presentación y pauta | 20 diapositivas del programa y pauta del expositor con guion y tiempos; se generan en cada publicación | ✅ |
 | Regulación | Chile, MiCA, EE. UU., LatAm y estándares internacionales, con rango normativo y fuente | ✅ |
 | Casos reales | Terra/UST, FTX, puente Ronin y El Salvador, con estructura fija de análisis | ✅ |
 | Bibliografía | Libros de referencia por área e hitos del ecosistema | ✅ |
@@ -41,6 +42,8 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | 4 | Profesional | 08–11 | ✅ |
 | 5 | Avanzado | 12–15 | ✅ |
 | 6 | Producción | 16–18 | ✅ |
+| 7 | Finanzas on-chain | 19–25 | ✅ |
+| 8 | Institucional y regulación | 26–27 | ✅ |
 
 ## Componentes del repositorio
 
@@ -56,6 +59,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | `assessments/` | Evaluaciones y progreso | ✅ | Revisar rúbricas y criterios |
 | `instructor/` | Kit docente y syllabus | ✅ | Abrir `instructor/README.md` |
 | `industria/` | Análisis de la industria | ✅ | Abrir `industria/README.md` |
+| `docs/presentacion.md` | Guion de la muestra: diapositivas y pauta | ✅ | `pnpm build:presentacion` |
 | CI / workflows | Lint, pruebas, secretos, CodeQL, enlaces y binarios | ✅ | Revisar estado de Actions en verde |
 
 ## Requiere infraestructura externa

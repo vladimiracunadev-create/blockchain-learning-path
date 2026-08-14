@@ -47,7 +47,7 @@ export default [
     // Este script corre en Node, pero los callbacks de `page.evaluate()` se
     // serializan y ejecutan dentro del navegador de Puppeteer: ahí `document`
     // sí existe.
-    files: ["scripts/render-manual-pdf.mjs"],
+    files: ["scripts/render-manual-pdf.mjs", "scripts/render-presentation-pdf.mjs"],
     languageOptions: { globals: { ...globals.node, ...globals.browser } }
   }
 ];

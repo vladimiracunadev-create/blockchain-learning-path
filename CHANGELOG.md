@@ -3,6 +3,24 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/)
 y el versionado [SemVer](https://semver.org/lang/es/).
 
+## [No publicado]
+
+### Añadido
+
+- **Presentación del programa y pauta del expositor** ([`docs/presentacion.md`](docs/presentacion.md)):
+  20 diapositivas 16:9 con letra grande —cifras, las ocho etapas, la anatomía de un módulo,
+  las siete etapas de contenido, laboratorios, seguridad, casos reales, rutas por perfil,
+  proyecto final y formatos de descarga— y una pauta de ≈46 minutos con el guion hablado,
+  el tiempo de cada lámina y qué se ve en pantalla. Enlazadas desde el README, el menú del
+  sitio y la portada.
+- **Un solo origen para los tres formatos**: `pnpm build:presentacion` genera desde ese
+  Markdown las diapositivas en HTML (para proyectar desde el navegador), `PRESENTACION.pdf`
+  y `PAUTA.pdf`. El guion y las láminas no pueden separarse porque viven en el mismo archivo.
+- **`scripts/check-presentation.mjs`**: comprueba que el PDF tiene una página por diapositiva
+  (ninguna lámina se desbordó) y que el número de diapositivas y la duración que anuncia el
+  README siguen siendo los reales. Se ejecuta en la publicación del sitio y en cada release,
+  donde ambos PDF se adjuntan como artefactos.
+
 ## [0.9.0] · 2026-08-12
 
 De programa de blockchain a **programa de ingeniería blockchain y sistemas financieros
