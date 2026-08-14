@@ -218,4 +218,30 @@ La madurez técnica no se demuestra usando blockchain en todo, sino sabiendo **c
 
 ## 📄 Licencia
 
-Código bajo [MIT](LICENSE). Contenido educativo bajo [CC BY 4.0](LICENSE-CONTENT).
+Código bajo **[MIT](LICENSE)** y contenido educativo bajo **[CC BY 4.0](LICENSE-CONTENT)** —
+úsalo, modifícalo y compártelo citando la fuente. Las obras, normas, protocolos y servicios
+citados pertenecen a sus autores, organismos emisores y titulares.
+
+---
+
+<div align="center">
+
+**Hecho para quien quiere entender el sistema completo, no solo el token de moda.**
+
+[⬆️ Empezar por el módulo 00](curriculum/00-orientacion/README.md) ·
+[🌐 Sitio de estudio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) ·
+[📖 Glosario](docs/glosario.md) ·
+[📕 Programa completo en PDF](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) ·
+[🗺️ Roadmap](ROADMAP.md)
+
+<br>
+
+**¿Te resulta útil? ⭐ Dale una estrella al repo.**
+
+[![GitHub stars](https://img.shields.io/github/stars/vladimiracunadev-create/blockchain-learning-path?style=social)](https://github.com/vladimiracunadev-create/blockchain-learning-path/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/vladimiracunadev-create/blockchain-learning-path?style=social)](https://github.com/vladimiracunadev-create/blockchain-learning-path/network/members)
+[![Follow](https://img.shields.io/github/followers/vladimiracunadev-create?style=social&label=Follow)](https://github.com/vladimiracunadev-create)
+
+Hecho con ⛓️ y ☕ por [Vladimir Acuña](https://github.com/vladimiracunadev-create)
+
+</div>
