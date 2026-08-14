@@ -171,16 +171,27 @@ const AJUSTE = `
     if (!zona || !caja) return;
     var disponible = zona.clientHeight - 2;
     if (disponible <= 0) return;
-    // Al encoger se compensa el ancho (la lámina sigue ocupando todo el lado),
-    // y eso vuelve a reflotar el texto: se itera hasta que la altura cuadra.
-    var escala = 1;
-    for (var i = 0; i < 4; i++) {
-      var alto = caja.scrollHeight;
-      if (alto * escala <= disponible) break;
-      escala = Math.max(0.62, disponible / alto);
-      caja.style.transform = "scale(" + escala + ")";
-      caja.style.width = (100 / escala) + "%";
+    var base = caja.scrollHeight;
+    if (base <= disponible) return; // cabe tal cual: no se toca
+
+    function aplicar(e) {
+      caja.style.transform = e < 1 ? "scale(" + e + ")" : "";
+      caja.style.width = (100 / e) + "%";
     }
+    // Primera escala, calculada al ancho original: siempre cabe, porque al
+    // compensar el ancho el texto envuelve MENOS y el bloque solo puede encoger.
+    var segura = Math.max(0.62, disponible / base);
+    aplicar(segura);
+    // Y como al ensanchar suele sobrar sitio, se busca por bisección la letra más
+    // grande que sigue cabiendo: cada intento se mide de verdad, no se estima.
+    var alta = 1;
+    for (var i = 0; i < 5 && alta - segura > 0.015; i++) {
+      var media = (segura + alta) / 2;
+      aplicar(media);
+      if (caja.scrollHeight * media <= disponible) segura = media;
+      else alta = media;
+    }
+    aplicar(segura);
   });
   window.__deckReady = true;
 })();
@@ -273,9 +284,9 @@ const pauta = `<!doctype html>
   <strong>Cómo se usa.</strong> Proyecta <code>PRESENTACION.pdf</code> a pantalla completa y
   ten esta pauta impresa o en un segundo monitor. Para cada diapositiva encontrarás
   <strong>lo que el público ve</strong> y <strong>lo que conviene decir</strong>, con el tiempo
-  previsto. Los tiempos suman ${duracion} minutos: en una sesión de 45 minutos deja
-  las dos últimas láminas para preguntas; si dispones de menos, agrupa las etapas
-  (láminas 6 a 12) en una sola pasada por el mapa de la lámina 4.
+  previsto. Los tiempos suman ${duracion} minutos sobre ${slides.length} láminas, así que la
+  muestra completa cabe en media hora dejando margen para preguntas. Si vas corto, recorta
+  en el mapa de etapas —dos frases y adelante— antes que en cualquier otra lámina.
 </div>
 
 <h2>Guion en un vistazo</h2>

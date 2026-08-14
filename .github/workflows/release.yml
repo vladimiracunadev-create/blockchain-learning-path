@@ -194,7 +194,7 @@ jobs:
             | `BlockchainLearningPath-Portable-*.exe` | Windows portable, sin instalar |
             | `BlockchainLearningPath-*.apk` | App Android |
             | `MANUAL.pdf` | Manual del curso (~520 páginas) |
-            | `PRESENTACION.pdf` | Presentación del programa (20 diapositivas) |
+            | `PRESENTACION.pdf` | Presentación del programa (6 diapositivas) |
             | `PAUTA.pdf` | Pauta del expositor: guion y tiempos de la charla |
             | `SHA256SUMS.txt` | Checksums para verificar las descargas |
 

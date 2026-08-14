@@ -11,6 +11,12 @@ sin escribirse dos veces, los tres formatos que se publican en cada despliegue:
 | 🎞️ **Diapositivas (PDF)** | Proyectar sin conexión y repartir como material | [PRESENTACION.pdf](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PRESENTACION.pdf) |
 | 🧾 **Pauta del expositor (PDF)** | Guion hablado, tiempos y qué se ve en pantalla | [PAUTA.pdf](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PAUTA.pdf) |
 
+**Seis diapositivas, no más.** La muestra está pensada para exponerse en media hora:
+seis láminas con letra grande y lo esencial en pantalla, y **todo el detalle en la
+pauta**, que es el documento de apoyo que lee quien expone. Si necesitas profundizar en
+un punto, el sitio y el [manual completo](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf)
+están a un enlace.
+
 **Cómo se estructura cada diapositiva.** Cada sección numerada de abajo es una
 diapositiva: el encabezado es su título, el cuerpo es **lo que se ve proyectado**
 (letra grande, poco texto) y la cita final (`> **Pauta · N min.**`) es **lo que dice
@@ -23,11 +29,6 @@ diapositiva se suman automáticamente para calcular la duración total de la cha
 pnpm build:presentacion
 ```
 
-**Cómo usarla en una muestra de 45 minutos.** Proyecta el PDF a pantalla completa,
-lleva la pauta impresa o en un segundo monitor, y reserva las dos últimas diapositivas
-para preguntas. Si dispones de menos tiempo, el recorte natural es agrupar las etapas
-(diapositivas 6 a 12) en una sola pasada por el mapa de la diapositiva 4.
-
 ---
 
 ## 1 · Blockchain Learning Path
@@ -36,50 +37,54 @@ para preguntas. Si dispones de menos tiempo, el recorte natural es agrupar las e
 
 - 28 módulos secuenciales · 70 prácticas ejecutables · un proyecto final.
 - Criptografía, Bitcoin, Ethereum, contratos, seguridad, producción, dinero y regulación.
-- Todo el material es **abierto**: código MIT, contenido CC BY 4.0.
+- Web, manual en PDF y apps que **funcionan sin conexión**.
+- Material **abierto**: código MIT, contenido CC BY 4.0.
 
-> **Pauta · 1 min.** Preséntate y presenta el programa en una frase: es una ruta de
+> **Pauta · 2 min.** Preséntate y presenta el programa en una frase: es una ruta de
 > aprendizaje completa, en español, que lleva a alguien desde no saber qué es un hash
 > hasta poder discutir cómo se liquida un bono tokenizado. Aclara desde el principio el
-> encuadre: no es un curso de inversión ni de trading, es ingeniería. Dilo tú antes de
-> que alguien lo pregunte.
+> encuadre, antes de que alguien lo pregunte: **no es un curso de inversión ni de
+> trading, es ingeniería**. Y menciona la licencia ya aquí: cualquiera puede usar esto
+> en un aula sin pedir permiso, citando la fuente. Si el público es institucional, ese
+> dato cambia la conversación desde el primer minuto.
 
-## 2 · Blockchain no es sinónimo de criptomoneda
+## 2 · Qué enseña, y qué no
 
-**El programa enseña a decidir, no a especular.**
+**Blockchain no es sinónimo de criptomoneda: esto enseña a decidir, no a especular.**
 
 - Cuándo una cadena de bloques **aporta valor** y cuándo una base de datos es mejor.
 - Cómo **construirla** con pruebas automatizadas, no con capturas de pantalla.
 - Cómo **llevarla a una empresa**: infraestructura, costos, riesgo y cumplimiento.
-- Qué cambia —y qué **no** cambia— cuando el dinero y los valores se vuelven programables.
+- Qué cambia —y qué **no**— cuando el dinero y los valores se vuelven programables.
 
-> **Pauta · 2 min.** Esta es la diapositiva que fija el tono de toda la charla. La
-> mayoría del público llega con el ruido del precio de las monedas; hay que sacarlo de
-> ahí en el primer minuto. Usa el ejemplo del módulo 00: si el sistema tiene un dueño
-> claro, confianza entre partes y nadie necesita verificar nada por su cuenta, una base
-> de datos tradicional es más barata, más rápida y más fácil de operar. La primera
-> pregunta del programa no es "cómo", es "¿lo necesito?".
+| Lo que hay dentro | Cuánto |
+|---|---|
+| Módulos secuenciales (00→27), en ocho etapas | **28** |
+| Prácticas guiadas con evidencia y criterio de aceptación | **70** |
+| Pruebas automatizadas que la CI ejecuta en cada cambio | **186** |
 
-## 3 · Las cifras del programa
-
-**Lo que hay dentro, en números verificables.**
-
-| Qué | Cuánto | Dónde |
-|---|---|---|
-| Módulos secuenciales (00→27) | **28** | Currículo |
-| Prácticas guiadas con evidencia | **70** | Catálogo de laboratorios |
-| Pruebas automatizadas en CI | **186** | 148 de Node + 38 de Foundry |
-| Documentos de industria | **6** | Cómo se construye y se vende esto |
-| Decisiones de arquitectura (ADR) | **6** | Plantillas reutilizables |
-| Manual completo en PDF | **~520 págs.** | Se genera en cada publicación |
-
-> **Pauta · 2 min.** No leas la tabla en voz alta: destaca dos cifras. Las 70 prácticas,
-> porque significan que nadie termina el programa habiendo solo leído; y las 186 pruebas
-> automatizadas, porque significan que el material se comprueba ejecutándolo, no
-> afirmándolo. Menciona que todas estas cifras las verifica la integración continua: si
+> **Pauta · 6 min.** Esta lámina fija el tono de toda la charla; es la más importante
+> de las seis y merece que le dediques tiempo.
+>
+> Empieza por el encuadre. La mayoría del público llega con el ruido del precio de las
+> monedas: hay que sacarlo de ahí en el primer minuto. Usa el ejemplo del módulo 00 —si
+> el sistema tiene un dueño claro, hay confianza entre las partes y nadie necesita
+> verificar nada por su cuenta, una base de datos tradicional es más barata, más rápida
+> y más fácil de operar. La primera pregunta del programa no es "cómo", es "¿lo
+> necesito?".
+>
+> Después baja a los cuatro puntos: decidir, construir, operar y entender el dinero
+> programable. Ese es el arco completo, y es lo que separa este material de un curso de
+> Solidity.
+>
+> Cierra con la tabla, sin leerla entera. Destaca dos números. **Las 70 prácticas**,
+> porque significan que nadie termina el programa habiendo solo leído: cada una declara
+> qué actividad hace, qué evidencia produce y con qué criterio se acepta. Y **las 186
+> pruebas automatizadas**, porque significan que el material se comprueba ejecutándolo,
+> no afirmándolo. Añade que esas cifras las verifica la propia integración continua: si
 > alguien añade un módulo y no actualiza el texto, la comprobación falla y no se publica.
 
-## 4 · Ocho etapas, un solo camino
+## 3 · Los 28 módulos en ocho etapas
 
 **Cada módulo asume el anterior. Se estudian en orden.**
 
@@ -94,280 +99,136 @@ para preguntas. Si dispones de menos tiempo, el recorte natural es agrupar las e
 | **Finanzas on-chain** | 19–25 | DeFi, dinero, stablecoins, MDBC, pagos, tokenización |
 | **Institucional** | 26–27 | Custodia, identidad digital, regulación |
 
-> **Pauta · 3 min.** Este es el mapa al que vas a volver varias veces; deja que el
-> público lo mire unos segundos en silencio. Explica la lógica del orden: no se puede
-> entender una stablecoin sin entender un token, ni un token sin entender la EVM, ni la
-> EVM sin entender firmas y hashes. La progresión no es un capricho editorial, es una
-> cadena de dependencias. Y remata: al final de las ocho etapas hay un proyecto final
-> que las integra todas.
+> **Pauta · 7 min.** Este es el mapa del programa: deja que el público lo mire unos
+> segundos en silencio antes de hablar.
+>
+> Explica primero la lógica del orden. No se puede entender una stablecoin sin entender
+> un token, ni un token sin entender la EVM, ni la EVM sin entender firmas y hashes. La
+> progresión no es un capricho editorial, es una cadena de dependencias, y por eso los
+> módulos se enlazan uno al siguiente.
+>
+> Después recorre las etapas de arriba abajo, una frase por cada una:
+>
+> - **Fundamentos** (01–03): qué hace verificable a una cadena. Hash, firmas, Merkle,
+>   propagación en red y consenso. Una blockchain no es mágica: es la composición de
+>   tres cosas que ya existían por separado.
+> - **Desarrollo** (04–07): el salto de entender a construir. UTXO en Bitcoin, cuentas y
+>   gas en la EVM, contratos en Solidity probados con Foundry, y una dApp que firma,
+>   envía y maneja los errores.
+> - **Profesional** (08–11): escribir contratos que otros pueden auditar — estándares de
+>   token, seguridad, oráculos y gobernanza con timelock.
+> - **Avanzado** (12–15): cuando una cadena sola no alcanza. La idea que hay que dejar
+>   clara es que **escalar no es gratis: se paga con supuestos de confianza**.
+> - **Producción** (16–18): la etapa que casi ningún curso tiene y la que más pesa en una
+>   entrevista. La pregunta que hunde proyectos no es técnica: "¿por qué esto justifica
+>   su costo y su mantenimiento durante cinco años?".
+> - **Finanzas on-chain** (19–25): DeFi, dinero y liquidación, stablecoins, depósitos
+>   tokenizados y MDBC, pagos y FX, tokenización de activos reales y mercados de
+>   capitales. Aquí es donde el programa se separa de la oferta habitual.
+> - **Institucional** (26–27): custodia, identidad y regulación comparada —Chile, MiCA,
+>   Estados Unidos, América Latina y estándares internacionales—. El cumplimiento no es
+>   un trámite que se añade al final: es una restricción de diseño.
+>
+> Si vas corto de tiempo, este es el punto donde recortar: da las ocho etapas en dos
+> frases y salta a la lámina 4.
 
-## 5 · Cómo es un módulo por dentro
+## 4 · Cómo se aprende: un módulo y 70 laboratorios
 
-**Los 28 módulos tienen la misma anatomía. Siempre.**
+**Los 28 módulos tienen la misma anatomía, y ninguno se aprueba solo leyendo.**
 
-- 🎯 **Objetivos** medibles y **resultados de aprendizaje** verificables.
-- 🗺️ **Temas** con su porqué y **conceptos** con definición.
-- 🧩 **Esquema visual** en Mermaid y 🧠 **modelo mental** con los **límites** de la analogía.
-- 🔬 **Profundización** con ejemplos numéricos y casos reales.
+- 🎯 **Objetivos** medibles · 🗺️ **temas** con su porqué · 🧩 **esquema visual**.
+- 🧠 **Modelo mental** con su analogía y los **límites** de la analogía.
+- 🔬 **Profundización** con ejemplos numéricos · ⚠️ **errores frecuentes** (síntoma → causa).
 - 🧪 **Laboratorio guiado** y ⚡ **reto verificable** con criterio de aceptación.
-- ⚠️ **Errores frecuentes** (síntoma → causa) y 🛡️ **seguridad y ética**.
-- 🔗 **Referencias** a fuentes primarias, con enlaces vivos.
+- 🔗 **Referencias** a fuentes primarias, con enlaces vivos y comprobados cada semana.
+- **70 prácticas**: 42 con verificación ejecutable (`pnpm lab:*`), el resto con rúbrica.
+- Contratos con **Foundry** (fuzzing e invariantes), dApp con **viem** e indexador.
 
-> **Pauta · 3 min.** Aquí conviene abrir un módulo real en el sitio y recorrerlo con el
-> cursor mientras hablas: entra al 01 de criptografía. Detente en dos secciones. La de
-> "límites de la analogía", porque las analogías mal cerradas son la principal fuente de
-> malentendidos en este campo; y la de "errores frecuentes", escrita como síntoma →
-> causa, que es como se depura de verdad. Menciona que cada módulo declara su fuente
-> bibliográfica y que una comprobación automática exige un mínimo de tres enlaces a
-> fuente primaria: sin eso, "según el libro tal" no significa nada.
+> **Pauta · 7 min.** Aquí conviene abrir un módulo real en el sitio y recorrerlo con el
+> cursor mientras hablas —el 01 de criptografía sirve—.
+>
+> Detente en dos secciones. La de **límites de la analogía**, porque las analogías mal
+> cerradas son la principal fuente de malentendidos en este campo. Y la de **errores
+> frecuentes**, escrita como síntoma → causa, que es como se depura de verdad.
+>
+> Menciona que cada módulo declara su fuente bibliográfica y que una comprobación
+> automática exige un mínimo de tres enlaces a fuente primaria: sin eso, "según
+> Antonopoulos" no significa nada. Las obras clave tienen edición legalmente gratuita,
+> así que el programa se puede seguir sin comprar un solo libro.
+>
+> Sobre los laboratorios, explica por qué existe la columna **evidencia**: sin un
+> artefacto concreto, "hice el laboratorio" no es comprobable ni por el alumno ni por un
+> evaluador. Y aclara la mezcla deliberada: hay cosas que una máquina verifica mejor —un
+> hash, una invariante— y otras que exigen criterio humano, como justificar una decisión
+> de arquitectura. El programa no finge que todo se puede automatizar.
+>
+> Si tienes proyector y ganas, ejecuta uno en vivo. `pnpm lab:hash` encadena bloques por
+> hash, altera un dato intermedio y deja inválidos todos los siguientes: treinta segundos
+> de terminal explican la inmutabilidad mejor que diez diapositivas. Si el público es
+> financiero, usa `pnpm lab:remesa`, que compara comisión a comisión el costo real de
+> una remesa tradicional y una on-chain.
 
-## 6 · Fundamentos · módulos 01 a 03
+## 5 · Seguridad, casos reales y por qué creerle al material
 
-**Qué hace verificable a una cadena.**
+**Primero se rompe el contrato, después se arregla. Y todo se verifica solo.**
 
-- **01 · Criptografía aplicada** — hash, firmas, árboles de Merkle, gestión de claves.
-- **02 · Sistemas distribuidos y redes P2P** — propagación, particiones, teorema CAP.
-- **03 · Consenso** — prueba de trabajo, prueba de participación, finalidad, BFT.
-
-**Se practica ejecutando:** `pnpm lab:hash`, `pnpm lab:merkle`, `pnpm lab:pow`, `pnpm lab:p2p`, `pnpm lab:particion`.
-
-> **Pauta · 3 min.** El mensaje de esta etapa: una blockchain no es mágica, es la
-> composición de tres cosas que ya existían por separado. Si tienes proyector y ganas,
-> ejecuta en vivo `pnpm lab:hash`: se ve una cadena de bloques encadenada por hashes,
-> se altera un dato de un bloque intermedio y todos los siguientes quedan inválidos.
-> Treinta segundos de terminal explican la inmutabilidad mejor que diez diapositivas.
-
-## 7 · Desarrollo · módulos 04 a 07
-
-**De leer una cadena a escribir en ella.**
-
-- **04 · Bitcoin** — UTXO, script, comisiones, selección de monedas.
-- **05 · Ethereum y EVM** — cuentas, gas, ABI, almacenamiento, ciclo de una transacción.
-- **06 · Solidity y Foundry** — contratos con pruebas unitarias, fuzzing e invariantes.
-- **07 · dApps** — firmar, enviar, esperar confirmación y manejar los estados de error.
-
-**Se practica construyendo:** un vault en Solidity probado con Foundry y una dApp con viem/TypeScript.
-
-> **Pauta · 3 min.** Marca aquí el salto de nivel: se pasa de entender a construir. Dos
-> ideas que valen por toda la etapa. Primera: en la EVM, los decimales no existen — se
-> trabaja con enteros y unidades mínimas, y ese es el origen de una parte enorme de los
-> errores de principiante; el laboratorio `pnpm lab:montos` está dedicado a eso.
-> Segunda: en Foundry, el fuzzing prueba una propiedad con miles de entradas aleatorias,
-> así que las pruebas dejan de ser tres ejemplos escogidos por quien programó.
-
-## 8 · Profesional · módulos 08 a 11
-
-**Escribir contratos que otros pueden auditar.**
-
-- **08 · Tokens y estándares** — ERC-20, ERC-721, ERC-1155 y por qué existe cada uno.
-- **09 · Seguridad y auditoría** — reentrada, control de acceso, oráculos manipulables.
-- **10 · Oráculos, almacenamiento e indexación** — el dato externo y su cadena de confianza.
-- **11 · DAO y gobernanza** — votación, quórum, timelock y captura de la gobernanza.
-
-**Se practica atacando:** contratos vulnerables a propósito, su explotación y su corrección.
-
-> **Pauta · 3 min.** El corazón de la etapa es el módulo 09. Explica el patrón
-> checks-effects-interactions con el ejemplo de la reentrada: el contrato envía fondos
-> antes de anotar que ya los envió, y quien recibe vuelve a entrar en la misma función
-> antes de que el saldo se actualice. En el repositorio hay contratos vulnerables con su
-> exploit y su corrección, ambos ejecutables con pruebas. Es la diferencia entre saber
-> el nombre de una vulnerabilidad y haberla visto vaciar un contrato en tu terminal.
-
-## 9 · Avanzado · módulos 12 a 15
-
-**Cuando una cadena sola no alcanza.**
-
-- **12 · Escalabilidad y capas 2** — rollups optimistas y de validez, disponibilidad de datos.
-- **13 · Interoperabilidad** — puentes, mensajería entre cadenas y su modelo de confianza.
-- **14 · Privacidad y zero knowledge** — probar sin revelar; qué se puede y qué no.
-- **15 · Arquitectura avanzada** — cuentas abstractas, MEV, diseño de sistemas completos.
-
-> **Pauta · 2 min.** La idea que hay que dejar clara: escalar no es gratis, se paga con
-> supuestos de confianza. Un rollup optimista es barato porque asume que alguien vigila
-> y presenta pruebas de fraude a tiempo; un puente es cómodo hasta que su comité de
-> firmas es el punto único de fallo. Si alguien pregunta por ZK, la respuesta corta del
-> módulo 14: sirve para demostrar que un cálculo se hizo bien sin mostrar los datos, y
-> su costo real está en generar la prueba, no en verificarla.
-
-## 10 · Producción · módulos 16 a 18
-
-**Llevarlo a una organización de verdad.**
-
-- **16 · Infraestructura y operación de nodos** — disponibilidad, monitoreo, respaldo, costos.
-- **17 · Blockchain en la empresa** — caso de negocio, alternativas descartadas, viabilidad.
-- **18 · Implementación end-to-end** — del piloto a producción, con documento de arquitectura.
-
-> **Pauta · 2 min.** Esta es la etapa que casi ningún curso tiene y la que más peso
-> tiene en una entrevista de trabajo. Insiste en el módulo 17: la pregunta que hunde
-> proyectos no es técnica, es "¿por qué esto justifica su costo y su mantenimiento
-> durante cinco años?". El programa obliga a responderla por escrito, en formato ADR,
-> incluyendo qué alternativa se descartó y por qué.
-
-## 11 · Finanzas on-chain · módulos 19 a 25
-
-**Qué cambia cuando el dinero es programable.**
-
-- **19 · DeFi** — mercados automáticos, préstamo, factor de salud y liquidaciones.
-- **20 · Dinero, banca y liquidación** — qué es liquidar y por qué la firmeza importa.
-- **21 · Stablecoins** — colateral, paridad y los mecanismos que fallaron.
-- **22 · Depósitos tokenizados y MDBC/CBDC** — dinero de banco central y comercial.
-- **23 · Pagos, cross-border y FX** — costo real de una remesa, pago contra pago atómico.
-- **24 · Tokenización y RWA** — el activo del mundo real y su vínculo legal.
-- **25 · Mercados de capitales on-chain** — entrega contra pago, ciclo de vida de un bono.
-
-> **Pauta · 3 min.** Aquí es donde el programa se separa de la oferta habitual. Elige
-> un solo laboratorio y cuéntalo con números: `pnpm lab:remesa` compara el costo de
-> enviar dinero por la vía tradicional y on-chain, comisión a comisión, y
-> `pnpm lab:pvp` muestra por qué una liquidación atómica elimina el riesgo de que una
-> pata del intercambio se cumpla y la otra no. Ese riesgo tiene nombre propio en la
-> banca y siglos de historia; el módulo 20 lo explica antes de proponer la solución.
-
-## 12 · Institucional · módulos 26 y 27
-
-**Custodia y cumplimiento desde el primer día.**
-
-- **26 · Custodia, wallets institucionales e identidad digital** — multifirma, MPC, políticas de cuórum.
-- **27 · Regulación y cumplimiento** — riesgo, regla del viaje, y qué exige cada jurisdicción.
-- **Marcos comparados:** Chile, Unión Europea (MiCA), Estados Unidos, América Latina y estándares internacionales.
-
-> **Pauta · 2 min.** El argumento: el cumplimiento no es un trámite que se añade al
-> final, es una restricción de diseño que cambia la arquitectura. Si tu sistema debe
-> poder congelar un activo o identificar a las partes, eso se decide antes de escribir
-> el primer contrato, no después. Menciona el caso FTX, que está documentado en el
-> repositorio: no cayó por un fallo criptográfico, cayó por custodia y controles.
-
-## 13 · 70 prácticas, todas con evidencia
-
-**Nadie termina el programa habiendo solo leído.**
-
-- Cada práctica declara **actividad**, **evidencia** que produce y **criterio de aceptación**.
-- Las marcadas **auto** traen verificación ejecutable (`pnpm lab:*` o `node --test`).
-- El resto produce un entregable revisable con rúbrica: un ADR, un informe, un diagrama.
-- Contratos con **Foundry**: vault, protocolos, token, oráculo y gobernador con timelock.
-- dApp con **viem/TypeScript** e indexador de eventos con checkpoint.
-
-> **Pauta · 3 min.** Explica por qué existe la columna "evidencia": sin un artefacto
-> concreto, "hice el laboratorio" no es comprobable ni por el alumno ni por un
-> evaluador. Y aclara la mezcla deliberada de prácticas automáticas y con rúbrica: hay
-> cosas que una máquina verifica mejor —un hash, una invariante— y otras que exigen
-> criterio humano, como justificar una decisión de arquitectura. El programa no finge
-> que todo se puede automatizar.
-
-## 14 · Seguridad: primero se rompe, después se arregla
-
-**Se aprende explotando el contrato, no leyendo sobre la vulnerabilidad.**
-
-- Contratos vulnerables a propósito, con su **exploit ejecutable** y su **corrección**.
-- Reentrada, control de acceso, desbordamiento, dependencia de oráculos, y más.
-- Análisis estático con **Slither** ejecutado en la integración continua.
-- Plantilla de **informe de auditoría** y modelo de amenazas para el proyecto final.
-
-> **Pauta · 2 min.** Insiste en el orden: primero el exploit, después el arreglo.
-> Alguien que solo leyó qué es la reentrada la reconoce en un examen; quien la ejecutó
-> la reconoce en una revisión de código a las once de la noche. Aclara también el
-> encuadre ético, que está en el material: todo corre en local o en testnet, nunca con
-> fondos ni claves reales.
-
-## 15 · Casos reales, con las cuentas hechas
-
-**Cuatro fracasos y una decisión de país, documentados.**
-
-- **Terra/UST** — cómo una paridad algorítmica se desarma en días.
-- **FTX** — qué falla cuando la custodia y los controles internos no existen.
-- **Puente Ronin** — el comité de firmas como punto único de fallo.
-- **El Salvador y bitcoin** — una decisión soberana y sus efectos medibles.
-
-> **Pauta · 2 min.** Estos casos son la vacuna contra el entusiasmo sin fricción. Cada
-> uno está escrito con la misma estructura: qué se prometió, qué mecanismo falló, qué
-> señales había antes y qué decisión de diseño lo habría evitado. Si tienes público de
-> negocio, este es el momento de la charla en que te van a escuchar con más atención.
-
-## 16 · Nueve rutas según a qué te dedicas
-
-**El mismo material, distintos recorridos.**
-
-| Perfil | Entregable de portafolio |
-|---|---|
-| Desarrollo | dApp integral probada con Foundry |
-| Arquitectura | ADR de plataforma con sus trade-offs |
-| Auditoría y seguridad | Informe estilo auditoría |
-| Producto y negocio | Validación de caso y tokenomics |
-| Investigación | Réplica comentada de un paper |
-| Empresa y consultoría | Diseño de red permisionada con ADR |
-| Finanzas on-chain | Ficha de riesgo de un protocolo, con cálculos |
-| Banca y activos digitales | Arquitectura de un mercado de bonos tokenizados |
-| Cumplimiento y regulación | Análisis regulatorio en dos jurisdicciones |
-
-> **Pauta · 2 min.** No leas las nueve. Pregunta al público a qué se dedica y comenta
-> las dos o tres rutas que aparezcan. El punto importante es el de la derecha: cada ruta
-> termina en un artefacto que se puede enseñar en una entrevista. Estudiar sin producir
-> nada demostrable es tiempo que no se puede acreditar después.
-
-## 17 · El material se verifica solo
-
-**Un curso también se degrada. Aquí hay guardias que lo impiden.**
-
-- **186 pruebas** automatizadas en cada cambio: laboratorios de Node y contratos de Foundry.
-- Comprobaciones de coherencia: módulos encadenados, glosario enlazado, fuentes con URL viva.
-- Revisión semanal de **enlaces externos**: si una fuente oficial muere, se abre una incidencia.
+- Contratos **vulnerables a propósito**, con su exploit ejecutable y su corrección.
+- Reentrada, control de acceso, desbordamiento y dependencia de oráculos, con **Slither** en la CI.
+- Cuatro casos reales con las cuentas hechas: **Terra/UST**, **FTX**, **puente Ronin** y **El Salvador**.
+- **186 pruebas** en cada cambio, más comprobaciones de coherencia y de enlaces vivos.
 - Los binarios se verifican **abriéndolos y contando el contenido**: un build en verde no prueba que la app lleve el curso dentro.
 
-> **Pauta · 2 min.** Esta diapositiva es el argumento de confianza, y es el que más
-> distingue al programa de un PDF publicado una vez. Cuenta la regla explícita del
-> repositorio: una compilación exitosa no demuestra que el artefacto contenga el
-> material, así que la integración continua abre el instalador y el APK y cuenta los
-> módulos, las páginas y las preguntas que llevan dentro. Si sale vacío, la publicación
-> falla en vez de entregar algo que se instala y abre en blanco.
+> **Pauta · 6 min.** Dos mensajes, y los dos importan.
+>
+> El primero es el orden de la seguridad: **primero el exploit, después el arreglo**.
+> Quien solo leyó qué es la reentrada la reconoce en un examen; quien la ejecutó la
+> reconoce en una revisión de código a las once de la noche. Explica el patrón con el
+> ejemplo clásico: el contrato envía los fondos antes de anotar que ya los envió, y quien
+> recibe vuelve a entrar en la misma función antes de que el saldo se actualice. Aclara
+> el encuadre ético, que está escrito en el material: todo corre en local o en testnet,
+> nunca con fondos ni claves reales.
+>
+> Los casos reales son la vacuna contra el entusiasmo sin fricción, y con público de
+> negocio son el momento en que más te van a escuchar. Cada uno está escrito con la misma
+> estructura: qué se prometió, qué mecanismo falló, qué señales había antes y qué decisión
+> de diseño lo habría evitado. FTX es el más útil para cerrar el argumento del módulo 26:
+> no cayó por un fallo criptográfico, cayó por custodia y controles.
+>
+> El segundo mensaje es el de confianza, y es el que distingue esto de un PDF publicado
+> una vez. Cuenta la regla explícita del repositorio: **una compilación exitosa no
+> demuestra que el artefacto contenga el material**, así que la integración continua abre
+> el instalador y el APK y cuenta los módulos, las páginas y las preguntas que llevan
+> dentro. Si sale vacío, la publicación falla en vez de entregar algo que se instala y
+> abre en blanco.
 
-## 18 · Proyecto final y evaluación
+## 6 · Para quién es, y cómo se empieza
 
-**La prueba de que se aprendió.**
+**Nueve rutas, un proyecto final y cuatro formatos que salen del mismo build.**
 
-- Un protocolo pequeño, **desplegable y probado**, que integra todas las etapas.
-- Requiere: contratos con pruebas e invariantes, interfaz, estrategia de datos, documento de arquitectura, modelo de amenazas, estimación de gas y caso de negocio.
-- **Autoevaluación** por módulo con explicación de cada respuesta.
-- **Diagnóstico** inicial para saber por dónde entrar, y certificado al terminar.
+- **Rutas por perfil:** desarrollo, arquitectura, auditoría, producto, investigación, empresa, DeFi, banca y cumplimiento.
+- Cada ruta termina en un **entregable de portafolio**: dApp probada, ADR, informe de auditoría, ficha de riesgo.
+- **Proyecto final**: protocolo probado, dApp, datos, arquitectura, modelo de amenazas y caso de negocio.
+- **Llévatelo entero**: sitio web, manual PDF de ~520 páginas, app de Windows y APK de Android, sin conexión.
+- **Empieza hoy:** abre *Empieza aquí* → haz el diagnóstico → módulo 00 y `pnpm lab:hash`.
+- `github.com/vladimiracunadev-create/blockchain-learning-path`
 
-> **Pauta · 2 min.** Subraya que el proyecto final no pide originalidad, pide criterio:
-> decisiones justificadas y verificadas. Y menciona el requisito que más incomoda y más
-> enseña — el ADR que responde "¿por qué blockchain, y qué alternativa descarté?". Si la
-> respuesta honesta es que una base de datos bastaba, el proyecto sigue siendo válido:
-> lo que se evalúa es el razonamiento.
-
-## 19 · Llévatelo entero, funciona sin conexión
-
-**Cuatro formatos que salen del mismo build.**
-
-| Formato | Qué es |
-|---|---|
-| 🌐 **Sitio web** | Todo el material con buscador, progreso y autoevaluación |
-| 📕 **Manual PDF** | ~520 páginas: currículo, laboratorios, regulación y anexos |
-| 🖥️ **Windows** | Instalador o portable, con el curso dentro |
-| 📱 **Android** | APK con el curso dentro, para estudiar sin datos |
-
-- Código **MIT**, contenido **CC BY 4.0**: se puede usar en un aula sin pedir permiso.
-- Los binarios **no están firmados**: compara el SHA256 publicado antes de ejecutarlos.
-
-> **Pauta · 2 min.** El argumento de accesibilidad: las apps funcionan sin conexión, lo
-> que importa de verdad en un aula sin wifi o en el metro. Las cuatro versiones salen
-> del mismo build, así que ninguna se queda atrás. Y sé transparente con lo de la firma
-> de código: los binarios no están firmados porque el certificado cuesta cientos de
-> dólares al año, así que Windows y Android van a avisar del origen desconocido; por eso
-> se publica el checksum.
-
-## 20 · Empieza hoy
-
-**Tres pasos, quince minutos.**
-
-1. Abre **Empieza aquí**: qué necesitas, qué instalar y en qué momento.
-2. Haz el **diagnóstico** para saber por dónde entrar.
-3. Estudia el **módulo 00** y ejecuta tu primer laboratorio: `pnpm lab:hash`.
-
-**Sitio:** `vladimiracunadev-create.github.io/blockchain-learning-path`
-**Repositorio:** `github.com/vladimiracunadev-create/blockchain-learning-path`
-
-> **Pauta · 2 min.** Cierra con una acción concreta, no con un agradecimiento. Si el
-> público está frente a un computador, que abran la página de entrada ahí mismo y
-> ejecuten el primer laboratorio antes de irse: quien ve funcionar algo suyo en el
-> primer día vuelve al segundo. Deja los dos enlaces en pantalla mientras respondes
-> preguntas.
+> **Pauta · 5 min.** No enumeres las nueve rutas: pregunta al público a qué se dedica y
+> comenta las dos o tres que aparezcan. El punto importante es el entregable — estudiar
+> sin producir nada demostrable es tiempo que después no se puede acreditar.
+>
+> Del proyecto final subraya que no pide originalidad, pide criterio: decisiones
+> justificadas y verificadas. Menciona el requisito que más incomoda y más enseña, el ADR
+> que responde "¿por qué blockchain, y qué alternativa descarté?". Si la respuesta honesta
+> es que bastaba una base de datos, el proyecto sigue siendo válido: lo que se evalúa es
+> el razonamiento.
+>
+> Sobre los formatos, el argumento es la accesibilidad: las apps funcionan sin conexión,
+> que es lo que importa en un aula sin wifi o en el metro, y las cuatro versiones salen
+> del mismo build, así que ninguna se queda atrás. Sé transparente con la firma de código:
+> los binarios no están firmados porque el certificado cuesta cientos de dólares al año,
+> así que Windows y Android avisarán del origen desconocido; por eso se publica el SHA256.
+>
+> Cierra con una acción concreta, no con un agradecimiento. Si el público está frente a un
+> computador, que abran la página de entrada ahí mismo y ejecuten el primer laboratorio
+> antes de irse: quien ve funcionar algo suyo el primer día vuelve el segundo. Deja los
+> enlaces en pantalla mientras respondes preguntas.

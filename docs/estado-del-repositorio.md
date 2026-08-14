@@ -26,7 +26,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | Autoevaluación | Quiz global + 112 preguntas repartidas en los 28 módulos | ✅ |
 | Apps offline | App de escritorio para Windows y APK de Android con todo el curso dentro | ✅ |
 | Manual en PDF | ~520 páginas con todo el contenido; se genera en cada publicación | ✅ |
-| Presentación y pauta | 20 diapositivas del programa y pauta del expositor con guion y tiempos; se generan en cada publicación | ✅ |
+| Presentación y pauta | 6 diapositivas del programa y pauta del expositor con guion y tiempos; se generan en cada publicación | ✅ |
 | Regulación | Chile, MiCA, EE. UU., LatAm y estándares internacionales, con rango normativo y fuente | ✅ |
 | Casos reales | Terra/UST, FTX, puente Ronin y El Salvador, con estructura fija de análisis | ✅ |
 | Bibliografía | Libros de referencia por área e hitos del ecosistema | ✅ |

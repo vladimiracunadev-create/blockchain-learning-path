@@ -8,11 +8,11 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 ### Añadido
 
 - **Presentación del programa y pauta del expositor** ([`docs/presentacion.md`](docs/presentacion.md)):
-  20 diapositivas 16:9 con letra grande —cifras, las ocho etapas, la anatomía de un módulo,
-  las siete etapas de contenido, laboratorios, seguridad, casos reales, rutas por perfil,
-  proyecto final y formatos de descarga— y una pauta de ≈46 minutos con el guion hablado,
-  el tiempo de cada lámina y qué se ve en pantalla. Enlazadas desde el README, el menú del
-  sitio y la portada.
+  6 diapositivas 16:9 con letra grande —qué enseña y qué no con las cifras del programa, los
+  28 módulos en ocho etapas, la anatomía de un módulo y los 70 laboratorios, seguridad y casos
+  reales, y para quién es— y una pauta de ≈33 minutos con el guion hablado, el tiempo de cada
+  lámina y qué se ve en pantalla. La lámina lleva lo esencial; **el detalle vive en la pauta**,
+  que es el documento de apoyo. Enlazadas desde el README, el menú del sitio y la portada.
 - **Un solo origen para los tres formatos**: `pnpm build:presentacion` genera desde ese
   Markdown las diapositivas en HTML (para proyectar desde el navegador), `PRESENTACION.pdf`
   y `PAUTA.pdf`. El guion y las láminas no pueden separarse porque viven en el mismo archivo.

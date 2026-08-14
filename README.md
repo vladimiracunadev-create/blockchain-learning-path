@@ -99,11 +99,11 @@ Para generarlo todo desde el repositorio: `pnpm build:manual`, `pnpm app:windows
 
 ## 🎤 Presenta el programa: diapositivas y pauta
 
-¿Tienes que **mostrar el programa** en una clase, un comité o una charla? Está todo hecho: una presentación de 20 diapositivas con letra grande y los contenidos importantes del recorrido, y una **pauta del expositor** con el guion hablado, el tiempo de cada lámina y qué se ve en pantalla. La charla completa dura **≈46 minutos** y cabe en una sesión de 45 con preguntas.
+¿Tienes que **mostrar el programa** en una clase, un comité o una charla? Está todo hecho: una presentación de **6 diapositivas** con letra grande y lo esencial del recorrido, y una **pauta del expositor** con el guion hablado, el tiempo de cada lámina y qué se ve en pantalla. La charla completa dura **≈33 minutos**, así que la muestra cabe en media hora con preguntas.
 
 | Documento | Descarga | Para qué sirve |
 |---|---|---|
-| 🎞️ **Diapositivas (PDF)** | [PRESENTACION.pdf (20 diapositivas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PRESENTACION.pdf) | Proyectar sin conexión y repartir como material |
+| 🎞️ **Diapositivas (PDF)** | [PRESENTACION.pdf (6 diapositivas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PRESENTACION.pdf) | Proyectar sin conexión y repartir como material |
 | 🧾 **Pauta del expositor (PDF)** | [PAUTA.pdf](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PAUTA.pdf) | Guion, tiempos y qué decir en cada diapositiva |
 | 🖥️ **Diapositivas en el navegador** | [Ver online](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/presentacion.html) | Proyectar desde el navegador, sin instalar nada |
 | ✍️ **Guion editable** | [docs/presentacion.md](docs/presentacion.md) | La fuente: edítala y regenera los tres formatos |
