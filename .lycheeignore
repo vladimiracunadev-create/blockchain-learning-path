@@ -1,0 +1,20 @@
+# Enlaces vivos que un verificador automático no puede comprobar.
+#
+# Esto NO es una lista para silenciar link rot: cada entrada se revisó a mano y
+# el sitio responde. Se excluyen para que el informe semanal del workflow de
+# enlaces contenga solo enlaces rotos de verdad — una lista con falsos positivos
+# recurrentes se deja de leer, y entonces el guardián no sirve de nada.
+#
+# Antes de añadir una línea aquí hay que demostrar que el destino responde.
+# Si no se puede demostrar, el enlace está roto y lo que toca es arreglarlo.
+
+# Banco Central del Uruguay: sirve solo el certificado de servidor, sin la CA
+# intermedia. Los navegadores la recuperan por AIA y el sitio carga con
+# normalidad (responde 302); un cliente estricto como lychee no puede validar la
+# cadena. Verificado con openssl: "unable to verify the first certificate" (21).
+^https://www\.bcu\.gub\.uy/?$
+
+# SWIFT: no atiende a clientes automatizados. Agota el tiempo de espera tanto
+# desde los runners de GitHub como desde una red doméstica, en la raíz y en
+# cualquier ruta interna, mientras que en un navegador carga sin problema.
+^https://www\.swift\.com/?$

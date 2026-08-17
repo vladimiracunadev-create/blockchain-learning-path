@@ -18,6 +18,7 @@ on:
       - "docs/recursos-oficiales.md"
       - "docs/bibliografia.md"
       - ".github/workflows/links.yml"
+      - ".lycheeignore"
 
 permissions:
   contents: read
