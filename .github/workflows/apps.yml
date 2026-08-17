@@ -82,7 +82,7 @@ jobs:
             "- $($_.Name) — $([math]::Round($_.Length/1MB,1)) MB" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
           }
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: windows
           path: apps/desktop/dist/*.exe
@@ -105,7 +105,7 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
-      - uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@v4
 
       - run: pnpm install --frozen-lockfile
 
@@ -142,7 +142,7 @@ jobs:
           cp apps/android/android/app/build/outputs/apk/debug/app-debug.apk \
              "apk/BlockchainLearningPath-${version}.apk"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: android
           path: apk/*.apk

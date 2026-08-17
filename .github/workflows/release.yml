@@ -51,7 +51,7 @@ jobs:
             exit 1
           fi
           echo "Manual: $((bytes / 1048576)) MB" >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: manual
           path: manual/MANUAL.pdf
@@ -63,7 +63,7 @@ jobs:
         run: pnpm build:presentacion
       - name: Comprobar que la presentación coincide con lo anunciado
         run: node scripts/check-presentation.mjs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: presentacion
           path: presentacion/*.pdf
@@ -99,7 +99,7 @@ jobs:
           $modulos = (Get-ChildItem "$empaquetada/curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
           if ($modulos -ne $esperados) { throw "La app empaquetada tiene $modulos módulos, se esperaban $esperados" }
           "✅ Windows: $modulos módulos empaquetados" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: windows
           path: apps/desktop/dist/*.exe
@@ -121,7 +121,7 @@ jobs:
         with:
           distribution: temurin
           java-version: "21"
-      - uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@v4
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:icons
       - run: pnpm build:manual
@@ -142,7 +142,7 @@ jobs:
           mkdir -p apk
           cp apps/android/android/app/build/outputs/apk/debug/app-debug.apk \
              "apk/BlockchainLearningPath-${version}.apk"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: android
           path: apk/*.apk
@@ -156,7 +156,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v8
         with:
           path: artefactos
           merge-multiple: true
@@ -178,7 +178,7 @@ jobs:
           cat SHA256SUMS.txt
 
       - name: Crear la release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ github.event.inputs.etiqueta || github.ref_name }}
           name: ${{ github.event.inputs.etiqueta || github.ref_name }}
