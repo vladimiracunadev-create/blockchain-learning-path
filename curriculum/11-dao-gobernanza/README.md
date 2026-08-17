@@ -210,7 +210,7 @@ Diseña e implementa una DAO en la que una propuesta crítica requiera votación
 - OpenZeppelin, *Governance* — <https://docs.openzeppelin.com/contracts/governance>
 - Compound, *Governance* — <https://docs.compound.finance/governance/>
 - Snapshot, *Documentación* — <https://docs.snapshot.org/>
-- Voshmgir, *Token Economy* — <https://tokeneconomy.co/>
+- Voshmgir, *Token Economy* — <https://github.com/Token-Economy-Book/3rdEdition-English>
 - Fuente primaria: OpenZeppelin Governor y Compound Governor Bravo (documentación enlazada arriba) — <https://docs.openzeppelin.com/contracts/governance>
 
 ## ✅ Criterio de dominio

@@ -252,7 +252,7 @@ citados pertenecen a sus autores, organismos emisores y titulares.
 
 **¿Te resulta útil? ⭐ Dale una estrella al repo.**
 
-[![GitHub stars](https://img.shields.io/github/stars/vladimiracunadev-create/blockchain-learning-path?style=social)](https://github.com/vladimiracunadev-create/blockchain-learning-path/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/vladimiracunadev-create/blockchain-learning-path?style=social)](https://github.com/vladimiracunadev-create/blockchain-learning-path)
 [![GitHub forks](https://img.shields.io/github/forks/vladimiracunadev-create/blockchain-learning-path?style=social)](https://github.com/vladimiracunadev-create/blockchain-learning-path/network/members)
 [![Follow](https://img.shields.io/github/followers/vladimiracunadev-create?style=social&label=Follow)](https://github.com/vladimiracunadev-create)
 

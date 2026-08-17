@@ -309,11 +309,11 @@ sobre un país real se presenta sin fuente oficial.
 
 ## 🔗 Referencias
 
-- BIS Innovation Hub — proyectos sobre MDBC, liquidación y tokenización: <https://www.bis.org/about/bisih/>
-- BIS/CPMI — trabajos sobre monedas digitales de banco central: <https://www.bis.org/cpmi/>
+- BIS Innovation Hub — proyectos sobre MDBC, liquidación y tokenización: <https://www.bis.org/about/bisih/about.htm>
+- BIS/CPMI — trabajos sobre monedas digitales de banco central: <https://www.bis.org/cpmi/index.htm>
 - Banco Central de Chile — publicaciones e información institucional (MDBC): <https://www.bcentral.cl/>
 - Banco Central Europeo — proyecto del euro digital: <https://www.ecb.europa.eu/euro/digital_euro/html/index.es.html>
-- Banco de Inglaterra — trabajo sobre la libra digital: <https://www.bankofengland.co.uk/central-bank-digital-currency>
+- Banco de Inglaterra — trabajo sobre la libra digital: <https://www.bankofengland.co.uk/the-digital-pound>
 - FMI — trabajo sobre dinero digital de banco central: <https://www.imf.org/en/Topics/fintech>
 - Laboratorio del módulo: [Mercado tokenizado con dinero mayorista simulado](../../labs/22-cbdc-mercado-tokenizado/README.md)
 

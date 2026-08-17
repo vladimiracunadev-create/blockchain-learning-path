@@ -138,7 +138,7 @@ Lido cobra un porcentaje de las recompensas de staking que genera para sus usuar
 
 ## 🔗 Referencias
 
-- Shermin Voshmgir, *Token Economy* (texto abierto): <https://github.com/Token-Economy-Book/EnglishVersion>
+- Shermin Voshmgir, *Token Economy* (texto abierto): <https://github.com/Token-Economy-Book/3rdEdition-English>
 - DefiLlama — TVL, fees y revenue en vivo: <https://defillama.com/>
 - Token Terminal — métricas financieras de protocolos: <https://tokenterminal.com/>
 - Joel Monegro, "Fat Protocols" (USV, 2016): <https://www.usv.com/writing/2016/08/fat-protocols/>

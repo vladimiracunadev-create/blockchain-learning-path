@@ -229,7 +229,7 @@ Entrega un documento de arquitectura del proyecto integrador que incluya: proble
 - EIP-7702, Set EOA account code (Pectra) — <https://eips.ethereum.org/EIPS/eip-7702>
 - Flashbots, investigación sobre MEV — <https://writings.flashbots.net/>
 - OpenZeppelin, Upgrades Plugins — <https://docs.openzeppelin.com/upgrades-plugins/>
-- Voshmgir, S., *Token Economy* — <https://tokeneconomy.co/>
+- Voshmgir, S., *Token Economy* — <https://github.com/Token-Economy-Book/3rdEdition-English>
 - Fuente primaria: Daian et al., *Flash Boys 2.0* — <https://arxiv.org/abs/1904.05234>
 
 ## ✅ Criterio de dominio

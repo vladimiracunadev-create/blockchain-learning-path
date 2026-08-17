@@ -195,7 +195,7 @@ Completa la tabla de dificultad frente a intentos y tiempo con al menos tres niv
 ## 🔗 Referencias
 
 - Fuente primaria: Satoshi Nakamoto, *Bitcoin: A Peer-to-Peer Electronic Cash System* — <https://bitcoin.org/bitcoin.pdf>
-- Miguel Castro y Barbara Liskov, *Practical Byzantine Fault Tolerance*, OSDI 1999 — <https://pmg.csail.mit.edu/papers/osdi99.pdf>
+- Miguel Castro y Barbara Liskov, *Practical Byzantine Fault Tolerance*, OSDI 1999 — <https://www.usenix.org/conference/osdi-99/practical-byzantine-fault-tolerance>
 - Buterin y Griffith, *Casper the Friendly Finality Gadget* — <https://arxiv.org/abs/1710.09437>
 - ethereum.org, documentación sobre Proof of Stake — <https://ethereum.org/developers/docs/consensus-mechanisms/pos/>
 

@@ -215,7 +215,7 @@ Entrega el diseño conceptual completo de la prueba de mayoría de edad: enuncia
 - Thaler, J., *Proofs, Arguments, and Zero-Knowledge* — <https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.html>
 - Least Authority, *The MoonMath Manual to zk-SNARKs* — <https://github.com/LeastAuthority/moonmath-manual>
 - ZKProof, Community Reference — <https://zkproof.org/>
-- circom, documentación del lenguaje de circuitos — <https://docs.circom.io/>
+- circom, documentación del lenguaje de circuitos — <https://github.com/iden3/circom>
 - Fuente primaria: Goldwasser, Micali y Rackoff, *The Knowledge Complexity of Interactive Proof-Systems* (1985), definición original de conocimiento cero.
 
 ## ✅ Criterio de dominio

@@ -2,7 +2,7 @@ name: Enlaces
 
 # Un curso se degrada por link rot: las fuentes oficiales cambian de URL y el
 # material queda apuntando al vacío sin que nadie lo note. Este workflow revisa
-# los ~240 enlaces externos del repositorio.
+# los ~450 enlaces únicos del repositorio.
 #
 # Es INFORMATIVO a propósito: que un servidor externo esté caído un martes no
 # puede romper la CI de un pull request de contenido. Cuando encuentra enlaces
@@ -32,6 +32,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # --accept incluye 202 porque EUR-Lex responde así a los enlaces del
+      # reglamento MiCA, y MODULE_TEMPLATE.md queda fuera porque es la plantilla
+      # de módulo: sus enlaces son marcadores (`https://…`, `../NN-slug/`) que
+      # no apuntan a ninguna parte a propósito.
       - name: Revisar enlaces
         id: lychee
         uses: lycheeverse/lychee-action@v2
@@ -41,18 +45,45 @@ jobs:
             --max-concurrency 8
             --timeout 30
             --max-retries 2
-            --accept 200,206,403,429
+            --accept 200,206,202,403,429
             --exclude-path node_modules
             --exclude-path site
-            --exclude-mail
+            --exclude-path MODULE_TEMPLATE.md
+            --include-mail=false
             "**/*.md"
           output: informe-enlaces.md
           fail: false
 
-      - name: Abrir issue si hay enlaces rotos
-        if: steps.lychee.outputs.exit_code != 0
+      # lychee separa sus salidas: 0 es que todo responde, 2 es que hay enlaces
+      # rotos y cualquier otro código significa que el comando ni siquiera llegó
+      # a revisar nada (una bandera que dejó de existir, por ejemplo). Ese último
+      # caso tiene que romper el job: confundirlo con "enlaces rotos" hace que el
+      # workflow abra un issue vacío cada semana mientras el link rot avanza sin
+      # que nadie lo mire.
+      - name: Comprobar que lychee llegó a revisar los enlaces
+        if: steps.lychee.outputs.exit_code != '0' && steps.lychee.outputs.exit_code != '2'
+        run: |
+          echo "::error::lychee terminó con código ${{ steps.lychee.outputs.exit_code }}: el comando falló y no se revisó ningún enlace."
+          exit 1
+
+      # Un issue por semana con la misma lista es ruido que se acaba ignorando.
+      # Si ya hay uno abierto se actualiza en vez de abrir otro.
+      - name: Buscar el issue de enlaces ya abierto
+        id: issue-abierto
+        if: steps.lychee.outputs.exit_code == '2'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          numero="$(gh issue list --state open --label mantenimiento \
+            --search 'Enlaces rotos detectados en el material in:title' \
+            --json number --jq '.[0].number // empty')"
+          echo "numero=${numero}" >> "$GITHUB_OUTPUT"
+
+      - name: Abrir o actualizar el issue de enlaces rotos
+        if: steps.lychee.outputs.exit_code == '2'
         uses: peter-evans/create-issue-from-file@v5
         with:
           title: "🔗 Enlaces rotos detectados en el material"
           content-filepath: informe-enlaces.md
+          issue-number: ${{ steps.issue-abierto.outputs.numero }}
           labels: mantenimiento, documentación

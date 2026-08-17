@@ -53,4 +53,4 @@ Negativas:
 - SEC, *Framework for “Investment Contract” Analysis of Digital Assets*: <https://www.sec.gov/corpfin/framework-investment-contract-analysis-digital-assets>
 - Reglamento MiCA (UE) 2023/1114: <https://eur-lex.europa.eu/eli/reg/2023/1114/oj>
 - a16z crypto, *Defining tokens*: <https://a16zcrypto.com/posts/article/defining-tokens/>
-- Variant, *Productive assets and token value*: <https://variant.fund/articles/>
+- Variant, *Productive assets and token value*: <https://variant.fund/writing/>
