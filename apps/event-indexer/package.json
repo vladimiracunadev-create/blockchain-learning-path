@@ -8,6 +8,6 @@
     "test": "node --test src/*.test.mjs"
   },
   "dependencies": {
-    "viem": "^2.55.15"
+    "viem": "^2.55.19"
   }
 }
