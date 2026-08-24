@@ -92,7 +92,7 @@ Todo el contenido —los 28 módulos, la industria, los laboratorios, la regulac
 |---|---|---|
 | 🖥️ **Windows** | [Instalador o portable](https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/latest) | Curso completo dentro del ejecutable · [cómo está hecha](apps/desktop/README.md) |
 | 📱 **Android** | [APK](https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/latest) | Curso completo dentro del APK · [cómo está hecha](apps/android/README.md) |
-| 📕 **Manual PDF** | [MANUAL.pdf (~520 páginas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) | También adjunto en cada release |
+| 📕 **Manual PDF** | [MANUAL.pdf (~385 páginas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) | También adjunto en cada release |
 | 🌐 **Web** | [Sitio del programa](https://vladimiracunadev-create.github.io/blockchain-learning-path/) | Con buscador, progreso y autoevaluación |
 
 Las tres versiones salen del **mismo build**, así que ninguna se queda atrás. Cada binario se verifica en CI abriéndolo y contando los módulos, las páginas y las preguntas que lleva dentro: un build en verde no prueba que el artefacto contenga el curso.

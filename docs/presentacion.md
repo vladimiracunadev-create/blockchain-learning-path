@@ -208,7 +208,7 @@ pnpm build:presentacion
 - **Rutas por perfil:** desarrollo, arquitectura, auditoría, producto, investigación, empresa, DeFi, banca y cumplimiento.
 - Cada ruta termina en un **entregable de portafolio**: dApp probada, ADR, informe de auditoría, ficha de riesgo.
 - **Proyecto final**: protocolo probado, dApp, datos, arquitectura, modelo de amenazas y caso de negocio.
-- **Llévatelo entero**: sitio web, manual PDF de ~520 páginas, app de Windows y APK de Android, sin conexión.
+- **Llévatelo entero**: sitio web, manual PDF de ~385 páginas, app de Windows y APK de Android, sin conexión.
 - **Empieza hoy:** abre *Empieza aquí* → haz el diagnóstico → módulo 00 y `pnpm lab:hash`.
 - `github.com/vladimiracunadev-create/blockchain-learning-path`
 
