@@ -4,6 +4,7 @@
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [00 · Orientación](../00-orientacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [02 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
+> 👛 La versión de usuario de la custodia de claves está en la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
 ---
 

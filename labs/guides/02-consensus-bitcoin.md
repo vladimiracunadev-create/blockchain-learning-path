@@ -1,6 +1,6 @@
-# Guías 11–20 · Consenso y Bitcoin
+# Guías 11–20 y 71 · Consenso, Bitcoin y wallets
 
-Este cuaderno lleva del consenso (Proof of Work y sus alternativas) al modelo UTXO de Bitcoin y a un nodo local en regtest. Acompaña a los módulos [consenso](../../curriculum/03-consenso/README.md) y [Bitcoin](../../curriculum/04-bitcoin/README.md).
+Este cuaderno lleva del consenso (Proof of Work y sus alternativas) al modelo UTXO de Bitcoin y a un nodo local en regtest. Acompaña a los módulos [consenso](../../curriculum/03-consenso/README.md) y [Bitcoin](../../curriculum/04-bitcoin/README.md). Incluye también la práctica 71 de la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md), que se estudia justo después del módulo 04.
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 
@@ -18,6 +18,7 @@ Trabaja siempre en regtest: sin fondos ni direcciones reales. La bitácora regis
 | 18 | Wallet y direcciones regtest | transcript | dos wallets descriptor |
 | 19 | Crear y confirmar una transacción | txid local | mempool → confirmada |
 | 20 | Multisig/descriptor en regtest | política | descriptor 2-de-3 + PSBT |
+| 71 | Prevuelo de una transacción (wallets) | auto | `pnpm lab:wallet-segura` |
 
 ## 11 · Proof of Work y dificultad
 
@@ -174,6 +175,31 @@ node --test labs/04-bitcoin/utxo-selection.test.mjs
 - **Estructura de la respuesta:** política del descriptor + evidencia de que una firma no finaliza y dos sí.
 - **Criterio de aceptación:** demuestra que una clave no puede finalizar y documenta la recuperación.
 - **Error común:** perder un descriptor sin backup → sin él no se reconstruye la política de gasto.
+
+## 71 · Prevuelo de una transacción
+
+- **Objetivo:** revisar una solicitud de firma completa (red, origen, destino, contrato, función, token, monto, decimales, comisión y aprobación) antes de firmar, y detectar dos ataques clásicos: el `approve` ilimitado y el address poisoning. Es la práctica de la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
+- **Cómo se resuelve:** [`prevuelo-transaccion.mjs`](../00-wallets/prevuelo-transaccion.mjs) trae tres solicitudes simuladas y deterministas (direcciones ficticias, sin red, sin claves, sin fondos) y las contrasta contra lo que el usuario esperaba firmar, control por control.
+
+```bash
+pnpm lab:wallet-segura
+```
+
+```text
+── 1 · Transferencia legítima de un token de prueba
+   ✅ red … ✅ aprobación
+   → Veredicto: FIRMAR
+── 2 · Una dApp pide un approve ilimitado a un contrato desconocido
+   ❌ aprobación: pide una aprobación ILIMITADA …
+   → Veredicto: NO FIRMAR
+── 3 · Dirección envenenada: mismo principio y mismo final, otro cuerpo
+   ❌ address poisoning: el destino imita el principio y el final …
+   → Veredicto: NO FIRMAR
+```
+
+- **Verificación automática:** `node --test labs/00-wallets/prevuelo-transaccion.test.mjs` (10 pruebas).
+- **Criterio de aceptación:** el escenario 1 termina en `FIRMAR`, los escenarios 2 y 3 en `NO FIRMAR`, y puedes explicar qué control falló en cada uno y qué ataque representa.
+- **Error común:** verificar la dirección por el principio y el final abreviados → es exactamente lo que explota el address poisoning; se compara completa.
 
 ## 🧭 Navegación
 

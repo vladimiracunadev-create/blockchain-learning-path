@@ -29,7 +29,10 @@ const PARTS = [
   // imprime el manual y lo abre por el principio tiene que encontrarla ahí, igual
   // que en el sitio y en las apps.
   ["Introducción", ["README.md", "docs/empieza-aqui.md"]],
-  ["Currículo", ["curriculum/README.md", ...curriculumSlugs.map((s) => `curriculum/${s}/README.md`)]],
+  // La unidad transversal de wallets va donde se estudia: después del módulo 04
+  // (Bitcoin) y antes del 05 (Ethereum), igual que en el sitio y en el currículo.
+  ["Currículo", ["curriculum/README.md", ...curriculumSlugs.flatMap((s) =>
+    s.startsWith("04-") ? [`curriculum/${s}/README.md`, "docs/wallets-desde-cero.md"] : [`curriculum/${s}/README.md`])]],
   ["Industria", ["industria/README.md", ...industriaDocs.map((f) => `industria/${f}`)]],
   ["Laboratorios", ["labs/CATALOG.md", "labs/guides/01-foundations.md", "labs/guides/02-consensus-bitcoin.md",
     "labs/guides/03-evm-development.md", "labs/guides/04-professional-security.md", "labs/guides/05-advanced-capstone.md",

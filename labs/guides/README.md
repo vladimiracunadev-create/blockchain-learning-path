@@ -1,6 +1,6 @@
 # Cuaderno de prácticas
 
-El cuaderno de laboratorios reúne las **70 prácticas** del programa, organizadas en **6 cuadernos por etapa** que acompañan el avance por los 28 módulos del currículo. Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
+El cuaderno de laboratorios reúne las **71 prácticas** del programa, organizadas en **6 cuadernos por etapa** que acompañan el avance por los 28 módulos del currículo y la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md). Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
 
 ## Los seis cuadernos
 

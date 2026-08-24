@@ -1,6 +1,6 @@
 # Rutas por perfil profesional
 
-Todas las rutas parten del tronco común 00–05 (orientación, criptografía, sistemas distribuidos, consenso, Bitcoin y EVM). A partir de ahí, cada perfil prioriza módulos, laboratorios y un entregable de portafolio distinto. Elige la ruta que mejor describa el rol al que apuntas; puedes cambiar de ruta sin perder avance, porque el registro de progreso es el mismo. Comprueba tu nivel en cada competencia con la [matriz de competencias](../docs/skills-matrix.md), que exige **evidencia reproducible** para cada casilla.
+Todas las rutas parten del tronco común 00–05 (orientación, criptografía, sistemas distribuidos, consenso, Bitcoin y EVM), que incluye la unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) entre el módulo 04 y el 05 — obligatoria para quien nunca ha usado una wallet. A partir de ahí, cada perfil prioriza módulos, laboratorios y un entregable de portafolio distinto. Elige la ruta que mejor describa el rol al que apuntas; puedes cambiar de ruta sin perder avance, porque el registro de progreso es el mismo. Comprueba tu nivel en cada competencia con la [matriz de competencias](../docs/skills-matrix.md), que exige **evidencia reproducible** para cada casilla.
 
 ```mermaid
 flowchart TD

@@ -17,7 +17,8 @@ Glosario de referencia de los términos que usan los módulos 00-27, los laborat
 - **Criptografía de curva elíptica (ECC)**: familia de esquemas de clave pública usada por Bitcoin y Ethereum (secp256k1) y por BLS en consenso.
 - **Clave privada / clave pública**: par asimétrico; la privada firma y jamás se comparte, la pública identifica y verifica.
 - **Frase semilla (seed phrase)**: secuencia mnemónica (BIP-39) de la que se derivan de forma determinista todas las claves de una billetera.
-- **Billetera (wallet)**: herramienta que administra claves y firma transacciones; no "guarda monedas" literalmente, las monedas viven en el registro.
+- **Billetera (wallet)**: herramienta que administra claves y firma transacciones; no "guarda monedas" literalmente, las monedas viven en el registro. Cómo usarla con seguridad: [Wallets desde cero](wallets-desde-cero.md).
+- **Ruta de derivación**: camino jerárquico (BIP-32/44, p. ej. `m/44'/0'/0'/0/0`) por el que una semilla genera cada clave; explica que la misma semilla reproduzca las mismas cuentas en otra wallet compatible.
 - **Nodo**: software que valida, almacena o comunica datos de la red.
 - **Consenso**: reglas para acordar el estado válido entre participantes que no confían entre sí.
 - **Prueba de trabajo (proof of work, PoW)**: consenso que exige gasto computacional verificable para proponer bloques.
@@ -99,6 +100,9 @@ Glosario de referencia de los términos que usan los módulos 00-27, los laborat
 - **Desbordamiento (overflow/underflow)**: exceso del rango numérico; Solidity ≥0.8 revierte por defecto, pero `unchecked` lo reintroduce.
 - **Front-running**: adelantarse a una transacción visible en el mempool para obtener ventaja; caso particular del MEV.
 - **Ataque sándwich**: front-run más back-run alrededor de un intercambio para extraer valor del deslizamiento (slippage) de la víctima.
+- **Address poisoning (envenenamiento de direcciones)**: sembrar en el historial de la víctima direcciones que imitan el principio y el final de las suyas, esperando que copie la impostora; se previene verificando la dirección completa.
+- **Blind signing (firma a ciegas)**: firmar datos que la wallet no puede mostrar en claro; la regla defensiva es no firmar lo que no se puede leer.
+- **Wallet drainer**: dApp o contrato malicioso diseñado para obtener firmas o aprobaciones que vacían la wallet de la víctima.
 - **Control de acceso**: restricción de funciones sensibles a roles autorizados; su ausencia o mala configuración es una causa principal de pérdidas.
 - **Multifirma (multisig)**: esquema que exige M-de-N firmas para ejecutar una acción; estándar mínimo para administrar contratos con fondos.
 - **MPC (multi-party computation)**: técnica que reparte una clave entre varias partes de modo que ninguna la conozca completa; usada en custodia institucional.

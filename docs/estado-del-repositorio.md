@@ -13,10 +13,10 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 | Área | Qué incluye | Estado |
 |---|---|:---:|
-| Currículo | 28 módulos (00–27) con esquemas Mermaid, casos reales, fuentes y navegación | ✅ |
+| Currículo | 28 módulos (00–27) con esquemas Mermaid, casos reales, fuentes y navegación, más la unidad transversal [Wallets desde cero](wallets-desde-cero.md) | ✅ |
 | Rutas por perfil | Itinerarios según objetivo del estudiante | ✅ |
 | Industria | Construcción de una red, stack, equipos, empresas, negocio y ciclo de vida | ✅ |
-| Prácticas | Setenta prácticas con criterios de aceptación (42 auto-verificables) | ✅ |
+| Prácticas | Setenta y una prácticas con criterios de aceptación (43 auto-verificables) | ✅ |
 | Laboratorios | Automáticos sin dependencias y laboratorios Foundry | ✅ |
 | Bitcoin regtest | Entorno de práctica UTXO | ✅ |
 | Contratos de ejemplo | Token, oráculo, gobernanza, Vault y financiamiento | ✅ |

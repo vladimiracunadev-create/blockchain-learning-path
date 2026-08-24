@@ -4,6 +4,7 @@
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [04 · Bitcoin](../04-bitcoin/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [06 · Solidity y Foundry](../06-solidity-foundry/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
+> 👛 ¿Aún no has usado una wallet? Pasa primero por la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
 ---
 

@@ -31,6 +31,7 @@ resiste.
 | Hashes, Merkle, firmas | `pnpm test` — pruebas de `labs/01-cryptography` |
 | Prueba de trabajo y dificultad | `pnpm test` — `labs/02-consensus` |
 | Conservación de valor en UTXO | `pnpm test` — `labs/04-bitcoin` |
+| Prevuelo de una firma: montos, decimales, aprobaciones y address poisoning | `pnpm test` — `labs/00-wallets` |
 | Codificación ABI y selectores | `pnpm test` — `labs/05-evm` |
 | Reentrancia, control de acceso, oráculo, replay, front-running, colisión de storage | `forge test` en [`security-challenges/`](../security-challenges/README.md) — cada reto trae su **exploit** y su **fix** |
 | Contratos de bóveda, gobernanza y financiamiento | `forge test` en `labs/` y `projects/` |
@@ -42,7 +43,7 @@ resiste.
 | Enfoque basado en riesgo y Regla de Viaje | `pnpm test` — `labs/27-cumplimiento` |
 | Mercado tokenizado: dinero mayorista simulado, bono y DvP atómico | `forge test` en [`labs/22-cbdc-mercado-tokenizado/`](../labs/22-cbdc-mercado-tokenizado/README.md) |
 
-Son **186 pruebas automatizadas** (148 de Node y 38 de Foundry) que la CI ejecuta en
+Son **196 pruebas automatizadas** (158 de Node y 38 de Foundry) que la CI ejecuta en
 cada cambio. Una afirmación que se contradiga con el código hace fallar el build.
 Eso es más fuerte que una cita: no apela a la autoridad de un autor, se comprueba.
 

@@ -44,6 +44,12 @@ No instales nada todavía. Cada cosa se necesita en un momento distinto:
 | Módulo 06 | [Foundry](https://book.getfoundry.sh/getting-started/installation) | Escribir y probar contratos |
 | Módulo 07 | Una wallet de navegador, **en red de prueba** | Interactuar con una dApp |
 
+Y una parada obligatoria en el camino: al terminar el módulo 04 (Bitcoin), estudia la
+unidad transversal **[👛 Wallets desde cero](wallets-desde-cero.md)** antes de entrar en
+Ethereum. Ahí aprendes qué es una wallet, cómo usarla sin quemarte y qué hacer si pierdes
+el teléfono o firmas algo raro — es el manual de usuario que casi nadie lee y casi todos
+necesitan.
+
 ¿No quieres instalar nada? Abre el repositorio en **GitHub Codespaces**: viene con
 todo listo. O usa la [app de escritorio](../apps/desktop/README.md) o la
 [app Android](../apps/android/README.md) para leer el curso sin conexión.

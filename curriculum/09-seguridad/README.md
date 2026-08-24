@@ -4,6 +4,7 @@
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [08 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
+> 👛 Las amenazas al usuario final (drainers, approvals, address poisoning) tienen su guía de entrada en [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
 ---
 

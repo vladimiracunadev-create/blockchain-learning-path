@@ -1,6 +1,6 @@
 {
   "name": "blockchain-learning-path",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": true,
   "description": "Ruta práctica en español para aprender blockchain desde nivel inicial hasta producción",
   "packageManager": "pnpm@10.13.1",
@@ -28,6 +28,7 @@
     "lab:p2p": "node labs/02-consensus/p2p-propagation.mjs",
     "lab:particion": "node labs/02-consensus/partition-reconciliation.mjs",
     "lab:utxo": "node labs/04-bitcoin/utxo-selection.mjs",
+    "lab:wallet-segura": "node labs/00-wallets/prevuelo-transaccion.mjs",
     "lab:abi": "node labs/05-evm/abi-selector.mjs",
     "lab:tx": "node labs/07-dapps/tx-lifecycle.mjs",
     "lab:montos": "node labs/07-dapps/token-amounts.mjs",

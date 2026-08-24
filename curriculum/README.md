@@ -20,7 +20,7 @@ flowchart LR
         M01["01 Cripto"] --> M02["02 Distribuidos"] --> M03["03 Consenso"]
     end
     subgraph N2["Desarrollo"]
-        M04["04 Bitcoin"] --> M05["05 EVM"] --> M06["06 Solidity"] --> M07["07 dApps"]
+        M04["04 Bitcoin"] --> W["👛 Wallets desde cero"] --> M05["05 EVM"] --> M06["06 Solidity"] --> M07["07 dApps"]
     end
     subgraph N3["Profesional"]
         M08["08 Tokens"] --> M09["09 Seguridad"] --> M10["10 Oráculos"] --> M11["11 DAO"]
@@ -81,6 +81,11 @@ flowchart LR
 | 26 | [Custodia, wallets institucionales e identidad](26-custodia-identidad/README.md) | ¿Quién tiene la llave y cómo se prueba quién eres? | BIPs · ERC-4337 · W3C |
 | 27 | [Regulación y cumplimiento](27-regulacion-cumplimiento/README.md) | ¿Qué obliga la norma y quién la dicta? | MiCA · GAFI · Basilea · CMF |
 
+> 👛 **Unidad transversal:** [Wallets desde cero: uso, seguridad y recuperación](../docs/wallets-desde-cero.md)
+> se estudia **entre el módulo 04 y el 05** y es obligatoria para principiantes: qué administra
+> una wallet, cómo usarla con seguridad y qué hacer ante una emergencia. No lleva número
+> para no alterar la secuencia 00–27; su práctica es la 71 del [catálogo](../labs/CATALOG.md).
+
 ## Cómo está construido cada módulo
 
 Todos siguen la misma estructura (ver [`MODULE_TEMPLATE.md`](MODULE_TEMPLATE.md)):
@@ -107,7 +112,7 @@ Pectra/EIP-7702) para mantener el material al día.
 |---|---|---|
 | Orientación | 00 | Distinguir blockchain de una base de datos |
 | Fundamentos | 01–03 | Criptografía, redes y consenso |
-| Desarrollo | 04–07 | Bitcoin, EVM, contratos y una dApp |
+| Desarrollo | 04–07 (+ [Wallets desde cero](../docs/wallets-desde-cero.md) tras el 04) | Bitcoin, wallets, EVM, contratos y una dApp |
 | Profesional | 08–11 | Tokens, seguridad, oráculos y DAO |
 | Avanzado | 12–15 | L2, interoperabilidad, ZK y arquitectura |
 | Producción | 16–18 | Infraestructura real, caso de negocio e implementación en la empresa |

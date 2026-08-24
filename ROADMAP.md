@@ -9,7 +9,7 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 | 1–2 | Orientación, historia y casos de uso | Matriz blockchain vs. BD |
 | 3–4 | Hashes, firmas, Merkle trees | Laboratorio de integridad |
 | 5–6 | Bloques, P2P y consenso | Mini blockchain documentada |
-| 7–8 | Bitcoin y UTXO | Análisis de transacciones |
+| 7–8 | Bitcoin y UTXO, y la unidad transversal [Wallets desde cero](docs/wallets-desde-cero.md) | Análisis de transacciones + prevuelo de una transacción (práctica 71) |
 | 9–10 | Ethereum, EVM, gas y ABI | Lectura de estado con viem |
 | 11–13 | Solidity y Foundry | Contratos con pruebas |
 | 14–15 | dApp y gestión de wallets | Interfaz local/testnet |
@@ -61,7 +61,8 @@ principal o de forma independiente por quien ya domine la parte técnica.
 | 0.7.0 | autoevaluación por módulo (19 quizzes), app de escritorio para Windows y app Android, ambas offline; enlaces externos vigilados y lint de código | completada |
 | 0.8.0 | profundización de los 19 módulos (11 900 → 24 218 palabras) en cuatro capas para principiante y experto, guía «Empieza aquí», glosario enlazado en todos los módulos y 31 de 50 prácticas auto-verificadas | completada |
 | 0.8.1 | manual en PDF con la guía de entrada incluida (341 páginas) y cifras del manual verificadas en CI | completada |
-| 0.9.0 | etapa de finanzas on-chain e institucional: 9 módulos nuevos (19–27) sobre DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización y RWA, mercados de capitales, custodia e identidad y regulación; 20 prácticas nuevas, laboratorio de mercado tokenizado en Solidity, carpeta `regulation/`, casos reales y auditoría del programa | actual |
+| 0.9.0 | etapa de finanzas on-chain e institucional: 9 módulos nuevos (19–27) sobre DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización y RWA, mercados de capitales, custodia e identidad y regulación; 20 prácticas nuevas, laboratorio de mercado tokenizado en Solidity, carpeta `regulation/`, casos reales y auditoría del programa | completada |
+| 0.9.1 | unidad transversal [Wallets desde cero](docs/wallets-desde-cero.md) (uso, seguridad y recuperación) entre los módulos 04 y 05, con la práctica 71 «Prevuelo de una transacción» (`pnpm lab:wallet-segura`, 10 pruebas) integrada en catálogo, guías, sitio, manual y apps | actual |
 | 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

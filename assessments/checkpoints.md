@@ -28,6 +28,7 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Qué debes poder hacer | Evidencia | Autoevaluación |
 |---|---|---|
 | Seguir una transacción de punta a punta | Traza desde firma hasta confirmación | ¿Por qué una wallet no "contiene" monedas? |
+| Revisar una solicitud de firma antes de firmar ([Wallets desde cero](../docs/wallets-desde-cero.md)) | `pnpm lab:wallet-segura` explicado control por control | ¿Qué control detecta un `approve` ilimitado y cuál una dirección envenenada? |
 | Implementar el Vault y demostrar sus invariantes | Suite verde con fuzzing | ¿Por qué CEI no basta sin una guarda de reentrancia? |
 | Conectar una interfaz que simula antes de firmar | dApp que muestra red, valor y efecto | ¿Qué error se evita simulando antes de pedir la firma? |
 

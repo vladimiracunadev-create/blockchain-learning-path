@@ -29,6 +29,7 @@ Toda sesión se planifica con esta tabla: objetivo, actividad, tiempo y evidenci
 | 02 | replicación y particiones | P2P y Sybil | simulación de cinco nodos | descentralización binaria |
 | 03 | PoW/PoS/BFT | finalidad y ataques | minería con dificultad | comparar solo por TPS |
 | 04 | UTXO y scripts | nodos y Lightning | transacción regtest | dirección = persona |
+| 👛 [Wallets desde cero](wallets-desde-cero.md) | anatomía y ciclo de uso de una wallet | firmas, approvals y matriz de emergencia | prevuelo de una transacción (lab 71) | "la wallet guarda las monedas" |
 | 05 | cuentas, gas y ABI | storage y eventos | decodificar calldata | estimación = costo garantizado |
 | 06 | Solidity y CEI | Foundry, fuzz e invariantes | Vault | cobertura = corrección |
 | 07 | RPC y wallet | UX de transacciones | interfaz funding | frontend = verdad |

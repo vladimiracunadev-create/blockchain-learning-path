@@ -250,4 +250,8 @@ Documenta el análisis de una transacción pública en un texto breve: identific
 
 ## 🧭 Navegación
 
+> 👛 **Parada obligatoria para principiantes:** antes de pasar a Ethereum, estudia la unidad
+> transversal [Wallets desde cero: uso, seguridad y recuperación](../../docs/wallets-desde-cero.md) —
+> qué administra una wallet, cómo firmar sin quemarte y qué hacer en una emergencia.
+
 ⬅️ [Módulo 03 · Consenso](../03-consenso/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 05 · Ethereum y EVM](../05-ethereum-evm/README.md)

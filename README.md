@@ -2,7 +2,7 @@
 
 # ⛓️ Blockchain Learning Path
 
-## **28 módulos · 70 prácticas · de cero a la infraestructura financiera**
+## **28 módulos · 71 prácticas · de cero a la infraestructura financiera**
 
 **Programa integral y progresivo en español: de los fundamentos técnicos de blockchain a los sistemas financieros programables — criptografía, sistemas distribuidos, Bitcoin, Ethereum/EVM, contratos, activos digitales, seguridad, L2, ZK, infraestructura y empresa; y después DeFi, dinero y liquidación, stablecoins, depósitos tokenizados, CBDC/MDBC, pagos y FX on-chain, tokenización, RWA, mercados de capitales, custodia, identidad digital y regulación. Con laboratorios ejecutables y un proyecto integrador.**
 
@@ -10,9 +10,9 @@
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.9.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versión-0.9.1-7c5cff?style=for-the-badge)](CHANGELOG.md)
 [![Módulos](https://img.shields.io/badge/módulos-28-7c5cff?style=for-the-badge)](curriculum/README.md)
-[![Prácticas](https://img.shields.io/badge/prácticas-70-2e8b57?style=for-the-badge)](labs/CATALOG.md)
+[![Prácticas](https://img.shields.io/badge/prácticas-71-2e8b57?style=for-the-badge)](labs/CATALOG.md)
 [![Nivel](https://img.shields.io/badge/nivel-inicial%20→%20infraestructura%20financiera-e67e22?style=for-the-badge)](ROADMAP.md)
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![License](https://img.shields.io/badge/code-MIT-3fb950?style=for-the-badge)](LICENSE)
@@ -40,6 +40,10 @@
 **No hace falta que sepas nada todavía.** Esa página te dice qué necesitas antes de arrancar, qué instalar y en qué momento, cómo se lee un módulo, qué hacer cuando te atasques — y te deja en la puerta del [módulo 00](curriculum/00-orientacion/README.md), que es por donde se empieza.
 
 Ten a mano el **[📖 glosario](docs/glosario.md)**, enlazado desde todos los módulos, para cuando una palabra te frene.
+
+Y cuando llegues al final del módulo 04, pasa por la unidad transversal
+**[👛 Wallets desde cero](docs/wallets-desde-cero.md)** — qué es una wallet, cómo usarla
+con seguridad y qué hacer cuando algo sale mal — antes de entrar en Ethereum.
 
 </div>
 
@@ -126,9 +130,11 @@ Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visua
 | **Institucional** | [26](curriculum/26-custodia-identidad/README.md)–[27](curriculum/27-regulacion-cumplimiento/README.md) | Custodia, identidad digital, regulación y cumplimiento | Diseñar con custodia y cumplimiento desde el primer día |
 | **Proyecto final** | [capstone](capstone/README.md) | Integración | Protocolo documentado, probado y desplegable |
 
+> 👛 Entre los módulos [04](curriculum/04-bitcoin/README.md) y [05](curriculum/05-ethereum-evm/README.md) se estudia la unidad transversal **[Wallets desde cero: uso, seguridad y recuperación](docs/wallets-desde-cero.md)** — obligatoria para principiantes. No altera la numeración 00–27.
+
 ## 🧪 Laboratorios y proyectos ejecutables
 
-- **70 prácticas** guiadas con actividad, evidencia y criterio de aceptación ([catálogo](labs/CATALOG.md)).
+- **71 prácticas** guiadas con actividad, evidencia y criterio de aceptación ([catálogo](labs/CATALOG.md)).
 - **Contratos con Foundry**: vault, protocolos, token, oráculo y gobernador con timelock, con pruebas, fuzzing e invariantes.
 - **Retos de seguridad**: contratos vulnerables y sus correcciones ([security-challenges](security-challenges/README.md)).
 - **dApp** de financiamiento comunitario (viem/TypeScript), **indexador** de eventos y **panel** de progreso.
@@ -148,7 +154,7 @@ pnpm serve      # panel de seguimiento
 
 > 💻 **Sin instalar nada:** abre el repo en [GitHub Codespaces](https://codespaces.new/vladimiracunadev-create/blockchain-learning-path) — el [devcontainer](.devcontainer/devcontainer.json) deja listos Node, pnpm, Foundry y Docker.
 
-Luego empieza por [curriculum/00-orientacion](curriculum/00-orientacion/README.md). Cada una de las 70 prácticas trae su **resolución explicada** —cómo se implementa, el comando, la salida esperada y su interpretación— en el [cuaderno de laboratorios](labs/guides/README.md).
+Luego empieza por [curriculum/00-orientacion](curriculum/00-orientacion/README.md). Cada una de las 71 prácticas trae su **resolución explicada** —cómo se implementa, el comando, la salida esperada y su interpretación— en el [cuaderno de laboratorios](labs/guides/README.md).
 
 ## 💵 Del token al sistema financiero
 
@@ -187,7 +193,7 @@ El programa está listo para el aula: [guía del instructor](instructor/README.m
 2. **Aplica el ciclo** de cada módulo: comprender → experimentar → explicar → construir → verificar.
 3. **Ejecuta los laboratorios** en local (Anvil) o testnet; registra la evidencia en tu bitácora de progreso.
 4. **Haz el reto verificable** de cada módulo: ahí se fija el aprendizaje con un criterio de aceptación explícito.
-5. **Comprueba tu trabajo sin depender de nadie:** 42 de las 70 prácticas traen verificación ejecutable (`pnpm test`, `forge test`), así que estudiando solo tienes señal inmediata de si tu solución funciona. El resto produce una evidencia revisable con rúbrica.
+5. **Comprueba tu trabajo sin depender de nadie:** 43 de las 71 prácticas traen verificación ejecutable (`pnpm test`, `forge test`), así que estudiando solo tienes señal inmediata de si tu solución funciona. El resto produce una evidencia revisable con rúbrica.
 6. **Cierra con la autoevaluación** del módulo (4 preguntas al final de cada uno, también en el sitio y en las apps). Cada opción incorrecta es un error frecuente documentado en ese mismo módulo: si fallas, la explicación te dice exactamente qué releer. Al terminar el programa, el [quiz global](https://vladimiracunadev-create.github.io/blockchain-learning-path/autoevaluacion.html) repasa todo el recorrido.
 7. **Usa los libros de referencia** de cada área para profundizar, y la [matriz de competencias](docs/skills-matrix.md) para saber qué nivel has alcanzado y con qué evidencia lo demuestras.
 

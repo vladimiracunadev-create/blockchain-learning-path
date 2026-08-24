@@ -4,6 +4,7 @@
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [25 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [27 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
+> 👛 La versión para el usuario individual de este tema es la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
 ---
 

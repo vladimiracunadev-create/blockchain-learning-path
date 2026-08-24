@@ -1,8 +1,8 @@
-# 🧪 Catálogo de 70 prácticas
+# 🧪 Catálogo de 71 prácticas
 
 > [⬅️ Cuaderno de laboratorios](guides/README.md) · [📚 Currículo](../curriculum/README.md) · [🏠 Programa](../README.md)
 
-Las 70 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
+Las 71 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
 del currículo que la sustenta y a su **resolución explicada** (cómo se resuelve, el
 comando, la salida esperada y el error común).
 
@@ -49,6 +49,11 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 | 18 | Wallet y direcciones regtest | intermedio | transcript | [04](../curriculum/04-bitcoin/README.md) | [ver](guides/02-consensus-bitcoin.md) |
 | 19 | Crear y confirmar una transacción regtest | intermedio | txid local | [04](../curriculum/04-bitcoin/README.md) | [ver](guides/02-consensus-bitcoin.md) |
 | 20 | Multisig/descriptor en regtest | intermedio | política | [04](../curriculum/04-bitcoin/README.md) | [ver](guides/02-consensus-bitcoin.md) |
+| 71 | Prevuelo de una transacción (wallets) | inicial | **auto** | [Wallets desde cero](../docs/wallets-desde-cero.md) | [ver](guides/02-consensus-bitcoin.md) |
+
+> La práctica 71 pertenece a la unidad transversal
+> [**Wallets desde cero**](../docs/wallets-desde-cero.md), que se estudia entre los
+> módulos 04 y 05. Conserva el número 71 para no renumerar las prácticas existentes.
 
 ## Prácticas 21–30 · Desarrollo EVM
 

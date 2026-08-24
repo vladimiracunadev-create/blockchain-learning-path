@@ -5,11 +5,32 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 ## [No publicado]
 
+*Nada pendiente.*
+
+## [0.9.1] · 2026-08-24
+
 ### Añadido
+
+- **Unidad transversal [«Wallets desde cero: uso, seguridad y recuperación»](docs/wallets-desde-cero.md)**,
+  obligatoria para principiantes y ubicada pedagógicamente **entre el módulo 04 (Bitcoin) y el 05
+  (Ethereum)** sin alterar la numeración 00–27: qué administra realmente una wallet (claves y
+  autorizaciones, no monedas), anatomía (clave, dirección, cuenta, seed phrase, derivación HD),
+  custodia frente a autocustodia, tabla comparativa de nueve tipos de wallet, Bitcoin frente a EVM,
+  ciclo completo de uso, firmas y aprobaciones (mensaje, EIP-712, `approve`, `permit`), matriz de
+  16 amenazas con prevención/detección/respuesta, matriz de emergencia de 8 escenarios, ejercicio
+  de recuperación como simulación de escritorio (sin secretos reales), autoevaluación de 15
+  preguntas (4 de escenario, aprobación 80 %), glosario y referencias primarias con fecha de
+  consulta (BIP-32/39/44, EIP-1193/6963/712/2612, ERC-4337, ethereum.org, viem, OWASP).
+- **Práctica 71 · «Prevuelo de una transacción»** (`pnpm lab:wallet-segura`,
+  [`labs/00-wallets/`](labs/00-wallets/prevuelo-transaccion.mjs)): tres solicitudes de firma
+  simuladas y deterministas —transferencia legítima, `approve` ilimitado a contrato desconocido y
+  dirección envenenada— revisadas control por control (red, origen, destino, contrato, función,
+  token, monto, decimales, comisión y aprobación), con **10 pruebas automatizadas** y un reto
+  verificable (detectar un `permit` malicioso). Sin red, sin claves y sin fondos.
 
 - **Presentación del programa y pauta del expositor** ([`docs/presentacion.md`](docs/presentacion.md)):
   6 diapositivas 16:9 con letra grande —qué enseña y qué no con las cifras del programa, los
-  28 módulos en ocho etapas, la anatomía de un módulo y los 70 laboratorios, seguridad y casos
+  28 módulos en ocho etapas, la anatomía de un módulo y los 71 laboratorios, seguridad y casos
   reales, y para quién es— y una pauta de ≈33 minutos con el guion hablado, el tiempo de cada
   lámina y qué se ve en pantalla. La lámina lleva lo esencial; **el detalle vive en la pauta**,
   que es el documento de apoyo. Enlazadas desde el README, el menú del sitio y la portada.
@@ -20,6 +41,15 @@ y el versionado [SemVer](https://semver.org/lang/es/).
   (ninguna lámina se desbordó) y que el número de diapositivas y la duración que anuncia el
   README siguen siendo los reales. Se ejecuta en la publicación del sitio y en cada release,
   donde ambos PDF se adjuntan como artefactos.
+
+### Cambiado
+
+- Catálogo y guías: **70 → 71 prácticas** (43 auto-verificables); pruebas de Node: 148 → 158
+  (total 196). Conteos contrastados por `pnpm check`.
+- La unidad queda integrada en el README, el índice y el mapa del currículo, «Empieza aquí»,
+  roadmap (semanas 7–8), syllabus, planes de clase, checkpoints, guía del estudiante, rutas por
+  perfil, glosario (4 términos nuevos), menú del sitio, manual PDF y apps offline; los módulos
+  01, 04, 05, 07, 09 y 26 enlazan a la unidad como puerta de entrada o profundización.
 
 ## [0.9.0] · 2026-08-12
 

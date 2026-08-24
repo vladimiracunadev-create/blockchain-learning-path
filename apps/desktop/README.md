@@ -2,7 +2,7 @@
 
 > [⬅️ Volver al programa](../../README.md) · [📱 App Android](../android/README.md) · [📚 Currículo](../../curriculum/README.md)
 
-El curso completo como aplicación de escritorio: **28 módulos, las 70
+El curso completo como aplicación de escritorio: **28 módulos, las 71
 prácticas, los ADR, el manual en PDF y la autoevaluación de cada módulo**, todo
 dentro del ejecutable. No necesita conexión ni navegador: funciona en un aula sin
 red.
