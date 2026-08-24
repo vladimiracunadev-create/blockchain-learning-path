@@ -89,7 +89,7 @@ flowchart LR
 > 👛 **Unidad transversal:** [Wallets desde cero: uso, seguridad y recuperación](../docs/wallets-desde-cero.md)
 > se estudia **entre el módulo 04 y el 05** y es obligatoria para principiantes: qué administra
 > una wallet, cómo usarla con seguridad y qué hacer ante una emergencia. No lleva número
-> para no alterar la secuencia 00–27; su práctica es la 71 del [catálogo](../labs/CATALOG.md).
+> para no alterar la secuencia numerada; su práctica es la 71 del [catálogo](../labs/CATALOG.md).
 
 ## Cómo está construido cada módulo
 

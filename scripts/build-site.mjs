@@ -61,7 +61,7 @@ const NAV = [
   { t: "🌱 Empieza aquí", href: "docs/empieza-aqui.html" },
   { t: "📖 Glosario", href: "docs/glosario.html" },
   // Unidad transversal para principiantes: se estudia entre los módulos 04 y 05,
-  // pero vive fuera del currículo numerado para no alterar la secuencia 00–27.
+  // pero vive fuera del currículo numerado para no alterar su secuencia.
   { t: "👛 Wallets desde cero", href: "docs/wallets-desde-cero.html" },
   ...(hasManual ? [{ t: "📕 Manual (PDF)", href: "manual/MANUAL.pdf" }] : []),
   {

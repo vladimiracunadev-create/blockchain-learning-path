@@ -131,7 +131,7 @@ Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visua
 | **Analítica de datos** | [28](curriculum/28-data-analytics-onchain/README.md) | Minería de datos on-chain, grafos, patrones y detección | Analizar una cadena y defender las conclusiones con sus límites |
 | **Proyecto final** | [capstone](capstone/README.md) | Integración | Protocolo documentado, probado y desplegable |
 
-> 👛 Entre los módulos [04](curriculum/04-bitcoin/README.md) y [05](curriculum/05-ethereum-evm/README.md) se estudia la unidad transversal **[Wallets desde cero: uso, seguridad y recuperación](docs/wallets-desde-cero.md)** — obligatoria para principiantes. No altera la numeración 00–27.
+> 👛 Entre los módulos [04](curriculum/04-bitcoin/README.md) y [05](curriculum/05-ethereum-evm/README.md) se estudia la unidad transversal **[Wallets desde cero: uso, seguridad y recuperación](docs/wallets-desde-cero.md)** — obligatoria para principiantes. No altera la numeración de los módulos.
 
 ## 🧪 Laboratorios y proyectos ejecutables
 

@@ -2,7 +2,7 @@
 
 > **Nivel:** Inicial · ⏱️ **Duración estimada:** 120 min · **Fuente:** BIP-32/39/44, documentación oficial de Ethereum (ethereum.org), EIP-1193/6963/712/2612 y ERC-4337
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📚 Bibliografía](bibliografia.md)
-> 🧭 **Unidad transversal** — se estudia después del [módulo 04 · Bitcoin](../curriculum/04-bitcoin/README.md) y antes del [módulo 05 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md). No altera la numeración 00–27.
+> 🧭 **Unidad transversal** — se estudia después del [módulo 04 · Bitcoin](../curriculum/04-bitcoin/README.md) y antes del [módulo 05 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md). No altera la numeración de los módulos.
 > 📖 [Glosario de términos](glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](empieza-aqui.md)
 
 ---

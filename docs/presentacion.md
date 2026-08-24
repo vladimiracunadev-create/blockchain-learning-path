@@ -59,8 +59,8 @@ pnpm build:presentacion
 
 | Lo que hay dentro | Cuánto |
 |---|---|
-| Módulos secuenciales (00→27), en ocho etapas | **28** |
-| Prácticas guiadas con evidencia y criterio de aceptación | **70** |
+| Módulos secuenciales (00→28), en nueve etapas | **29** |
+| Prácticas guiadas con evidencia y criterio de aceptación | **83** |
 | Pruebas automatizadas que la CI ejecuta en cada cambio | **327** |
 
 > **Pauta · 6 min.** Esta lámina fija el tono de toda la charla; es la más importante
@@ -98,6 +98,7 @@ pnpm build:presentacion
 | **Producción** | 16–18 | Infraestructura, empresa, implementación |
 | **Finanzas on-chain** | 19–25 | DeFi, dinero, stablecoins, MDBC, pagos, tokenización |
 | **Institucional** | 26–27 | Custodia, identidad digital, regulación |
+| **Analítica de datos** | 28 | Minería de datos on-chain, grafos, patrones, anomalías |
 
 > **Pauta · 7 min.** Este es el mapa del programa: deja que el público lo mire unos
 > segundos en silencio antes de hablar.
@@ -128,11 +129,14 @@ pnpm build:presentacion
 > - **Institucional** (26–27): custodia, identidad y regulación comparada —Chile, MiCA,
 >   Estados Unidos, América Latina y estándares internacionales—. El cumplimiento no es
 >   un trámite que se añade al final: es una restricción de diseño.
+> - **Analítica de datos** (28): leer la propia cadena como fuente de datos —grafos,
+>   patrones y detección de anomalías— y, sobre todo, saber qué NO se puede concluir:
+>   una dirección no es una persona y un patrón no es una prueba.
 >
-> Si vas corto de tiempo, este es el punto donde recortar: da las ocho etapas en dos
+> Si vas corto de tiempo, este es el punto donde recortar: da las nueve etapas en dos
 > frases y salta a la lámina 4.
 
-## 4 · Cómo se aprende: un módulo y 70 laboratorios
+## 4 · Cómo se aprende: un módulo y 83 laboratorios
 
 **Los 29 módulos tienen la misma anatomía, y ninguno se aprueba solo leyendo.**
 
