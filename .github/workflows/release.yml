@@ -184,7 +184,7 @@ jobs:
           name: ${{ github.event.inputs.etiqueta || github.ref_name }}
           body: |
             Programa completo en español, de los fundamentos de blockchain a la
-            infraestructura financiera programable: 28 módulos, 71 prácticas y proyecto final.
+            infraestructura financiera programable: 29 módulos, 83 prácticas y proyecto final.
 
             ## Descargas
 

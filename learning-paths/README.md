@@ -131,7 +131,7 @@ flowchart TD
 ## Navegación
 
 - [Inicio del programa](../README.md)
-- [Currículo completo (28 módulos)](../curriculum/README.md)
+- [Currículo completo (29 módulos)](../curriculum/README.md)
 - [Catálogo de laboratorios](../labs/CATALOG.md)
 - [Evaluación](../docs/evaluacion.md) · [Checkpoints](../assessments/checkpoints.md)
 - [Sección de industria](../industria/README.md) · [Roadmap](../ROADMAP.md)

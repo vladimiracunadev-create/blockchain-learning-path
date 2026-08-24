@@ -2,12 +2,12 @@
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** textos normativos oficiales (Reglamento MiCA, Ley 21.521 de Chile), Recomendaciones del GAFI/FATF, estándares del Comité de Basilea y de IOSCO
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [26 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [🎓 Proyecto final](../../capstone/README.md)
+> 🧭 ⬅️ **Anterior:** [26 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [28 · Blockchain Data Analytics y minería de datos on-chain](../28-data-analytics-onchain/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
 
-Último módulo antes del capstone, y el que más disciplina exige: **la regulación no se
+Cierre de la etapa institucional, y el módulo que más disciplina exige: **la regulación no se
 aprende de memoria, se aprende a leer**. Las normas cambian, difieren entre países y llegan
 tarde a la tecnología. Lo que no cambia es la estructura: quién dicta qué, con qué rango,
 sobre qué actividad, y qué obligación concreta genera.
@@ -348,4 +348,4 @@ es un análisis incompleto.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 26 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [🎓 Proyecto final](../../capstone/README.md)
+⬅️ [Módulo 26 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 28 · Blockchain Data Analytics y minería de datos on-chain](../28-data-analytics-onchain/README.md)

@@ -2,7 +2,7 @@
 
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📖 Bibliografía](bibliografia.md)
 
-Glosario de referencia de los términos que usan los módulos 00-27, los laboratorios y el capstone. Se privilegia el término en español con el anglicismo entre paréntesis cuando el sector lo usa de forma dominante. Para profundizar en cada tema, consulta [recursos-oficiales.md](recursos-oficiales.md).
+Glosario de referencia de los términos que usan los módulos 00-28, los laboratorios y el capstone. Se privilegia el término en español con el anglicismo entre paréntesis cuando el sector lo usa de forma dominante. Para profundizar en cada tema, consulta [recursos-oficiales.md](recursos-oficiales.md).
 
 ## Fundamentos y criptografía
 
@@ -148,6 +148,15 @@ Glosario de referencia de los términos que usan los módulos 00-27, los laborat
 - **Consorcio**: grupo de organizaciones que operan una red permisionada compartida con gobernanza contractual.
 - **Tokenización**: representación de un activo o derecho como token, con el desafío central de que el vínculo legal off-chain sea exigible.
 - **Custodia**: guarda de claves por un tercero regulado; alternativa a la autocustodia con otros riesgos y obligaciones.
+- **Minería de datos blockchain**: análisis de bloques, transacciones, direcciones, tokens y eventos para hallar patrones. No produce bloques ni monedas: se distingue de la **minería de criptomonedas**, que es consenso. Ver [módulo 28](../curriculum/28-data-analytics-onchain/README.md).
+- **On-chain analytics**: análisis limitado a lo escrito en la cadena. **Blockchain intelligence** añade fuentes y etiquetas externas, y con ellas los juicios y su margen de error.
+- **Verdad de campo (ground truth)**: conjunto de casos cuya etiqueta real se conoce; sin ella no se puede calcular el recall de un detector, y en una cadena real casi nunca existe.
+- **Fan-in / fan-out**: convergencia de muchas direcciones en una / reparto de una a muchas. Son **indicadores**, compatibles con actividad legítima.
+- **Cadena de pelado (peel chain)**: secuencia en la que se desprenden importes pequeños mientras el resto avanza a direcciones nuevas.
+- **Taint (marca de procedencia)**: propagación de la procedencia de unos fondos por el grafo; el reparto **depende del criterio** (proporcional, FIFO, LIFO, haircut).
+- **Reorganización (reorg)**: sustitución de bloques ya vistos por otra rama; los descartados quedan **huérfanos** y sus transacciones no deben contarse.
+- **Idempotencia (en un ETL)**: procesar dos veces la misma entrada no duplica el resultado. Imprescindible porque los reintentos y los reorgs re-entregan datos.
+- **Precisión y recall**: de lo marcado, cuánto era correcto / de lo real, cuánto se encontró. Se mueven en sentidos opuestos al ajustar el umbral.
 - **RPC (remote procedure call)**: interfaz por la que aplicaciones consultan nodos (propios o de proveedores como Alchemy/Infura).
 - **Indexador**: servicio que transforma eventos on-chain en datos consultables (por ejemplo, The Graph o un indexador propio).
 - **IOPS**: operaciones de entrada/salida por segundo; el disco (NVMe) suele ser el cuello de botella real al operar nodos, más que la CPU.

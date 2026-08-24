@@ -2,7 +2,7 @@
 
 > [⬅️ Volver al programa](../../README.md) · [🖥️ App de Windows](../desktop/README.md) · [📚 Currículo](../../curriculum/README.md)
 
-El curso completo en el teléfono: **28 módulos, las 71 prácticas, los
+El curso completo en el teléfono: **29 módulos, las 83 prácticas, los
 ADR, el manual en PDF y la autoevaluación de cada módulo**, todo dentro del APK.
 Una vez instalada **no necesita conexión**, que es justo lo que hace falta para
 estudiar en el metro o en un aula sin wifi.

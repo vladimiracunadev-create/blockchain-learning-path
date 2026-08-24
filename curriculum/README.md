@@ -2,8 +2,8 @@
 
 > [⬅️ Volver al programa](../README.md) · [📖 Bibliografía y fuentes](../docs/bibliografia.md) · [🧪 Laboratorios](../labs/CATALOG.md) · [🗺️ Roadmap](../ROADMAP.md)
 
-28 módulos progresivos (00–27), de los fundamentos criptográficos a la infraestructura
-financiera programable: criptografía, Bitcoin, Ethereum, contratos, seguridad, producción,
+29 módulos progresivos (00–28), de los fundamentos criptográficos a la infraestructura
+financiera programable y a la analítica de datos on-chain: criptografía, Bitcoin, Ethereum, contratos, seguridad, producción,
 y después dinero, stablecoins, MDBC, pagos, tokenización, mercados de capitales, custodia
 y regulación. Cada módulo enlaza al siguiente y trae su
 **fuente de referencia**, un **esquema visual**, un laboratorio y un reto verificable.
@@ -38,6 +38,9 @@ flowchart LR
     subgraph N7["Institucional"]
         M26["26 Custodia e identidad"] --> M27["27 Regulación"]
     end
+    subgraph N8["Analítica de datos"]
+        M28["28 Data Analytics on-chain"]
+    end
     M00 --> M01
     M03 --> M04
     M07 --> M08
@@ -45,7 +48,8 @@ flowchart LR
     M15 --> M16
     M18 --> M19
     M25 --> M26
-    M27 --> CAP["🎓 Capstone"]
+    M27 --> M28
+    M28 --> CAP["🎓 Capstone"]
 ```
 
 ## Índice
@@ -80,6 +84,7 @@ flowchart LR
 | 25 | [Mercados de capitales on-chain](25-mercados-capitales-onchain/README.md) | ¿Cómo se emite, negocia y liquida un valor? | CPMI-IOSCO — PFMI |
 | 26 | [Custodia, wallets institucionales e identidad](26-custodia-identidad/README.md) | ¿Quién tiene la llave y cómo se prueba quién eres? | BIPs · ERC-4337 · W3C |
 | 27 | [Regulación y cumplimiento](27-regulacion-cumplimiento/README.md) | ¿Qué obliga la norma y quién la dicta? | MiCA · GAFI · Basilea · CMF |
+| 28 | [Blockchain Data Analytics y minería de datos on-chain](28-data-analytics-onchain/README.md) | ¿Qué se puede saber —y qué no— leyendo la cadena? | Bitcoin Core · ethereum.org · EIP-20 · GAFI |
 
 > 👛 **Unidad transversal:** [Wallets desde cero: uso, seguridad y recuperación](../docs/wallets-desde-cero.md)
 > se estudia **entre el módulo 04 y el 05** y es obligatoria para principiantes: qué administra
@@ -118,6 +123,7 @@ Pectra/EIP-7702) para mantener el material al día.
 | Producción | 16–18 | Infraestructura real, caso de negocio e implementación en la empresa |
 | Finanzas on-chain | 19–25 | DeFi, dinero y liquidación, stablecoins, MDBC, pagos, tokenización y mercados |
 | Institucional y regulación | 26–27 | Custodia, identidad digital, cumplimiento y marcos regulatorios |
+| Analítica de datos on-chain | 28 | Minería de datos blockchain, grafos, patrones, anomalías y sus límites |
 
 Empieza por el [Módulo 00 · Orientación](00-orientacion/README.md).
 

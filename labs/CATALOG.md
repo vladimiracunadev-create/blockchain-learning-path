@@ -1,8 +1,8 @@
-# 🧪 Catálogo de 71 prácticas
+# 🧪 Catálogo de 83 prácticas
 
 > [⬅️ Cuaderno de laboratorios](guides/README.md) · [📚 Currículo](../curriculum/README.md) · [🏠 Programa](../README.md)
 
-Las 71 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
+Las 83 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
 del currículo que la sustenta y a su **resolución explicada** (cómo se resuelve, el
 comando, la salida esperada y el error común).
 
@@ -134,6 +134,32 @@ Todas son **simulaciones locales**: sin red, sin claves y sin fondos.
 | 68 | Mercado tokenizado en contratos | avanzado | **auto** · Foundry | [22](../curriculum/22-deposito-tokenizado-cbdc/README.md) | [ver](guides/06-finanzas-onchain.md) |
 | 69 | Política de custodia M-de-N | avanzado | **auto** | [26](../curriculum/26-custodia-identidad/README.md) | [ver](guides/06-finanzas-onchain.md) |
 | 70 | Cribado por riesgo y Regla de Viaje | avanzado | **auto** | [27](../curriculum/27-regulacion-cumplimiento/README.md) | [ver](guides/06-finanzas-onchain.md) |
+
+## Prácticas 72–83 · Blockchain Data Analytics y minería de datos on-chain
+
+📖 Resolución explicada del bloque: [07-data-analytics.md](guides/07-data-analytics.md) · Teoría: [módulo 28](../curriculum/28-data-analytics-onchain/README.md).
+
+Todas trabajan sobre una **cadena sintética determinista** (dos modelos, UTXO y cuentas, con
+eventos, mempool, reorganizaciones y patrones plantados): sin red, sin claves, sin fondos y sin
+datos personales.
+
+| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+|---:|---|---|---|---|---|
+| 72 | Anatomía de un bloque campo por campo | inicial | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 73 | Transacción Bitcoin frente a transacción EVM | inicial | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 74 | Extracción por RPC con checkpoint y reorganización | intermedio | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 75 | Normalizar, validar y almacenar sin duplicar | intermedio | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 76 | Direcciones activas, volumen y comisiones | intermedio | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 77 | Eventos de un contrato de token | intermedio | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 78 | Grafo de direcciones y transacciones | profesional | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 79 | Rastreo de fondos en un caso simulado | profesional | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 80 | Fan-in, fan-out y cadena de pelado | profesional | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 81 | Detección de anomalías y su evaluación | avanzado | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 82 | Panel de indicadores on-chain | avanzado | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 83 | Explorador analítico (proyecto final del módulo) | avanzado | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+
+> Las prácticas 72–83 continúan la numeración sin renumerar nada: el 71 es la unidad de wallets
+> y los números 01–70 conservan su identidad en progresos, guías y registros ya existentes.
 
 ---
 

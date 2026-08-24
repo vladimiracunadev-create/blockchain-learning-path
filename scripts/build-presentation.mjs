@@ -153,7 +153,7 @@ const deckSlides = slides.map((s) => {
   <div class="tope"><span class="marca">${s.n === 1 ? "🎤 Muestra del programa" : "⛓️ Blockchain Learning Path"}</span><span class="pag">${s.n} / ${slides.length}</span></div>
   <h2>${esc(s.titulo)}</h2>
   <div class="zona"><div class="contenido${claseDensidad(cuerpo)}">${cuerpo}</div></div>
-  <div class="pie"><span>v${version} · 28 módulos · 71 prácticas</span><span>${SITE.replace("https://", "")}</span></div>
+  <div class="pie"><span>v${version} · 29 módulos · 83 prácticas</span><span>${SITE.replace("https://", "")}</span></div>
 </section>`;
 }).join("\n");
 
@@ -276,7 +276,7 @@ const pauta = `<!doctype html>
   <div class="escudo">⛓️</div>
   <h1>Pauta del expositor</h1>
   <p><strong>Blockchain Learning Path</strong> · muestra del programa</p>
-  <p>28 módulos · 71 prácticas · de cero a la infraestructura financiera</p>
+  <p>29 módulos · 83 prácticas · de cero a la infraestructura financiera</p>
   <div class="meta"><span>v${version}</span><span>${slides.length} diapositivas</span><span>≈ ${duracion} min</span></div>
 </div>
 

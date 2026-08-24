@@ -35,7 +35,7 @@ pnpm build:presentacion
 
 **De cero a la infraestructura financiera programable, en español.**
 
-- 28 módulos secuenciales · 71 prácticas ejecutables · un proyecto final.
+- 29 módulos secuenciales · 83 prácticas ejecutables · un proyecto final.
 - Criptografía, Bitcoin, Ethereum, contratos, seguridad, producción, dinero y regulación.
 - Web, manual en PDF y apps que **funcionan sin conexión**.
 - Material **abierto**: código MIT, contenido CC BY 4.0.
@@ -61,7 +61,7 @@ pnpm build:presentacion
 |---|---|
 | Módulos secuenciales (00→27), en ocho etapas | **28** |
 | Prácticas guiadas con evidencia y criterio de aceptación | **70** |
-| Pruebas automatizadas que la CI ejecuta en cada cambio | **196** |
+| Pruebas automatizadas que la CI ejecuta en cada cambio | **327** |
 
 > **Pauta · 6 min.** Esta lámina fija el tono de toda la charla; es la más importante
 > de las seis y merece que le dediques tiempo.
@@ -77,14 +77,14 @@ pnpm build:presentacion
 > programable. Ese es el arco completo, y es lo que separa este material de un curso de
 > Solidity.
 >
-> Cierra con la tabla, sin leerla entera. Destaca dos números. **Las 71 prácticas**,
+> Cierra con la tabla, sin leerla entera. Destaca dos números. **Las 83 prácticas**,
 > porque significan que nadie termina el programa habiendo solo leído: cada una declara
-> qué actividad hace, qué evidencia produce y con qué criterio se acepta. Y **las 196
+> qué actividad hace, qué evidencia produce y con qué criterio se acepta. Y **las 327
 > pruebas automatizadas**, porque significan que el material se comprueba ejecutándolo,
 > no afirmándolo. Añade que esas cifras las verifica la propia integración continua: si
 > alguien añade un módulo y no actualiza el texto, la comprobación falla y no se publica.
 
-## 3 · Los 28 módulos en ocho etapas
+## 3 · Los 29 módulos en nueve etapas
 
 **Cada módulo asume el anterior. Se estudian en orden.**
 
@@ -134,14 +134,14 @@ pnpm build:presentacion
 
 ## 4 · Cómo se aprende: un módulo y 70 laboratorios
 
-**Los 28 módulos tienen la misma anatomía, y ninguno se aprueba solo leyendo.**
+**Los 29 módulos tienen la misma anatomía, y ninguno se aprueba solo leyendo.**
 
 - 🎯 **Objetivos** medibles · 🗺️ **temas** con su porqué · 🧩 **esquema visual**.
 - 🧠 **Modelo mental** con su analogía y los **límites** de la analogía.
 - 🔬 **Profundización** con ejemplos numéricos · ⚠️ **errores frecuentes** (síntoma → causa).
 - 🧪 **Laboratorio guiado** y ⚡ **reto verificable** con criterio de aceptación.
 - 🔗 **Referencias** a fuentes primarias, con enlaces vivos y comprobados cada semana.
-- **71 prácticas**: 43 con verificación ejecutable (`pnpm lab:*`), el resto con rúbrica.
+- **83 prácticas**: 55 con verificación ejecutable (`pnpm lab:*`), el resto con rúbrica.
 - Contratos con **Foundry** (fuzzing e invariantes), dApp con **viem** e indexador.
 
 > **Pauta · 7 min.** Aquí conviene abrir un módulo real en el sitio y recorrerlo con el
@@ -175,7 +175,7 @@ pnpm build:presentacion
 - Contratos **vulnerables a propósito**, con su exploit ejecutable y su corrección.
 - Reentrada, control de acceso, desbordamiento y dependencia de oráculos, con **Slither** en la CI.
 - Cuatro casos reales con las cuentas hechas: **Terra/UST**, **FTX**, **puente Ronin** y **El Salvador**.
-- **196 pruebas** en cada cambio, más comprobaciones de coherencia y de enlaces vivos.
+- **327 pruebas** en cada cambio, más comprobaciones de coherencia y de enlaces vivos.
 - Los binarios se verifican **abriéndolos y contando el contenido**: un build en verde no prueba que la app lleve el curso dentro.
 
 > **Pauta · 6 min.** Dos mensajes, y los dos importan.
@@ -208,7 +208,7 @@ pnpm build:presentacion
 - **Rutas por perfil:** desarrollo, arquitectura, auditoría, producto, investigación, empresa, DeFi, banca y cumplimiento.
 - Cada ruta termina en un **entregable de portafolio**: dApp probada, ADR, informe de auditoría, ficha de riesgo.
 - **Proyecto final**: protocolo probado, dApp, datos, arquitectura, modelo de amenazas y caso de negocio.
-- **Llévatelo entero**: sitio web, manual PDF de ~385 páginas, app de Windows y APK de Android, sin conexión.
+- **Llévatelo entero**: sitio web, manual PDF de ~400 páginas, app de Windows y APK de Android, sin conexión.
 - **Empieza hoy:** abre *Empieza aquí* → haz el diagnóstico → módulo 00 y `pnpm lab:hash`.
 - `github.com/vladimiracunadev-create/blockchain-learning-path`
 

@@ -41,9 +41,10 @@ resiste.
 | Entrega contra pago, liquidez del neteo y ciclo de un bono | `pnpm test` — `labs/25-mercados-capitales` |
 | Política de cuórum M-de-N frente a compromiso y a pérdida | `pnpm test` — `labs/26-custodia` |
 | Enfoque basado en riesgo y Regla de Viaje | `pnpm test` — `labs/27-cumplimiento` |
+| Anatomía de bloques, extracción con reorgs, grafos, patrones y detección de anomalías | `pnpm test` — `labs/28-data-analytics` y [`projects/explorador-analitico/`](../projects/explorador-analitico/README.md) |
 | Mercado tokenizado: dinero mayorista simulado, bono y DvP atómico | `forge test` en [`labs/22-cbdc-mercado-tokenizado/`](../labs/22-cbdc-mercado-tokenizado/README.md) |
 
-Son **196 pruebas automatizadas** (158 de Node y 38 de Foundry) que la CI ejecuta en
+Son **327 pruebas automatizadas** (289 de Node y 38 de Foundry) que la CI ejecuta en
 cada cambio. Una afirmación que se contradiga con el código hace fallar el build.
 Eso es más fuerte que una cita: no apela a la autoridad de un autor, se comprueba.
 
@@ -113,6 +114,7 @@ legalmente gratuita, se enlaza esa.
 | [25 · Mercados de capitales on-chain](../curriculum/25-mercados-capitales-onchain/README.md) | [CPMI-IOSCO — *Principles for Financial Market Infrastructures*](https://www.bis.org/cpmi/publ/d101.htm) · [BCE — T2S](https://www.ecb.europa.eu/paym/target/t2s/html/index.en.html) |
 | [26 · Custodia e identidad](../curriculum/26-custodia-identidad/README.md) | [BIPs 32/39/44](https://github.com/bitcoin/bips) · [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337) · [W3C — DID](https://www.w3.org/TR/did-core/) y [credenciales verificables](https://www.w3.org/TR/vc-data-model-2.0/) · [NIST SP 800-57](https://csrc.nist.gov/projects/key-management) |
 | [27 · Regulación y cumplimiento](../curriculum/27-regulacion-cumplimiento/README.md) | [MiCA](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32023R1114) · [GAFI/FATF](https://www.fatf-gafi.org/) · [Comité de Basilea](https://www.bis.org/bcbs/) · [IOSCO](https://www.iosco.org/) · [CMF](https://www.cmfchile.cl/) y [Ley Chile](https://www.bcn.cl/leychile) |
+| [28 · Blockchain Data Analytics y minería de datos on-chain](../curriculum/28-data-analytics-onchain/README.md) | [Bitcoin Core](https://bitcoincore.org/en/doc/) · [Ethereum JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) · [EIP-20](https://eips.ethereum.org/EIPS/eip-20) · [The Graph](https://thegraph.com/docs/en/) · [FATF/GAFI](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html) · Antonopoulos/Harding — [*Mastering Bitcoin* (3.ª ed., libre)](https://github.com/bitcoinbook/bitcoinbook) |
 
 > **Obras libres.** *Mastering Bitcoin*, *Mastering Ethereum*, *Mastering the Lightning
 > Network*, *Distributed Systems*, *Proofs, Arguments, and Zero-Knowledge* y el

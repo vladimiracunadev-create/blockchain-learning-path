@@ -1,8 +1,8 @@
 # Cuaderno de prácticas
 
-El cuaderno de laboratorios reúne las **71 prácticas** del programa, organizadas en **6 cuadernos por etapa** que acompañan el avance por los 28 módulos del currículo y la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md). Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
+El cuaderno de laboratorios reúne las **83 prácticas** del programa, organizadas en **7 cuadernos por etapa** que acompañan el avance por los 29 módulos del currículo y la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md). Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
 
-## Los seis cuadernos
+## Los siete cuadernos
 
 | Cuaderno | Prácticas | Módulos que acompaña |
 |---|---|---|
@@ -12,6 +12,7 @@ El cuaderno de laboratorios reúne las **71 prácticas** del programa, organizad
 | [Profesional y seguridad](04-professional-security.md) | 31–40 | 08–11 (tokens, seguridad, oráculos, DAO) |
 | [Avanzado y capstone](05-advanced-capstone.md) | 41–50 | 12–18 y proyecto final |
 | [Finanzas on-chain](06-finanzas-onchain.md) | 51–70 | 19–27 (DeFi, dinero, stablecoins, MDBC, pagos, tokenización, mercados, custodia, regulación) |
+| [Data analytics on-chain](07-data-analytics.md) | 72–83 | 28 (minería de datos blockchain, grafos, patrones, anomalías y proyecto final) |
 
 ## Qué contiene cada guía
 

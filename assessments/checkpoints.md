@@ -23,6 +23,14 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Demostrar manipulación en la mini cadena | Bloque alterado y verificación que falla | ¿Por qué cambiar un bloque invalida los siguientes? |
 | Comparar mecanismos de consenso con criterios claros | Tabla con cuatro criterios (coste Sybil, finalidad, etc.) | ¿Cómo afecta una partición a seguridad y vivacidad? |
 
+## Etapa 28 · Analítica de datos on-chain
+
+| Qué debes poder hacer | Evidencia | Autoevaluación |
+|---|---|---|
+| Extraer datos de una cadena de forma reanudable e idempotente | `pnpm lab:extraccion` y `pnpm lab:normalizar` con su bitácora | ¿Por qué una respuesta truncada no es un error del nodo? |
+| Medir un detector, no solo ejecutarlo | Precisión, recall y falsos positivos de tu detector | ¿Por qué el recall no se puede calcular en una cadena real? |
+| Separar hecho, indicador, inferencia e hipótesis | El informe del [explorador analítico](../projects/explorador-analitico/README.md) | ¿Qué te faltaría para atribuir una dirección a una persona, y quién debería autorizarlo? |
+
 ## Etapas 04–07 · Desarrollo
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |

@@ -93,6 +93,8 @@ const NAV = [
       { t: "04 · Profesional y seguridad", href: "labs/guides/04-professional-security.html" },
       { t: "05 · Avanzado y capstone", href: "labs/guides/05-advanced-capstone.html" },
       { t: "06 · Finanzas on-chain", href: "labs/guides/06-finanzas-onchain.html" },
+      { t: "07 · Data analytics on-chain", href: "labs/guides/07-data-analytics.html" },
+      { t: "Explorador analítico (proyecto)", href: "projects/explorador-analitico/README.html" },
       { t: "Mercado tokenizado (Foundry)", href: "labs/22-cbdc-mercado-tokenizado/README.html" },
     ],
   },

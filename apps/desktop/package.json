@@ -1,7 +1,7 @@
 {
   "name": "@blockchain-course/desktop",
   "productName": "Blockchain Learning Path",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "private": true,
   "description": "Curso completo de blockchain para leer sin conexión en Windows",
   "author": "Vladimir Acuña",

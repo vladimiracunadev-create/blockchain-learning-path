@@ -7,6 +7,66 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 *Nada pendiente.*
 
+## [0.10.0] · 2026-08-24
+
+Novena etapa del programa: **leer la propia cadena como fuente de datos**. El currículo pasa de
+28 a 29 módulos sin renumerar ni reescribir nada de lo existente, y las prácticas de 71 a 83.
+
+### Añadido
+
+- **Módulo [28 · Blockchain Data Analytics y minería de datos on-chain](curriculum/28-data-analytics-onchain/README.md)**,
+  organizado en cuatro niveles: **fundamentos** (qué contiene una cadena, bloques y confirmaciones,
+  UTXO frente a cuentas, seudonimato frente a anonimato, exploradores, qué se puede y qué no se
+  puede saber), **adquisición y preparación** (nodo, RPC, API, indexadores, mempool, eventos,
+  ETL/ELT, limpieza, duplicados, bloques huérfanos y reorganizaciones, almacenamiento SQL/NoSQL/grafo,
+  procedencia del dato), **análisis on-chain** (volumen, comisiones y gas, direcciones activas y
+  nuevas, concentración, métricas de token, actividad de contratos, grafos, fan-in/fan-out y
+  visualización) y **avanzado** (anomalías, agrupamiento aproximado, aprendizaje automático,
+  comportamiento coordinado, análisis entre cadenas, patrones de fraude, precisión y recall,
+  explicabilidad, privacidad, ética y límites de la atribución de identidad). Abre distinguiendo
+  **minería de criptomonedas** (consenso) de **minería de datos blockchain** (análisis), y
+  delimitando *blockchain analytics*, *on-chain analytics* y *blockchain intelligence*.
+- **12 prácticas nuevas (72–83)** con su [cuaderno de resolución](labs/guides/07-data-analytics.md):
+  anatomía de un bloque, transacción Bitcoin frente a EVM, extracción por RPC con checkpoint y
+  reorganización, normalización idempotente, indicadores de actividad, eventos de token,
+  grafo de direcciones, rastreo de fondos, fan-in/fan-out/pelado, detección de anomalías con su
+  evaluación, panel de indicadores y proyecto final. **Todas auto-verificables.**
+- **Cadena sintética determinista** ([`labs/28-data-analytics/cadena-sintetica.mjs`](labs/28-data-analytics/cadena-sintetica.mjs)):
+  dos modelos (UTXO con salidas de cambio y comisión deducida; cuentas con `nonce`, gas y eventos
+  ERC-20), patrones plantados —fan-in de 9, fan-out de 8, cadena de pelado de 7 pasos y 3 anomalías—
+  y su **verdad de campo**, que es lo que permite medir precisión y recall de forma honesta.
+  Acompañada de un [nodo RPC simulado](labs/28-data-analytics/rpc-simulado.mjs) con paginación,
+  fallos transitorios, mempool y reorganizaciones.
+- **Proyecto final [«Explorador analítico de actividad blockchain»](projects/explorador-analitico/README.md)**:
+  importa el dataset, consulta bloques, transacciones y direcciones, filtra por rango, día, activo
+  y dirección, calcula indicadores, construye el grafo, aplica los detectores y **exporta un informe
+  que incluye siempre sus limitaciones** y la clasificación hecho / indicador / inferencia / hipótesis.
+  Compone los módulos de los laboratorios en lugar de reimplementarlos.
+- **131 pruebas automatizadas nuevas** (196 → 327) y 12 comandos `pnpm lab:*`, más
+  `pnpm lab:explorador`.
+- Autoevaluación del módulo con **5 preguntas** (112 → 117), checkpoint propio, dos semanas de
+  syllabus, plan de clase por niveles y fila en la bibliografía con fuentes primarias fechadas.
+
+### Cambiado
+
+- **Currículo: 28 → 29 módulos** (00–28) en **nueve** etapas; el módulo 27 encadena ahora con el 28,
+  y el 28 cierra contra el capstone. **La numeración 00–27 no se tocó.**
+- **Catálogo: 71 → 83 prácticas** (55 auto-verificables) y **7 cuadernos** de resolución.
+- `scripts/run-tests.mjs` descubre también las pruebas de `projects/`: antes se contaban en
+  `pnpm check` y no se ejecutaban nunca, la peor combinación posible.
+- El panel de indicadores agrega la serie con la **granularidad adecuada a la ventana observada**
+  (`serieTemporal`); agregar doce minutos «por día» producía un único punto y un gráfico que
+  aparentaba información sin tenerla. `serieDiaria` se conserva para datos de años.
+
+### Seguridad y ética
+
+- Todo el material trabaja con **datos sintéticos**: sin red, sin claves, sin fondos y sin datos
+  personales. Ningún laboratorio firma ni envía transacciones.
+- Cada laboratorio y el informe del proyecto repiten y verifican por prueba automática que **una
+  dirección no es una persona**, que un patrón es un **indicador** y no una prueba, que el
+  agrupamiento es una aproximación y que todo detector produce **falsos positivos** que paga
+  alguien real. El perfil de dirección del explorador no expone ningún campo de identidad.
+
 ## [0.9.1] · 2026-08-24
 
 ### Añadido

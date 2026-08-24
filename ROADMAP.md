@@ -38,6 +38,7 @@ principal o de forma independiente por quien ya domine la parte técnica.
 | 32 | Tokenización y RWA (módulo 24) | Memorando de tokenización |
 | 33 | Mercados de capitales on-chain (módulo 25) | Arquitectura de un mercado de bonos |
 | 34 | Custodia, identidad y regulación (módulos 26–27) | Política de custodia y análisis regulatorio |
+| 35–36 | Blockchain Data Analytics y minería de datos on-chain (módulo 28) | Explorador analítico con informe, métricas de detección y límites declarados |
 
 ## Criterios para avanzar
 
@@ -62,7 +63,8 @@ principal o de forma independiente por quien ya domine la parte técnica.
 | 0.8.0 | profundización de los 19 módulos (11 900 → 24 218 palabras) en cuatro capas para principiante y experto, guía «Empieza aquí», glosario enlazado en todos los módulos y 31 de 50 prácticas auto-verificadas | completada |
 | 0.8.1 | manual en PDF con la guía de entrada incluida (341 páginas) y cifras del manual verificadas en CI | completada |
 | 0.9.0 | etapa de finanzas on-chain e institucional: 9 módulos nuevos (19–27) sobre DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización y RWA, mercados de capitales, custodia e identidad y regulación; 20 prácticas nuevas, laboratorio de mercado tokenizado en Solidity, carpeta `regulation/`, casos reales y auditoría del programa | completada |
-| 0.9.1 | unidad transversal [Wallets desde cero](docs/wallets-desde-cero.md) (uso, seguridad y recuperación) entre los módulos 04 y 05, con la práctica 71 «Prevuelo de una transacción» (`pnpm lab:wallet-segura`, 10 pruebas) integrada en catálogo, guías, sitio, manual y apps | actual |
+| 0.9.1 | unidad transversal [Wallets desde cero](docs/wallets-desde-cero.md) (uso, seguridad y recuperación) entre los módulos 04 y 05, con la práctica 71 «Prevuelo de una transacción» (`pnpm lab:wallet-segura`, 10 pruebas) integrada en catálogo, guías, sitio, manual y apps | completada |
+| 0.10.0 | módulo 28 «Blockchain Data Analytics y minería de datos on-chain» en cuatro niveles (fundamentos, adquisición y preparación, análisis on-chain y avanzado), doce prácticas nuevas (72–83) sobre una cadena sintética determinista con verdad de campo, y el proyecto final «Explorador analítico de actividad blockchain» | actual |
 | 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

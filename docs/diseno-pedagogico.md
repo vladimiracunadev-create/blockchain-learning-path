@@ -5,7 +5,7 @@
 Este documento describe **cómo está diseñado el aprendizaje** del programa: el ciclo
 de trabajo de cada módulo, la taxonomía de objetivos, la construcción de una lección,
 el manejo de la carga cognitiva y la estrategia de evaluación. No es un temario; es la
-ingeniería instruccional que sostiene los 28 módulos.
+ingeniería instruccional que sostiene los 29 módulos.
 
 ## Principios
 

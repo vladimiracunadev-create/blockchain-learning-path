@@ -142,6 +142,11 @@
       "status": "pending",
       "score": null,
       "evidence": []
+    },
+    "28": {
+      "status": "pending",
+      "score": null,
+      "evidence": []
     }
   },
   "labs": {
@@ -426,6 +431,54 @@
       "evidence": ""
     },
     "71": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "72": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "73": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "74": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "75": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "76": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "77": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "78": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "79": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "80": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "81": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "82": {
+      "status": "pending",
+      "evidence": ""
+    },
+    "83": {
       "status": "pending",
       "evidence": ""
     }

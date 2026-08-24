@@ -45,6 +45,11 @@ Toda sesión se planifica con esta tabla: objetivo, actividad, tiempo y evidenci
 Los módulos 16–18 (producción: infraestructura, empresa e implementación) usan la misma
 plantilla con sesiones de laboratorio de operación y estudio de casos empresariales.
 
+El [módulo 28](../curriculum/28-data-analytics-onchain/README.md) (analítica de datos on-chain) se imparte en cuatro sesiones,
+una por nivel: fundamentos del dato · adquisición y preparación · indicadores y grafos ·
+anomalías, evaluación y ética. El error que debe detectar el alumno: **confundir una dirección
+con una persona y un indicador con una prueba**.
+
 ## Plan 1 · Fundamentos — Criptografía (módulo 01, Sesión A)
 
 Objetivo: distinguir hash, cifrado y firma, y explicar por qué un hash prueba integridad.

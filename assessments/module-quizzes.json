@@ -1262,6 +1262,61 @@
           "explanation": "Ley, norma, circular, guía, consulta y propuesta tienen efectos distintos. Declarar el rango es lo que separa informar de desinformar."
         }
       ]
+    },
+    "28-data-analytics-onchain": {
+      "titulo": "Blockchain Data Analytics y minería de datos on-chain",
+      "preguntas": [
+        {
+          "prompt": "¿Qué diferencia hay entre minar criptomonedas y minar datos de una blockchain?",
+          "options": [
+            "Son lo mismo: ambas producen bloques nuevos",
+            "Minar criptomonedas valida transacciones y crea bloques (consenso); minar datos analiza lo ya escrito para hallar patrones (conocimiento)",
+            "Minar datos consume más electricidad que minar criptomonedas"
+          ],
+          "answer": 1,
+          "explanation": "Comparten el verbo por herencia del inglés y nada más: una es una actividad de consenso que produce seguridad y recompensa; la otra es análisis de lo ya registrado y no produce ni una sola moneda."
+        },
+        {
+          "prompt": "Analizas transferencias de un token ERC-20 y el campo `valor` de todas las transacciones es 0. ¿Qué ocurre?",
+          "options": [
+            "Las transferencias fallaron y no movieron nada",
+            "El importe de un token no viaja en `valor` (que es el activo nativo), sino en el evento Transfer que emite el contrato",
+            "El token tiene cero decimales configurados"
+          ],
+          "answer": 1,
+          "explanation": "En el modelo de cuentas, mover un token es llamar a un contrato: el activo nativo transferido es 0 y el importe real vive en el log del evento. Leer `valor` para analizar tokens es el error más frecuente del nivel 1."
+        },
+        {
+          "prompt": "Tu extractor pide los bloques 0 a 999 y el nodo devuelve 10. ¿Cuál es la lectura correcta?",
+          "options": [
+            "El nodo falló: hay que reintentar la misma petición hasta que devuelva los 1000",
+            "Es el límite de página del proveedor: hay que seguir paginando desde el último bloque recibido",
+            "Faltan 990 bloques en la cadena porque quedaron huérfanos"
+          ],
+          "answer": 1,
+          "explanation": "Truncar una respuesta por rango no es un error, es el límite del proveedor. Un extractor que da por completa la respuesta se salta bloques en silencio: por eso se pagina y se guarda un checkpoint."
+        },
+        {
+          "prompt": "Tu detector marca 12 transferencias y 3 de ellas eran realmente anómalas, que son todas las que había. ¿Qué puedes afirmar?",
+          "options": [
+            "Recall 1,00 y precisión 0,25: las encontró todas, a costa de 9 falsos positivos",
+            "Precisión 1,00: acertó todas las que existían",
+            "Exactitud del 99 %, así que el modelo es fiable"
+          ],
+          "answer": 0,
+          "explanation": "Recall mide cuánto de lo real se encontró (3 de 3) y precisión cuánto de lo marcado era correcto (3 de 12). La exactitud es inútil aquí por el desequilibrio de clases: decir «todo legítimo» ya acertaría casi siempre."
+        },
+        {
+          "prompt": "Una dirección recibe fondos de nueve direcciones distintas en pocos bloques. ¿Qué puedes concluir?",
+          "options": [
+            "Que es una dirección de un delincuente que está reuniendo fondos",
+            "Que es un patrón de fan-in: un indicador compatible con un exchange, una nómina inversa o una recaudación legítima",
+            "Que las nueve direcciones pertenecen a la misma persona"
+          ],
+          "answer": 1,
+          "explanation": "El hecho es la convergencia de fondos; la explicación es una hipótesis. Un fan-in se ve idéntico en una recaudación legítima y en una consolidación ilícita: presentarlo como conclusión es convertir un indicador en una acusación."
+        }
+      ]
     }
   }
 }

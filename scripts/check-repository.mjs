@@ -40,14 +40,14 @@ console.log(`Repositorio válido: ${required.length} documentos esenciales prese
 
 const catalog = await readFile("labs/CATALOG.md", "utf8");
 const practices = catalog.match(/^\| \d{2} \|/gm) ?? [];
-if (practices.length !== 71) throw new Error(`Se esperaban 71 prácticas y existen ${practices.length}`);
+if (practices.length !== 83) throw new Error(`Se esperaban 83 prácticas y existen ${practices.length}`);
 
 const diagnostic = JSON.parse(await readFile("assessments/diagnostic.json", "utf8"));
 if (!Array.isArray(diagnostic.questions) || diagnostic.questions.length < 5) {
   throw new Error("Diagnóstico incompleto");
 }
 
-console.log("Catálogo: 71 prácticas. Diagnóstico: válido.");
+console.log("Catálogo: 83 prácticas. Diagnóstico: válido.");
 
 async function markdownFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -82,14 +82,14 @@ console.log("Enlaces Markdown locales: válidos.");
 
 const guideText = await Promise.all(
   ["01-foundations.md", "02-consensus-bitcoin.md", "03-evm-development.md", "04-professional-security.md",
-   "05-advanced-capstone.md", "06-finanzas-onchain.md"]
+   "05-advanced-capstone.md", "06-finanzas-onchain.md", "07-data-analytics.md"]
     .map((name) => readFile(join("labs/guides", name), "utf8"))
 );
 const guidedPractices = guideText.join("\n").match(/^## \d{2} ·/gm) ?? [];
-if (guidedPractices.length !== 71) {
-  throw new Error(`Se esperaban 71 guías prácticas y existen ${guidedPractices.length}`);
+if (guidedPractices.length !== 83) {
+  throw new Error(`Se esperaban 83 guías prácticas y existen ${guidedPractices.length}`);
 }
-console.log("Guías prácticas: 71/71.");
+console.log("Guías prácticas: 83/83.");
 
 // --- Autoevaluación por módulo -----------------------------------------------
 // Un quiz con una respuesta correcta fuera de rango o con opciones repetidas no
@@ -270,10 +270,10 @@ console.log(`Pruebas: ${total} (${pruebas.node} Node + ${pruebas.foundry} Foundr
 const catalogo = await readFile("labs/CATALOG.md", "utf8");
 const filasPractica = catalogo.match(/^\| \d+ \|.*$/gm) ?? [];
 const practicasAuto = filasPractica.filter((fila) => fila.includes("**auto**")).length;
-if (filasPractica.length !== 71) {
-  throw new Error(`El catálogo tiene ${filasPractica.length} prácticas y deberían ser 71.`);
+if (filasPractica.length !== 83) {
+  throw new Error(`El catálogo tiene ${filasPractica.length} prácticas y deberían ser 83.`);
 }
-const readmeAuto = /(\d+) de las 71 prácticas traen verificación ejecutable/
+const readmeAuto = /(\d+) de las 83 prácticas traen verificación ejecutable/
   .exec(await readFile("README.md", "utf8"));
 if (!readmeAuto) {
   throw new Error("El README ya no declara cuántas prácticas son auto-verificables.");
@@ -283,7 +283,7 @@ if (Number(readmeAuto[1]) !== practicasAuto) {
     `El README declara ${readmeAuto[1]} prácticas auto-verificadas y el catálogo marca ${practicasAuto}.`
   );
 }
-console.log(`Prácticas auto-verificadas: ${practicasAuto}/71, coincide con el README.`);
+console.log(`Prácticas auto-verificadas: ${practicasAuto}/83, coincide con el README.`);
 
 // --- Coherencia de versión ----------------------------------------------------
 // La versión vive en el package.json raíz. Cualquier otro sitio que la declare

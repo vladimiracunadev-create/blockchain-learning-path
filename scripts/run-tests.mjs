@@ -18,7 +18,11 @@ async function discover(directory) {
   return files.flat();
 }
 
-const testFiles = [...await discover("labs"), ...await discover("apps")].sort();
+// `projects/` alberga sobre todo contratos (que prueba Foundry), pero también el
+// proyecto final del módulo 28, que es JavaScript. Sin incluirlo aquí, sus
+// pruebas se contarían en `pnpm check` y no se ejecutarían nunca: la peor
+// combinación posible, porque la cifra prometida dejaría de estar respaldada.
+const testFiles = [...await discover("labs"), ...await discover("apps"), ...await discover("projects")].sort();
 if (!testFiles.length) throw new Error("No se encontraron pruebas");
 console.log(`Ejecutando ${testFiles.length} archivos de prueba.`);
 const result = spawnSync(process.execPath, ["--test", ...testFiles], { stdio: "inherit" });
