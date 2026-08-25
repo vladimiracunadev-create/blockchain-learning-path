@@ -107,7 +107,8 @@ Para generarlo todo desde el repositorio: `pnpm build:manual`, `pnpm app:windows
 
 - **7 diapositivas** con letra grande y lo esencial del recorrido, en 16:9.
 - Una **demo en vivo de 90 segundos** (`pnpm lab:hash` y `pnpm lab:remesa`) **con sus resultados impresos en la lámina**: si la terminal falla delante del público, señalas la tabla y sigues.
-- Una **pauta del expositor** con el guion hablado, el tiempo de cada lámina y qué se ve en pantalla, más **4 anexos** que son los que salvan una exposición: la comprobación de los diez minutos previos, qué recortar si tienes 10, 20 o 50 minutos en vez de 35, las preguntas que te va a hacer el público con la respuesta ya pensada, y lo que no hay que prometer.
+- Una **pauta del expositor escrita como un libreto de televisión**: en cada lámina, **lo que dices** va aparte —palabra por palabra, en intervenciones numeradas para no perder el sitio al levantar la vista— y **lo que haces** va aparte —qué abrir, dónde detenerte, qué recortar—, en un bloque gris que no se pronuncia nunca. Son dos cosas distintas y no se leen igual.
+- Y **4 anexos** que son los que salvan una exposición: la comprobación de los diez minutos previos, qué recortar si tienes 10, 20 o 50 minutos en vez de 35, las preguntas que te va a hacer el público con la respuesta ya redactada, y lo que no hay que prometer.
 
 La charla completa dura **≈35 minutos**, así que cabe holgada en una franja de 45 con preguntas.
 

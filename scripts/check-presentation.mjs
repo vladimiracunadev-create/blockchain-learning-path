@@ -64,6 +64,21 @@ if (anexosEnFuente < 1) {
   process.exit(1);
 }
 const pautaHtml = await readFile("presentacion/pauta.html", "utf8");
+
+// Cada lámina tiene que llegar a la pauta con sus DOS bloques: lo que se dice y lo
+// que se hace. Si alguno se pierde, la pauta sigue pareciendo correcta —tiene texto—
+// pero quien expone vuelve a leer en voz alta una instrucción de escena.
+for (const [clase, que] of [["guion", "el guion hablado"], ["indicaciones", "las indicaciones"]]) {
+  const encontrados = (pautaHtml.match(new RegExp(`class="${clase}"`, "g")) ?? []).length;
+  if (encontrados !== declaradasEnFuente) {
+    console.error(
+      `La pauta tiene ${encontrados} bloques con ${que} y la presentación tiene ` +
+      `${declaradasEnFuente} diapositivas: alguna lámina se quedó sin su parte.`
+    );
+    process.exit(1);
+  }
+}
+
 const anexosRenderizados = (pautaHtml.match(/class="anexo"/g) ?? []).length;
 if (anexosRenderizados !== anexosEnFuente) {
   console.error(

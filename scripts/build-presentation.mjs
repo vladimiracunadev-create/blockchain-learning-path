@@ -10,6 +10,16 @@
 // problema clásico de las presentaciones: el guion y las láminas se separan a la
 // segunda edición y acaban contando cosas distintas.
 //
+// Dentro de esa cita, la pauta se parte en dos secciones obligatorias, como el
+// libreto de un programa de televisión:
+//
+//   ### Guion         → lo que se pronuncia, palabra por palabra
+//   ### Indicaciones  → lo que se hace (abrir, señalar, recortar); NO se dice
+//
+// Van separadas porque se leen de forma distinta: el guion se lee en voz alta y las
+// indicaciones se miran de reojo. Mezcladas en el mismo párrafo —que es como estaban—
+// quien expone acaba leyendo en voz alta una instrucción de escena.
+//
 // Las secciones "## Anexo · Título" son la otra mitad del oficio de exponer —la
 // comprobación previa, los recortes por duración, las preguntas del público y las
 // líneas que no se cruzan—. NO se proyectan: se imprimen al final de la pauta.
@@ -99,7 +109,24 @@ for (const s of slides) {
   const min = /\*\*Pauta\s*·\s*(\d+)\s*min\.?\*\*/.exec(texto);
   if (!min) throw new Error(`La diapositiva ${s.n} no declara los minutos: usa "> **Pauta · N min.** …".`);
   s.minutos = Number(min[1]);
-  s.guion = texto.replace(/\*\*Pauta\s*·\s*\d+\s*min\.?\*\*\s*/, "");
+  const cuerpoPauta = texto.replace(/\*\*Pauta\s*·\s*\d+\s*min\.?\*\*\s*/, "");
+
+  // Guion e indicaciones son DOS COSAS DISTINTAS y se componen distinto. Mezclar
+  // "di esta frase" con "abre el módulo 01 en el sitio" en el mismo párrafo es lo
+  // que hace que quien expone se pierda leyendo en voz alta: el ojo no distingue
+  // lo que hay que pronunciar de lo que hay que hacer.
+  const partes = /###\s+Guion\s*\n([\s\S]*?)\n###\s+Indicaciones\s*\n([\s\S]*)$/.exec(cuerpoPauta);
+  if (!partes) {
+    throw new Error(
+      `La diapositiva ${s.n} (${s.titulo}) no separa el guion de las indicaciones.\n` +
+      'Usa dentro de la pauta: "### Guion" (lo que se dice, palabra por palabra) y ' +
+      '"### Indicaciones" (lo que se hace; no se pronuncia).'
+    );
+  }
+  s.guionHablado = partes[1].trim();
+  s.indicaciones = partes[2].trim();
+  if (!s.guionHablado) throw new Error(`La diapositiva ${s.n} tiene el guion vacío.`);
+  if (!s.indicaciones) throw new Error(`La diapositiva ${s.n} no tiene indicaciones.`);
 }
 const duracion = slides.reduce((total, s) => total + s.minutos, 0);
 
@@ -114,6 +141,29 @@ function cuerpoHtml(slide) {
 // caben con el cuerpo por defecto. En vez de dejar que el ajuste automático las
 // encoja mucho (y las vuelva ilegibles al proyectar), se compone ese contenido con
 // una escala tipográfica algo menor pero controlada.
+// Cada párrafo del guion es una intervención numerada: leyendo en voz alta y
+// levantando la vista cada pocas frases, el número es lo que permite volver al
+// sitio exacto donde se estaba. Un bloque de prosa corrida, no.
+// Un párrafo enteramente en negrita ("**Demo A · …**") no es una intervención: es un
+// rótulo que separa dos ramas del guion. No se numera ni se pronuncia como frase, o la
+// numeración dejaría de contar lo que hay que decir.
+function guionHtml(texto) {
+  let n = 0;
+  return texto
+    .split(/\n{2,}/)
+    .map((p) => p.trim().replace(/\s*\n\s*/g, " "))
+    .filter(Boolean)
+    .map((p) => {
+      const rotulo = /^\*\*([\s\S]+)\*\*$/.exec(p);
+      if (rotulo && !rotulo[1].includes("**")) {
+        return `<p class="rotulo">${marked.parseInline(rotulo[1])}</p>`;
+      }
+      n += 1;
+      return `<p class="linea"><span class="n">${n}</span>${marked.parseInline(p)}</p>`;
+    })
+    .join("\n");
+}
+
 function claseDensidad(html) {
   const filas = (html.match(/<tr>/g) ?? []).length;
   const puntos = (html.match(/<li>/g) ?? []).length;
@@ -276,15 +326,35 @@ const CSS_PAUTA = `
   .lamina p, .anexo p, .lamina li, .anexo li { orphans:3; widows:3; }
   .lamina .num { font-size:12pt; color:#fff; background:var(--acento); border-radius:8px; padding:3px 12px; font-weight:700; }
   .lamina .tiempo { font-size:11.5pt; color:var(--suave); white-space:nowrap; }
-  .rot { font-size:10.5pt; text-transform:uppercase; letter-spacing:.07em; color:var(--acento); font-weight:700; margin:0 0 6px; }
-  .pantalla { font-size:12pt; color:#33334a; background:#faf9ff; border-radius:8px; padding:10px 16px; }
+  .rot { font-size:10pt; text-transform:uppercase; letter-spacing:.07em; color:var(--suave); font-weight:700; margin:0 0 6px; }
+  .rot .aparte { text-transform:none; letter-spacing:0; font-weight:400; font-size:9.5pt; }
+  /* El rótulo del guion pesa más que los otros dos: en una hoja leída de reojo,
+     el ojo tiene que caer en lo que hay que pronunciar, no en el contexto. */
+  .rot.decir { font-size:11.5pt; color:var(--acento); }
+  .pantalla { font-size:10.5pt; color:#4a4a60; background:#faf9ff; border-radius:8px; padding:9px 14px; }
   .pantalla ul, .pantalla ol { margin:0; padding-left:1.1em; }
-  .pantalla li { margin-bottom:4px; }
-  .pantalla p { margin:0 0 6px; }
-  .pantalla table { font-size:10.5pt; margin:6px 0 0; }
-  .pantalla th, .pantalla td { padding:5px 8px; }
-  .guion { margin-top:12px; font-size:13pt; }
-  .guion p { margin:0 0 8px; }
+  .pantalla li { margin-bottom:3px; }
+  .pantalla p { margin:0 0 5px; }
+  .pantalla table { font-size:9.5pt; margin:5px 0 0; }
+  .pantalla th, .pantalla td { padding:4px 7px; }
+  .pantalla th { font-size:8.5pt; }
+  /* Lo que se dice: cuerpo grande, línea holgada y una intervención por párrafo.
+     Está pensado para leerse de pie y a un metro de distancia. */
+  .guion { margin-top:6px; border-left:6px solid var(--acento); padding:4px 0 2px 16px; }
+  .guion .linea { position:relative; padding-left:32px; margin:0 0 12px; font-size:13.5pt; line-height:1.62;
+                  page-break-inside:avoid; break-inside:avoid; }
+  .guion .rotulo { margin:14px 0 9px; font-size:10.5pt; text-transform:uppercase; letter-spacing:.06em;
+                   color:var(--suave); font-weight:700; border-bottom:1.5px dashed var(--linea); padding-bottom:5px; }
+  .guion .rotulo:first-child { margin-top:0; }
+  .guion .linea .n { position:absolute; left:0; top:3px; width:22px; height:22px; border-radius:50%;
+                     background:#efecff; color:var(--acento); font-size:9.5pt; font-weight:700;
+                     display:inline-flex; align-items:center; justify-content:center; }
+  /* Lo que se hace: gris, pequeño y en viñetas. No se pronuncia nunca. */
+  .indicaciones { background:#f2f1f7; border-radius:8px; padding:9px 16px; font-size:11pt; color:#494960; }
+  .indicaciones ul { margin:0; padding-left:1.05em; }
+  .indicaciones li { margin-bottom:5px; }
+  .indicaciones li::marker { color:var(--suave); }
+  .indicaciones p { margin:0 0 6px; }
   .anexo { border:2px solid var(--linea); border-left:8px solid var(--acento); border-radius:12px;
            padding:16px 22px 18px; margin:0 0 18px; }
   .anexo h3 { border-bottom:2px solid var(--linea); padding-bottom:9px; margin-bottom:10px;
@@ -306,10 +376,12 @@ const laminas = slides.map((s) => `
     <h3><span class="num">${s.n}</span> ${esc(s.titulo)}</h3>
     <span class="tiempo">⏱ ${s.minutos} min</span>
   </div>
-  <p class="rot">En pantalla</p>
+  <p class="rot">En pantalla <span class="aparte">— lo que ve el público</span></p>
   <div class="pantalla">${cuerpoHtml(s)}</div>
-  <p class="rot" style="margin-top:14px">Qué decir</p>
-  <div class="guion">${marked.parse(s.guion)}</div>
+  <p class="rot decir" style="margin-top:15px">🎙 Lo que dices <span class="aparte">— léelo tal cual</span></p>
+  <div class="guion">${guionHtml(s.guionHablado)}</div>
+  <p class="rot" style="margin-top:15px">🎬 Lo que haces <span class="aparte">— no se dice en voz alta</span></p>
+  <div class="indicaciones">${marked.parse(s.indicaciones)}</div>
 </div>`).join("\n");
 
 const bloquesAnexo = anexos.map((a) => `
@@ -336,13 +408,21 @@ const pauta = `<!doctype html>
 
 <div class="aviso">
   <strong>Cómo se usa.</strong> Proyecta <code>PRESENTACION.pdf</code> a pantalla completa y
-  ten esta pauta impresa o en un segundo monitor. Para cada diapositiva encontrarás
-  <strong>lo que el público ve</strong> y <strong>lo que conviene decir</strong>, con el tiempo
-  previsto. Los tiempos suman ${duracion} minutos sobre ${slides.length} láminas, así que la
-  charla entera cabe en una franja de tres cuartos de hora dejando margen para preguntas.
-  <strong>Si expones hoy, empieza por el primer anexo</strong>: es la comprobación de los diez
-  minutos previos. Y si el hueco que tienes no son ${duracion} minutos, el anexo siguiente dice
-  exactamente qué proyectar y qué sacrificar.
+  ten esta pauta impresa o en un segundo monitor. Cada diapositiva trae <strong>tres bloques
+  separados a propósito</strong>, y no se leen igual:
+  <ul style="margin:8px 0 0;padding-left:1.1em">
+    <li><strong>En pantalla</strong> — lo que ve el público. Es contexto: no se lee.</li>
+    <li><strong>🎙 Lo que dices</strong> — el guion, palabra por palabra, en intervenciones
+        numeradas. <strong>Esto se pronuncia tal cual está escrito.</strong> Si te pierdes, el
+        número te devuelve al sitio exacto.</li>
+    <li><strong>🎬 Lo que haces</strong> — las acotaciones: qué abrir, dónde detenerte, qué
+        recortar. <strong>Nada de esto se dice en voz alta.</strong></li>
+  </ul>
+  <p style="margin:10px 0 0">Los tiempos suman ${duracion} minutos sobre ${slides.length} láminas,
+  así que la charla entera cabe en una franja de tres cuartos de hora dejando margen para
+  preguntas. <strong>Si expones hoy, empieza por el primer anexo</strong>: es la comprobación de
+  los diez minutos previos. Y si el hueco que tienes no son ${duracion} minutos, el anexo
+  siguiente dice exactamente qué proyectar y qué sacrificar.</p>
 </div>
 
 <h2>Guion en un vistazo</h2>

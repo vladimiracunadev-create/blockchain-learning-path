@@ -20,6 +20,14 @@ cuando quedan diez minutos para entrar en la sala.
   impresos en la propia lámina** —12.00 y 6 % por la vía tradicional, 2.80 o 13.30 on-chain
   según la última milla—. Si la terminal falla delante del público, el argumento sigue en
   pantalla y la charla no se detiene.
+- **La pauta se escribe como un libreto de televisión.** Cada lámina llega con tres bloques
+  separados y compuestos distinto: **en pantalla** (contexto, no se lee), **lo que dices**
+  —el guion, palabra por palabra, en intervenciones numeradas para volver al sitio exacto
+  al levantar la vista— y **lo que haces** —las acotaciones: qué abrir, dónde detenerte,
+  qué recortar—, en gris y en cuerpo pequeño porque **no se pronuncian**. Antes iban
+  mezcladas en el mismo párrafo, y quien exponía acababa leyendo en voz alta una
+  instrucción de escena. La fuente lo obliga: `### Guion` y `### Indicaciones` son
+  secciones obligatorias y el build falla si falta una.
 - **Cuatro anexos en la pauta del expositor**, que no se proyectan nunca: la comprobación
   de los diez minutos previos (proyector, terminal, ensayo de la demo, plan B sin wifi),
   qué recortar si tienes 10, 20 o 50 minutos en vez de 35, **las preguntas que te va a
