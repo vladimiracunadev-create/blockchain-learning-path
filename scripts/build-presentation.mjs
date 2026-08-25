@@ -10,11 +10,15 @@
 // problema clásico de las presentaciones: el guion y las láminas se separan a la
 // segunda edición y acaban contando cosas distintas.
 //
+// Las secciones "## Anexo · Título" son la otra mitad del oficio de exponer —la
+// comprobación previa, los recortes por duración, las preguntas del público y las
+// líneas que no se cruzan—. NO se proyectan: se imprimen al final de la pauta.
+//
 // scripts/render-presentation-pdf.mjs convierte ambos HTML en PDF.
 //
 // Uso: node scripts/build-presentation.mjs   (requiere el paquete `marked`).
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -25,24 +29,48 @@ const SITE = "https://vladimiracunadev-create.github.io/blockchain-learning-path
 const version = JSON.parse(read("package.json")).version;
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-// --- Leer la fuente y separarla en diapositivas -------------------------------
+// Las cifras del pie de las láminas se cuentan de los archivos, nunca se escriben
+// a mano: una presentación con un número obsoleto proyectado a pantalla completa
+// es la peor manera posible de enterarse de que el material creció.
+const modulos = readdirSync(join(ROOT, "curriculum"), { withFileTypes: true })
+  .filter((e) => e.isDirectory() && /^\d\d-/.test(e.name)).length;
+const practicas = (read("labs/CATALOG.md").match(/^\|\s*\d+\s*\|/gm) ?? []).length;
+if (!modulos || !practicas) throw new Error("No se pudieron contar los módulos o las prácticas del programa.");
+
+// --- Leer la fuente y separarla en diapositivas y anexos -----------------------
 
 const fuente = read("docs/presentacion.md");
 const lineas = fuente.split("\n");
 const slides = [];
+const anexos = [];
 let actual = null;
+let anexo = null;
 
 for (const linea of lineas) {
   const encabezado = /^##\s+(\d+)\s*·\s*(.+?)\s*$/.exec(linea);
   if (encabezado) {
+    anexo = null;
     actual = { n: Number(encabezado[1]), titulo: encabezado[2], cuerpo: [], pauta: [] };
     slides.push(actual);
     continue;
   }
-  // Cualquier otro "## " cierra la diapositiva en curso: las secciones de
+  // "## Anexo · Título": material del expositor. Va a la pauta, nunca a la pantalla.
+  const cabeceraAnexo = /^##\s+Anexo\s*·\s*(.+?)\s*$/.exec(linea);
+  if (cabeceraAnexo) {
+    actual = null;
+    anexo = { titulo: cabeceraAnexo[1], cuerpo: [] };
+    anexos.push(anexo);
+    continue;
+  }
+  // Cualquier otro "## " cierra la sección en curso: las secciones de
   // introducción del documento (sin número) no son láminas.
   if (/^##\s/.test(linea)) {
     actual = null;
+    anexo = null;
+    continue;
+  }
+  if (anexo) {
+    anexo.cuerpo.push(linea);
     continue;
   }
   if (!actual) continue;
@@ -52,6 +80,12 @@ for (const linea of lineas) {
 
 if (slides.length < 6) {
   throw new Error(`docs/presentacion.md solo define ${slides.length} diapositivas: se esperaban al menos 6.`);
+}
+if (!anexos.length) {
+  throw new Error("docs/presentacion.md no define ningún anexo (\"## Anexo · Título\") para la pauta.");
+}
+for (const a of anexos) {
+  if (!a.cuerpo.join("").trim()) throw new Error(`El anexo "${a.titulo}" está vacío.`);
 }
 slides.forEach((s, i) => {
   if (s.n !== i + 1) throw new Error(`Diapositivas mal numeradas: la ${i + 1}.ª declara "${s.n}".`);
@@ -153,7 +187,7 @@ const deckSlides = slides.map((s) => {
   <div class="tope"><span class="marca">${s.n === 1 ? "🎤 Muestra del programa" : "⛓️ Blockchain Learning Path"}</span><span class="pag">${s.n} / ${slides.length}</span></div>
   <h2>${esc(s.titulo)}</h2>
   <div class="zona"><div class="contenido${claseDensidad(cuerpo)}">${cuerpo}</div></div>
-  <div class="pie"><span>v${version} · 29 módulos · 83 prácticas</span><span>${SITE.replace("https://", "")}</span></div>
+  <div class="pie"><span>v${version} · ${modulos} módulos · ${practicas} prácticas</span><span>${SITE.replace("https://", "")}</span></div>
 </section>`;
 }).join("\n");
 
@@ -230,10 +264,16 @@ const CSS_PAUTA = `
   th, td { border:1.5px solid var(--linea); padding:8px 11px; text-align:left; vertical-align:top; }
   th { background:#f6f4ff; color:var(--suave); text-transform:uppercase; font-size:10.5pt; letter-spacing:.04em; }
   .aviso { background:#f6f4ff; border-left:6px solid var(--acento); padding:14px 18px; border-radius:0 8px 8px 0; font-size:12.5pt; }
-  .lamina { border:2px solid var(--linea); border-radius:12px; padding:18px 22px; margin:0 0 18px;
-            page-break-inside:avoid; break-inside:avoid; }
+  /* Los bloques largos (la lámina del mapa de etapas pasa de una página entera) se
+     dejan fluir. Con break-inside:avoid, un bloque más alto que la hoja empieza en
+     una página nueva igualmente Y deja la anterior medio vacía: seis hojas de más
+     en un documento que existe para imprimirse. Lo que sí se evita es que la
+     cabecera quede huérfana al final de una página. */
+  .lamina { border:2px solid var(--linea); border-radius:12px; padding:18px 22px; margin:0 0 18px; }
   .lamina .cab { display:flex; justify-content:space-between; align-items:baseline; gap:14px;
-                 border-bottom:2px solid var(--linea); padding-bottom:10px; margin-bottom:12px; }
+                 border-bottom:2px solid var(--linea); padding-bottom:10px; margin-bottom:12px;
+                 page-break-after:avoid; break-after:avoid; }
+  .lamina p, .anexo p, .lamina li, .anexo li { orphans:3; widows:3; }
   .lamina .num { font-size:12pt; color:#fff; background:var(--acento); border-radius:8px; padding:3px 12px; font-weight:700; }
   .lamina .tiempo { font-size:11.5pt; color:var(--suave); white-space:nowrap; }
   .rot { font-size:10.5pt; text-transform:uppercase; letter-spacing:.07em; color:var(--acento); font-weight:700; margin:0 0 6px; }
@@ -245,6 +285,14 @@ const CSS_PAUTA = `
   .pantalla th, .pantalla td { padding:5px 8px; }
   .guion { margin-top:12px; font-size:13pt; }
   .guion p { margin:0 0 8px; }
+  .anexo { border:2px solid var(--linea); border-left:8px solid var(--acento); border-radius:12px;
+           padding:16px 22px 18px; margin:0 0 18px; }
+  .anexo h3 { border-bottom:2px solid var(--linea); padding-bottom:9px; margin-bottom:10px;
+              page-break-after:avoid; break-after:avoid; }
+  .anexo tr, .lamina tr { page-break-inside:avoid; break-inside:avoid; }
+  .anexo table { font-size:11pt; }
+  .anexo th, .anexo td { padding:6px 9px; }
+  .anexo li { margin-bottom:5px; }
   code { font-family:"Cascadia Mono",Consolas,monospace; font-size:.9em; background:#f2f0ff; color:#4a32c9; padding:.08em .3em; border-radius:4px; }
   @page { size:A4; margin:16mm 15mm; }
 `;
@@ -264,6 +312,12 @@ const laminas = slides.map((s) => `
   <div class="guion">${marked.parse(s.guion)}</div>
 </div>`).join("\n");
 
+const bloquesAnexo = anexos.map((a) => `
+<section class="anexo">
+  <h3>${esc(a.titulo)}</h3>
+  ${marked.parse(a.cuerpo.join("\n").trim())}
+</section>`).join("\n");
+
 const pauta = `<!doctype html>
 <html lang="es">
 <head>
@@ -276,8 +330,8 @@ const pauta = `<!doctype html>
   <div class="escudo">⛓️</div>
   <h1>Pauta del expositor</h1>
   <p><strong>Blockchain Learning Path</strong> · muestra del programa</p>
-  <p>29 módulos · 83 prácticas · de cero a la infraestructura financiera</p>
-  <div class="meta"><span>v${version}</span><span>${slides.length} diapositivas</span><span>≈ ${duracion} min</span></div>
+  <p>${modulos} módulos · ${practicas} prácticas · de cero a la infraestructura financiera</p>
+  <div class="meta"><span>v${version}</span><span>${slides.length} diapositivas</span><span>≈ ${duracion} min</span><span>${anexos.length} anexos</span></div>
 </div>
 
 <div class="aviso">
@@ -285,8 +339,10 @@ const pauta = `<!doctype html>
   ten esta pauta impresa o en un segundo monitor. Para cada diapositiva encontrarás
   <strong>lo que el público ve</strong> y <strong>lo que conviene decir</strong>, con el tiempo
   previsto. Los tiempos suman ${duracion} minutos sobre ${slides.length} láminas, así que la
-  muestra completa cabe en media hora dejando margen para preguntas. Si vas corto, recorta
-  en el mapa de etapas —dos frases y adelante— antes que en cualquier otra lámina.
+  charla entera cabe en una franja de tres cuartos de hora dejando margen para preguntas.
+  <strong>Si expones hoy, empieza por el primer anexo</strong>: es la comprobación de los diez
+  minutos previos. Y si el hueco que tienes no son ${duracion} minutos, el anexo siguiente dice
+  exactamente qué proyectar y qué sacrificar.
 </div>
 
 <h2>Guion en un vistazo</h2>
@@ -301,6 +357,9 @@ ${filasResumen}
 <h2>Diapositiva a diapositiva</h2>
 ${laminas}
 
+<h2>Anexos: lo que no se proyecta</h2>
+${bloquesAnexo}
+
 <p style="margin-top:26px;font-size:11pt;color:#5b5b73;border-top:2px solid #ddd9f2;padding-top:12px">
 Generado desde <code>docs/presentacion.md</code> · v${version} ·
 ${SITE.replace("https://", "")} · Código MIT · Contenido CC BY 4.0
@@ -313,5 +372,5 @@ ${SITE.replace("https://", "")} · Código MIT · Contenido CC BY 4.0
 mkdirSync(join(ROOT, "presentacion"), { recursive: true });
 writeFileSync(join(ROOT, "presentacion", "presentacion.html"), deck, "utf8");
 writeFileSync(join(ROOT, "presentacion", "pauta.html"), pauta, "utf8");
-console.log(`presentacion/presentacion.html: ${slides.length} diapositivas.`);
-console.log(`presentacion/pauta.html: pauta del expositor, ≈${duracion} min.`);
+console.log(`presentacion/presentacion.html: ${slides.length} diapositivas (${modulos} módulos · ${practicas} prácticas).`);
+console.log(`presentacion/pauta.html: pauta del expositor, ≈${duracion} min y ${anexos.length} anexos.`);

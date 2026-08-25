@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.10.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versión-0.10.1-7c5cff?style=for-the-badge)](CHANGELOG.md)
 [![Módulos](https://img.shields.io/badge/módulos-29-7c5cff?style=for-the-badge)](curriculum/README.md)
 [![Prácticas](https://img.shields.io/badge/prácticas-83-2e8b57?style=for-the-badge)](labs/CATALOG.md)
 [![Nivel](https://img.shields.io/badge/nivel-inicial%20→%20infraestructura%20financiera-e67e22?style=for-the-badge)](ROADMAP.md)
@@ -25,7 +25,7 @@
 [![viem](https://img.shields.io/badge/viem-dApps-2e8b57?style=flat-square)](apps/community-funding-web)
 [![TypeScript](https://img.shields.io/badge/TypeScript-dApp%20%26%20indexer-3178C6?style=flat-square&logo=typescript&logoColor=white)](apps)
 
-[🌱 Empieza aquí](docs/empieza-aqui.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-diapositivas-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
+[🌱 Empieza aquí](docs/empieza-aqui.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
 
 </div>
 
@@ -101,18 +101,26 @@ Las tres versiones salen del **mismo build**, así que ninguna se queda atrás. 
 
 Para generarlo todo desde el repositorio: `pnpm build:manual`, `pnpm app:windows`, `pnpm app:android`.
 
-## 🎤 Presenta el programa: diapositivas y pauta
+## 🎤 Presenta el programa hoy: diapositivas, demo y pauta
 
-¿Tienes que **mostrar el programa** en una clase, un comité o una charla? Está todo hecho: una presentación de **6 diapositivas** con letra grande y lo esencial del recorrido, y una **pauta del expositor** con el guion hablado, el tiempo de cada lámina y qué se ve en pantalla. La charla completa dura **≈33 minutos**, así que la muestra cabe en media hora con preguntas.
+¿Tienes que **mostrar el programa** esta tarde —en una clase, un comité o una charla— y no quieres preparar nada? Está todo hecho y listo para proyectar:
+
+- **7 diapositivas** con letra grande y lo esencial del recorrido, en 16:9.
+- Una **demo en vivo de 90 segundos** (`pnpm lab:hash` y `pnpm lab:remesa`) **con sus resultados impresos en la lámina**: si la terminal falla delante del público, señalas la tabla y sigues.
+- Una **pauta del expositor** con el guion hablado, el tiempo de cada lámina y qué se ve en pantalla, más **4 anexos** que son los que salvan una exposición: la comprobación de los diez minutos previos, qué recortar si tienes 10, 20 o 50 minutos en vez de 35, las preguntas que te va a hacer el público con la respuesta ya pensada, y lo que no hay que prometer.
+
+La charla completa dura **≈35 minutos**, así que cabe holgada en una franja de 45 con preguntas.
 
 | Documento | Descarga | Para qué sirve |
 |---|---|---|
-| 🎞️ **Diapositivas (PDF)** | [PRESENTACION.pdf (6 diapositivas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PRESENTACION.pdf) | Proyectar sin conexión y repartir como material |
-| 🧾 **Pauta del expositor (PDF)** | [PAUTA.pdf](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PAUTA.pdf) | Guion, tiempos y qué decir en cada diapositiva |
+| 🎞️ **Diapositivas (PDF)** | [PRESENTACION.pdf (7 diapositivas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PRESENTACION.pdf) | Proyectar sin conexión y repartir como material |
+| 🧾 **Pauta del expositor (PDF)** | [PAUTA.pdf](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/PAUTA.pdf) | Guion, tiempos, anexos y qué decir en cada diapositiva |
 | 🖥️ **Diapositivas en el navegador** | [Ver online](https://vladimiracunadev-create.github.io/blockchain-learning-path/presentacion/presentacion.html) | Proyectar desde el navegador, sin instalar nada |
 | ✍️ **Guion editable** | [docs/presentacion.md](docs/presentacion.md) | La fuente: edítala y regenera los tres formatos |
 
-Los tres formatos salen del **mismo archivo** ([docs/presentacion.md](docs/presentacion.md)), así que el guion y las láminas no se separan a la segunda edición. Para regenerarlos: `pnpm build:presentacion`.
+**Diez minutos antes de exponer:** descarga los dos PDF; proyecta `PRESENTACION.pdf` a pantalla completa y deja `PAUTA.pdf` impreso o en el segundo monitor; abre una terminal en el repo con letra grande y **ejecuta una vez** `pnpm lab:hash` y `pnpm lab:remesa` antes de que entre el público —la primera ejecución siempre tarda más, y ese silencio se hace largo—. El resto está en el primer anexo de la pauta.
+
+Los tres formatos salen del **mismo archivo** ([docs/presentacion.md](docs/presentacion.md)), así que el guion y las láminas no se separan a la segunda edición; las cifras del pie de cada lámina se cuentan de los archivos del repositorio, no se escriben a mano. Para regenerarlos: `pnpm build:presentacion`.
 
 ## 🗂️ Los 29 módulos en nueve etapas
 

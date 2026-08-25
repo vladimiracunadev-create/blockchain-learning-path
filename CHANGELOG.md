@@ -7,6 +7,41 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 *Nada pendiente.*
 
+## [0.10.1] · 2026-08-25
+
+La presentación del programa pasa de ser un resumen a ser un **kit para exponer hoy**:
+una demo que se ejecuta en vivo con su red de seguridad, y los anexos que hacen falta
+cuando quedan diez minutos para entrar en la sala.
+
+### Añadido
+
+- **Diapositiva «Demo en vivo: 90 segundos de terminal»** (lámina 5 de 7): `pnpm lab:hash`
+  para público técnico y `pnpm lab:remesa` para público financiero, **con los resultados
+  impresos en la propia lámina** —12.00 y 6 % por la vía tradicional, 2.80 o 13.30 on-chain
+  según la última milla—. Si la terminal falla delante del público, el argumento sigue en
+  pantalla y la charla no se detiene.
+- **Cuatro anexos en la pauta del expositor**, que no se proyectan nunca: la comprobación
+  de los diez minutos previos (proyector, terminal, ensayo de la demo, plan B sin wifi),
+  qué recortar si tienes 10, 20 o 50 minutos en vez de 35, **las preguntas que te va a
+  hacer el público** con la respuesta ya redactada, y las cuatro líneas que no se cruzan
+  (rentabilidad, «auditado», asesoría legal e inventar cifras).
+- `scripts/build-presentation.mjs` reconoce las secciones **`## Anexo · Título`** de
+  `docs/presentacion.md` y las compone al final de la pauta; `check-presentation.mjs`
+  comprueba que todas llegaron al documento generado y que el README declara cuántas son.
+
+### Cambiado
+
+- **La presentación pasa de 6 a 7 diapositivas y de ≈33 a ≈35 minutos.** La lámina 2 gana
+  la fila de las 117 preguntas de autoevaluación y la 3 declara la unidad transversal de
+  wallets entre los módulos 04 y 05, que no aparecía en ninguna lámina.
+- **La pauta baja de 19 a 14 páginas.** Un bloque más alto que la hoja empezaba en página
+  nueva igualmente por `break-inside: avoid` y dejaba la anterior medio vacía: seis hojas
+  de más en un documento que existe para imprimirse. Ahora solo se protege la cabecera de
+  cada bloque de quedar huérfana.
+- El pie de cada lámina **cuenta los módulos y las prácticas de los archivos** en vez de
+  llevarlos escritos: un número obsoleto proyectado a pantalla completa es la peor manera
+  posible de enterarse de que el material creció.
+
 ## [0.10.0] · 2026-08-24
 
 Novena etapa del programa: **leer la propia cadena como fuente de datos**. El currículo pasa de
