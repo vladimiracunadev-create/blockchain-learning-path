@@ -101,7 +101,7 @@ jobs:
           node-version: "22"
           cache: pnpm
       # Capacitor 7 no compila con un JDK anterior al 21.
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: "21"
