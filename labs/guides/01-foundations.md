@@ -1,6 +1,6 @@
 # Guías 01–10 · Fundamentos
 
-Este cuaderno cubre criptografía aplicada y sistemas distribuidos: hashes, cadenas encadenadas, Merkle, firmas Ed25519 y propagación P2P. Acompaña a los módulos [criptografía](../../curriculum/01-criptografia/README.md), [sistemas distribuidos](../../curriculum/02-sistemas-distribuidos/README.md) y [consenso](../../curriculum/03-consenso/README.md).
+Este cuaderno cubre criptografía aplicada y sistemas distribuidos: hashes, cadenas encadenadas, Merkle, firmas Ed25519 y propagación P2P. Acompaña a las clases [criptografía](../../curriculum/01-criptografia/README.md), [sistemas distribuidos](../../curriculum/02-sistemas-distribuidos/README.md) y [consenso](../../curriculum/03-consenso/README.md).
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 

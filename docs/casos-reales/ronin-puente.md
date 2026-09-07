@@ -1,6 +1,6 @@
 # Caso · Puente Ronin: compromiso del cuórum de validadores
 
-> [⬅️ Casos reales](README.md) · [📖 Módulo 13 · Interoperabilidad](../../curriculum/13-interoperabilidad/README.md) · [🏠 Programa](../../README.md)
+> [⬅️ Casos reales](README.md) · [📖 Clases 13.1–13.2 · Interoperabilidad](../../curriculum/13-interoperabilidad/README.md) · [🏠 Programa](../../README.md)
 
 **Cuándo:** marzo de 2022. **Qué:** un atacante obtuvo control de la mayoría de las claves
 validadoras de un puente entre cadenas y retiró los fondos custodiados. Es uno de los
@@ -11,7 +11,7 @@ mayores incidentes documentados del sector por importe.
 Un **puente de bloqueo y acuñación** custodia activos en la cadena de origen y acuña sus
 representaciones en la de destino. La seguridad de todo lo custodiado depende, por tanto, de
 **quién puede autorizar una retirada** — es decir, de un cuórum de validadores, exactamente
-el problema del [módulo 26](../../curriculum/26-custodia-identidad/README.md).
+el problema de las [clases 26.1–26.2](../../curriculum/26-custodia-identidad/README.md).
 
 El puente operaba con un conjunto de validadores y una política de tipo M-de-N para aprobar
 retiradas.
@@ -89,7 +89,7 @@ comunicación que rigen en infraestructuras financieras.
 
 ## Referencias
 
-- Módulos del programa: [13 · Interoperabilidad](../../curriculum/13-interoperabilidad/README.md) · [26 · Custodia](../../curriculum/26-custodia-identidad/README.md) · [09 · Seguridad](../../curriculum/09-seguridad/README.md)
+- Clases del programa: [13.1–13.2 · Interoperabilidad](../../curriculum/13-interoperabilidad/README.md) · [26.1–26.2 · Custodia](../../curriculum/26-custodia-identidad/README.md) · [09.1–09.2 · Seguridad](../../curriculum/09-seguridad/README.md)
 - Trail of Bits — *Building Secure Contracts*: <https://secure-contracts.com/>
 - OpenZeppelin — prácticas de control de acceso y gobernanza: <https://docs.openzeppelin.com/>
 - Chainalysis — informes públicos sobre incidentes en puentes: <https://www.chainalysis.com/>
@@ -98,4 +98,4 @@ comunicación que rigen en infraestructuras financieras.
 
 ## 🧭 Navegación
 
-[⬅️ Casos reales](README.md) · [📖 Módulo 13](../../curriculum/13-interoperabilidad/README.md) · [🏠 Programa](../../README.md)
+[⬅️ Casos reales](README.md) · [📖 Clases 13.1–13.2](../../curriculum/13-interoperabilidad/README.md) · [🏠 Programa](../../README.md)

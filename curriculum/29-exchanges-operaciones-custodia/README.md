@@ -5,6 +5,57 @@
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [28 · Blockchain Data Analytics](../28-data-analytics-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [30 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md)
 
+
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 29.1 · Exchanges, custodia y libros internos
+
+**Pregunta guía:** ¿Dónde se ejecuta una operación y quién controla las claves?
+
+**Enfoque pedagógico:** recorrido operativo de una orden.
+
+Depósito, compraventa interna y retiro se siguen por sistemas distintos. El estudiante localiza cuándo cambia una obligación y cuándo se mueve un activo on-chain.
+
+**Núcleo conceptual:**
+
+- CEX frente a DEX.
+- custodial frente a non-custodial.
+- ledger interno y operación off-chain.
+
+**Caso de trabajo:** Dos clientes negocian en un CEX sin que cambie ninguna dirección on-chain.
+
+**Actividad:** Trazar depósito, trade, saldo y retiro entre sistemas.
+
+**Comprobación formativa:** ¿Qué operación altera dos saldos de clientes sin crear una transacción blockchain?
+
+**Evidencia de aprendizaje:** Diagrama que ubique obligación, activo, firma y evidencia por paso.
+
+### Clase 29.2 · Wallets operacionales y evidencia blockchain
+
+**Pregunta guía:** ¿Cómo vinculamos una orden interna con direcciones y transaction IDs?
+
+**Enfoque pedagógico:** investigación multi-red sin fondos reales.
+
+Txids, direcciones, UTXO y cuentas se leen en regtest y Anvil. Un retiro agrupado evita la falsa expectativa de una correspondencia uno a uno.
+
+**Núcleo conceptual:**
+
+- hot, warm y cold.
+- multisig, MPC y HSM.
+- dirección, txid, UTXO y cuenta.
+
+**Caso de trabajo:** Un retiro se agrupa con otros y su importe no coincide con una salida única.
+
+**Actividad:** Investigar transacciones en regtest y red local Ethereum.
+
+**Comprobación formativa:** ¿Qué evidencia vincula un retiro interno con una salida dentro de una transacción agrupada?
+
+**Evidencia de aprendizaje:** Expediente con fuente, corte, identificadores y explicación del batching.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Distinguir CEX, DEX, custodial y non-custodial sin confundir ejecución con custodia.
@@ -104,4 +155,4 @@ Puedes revisar una arquitectura de exchange sin asumir que interfaz, custodia y 
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 28 · Blockchain Data Analytics](../28-data-analytics-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 30 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md)
+⬅️ [Clases 28.1–28.2 · Blockchain Data Analytics](../28-data-analytics-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 30.1–30.2 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md)

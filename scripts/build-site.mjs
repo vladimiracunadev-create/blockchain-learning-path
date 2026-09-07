@@ -7,7 +7,7 @@
 //
 // Uso: node scripts/build-site.mjs   (requiere el paquete `marked`).
 
-import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync, existsSync, copyFileSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync, existsSync, copyFileSync, cpSync } from "node:fs";
 import { join, dirname, relative, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -112,6 +112,7 @@ const NAV = [
   {
     t: "📁 Casos reales", href: "docs/casos-reales/README.html",
     children: [
+      ["Orionx · caso en desarrollo", "docs/casos-reales/orionx-descalce-custodia.html"],
       ["Terra/UST", "docs/casos-reales/terra-ust.html"],
       ["FTX y la custodia", "docs/casos-reales/ftx-custodia.html"],
       ["Puente Ronin", "docs/casos-reales/ronin-puente.html"],
@@ -285,7 +286,7 @@ nav.side a .done{color:#2e8b57;font-weight:700}
 }
 </style>
 <script type="module">
-import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+import mermaid from "${BASE}assets/mermaid/mermaid.esm.min.mjs";
 const dark = (document.documentElement.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))==="dark";
 mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"loose"});
 </script>
@@ -383,7 +384,7 @@ function navDeModulo(rel) {
     : { href: `${BASE}capstone/README.html`, t: "Proyecto final" };
 
   return `
-<nav class="modnav" aria-label="Navegación entre módulos">
+<nav class="modnav" aria-label="Navegación entre unidades y clases">
   <a class="prev" href="${anterior.href}" rel="prev"><span class="dir">⬅️ Anterior</span><span class="ttl">${esc(anterior.t)}</span></a>
   <a class="next" href="${siguiente.href}" rel="next"><span class="dir">Siguiente ➡️</span><span class="ttl">${esc(siguiente.t)}</span></a>
 </nav>`;
@@ -397,9 +398,9 @@ function quizDelModulo(rel) {
   const datos = JSON.stringify(quiz.preguntas).replace(/</g, "\\u003c");
   return `
 <hr>
-<h2 id="autoevaluacion">🧠 Autoevaluación del módulo</h2>
+<h2 id="autoevaluacion">🧠 Autoevaluación de la unidad</h2>
 <p>Responde sin volver atrás. Cada opción incorrecta corresponde a un error frecuente
-documentado en este mismo módulo: si fallas, la explicación te dice qué releer.</p>
+documentado en estas clases: si fallas, la explicación te dice qué releer.</p>
 <div class="quiz-mod" id="quiz-mod"></div>
 <script>
 (function(){
@@ -447,7 +448,7 @@ documentado en este mismo módulo: si fallas, la explicación te dice qué relee
     var pct = Math.round(100 * aciertos / PREGUNTAS.length);
     var salida = document.getElementById("qm-out");
     salida.textContent = aciertos + "/" + PREGUNTAS.length + " (" + pct + "%) — " +
-      (pct >= APROBADO ? "módulo superado." : "repasa lo marcado antes de seguir.") +
+      (pct >= APROBADO ? "unidad superada." : "repasa lo marcado antes de seguir.") +
       (sinResponder ? " Dejaste " + sinResponder + " sin responder." : "");
     salida.className = "qm-out " + (pct >= APROBADO ? "qm-aprob" : "qm-susp");
     document.getElementById("qm-reset").hidden = false;
@@ -470,7 +471,7 @@ documentado en este mismo módulo: si fallas, la explicación te dice qué relee
     if (guardado) {
       var aviso = document.createElement("p");
       aviso.className = "qm-previo";
-      aviso.textContent = "Tu mejor resultado en este módulo: " + guardado.pct + "%.";
+      aviso.textContent = "Tu mejor resultado en esta unidad: " + guardado.pct + "%.";
       caja.parentNode.insertBefore(aviso, caja);
     }
   } catch (e) {}
@@ -578,6 +579,13 @@ var QUIZ = ${JSON.stringify(quiz.questions)};
 </script>`;
   writeFileSync(join(ROOT, OUT, "autoevaluacion.html"), page(quiz.title, quizBody, "autoevaluacion.html"), "utf8");
 }
+// Mermaid se sirve desde el propio sitio: Pages y las apps offline conservan
+// los diagramas sin depender de una CDN ni de conexión durante la lectura.
+mkdirSync(join(ROOT, OUT, "assets"), { recursive: true });
+cpSync(join(ROOT, "node_modules", "mermaid", "dist"), join(ROOT, OUT, "assets", "mermaid"), {
+  recursive: true,
+});
+
 // Copiar el manual PDF al sitio si existe (para servirlo en GitHub Pages).
 if (hasManual) {
   mkdirSync(join(ROOT, OUT, "manual"), { recursive: true });

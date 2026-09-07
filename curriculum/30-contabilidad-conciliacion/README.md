@@ -5,6 +5,57 @@
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [29 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [31 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md)
 
+
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 30.1 · Tres realidades contables
+
+**Pregunta guía:** ¿Cómo se relacionan Internal Ledger, Exchange Reality y Blockchain State?
+
+**Enfoque pedagógico:** reconstrucción independiente de tres libros.
+
+Cada fuente se totaliza antes de reconciliar para impedir que una cifra contamine a las demás. La procedencia importa tanto como el importe.
+
+**Núcleo conceptual:**
+
+- pasivo por cliente.
+- activo bajo custodia o en tercero.
+- estado on-chain confirmado.
+
+**Caso de trabajo:** La interfaz muestra saldo, el exchange externo otro y la wallet un tercero.
+
+**Actividad:** Reconstruir cada universo sin compensarlos prematuramente.
+
+**Comprobación formativa:** ¿Qué representa un saldo de cliente: activo de la empresa, pasivo o ambos?
+
+**Evidencia de aprendizaje:** Balance por fuente con dueño, timestamp, unidad y procedencia.
+
+### Clase 30.2 · Conciliación y gestión de diferencias
+
+**Pregunta guía:** ¿Qué explica una diferencia y cuándo se convierte en incidente?
+
+**Enfoque pedagógico:** war room de conciliación.
+
+Excepciones con antigüedad y causa distintas compiten por atención. El equipo separa diferencia temporal, error, pérdida y dato insuficiente.
+
+**Núcleo conceptual:**
+
+- cut-off y confirmaciones.
+- comisiones, pendientes, reorgs y unidades.
+- excepciones, aging y escalamiento.
+
+**Caso de trabajo:** Un retiro pendiente cruza el cierre y parece un déficit temporal.
+
+**Actividad:** Ejecutar conciliación por activo y clasificar cada excepción.
+
+**Comprobación formativa:** ¿Cuándo un ajuste contable corrige el registro y cuándo sólo oculta la causa?
+
+**Evidencia de aprendizaje:** Informe repetible con diferencia bruta, ajuste justificado y saldo final.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Mantener separados pasivos de clientes, activos en exchanges y activos on-chain.
@@ -65,7 +116,7 @@ Las diferencias se clasifican: timing, dato incompleto, dirección no inventaria
 
 No se netean activos distintos ni clientes distintos para ocultar faltantes. Tampoco se cuenta dos veces una wallet reflejada en un exchange o en un servicio de custodia. La prueba de control de dirección —mensaje firmado o movimiento diseñado— debe evitar reutilización y no exige transferir fondos reales en este programa. La segregación de funciones separa quien extrae, quien concilia y quien aprueba ajustes.
 
-Una conciliación aprobada no es una auditoría completa. Demuestra que fuentes definidas coinciden bajo reglas y corte concretos. La auditoría además evalúa integridad de la población, derechos y obligaciones, valuación, presentación, controles y hechos posteriores. Esta distinción prepara el módulo de reservas y el caso final.
+Una conciliación aprobada no es una auditoría completa. Demuestra que fuentes definidas coinciden bajo reglas y corte concretos. La auditoría además evalúa integridad de la población, derechos y obligaciones, valuación, presentación, controles y hechos posteriores. Esta distinción prepara las clases de reservas y el caso final.
 
 ## 🧪 Laboratorio guiado
 
@@ -86,6 +137,10 @@ Añade una diferencia temporal sin borrar el dato original. Documenta el asiento
 
 ## 🛡️ Seguridad y ética
 
+- El [caso Orionx](../../docs/casos-reales/orionx-descalce-custodia.md) se estudia como
+  asunto en desarrollo: distingue hechos públicos, afirmaciones de parte, alegaciones e
+  inferencias; no atribuyas responsabilidad ni direcciones a personas sin prueba legítima.
+
 Usa endpoints read-only, direcciones públicas y datasets minimizados. No incluyas PII en exports de laboratorio y no conviertas una diferencia sin investigar en acusación de fraude.
 
 ## 🔗 Referencias
@@ -101,4 +156,4 @@ Puedes ejecutar y revisar una conciliación reproducible de tres registros, expl
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 29 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 31 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md)
+⬅️ [Clases 29.1–29.2 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 31.1–31.2 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md)

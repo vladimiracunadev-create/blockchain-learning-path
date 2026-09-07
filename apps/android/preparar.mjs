@@ -22,8 +22,8 @@ if (!existsSync(join(BUNDLE, "index.html"))) {
 }
 
 const manifiesto = JSON.parse(readFileSync(join(BUNDLE, "contenido.json"), "utf8"));
-if (manifiesto.modulos < 19) {
-  throw new Error(`El bundle solo declara ${manifiesto.modulos} módulos.`);
+if (manifiesto.clases !== 66 || manifiesto.modulos !== 33) {
+  throw new Error(`El bundle declara ${manifiesto.clases} clases en ${manifiesto.modulos} unidades; se esperaban 66 en 33.`);
 }
 
 rmSync(WWW, { recursive: true, force: true });
@@ -40,4 +40,4 @@ function contarHtml(directorio) {
   return total;
 }
 
-console.log(`www/ preparado: ${contarHtml(WWW)} páginas, ${manifiesto.modulos} módulos, v${manifiesto.version}.`);
+console.log(`www/ preparado: ${contarHtml(WWW)} páginas, ${manifiesto.clases} clases, v${manifiesto.version}.`);

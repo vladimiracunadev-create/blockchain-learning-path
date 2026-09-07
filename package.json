@@ -1,6 +1,6 @@
 {
   "name": "blockchain-learning-path",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "private": true,
   "description": "Ruta práctica en español para aprender blockchain desde nivel inicial hasta producción",
   "packageManager": "pnpm@10.13.1",
@@ -16,6 +16,7 @@
     "build:manual": "node scripts/build-manual.mjs && node scripts/render-manual-pdf.mjs",
     "build:presentacion": "node scripts/build-presentation.mjs && node scripts/render-presentation-pdf.mjs",
     "build:icons": "node scripts/build-icons.mjs",
+    "sync:classes": "node scripts/sync-class-plans.mjs && node scripts/sync-curriculum-index.mjs",
     "sync:versions": "node scripts/sync-app-versions.mjs",
     "build:bundle": "node scripts/sync-app-versions.mjs && node scripts/build-app-bundle.mjs",
     "app:windows": "pnpm build:bundle && pnpm --filter @blockchain-course/desktop dist",
@@ -72,6 +73,7 @@
     "eslint": "^10.9.1",
     "globals": "^17.12.0",
     "marked": "^18.0.11",
+    "mermaid": "11.12.0",
     "puppeteer-core": "^25.10.0"
   }
 }

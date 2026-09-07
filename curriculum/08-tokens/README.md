@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 08.1 · Estándares y derechos del token
+
+**Pregunta guía:** ¿Qué interfaz garantiza un ERC y qué derechos económicos quedan fuera?
+
+**Enfoque pedagógico:** comparación de contratos con igual interfaz.
+
+Dos tokens cumplen el mismo ERC pero representan promesas distintas. El estándar se aprende como compatibilidad técnica, no como garantía económica o jurídica.
+
+**Núcleo conceptual:**
+
+- ERC-20, 721, 1155 y 4626.
+- metadata frente a estado normativo.
+- suministro, mint y burn.
+
+**Caso de trabajo:** Dos tokens cumplen ERC-20, pero sólo uno representa un derecho exigible.
+
+**Actividad:** Comparar interfaces, autoridad administrativa y promesa externa.
+
+**Comprobación formativa:** Nombra una propiedad que ERC-20 garantiza y dos que deja fuera.
+
+**Evidencia de aprendizaje:** Ficha de token con estándar, invariantes, poderes y riesgos explícitos.
+
+### Clase 08.2 · Permisos, distribución y necesidad
+
+**Pregunta guía:** ¿Por qué un token técnicamente correcto puede ser un mal producto?
+
+**Enfoque pedagógico:** comité de diseño token/no-token.
+
+Cada propuesta debe sobrevivir alternativas de puntos, base de datos y pagos existentes. La distribución y los poderes administrativos se evalúan antes de celebrar la transferibilidad.
+
+**Núcleo conceptual:**
+
+- allowance, permit y aprobaciones.
+- concentración y distribución.
+- utilidad, gobernanza y captura de valor.
+
+**Caso de trabajo:** Un protocolo emite token antes de demostrar que necesita transferibilidad.
+
+**Actividad:** Auditar allowances y construir una matriz token/no-token.
+
+**Comprobación formativa:** ¿Qué evidencia demostraría que el token resuelve algo que una cuenta interna no resuelve?
+
+**Evidencia de aprendizaje:** Recomendación defendible con métricas, alternativas off-chain y controles.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Distinguir con precisión los estándares ERC-20, ERC-721, ERC-1155 y ERC-4626, y cuándo elegir cada uno.
@@ -147,7 +197,7 @@ El titular "firmó algo y perdió todo" suena a descuido. Casi nunca lo es: es u
 <summary><strong>🎓 Si ya dominas esto</strong> — el detalle que separa un token correcto de uno que rompe integraciones</summary>
 
 - **`permit` no está en todos los tokens y su ausencia se detecta tarde.** USDC en Ethereum lo implementa; muchos tokens antiguos no. Un contrato que asume `permit` falla con esos tokens en producción, no en los tests, donde se usa un mock que sí lo tiene.
-- **Los tokens con hooks reintroducen la reentrancia en el estándar.** ERC-777 y ERC-1155 llaman al receptor durante la transferencia; si tu contrato actualiza estado después de transferir, ese hook puede reentrar. Es la lección del módulo 09 llegando por la puerta de los estándares.
+- **Los tokens con hooks reintroducen la reentrancia en el estándar.** ERC-777 y ERC-1155 llaman al receptor durante la transferencia; si tu contrato actualiza estado después de transferir, ese hook puede reentrar. Es la lección de las clases 09.1–09.2 llegando por la puerta de los estándares.
 - **ERC-4626 tiene un ataque de inflación conocido.** El primer depositante puede donar activos directamente a la bóveda para inflar el precio por *share* y hacer que los depósitos pequeños siguientes redondeen a cero shares. Las mitigaciones son los *virtual shares* o sembrar un depósito inicial en el despliegue.
 - **`decimals` no forma parte del núcleo del ERC-20**, es de la extensión de metadatos. Tratarlo como garantizado es la causa del error de escala más caro que se comete en integraciones.
 - **Renunciar a la propiedad no siempre es más seguro.** Un `renounceOwnership` deja el contrato sin nadie que pueda pausar ante un incidente. La decisión correcta depende de si el mayor riesgo es el administrador o el bug — y conviene argumentarla, no imitarla.
@@ -166,7 +216,7 @@ pnpm lab:tokenomics
 
 2. Modela dos escenarios: uno con suministro máximo fijo y otro con emisión continua, y compara la concentración resultante en las primeras direcciones.
 
-3. Abre los contratos del módulo en `labs/08-protocols` y ejecuta la suite de pruebas con trazas para observar transferencias, allowances y eventos.
+3. Abre los contratos de la unidad en `labs/08-protocols` y ejecuta la suite de pruebas con trazas para observar transferencias, allowances y eventos.
 
 ```bash
 forge test -vv
@@ -220,4 +270,4 @@ Implementa un token educativo ERC-20 apoyado en OpenZeppelin con: suministro má
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 07 · Aplicaciones descentralizadas](../07-dapps/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 09 · Seguridad y auditoría](../09-seguridad/README.md)
+⬅️ [Clases 07.1–07.2 · Aplicaciones descentralizadas](../07-dapps/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 09.1–09.2 · Seguridad y auditoría](../09-seguridad/README.md)

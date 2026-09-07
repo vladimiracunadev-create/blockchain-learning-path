@@ -1,6 +1,6 @@
 # Guías 51–70 · Finanzas on-chain, institucional y regulación
 
-Este cuaderno cubre la etapa que va del mercado sin intermediario a la infraestructura financiera: DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización, mercados de capitales, custodia, identidad y cumplimiento. Acompaña a los módulos [19](../../curriculum/19-defi/README.md)–[27](../../curriculum/27-regulacion-cumplimiento/README.md).
+Este cuaderno cubre la etapa que va del mercado sin intermediario a la infraestructura financiera: DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización, mercados de capitales, custodia, identidad y cumplimiento. Acompaña a las clases [19](../../curriculum/19-defi/README.md)–[27](../../curriculum/27-regulacion-cumplimiento/README.md).
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 
@@ -77,7 +77,7 @@ Todas las prácticas de este bloque son **simulaciones locales**: sin red, sin c
 
 - **Objetivo:** ver el intercambio entre liquidez y riesgo en su forma pura.
 - **Cómo se resuelve:**
-  1. Con los cuatro pagos del módulo 20 (A→B 100, B→A 80, B→C 50, C→A 30), calcula el bruto total y las posiciones netas.
+  1. Con los cuatro pagos de las clases 20.1–20.2 (A→B 100, B→A 80, B→C 50, C→A 30), calcula el bruto total y las posiciones netas.
   2. Cuantifica la liquidez que ahorra el neteo frente a liquidar bruto.
   3. Responde por escrito: si B falla justo antes de liquidar, ¿qué operaciones se deshacen y quién asume la pérdida?
 - **Estructura de la respuesta:** tabla de posiciones netas, ahorro de liquidez y análisis del fallo de un participante.
@@ -218,7 +218,7 @@ Todas las prácticas de este bloque son **simulaciones locales**: sin red, sin c
 
 ## 68 · Mercado tokenizado en contratos
 
-- **Objetivo:** comprobar en Solidity lo que los módulos 22, 24 y 25 afirman.
+- **Objetivo:** comprobar en Solidity lo que las clases 22, 24 y 25 afirman.
 - **Cómo se resuelve:**
   1. `cd labs/22-cbdc-mercado-tokenizado && forge install foundry-rs/forge-std && forge test -vv`.
   2. Lee el README del laboratorio: qué representa cada contrato y, sobre todo, qué **no** representa.

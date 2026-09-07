@@ -7,18 +7,68 @@
 
 ---
 
-Este es el módulo **bisagra** del programa. Todo lo que viene después —stablecoins,
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 20.1 · Qué es dinero bancario
+
+**Pregunta guía:** Cuando pagas, ¿qué activo se mueve y qué institución te debe?
+
+**Enfoque pedagógico:** contabilidad con balances enlazados.
+
+Cada pago se registra simultáneamente en libros de cliente, bancos y sistema de liquidación. Esto separa el mensaje visible del activo que finalmente cancela obligaciones.
+
+**Núcleo conceptual:**
+
+- dinero de banco central y comercial.
+- depósito como pasivo.
+- mensajería, compensación y liquidación.
+
+**Caso de trabajo:** Una transferencia aparece abonada antes de liquidarse entre bancos.
+
+**Actividad:** Registrar asientos de pagador, bancos, cámara y receptor.
+
+**Comprobación formativa:** ¿Qué pasivo disminuye y qué activo se transfiere en cada institución?
+
+**Evidencia de aprendizaje:** Mapa de balances que distinga mensaje, obligación y activo de liquidación.
+
+### Clase 20.2 · Finalidad, liquidez y riesgo de liquidación
+
+**Pregunta guía:** ¿Cuándo un pago es técnico, económico y jurídicamente final?
+
+**Enfoque pedagógico:** comparación cuantitativa de liquidación.
+
+La misma operación se procesa de forma bruta, neta y atómica. El grupo calcula exposición y liquidez para entender por qué velocidad y seguridad no son sinónimos.
+
+**Núcleo conceptual:**
+
+- DvP, PvP y riesgo Herstatt.
+- neteo y liquidez intradía.
+- firmeza y riesgo de crédito.
+
+**Caso de trabajo:** Una pata de una operación FX se liquida y la contraparte falla.
+
+**Actividad:** Comparar liquidación bruta, neta y atómica con cifras.
+
+**Comprobación formativa:** ¿Qué riesgo elimina PvP y cuál permanece si una contraparte es insolvente antes del intercambio?
+
+**Evidencia de aprendizaje:** Recomendación que cuantifique exposición y necesidad de liquidez.
+<!-- plan-clases:fin -->
+
+---
+
+Esta pareja de clases es la **bisagra** del programa. Todo lo que viene después —stablecoins,
 depósitos tokenizados, MDBC, pagos, tokenización, mercados de capitales— es una respuesta
 a problemas que solo se ven si primero entiendes **qué es el dinero que ya usas y cómo se
 mueve realmente**.
 
-La pregunta que ordena el módulo no es "¿qué mejora blockchain?" sino la anterior:
+La pregunta que ordena ambas clases no es "¿qué mejora blockchain?" sino la anterior:
 **cuando transfieres 50 000 pesos desde tu app del banco, ¿qué se mueve exactamente,
 quién te debe qué en cada instante, y en qué momento es irreversible?** Casi nadie que
 trabaja en el sector sabe responderla, y sin esa respuesta las comparaciones con
 blockchain son eslóganes.
 
-> **Alcance deliberado.** Este módulo enseña banca **solo hasta donde hace falta** para
+> **Alcance deliberado.** Esta unidad de clases enseña banca **solo hasta donde hace falta** para
 > entender qué cambia al llevarla a una cadena. No es un curso de finanzas: no cubre
 > crédito, contabilidad, riesgo de tasa ni tesorería. Para eso existe literatura
 > específica, citada en las referencias.
@@ -55,7 +105,7 @@ Al finalizar, el estudiante podrá:
 | 7 | Neto diferido vs. bruto en tiempo real | El intercambio entre liquidez y riesgo, en su forma pura |
 | 8 | Finalidad: técnica, económica y jurídica | La confusión más cara del sector |
 | 9 | Riesgo de contraparte, riesgo de liquidación y Herstatt | El problema que DvP y PvP existen para resolver |
-| 10 | Dinero programable: qué es y qué no | Prepara los módulos 21 y 22 |
+| 10 | Dinero programable: qué es y qué no | Prepara las clases 21.1–21.2 y 22.1–22.2 |
 
 ## 🧠 Modelo mental
 
@@ -170,7 +220,7 @@ De ahí la existencia de los sistemas **LBTR**: liquidan una a una, al instante,
 de banco central, eliminando ese intervalo. El coste es que cada banco necesita tener
 reservas suficientes en todo momento — liquidez inmovilizada que no rinde. **Liquidez
 contra riesgo: ese es el intercambio, y no tiene solución óptima, solo elecciones.**
-Cuando en el módulo 22 se hable de MDBC mayorista, la pregunta será exactamente esta,
+Cuando en las clases 22.1–22.2 se hable de MDBC mayorista, la pregunta será exactamente esta,
 formulada de nuevo.
 
 ### Las tres finalidades, y por qué confundirlas es caro
@@ -196,7 +246,7 @@ tradicionales son lentos porque su tecnología es antigua". Lo primero omite la 
 jurídica; lo segundo confunde latencia técnica con ventanas de firmeza, cumplimiento,
 horarios de banco central y gestión de liquidez.
 
-### Riesgo Herstatt: el problema que ordena los módulos 23 y 25
+### Riesgo Herstatt: el problema que ordena las clases 23.1–23.2 y 25.1–25.2
 
 Un banco de Fráncfort vende dólares contra marcos a un banco de Nueva York. Paga los marcos
 por la mañana, hora europea. Los dólares deben llegar por la tarde, hora de Nueva York.
@@ -208,7 +258,7 @@ respuesta del sector fue estructural —mecanismos de **pago contra pago (PvP)**
 divisas y de **entrega contra pago (DvP)** para valores— y es exactamente el problema que
 la atomicidad de un contrato inteligente resuelve de forma natural. Ese es, sin
 exageración, **el argumento técnico más sólido a favor de la tokenización**, y por eso los
-módulos 23 y 25 lo desarrollan con laboratorios ejecutables.
+clases 23.1–23.2 y 25.1–25.2 lo desarrollan con laboratorios ejecutables.
 
 > 💡 **En una frase:** compensar es ponerse de acuerdo en cuánto; liquidar es moverlo; y
 > ser firme es que la ley diga que ya no se puede deshacer — tres cosas distintas que solo
@@ -251,14 +301,14 @@ módulos 23 y 25 lo desarrollan con laboratorios ejecutables.
 2. **El circuito de tu propio pago.** Toma una transferencia real que hayas hecho (sin
    datos personales) y sitúa cada momento: iniciación, validación, envío, compensación,
    liquidación, abono. Marca en qué punto **tú** creíste que el pago era definitivo y en
-   qué punto lo fue de verdad. La distancia entre ambos es el aprendizaje del módulo.
+   qué punto lo fue de verdad. La distancia entre ambos es el aprendizaje de la unidad.
 
 3. **Ficha de las cuatro formas de dinero.** Para efectivo, depósito, dinero electrónico y
    reservas, completa: emisor, de quién es el pasivo, quién puede tenerlo, qué pasa si el
-   emisor quiebra, y si es programable. Guárdala: los módulos 21 y 22 le añaden tres
+   emisor quiebra, y si es programable. Guárdala: las clases 21.1–21.2 y 22.1–22.2 le añaden tres
    columnas más.
 
-4. Anticipo ejecutable del problema Herstatt, que resolverás en el módulo 23:
+4. Anticipo ejecutable del problema Herstatt, que resolverás en las clases 23.1–23.2:
 
 ```bash
 pnpm lab:pvp
@@ -298,7 +348,7 @@ problema que **no** se resuelve cambiando la tecnología de registro.
   a un oráculo.
 - Al describir sistemas de pago reales, no publiques identificadores, cuentas ni importes
   de terceros. El laboratorio 2 se hace con datos propios y anonimizados.
-- Este módulo **no es asesoría financiera ni legal**. Las reglas de firmeza, seguro de
+- Esta unidad de clases **no es asesoría financiera ni legal**. Las reglas de firmeza, seguro de
   depósito y supervisión dependen de cada jurisdicción y cambian; consulta siempre la
   norma vigente de la tuya (para Chile, [regulación chilena](../../regulation/chile/README.md)).
 - Sé preciso al comunicar: afirmar que una stablecoin "es como tener el dinero en el banco"
@@ -313,7 +363,7 @@ problema que **no** se resuelve cambiando la tecnología de registro.
 - Banco Central Europeo — explicación del dinero y de TARGET: <https://www.ecb.europa.eu/paym/target/html/index.en.html>
 - Banco Central de Chile — sistemas de pago y LBTR: <https://www.bcentral.cl/>
 - Banco de Inglaterra — *Money creation in the modern economy* (boletín trimestral): <https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy>
-- Módulos relacionados: [19 · DeFi](../19-defi/README.md) · [21 · Stablecoins](../21-stablecoins/README.md) · [23 · Pagos y FX on-chain](../23-pagos-fx-onchain/README.md)
+- Clases relacionadas: [19 · DeFi](../19-defi/README.md) · [21 · Stablecoins](../21-stablecoins/README.md) · [23 · Pagos y FX on-chain](../23-pagos-fx-onchain/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -326,4 +376,4 @@ problema que **no** se resuelve cambiando la tecnología de registro.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 19 · DeFi](../19-defi/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 21 · Stablecoins](../21-stablecoins/README.md)
+⬅️ [Clases 19.1–19.2 · DeFi](../19-defi/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 21.1–21.2 · Stablecoins](../21-stablecoins/README.md)

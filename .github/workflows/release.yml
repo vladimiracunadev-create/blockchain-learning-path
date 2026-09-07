@@ -96,9 +96,10 @@ jobs:
           $empaquetada = "apps/desktop/dist/win-unpacked/resources/bundle"
           if (-not (Test-Path "$empaquetada/index.html")) { throw "El empaquetado no lleva el curso" }
           $esperados = (Get-ChildItem "curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
-          $modulos = (Get-ChildItem "$empaquetada/curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
-          if ($modulos -ne $esperados) { throw "La app empaquetada tiene $modulos módulos, se esperaban $esperados" }
-          "✅ Windows: $modulos módulos empaquetados" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
+          $clases = @((Get-Content "curriculum/classes.json" -Raw | ConvertFrom-Json).classes).Count
+          $unidades = (Get-ChildItem "$empaquetada/curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
+          if ($unidades -ne $esperados) { throw "La app empaquetada tiene $unidades unidades, se esperaban $esperados" }
+          "✅ Windows: $clases clases en $unidades unidades empaquetadas" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v7
         with:
           name: windows
@@ -184,7 +185,7 @@ jobs:
           name: ${{ github.event.inputs.etiqueta || github.ref_name }}
           body: |
             Programa completo en español, de los fundamentos de blockchain a la
-            práctica profesional: 33 módulos, 91 prácticas y proyecto final. Esta
+            práctica profesional: 66 clases, 91 prácticas y proyecto final. Esta
             versión incorpora custodia, conciliación, Proof of Reserves/Liabilities,
             auditoría y blockchain forensics sin perder la progresión técnica general.
 
@@ -201,7 +202,7 @@ jobs:
             | `SHA256SUMS.txt` | Checksums para verificar las descargas |
 
             Las apps traen **todo el contenido dentro** y funcionan sin conexión.
-            Cada binario se verifica en CI abriéndolo y contando módulos, páginas y
+            Cada binario se verifica en CI abriéndolo y contando clases, páginas y
             preguntas antes de publicarse.
 
             > Los binarios **no están firmados** con certificado de código: Windows

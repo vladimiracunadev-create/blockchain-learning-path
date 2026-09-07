@@ -4,7 +4,7 @@
 
 Buenas prácticas de desarrollo, prueba y operación de sistemas blockchain. Cada práctica
 se describe con **qué** es, **por qué** importa y **cómo verificar** que se cumple. La
-profundización con exploits reales está en el módulo
+profundización con exploits reales está en las clases
 [09 · Seguridad y auditoría](../curriculum/09-seguridad/README.md).
 
 ## Diseño
@@ -16,7 +16,7 @@ Decisiones tomadas antes de escribir la primera línea de código.
 | Justificar la descentralización | Documentar por qué se necesita consenso e inmutabilidad | Evita usar blockchain por moda | ADR con alternativas descartadas |
 | Minimizar estado on-chain | Almacenar y calcular fuera de la cadena cuando se pueda | Storage y cómputo cuestan gas real | Revisar variables y bucles por costo |
 | Definir invariantes primero | Escribir las propiedades que nunca deben romperse | Guían el diseño y las pruebas | Lista de invariantes en el repo |
-| Separar responsabilidades | Aislar lógica, permisos, tesorería y actualización | Reduce el radio de impacto de un fallo | Módulos y roles distintos |
+| Separar responsabilidades | Aislar lógica, permisos, tesorería y actualización | Reduce el radio de impacto de un fallo | Componentes y roles distintos |
 
 ## Seguridad de contratos
 

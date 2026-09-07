@@ -23,7 +23,7 @@ const RAIZ_CONTENIDO = app.isPackaged
 const RAIZ_CURRICULO = app.isPackaged
   ? path.join(RAIZ_CONTENIDO, "curriculum")
   : path.join(__dirname, "..", "..", "curriculum");
-const MODULOS_ESPERADOS = fs.existsSync(RAIZ_CURRICULO)
+const UNIDADES_ESPERADAS = fs.existsSync(RAIZ_CURRICULO)
   ? fs.readdirSync(RAIZ_CURRICULO, { withFileTypes: true })
       .filter((entrada) => entrada.isDirectory() && /^\d{2}-/.test(entrada.name)).length
   : 0;
@@ -46,8 +46,8 @@ app.whenReady().then(async () => {
   } catch { /* se reporta abajo */ }
   comprobar(manifiesto !== null, "contenido.json presente");
   comprobar(
-    manifiesto?.modulos === MODULOS_ESPERADOS,
-    `el manifiesto declara ${MODULOS_ESPERADOS} módulos (declara ${manifiesto?.modulos})`
+    manifiesto?.modulos === UNIDADES_ESPERADAS && manifiesto?.clases === 66,
+    `el manifiesto declara 66 clases en ${UNIDADES_ESPERADAS} unidades`
   );
   comprobar(manifiesto?.manual === true, "el manual PDF viaja dentro de la app");
 
@@ -60,9 +60,9 @@ app.whenReady().then(async () => {
   const titulo = await ventana.webContents.executeJavaScript("document.title");
   comprobar(/Blockchain Learning Path/i.test(titulo), `la portada carga (título: "${titulo}")`);
 
-  // Un módulo cualquiera, con su temario, su quiz y su navegación
+  // Una pareja de clases, con su temario, su quiz y su navegación
   await ventana.loadURL(`${url}/curriculum/09-seguridad/README.html`);
-  const modulo = await ventana.webContents.executeJavaScript(`(() => ({
+  const unidad = await ventana.webContents.executeJavaScript(`(() => ({
     h1: document.querySelector("h1")?.textContent || "",
     palabras: document.body.innerText.trim().split(/\\s+/).length,
     preguntas: document.querySelectorAll(".qm").length,
@@ -71,12 +71,12 @@ app.whenReady().then(async () => {
     enlacesMenu: document.querySelectorAll("nav.side a").length
   }))()`);
 
-  comprobar(/Seguridad/i.test(modulo.h1), `el módulo 09 carga su título ("${modulo.h1}")`);
-  comprobar(modulo.palabras > 800, `el módulo trae su contenido (${modulo.palabras} palabras)`);
-  comprobar(modulo.preguntas === 4, `la autoevaluación del módulo se renderiza (${modulo.preguntas} preguntas)`);
-  comprobar(modulo.prev.includes("08-tokens"), `enlaza al módulo anterior (${modulo.prev || "ninguno"})`);
-  comprobar(modulo.next.includes("10-oraculos"), `enlaza al módulo siguiente (${modulo.next || "ninguno"})`);
-  comprobar(modulo.enlacesMenu > 40, `el menú lateral tiene el índice completo (${modulo.enlacesMenu} enlaces)`);
+  comprobar(/Seguridad/i.test(unidad.h1), `las clases 09.1–09.2 cargan su título ("${unidad.h1}")`);
+  comprobar(unidad.palabras > 800, `las clases traen su contenido (${unidad.palabras} palabras)`);
+  comprobar(unidad.preguntas === 4, `la autoevaluación de la unidad se renderiza (${unidad.preguntas} preguntas)`);
+  comprobar(unidad.prev.includes("08-tokens"), `enlaza a las clases anteriores (${unidad.prev || "ninguno"})`);
+  comprobar(unidad.next.includes("10-oraculos"), `enlaza a las clases siguientes (${unidad.next || "ninguno"})`);
+  comprobar(unidad.enlacesMenu > 40, `el menú lateral tiene el índice completo (${unidad.enlacesMenu} enlaces)`);
 
   // El buscador depende de un fetch: bajo file:// fallaría en silencio.
   await ventana.loadURL(url);

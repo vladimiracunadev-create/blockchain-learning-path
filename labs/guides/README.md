@@ -1,10 +1,10 @@
 # Cuaderno de prácticas
 
-El cuaderno de laboratorios reúne las **91 prácticas** del programa, organizadas en **8 cuadernos por etapa** que acompañan el avance por los 33 módulos del currículo y la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md). Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
+El cuaderno de laboratorios reúne las **91 prácticas** del programa, organizadas en **8 cuadernos por etapa** que acompañan el avance por las 66 clases —agrupadas en 33 unidades— y la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md). Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
 
 ## Los ocho cuadernos
 
-| Cuaderno | Prácticas | Módulos que acompaña |
+| Cuaderno | Prácticas | Clases que acompaña |
 |---|---|---|
 | [Fundamentos](01-foundations.md) | 01–10 | 00–03 (orientación, criptografía, distribuidos, consenso) |
 | [Consenso y Bitcoin](02-consensus-bitcoin.md) | 11–20 | 03–04 (consenso aplicado y Bitcoin) |
@@ -48,7 +48,7 @@ flowchart LR
 
 ## Evaluación
 
-El instructor evalúa con los criterios de `docs/evaluacion.md`; las respuestas conceptuales orientativas están en `solutions/conceptual-guide.md`, que da criterios de revisión, no soluciones para copiar. Las prácticas se articulan con los módulos del [currículo](../../curriculum/README.md).
+El instructor evalúa con los criterios de `docs/evaluacion.md`; las respuestas conceptuales orientativas están en `solutions/conceptual-guide.md`, que da criterios de revisión, no soluciones para copiar. Las prácticas se articulan con las clases del [currículo](../../curriculum/README.md).
 
 ## Navegación
 

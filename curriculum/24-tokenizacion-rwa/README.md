@@ -7,10 +7,60 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 24.1 · Del activo al derecho tokenizado
+
+**Pregunta guía:** ¿Qué posee jurídicamente quien controla el token?
+
+**Enfoque pedagógico:** cadena de titularidad documental.
+
+El grupo sigue un derecho desde el activo físico hasta la wallet y vuelve durante la redención. Cada salto debe tener autoridad y remedio identificables.
+
+**Núcleo conceptual:**
+
+- activo, derecho y vehículo legal.
+- registro maestro y oráculo.
+- emisión, transferencia y redención.
+
+**Caso de trabajo:** Un token apunta a un inmueble, pero el registro legal no reconoce al tenedor.
+
+**Actividad:** Dibujar cadena de derechos desde activo físico hasta wallet.
+
+**Comprobación formativa:** ¿Qué ocurre si el token y el registro legal asignan el activo a personas distintas?
+
+**Evidencia de aprendizaje:** Mapa de exigibilidad con jurisdicción, responsables y fallas posibles.
+
+### Clase 24.2 · Ciclo de vida y controles de RWA
+
+**Pregunta guía:** ¿Cómo se mantienen sincronizados token, activo y restricciones?
+
+**Enfoque pedagógico:** mesa operativa de eventos corporativos.
+
+Cupón, transferencia, congelamiento y default actualizan varios registros. La clase diseña conciliaciones para que el token no se separe del derecho.
+
+**Núcleo conceptual:**
+
+- KYC, listas permitidas y transferibilidad.
+- valuación, servicing y eventos.
+- default, congelamiento y recuperación.
+
+**Caso de trabajo:** El activo paga un cupón, pero el registro de tenedores está desactualizado.
+
+**Actividad:** Diseñar eventos corporativos y conciliaciones del ciclo completo.
+
+**Comprobación formativa:** ¿Quién corrige una divergencia y qué registro prevalece?
+
+**Evidencia de aprendizaje:** Control matrix con frecuencia, evidencia y dueño de cada control.
+<!-- plan-clases:fin -->
+
+---
+
 Tokenizar no es desplegar un ERC-20 con el nombre de un activo. Es responder a una pregunta
 incómoda: **si tienes el token y alguien más tiene el activo, ¿quién manda?**
 
-El módulo recorre el ciclo completo —del activo al derecho, del derecho al envoltorio
+Las clases recorren el ciclo completo —del activo al derecho, del derecho al envoltorio
 jurídico, del envoltorio al token, y del token de vuelta al activo en la redención— y se
 detiene donde está el riesgo de verdad: en la **junta** entre el mundo físico y la cadena.
 Un contrato inteligente ejecuta lo que dice su código con certeza absoluta; lo que no puede
@@ -126,7 +176,7 @@ participaciones de un SPV cuyo único activo es el inmueble— y hacen que el to
 representación de esas participaciones. La divergencia no se elimina; se acota a un ámbito
 en el que el token sí manda.
 
-De ahí la regla práctica que ordena el módulo: **cuanto más lejos esté el activo de poder
+De ahí la regla práctica que ordena ambas clases: **cuanto más lejos esté el activo de poder
 existir nativamente en la cadena, más pesada tiene que ser la estructura jurídica y más
 riesgo residual queda**. Un bono emitido directamente en la cadena por un emisor que
 reconoce el token como el valor tiene una junta mínima. Un inmueble tiene una junta enorme.
@@ -147,7 +197,7 @@ reconoce el token como el valor tiene una junta mínima. Un inmueble tiene una j
    patrimonio del custodio? *Control: custodio regulado, segregación acreditada, seguro.*
 3. **Atestación.** ¿Quién certifica que sigue ahí, con qué frecuencia y con qué alcance?
    *Control: firma de un tercero independiente y publicación del alcance exacto — recuerda
-   la distinción atestación/auditoría del [módulo 21](../21-stablecoins/README.md).*
+   la distinción atestación/auditoría de las [clases 21.1–21.2](../21-stablecoins/README.md).*
 4. **Servicio.** ¿Quién cobra las rentas y las reparte? ¿Qué pasa si ese gestor desaparece?
    *Control: gestor sustituto designado por contrato y probado, no nombrado sobre el papel.*
 5. **Ejecución.** Si el deudor no paga, ¿quién demanda y con qué legitimación? *Control:
@@ -211,7 +261,7 @@ tokenizados es la evidencia práctica de esto.
   y error de conciliación. Es el mejor caso de uso real de la tokenización de crédito.
 - **Multi-cadena multiplica la junta.** Si el token vive en varias cadenas mediante puente,
   el riesgo del puente se suma al del activo. El emisor puede ser impecable y el tenedor
-  perderlo todo por el tramo intermedio ([módulo 13](../13-interoperabilidad/README.md)).
+  perderlo todo por el tramo intermedio ([clases 13.1–13.2](../13-interoperabilidad/README.md)).
 - **La recuperación de tokens perdidos es un requisito, no una concesión.** Con valores
   nominativos, el emisor debe poder reasignar la titularidad si un inversor pierde su llave.
   Eso obliga a una función de intervención — y a gobernarla con timelock y auditoría, porque
@@ -220,7 +270,7 @@ tokenizados es la evidencia práctica de esto.
   impuestos fuera es la fuente más común de fricción operativa en emisiones reales.
 - **Fraccionar puede cambiar la calificación del instrumento.** Vender participaciones de un
   activo a inversores para obtener un rendimiento del esfuerzo de un tercero es, en muchas
-  jurisdicciones, emitir un valor, con todo lo que eso implica ([módulo 27](../27-regulacion-cumplimiento/README.md)).
+  jurisdicciones, emitir un valor, con todo lo que eso implica ([clases 27.1–27.2](../27-regulacion-cumplimiento/README.md)).
 
 </details>
 
@@ -230,7 +280,7 @@ tokenizados es la evidencia práctica de esto.
 
 1. **Mapa de la junta.** Elige un activo (factura comercial, plaza de aparcamiento, fondo
    monetario) y completa los cinco puntos de fallo con: quién lo cubre, con qué documento se
-   acredita y qué pasa si esa parte desaparece. Es el entregable más valioso del módulo.
+   acredita y qué pasa si esa parte desaparece. Es el entregable más valioso de la unidad.
 
 2. **Ciclo de vida ejecutable.** El laboratorio del bloque simula un instrumento tokenizado
    desde la emisión hasta el vencimiento, con cupones y amortización:
@@ -277,7 +327,7 @@ punto que la tokenización cree liquidez por sí sola.
 ## 🛡️ Seguridad y ética
 
 - Los laboratorios **simulan** instrumentos: sin activos reales, sin fondos, sin ofertas.
-  Nada en este módulo constituye una oferta de valores ni una invitación a invertir.
+  Nada en esta unidad de clases constituye una oferta de valores ni una invitación a invertir.
 - Ofrecer participaciones tokenizadas de un activo al público puede constituir **emisión de
   valores** sujeta a autorización. Comprobarlo **antes** de construir no es prudencia
   excesiva: es la diferencia entre un proyecto y una infracción.
@@ -286,7 +336,7 @@ punto que la tokenización cree liquidez por sí sola.
 - La función de recuperación/reasignación es imprescindible y peligrosa a la vez:
   gobiérnala con multifirma, timelock y registro auditable, y publícalo.
 - Nada aquí es asesoría legal, fiscal ni de inversión. Las estructuras y su tratamiento
-  varían por jurisdicción; ver [módulo 27](../27-regulacion-cumplimiento/README.md) y
+  varían por jurisdicción; ver [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md) y
   [regulación](../../regulation/README.md).
 
 ## 🔗 Referencias
@@ -296,7 +346,7 @@ punto que la tokenización cree liquidez por sí sola.
 - ERC-1400 / ERC-1404 — estándares de token de valor: <https://eips.ethereum.org/>
 - ERC-3643 — estándar de activos permisionados con identidad: <https://www.erc3643.org/>
 - OpenZeppelin — contratos base y control de acceso: <https://docs.openzeppelin.com/>
-- Módulos relacionados: [08 · Tokens](../08-tokens/README.md) · [10 · Oráculos](../10-oraculos-indexacion/README.md) · [25 · Mercados de capitales](../25-mercados-capitales-onchain/README.md)
+- Clases relacionadas: [08 · Tokens](../08-tokens/README.md) · [10 · Oráculos](../10-oraculos-indexacion/README.md) · [25 · Mercados de capitales](../25-mercados-capitales-onchain/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -309,4 +359,4 @@ punto que la tokenización cree liquidez por sí sola.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 23 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 25 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md)
+⬅️ [Clases 23.1–23.2 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 25.1–25.2 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md)

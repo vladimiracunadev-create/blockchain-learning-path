@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 03.1 · Elegir un historial válido
+
+**Pregunta guía:** ¿Cómo acuerdan los nodos qué ocurrió sin una autoridad central?
+
+**Enfoque pedagógico:** reconstrucción de una bifurcación.
+
+Se entregan bloques fuera de orden y cada equipo aplica la regla de selección. La finalidad aparece como una propiedad gradual o protocolaria, no como sinónimo de ‘visto en un explorador’.
+
+**Núcleo conceptual:**
+
+- seguridad y vivacidad.
+- finalidad probabilística y determinista.
+- reglas de fork choice.
+
+**Caso de trabajo:** Dos bloques válidos compiten temporalmente por ser la cabeza de la cadena.
+
+**Actividad:** Reconstruir una bifurcación y aplicar una regla de selección paso a paso.
+
+**Comprobación formativa:** ¿Qué dato adicional necesitas antes de afirmar que una operación ya no puede revertirse?
+
+**Evidencia de aprendizaje:** Explicación causal de cuándo una operación se considera suficientemente final.
+
+### Clase 03.2 · PoW, PoS y BFT bajo amenaza
+
+**Pregunta guía:** ¿Qué recurso impide identidades gratuitas y qué ocurre si el actor miente?
+
+**Enfoque pedagógico:** mesa comparativa bajo ataque.
+
+Todos los mecanismos enfrentan el mismo conjunto de fallas para evitar comparaciones publicitarias. El grupo identifica recurso anti-Sybil, umbral, penalización y recuperación.
+
+**Núcleo conceptual:**
+
+- recurso anti-Sybil.
+- slashing y costo de ataque.
+- quórum, 3f+1 y fallas.
+
+**Caso de trabajo:** Un conjunto de validadores pierde conectividad mientras otro intenta equivocar firmas.
+
+**Actividad:** Comparar mecanismos con una misma matriz de amenaza y recuperación.
+
+**Comprobación formativa:** Explica por qué bajo consumo energético no implica por sí mismo menor seguridad.
+
+**Evidencia de aprendizaje:** Tabla argumentada de garantías, límites y supuestos de PoW, PoS y BFT.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Comparar Proof of Work, Proof of Stake, BFT y Proof of Authority más allá de energía y velocidad.
@@ -209,4 +259,4 @@ Completa la tabla de dificultad frente a intentos y tiempo con al menos tres niv
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 02 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 04 · Bitcoin](../04-bitcoin/README.md)
+⬅️ [Clases 02.1–02.2 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 04.1–04.2 · Bitcoin](../04-bitcoin/README.md)

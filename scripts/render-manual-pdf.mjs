@@ -43,9 +43,15 @@ await pageObj.waitForFunction(
   "document.querySelectorAll('pre.mermaid svg').length >= document.querySelectorAll('pre.mermaid').length",
   { timeout: 120000, polling: 500 },
 ).catch(() => {});
-const diag = await pageObj.evaluate(
-  () => `${document.querySelectorAll("pre.mermaid svg").length}/${document.querySelectorAll("pre.mermaid").length}`);
-console.log(`Diagramas Mermaid dibujados: ${diag}`);
+const diag = await pageObj.evaluate(() => ({
+  rendered: document.querySelectorAll("pre.mermaid svg").length,
+  expected: document.querySelectorAll("pre.mermaid").length,
+}));
+console.log(`Diagramas Mermaid dibujados: ${diag.rendered}/${diag.expected}`);
+if (diag.rendered !== diag.expected) {
+  await browser.close();
+  throw new Error(`El manual perdió diagramas Mermaid: ${diag.rendered}/${diag.expected} renderizados.`);
+}
 await new Promise((r) => setTimeout(r, 2000));
 
 await pageObj.pdf({

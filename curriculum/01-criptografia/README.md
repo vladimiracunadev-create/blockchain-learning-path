@@ -8,6 +8,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 01.1 · Hashes, integridad y compromisos
+
+**Pregunta guía:** ¿Cómo se detecta una alteración sin ocultar necesariamente el dato?
+
+**Enfoque pedagógico:** demostración con contraejemplos.
+
+Se alteran mensajes casi idénticos para observar el efecto avalancha y luego se compara hash, cifrado y MAC. La clase avanza desde lo visible hacia las propiedades formales, sin presentar una huella como prueba de verdad.
+
+**Núcleo conceptual:**
+
+- preimagen, colisión y efecto avalancha.
+- hash frente a cifrado.
+- árboles y pruebas de Merkle.
+
+**Caso de trabajo:** Verificar que un lote de documentos contables no cambió desde el cierre.
+
+**Actividad:** Construir hashes encadenados y una prueba de inclusión con datos pequeños.
+
+**Comprobación formativa:** Explica por qué conocer el hash de un contrato no demuestra que su contenido sea correcto.
+
+**Evidencia de aprendizaje:** Script reproducible y explicación de qué demuestra y qué no demuestra el hash.
+
+### Clase 01.2 · Firmas, claves y ciclo de vida
+
+**Pregunta guía:** ¿Qué prueba una firma y cómo se gobierna la clave que la produce?
+
+**Enfoque pedagógico:** ceremonia de claves simulada.
+
+Cada participante asume un rol en generación, firma, respaldo, rotación o revocación. Una pérdida y una filtración obligan a distinguir disponibilidad de confidencialidad y a diseñar recuperación antes del incidente.
+
+**Núcleo conceptual:**
+
+- clave privada y pública.
+- firma, verificación y dominio del mensaje.
+- generación, respaldo, rotación y revocación.
+
+**Caso de trabajo:** Una clave de tesorería sigue activa después de que su responsable deja la empresa.
+
+**Actividad:** Firmar y verificar mensajes, luego diseñar controles para pérdida y compromiso.
+
+**Comprobación formativa:** ¿Qué puede verificar una firma y qué hecho sobre la identidad del firmante necesita evidencia externa?
+
+**Evidencia de aprendizaje:** Diagrama del ciclo de vida de una clave con responsables y puntos de control.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Explicar las propiedades de una función hash: resistencia a preimagen, a colisiones y efecto avalancha.
@@ -42,7 +92,7 @@ Al finalizar, el estudiante podrá:
 
 Imagina un sello de lacre sobre un sobre. El hash es como una huella del contenido: si alguien altera una sola letra, la huella cambia por completo (efecto avalancha) y se nota la manipulación. La firma digital es como un sello personal imposible de falsificar sin tu anillo (clave privada), que cualquiera puede reconocer con la impronta pública. El árbol de Merkle es como un índice que permite probar que una carta está dentro de un archivo enorme mostrando solo unos pocos sellos, sin abrir todas las cajas.
 
-El límite de la analogía es que ninguna de estas primitivas decide qué historia es la verdadera. El hash detecta cambios pero no dice cuál versión debe prevalecer; la firma prueba quién autorizó un mensaje pero no si ese mensaje es la transacción correcta del sistema. Ordenar y validar el historial es tarea del consenso (módulo 03), no de la criptografía por sí sola.
+El límite de la analogía es que ninguna de estas primitivas decide qué historia es la verdadera. El hash detecta cambios pero no dice cuál versión debe prevalecer; la firma prueba quién autorizó un mensaje pero no si ese mensaje es la transacción correcta del sistema. Ordenar y validar el historial es tarea del consenso (clases 03.1–03.2), no de la criptografía por sí sola.
 
 ## 🧩 Esquema visual
 
@@ -126,7 +176,7 @@ Regla práctica: si la entrada es de baja entropía (una contraseña humana), nu
 
 ### Por qué "inviable" no significa "imposible"
 
-Cuando este módulo dice que encontrar una colisión de SHA-256 es *inviable*, no está diciendo que sea imposible: está diciendo que **cuesta más energía de la que hay disponible**. Conviene ver el número, porque es lo que convierte un acto de fe en un argumento.
+Cuando esta unidad de clases dice que encontrar una colisión de SHA-256 es *inviable*, no está diciendo que sea imposible: está diciendo que **cuesta más energía de la que hay disponible**. Conviene ver el número, porque es lo que convierte un acto de fe en un argumento.
 
 Por la paradoja del cumpleaños, encontrar una colisión en un hash de *n* bits no cuesta 2ⁿ intentos sino aproximadamente **2^(n/2)**. Para SHA-256:
 
@@ -231,4 +281,4 @@ Toma un conjunto de transacciones, construye su raíz de Merkle, altera una tran
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 00 · Orientación](../00-orientacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 02 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)
+⬅️ [Clases 00.1–00.2 · Orientación](../00-orientacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 02.1–02.2 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)

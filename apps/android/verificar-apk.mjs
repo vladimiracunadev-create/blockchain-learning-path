@@ -74,13 +74,16 @@ function comprobar(condicion, mensaje) {
 // El número esperado se CUENTA del repositorio, no se escribe a mano: una cifra
 // fija aquí obliga a recordar actualizarla cada vez que crece el currículo, y el
 // día que se olvida el verificador miente en la dirección peligrosa.
-const MODULOS_ESPERADOS = readdirSync(new URL("../../curriculum", import.meta.url))
+const UNIDADES_ESPERADAS = readdirSync(new URL("../../curriculum", import.meta.url))
   .filter((nombre) => /^\d{2}-/.test(nombre)).length;
+const CLASES_ESPERADAS = JSON.parse(
+  readFileSync(new URL("../../curriculum/classes.json", import.meta.url), "utf8")
+).flatMap((unit) => unit.classes).length;
 
 const RAIZ = "assets/public/";
 const contenido = entradas.filter((e) => e.nombre.startsWith(RAIZ));
 const paginas = contenido.filter((e) => e.nombre.endsWith(".html"));
-const modulos = new Set(
+const unidades = new Set(
   contenido
     .map((e) => /^assets\/public\/curriculum\/(\d{2}-[a-z0-9-]+)\//.exec(e.nombre)?.[1])
     .filter(Boolean)
@@ -94,8 +97,8 @@ comprobar(entradas.some((e) => e.nombre === "classes.dex"), "incluye el código 
 comprobar(contenido.length > 0, `el curso está empaquetado en ${RAIZ} (${contenido.length} archivos)`);
 comprobar(paginas.length >= 80, `trae las páginas del curso (${paginas.length} HTML)`);
 comprobar(
-  modulos.size === MODULOS_ESPERADOS,
-  `trae los ${MODULOS_ESPERADOS} módulos del currículo (${modulos.size} encontrados)`
+  unidades.size === UNIDADES_ESPERADAS,
+  `trae las ${CLASES_ESPERADAS} clases en ${UNIDADES_ESPERADAS} unidades (${unidades.size} encontradas)`
 );
 comprobar(
   entradas.some((e) => e.nombre === `${RAIZ}manual/MANUAL.pdf` && e.sinComprimir > 1_000_000),
@@ -114,8 +117,8 @@ comprobar(Boolean(entradaManifiesto), "incluye el manifiesto de contenido");
 if (entradaManifiesto) {
   const manifiesto = JSON.parse(leerEntrada(entradaManifiesto).toString("utf8"));
   comprobar(
-    manifiesto.modulos === MODULOS_ESPERADOS,
-    `el manifiesto declara ${MODULOS_ESPERADOS} módulos (declara ${manifiesto.modulos})`
+    manifiesto.modulos === UNIDADES_ESPERADAS && manifiesto.clases === CLASES_ESPERADAS,
+    `el manifiesto declara ${CLASES_ESPERADAS} clases en ${UNIDADES_ESPERADAS} unidades`
   );
   comprobar(manifiesto.manual === true, "el manifiesto confirma el manual incluido");
   console.log(`\n  Versión empaquetada: ${manifiesto.version}`);
@@ -123,14 +126,14 @@ if (entradaManifiesto) {
 
 // Una página real, descomprimida y leída: la prueba definitiva de que el HTML
 // no es un archivo vacío con el nombre correcto.
-const modulo = entradas.find((e) => e.nombre === `${RAIZ}curriculum/09-seguridad/README.html`);
-comprobar(Boolean(modulo), "el módulo 09 está en el APK");
-if (modulo) {
-  const html = leerEntrada(modulo).toString("utf8");
-  comprobar(html.length > 20000, `el módulo 09 tiene su contenido (${html.length} bytes de HTML)`);
-  comprobar(html.includes("Seguridad y auditoría"), "el módulo 09 conserva su título");
-  comprobar((html.match(/"prompt":/g) ?? []).length === 4, "el módulo 09 lleva sus 4 preguntas de autoevaluación");
-  comprobar(html.includes('rel="prev"') && html.includes('rel="next"'), "el módulo 09 lleva la navegación anterior/siguiente");
+const unidad = entradas.find((e) => e.nombre === `${RAIZ}curriculum/09-seguridad/README.html`);
+comprobar(Boolean(unidad), "las clases 09.1–09.2 están en el APK");
+if (unidad) {
+  const html = leerEntrada(unidad).toString("utf8");
+  comprobar(html.length > 20000, `las clases 09.1–09.2 tienen su contenido (${html.length} bytes de HTML)`);
+  comprobar(html.includes("Seguridad y auditoría"), "las clases conservan el título de su unidad");
+  comprobar((html.match(/"prompt":/g) ?? []).length === 4, "la unidad lleva sus 4 preguntas de autoevaluación");
+  comprobar(html.includes('rel="prev"') && html.includes('rel="next"'), "la unidad conserva la navegación anterior/siguiente");
 }
 
 console.log(fallos.length

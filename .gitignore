@@ -12,6 +12,7 @@ foundry.lock
 coverage/
 site/
 manual/manual.html
+manual/assets/
 # Bundle offline y binarios de las apps: se generan en cada build y se publican
 # como artefactos del release, no se versionan.
 apps/bundle/

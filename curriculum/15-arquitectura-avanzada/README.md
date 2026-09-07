@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 15.1 · Cuentas programables y actualizaciones
+
+**Pregunta guía:** ¿Cómo añadimos recuperación y cambios sin crear una llave maestra invisible?
+
+**Enfoque pedagógico:** revisión de arquitectura y rollback.
+
+Una actualización útil se enfrenta a corrupción de storage y abuso administrativo. La clase exige procedimiento de migración y reversión junto con el patrón técnico.
+
+**Núcleo conceptual:**
+
+- ERC-4337 y EIP-7702.
+- proxies y storage layout.
+- roles, timelocks y migración.
+
+**Caso de trabajo:** Una actualización válida corrompe storage y bloquea retiros.
+
+**Actividad:** Diseñar cuenta recuperable y plan de upgrade con rollback.
+
+**Comprobación formativa:** ¿Qué poder conserva el administrador después del timelock y cómo se limita?
+
+**Evidencia de aprendizaje:** ADR con invariantes, autoridad, demora y procedimiento de emergencia.
+
+### Clase 15.2 · MEV y arquitectura de producción
+
+**Pregunta guía:** ¿Qué actores pueden reordenar operaciones y cómo cambia el diseño?
+
+**Enfoque pedagógico:** simulación de cadena de suministro de bloques.
+
+Usuarios, searchers, builders, relays y proponentes compiten por ordenar una operación. El MEV se observa como consecuencia arquitectónica y económica.
+
+**Núcleo conceptual:**
+
+- front-running y sandwich.
+- PBS, builders y relays.
+- observabilidad, costos y reducción de complejidad.
+
+**Caso de trabajo:** Una operación grande pierde valor por hacerse visible en el mempool.
+
+**Actividad:** Modelar el recorrido de una orden y sus puntos de extracción.
+
+**Comprobación formativa:** Señala dónde se hace visible la intención y quién puede beneficiarse de ella.
+
+**Evidencia de aprendizaje:** Arquitectura final con amenaza MEV, mitigación y costo residual.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Integrar la abstracción de cuenta con ERC-4337 (UserOperations, bundlers, paymasters) y EIP-7702 para EOAs en Pectra (2025).
@@ -227,6 +277,8 @@ Entrega un documento de arquitectura del proyecto integrador que incluya: proble
 
 - ERC-4337, Account Abstraction Using Alt Mempool — <https://eips.ethereum.org/EIPS/eip-4337>
 - EIP-7702, Set EOA account code (Pectra) — <https://eips.ethereum.org/EIPS/eip-7702>
+- Ethereum.org, guía operativa y de seguridad de EIP-7702 — <https://ethereum.org/roadmap/pectra/7702/>
+- Ethereum Foundation, activación de Pectra en mainnet (7 de mayo de 2025) — <https://blog.ethereum.org/en/2025/04/23/pectra-mainnet>
 - Flashbots, investigación sobre MEV — <https://writings.flashbots.net/>
 - OpenZeppelin, Upgrades Plugins — <https://docs.openzeppelin.com/upgrades-plugins/>
 - Voshmgir, S., *Token Economy* — <https://github.com/Token-Economy-Book/3rdEdition-English>
@@ -242,4 +294,4 @@ Entrega un documento de arquitectura del proyecto integrador que incluya: proble
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 16 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md)
+⬅️ [Clases 14.1–14.2 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 16.1–16.2 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md)

@@ -5,6 +5,57 @@
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [31 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [🎓 Caso final de empresa custodial](../../capstone/README.md)
 
+
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 32.1 · Forensics con evidencia reproducible
+
+**Pregunta guía:** ¿Cómo investigamos flujos sin convertir heurísticas en acusaciones?
+
+**Enfoque pedagógico:** expediente forense con revisión ciega.
+
+Un equipo reconstruye flujos y otro revisa sin conocer su conclusión. La cadena de custodia y las hipótesis alternativas reducen confirmación y sobreatribución.
+
+**Núcleo conceptual:**
+
+- grafos y trazabilidad.
+- procedencia y cadena de custodia.
+- privacidad y falsa atribución.
+
+**Caso de trabajo:** Una dirección recibe fondos desde un cluster etiquetado, pero la relación es indirecta.
+
+**Actividad:** Reconstruir un camino y puntuar la fuerza de cada inferencia.
+
+**Comprobación formativa:** ¿Qué parte del hallazgo es observable directamente y cuál depende de una heurística?
+
+**Evidencia de aprendizaje:** Expediente con hashes, timestamps, fuentes y lenguaje probabilístico.
+
+### Clase 32.2 · Auditoría, cumplimiento y gobierno custodial
+
+**Pregunta guía:** ¿Quién autoriza, ejecuta, registra, concilia e investiga cada movimiento?
+
+**Enfoque pedagógico:** simulacro de comité de control.
+
+Autorización, ejecución, registro, conciliación e investigación se reparten entre roles. Una excepción obliga a comprobar independencia y escalamiento real.
+
+**Núcleo conceptual:**
+
+- segregación de funciones.
+- gobierno de wallets y excepciones.
+- auditoría, compliance y respuesta.
+
+**Caso de trabajo:** La misma persona crea una dirección, aprueba el retiro y resuelve la alerta.
+
+**Actividad:** Diseñar RACI, controles preventivos/detectivos y escalamiento.
+
+**Comprobación formativa:** Identifica un conflicto de funciones y diseña un control preventivo y otro detectivo.
+
+**Evidencia de aprendizaje:** Programa de auditoría con objetivo, procedimiento, muestra, evidencia y conclusión.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Construir y leer grafos de transacciones sin convertir heurísticas en hechos.
@@ -81,6 +132,10 @@ Redacta un hallazgo sobre `bc1qbeta` con cuatro párrafos rotulados: hecho, indi
 
 ## 🛡️ Seguridad y ética
 
+- Aplica la separación hecho/indicador/inferencia/hipótesis al
+  [caso Orionx](../../docs/casos-reales/orionx-descalce-custodia.md). Una querella es una
+  fuente procesal relevante, no una sentencia ni autorización para publicar identidades.
+
 No hagas deanonymization de personas sin finalidad legítima y autorización. Minimiza datos, controla acceso y conserva una pista de decisiones. Los laboratorios solo usan identidades y fondos ficticios.
 
 ## 🔗 Referencias
@@ -96,4 +151,4 @@ Puedes sostener una conclusión con evidencia reproducible, cuantificar su incer
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 31 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [🎓 Caso final de empresa custodial](../../capstone/README.md)
+⬅️ [Clases 31.1–31.2 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [🎓 Caso final de empresa custodial](../../capstone/README.md)

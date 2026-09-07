@@ -7,7 +7,57 @@
 
 ---
 
-El módulo final antes del capstone responde la pregunta que los diagramas conceptuales
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 18.1 · Integración end-to-end
+
+**Pregunta guía:** ¿Cómo se conectan contratos, identidad, datos y sistemas heredados?
+
+**Enfoque pedagógico:** taller de secuencia e idempotencia.
+
+Un timeout provoca reintentos y dobles registros entre ERP, API y cadena. Los identificadores y estados compensatorios se descubren siguiendo el evento extremo a extremo.
+
+**Núcleo conceptual:**
+
+- límites de sistema y APIs.
+- eventos, idempotencia y reconciliación.
+- off-chain, on-chain y oráculos.
+
+**Caso de trabajo:** El ERP registra una orden dos veces al reintentar tras un timeout RPC.
+
+**Actividad:** Diseñar flujo con identificadores, reintentos y compensaciones.
+
+**Comprobación formativa:** ¿Qué componente decide si un reintento es duplicado y con qué clave?
+
+**Evidencia de aprendizaje:** Diagrama de secuencia con fuente de verdad y control por transición.
+
+### Clase 18.2 · Paso a producción y operación
+
+**Pregunta guía:** ¿Qué debe estar listo antes de que una transacción tenga consecuencias reales?
+
+**Enfoque pedagógico:** readiness review multidisciplinario.
+
+Tecnología, operaciones, seguridad, legal y soporte deben presentar evidencia antes del go-live. Un contrato correcto no compensa la ausencia de propietario del servicio.
+
+**Núcleo conceptual:**
+
+- entornos, despliegue y rollback.
+- seguridad, legal y soporte.
+- SLA, costos y gobierno de cambios.
+
+**Caso de trabajo:** Un contrato probado se despliega sin propietario operativo del incidente.
+
+**Actividad:** Ejecutar un readiness review multidisciplinario.
+
+**Comprobación formativa:** Nombra un bloqueo de producción que no pueda resolver el equipo de desarrollo solo.
+
+**Evidencia de aprendizaje:** Checklist firmable con responsables, evidencias y riesgos aceptados.
+<!-- plan-clases:fin -->
+
+---
+
+Las últimas dos clases antes del proyecto final responden la pregunta que los diagramas conceptuales
 esquivan: **¿cómo se conecta esto con el ERP, el core bancario y los sistemas que la
 empresa ya tiene?** Con qué piezas, en qué ambientes, con qué equipo, en cuántos meses
 — y lo ensamblas en miniatura, ejecutable, con las piezas reales de este repositorio.
@@ -69,7 +119,7 @@ flowchart TD
     Q --> MW["Middleware blockchain:<br>construye y simula la tx"]
     MW --> SIG["Firma: KMS, HSM o MPC"]
     SIG --> MW
-    MW --> RPC["Nodos propios + contingencia<br>modulo 16"]
+    MW --> RPC["Nodos propios + contingencia<br>clases 16.1–16.2"]
     RPC --> NET["Red: L2 publica o permisionada"]
     NET --> IDX["Indexador de eventos"]
     IDX --> DB["Base de datos de lectura"]
@@ -105,7 +155,7 @@ flowchart LR
 
 | Componente | Construir | Comprar | Criterio |
 |---|---|---|---|
-| Nodos / RPC | Flota propia (módulo 16) | Alchemy, Infura, QuickNode | Volumen, privacidad, SLA |
+| Nodos / RPC | Flota propia (clases 16.1–16.2) | Alchemy, Infura, QuickNode | Volumen, privacidad, SLA |
 | Firma / custodia | HSM propio + política | Fireblocks, BitGo, custodio regulado | Licencias, monto, seguro |
 | Indexación | Indexador propio (como el del repo) | The Graph, proveedores de datos | Complejidad y latencia |
 | Contratos | Equipo propio + auditoría | Plantillas auditadas (OpenZeppelin) | Cuán estándar es el caso |
@@ -125,14 +175,14 @@ flowchart LR
 
 | Fase | Semanas | Entregable verificable |
 |---|---|---|
-| 1 · Descubrimiento | 1-4 | Matriz del módulo 00 respondida con evidencia; elección de red; ADRs |
+| 1 · Descubrimiento | 1-4 | Matriz de las clases 00.1–00.2 respondida con evidencia; elección de red; ADRs |
 | 2 · Diseño | 5-8 | Spec con invariantes, threat model, plan de custodia e integración |
 | 3 · Construcción | 9-16 | Contratos probados y fuzzeados; middleware + firma; todo en testnet |
 | 4 · Endurecimiento | 17-20 | Auditoría externa, correcciones verificadas, pre-producción completa |
 | 5 · Lanzamiento acotado | 21-24 | Mainnet con caps, monitoreo y runbook ensayado |
 | 6 · Operación | 25+ | Ampliación gradual de límites, post-mortems, métricas de negocio |
 
-Las fases 1-2 son las más baratas y las más determinantes: los fracasos del módulo 17
+Las fases 1-2 son las más baratas y las más determinantes: los fracasos de las clases 17.1–17.2
 (TradeLens, ASX) se gestaron ahí, no en el código.
 
 ### Una operación real, paso a paso, y dónde se rompe cada una
@@ -240,7 +290,7 @@ pnpm build:web
 ## 📝 Reto verificable
 
 Escribe el **documento de arquitectura** de una implementación empresarial para el caso
-de negocio que construiste en el módulo 17: diagrama de siete capas adaptado, tabla
+de negocio que construiste en las clases 17.1–17.2: diagrama de siete capas adaptado, tabla
 build vs. buy con justificación por componente, plan de ambientes con qué valida cada
 uno, plan de fases con entregables, y la operación segura (límites iniciales, política
 de firma M-de-N, tres runbooks nombrados).
@@ -259,7 +309,7 @@ lanzamiento tienen números concretos.
 | El lanzamiento se retrasa por la auditoría | Se agendó tarde; las firmas serias se reservan desde la fase de diseño |
 | La primera firma multisig falla en producción | No hubo pre-producción con ceremonia ensayada |
 | Un bug drena más de lo tolerable | Sin caps de guarded launch; los límites se definen antes de mainnet |
-| "Multi-región lo vemos después" | La contingencia RPC y la réplica se diseñan el día uno (módulo 16) |
+| "Multi-región lo vemos después" | La contingencia RPC y la réplica se diseñan el día uno (clases 16.1–16.2) |
 
 ## 🛡️ Seguridad y ética
 
@@ -289,4 +339,4 @@ lanzamiento tienen números concretos.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 17 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 19 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md)
+⬅️ [Clases 17.1–17.2 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 19.1–19.2 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md)

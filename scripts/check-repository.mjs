@@ -7,6 +7,8 @@ const required = [
   "SECURITY.md",
   "docs/mejores-practicas.md",
   "curriculum/README.md",
+  "curriculum/classes.json",
+  "curriculum/pedagogy.json",
   "capstone/README.md",
   "labs/CATALOG.md",
   "learning-paths/README.md",
@@ -91,15 +93,81 @@ if (guidedPractices.length !== 91) {
 }
 console.log("Guías prácticas: 91/91.");
 
-// --- Autoevaluación por módulo -----------------------------------------------
-// Un quiz con una respuesta correcta fuera de rango o con opciones repetidas no
-// falla al construir el sitio: falla en la cara del alumno, que no entiende por
-// qué acertando le dice que no. Aquí se comprueba antes de publicar.
-const quizzes = JSON.parse(await readFile("assessments/module-quizzes.json", "utf8"));
+// --- Catálogo y diseño pedagógico de las clases ------------------------------
+const classCatalog = JSON.parse(await readFile("curriculum/classes.json", "utf8"));
+const pedagogy = JSON.parse(await readFile("curriculum/pedagogy.json", "utf8"));
+
+// Las carpetas numeradas son unidades documentales estables. Cada una contiene
+// dos clases pedagógicamente distintas; separar ambos conceptos evita romper URL.
 const moduleSlugs = (await readdir("curriculum", { withFileTypes: true }))
   .filter((entry) => entry.isDirectory() && /^\d{2}-/.test(entry.name))
   .map((entry) => entry.name)
   .sort();
+const classIds = classCatalog.flatMap((unit) => unit.classes.map((item) => item.id));
+const classItems = classCatalog.flatMap((unit) => unit.classes);
+const classErrors = [];
+
+if (classCatalog.length !== moduleSlugs.length) {
+  classErrors.push(`hay ${classCatalog.length} unidades en classes.json y ${moduleSlugs.length} directorios`);
+}
+if (classIds.length !== 66 || new Set(classIds).size !== 66) {
+  classErrors.push(`se esperaban 66 identificadores únicos y existen ${new Set(classIds).size}/${classIds.length}`);
+}
+for (const field of ["title", "question", "case", "activity", "evidence"]) {
+  const values = classItems.map((item) => item[field]?.trim()).filter(Boolean);
+  if (values.length !== classItems.length || new Set(values).size !== classItems.length) {
+    classErrors.push(`el campo ${field} debe ser propio y no repetirse entre las 66 clases`);
+  }
+}
+const expectedPedagogy = new Set(classIds.filter((id) => !["00.1", "00.2", "31.1", "31.2"].includes(id)));
+const actualPedagogy = new Set(Object.keys(pedagogy));
+if (actualPedagogy.size !== expectedPedagogy.size || [...actualPedagogy].some((id) => !expectedPedagogy.has(id))) {
+  classErrors.push("pedagogy.json debe contener exactamente las 62 clases no artesanales");
+}
+
+for (const [index, unit] of classCatalog.entries()) {
+  const number = moduleSlugs[index]?.slice(0, 2);
+  if (unit.unit !== number || unit.classes.length !== 2) {
+    classErrors.push(`${unit.unit}: no corresponde a ${number} o no contiene exactamente dos clases`);
+    continue;
+  }
+  const text = await readFile(join("curriculum", moduleSlugs[index], "README.md"), "utf8");
+  if ((text.match(/<!-- plan-clases:inicio -->/g) ?? []).length !== 1 ||
+      (text.match(/<!-- plan-clases:fin -->/g) ?? []).length !== 1) {
+    classErrors.push(`${moduleSlugs[index]}: debe contener un único plan de clases delimitado`);
+  }
+  for (const item of unit.classes) {
+    if (!text.includes(`### Clase ${item.id} · ${item.title}`)) {
+      classErrors.push(`${moduleSlugs[index]}: no contiene el encabezado de ${item.id}`);
+    }
+    const design = pedagogy[item.id];
+    const isHandcrafted = ["00.1", "00.2", "31.1", "31.2"].includes(item.id);
+    if (!design && !isHandcrafted) classErrors.push(`${item.id}: falta diseño pedagógico`);
+    if (design && design.explanation.trim().split(/\s+/).length < 18) {
+      classErrors.push(`${item.id}: explicación pedagógica demasiado breve`);
+    }
+    if (!isHandcrafted) {
+      for (const value of [item.question, item.case, item.activity, item.evidence]) {
+        if (!text.includes(value)) classErrors.push(`${item.id}: su diseño no está sincronizado en el README`);
+      }
+    }
+  }
+  const methods = unit.classes.map((item) => pedagogy[item.id]?.method).filter(Boolean);
+  if (methods.length === 2 && methods[0] === methods[1]) {
+    classErrors.push(`${unit.unit}: sus dos clases usan el mismo método`);
+  }
+}
+if (new Set(Object.values(pedagogy).map((item) => item.method)).size < 25) {
+  classErrors.push("hay menos de 25 estrategias pedagógicas distintas");
+}
+if (classErrors.length) throw new Error(`Catálogo de clases inválido:\n${classErrors.join("\n")}`);
+console.log(`Clases: ${classIds.length} en ${classCatalog.length} unidades estables, con diseño pedagógico verificado.`);
+
+// --- Autoevaluación por unidad ------------------------------------------------
+// Un quiz con una respuesta correcta fuera de rango o con opciones repetidas no
+// falla al construir el sitio: falla en la cara del alumno, que no entiende por
+// qué acertando le dice que no. Aquí se comprueba antes de publicar.
+const quizzes = JSON.parse(await readFile("assessments/module-quizzes.json", "utf8"));
 
 const quizErrors = [];
 let preguntas = 0;
@@ -127,10 +195,10 @@ for (const slug of moduleSlugs) {
   });
 }
 for (const slug of Object.keys(quizzes.modules)) {
-  if (!moduleSlugs.includes(slug)) quizErrors.push(`${slug}: hay quiz pero no existe el módulo`);
+  if (!moduleSlugs.includes(slug)) quizErrors.push(`${slug}: hay evaluación pero no existe la unidad`);
 }
-if (quizErrors.length) throw new Error(`Autoevaluación por módulo:\n${quizErrors.join("\n")}`);
-console.log(`Autoevaluación: ${moduleSlugs.length}/${moduleSlugs.length} módulos, ${preguntas} preguntas.`);
+if (quizErrors.length) throw new Error(`Autoevaluación por unidad:\n${quizErrors.join("\n")}`);
+console.log(`Autoevaluación: ${moduleSlugs.length}/${moduleSlugs.length} unidades, ${preguntas} preguntas, más 66 comprobaciones formativas de clase.`);
 
 // --- Cadena anterior/siguiente entre módulos ---------------------------------
 // El curso es secuencial: si un módulo apunta al vecino equivocado (o a ninguno),
@@ -169,8 +237,8 @@ for (const [indice, slug] of moduleSlugs.entries()) {
     if (!pie.includes(siguiente)) cadenaErrores.push(`${slug}: el pie no enlaza al siguiente (${siguiente})`);
   }
 }
-if (cadenaErrores.length) throw new Error(`Cadena de módulos rota:\n${cadenaErrores.join("\n")}`);
-console.log(`Cadena anterior/siguiente: ${moduleSlugs.length} módulos encadenados.`);
+if (cadenaErrores.length) throw new Error(`Cadena de unidades rota:\n${cadenaErrores.join("\n")}`);
+console.log(`Cadena anterior/siguiente: ${moduleSlugs.length} unidades encadenadas.`);
 
 // --- Trazabilidad de las fuentes ----------------------------------------------
 // El contenido de los módulos es original, pero se apoya en obras concretas. Esa
@@ -219,7 +287,7 @@ for (const slug of moduleSlugs) {
 }
 
 if (fuentesErrores.length) throw new Error(`Fuentes no trazables:\n${fuentesErrores.join("\n")}`);
-console.log(`Fuentes: ${moduleSlugs.length} módulos con fuente declarada y referencias enlazadas.`);
+console.log(`Fuentes: ${moduleSlugs.length} unidades / ${classIds.length} clases con fuente declarada y referencias enlazadas.`);
 
 // --- Recuento de pruebas declarado en la documentación ------------------------
 // La bibliografía afirma que buena parte del contenido "se comprueba ejecutándolo"

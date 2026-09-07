@@ -6,7 +6,7 @@ name: Apps
 # Un build en verde no prueba que el artefacto sirva: el caso que se repite es un
 # instalador que pesa lo esperado, se instala sin error y abre una ventana vacía
 # porque el contenido nunca llegó a copiarse. Por eso cada job termina con un
-# paso de verificación que cuenta módulos, páginas y preguntas DENTRO del binario.
+# paso de verificación que cuenta clases, unidades, páginas y preguntas DENTRO del binario.
 
 on:
   push:
@@ -72,12 +72,13 @@ jobs:
           if (-not (Test-Path "$empaquetada/index.html")) {
             throw "El instalador no lleva el curso dentro ($empaquetada)"
           }
-          $esperados = (Get-ChildItem "curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
-          $modulos = (Get-ChildItem "$empaquetada/curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
+          $esperadas = @((Get-Content "curriculum/classes.json" -Raw | ConvertFrom-Json).classes).Count
+          $unidadesEsperadas = (Get-ChildItem "curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
+          $unidades = (Get-ChildItem "$empaquetada/curriculum" -Directory | Where-Object { $_.Name -match '^\d{2}-' }).Count
           $paginas = (Get-ChildItem $empaquetada -Recurse -Filter *.html).Count
-          if ($modulos -ne $esperados) { throw "La app empaquetada tiene $modulos módulos, se esperaban $esperados" }
+          if ($unidades -ne $unidadesEsperadas) { throw "La app empaquetada tiene $unidades unidades, se esperaban $unidadesEsperadas" }
           if ($paginas -lt 80) { throw "La app empaquetada tiene $paginas páginas, se esperaban 80 o más" }
-          "✅ App empaquetada: $modulos módulos, $paginas páginas" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
+          "✅ App empaquetada: $esperadas clases en $unidades unidades, $paginas páginas" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
           Get-ChildItem apps/desktop/dist/*.exe | ForEach-Object {
             "- $($_.Name) — $([math]::Round($_.Length/1MB,1)) MB" | Tee-Object -Append $env:GITHUB_STEP_SUMMARY
           }

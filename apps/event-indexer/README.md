@@ -1,6 +1,6 @@
 # Indexador de eventos
 
-> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Módulo 10 · Oráculos e indexación](../../curriculum/10-oraculos-indexacion/README.md)
+> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 10.1–10.2 · Oráculos e indexación](../../curriculum/10-oraculos-indexacion/README.md)
 
 Indexador mínimo en Node.js que reconstruye una vista de campañas de `CommunityFunding` a partir de sus **logs de eventos**, y guarda un **checkpoint** (último bloque procesado) para reanudar sin releer toda la cadena. Es la contraparte del [contrato](../../projects/community-funding/README.md) y de la [interfaz web](../community-funding-web/README.md): un patrón que aparece en todo backend serio de dApp.
 
@@ -96,4 +96,4 @@ El indexador es deliberadamente ingenuo. Convertirlo en robusto exige:
 
 ## Relación con el currículo
 
-Este laboratorio concreta las ideas del [módulo 10 · Oráculos e indexación](../../curriculum/10-oraculos-indexacion/README.md): cómo el dato on-chain se transforma en una vista consultable y por qué la seguridad ante reorgs es parte del diseño, no un extra.
+Este laboratorio concreta las ideas de las [clases 10.1–10.2 · Oráculos e indexación](../../curriculum/10-oraculos-indexacion/README.md): cómo el dato on-chain se transforma en una vista consultable y por qué la seguridad ante reorgs es parte del diseño, no un extra.

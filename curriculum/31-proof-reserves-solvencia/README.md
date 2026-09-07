@@ -1,9 +1,67 @@
 # 31 · Proof of Reserves, pasivos y solvencia
 
-> **Nivel:** Profesional · ⏱️ **Duración estimada:** 210 min · **Fuente:** especificaciones de Certificate Transparency/Merkle trees, marcos de encargos de aseguramiento y publicaciones regulatorias sobre proof of reserves
+> **Nivel:** Profesional · ⏱️ **Duración estimada:** 2 clases de 105 min · **Fuente:** especificaciones de Certificate Transparency/Merkle trees, marcos de encargos de aseguramiento y publicaciones regulatorias sobre proof of reserves
 >
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [30 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [32 · Forensics, auditoría y gobernanza](../32-forensics-auditoria-gobernanza/README.md)
+
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 31.1 · Del saldo del cliente a una prueba Merkle
+
+**Método:** laboratorio de construcción y sabotaje controlado.
+
+La clase no comienza definiendo Proof of Reserves. Comienza con cinco clientes que
+preguntan si sus saldos aparecen en una lista sin publicar los saldos de los demás.
+El grupo normaliza cada registro, añade un nonce, calcula las hojas y construye el
+árbol hasta obtener una única raíz. Después verifica una prueba a mano antes de usar
+el script. Esto permite entender que la raíz es un **compromiso criptográfico con un
+conjunto concreto**, no un certificado general de honestidad.
+
+Cuando la prueba funciona, otro equipo actúa como operador adversarial: omite una
+cuenta, duplica otra, cambia la unidad, introduce saldo negativo o reutiliza una raíz
+de otro corte. Cada manipulación obliga a preguntar qué control la detectaría. El
+objetivo no es admirar el árbol, sino reconocer la diferencia entre integridad de los
+datos comprometidos e **integridad de la población** que debió entrar al árbol.
+
+**Secuencia práctica:** canonizar → hashear hojas → construir niveles → publicar raíz
+→ verificar inclusión → alterar una entrada → localizar qué garantía se rompió.
+
+**Evidencia:** raíz reproducible, prueba válida, prueba inválida y una nota que enumere
+cuatro afirmaciones que Merkle no demuestra. No se aprueba una captura de pantalla sin
+datos de entrada y comando de reproducción.
+
+### Clase 31.2 · Del snapshot a una conclusión profesional
+
+**Método:** comité de aseguramiento con contradicción de evidencia.
+
+El grupo recibe tres paquetes separados: pasivos comprometidos, wallets atribuidas a
+la entidad y confirmaciones de saldos mantenidos en terceros. Debe fijar primero un
+corte común. Luego compara activo por activo: BTC no se compensa automáticamente con
+un token ilíquido y una reclamación contra otro exchange no equivale a una wallet cuyo
+control fue demostrado.
+
+La mitad de la clase se dedica al lenguaje de la conclusión. “Las reservas existen”,
+“los activos cubren los pasivos incluidos” y “la empresa es solvente” son afirmaciones
+distintas. Para pasar de la segunda a la tercera faltan, entre otras cosas, integridad
+de todos los pasivos, derechos sobre los activos, gravámenes, valuación, hechos
+posteriores y continuidad operacional. El comité debe rechazar toda frase cuyo alcance
+sea mayor que la evidencia.
+
+**Incidente de contraste:** aparece un préstamo no incluido firmado el día anterior y
+una transferencia entrante devuelta horas después del corte. El equipo reevalúa ratio,
+propiedad, ventana temporal y riesgo de *window dressing*.
+
+**Evidencia:** papel de trabajo que reconcilie `assets vs liabilities`, describa los
+procedimientos ejecutados, separe excepción de limitación y redacte una conclusión
+acotada. Otro equipo debe poder reproducir los totales sin pedir explicaciones orales.
+
+**Cierre:** PoR puede aportar evidencia útil. Deja de ser útil cuando se presenta como
+sinónimo de auditoría financiera completa.
+<!-- plan-clases:fin -->
+
+---
 
 ## 🎯 Objetivos
 
@@ -85,6 +143,7 @@ Publicar identificadores o saldos sin protección puede reidentificar clientes. 
 
 - [RFC 6962: Certificate Transparency y árboles Merkle](https://www.rfc-editor.org/rfc/rfc6962)
 - [IAASB: International Framework for Assurance Engagements](https://www.iaasb.org/publications/international-framework-assurance-engagements-2)
+- [IAASB: ISRS 4400 (Revised), procedimientos acordados](https://www.iaasb.org/publications/international-standard-related-services-isrs-4400-revised)
 - [PCAOB: Proof of Reserve Reports and Crypto Exchanges](https://pcaobus.org/news-events/news-releases/news-release-detail/office-of-the-investor-advocate-issues-investor-advisory-on-proof-of-reserve-reports)
 - [IOSCO Final Report on Crypto and Digital Asset Markets](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf)
 
@@ -94,4 +153,4 @@ Puedes verificar criptográficamente inclusión y, al mismo tiempo, explicar con
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 30 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 32 · Forensics, auditoría y gobernanza](../32-forensics-auditoria-gobernanza/README.md)
+⬅️ [Clases 30.1–30.2 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 32.1–32.2 · Forensics, auditoría y gobernanza](../32-forensics-auditoria-gobernanza/README.md)

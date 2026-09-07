@@ -7,7 +7,57 @@
 
 ---
 
-Cierre de la etapa institucional, y el módulo que más disciplina exige: **la regulación no se
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 27.1 · Leer regulación desde la fuente
+
+**Pregunta guía:** ¿Cómo distinguimos una obligación vigente de una guía o noticia?
+
+**Enfoque pedagógico:** taller de trazabilidad normativa.
+
+Una afirmación pasa por noticia, resumen, guía, norma y artículo. El estudiante aprende a fechar, acotar jurisdicción y reconocer autoridad competente.
+
+**Núcleo conceptual:**
+
+- jerarquía normativa y jurisdicción.
+- actividad, instrumento y sujeto obligado.
+- vigencia, supervisor y sanción.
+
+**Caso de trabajo:** Un resumen comercial presenta una consulta pública como ley aprobada.
+
+**Actividad:** Trazar una afirmación hasta norma, artículo, fecha y autoridad.
+
+**Comprobación formativa:** ¿Qué dato falta para saber si el texto produce hoy una obligación exigible?
+
+**Evidencia de aprendizaje:** Ficha normativa con alcance, vigencia y enlace primario.
+
+### Clase 27.2 · Cumplimiento basado en riesgo
+
+**Pregunta guía:** ¿Qué controles responden al riesgo sin convertir toda señal en culpabilidad?
+
+**Enfoque pedagógico:** comité de alertas con falsos positivos.
+
+Se revisan señales con fuerza desigual y contexto incompleto. La decisión debe ser proporcional, revisable y documentada sin presentar heurísticas como culpabilidad.
+
+**Núcleo conceptual:**
+
+- KYC/KYB y debida diligencia.
+- Travel Rule y monitoreo.
+- sanciones, escalamiento y reporte.
+
+**Caso de trabajo:** Una transacción toca una dirección de riesgo por varios saltos indirectos.
+
+**Actividad:** Diseñar reglas, revisión humana y documentación de decisión.
+
+**Comprobación formativa:** ¿Qué evidencia adicional pedirías antes de escalar la alerta?
+
+**Evidencia de aprendizaje:** Matriz riesgo-control con falsos positivos, responsable y retención.
+<!-- plan-clases:fin -->
+
+---
+
+Cierre de la etapa institucional, y las clases que más disciplina exigen: **la regulación no se
 aprende de memoria, se aprende a leer**. Las normas cambian, difieren entre países y llegan
 tarde a la tecnología. Lo que no cambia es la estructura: quién dicta qué, con qué rango,
 sobre qué actividad, y qué obligación concreta genera.
@@ -72,7 +122,7 @@ Límite de la analogía, y es donde está la dificultad real: algunas configurac
 encajan limpiamente en ninguna categoría anterior —un protocolo sin operador identificable,
 una wallet que no custodia pero facilita—. Ahí la respuesta honesta suele ser **"depende, y
 está evolucionando"**, y sostener esa incomodidad sin inventarse certezas es exactamente lo
-que este módulo enseña.
+que esta unidad de clases enseña.
 
 ## 🧩 Esquema visual
 
@@ -313,7 +363,7 @@ es un análisis incompleto.
 
 ## 🛡️ Seguridad y ética
 
-- **Este módulo no sustituye asesoría legal.** Su objetivo es que sepas hacer las preguntas
+- **Esta unidad de clases no sustituye asesoría legal.** Su objetivo es que sepas hacer las preguntas
   correctas y buscar en la fuente correcta, no que decidas sin abogado.
 - Cita siempre **fuente oficial, rango y fecha**. Una afirmación regulatoria sin las tres
   cosas no es utilizable, ni siquiera si es correcta.
@@ -329,13 +379,19 @@ es un análisis incompleto.
 ## 🔗 Referencias
 
 - Reglamento (UE) 2023/1114 (MiCA) — EUR-Lex: <https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32023R1114>
-- GAFI/FATF — Recomendaciones y guía sobre activos virtuales y VASP: <https://www.fatf-gafi.org/>
+- GAFI/FATF — Recomendaciones vigentes: <https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Fatf-recommendations.html>
+- GAFI/FATF — actualización focalizada 2025 sobre implementación para activos virtuales y VASP: <https://www.fatf-gafi.org/content/dam/fatf-gafi/recommendations/2025-Targeted-Upate-VA-VASPs.pdf.coredownload.pdf>
 - Comité de Basilea — normas prudenciales y publicaciones: <https://www.bis.org/bcbs/>
 - IOSCO — recomendaciones sobre mercados de criptoactivos: <https://www.iosco.org/>
 - CMF Chile — Ley Fintech, registro de prestadores y Sistema de Finanzas Abiertas: <https://www.cmfchile.cl/>
 - UAF Chile — prevención de lavado de activos: <https://www.uaf.cl/>
 - Biblioteca del Congreso Nacional de Chile — texto de la Ley 21.521: <https://www.bcn.cl/leychile>
 - Documentos del programa: [regulación comparada](../../regulation/README.md) · [Chile](../../regulation/chile/README.md) · [casos reales](../../docs/casos-reales/README.md)
+
+> **Nota de vigencia (septiembre de 2026):** la guía GAFI de 2021 sigue siendo una
+> referencia específica para VASP, pero debe leerse junto con las revisiones de 2025
+> a la Recomendación 1 y sus notas interpretativas. El programa separa deliberadamente
+> texto vigente, guía y actualización de implementación.
 
 ## ✅ Criterio de dominio
 
@@ -348,4 +404,4 @@ es un análisis incompleto.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 26 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 28 · Blockchain Data Analytics y minería de datos on-chain](../28-data-analytics-onchain/README.md)
+⬅️ [Clases 26.1–26.2 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 28.1–28.2 · Blockchain Data Analytics y minería de datos on-chain](../28-data-analytics-onchain/README.md)

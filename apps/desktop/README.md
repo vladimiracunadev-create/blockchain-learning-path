@@ -2,8 +2,8 @@
 
 > [⬅️ Volver al programa](../../README.md) · [📱 App Android](../android/README.md) · [📚 Currículo](../../curriculum/README.md)
 
-El curso completo como aplicación de escritorio: **33 módulos, las 91
-prácticas, los ADR, el manual en PDF y la autoevaluación de cada módulo**, todo
+El curso completo como aplicación de escritorio: **66 clases, las 91
+prácticas, los ADR, el manual en PDF y la autoevaluación de cada clase**, todo
 dentro del ejecutable. No necesita conexión ni navegador: funciona en un aula sin
 red.
 
@@ -63,7 +63,7 @@ pnpm app:windows
 ## Verificación
 
 `smoke.js` es la prueba que importa. Arranca la app real y comprueba **dentro**
-que están el manifiesto, todos los módulos del currículo, el texto de un módulo, sus 4 preguntas
+que están el manifiesto, todas las clases del currículo, el texto de una pareja de clases, sus preguntas
 de autoevaluación, los enlaces anterior/siguiente y el índice de búsqueda.
 
 Existe porque el fallo típico de estos empaquetados no es que no compilen: es que

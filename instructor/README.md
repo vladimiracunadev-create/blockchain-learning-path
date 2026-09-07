@@ -6,10 +6,10 @@ Esta guía explica cómo llevar el programa a un aula real: cómo planificarlo s
 
 ## Cómo usar el programa
 
-El material está diseñado para dos formatos. Ambos cubren los módulos 00–18 y el proyecto final; cambia el ritmo, no el alcance. La etapa de finanzas on-chain e institucional (módulos 19–27) se imparte como [extensión optativa de ocho semanas](syllabus.md).
+El material está diseñado para dos formatos. Ambos cubren las clases 00.1–18.2 y el proyecto final; cambia el ritmo, no el alcance. La etapa de finanzas on-chain e institucional (clases 19.1–27.2) se imparte como [extensión optativa de ocho semanas](syllabus.md).
 
 - **Semestre largo (24–26 semanas).** Una sesión conceptual y una de laboratorio por semana. Es el formato de referencia del [programa académico](syllabus.md). Deja espacio para checkpoints, retroalimentación y una defensa amplia del capstone.
-- **Intensivo (8 semanas).** Dos o tres módulos por semana, laboratorios seleccionados y capstone reducido en alcance. Prioriza fundamentos (00–06), seguridad (09) y un proyecto acotado; convierte los módulos avanzados (12–18) en lecturas guiadas.
+- **Intensivo (8 semanas).** Entre cuatro y seis clases por semana, laboratorios seleccionados y proyecto final reducido en alcance. Prioriza fundamentos (00.1–06.2), seguridad (09.1–09.2) y un proyecto acotado; convierte las clases avanzadas (12.1–18.2) en lecturas guiadas.
 
 En cualquier formato mantén el ciclo pedagógico: comprender, experimentar, explicar, construir y verificar. El detalle didáctico está en [diseño pedagógico](../docs/diseno-pedagogico.md) y [planes de clase](../docs/planes-de-clase.md).
 
@@ -33,7 +33,7 @@ Antes de la primera sesión:
 
 ## Laboratorios peligrosos
 
-Los módulos de seguridad usan contratos deliberadamente vulnerables. Trátalos como material de laboratorio controlado:
+Las clases de seguridad usan contratos deliberadamente vulnerables. Trátalos como material de laboratorio controlado:
 
 - Solo en red local (Anvil) o testnet; nunca en mainnet ni contra sistemas de terceros.
 - Wallets exclusivas sin fondos reales; jamás claves o seeds de valor.
@@ -48,7 +48,7 @@ La rúbrica maestra vive en [docs/evaluacion.md](../docs/evaluacion.md); úsala 
 
 - [Checkpoints](../assessments/checkpoints.md) para cortes formativos.
 - [Banco de preguntas](../assessments/module-question-bank.md) para exámenes y quizzes.
-- [Plantilla de informe de auditoría](../assessments/audit-report-template.md) para el módulo de seguridad.
+- [Plantilla de informe de auditoría](../assessments/audit-report-template.md) para las clases de seguridad.
 
 ## Uso de `solutions/`
 
@@ -58,9 +58,9 @@ La carpeta [`../solutions/`](../solutions/conceptual-guide.md) contiene **criter
 
 Primero corrige el modelo mental, después la implementación. Un resultado correcto con una explicación falsa debe repetirse. En seguridad, separa siempre cinco planos: causa raíz, exploit, impacto, mitigación y riesgo residual.
 
-## Módulos, tiempo de clase y entregable
+## Clases, tiempo y entregable
 
-| Módulos | Tema | Clase sugerida | Entregable |
+| Clases | Tema | Duración sugerida | Entregable |
 |---|---|---:|---|
 | 00–01 | Orientación y criptografía | 3 sesiones | ADR + checkpoint |
 | 02–03 | Distribuidos y consenso | 3 sesiones | mini blockchain |

@@ -2,25 +2,25 @@
 
 > [⬅️ Cuaderno de laboratorios](guides/README.md) · [📚 Currículo](../curriculum/README.md) · [🏠 Programa](../README.md)
 
-Las 91 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
+Las 91 prácticas del programa, agrupadas por bloque. Cada fila enlaza a las **clases**
 del currículo que la sustenta y a su **resolución explicada** (cómo se resuelve, el
 comando, la salida esperada y el error común).
 
 **Cómo moverte:** elige una práctica → abre su **Resolución** para ver el paso a paso →
-vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación ejecutable
+vuelve a la **clase** para la teoría. Las marcadas **auto** traen verificación ejecutable
 (`pnpm lab:*` o `node --test`); el resto produce una evidencia revisable con rúbrica.
 
 | Marca | Significado |
 |---|---|
 | **auto** | Tiene verificación ejecutable incluida |
-| Módulo | Enlace al módulo del currículo que da la teoría |
+| Clases | Enlace a la unidad del currículo que da la teoría |
 | Resolución | Enlace a la guía con el paso a paso y la salida esperada |
 
 ## Prácticas 01–10 · Fundamentos
 
-📖 Resolución explicada del bloque: [01-foundations.md](guides/01-foundations.md) · Teoría: módulos 01–03.
+📖 Resolución explicada del bloque: [01-foundations.md](guides/01-foundations.md) · Teoría: clases 01.1–03.2.
 
-| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+| # | Práctica | Nivel | Evidencia | Clases | Resolución |
 |---:|---|---|---|---|---|
 | 01 | Matriz blockchain vs. base tradicional | inicial | ADR | [00](../curriculum/00-orientacion/README.md) | [ver](guides/01-foundations.md) |
 | 02 | Historia anotada de sistemas de dinero digital | inicial | línea temporal | [00](../curriculum/00-orientacion/README.md) | [ver](guides/01-foundations.md) |
@@ -35,9 +35,9 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 
 ## Prácticas 11–20 · Consenso y Bitcoin
 
-📖 Resolución explicada del bloque: [02-consensus-bitcoin.md](guides/02-consensus-bitcoin.md) · Teoría: módulos 03–04.
+📖 Resolución explicada del bloque: [02-consensus-bitcoin.md](guides/02-consensus-bitcoin.md) · Teoría: clases 03.1–04.2.
 
-| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+| # | Práctica | Nivel | Evidencia | Clases | Resolución |
 |---:|---|---|---|---|---|
 | 11 | Proof of Work y dificultad | inicial | **auto** | [03](../curriculum/03-consenso/README.md) | [ver](guides/02-consensus-bitcoin.md) |
 | 12 | Comparación PoW, PoS y BFT | inicial | matriz | [03](../curriculum/03-consenso/README.md) | [ver](guides/02-consensus-bitcoin.md) |
@@ -53,13 +53,13 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 
 > La práctica 71 pertenece a la unidad transversal
 > [**Wallets desde cero**](../docs/wallets-desde-cero.md), que se estudia entre los
-> módulos 04 y 05. Conserva el número 71 para no renumerar las prácticas existentes.
+> clases 04.1–04.2 y 05.1–05.2. Conserva el número 71 para no renumerar las prácticas existentes.
 
 ## Prácticas 21–30 · Desarrollo EVM
 
-📖 Resolución explicada del bloque: [03-evm-development.md](guides/03-evm-development.md) · Teoría: módulos 05–07.
+📖 Resolución explicada del bloque: [03-evm-development.md](guides/03-evm-development.md) · Teoría: clases 05.1–07.2.
 
-| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+| # | Práctica | Nivel | Evidencia | Clases | Resolución |
 |---:|---|---|---|---|---|
 | 21 | Anatomía de una transacción pública | intermedio | informe | [05](../curriculum/05-ethereum-evm/README.md) | [ver](guides/03-evm-development.md) |
 | 22 | Selector ABI | intermedio | **auto** | [05](../curriculum/05-ethereum-evm/README.md) | [ver](guides/03-evm-development.md) |
@@ -74,9 +74,9 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 
 ## Prácticas 31–40 · Profesional y seguridad
 
-📖 Resolución explicada del bloque: [04-professional-security.md](guides/04-professional-security.md) · Teoría: módulos 07–10.
+📖 Resolución explicada del bloque: [04-professional-security.md](guides/04-professional-security.md) · Teoría: clases 07.1–10.2.
 
-| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+| # | Práctica | Nivel | Evidencia | Clases | Resolución |
 |---:|---|---|---|---|---|
 | 31 | Estados de una transacción | intermedio | **auto** | [07](../curriculum/07-dapps/README.md) | [ver](guides/04-professional-security.md) |
 | 32 | ERC-20 con roles | profesional | **auto** | [08](../curriculum/08-tokens/README.md) | [ver](guides/04-professional-security.md) |
@@ -91,9 +91,9 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 
 ## Prácticas 41–50 · Avanzado y capstone
 
-📖 Resolución explicada del bloque: [05-advanced-capstone.md](guides/05-advanced-capstone.md) · Teoría: módulos 09–15 y capstone.
+📖 Resolución explicada del bloque: [05-advanced-capstone.md](guides/05-advanced-capstone.md) · Teoría: clases 09.1–15.2 y capstone.
 
-| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+| # | Práctica | Nivel | Evidencia | Clases | Resolución |
 |---:|---|---|---|---|---|
 | 41 | Front-running y commit-reveal | profesional | **auto** · commit-reveal | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 42 | Colisión de storage en proxy | profesional | **auto** · storage layout | [09](../curriculum/09-seguridad/README.md) | [ver](guides/05-advanced-capstone.md) |
@@ -108,11 +108,11 @@ vuelve al **módulo** para la teoría. Las marcadas **auto** traen verificación
 
 ## Prácticas 51–70 · Finanzas on-chain, institucional y regulación
 
-📖 Resolución explicada del bloque: [06-finanzas-onchain.md](guides/06-finanzas-onchain.md) · Teoría: módulos 19–27.
+📖 Resolución explicada del bloque: [06-finanzas-onchain.md](guides/06-finanzas-onchain.md) · Teoría: clases 19.1–27.2.
 
 Todas son **simulaciones locales**: sin red, sin claves y sin fondos.
 
-| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+| # | Práctica | Nivel | Evidencia | Clases | Resolución |
 |---:|---|---|---|---|---|
 | 51 | Curva, impacto y deslizamiento en un AMM | profesional | **auto** | [19](../curriculum/19-defi/README.md) | [ver](guides/06-finanzas-onchain.md) |
 | 52 | Pérdida impermanente y su compensación | profesional | **auto** | [19](../curriculum/19-defi/README.md) | [ver](guides/06-finanzas-onchain.md) |
@@ -137,13 +137,13 @@ Todas son **simulaciones locales**: sin red, sin claves y sin fondos.
 
 ## Prácticas 72–83 · Blockchain Data Analytics y minería de datos on-chain
 
-📖 Resolución explicada del bloque: [07-data-analytics.md](guides/07-data-analytics.md) · Teoría: [módulo 28](../curriculum/28-data-analytics-onchain/README.md).
+📖 Resolución explicada del bloque: [07-data-analytics.md](guides/07-data-analytics.md) · Teoría: [clases 28.1–28.2](../curriculum/28-data-analytics-onchain/README.md).
 
 Todas trabajan sobre una **cadena sintética determinista** (dos modelos, UTXO y cuentas, con
 eventos, mempool, reorganizaciones y patrones plantados): sin red, sin claves, sin fondos y sin
 datos personales.
 
-| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+| # | Práctica | Nivel | Evidencia | Clases | Resolución |
 |---:|---|---|---|---|---|
 | 72 | Anatomía de un bloque campo por campo | inicial | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
 | 73 | Transacción Bitcoin frente a transacción EVM | inicial | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
@@ -156,16 +156,16 @@ datos personales.
 | 80 | Fan-in, fan-out y cadena de pelado | profesional | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
 | 81 | Detección de anomalías y su evaluación | avanzado | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
 | 82 | Panel de indicadores on-chain | avanzado | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
-| 83 | Explorador analítico (proyecto final del módulo) | avanzado | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
+| 83 | Explorador analítico (proyecto final de la unidad) | avanzado | **auto** | [28](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/07-data-analytics.md) |
 
 > Las prácticas 72–83 continúan la numeración sin renumerar nada: el 71 es la unidad de wallets
 > y los números 01–70 conservan su identidad en progresos, guías y registros ya existentes.
 
 ## Prácticas 84–91 · Custodia, auditoría y forensics
 
-📖 Resolución explicada: [08-custodia-auditoria.md](guides/08-custodia-auditoria.md) · Teoría: módulos [29](../curriculum/29-exchanges-operaciones-custodia/README.md)–[32](../curriculum/32-forensics-auditoria-gobernanza/README.md).
+📖 Resolución explicada: [08-custodia-auditoria.md](guides/08-custodia-auditoria.md) · Teoría: clases [29.1](../curriculum/29-exchanges-operaciones-custodia/README.md)–[32.2](../curriculum/32-forensics-auditoria-gobernanza/README.md).
 
-| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+| # | Práctica | Nivel | Evidencia | Clases | Resolución |
 |---:|---|---|---|---|---|
 | 84 | CEX, DEX y punto de liquidación | profesional | **auto** | [29](../curriculum/29-exchanges-operaciones-custodia/README.md) | [ver](guides/08-custodia-auditoria.md) |
 | 85 | Arquitectura hot/warm/cold y firmantes | profesional | política | [29](../curriculum/29-exchanges-operaciones-custodia/README.md) | [ver](guides/08-custodia-auditoria.md) |

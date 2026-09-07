@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 04.1 · UTXO y anatomía de una transacción
+
+**Pregunta guía:** ¿Dónde está el saldo de Bitcoin y qué autoriza realmente una entrada?
+
+**Enfoque pedagógico:** autopsia de una transacción.
+
+Se sigue cada entrada y salida con cantidades concretas hasta que el saldo deja de parecer un número de cuenta. El cambio y la comisión se deducen, no se memorizan.
+
+**Núcleo conceptual:**
+
+- UTXO, entradas y salidas.
+- scripts y firmas.
+- txid, cambio y comisiones.
+
+**Caso de trabajo:** Una wallet gasta un UTXO grande y devuelve el remanente a una dirección de cambio.
+
+**Actividad:** Leer y construir una transacción en regtest sin fondos reales.
+
+**Comprobación formativa:** Señala cuál salida pertenece al receptor, cuál podría ser cambio y qué evidencia falta para confirmarlo.
+
+**Evidencia de aprendizaje:** Trazado de cada satoshi entre entradas, salidas, cambio y comisión.
+
+### Clase 04.2 · Verificación, minería y operación segura
+
+**Pregunta guía:** ¿Qué comprueba un nodo propio y qué delega un cliente ligero?
+
+**Enfoque pedagógico:** laboratorio regtest con política de riesgo.
+
+El estudiante genera bloques y observa cómo una operación acumula confirmaciones. Después ajusta una política de aceptación según valor, amenaza y tolerancia a reorganizaciones.
+
+**Núcleo conceptual:**
+
+- full node y SPV.
+- mempool, confirmaciones y reorganización.
+- emisión, dificultad y Lightning.
+
+**Caso de trabajo:** Un comercio decide cuántas confirmaciones exigir según importe y riesgo.
+
+**Actividad:** Generar bloques, observar confirmaciones y provocar gasto de cambio en regtest.
+
+**Comprobación formativa:** ¿Por qué seis confirmaciones son una política y no una constante universal del protocolo?
+
+**Evidencia de aprendizaje:** Política de aceptación que relacione amenaza, monto y profundidad.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Explicar el modelo UTXO identificando entradas, salidas, scripts y firmas en una transacción real.
@@ -163,7 +213,7 @@ sobra               2 508 sat   ← la comisión; se la queda el minero
 
 **Paso 5 — el polvo.** Una salida de 492 sat es *dust*: gastarla en el futuro costaría más de lo que vale (una entrada P2WPKH son 68 vB, que a 12 sat/vB ya son 816 sat). Las carteras, ante esto, hacen una de dos cosas: **omitir la salida de cambio** y regalar esos 492 sat al minero (comisión efectiva 3 000 sat), o **bajar la tasa** para que el cambio supere el umbral de polvo.
 
-**El error que cuesta dinero.** Si construyes la transacción a mano y olvidas la salida de cambio con los tres UTXOs seleccionados (50 000 sat de entradas, 17 000 de pago), la comisión no es de 2 500 sat: es de **33 000 sat**. El protocolo no te avisa, no hay error, y el minero se lo queda. No existe forma de recuperarlo. Es la razón por la que las prácticas de este módulo exigen comprobar que entradas = salidas + comisión antes de firmar nada.
+**El error que cuesta dinero.** Si construyes la transacción a mano y olvidas la salida de cambio con los tres UTXOs seleccionados (50 000 sat de entradas, 17 000 de pago), la comisión no es de 2 500 sat: es de **33 000 sat**. El protocolo no te avisa, no hay error, y el minero se lo queda. No existe forma de recuperarlo. Es la razón por la que las prácticas de esta unidad de clases exigen comprobar que entradas = salidas + comisión antes de firmar nada.
 
 > 💡 **En una frase:** la comisión no se escribe, se despeja — es lo que sobra entre lo que entra y lo que sale. Suma siempre ambos lados antes de firmar.
 
@@ -254,4 +304,4 @@ Documenta el análisis de una transacción pública en un texto breve: identific
 > transversal [Wallets desde cero: uso, seguridad y recuperación](../../docs/wallets-desde-cero.md) —
 > qué administra una wallet, cómo firmar sin quemarte y qué hacer en una emergencia.
 
-⬅️ [Módulo 03 · Consenso](../03-consenso/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 05 · Ethereum y EVM](../05-ethereum-evm/README.md)
+⬅️ [Clases 03.1–03.2 · Consenso](../03-consenso/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 05.1–05.2 · Ethereum y EVM](../05-ethereum-evm/README.md)

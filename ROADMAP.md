@@ -19,8 +19,8 @@ Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verif
 | 21 | DAO y gobernanza | Propuesta y simulación |
 | 22 | L2, puentes e interoperabilidad | Comparación arquitectónica |
 | 23 | Privacidad, ZK y tokenomics | Documento de decisiones |
-| 24 | Infraestructura y nodos (módulo 16) | Topología y presupuesto de despliegue |
-| 25 | Empresa e implementación (módulos 17–18) | Caso de negocio y documento de arquitectura |
+| 24 | Infraestructura y nodos (clases 16.1–16.2) | Topología y presupuesto de despliegue |
+| 25 | Empresa e implementación (clases 17.1–18.2) | Caso de negocio y documento de arquitectura |
 | 26 | Proyecto final | Demo, pruebas y defensa |
 
 ## Extensión: finanzas on-chain e institucional (semanas 27–34)
@@ -30,24 +30,24 @@ principal o de forma independiente por quien ya domine la parte técnica.
 
 | Semanas | Contenido | Evidencia |
 |---|---|---|
-| 27 | DeFi: AMM, préstamo y riesgo (módulo 19) | Ficha de riesgo de un protocolo real |
-| 28 | Dinero, banca y liquidación (módulo 20) | Informe «Qué se mueve cuando pago» |
-| 29 | Stablecoins (módulo 21) | Ficha comparada de dos emisores |
-| 30 | Depósitos tokenizados y CBDC/MDBC (módulo 22) | Documento de opciones de diseño |
-| 31 | Pagos, cross-border y FX on-chain (módulo 23) | Análisis de un corredor de pagos |
-| 32 | Tokenización y RWA (módulo 24) | Memorando de tokenización |
-| 33 | Mercados de capitales on-chain (módulo 25) | Arquitectura de un mercado de bonos |
-| 34 | Custodia, identidad y regulación (módulos 26–27) | Política de custodia y análisis regulatorio |
-| 35–36 | Blockchain Data Analytics y minería de datos on-chain (módulo 28) | Explorador analítico con informe, métricas de detección y límites declarados |
+| 27 | DeFi: AMM, préstamo y riesgo (clases 19.1–19.2) | Ficha de riesgo de un protocolo real |
+| 28 | Dinero, banca y liquidación (clases 20.1–20.2) | Informe «Qué se mueve cuando pago» |
+| 29 | Stablecoins (clases 21.1–21.2) | Ficha comparada de dos emisores |
+| 30 | Depósitos tokenizados y CBDC/MDBC (clases 22.1–22.2) | Documento de opciones de diseño |
+| 31 | Pagos, cross-border y FX on-chain (clases 23.1–23.2) | Análisis de un corredor de pagos |
+| 32 | Tokenización y RWA (clases 24.1–24.2) | Memorando de tokenización |
+| 33 | Mercados de capitales on-chain (clases 25.1–25.2) | Arquitectura de un mercado de bonos |
+| 34 | Custodia, identidad y regulación (clases 26.1–27.2) | Política de custodia y análisis regulatorio |
+| 35–36 | Blockchain Data Analytics y minería de datos on-chain (clases 28.1–28.2) | Explorador analítico con informe, métricas de detección y límites declarados |
 
 ## Especialización: custodia, auditoría y forensics (semanas 37–40)
 
-| Semana | Nivel | Módulo | Evidencia de salida |
+| Semana | Nivel | Clases | Evidencia de salida |
 |---:|---|---|---|
-| 37 | Profesional | 29 · Exchanges y operaciones de custodia | Mapa CEX/DEX y política hot/warm/cold |
-| 38 | Profesional | 30 · Contabilidad y conciliación | Conciliación `ledger ≠ exchange ≠ blockchain` |
-| 39 | Profesional | 31 · PoR, PoL y solvencia | Root Merkle, inclusión y conclusión acotada |
-| 40 | Profesional | 32 · Forensics, auditoría y gobernanza | Grafo con confianza + defensa de Aurora Custody |
+| 37 | Profesional | 29.1–29.2 · Exchanges y operaciones de custodia | Mapa CEX/DEX y política hot/warm/cold |
+| 38 | Profesional | 30.1–30.2 · Contabilidad y conciliación | Conciliación `ledger ≠ exchange ≠ blockchain` |
+| 39 | Profesional | 31.1–31.2 · PoR, PoL y solvencia | Root Merkle, inclusión y conclusión acotada |
+| 40 | Profesional | 32.1–32.2 · Forensics, auditoría y gobernanza | Grafo con confianza + defensa de Aurora Custody |
 
 Esta especialización usa datos sintéticos, Bitcoin regtest/signet, Ethereum local y APIs públicas solo en lectura. No requiere fondos reales ni convierte el tronco del programa en formación exclusivamente financiera.
 
@@ -77,7 +77,8 @@ Esta especialización usa datos sintéticos, Bitcoin regtest/signet, Ethereum lo
 | 0.9.1 | unidad transversal [Wallets desde cero](docs/wallets-desde-cero.md) (uso, seguridad y recuperación) entre los módulos 04 y 05, con la práctica 71 «Prevuelo de una transacción» (`pnpm lab:wallet-segura`, 10 pruebas) integrada en catálogo, guías, sitio, manual y apps | completada |
 | 0.10.0 | módulo 28 «Blockchain Data Analytics y minería de datos on-chain» en cuatro niveles (fundamentos, adquisición y preparación, análisis on-chain y avanzado), doce prácticas nuevas (72–83) sobre una cadena sintética determinista con verdad de campo, y el proyecto final «Explorador analítico de actividad blockchain» | completada |
 | 0.10.1 | presentación del programa lista para exponer: 7 diapositivas con demo en vivo (`pnpm lab:hash` y `pnpm lab:remesa`) y sus resultados impresos en la lámina, y pauta del expositor con cuatro anexos —comprobación previa, recortes por duración, preguntas del público y líneas que no se cruzan— | completada |
-| 0.11.0 | línea profesional de custodia, exchanges, contabilidad blockchain, PoR/PoL, conciliación, forensics, auditoría y gobernanza; 4 módulos, 8 prácticas y caso Aurora Custody | actual |
+| 0.11.0 | línea profesional de custodia, exchanges, contabilidad blockchain, PoR/PoL, conciliación, forensics, auditoría y gobernanza; 4 módulos, 8 prácticas y caso Aurora Custody | completada |
+| 0.12.0 | programa reorganizado en 66 clases con diseño pedagógico propio, glosario profesional ampliado y validación automática de variedad, fuentes y coherencia | actual |
 | 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

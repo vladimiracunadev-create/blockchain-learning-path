@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 06.1 · Diseño de contratos e invariantes
+
+**Pregunta guía:** ¿Qué debe ser siempre verdadero antes de escribir una línea de Solidity?
+
+**Enfoque pedagógico:** taller de especificación antes del código.
+
+Primero se escriben estados permitidos, transiciones e invariantes; después aparece Solidity. Esta inversión evita que la implementación dicte accidentalmente las reglas del sistema.
+
+**Núcleo conceptual:**
+
+- estado, transiciones e invariantes.
+- tipos, errores y eventos.
+- autoridad y mínima superficie.
+
+**Caso de trabajo:** Una bóveda acepta depósitos pero pierde correspondencia entre shares y activos.
+
+**Actividad:** Escribir especificación e invariantes antes de implementar el contrato.
+
+**Comprobación formativa:** Formula una propiedad que deba cumplirse tras cualquier depósito y retiro.
+
+**Evidencia de aprendizaje:** Contrato mínimo con pruebas unitarias que demuestren transiciones válidas.
+
+### Clase 06.2 · Pruebas profundas con Foundry
+
+**Pregunta guía:** ¿Cómo encontramos secuencias que una prueba feliz nunca ejecuta?
+
+**Enfoque pedagógico:** caza de secuencias con fuzzing.
+
+Las pruebas felices se reemplazan por actores y llamadas aleatorias. El estudiante reduce el fallo hasta una secuencia mínima y sólo entonces corrige.
+
+**Núcleo conceptual:**
+
+- fuzzing e invariantes.
+- cheatcodes y trazas.
+- storage layout y actualizabilidad.
+
+**Caso de trabajo:** Una secuencia depósito-retiro-donación rompe una aserción contable.
+
+**Actividad:** Crear handlers y ejecutar pruebas de invariantes sobre estados aleatorios.
+
+**Comprobación formativa:** ¿Qué aporta una prueba de invariantes que no aporta repetir cientos de casos unitarios?
+
+**Evidencia de aprendizaje:** Fallo mínimo reproducible, corrección y prueba de regresión.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Escribir un contrato en Solidity con tipos, visibilidad, modifiers, custom errors y eventos correctos.
@@ -186,7 +236,7 @@ Compruébalo tú mismo con `forge inspect Ejemplo storageLayout`, que imprime la
 <summary><strong>🎓 Si ya dominas esto</strong> — los bordes que muerden</summary>
 
 - **`forge inspect` compara, pero no protege.** OpenZeppelin Upgrades valida el layout automáticamente en el despliegue; hacerlo a ojo funciona hasta la versión en que alguien tiene prisa. Los *storage gaps* (`uint256[50] private __gap;`) reservan espacio para que una clase base pueda crecer sin desplazar a las derivadas.
-- **ERC-7201 (namespaced storage) elimina el problema de raíz.** En vez de confiar en el orden, cada módulo ancla su struct en un slot derivado de un hash de su nombre. Dos módulos independientes ya no pueden colisionar por mucho que cambien.
+- **ERC-7201 (namespaced storage) elimina el problema de raíz.** En vez de confiar en el orden, cada componente ancla su struct en un slot derivado de un hash de su nombre. Dos componentes independientes ya no pueden colisionar por mucho que cambien.
 - **`immutable` y `constant` no ocupan storage:** se incrustan en el bytecode. Leerlos cuesta ~3 gas en vez de 2 100, y por eso una dirección de token que no va a cambiar debe ser `immutable`, no una variable de estado.
 - **El empaquetado solo ayuda si escribes juntas las variables.** Dos `uint128` en la misma ranura ahorran cuando se actualizan en la misma transacción; si se escriben por separado, cada una paga un `SSTORE` de lectura-modificación-escritura y el ahorro desaparece.
 - **`--gas-report` mide el caso que ejecutaste**, no el peor. Una función con rama fría cara puede parecer barata si tus tests solo pasan por la templada; el fuzzing con `--gas-report` da una foto más honesta.
@@ -251,4 +301,4 @@ Implementa (o corrige) la bóveda para que respete ambas invariantes y pase el f
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 05 · Ethereum y EVM](../05-ethereum-evm/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 07 · Aplicaciones descentralizadas](../07-dapps/README.md)
+⬅️ [Clases 05.1–05.2 · Ethereum y EVM](../05-ethereum-evm/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 07.1–07.2 · Aplicaciones descentralizadas](../07-dapps/README.md)

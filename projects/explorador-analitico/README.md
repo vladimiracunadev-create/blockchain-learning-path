@@ -1,8 +1,8 @@
 # 🔎 Explorador analítico de actividad blockchain
 
-> Navegación: [🏠 Programa](../../README.md) · [📚 Módulo 28 · Data Analytics on-chain](../../curriculum/28-data-analytics-onchain/README.md) · [🧪 Catálogo de prácticas](../../labs/CATALOG.md) · [📖 Glosario](../../docs/glosario.md)
+> Navegación: [🏠 Programa](../../README.md) · [📚 Clases 28.1–28.2 · Data Analytics on-chain](../../curriculum/28-data-analytics-onchain/README.md) · [🧪 Catálogo de prácticas](../../labs/CATALOG.md) · [📖 Glosario](../../docs/glosario.md)
 
-Proyecto final del [módulo 28](../../curriculum/28-data-analytics-onchain/README.md) (**práctica 83**).
+Proyecto final de las [clases 28.1–28.2](../../curriculum/28-data-analytics-onchain/README.md) (**práctica 83**).
 Integra en una sola herramienta lo construido en los once laboratorios previos: importar un
 dataset, consultar bloques y transacciones, buscar direcciones, calcular indicadores, construir
 el grafo, filtrar, detectar patrones, dibujar los resultados y **exportar un informe que
@@ -48,7 +48,7 @@ Patrones: fan-in 10 · fan-out 6 · pelado 1 · rápidas 67 · anomalías 12
 Calidad de las anomalías: precisión 0.25, recall 1.00 (medible SOLO porque el dataset es sintético).
 ```
 
-Ese resultado es la lección central del módulo: **recall 1,00 con precisión 0,25** significa que
+Ese resultado es la lección central de la unidad: **recall 1,00 con precisión 0,25** significa que
 encuentra las tres anomalías plantadas… y arrastra nueve falsos positivos. Bajar el umbral
 encuentra más y ensucia más. Ese compromiso no se elimina, se decide y se declara.
 
@@ -102,4 +102,4 @@ exactamente el mismo informe.
 
 ## 🧭 Navegación
 
-[🏠 Programa](../../README.md) · [📚 Módulo 28](../../curriculum/28-data-analytics-onchain/README.md) · [🧪 Cuaderno del bloque](../../labs/guides/07-data-analytics.md) · [🎓 Capstone](../../capstone/README.md)
+[🏠 Programa](../../README.md) · [📚 Clases 28.1–28.2](../../curriculum/28-data-analytics-onchain/README.md) · [🧪 Cuaderno del bloque](../../labs/guides/07-data-analytics.md) · [🎓 Capstone](../../capstone/README.md)

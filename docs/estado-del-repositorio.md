@@ -3,7 +3,7 @@
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [🗺️ Roadmap](../ROADMAP.md)
 
 Estado honesto de lo que el repositorio entrega hoy y de lo que requiere infraestructura
-externa. El programa cubre **33 módulos (00–32)** organizados en **10 etapas**:
+externa. El programa cubre **66 clases (00.1–32.2)** organizadas en **33 unidades estables** y **10 etapas**:
 Orientación, Fundamentos, Desarrollo, Profesional, Avanzado, Producción,
 Finanzas on-chain, Institucional y regulación, y Analítica de datos on-chain.
 
@@ -13,7 +13,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 | Área | Qué incluye | Estado |
 |---|---|:---:|
-| Currículo | 33 módulos (00–32) con esquemas Mermaid, casos reales, fuentes y navegación, más la unidad transversal [Wallets desde cero](wallets-desde-cero.md) | ✅ |
+| Currículo | 66 clases (00.1–32.2) con esquemas Mermaid, casos reales, fuentes y navegación, más la unidad transversal [Wallets desde cero](wallets-desde-cero.md) | ✅ |
 | Rutas por perfil | Itinerarios según objetivo del estudiante | ✅ |
 | Industria | Construcción de una red, stack, equipos, empresas, negocio y ciclo de vida | ✅ |
 | Prácticas | Ochenta y tres prácticas con criterios de aceptación (55 auto-verificables) | ✅ |
@@ -23,9 +23,9 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | dApp y datos | Interfaz, indexador y panel educativo | ✅ |
 | Seguridad | Ofensiva autorizada y auditoría | ✅ |
 | Evaluación | Evaluaciones, progreso, certificado y kit docente | ✅ |
-| Autoevaluación | Quiz global + 129 preguntas repartidas en los 33 módulos | ✅ |
+| Autoevaluación | 66 comprobaciones formativas de clase + quiz global + 129 preguntas repartidas en 33 unidades | ✅ |
 | Apps offline | App de escritorio para Windows y APK de Android con todo el curso dentro | ✅ |
-| Manual en PDF | ~400 páginas con todo el contenido; se genera en cada publicación | ✅ |
+| Manual en PDF | ~450 páginas con todo el contenido; se genera en cada publicación | ✅ |
 | Presentación y pauta | 7 diapositivas del programa (con demo en vivo) y pauta del expositor con guion, tiempos y 4 anexos; se generan en cada publicación | ✅ |
 | Regulación | Chile, MiCA, EE. UU., LatAm y estándares internacionales, con rango normativo y fuente | ✅ |
 | Casos reales | Terra/UST, FTX, puente Ronin y El Salvador, con estructura fija de análisis | ✅ |
@@ -34,7 +34,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 ## Etapas del programa
 
-| # | Etapa | Módulos | Estado |
+| # | Etapa | Clases | Estado |
 |---:|---|---|:---:|
 | 1 | Orientación | 00 | ✅ |
 | 2 | Fundamentos | 01–03 | ✅ |
@@ -50,7 +50,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 | Área | Qué incluye | Estado | Cómo verificar |
 |---|---|:---:|---|
-| `curriculum/` | Módulos 00–32 y plantilla | ✅ | Abrir `curriculum/README.md` |
+| `curriculum/` | Clases 00.1–32.2 y plantilla | ✅ | Abrir `curriculum/README.md` |
 | `labs/` | Laboratorios con guía y catálogo | ✅ | Revisar `labs/CATALOG.md` |
 | `projects/` | Contratos Foundry de ejemplo | ✅ | `forge test` en el proyecto |
 | `apps/` | dApp web, indexador, panel y las dos apps offline | ✅ | Ver [despliegue local](despliegue-local.md) |

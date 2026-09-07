@@ -2,7 +2,7 @@
 
 > **Nivel:** Inicial · ⏱️ **Duración estimada:** 120 min · **Fuente:** BIP-32/39/44, documentación oficial de Ethereum (ethereum.org), EIP-1193/6963/712/2612 y ERC-4337
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📚 Bibliografía](bibliografia.md)
-> 🧭 **Unidad transversal** — se estudia después del [módulo 04 · Bitcoin](../curriculum/04-bitcoin/README.md) y antes del [módulo 05 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md). No altera la numeración de los módulos.
+> 🧭 **Unidad transversal** — se estudia después de las [clases 04.1–04.2 · Bitcoin](../curriculum/04-bitcoin/README.md) y antes de las [clases 05.1–05.2 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md). No altera la numeración de las clases.
 > 📖 [Glosario de términos](glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](empieza-aqui.md)
 
 ---
@@ -14,10 +14,10 @@ cartera digital) para una persona sin experiencia. Enseña qué es, cómo se usa
 seguridad y qué hacer cuando algo sale mal: perder el teléfono, exponer una
 credencial o firmar algo que no debías.
 
-**Prerrequisitos:** haber leído los módulos [01 · Criptografía](../curriculum/01-criptografia/README.md)
+**Prerrequisitos:** haber leído las clases [01 · Criptografía](../curriculum/01-criptografia/README.md)
 (qué es una clave y una firma) y [04 · Bitcoin](../curriculum/04-bitcoin/README.md)
 (qué es una transacción y una dirección). No hace falta conocer Ethereum: esta unidad
-se puede recorrer completa antes del [módulo 05](../curriculum/05-ethereum-evm/README.md).
+se puede recorrer completa antes de las [clases 05.1–05.2](../curriculum/05-ethereum-evm/README.md).
 
 > ⚠️ **Regla innegociable de toda la unidad:** ningún ejercicio usa fondos reales,
 > ninguna actividad te pedirá una seed phrase real ni una clave privada, y ningún
@@ -105,7 +105,7 @@ revisión antes de firmar**. A entrenar esa revisión se dedica el laboratorio.
 
 Ninguna es "la buena": son perfiles de riesgo distintos. La versión institucional de
 esta decisión (multisig, MPC, HSM, segregación, gobierno de claves) es el
-[módulo 26](../curriculum/26-custodia-identidad/README.md).
+[clases 26.1–26.2](../curriculum/26-custodia-identidad/README.md).
 
 ## 🌡️ Caliente, templada y fría
 
@@ -126,7 +126,7 @@ externo usa productos concretos, son solo ejemplos; verifica su documentación o
 | **Extensión de navegador** | El usuario | Caliente | Seed phrase | Alta: convive con toda la web | dApps y pruebas | Phishing, extensiones falsas, drainers | Inicial–intermedio, en testnet primero |
 | **Móvil** | El usuario | Caliente | Seed phrase | Media-alta: robo o pérdida del teléfono | Uso cotidiano | Malware, SIM swapping sobre cuentas asociadas | Inicial–intermedio |
 | **Escritorio** | El usuario | Caliente | Seed phrase | Media-alta | Gestión desde un equipo dedicado | Malware del equipo | Intermedio |
-| **Hardware** | El usuario | Templada/fría | Seed phrase | Baja: la clave no sale del dispositivo | Ahorro | Comprar unidades manipuladas; confirmar sin leer la pantalla | Intermedio |
+| **Hardware** | El usuario | Templada/fría | Seed phrase | Baja: la clave no sale del dispositivo | Ahorro | Comprar dispositivos manipulados; confirmar sin leer la pantalla | Intermedio |
 | **Watch-only (solo lectura)** | Nadie: no hay clave privada en el dispositivo | Cualquiera | No aplica (no firma) | Mínima | Vigilar saldos, conciliar | Creer que puede firmar; exponer qué direcciones son tuyas | Todos |
 | **Multisig** | Varias partes (M-de-N firmas) | Variable | Requiere M llaves; tolera perder N−M | Baja por diseño | Tesorerías, familias, DAO | Mal diseño del cuórum; perder demasiadas llaves | Avanzado ([lab 69](../labs/26-custodia/politica-cuorum.mjs)) |
 | **MPC** | Fragmentos repartidos; la clave completa nunca existe | Variable | Según el esquema del proveedor | Baja | Custodia institucional | Dependencia del protocolo/proveedor; sin seed estándar | Avanzado |
@@ -161,7 +161,7 @@ El orden importa: **el respaldo se verifica antes de recibir nada**.
 4. **Verificar la recuperación**: restaura la wallet desde el respaldo en un entorno limpio **antes** de que custodie nada. Un respaldo no verificado es una esperanza, no un respaldo.
 5. **Recibir**: comparte tu dirección, verifica con una cantidad pequeña, confirma que llegó.
 6. **Enviar**: aplica el [prevuelo](#-laboratorio-guiado-prevuelo-de-una-transacción) completo antes de firmar.
-7. **Conectar una dApp**: conectar ≠ autorizar movimientos; revisa qué cuenta y qué red expones. El detalle técnico ([EIP-1193](https://eips.ethereum.org/EIPS/eip-1193), [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963), viem) es el [módulo 07](../curriculum/07-dapps/README.md).
+7. **Conectar una dApp**: conectar ≠ autorizar movimientos; revisa qué cuenta y qué red expones. El detalle técnico ([EIP-1193](https://eips.ethereum.org/EIPS/eip-1193), [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963), viem) está en las [clases 07.1–07.2](../curriculum/07-dapps/README.md).
 8. **Revisar cada firma**: qué tipo de solicitud es (sección siguiente) y qué efecto puede tener.
 9. **Desconectar** la dApp al terminar la sesión.
 10. **Revocar permisos** periódicamente: las aprobaciones de tokens sobreviven a la desconexión y siguen vigentes hasta que las revocas con otra transacción.
@@ -411,15 +411,15 @@ Fuentes primarias, consultadas el 2026-08-24:
 
 - **Cuentas inteligentes (ERC-4337):** la cuenta es un contrato; la "wallet" firma
   `UserOperations` que un bundler lleva a la cadena. Cambia qué significa "clave":
-  la lógica de validación es programable. Profundiza en el [módulo 15](../curriculum/15-arquitectura-avanzada/README.md).
+  la lógica de validación es programable. Profundiza en las [clases 15.1–15.2](../curriculum/15-arquitectura-avanzada/README.md).
 - **Passkeys:** firmas WebAuthn (curva P-256) como autenticador de una cuenta
   inteligente; el respaldo pasa a depender del ecosistema de passkeys del usuario.
 - **Recuperación social:** guardianes (personas o dispositivos) que pueden rotar la
   clave de la cuenta; el diseño de quórum y de plazos es lo que la hace segura o inútil.
 - **Multisig:** política M-de-N explícita on-chain; simúlala con `pnpm lab:quorum`
-  y estudia la versión institucional en el [módulo 26](../curriculum/26-custodia-identidad/README.md).
+  y estudia la versión institucional en las [clases 26.1–26.2](../curriculum/26-custodia-identidad/README.md).
 - **MPC:** firma por cómputo multiparte; sin seed estándar, la clave completa nunca
-  existe. Comparación con HSM y multisig en el [módulo 26](../curriculum/26-custodia-identidad/README.md).
+  existe. Comparación con HSM y multisig en las [clases 26.1–26.2](../curriculum/26-custodia-identidad/README.md).
 - **Hardware:** el valor no es la caja, es el **canal de confirmación**: una pantalla
   independiente del equipo comprometido. Su límite: lo que esa pantalla no puede mostrar.
 - **Derivación HD fina:** gap limit, cuentas endurecidas (`'`), xpub/xprv y por qué
@@ -433,7 +433,7 @@ Fuentes primarias, consultadas el 2026-08-24:
 
 ## 🧭 Navegación
 
-Vienes de: ⬅️ [Módulo 04 · Bitcoin](../curriculum/04-bitcoin/README.md) · Sigue con: ➡️ [Módulo 05 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md)
+Vienes de: ⬅️ [Clases 04.1–04.2 · Bitcoin](../curriculum/04-bitcoin/README.md) · Sigue con: ➡️ [Clases 05.1–05.2 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md)
 
 Profundiza después: [07 · dApps](../curriculum/07-dapps/README.md) (conexión wallet-dApp con viem) ·
 [09 · Seguridad](../curriculum/09-seguridad/README.md) (cómo piensa un atacante) ·

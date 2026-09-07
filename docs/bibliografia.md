@@ -4,7 +4,7 @@
 
 Todo el contenido de este programa es **original en su redacción** y se apoya en la
 literatura de referencia del área. Aquí se listan las obras y fuentes primarias que
-sustentan cada módulo. **No se reproduce el contenido de los libros**: las referencias
+sustentan cada pareja de clases. **No se reproduce el contenido de los libros**: las referencias
 apuntan a las obras para que profundices en la fuente.
 
 Cuando una obra tiene varias ediciones, usa **la más reciente**: el ecosistema cambia
@@ -21,8 +21,8 @@ afirmación en el programa y **se validan de forma distinta**.
 ### 1. Lo que se demuestra ejecutando
 
 La mayor parte del contenido técnico no te pide que confíes en nadie: **lo puedes
-correr**. Si el módulo 01 afirma que una prueba de Merkle de 8 hojas necesita 3
-hashes, hay un test que lo comprueba; si el módulo 09 afirma que cierta línea
+correr**. Si la clase 01.1 afirma que una prueba de Merkle de 8 hojas necesita 3
+hashes, hay un test que lo comprueba; si la clase 09.1 afirma que cierta línea
 habilita una reentrancia, hay un exploit que drena el contrato y un fix que lo
 resiste.
 
@@ -56,10 +56,10 @@ y falla si esta página deja de coincidir con la realidad.
 El resto —historia, decisiones de diseño, cifras del ecosistema, casos de empresa,
 regulación— no se puede ejecutar. Ahí la garantía es la **trazabilidad**:
 
-- Cada módulo **declara su fuente** en la cabecera (`**Fuente:**`).
-- Cada módulo cierra con **Referencias** enlazando a la fuente primaria (mínimo 3
-  enlaces; los módulos van de 3 a 9).
-- `pnpm check` **falla** si un módulo no declara fuente, no tiene referencias
+- Cada unidad de dos clases **declara su fuente** en la cabecera (`**Fuente:**`).
+- Cada unidad cierra con **Referencias** enlazando a la fuente primaria (mínimo 3
+  enlaces; las unidades van de 3 a 9).
+- `pnpm check` **falla** si una unidad no declara fuente, no tiene referencias
   enlazadas o no aparece en la tabla de abajo.
 - Un workflow revisa **semanalmente** que esos enlaces siguen vivos y abre un issue
   si alguno muere. Una fuente que ya no se puede consultar deja de ser una fuente.
@@ -77,14 +77,14 @@ negocio en algo que leas aquí:
 - Si encuentras un error, [abre un issue](https://github.com/vladimiracunadev-create/blockchain-learning-path/issues):
   corregir el material es una contribución tan válida como añadirlo.
 
-## 🔗 Qué obra sustenta cada módulo
+## 🔗 Qué obra sustenta cada clase
 
-Cada módulo declara su fuente en la cabecera. Esta tabla invierte esa relación: te
-dice **dónde se usa cada obra**, para que puedas ir del libro al módulo o del módulo
-al libro. Los enlaces apuntan a la fuente oficial —cuando la obra tiene una edición
+Cada pareja de clases declara su fuente en la cabecera. Esta tabla invierte esa
+relación: te dice **dónde se usa cada obra**, para que puedas ir de la fuente a las
+clases o desde una clase a su fuente primaria. Los enlaces apuntan a la fuente oficial —cuando la obra tiene una edición
 legalmente gratuita, se enlaza esa.
 
-| Módulo | Obra que lo sustenta |
+| Clases | Obra que las sustenta |
 |---|---|
 | [00 · Orientación](../curriculum/00-orientacion/README.md) | Bashir — *Mastering Blockchain* · Werbach — [*The Blockchain and the New Architecture of Trust*](https://mitpress.mit.edu/9780262038935/the-blockchain-and-the-new-architecture-of-trust/) |
 | [01 · Criptografía](../curriculum/01-criptografia/README.md) | Aumasson — [*Serious Cryptography*](https://nostarch.com/serious-cryptography-2nd-edition) · Katz, Lindell — [*Introduction to Modern Cryptography*](http://www.cs.umd.edu/~jkatz/imc.html) |

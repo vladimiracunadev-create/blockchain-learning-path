@@ -5,7 +5,7 @@
 //
 // Uso: node scripts/build-manual.mjs   (requiere el paquete `marked`).
 
-import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, cpSync } from "node:fs";
 import { join, dirname, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -17,6 +17,7 @@ const GH = "https://github.com/vladimiracunadev-create/blockchain-learning-path"
 const version = JSON.parse(read("package.json")).version;
 
 const curriculumSlugs = readdirSync(join(ROOT, "curriculum")).filter((d) => /^\d{2}-/.test(d)).sort();
+const classCount = JSON.parse(read("curriculum/classes.json")).flatMap((unit) => unit.classes).length;
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 const adrDocs = readdirSync(join(ROOT, "adrs")).filter((f) => /^\d{3}-.*\.md$/.test(f)).sort();
 // Las cifras de la portada se calculan de los archivos reales: escritas a mano
@@ -41,7 +42,7 @@ const PARTS = [
   ["Regulación", ["regulation/README.md", "regulation/chile/README.md", "regulation/european-union/README.md",
     "regulation/united-states/README.md", "regulation/latin-america/README.md", "regulation/international/README.md",
     "regulation/comparison/README.md"]],
-  ["Casos reales", ["docs/casos-reales/README.md", "docs/casos-reales/terra-ust.md",
+  ["Casos reales", ["docs/casos-reales/README.md", "docs/casos-reales/orionx-descalce-custodia.md", "docs/casos-reales/terra-ust.md",
     "docs/casos-reales/ftx-custodia.md", "docs/casos-reales/ronin-puente.md",
     "docs/casos-reales/el-salvador-bitcoin.md"]],
   ["Decisiones de arquitectura (ADR)", ["adrs/README.md", ...adrDocs.map((f) => `adrs/${f}`)]],
@@ -137,7 +138,7 @@ img{max-width:100%}
 h1,h2,h3{page-break-after:avoid}
 </style>
 <script type="module">
-import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+import mermaid from "./assets/mermaid/mermaid.esm.min.mjs";
 window.__mermaidDone = false;
 await mermaid.run({ querySelector: "pre.mermaid" }).catch(()=>{});
 window.__mermaidDone = true;
@@ -148,12 +149,15 @@ window.__mermaidDone = true;
   <h1>Blockchain Learning Path</h1>
   <div class="sub">Manual del usuario · Programa educativo en español para aprender blockchain de cero a producción</div>
   <div class="ver">v${version}</div>
-  <div class="foot">${curriculumSlugs.length} módulos · ${practiceCount} prácticas · ${GH}</div>
+  <div class="foot">${classCount} clases · ${practiceCount} prácticas · ${GH}</div>
 </div>
 <div class="toc"><h2>Índice</h2><ul>${toc}</ul></div>
 ${body}
 </body></html>`;
 
 mkdirSync(join(ROOT, "manual"), { recursive: true });
+cpSync(join(ROOT, "node_modules", "mermaid", "dist"), join(ROOT, "manual", "assets", "mermaid"), {
+  recursive: true,
+});
 writeFileSync(join(ROOT, "manual", "manual.html"), out, "utf8");
 console.log(`manual/manual.html generado — ${n} capítulos, v${version}`);

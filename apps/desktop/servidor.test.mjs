@@ -34,7 +34,7 @@ test("sirve la portada en la raíz", async () => {
   });
 });
 
-test("sirve una página de módulo por su ruta absoluta", async () => {
+test("sirve una página de clase por la ruta absoluta de su unidad", async () => {
   await conServidor(async (url) => {
     const respuesta = await fetch(`${url}/curriculum/00-orientacion/README.html`);
     assert.equal(respuesta.status, 200);

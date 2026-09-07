@@ -7,6 +7,23 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 *Nada pendiente.*
 
+## [0.12.0] · 2026-09-07
+
+### Añadido
+
+- Catálogo estable de **66 clases** en 33 unidades documentales, con pregunta guía, caso, actividad, evidencia y comprobación formativa propias para cada clase.
+- Diseño pedagógico explícito con más de 25 estrategias distintas —simulación, autopsia, debate, ceremonia, laboratorio adversarial, conciliación y comité de aseguramiento, entre otras— para evitar clases clonadas.
+- Glosario profesional ampliado sobre exchanges, custodia, contabilidad blockchain, reservas, pasivos, solvencia, forensics, atribución y gobernanza.
+- Caso Orionx documentado con corte temporal, jerarquía de fuentes y separación explícita entre hechos, afirmaciones de parte, alegaciones e inferencias; Aurora Custody permanece como evaluación ficticia reproducible.
+- Comprobaciones automáticas que impiden publicar si faltan clases, se repiten identificadores, desaparece su diseño o cae la variedad pedagógica.
+
+### Cambiado
+
+- Todo el contenido vigente se presenta como **clases**, preservando las 33 rutas y unidades existentes para no romper enlaces, imágenes, diagramas, laboratorios ni progreso.
+- Se ordenaron y profundizaron las explicaciones, fuentes y alcance de cada clase; el laboratorio PoR y el caso Aurora Custody quedaron integrados en la progresión novato → intermedio → avanzado → profesional.
+- Landing, GitHub Pages, manual, presentación, apps offline, evaluaciones, certificado, CI y documentación del instructor reflejan las 66 clases.
+- Fuentes regulatorias y técnicas verificadas contra documentación primaria vigente, incluidas Ethereum Pectra/EIP-7702, FATF/GAFI, BIS/Basilea e ISRS 4400 (Revisada).
+
 ## [0.11.0] · 2026-09-07
 
 ### Añadido

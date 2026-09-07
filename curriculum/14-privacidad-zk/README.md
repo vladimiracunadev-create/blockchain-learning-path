@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 14.1 · Compromisos y pruebas de conocimiento cero
+
+**Pregunta guía:** ¿Cómo se demuestra una afirmación sin revelar el dato que la sostiene?
+
+**Enfoque pedagógico:** construcción de un circuito desde lenguaje natural.
+
+Una afirmación cotidiana se separa en entradas públicas, witness privado y restricciones. El estudiante descubre qué se demuestra exactamente antes de elegir una tecnología ZK.
+
+**Núcleo conceptual:**
+
+- statement, witness y circuito.
+- completitud, solidez y cero conocimiento.
+- prover y verifier.
+
+**Caso de trabajo:** Demostrar mayoría de edad sin publicar fecha de nacimiento.
+
+**Actividad:** Separar datos públicos, privados y restricciones de un circuito sencillo.
+
+**Comprobación formativa:** Escribe una restricción cuya ausencia permitiría una prueba engañosa.
+
+**Evidencia de aprendizaje:** Especificación de circuito con amenaza y propiedad demostrada.
+
+### Clase 14.2 · SNARK, STARK y privacidad real
+
+**Pregunta guía:** ¿Qué compromisos cambian entre sistemas y qué metadatos siguen visibles?
+
+**Enfoque pedagógico:** comparación con fuga de metadatos.
+
+Después de comparar SNARK y STARK, el grupo intenta correlacionar horarios, direcciones y patrones. La privacidad se evalúa como sistema completo.
+
+**Núcleo conceptual:**
+
+- setup confiable y transparencia.
+- tamaño, tiempo y supuestos.
+- anonimato, vínculo y cumplimiento.
+
+**Caso de trabajo:** Una prueba oculta el monto, pero horarios y direcciones permiten correlación.
+
+**Actividad:** Comparar dos esquemas y enumerar canales laterales de información.
+
+**Comprobación formativa:** ¿Qué dato permanece visible aunque el monto se pruebe en conocimiento cero?
+
+**Evidencia de aprendizaje:** Selección argumentada que incluya costo, confianza y límites de privacidad.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Definir con precisión compromiso, witness, circuito, prover y verifier dentro de un sistema de conocimiento cero.
@@ -168,7 +218,7 @@ Y ahí están las tres propiedades, sin una sola fórmula:
 
 ## 🧪 Laboratorio guiado
 
-Este módulo es un diseño conceptual de circuito, sin código de repositorio. Consulta el índice de prácticas del curso en [laboratorios](../../labs/CATALOG.md).
+Esta unidad de clases es un diseño conceptual de circuito, sin código de repositorio. Consulta el índice de prácticas del curso en [laboratorios](../../labs/CATALOG.md).
 
 1. Define el enunciado exacto a probar: "la persona nació antes de una fecha umbral" sin revelar la fecha real.
 2. Separa las señales del circuito en públicas y privadas, y anota qué recibe el verifier.
@@ -228,4 +278,4 @@ Entrega el diseño conceptual completo de la prueba de mayoría de edad: enuncia
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 13 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
+⬅️ [Clases 13.1–13.2 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 15.1–15.2 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)

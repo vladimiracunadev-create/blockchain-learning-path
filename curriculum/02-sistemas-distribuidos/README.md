@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 02.1 · Replicación, latencia y fallas
+
+**Pregunta guía:** ¿Qué significa mantener una verdad compartida cuando la red se parte?
+
+**Enfoque pedagógico:** simulación de red con eventos.
+
+Los equipos reciben mensajes con retrasos, duplicados y particiones. Al reconstruir el orden descubren por experiencia por qué consistencia y disponibilidad entran en tensión.
+
+**Núcleo conceptual:**
+
+- replicación y consistencia.
+- latencia y particiones.
+- CAP y disponibilidad.
+
+**Caso de trabajo:** Dos regiones aceptan operaciones durante una interrupción de conectividad.
+
+**Actividad:** Simular mensajes retrasados, duplicados y fuera de orden entre nodos.
+
+**Comprobación formativa:** Indica qué decisión tomaría cada réplica durante una partición y qué costo tendrá al reconectar.
+
+**Evidencia de aprendizaje:** Línea temporal que identifique estados divergentes y política de resolución.
+
+### Clase 02.2 · Redes P2P y adversarios
+
+**Pregunta guía:** ¿Cómo se propaga información sin confiar en cada participante?
+
+**Enfoque pedagógico:** juego adversarial de topologías.
+
+Una parte del grupo propaga información y otra intenta aislar nodos o crear identidades. El aprendizaje se centra en cómo la topología y el costo de identidad cambian la seguridad.
+
+**Núcleo conceptual:**
+
+- gossip y mempool.
+- fallas bizantinas.
+- identidad Sybil y eclipse.
+
+**Caso de trabajo:** Un nodo nuevo recibe una visión sesgada de la red por vecinos controlados.
+
+**Actividad:** Modelar topologías y observar cómo cambia la propagación al retirar nodos.
+
+**Comprobación formativa:** Diferencia un fallo por caída, uno bizantino y un ataque Sybil usando el mismo escenario.
+
+**Evidencia de aprendizaje:** Informe con amenaza, supuesto de red y mitigación medible.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Explicar los efectos de la latencia, las particiones de red y la replicación en un sistema distribuido.
@@ -95,7 +145,7 @@ flowchart TD
 
 Una blockchain pública de tipo Nakamoto elige, en la práctica, **disponibilidad con consistencia eventual**: durante una partición, cada mitad de la red sigue produciendo bloques sobre su propia vista, y al reunificarse la regla de elección de cadena descarta una de las ramas — eso es un **reorg**. Los nodos que consideraban confirmadas las transacciones de la rama perdedora ven cómo vuelven al mempool. Por eso la finalidad de Bitcoin es probabilística: más profundidad, menos probabilidad de reversión, pero nunca cero.
 
-Caso real verificable: el 25 de mayo de 2022, la Beacon Chain de Ethereum sufrió un **reorg de 7 bloques** — siete bloques ya propuestos fueron descartados de la cadena canónica. No hubo ataque: fue una consecuencia de la propagación desigual entre clientes actualizados y no actualizados en la implementación del boost del fork choice. La lección de sistemas distribuidos es doble: (1) incluso sin adversarios, la latencia y la heterogeneidad de clientes bastan para producir divergencias temporales; (2) el protocolo se diseña para que esas divergencias se resuelvan solas — la capa de finalidad (checkpoints de Casper FFG, módulo 03) marca el punto tras el cual un reorg ya no es una molestia sino una catástrofe económica. Análisis técnico: <https://barnabe.substack.com/p/pos-ethereum-reorg>.
+Caso real verificable: el 25 de mayo de 2022, la Beacon Chain de Ethereum sufrió un **reorg de 7 bloques** — siete bloques ya propuestos fueron descartados de la cadena canónica. No hubo ataque: fue una consecuencia de la propagación desigual entre clientes actualizados y no actualizados en la implementación del boost del fork choice. La lección de sistemas distribuidos es doble: (1) incluso sin adversarios, la latencia y la heterogeneidad de clientes bastan para producir divergencias temporales; (2) el protocolo se diseña para que esas divergencias se resuelvan solas — la capa de finalidad (checkpoints de Casper FFG, clases 03.1–03.2) marca el punto tras el cual un reorg ya no es una molestia sino una catástrofe económica. Análisis técnico: <https://barnabe.substack.com/p/pos-ethereum-reorg>.
 
 ### Modelos de sincronía y por qué FLP no condena el consenso
 
@@ -119,7 +169,7 @@ Crear una identidad en una red P2P abierta es gratis; por eso el voto "un nodo, 
 | Proof of Stake | Capital bloqueado en el protocolo | Comprar y arriesgar una fracción grande del stake, expuesta a slashing | El propio ataque destruye el valor del capital atacante; costo interno |
 | Identidad (PoA, consorcios) | Autorización verificada fuera de cadena | Corromper o suplantar a los miembros autorizados | No sirve para redes abiertas; reintroduce una autoridad de admisión |
 
-La conclusión conecta con el módulo 03: el mecanismo de consenso no "elige al mejor", solo hace que fingir ser muchos resulte más caro que el beneficio esperado del ataque.
+La conclusión conecta con las clases 03.1–03.2: el mecanismo de consenso no "elige al mejor", solo hace que fingir ser muchos resulte más caro que el beneficio esperado del ataque.
 
 ### CAP con un ejemplo que se puede seguir a mano
 
@@ -163,7 +213,7 @@ Aquí es donde encaja una blockchain pública: **elige CP**. Durante una partici
 
 > 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
 
-Este módulo es un ejercicio de diseño y simulación en papel; no requiere código específico. Puedes usar `pnpm test` para correr las pruebas del repositorio si tu diseño incluye un componente verificable.
+Esta unidad de clases es un ejercicio de diseño y simulación en papel; no requiere código específico. Puedes usar `pnpm test` para correr las pruebas del repositorio si tu diseño incluye un componente verificable.
 
 1. Dibuja una red de cinco nodos conectados como pares (P2P) e indica sus canales.
 2. Simula un **nodo desconectado**: describe cómo el resto continúa y cómo se reincorpora luego.
@@ -222,4 +272,4 @@ Entrega el diseño de la red de cinco nodos con los cuatro escenarios simulados 
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 01 · Criptografía aplicada](../01-criptografia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 03 · Consenso](../03-consenso/README.md)
+⬅️ [Clases 01.1–01.2 · Criptografía aplicada](../01-criptografia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 03.1–03.2 · Consenso](../03-consenso/README.md)

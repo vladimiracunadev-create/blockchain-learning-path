@@ -47,7 +47,7 @@ pnpm build:presentacion
 
 **De cero a la infraestructura financiera programable, en español.**
 
-- 33 módulos secuenciales · 91 prácticas · un proyecto final con caso custodial.
+- 66 clases secuenciales · 91 prácticas · un proyecto final con caso custodial.
 - Criptografía, Bitcoin, Ethereum, contratos, seguridad, producción, dinero y regulación.
 - Web, manual en PDF y apps que **funcionan sin conexión**.
 - Material **abierto**: código MIT, contenido CC BY 4.0.
@@ -66,7 +66,7 @@ pnpm build:presentacion
 > Y antes de que nadie lo pregunte, lo aclaro yo: esto no es un curso de inversión ni de
 > trading. No hay una sola recomendación de compra en todo el material. Esto es ingeniería.
 >
-> Son veintinueve módulos que se estudian en orden, ochenta y tres prácticas que se
+> Son sesenta y seis clases que se estudian en orden, noventa y una prácticas que se
 > ejecutan, y un proyecto final.
 >
 > Está disponible en la web, en un manual en PDF, y en dos aplicaciones —una de Windows y
@@ -91,7 +91,7 @@ pnpm build:presentacion
 >   charla. Prometer preguntas al final y luego aceptarlas a mitad rompe el tiempo.
 > - Si el público es institucional, haz una pausa de medio segundo después de decir
 >   "sin pedirme permiso": es el dato que les cambia la conversación.
-> - No entres todavía en el mapa de módulos. Aquí solo se abre la puerta.
+> - No entres todavía en el mapa de clases. Aquí solo se abre la puerta.
 
 ## 2 · Qué enseña, y qué no
 
@@ -104,8 +104,8 @@ pnpm build:presentacion
 
 | Lo que hay dentro | Cuánto |
 |---|---|
-| Módulos secuenciales (00→32), en diez etapas | **33** |
-| Prácticas guiadas con evidencia y criterio de aceptación | **83** |
+| Clases secuenciales (00.1→32.2), en diez etapas | **66** |
+| Prácticas guiadas con evidencia y criterio de aceptación | **91** |
 | Preguntas de autoevaluación, corregidas al instante | **117** |
 | Pruebas automatizadas que la CI ejecuta en cada cambio | **327** |
 
@@ -124,7 +124,7 @@ pnpm build:presentacion
 > las partes confían entre ellas y si nadie necesita verificar nada por su cuenta, una
 > base de datos de toda la vida es más barata, más rápida y más fácil de operar.
 >
-> Eso no es una opinión mía para quedar bien: es literalmente el módulo cero, el primero
+> Eso no es una opinión mía para quedar bien: es literalmente la clase 00.1, la primera
 > que hace todo el mundo.
 >
 > A partir de ahí, el programa hace cuatro cosas.
@@ -150,7 +150,7 @@ pnpm build:presentacion
 > comprueba ejecutándolo, no afirmándolo.
 >
 > Y hay un detalle que para mí es lo más importante de esta lámina: esas cifras las
-> verifica la propia integración continua. Si alguien añade un módulo y no actualiza este
+> verifica la propia integración continua. Si alguien añade una clase y no actualiza este
 > número, la comprobación falla y el material no se publica. El número que están viendo no
 > es un número de folleto.
 >
@@ -165,11 +165,11 @@ pnpm build:presentacion
 > - Marca con la voz el contraste "qué cambia / qué no cambia": es la idea que sostiene la
 >   segunda mitad del programa.
 
-## 3 · Los 33 módulos en diez etapas
+## 3 · Las 66 clases en diez etapas
 
-**Cada módulo asume el anterior. Se estudian en orden.**
+**Cada clase prepara la siguiente. Se estudian en orden.**
 
-| Etapa | Módulos | Foco |
+| Etapa | Clases | Foco |
 |---|---|---|
 | **Orientación** | 00 | ¿Necesito blockchain? |
 | **Fundamentos** | 01–03 | Criptografía, redes P2P, consenso |
@@ -189,7 +189,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 >
 > Este es el mapa completo. Denle unos segundos, porque es todo lo que vamos a recorrer.
 >
-> Treinta y tres módulos, agrupados en diez etapas, y se estudian en orden.
+> Sesenta y seis clases, agrupadas en diez etapas, y se estudian en orden.
 >
 > El orden no es un capricho editorial: es una cadena de dependencias. No se puede
 > entender una stablecoin sin entender antes un token, ni un token sin entender la máquina
@@ -225,11 +225,11 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 > internacionales—. Y una idea que atraviesa toda esta etapa: el cumplimiento no es un
 > trámite que se añade al final, es una restricción de diseño.
 >
-> Y la novena etapa, el módulo veintiocho: leer la propia cadena como fuente de datos.
+> Y la novena etapa, las clases 28.1 y 28.2: leer la propia cadena como fuente de datos.
 > Grafos, patrones, detección de anomalías. Y sobre todo, saber qué no se puede concluir:
 > una dirección no es una persona, y un patrón no es una prueba.
 >
-> Me falta una línea, la de abajo, que parece menor y no lo es. Entre el módulo cuatro y
+> Me falta una línea, la de abajo, que parece menor y no lo es. Entre las clases 04.2 y
 > el cinco hay una unidad sobre wallets: qué son, cómo se usan sin perder los fondos y qué
 > hacer cuando algo sale mal.
 >
@@ -241,16 +241,16 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 > - Después de la intervención 1, **cállate tres o cuatro segundos** y deja que lean el
 >   mapa. Es la única pausa larga de la charla.
 > - Una intervención por etapa y avanza. No te enredes en ninguna: cada una tiene su
->   propio módulo si alguien pregunta.
+>   propia clase si alguien pregunta.
 > - **Este es el punto por donde se recorta si vas corto.** Di las diez etapas en dos
 >   frases —"de fundamentos a producción, y después toda la parte financiera y
 >   regulatoria"— y salta a la lámina 4.
 > - Si el público es de banca o de sector público, alarga la etapa de finanzas on-chain y
 >   acorta la de desarrollo. Si es técnico, al revés.
 
-## 4 · Cómo se aprende: un módulo y 83 laboratorios
+## 4 · Cómo se aprende: una clase y 91 prácticas
 
-**Los 33 módulos tienen la misma anatomía, y ninguno se aprueba solo leyendo.**
+**Las 66 clases comparten una anatomía clara, pero cada una usa una estrategia didáctica propia y ninguna se aprueba solo leyendo.**
 
 - 🎯 **Objetivos** medibles · 🗺️ **temas** con su porqué · 🧩 **esquema visual**.
 - 🧠 **Modelo mental** con su analogía y los **límites** de la analogía.
@@ -266,8 +266,10 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 >
 > Ya vieron qué se enseña. Ahora les quiero mostrar cómo.
 >
-> Los veintinueve módulos tienen exactamente la misma anatomía. Uno aprende a leer uno y
-> después ya sabe dónde está cada cosa en todos los demás.
+> Las sesenta y seis clases conservan señales visuales comunes para orientarse, pero no
+> repiten la misma dinámica: unas demuestran, otras simulan, investigan, debaten o auditan.
+> Cuando el estudiante aprende a navegar una, reconoce dónde están la evidencia y las
+> fuentes en las demás sin confundir sus actividades.
 >
 > Objetivos medibles, los temas con su porqué, un esquema visual, y un modelo mental con
 > su analogía.
@@ -283,7 +285,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 > escritos como síntoma y causa. No como una lista de consejos: síntoma, y causa. Que es
 > como se depura de verdad.
 >
-> Cada módulo declara además de dónde saca lo que afirma. Y hay una comprobación
+> Cada pareja de clases declara además de dónde saca lo que afirma. Y hay una comprobación
 > automática que exige un mínimo de tres enlaces a fuente primaria, porque "según
 > Antonopoulos", sin enlace, no significa nada.
 >
@@ -307,7 +309,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 >
 > ### Indicaciones
 >
-> - Abre un módulo real en el sitio —el 01 de criptografía sirve— y recórrelo con el
+> - Abre una clase real en el sitio —la 01.1 de criptografía sirve— y recórrela con el
 >   cursor mientras hablas las intervenciones 3 a 7.
 > - Detente físicamente en dos sitios de la pantalla: **límites de la analogía** y
 >   **errores frecuentes**. Son las dos secciones que venden el material.
@@ -443,7 +445,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 > compilación exitosa no demuestra que el archivo contenga el material.
 >
 > Por eso la integración continua abre el instalador de Windows y abre el APK de Android,
-> y cuenta los módulos, las páginas y las preguntas que llevan dentro. Si sale vacío, la
+> y cuenta las clases, las páginas y las preguntas que llevan dentro. Si sale vacío, la
 > publicación falla — en vez de entregarles a ustedes una aplicación que se instala, se
 > abre, y está en blanco.
 >
@@ -466,7 +468,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 - Cada ruta termina en un **entregable de portafolio**: dApp probada, ADR, informe de auditoría, ficha de riesgo.
 - **Proyecto final**: protocolo probado, dApp, datos, arquitectura, modelo de amenazas y caso de negocio.
 - **Llévatelo entero**: sitio web, manual PDF de ~400 páginas, app de Windows y APK de Android, sin conexión.
-- **Empieza hoy:** abre *Empieza aquí* → haz el diagnóstico → módulo 00 y `pnpm lab:hash`.
+- **Empieza hoy:** abre *Empieza aquí* → haz el diagnóstico → clase 00.1 y `pnpm lab:hash`.
 - `github.com/vladimiracunadev-create/blockchain-learning-path`
 
 > **Pauta · 5 min.**
@@ -478,7 +480,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 > Hay nueve rutas por perfil: desarrollo, arquitectura, auditoría, producto,
 > investigación, empresa, DeFi, banca y cumplimiento.
 >
-> Nadie tiene que hacerlo entero. Cada ruta dice qué módulos priorizar y cuáles se pueden
+> Nadie tiene que hacerlo entero. Cada ruta dice qué clases priorizar y cuáles se pueden
 > leer en diagonal.
 >
 > Lo que sí tienen todas las rutas es un entregable de portafolio: una aplicación probada,
@@ -509,7 +511,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 > de cada archivo, para que puedan comprobar que descargaron lo que se publicó.
 >
 > Y cómo se empieza hoy: abren la página "Empieza aquí", hacen el diagnóstico, y entran al
-> módulo cero. El primer laboratorio son dos comandos.
+> clase 00.1. El primer laboratorio son dos comandos.
 >
 > El enlace está en pantalla y lo dejo ahí mientras respondemos preguntas.
 >
@@ -539,7 +541,7 @@ Nada de esto es opcional si la charla es hoy. En orden, con el proyector ya cone
 4. **Ensaya la demo una vez**, en silencio, antes de que entre el público: `pnpm lab:hash`
    y `pnpm lab:remesa`. La primera ejecución de Node siempre tarda más, y ese silencio se
    hace eterno en público.
-5. **Pestañas abiertas y en este orden**: el sitio del programa, el módulo 01, el catálogo
+5. **Pestañas abiertas y en este orden**: el sitio del programa, la clase 01.1, el catálogo
    de laboratorios y el caso de FTX. Cierra todo lo demás.
 6. **Plan B sin wifi**: ten descargados `PRESENTACION.pdf` y `MANUAL.pdf`, y la app de
    escritorio o el APK instalados. Si la sala se queda sin red y tú sigues, acabas de
@@ -558,10 +560,10 @@ Cuando el hueco es otro, esto es lo que se hace:
 
 | Tienes | Qué proyectas | Qué sacrificas |
 |---|---|---|
-| **10 min** (comité, pasillo) | 1 · 2 · 7 | La demo y el mapa; queda un solo dato: 33 módulos, 91 prácticas y todo verificado en CI |
-| **20 min** | 1 · 2 · 3 (en dos frases) · 5 (solo la remesa) · 7 | La anatomía del módulo y media lámina de seguridad |
+| **10 min** (comité, pasillo) | 1 · 2 · 7 | La demo y el mapa; queda un solo dato: 66 clases, 91 prácticas y todo verificado en CI |
+| **20 min** | 1 · 2 · 3 (en dos frases) · 5 (solo la remesa) · 7 | La anatomía de las clases y media lámina de seguridad |
 | **35 min** (completa) | Las siete, con los tiempos de esta pauta | Nada |
-| **50 min** (clase) | Las siete, un módulo real abierto en el sitio y las dos demos | Nada; sobra tiempo para preguntas largas |
+| **50 min** (clase) | Las siete, una clase real abierta en el sitio y las dos demos | Nada; sobra tiempo para preguntas largas |
 
 Reglas de recorte, por si hay que decidir en caliente:
 
@@ -583,7 +585,7 @@ para decirse en voz alta, no para leerse:
 | ¿Esto enseña a invertir o a hacer trading? | No, y es deliberado. Enseña a decidir si la tecnología aplica, a construirla con pruebas y a operarla. No hay una sola recomendación de compra en todo el material |
 | ¿No estará obsoleto en seis meses? | Los fundamentos —hash, firmas, consenso, UTXO, EVM— llevan años estables. Lo que cambia rápido está fechado y con fuente, y hay un historial de cambios: el Merge, Dencun y Pectra ya están incorporados |
 | ¿Cuánto tiempo lleva? | El plan es de 26 semanas a ritmo de curso, y hay una ruta rápida para quien ya programa. Nadie tiene que hacerlo entero: las rutas por perfil recortan a lo que necesitas |
-| ¿Necesito saber programar? | Para los módulos 00–05, no. Desde el 06 hace falta JavaScript básico. Y hay rutas —producto, cumplimiento— que llegan al final sin escribir contratos |
+| ¿Necesito saber programar? | Para las clases 00.1–05.2, no. Desde la 06.1 hace falta JavaScript básico. Y hay rutas —producto, cumplimiento— que llegan al final sin escribir contratos |
 | ¿Por qué en español? | Porque casi todo el material serio del área está en inglés, y eso deja fuera a mucha gente que sí puede hacer este trabajo. Los términos técnicos se mantienen en inglés y se traducen la primera vez que aparecen |
 | ¿Quién garantiza que esto sigue vivo? | La integración continua: pruebas en cada cambio, enlaces externos revisados cada semana y las cifras del material comprobadas contra los archivos. Si algo se rompe, no se publica |
 | ¿Puedo usarlo en mi institución o en mi empresa? | Sí, sin pedir permiso: código MIT y contenido CC BY 4.0, citando la fuente. Hay guía del instructor, syllabus, rúbricas y checklist de laboratorios |
@@ -591,7 +593,7 @@ para decirse en voz alta, no para leerse:
 | ¿Da certificado? | El propio repositorio genera un certificado de progreso a partir de la evidencia de los laboratorios. No es una acreditación oficial y no lo presentamos como tal |
 | ¿Cuánto cuesta? | Nada. Y las obras de referencia clave tienen edición legalmente gratuita, así que se puede seguir entero sin comprar un libro |
 
-Si te preguntan algo que no sabes, la respuesta correcta es **"no lo sé, está en el módulo
+Si te preguntan algo que no sabes, la respuesta correcta es **"no lo sé, está en la clase
 tal, te lo mando"**. En un tema con tanto vendedor, admitir un límite suma credibilidad;
 improvisar una cifra la destruye para el resto de la sesión.
 
@@ -614,5 +616,5 @@ aunque la pregunta invite a cruzarlas:
 
 Y una tentación que no es una promesa pero se le parece: **no vendas blockchain a quien no
 la necesita**. Si alguien del público describe un problema que se resuelve con una base de
-datos, díselo. Es literalmente la primera lección del módulo 00, y hacerlo en directo vale
+datos, díselo. Es literalmente la primera lección de la clase 00.1, y hacerlo en directo vale
 más que las siete láminas juntas.

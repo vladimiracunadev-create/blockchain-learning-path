@@ -7,7 +7,57 @@
 
 ---
 
-Este módulo responde la pregunta del directorio: **¿qué gana la empresa con esto, en qué
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 17.1 · Valor empresarial y límites
+
+**Pregunta guía:** ¿Qué coordinación mejora y qué costo nuevo introduce una red compartida?
+
+**Enfoque pedagógico:** clínica de caso de negocio.
+
+El proceso actual se cuantifica antes de diseñar el futuro. Beneficios, costos y riesgos comparten unidades comparables para evitar promesas imposibles de medir.
+
+**Núcleo conceptual:**
+
+- caso de uso y actores.
+- TCO, riesgo y beneficio.
+- base de datos frente a DLT.
+
+**Caso de trabajo:** Varias empresas quieren compartir trazabilidad sin compartir control total.
+
+**Actividad:** Cuantificar proceso actual, fricciones y alternativas tecnológicas.
+
+**Comprobación formativa:** ¿Qué indicador demostraría que el problema existe aun sin blockchain?
+
+**Evidencia de aprendizaje:** Business case con línea base, supuestos, costos y criterio de abandono.
+
+### Clase 17.2 · Comunicación, piloto y medición
+
+**Pregunta guía:** ¿Cómo se prueba valor sin prometer una transformación completa?
+
+**Enfoque pedagógico:** audiencia de inversión simulada.
+
+Una PoC técnica enfrenta preguntas de adopción, soporte, legal y operación. El piloto se diseña para invalidar hipótesis, no para confirmar entusiasmo.
+
+**Núcleo conceptual:**
+
+- hipótesis y alcance.
+- PoC, piloto y producción.
+- KPIs técnicos y de negocio.
+
+**Caso de trabajo:** Una PoC exitosa no contempla integración, soporte ni responsabilidad legal.
+
+**Actividad:** Convertir una demo en plan de piloto con usuarios y métricas reales.
+
+**Comprobación formativa:** Define una condición concreta que obligaría a detener el piloto.
+
+**Evidencia de aprendizaje:** Pitch y tablero de decisión go/no-go con riesgos explícitos.
+<!-- plan-clases:fin -->
+
+---
+
+Esta unidad de clases responde la pregunta del directorio: **¿qué gana la empresa con esto, en qué
 se usa, cuánto cuesta llevarlo a cabo y qué servicios existen para no construir todo?**
 Con casos reales verificables — éxitos y fracasos — porque el criterio profesional se
 entrena con ambos.
@@ -129,19 +179,19 @@ flowchart TD
 
 | Servicio | Qué resuelve | Ejemplos | Cuándo contratarlo |
 |---|---|---|---|
-| Nodo/RPC gestionado | Acceso a la red sin operar nodos | Alchemy, Infura, QuickNode | Siempre al inicio; nodo propio al crecer (módulo 16) |
+| Nodo/RPC gestionado | Acceso a la red sin operar nodos | Alchemy, Infura, QuickNode | Siempre al inicio; nodo propio al crecer (clases 16.1–16.2) |
 | Custodia / MPC | Claves institucionales con póliza y licencia | Fireblocks, BitGo, custodios bancarios | Cuando hay fondos de terceros o tesorería relevante |
 | KYT / analítica | Cumplimiento y monitoreo de fondos | Chainalysis, TRM, Elliptic | Obligatorio según actividad y jurisdicción |
 | Auditoría de contratos | Revisión externa pre-lanzamiento | Firmas especializadas + contests | Siempre antes de mainnet; se agenda con meses |
 | Tokenización como servicio | Emisión regulada de RWA | Securitize y equivalentes locales | Cuando el activo exige registro regulado |
-| Rollup/red como servicio | Cadena propia sin equipo de protocolo | Conduit, Caldera y similares | Casos que justifican appchain (revisa el módulo 12) |
+| Rollup/red como servicio | Cadena propia sin equipo de protocolo | Conduit, Caldera y similares | Casos que justifican appchain (revisa las clases 12.1–12.2) |
 
 ### Costos asociados: el presupuesto completo
 
 Partidas para un proyecto mediano de 6 meses (órdenes de magnitud del mercado —
 **consulta precios en vivo**): el **equipo** (6-8 personas) domina el costo; **auditoría
 externa** 30.000-150.000+ USD según alcance; **infraestructura** 500-5.000+ USD/mes
-(módulo 16); **custodia** fijo mensual + variable; **KYT/cumplimiento** suscripción
+(clases 16.1–16.2); **custodia** fijo mensual + variable; **KYT/cumplimiento** suscripción
 anual; **gas** marginal en L2 post-EIP-4844, relevante en L1. El error clásico:
 presupuestar solo el desarrollo y descubrir auditoría y cumplimiento a mitad de camino.
 
@@ -250,7 +300,7 @@ Análisis de caso con plantilla, sobre fuentes primarias:
 1. Elige un caso de la tabla (éxito o fracaso) y localiza dos fuentes primarias (anuncio oficial, informe del regulador, documentación del producto).
 2. Completa la ficha: problema de negocio → mecanismo del beneficio → evidencia medible → costos visibles → riesgos y consideraciones → estado actual (verifícalo en vivo).
 3. Aplica el flujo de decisión del esquema visual: ¿habrías aprobado el proyecto con la información de su época?
-4. Contrasta con la matriz del módulo 00: ¿este caso necesitaba blockchain o una base de datos?
+4. Contrasta con la matriz de las clases 00.1–00.2: ¿este caso necesitaba blockchain o una base de datos?
 5. Presenta la ficha en una página, como si fuera para un comité de inversión.
 
 ## 📝 Reto verificable
@@ -305,4 +355,4 @@ usa ninguno de los términos de la columna "No digas".
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 16 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 18 · Implementación empresarial](../18-implementacion-empresarial/README.md)
+⬅️ [Clases 16.1–16.2 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 18.1–18.2 · Implementación empresarial](../18-implementacion-empresarial/README.md)

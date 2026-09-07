@@ -8,6 +8,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 05.1 · Cuentas, estado y transacciones Ethereum
+
+**Pregunta guía:** ¿Cómo cambia el estado global cuando una cuenta firma una operación?
+
+**Enfoque pedagógico:** línea temporal de nonces.
+
+Dos transacciones compiten por el mismo nonce y una tercera queda bloqueada. Así se conectan cuenta, mempool, reemplazo y estado sin confundir envío con ejecución.
+
+**Núcleo conceptual:**
+
+- EOA y cuenta de contrato.
+- nonce, saldo, código y storage.
+- EIP-1559 y ciclo de transacción.
+
+**Caso de trabajo:** Dos transacciones con el mismo nonce compiten con tarifas distintas.
+
+**Actividad:** Inspeccionar cuentas y reemplazar una transacción en una red local.
+
+**Comprobación formativa:** Predice qué ocurre con los nonces siguientes si el primero queda pendiente.
+
+**Evidencia de aprendizaje:** Secuencia firmada que explique pending, reemplazo, inclusión y finalidad.
+
+### Clase 05.2 · EVM, ABI y costo de ejecución
+
+**Pregunta guía:** ¿Cómo convierte la EVM una llamada en cambios de estado y consumo de gas?
+
+**Enfoque pedagógico:** lectura guiada de una traza EVM.
+
+La clase decodifica calldata y sigue una llamada por stack, memory, storage y logs. Un revert permite comprobar qué efectos sobreviven y cuáles se deshacen.
+
+**Núcleo conceptual:**
+
+- bytecode y opcodes.
+- ABI, selector y calldata.
+- stack, memory, storage y logs.
+
+**Caso de trabajo:** Una llamada revierte después de escribir temporalmente en memoria y storage.
+
+**Actividad:** Decodificar calldata y seguir una traza de ejecución en Anvil.
+
+**Comprobación formativa:** Distingue un dato persistente, uno temporal y uno observable sólo fuera de cadena.
+
+**Evidencia de aprendizaje:** Mapa de la llamada con opcode relevante, gas y efecto persistente o revertido.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Distinguir cuentas EOA y de contrato por su nonce, código y forma de iniciar transacciones.
@@ -137,7 +187,7 @@ Los valores vigentes de base fee cambian bloque a bloque: consúltalo en vivo an
 
 ### El coste de una transacción, desglosado
 
-"¿Por qué me costó eso?" es la pregunta más repetida del módulo, y tiene respuesta exacta: se suma.
+"¿Por qué me costó eso?" es la pregunta más repetida de la unidad, y tiene respuesta exacta: se suma.
 
 Antes de los números, la idea. En Ethereum hay **dos cosas separadas** que se suelen confundir en una:
 
@@ -188,7 +238,7 @@ coste total = gas usado × (base fee + priority fee)
 = 0,000845 ETH
 ```
 
-De esos, `65 000 × 12 = 780 000 gwei` **se queman** (desaparecen de la circulación) y solo `65 000 × 1 = 65 000 gwei` van al validador. Mezclar ambas es el error tabulado en este módulo: si sumas la base fee al ingreso del validador, te sale un número que no corresponde a nadie.
+De esos, `65 000 × 12 = 780 000 gwei` **se queman** (desaparecen de la circulación) y solo `65 000 × 1 = 65 000 gwei` van al validador. Mezclar ambas es el error tabulado en esta unidad de clases: si sumas la base fee al ingreso del validador, te sale un número que no corresponde a nadie.
 
 El `maxFeePerGas` que fija tu cartera es un **techo**, no un precio: si la base fee sube por encima, la transacción espera; si baja, pagas menos de lo autorizado y te devuelven la diferencia.
 
@@ -282,4 +332,4 @@ Sigue una transacción de principio a fin: firma en la wallet, propagación, inc
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 04 · Bitcoin](../04-bitcoin/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 06 · Solidity y Foundry](../06-solidity-foundry/README.md)
+⬅️ [Clases 04.1–04.2 · Bitcoin](../04-bitcoin/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 06.1–06.2 · Solidity y Foundry](../06-solidity-foundry/README.md)

@@ -1,5 +1,5 @@
 // Lint del JavaScript del repositorio. El curso enseña disciplina de calidad en
-// el módulo 09; este archivo es esa disciplina aplicada al propio material.
+// las clases 09.1–09.2; este archivo es esa disciplina aplicada al propio material.
 //
 // El objetivo NO es imponer estilo (para eso está .editorconfig), sino atrapar
 // los errores que un alumno copiaría sin darse cuenta: variables no declaradas,
@@ -12,6 +12,8 @@ export default [
     ignores: [
       "**/node_modules/**",
       "site/**",
+      "apps/bundle/**",
+      "manual/assets/**",
       "**/out/**",
       "**/cache/**",
       "**/lib/**",

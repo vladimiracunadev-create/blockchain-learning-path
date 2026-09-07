@@ -8,7 +8,7 @@ Este documento define cómo se mide el aprendizaje en el programa: los pesos de 
 
 | Componente | Peso | Qué mide |
 |---|---:|---|
-| Cuestionarios de módulo | 20 % | Comprensión conceptual verificada por checkpoint |
+| Autoevaluaciones de unidad | 20 % | Comprensión conceptual verificada por checkpoint |
 | Laboratorios y bitácora | 30 % | Práctica guiada, reproducibilidad y reflexión escrita |
 | Proyectos de nivel | 30 % | Integración de habilidades al cierre de cada nivel |
 | Proyecto final (capstone) | 20 % | Sistema completo con modelo de amenazas y demo ([capstone](../capstone/README.md)) |
@@ -48,7 +48,7 @@ Dos reglas no negociables:
 | Nivel | Descripción |
 |---|---|
 | Insuficiente | No compila o incumple requisitos centrales |
-| Suficiente | Cumple el criterio de aceptación del módulo en el camino feliz |
+| Suficiente | Cumple el criterio de aceptación de la unidad en el camino feliz |
 | Bueno | Cumple requisitos e invariantes también en entradas adversas |
 | Sobresaliente | Documenta invariantes explícitos y demuestra que se preservan |
 
@@ -81,9 +81,9 @@ Dos reglas no negociables:
 
 ## Evidencia y registro de progreso
 
-El avance se registra en el archivo de progreso del estudiante (plantilla en `student/progress.example.json`). Por cada módulo se guarda:
+El avance se registra en el archivo de progreso del estudiante (plantilla en `student/progress.example.json`). Por cada clase se guarda:
 
-- Fecha de inicio y de cierre del módulo.
+- Fecha de inicio y de cierre de la unidad.
 - Resultado del cuestionario del checkpoint ([assessments/checkpoints.md](../assessments/checkpoints.md)).
 - Comandos de verificación ejecutados y su salida resumida (`pnpm lab:*`, `forge test`).
 - Enlace o ruta a la bitácora de laboratorio (qué intentaste, qué falló, qué aprendiste).
@@ -93,9 +93,9 @@ La bitácora no es burocracia: escribir por qué algo falló es la evidencia má
 
 ## Criterios de aprobación
 
-- **Por módulo**: nota ≥ 80/100 en la entrega del módulo y checkpoint aprobado. Es el mismo umbral que exige el certificado del programa.
-- **Retos verificables**: cada módulo define un criterio de aceptación explícito (una salida esperada, una prueba que debe pasar, un invariante que debe sostenerse). El reto está aprobado cuando el criterio se cumple de forma reproducible, no cuando "parece funcionar".
-- **Por nivel**: todos los módulos del nivel aprobados más el proyecto de nivel con nota ≥ 80.
+- **Por unidad de dos clases**: nota ≥ 80/100 en la entrega y checkpoint aprobado. Es el mismo umbral que exige el certificado del programa.
+- **Retos verificables**: cada clase define un criterio de aceptación explícito (una salida esperada, una prueba que debe pasar, un invariante que debe sostenerse). El reto está aprobado cuando el criterio se cumple de forma reproducible, no cuando "parece funcionar".
+- **Por nivel**: todas las clases del nivel aprobadas más el proyecto de nivel con nota ≥ 80.
 - **Programa completo**: todos los niveles más el capstone con nota ≥ 80.
 - **Especialización 29–32**: prácticas 84–91, autoevaluaciones ≥ 75 % y defensa de Aurora Custody ≥ 80/100. Una conclusión que llame “auditoría financiera completa” al snapshot PoR no aprueba.
 
@@ -110,7 +110,7 @@ La bitácora no es burocracia: escribir por qué algo falló es la evidencia má
 | Gobernanza y controles | 15 | Segregación, cuórum, recuperación y escalamiento |
 | Comunicación profesional | 10 | Conclusión proporcional, sin falsa atribución |
 
-Un módulo con nota entre 60 y 79 puede reentregarse una vez corrigiendo las observaciones; se registra la nota de la reentrega.
+Una unidad con nota entre 60 y 79 puede reentregarse una vez corrigiendo las observaciones; se registra la nota de la reentrega.
 
 ## Autoevaluación y evaluación con instructor
 

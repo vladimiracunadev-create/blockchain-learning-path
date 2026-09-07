@@ -63,7 +63,7 @@ function construirMenu(url) {
               title: "Blockchain Learning Path",
               message: `Blockchain Learning Path ${m ? "v" + m.version : ""}`,
               detail: m
-                ? `${m.modulos} módulos · ${m.paginas} páginas${m.manual ? " · manual PDF incluido" : ""}\n\nTodo el contenido está dentro de la app: funciona sin conexión.`
+                ? `${m.clases} clases · ${m.paginas} páginas${m.manual ? " · manual PDF incluido" : ""}\n\nTodo el contenido está dentro de la app: funciona sin conexión.`
                 : "No se encontró el contenido del curso dentro de la app."
             });
           }

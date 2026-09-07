@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 10.1 · Oráculos y calidad del dato
+
+**Pregunta guía:** ¿Qué confianza entra al contrato cuando importamos un precio externo?
+
+**Enfoque pedagógico:** clínica de datos defectuosos.
+
+El contrato recibe precios viejos, extremos y con decimales distintos. Cada falla revela una validación y el costo de operar en modo degradado.
+
+**Núcleo conceptual:**
+
+- spot, TWAP y agregación.
+- freshness, decimales y rangos.
+- fallback y circuit breaker.
+
+**Caso de trabajo:** Un precio válido pero antiguo habilita una liquidación incorrecta.
+
+**Actividad:** Evaluar respuestas de oráculo normales, atrasadas y fuera de rango.
+
+**Comprobación formativa:** ¿Por qué una respuesta firmada por el oráculo todavía puede ser insegura para el caso de uso?
+
+**Evidencia de aprendizaje:** Política de consumo con validaciones, umbrales y modo degradado.
+
+### Clase 10.2 · Eventos, indexación y disponibilidad
+
+**Pregunta guía:** ¿Cómo consultamos historia sin confundir un índice con la verdad del protocolo?
+
+**Enfoque pedagógico:** reconstrucción después de una reorg.
+
+El índice pierde coherencia mientras el contrato conserva su estado. Reprocesar desde un checkpoint enseña que velocidad de consulta y autoridad del dato son funciones diferentes.
+
+**Núcleo conceptual:**
+
+- logs y estado on-chain.
+- indexadores y reorgs.
+- CID, IPFS y persistencia.
+
+**Caso de trabajo:** Un indexador pierde eventos durante una reorganización y muestra saldo incorrecto.
+
+**Actividad:** Reprocesar eventos desde un checkpoint y comparar contra estado RPC.
+
+**Comprobación formativa:** ¿Qué comparación detecta que el índice ya no representa el estado canónico?
+
+**Evidencia de aprendizaje:** Índice reconstruible con bloque de corte, procedencia y manejo de reorg.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Explicar el "problema del oráculo" y por qué introducir datos externos añade un modelo de confianza.
@@ -213,4 +263,4 @@ Especifica el consumo seguro de un oráculo de precios para un contrato hipotét
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 09 · Seguridad y auditoría](../09-seguridad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 11 · DAO y gobernanza](../11-dao-gobernanza/README.md)
+⬅️ [Clases 09.1–09.2 · Seguridad y auditoría](../09-seguridad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 11.1–11.2 · DAO y gobernanza](../11-dao-gobernanza/README.md)

@@ -28,7 +28,7 @@
 //
 // Uso: node scripts/build-presentation.mjs   (requiere el paquete `marked`).
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
@@ -42,10 +42,10 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, 
 // Las cifras del pie de las láminas se cuentan de los archivos, nunca se escriben
 // a mano: una presentación con un número obsoleto proyectado a pantalla completa
 // es la peor manera posible de enterarse de que el material creció.
-const modulos = readdirSync(join(ROOT, "curriculum"), { withFileTypes: true })
-  .filter((e) => e.isDirectory() && /^\d\d-/.test(e.name)).length;
+const clases = JSON.parse(read("curriculum/classes.json"))
+  .flatMap((unit) => unit.classes).length;
 const practicas = (read("labs/CATALOG.md").match(/^\|\s*\d+\s*\|/gm) ?? []).length;
-if (!modulos || !practicas) throw new Error("No se pudieron contar los módulos o las prácticas del programa.");
+if (!clases || !practicas) throw new Error("No se pudieron contar las clases o las prácticas del programa.");
 
 // --- Leer la fuente y separarla en diapositivas y anexos -----------------------
 
@@ -237,7 +237,7 @@ const deckSlides = slides.map((s) => {
   <div class="tope"><span class="marca">${s.n === 1 ? "🎤 Muestra del programa" : "⛓️ Blockchain Learning Path"}</span><span class="pag">${s.n} / ${slides.length}</span></div>
   <h2>${esc(s.titulo)}</h2>
   <div class="zona"><div class="contenido${claseDensidad(cuerpo)}">${cuerpo}</div></div>
-  <div class="pie"><span>v${version} · ${modulos} módulos · ${practicas} prácticas</span><span>${SITE.replace("https://", "")}</span></div>
+  <div class="pie"><span>v${version} · ${clases} clases · ${practicas} prácticas</span><span>${SITE.replace("https://", "")}</span></div>
 </section>`;
 }).join("\n");
 
@@ -402,7 +402,7 @@ const pauta = `<!doctype html>
   <div class="escudo">⛓️</div>
   <h1>Pauta del expositor</h1>
   <p><strong>Blockchain Learning Path</strong> · muestra del programa</p>
-  <p>${modulos} módulos · ${practicas} prácticas · de cero a la infraestructura financiera</p>
+  <p>${clases} clases · ${practicas} prácticas · de cero a la infraestructura financiera</p>
   <div class="meta"><span>v${version}</span><span>${slides.length} diapositivas</span><span>≈ ${duracion} min</span><span>${anexos.length} anexos</span></div>
 </div>
 
@@ -452,5 +452,5 @@ ${SITE.replace("https://", "")} · Código MIT · Contenido CC BY 4.0
 mkdirSync(join(ROOT, "presentacion"), { recursive: true });
 writeFileSync(join(ROOT, "presentacion", "presentacion.html"), deck, "utf8");
 writeFileSync(join(ROOT, "presentacion", "pauta.html"), pauta, "utf8");
-console.log(`presentacion/presentacion.html: ${slides.length} diapositivas (${modulos} módulos · ${practicas} prácticas).`);
+console.log(`presentacion/presentacion.html: ${slides.length} diapositivas (${clases} clases · ${practicas} prácticas).`);
 console.log(`presentacion/pauta.html: pauta del expositor, ≈${duracion} min y ${anexos.length} anexos.`);

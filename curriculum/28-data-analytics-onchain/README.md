@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 28.1 · Extraer y normalizar datos on-chain
+
+**Pregunta guía:** ¿Cómo convertimos bloques y transacciones en un dataset reproducible?
+
+**Enfoque pedagógico:** pipeline reproducible por checkpoints.
+
+El dataset se extrae dos veces alrededor de una reorganización. Procedencia, bloque de corte y deduplicación convierten una descarga en evidencia analizable.
+
+**Núcleo conceptual:**
+
+- RPC, exploradores y procedencia.
+- UTXO frente a cuentas.
+- reorgs, duplicados y corte.
+
+**Caso de trabajo:** Dos consultas del mismo rango difieren por una reorganización reciente.
+
+**Actividad:** Construir pipeline incremental con checkpoints y validaciones.
+
+**Comprobación formativa:** ¿Qué campos permiten reproducir exactamente el conjunto observado?
+
+**Evidencia de aprendizaje:** Dataset con esquema, bloque de corte, hash y reglas de calidad.
+
+### Clase 28.2 · Grafo, anomalías y límites de atribución
+
+**Pregunta guía:** ¿Qué patrón observamos y qué identidad no podemos afirmar?
+
+**Enfoque pedagógico:** investigación de grafo con hipótesis rivales.
+
+Cada patrón recibe al menos dos explicaciones posibles. Precisión y recall se conectan con el costo humano de una falsa atribución.
+
+**Núcleo conceptual:**
+
+- nodos, aristas y clustering.
+- fan-in, fan-out y peeling chain.
+- precisión, recall y falsa atribución.
+
+**Caso de trabajo:** Un servicio compartido hace parecer relacionadas a personas independientes.
+
+**Actividad:** Construir grafo y clasificar hallazgos por fuerza de evidencia.
+
+**Comprobación formativa:** Reescribe una acusación como hecho, indicador, inferencia e hipótesis separados.
+
+**Evidencia de aprendizaje:** Informe que separe hecho, indicador, inferencia e hipótesis.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Distinguir **minería de criptomonedas**, **minería de datos blockchain**, **blockchain analytics**, **on-chain analytics** y **blockchain intelligence**, y usar cada término donde corresponde.
@@ -104,7 +154,7 @@ flowchart LR
 
 ### Nivel 1 — Fundamentos: qué hay dentro y qué nunca estuvo
 
-La primera confusión que hay que desmontar es de vocabulario. **Minar criptomonedas** es competir por proponer el siguiente bloque y cobrar por ello: es una actividad de consenso, estudiada en el [módulo 03](../03-consenso/README.md). **Minar datos** de una blockchain es leer lo ya escrito para encontrar regularidades: es una actividad de análisis, y no produce ni una sola moneda. Comparten el verbo por herencia histórica del inglés *mining*, y nada más.
+La primera confusión que hay que desmontar es de vocabulario. **Minar criptomonedas** es competir por proponer el siguiente bloque y cobrar por ello: es una actividad de consenso, estudiada en las [clases 03.1–03.2](../03-consenso/README.md). **Minar datos** de una blockchain es leer lo ya escrito para encontrar regularidades: es una actividad de análisis, y no produce ni una sola moneda. Comparten el verbo por herencia histórica del inglés *mining*, y nada más.
 
 Un bloque contiene una cabecera (altura o número, hash propio, hash del bloque anterior, marca de tiempo, y en la EVM el gas usado y el límite) y una lista ordenada de transacciones. El **encadenamiento** por el hash previo es lo que hace que alterar un bloque antiguo invalide todos los posteriores. Dos campos se malinterpretan sistemáticamente. El primero es la **marca de tiempo**: la declara quien propone el bloque, dentro de un margen tolerado; es una aproximación útil para agregar por día, y una fuente de error si se usa para afirmar el orden exacto de dos hechos separados por segundos. El segundo son las **confirmaciones**: no son un sello de validez sino una medida de coste de reversión. Seis confirmaciones no significan "ya es definitivo"; significan "revertirlo ahora saldría muy caro".
 
@@ -114,7 +164,7 @@ Sobre la privacidad, el término correcto es **seudonimato**, no anonimato. Una 
 
 ### Nivel 2 — Adquisición y preparación: donde se pierden los datos
 
-Hay cuatro fuentes y cada una impone su sesgo. Un **nodo propio** da el dato de primera mano y control total, a cambio de operarlo y almacenarlo ([módulo 16](../16-infraestructura-nodos/README.md)). Una **API de explorador** es cómoda y trae datos ya enriquecidos, pero introduce una dependencia, límites de tarifa y decisiones ajenas sobre qué es una "transferencia". Un **indexador** ([módulo 10](../10-oraculos-indexacion/README.md)) devuelve datos consultables por evento, pero solo los que alguien decidió indexar. La **mempool** ofrece lo que aún no se ha confirmado: útil para estudiar comportamiento y latencia, peligroso para contar dinero, porque lo pendiente puede no ocurrir nunca.
+Hay cuatro fuentes y cada una impone su sesgo. Un **nodo propio** da el dato de primera mano y control total, a cambio de operarlo y almacenarlo ([clases 16.1–16.2](../16-infraestructura-nodos/README.md)). Una **API de explorador** es cómoda y trae datos ya enriquecidos, pero introduce una dependencia, límites de tarifa y decisiones ajenas sobre qué es una "transferencia". Un **indexador** ([clases 10.1–10.2](../10-oraculos-indexacion/README.md)) devuelve datos consultables por evento, pero solo los que alguien decidió indexar. La **mempool** ofrece lo que aún no se ha confirmado: útil para estudiar comportamiento y latencia, peligroso para contar dinero, porque lo pendiente puede no ocurrir nunca.
 
 La extracción real es siempre **paginada y reanudable**. Un proveedor trunca las respuestas: pedir mil bloques puede devolver diez sin que eso sea un error, y un extractor que asume que recibió todo lo que pidió se salta bloques en silencio. Por eso se guarda un **checkpoint** (el último bloque consolidado) y se reanuda desde ahí, y por eso los reintentos deben ser **idempotentes**: si el mismo bloque llega dos veces, el almacén no puede duplicarlo. La clave primaria natural (el hash de la transacción) resuelve la mitad del problema; la otra mitad es la **reorganización**, en la que un bloque ya guardado deja de existir y otro ocupa su altura. Detectarla es comparar el `hashPrevio` del bloque nuevo con el hash que uno ya tiene almacenado; ignorarla significa contar transacciones que la cadena definitiva nunca incluyó.
 
@@ -130,7 +180,7 @@ El salto cualitativo es pasar de contar a **modelar la red**. Cada dirección es
 
 Detectar anomalías es proponer una definición de "normal" y medir la distancia. El z-score (media y desviación) es intuitivo pero **frágil**: la propia anomalía infla la media y se auto-oculta. La regla de Tukey sobre mediana e intercuartil resiste mucho mejor los valores extremos. Ambos son transparentes, y esa transparencia vale más que la sofisticación: un detector que no puede explicar por qué marcó algo no se puede defender ante quien lo cuestiona ni corregir cuando se equivoca.
 
-Medir es la parte que más se omite. Con una verdad de campo se calculan **precisión** (de lo marcado, cuánto era real), **recall** (de lo real, cuánto se marcó) y su compromiso: bajar el umbral encuentra más casos y multiplica los falsos positivos. Aquí un falso positivo no es un número, es una persona a la que se congela una cuenta. Y hay una honestidad adicional que enseñar: en una cadena real **el recall no se puede calcular**, porque nadie sabe qué se dejó de detectar; los números limpios de este módulo existen solo porque el dataset es sintético y los patrones fueron plantados a propósito.
+Medir es la parte que más se omite. Con una verdad de campo se calculan **precisión** (de lo marcado, cuánto era real), **recall** (de lo real, cuánto se marcó) y su compromiso: bajar el umbral encuentra más casos y multiplica los falsos positivos. Aquí un falso positivo no es un número, es una persona a la que se congela una cuenta. Y hay una honestidad adicional que enseñar: en una cadena real **el recall no se puede calcular**, porque nadie sabe qué se dejó de detectar; los números limpios de esta unidad de clases existen solo porque el dataset es sintético y los patrones fueron plantados a propósito.
 
 El techo del método es la **atribución**. El agrupamiento de direcciones se apoya en heurísticas (entradas gastadas juntas, patrones de cambio) que fallan con servicios, coinjoins y contratos. El rastreo de fondos depende del criterio elegido —proporcional, FIFO, LIFO, haircut— y **el mismo movimiento produce conclusiones distintas según el criterio**, lo que basta para entender que un rastreo es un argumento, no una prueba. Cruzar cadenas mediante puentes añade una discontinuidad que solo se salva con supuestos. Por eso la disciplina profesional consiste en etiquetar cada afirmación: **hecho** (está en la cadena y es verificable), **indicador** (un patrón compatible con varias explicaciones), **inferencia** (una lectura razonada con supuestos declarados) e **hipótesis** (una conjetura pendiente de contraste). Un informe que mezcla las cuatro categorías en el mismo párrafo es, técnicamente, un informe falso.
 
@@ -143,7 +193,7 @@ El techo del método es la **atribución**. El agrupamiento de direcciones se ap
 - **Análisis entre cadenas**: seguimiento conceptual por puentes; la correspondencia entre el depósito en la cadena A y la emisión en la B es una **inferencia por correlación de importe y tiempo**, no una continuidad verificable.
 - **Privacidad**: mezcladores, CoinJoin y cadenas con privacidad nativa; qué se degrada del análisis y por qué existe una tensión legítima entre privacidad financiera y supervisión.
 - **Forense**: cadena de custodia de la evidencia, reproducibilidad del análisis, versionado de datos y umbrales, y el papel de un perito que debe poder ser contrainterrogado sobre su método.
-- **Regulación**: cómo encaja esto con el enfoque basado en riesgo, la Regla de Viaje y la protección de datos personales, tratado en el [módulo 27](../27-regulacion-cumplimiento/README.md).
+- **Regulación**: cómo encaja esto con el enfoque basado en riesgo, la Regla de Viaje y la protección de datos personales, tratado en las [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md).
 
 </details>
 
@@ -186,7 +236,7 @@ Construye tu propia detección de **cadena de pelado** con un criterio distinto 
 
 ## 🛡️ Seguridad y ética
 
-Este módulo enseña técnicas de doble uso: las mismas que protegen a una víctima sirven para difamar a un inocente. Las reglas no son adorno:
+Esta unidad de clases enseña técnicas de doble uso: las mismas que protegen a una víctima sirven para difamar a un inocente. Las reglas no son adorno:
 
 - **Una dirección no es una persona.** La atribución requiere información fuera de la cadena y, según la jurisdicción, fundamento legal.
 - **Correlación no es culpabilidad.** Recibir fondos de una dirección marcada no convierte a nadie en cómplice: los pagos entrantes no se eligen.
@@ -202,7 +252,7 @@ Este módulo enseña técnicas de doble uso: las mismas que protegen a una víct
 
 Fuentes primarias y documentación oficial, consultadas el **2026-08-24**:
 
-| Título | Organización / autor | Enlace | Publicación | Tema del módulo |
+| Título | Organización / autor | Enlace | Publicación | Tema de la unidad |
 |---|---|---|---|---|
 | Bitcoin Core — Documentación y referencia RPC | Bitcoin Core | <https://bitcoincore.org/en/doc/> | continua | Niveles 1–2: bloques, transacciones, extracción |
 | Bitcoin Developer Guide — Transactions | bitcoin.org | <https://developer.bitcoin.org/devguide/transactions.html> | continua | Nivel 1: modelo UTXO, cambio, comisiones |
@@ -221,4 +271,4 @@ Cómo se relaciona cada obra con el resto del programa: [bibliografía central](
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 27 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 29 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md)
+⬅️ [Clases 27.1–27.2 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 29.1–29.2 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md)

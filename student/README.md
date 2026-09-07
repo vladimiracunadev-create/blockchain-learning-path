@@ -6,8 +6,8 @@ Este directorio contiene tu registro personal de avance. Aquí se explica cómo 
 
 1. Copia `progress.example.json` a un archivo con tu nombre (por ejemplo, `student/progress.tu-nombre.json`).
 2. Completa `student`, `startedAt` y `profile` (tu ruta de `learning-paths`).
-3. Cambia cada módulo o práctica a `in_progress` al comenzar y a `completed` solo cuando tengas evidencia reproducible.
-4. Registra la nota 0–100 por módulo en `score`.
+3. Cambia cada clase o práctica a `in_progress` al comenzar y a `completed` solo cuando tengas evidencia reproducible.
+4. Registra la nota 0–100 por unidad de dos clases en `score`.
 5. Verifica tu estado con `pnpm course:status ruta/progress.json`.
 
 La estructura del archivo (fragmento abreviado del ejemplo):
@@ -28,7 +28,7 @@ La estructura del archivo (fragmento abreviado del ejemplo):
 }
 ```
 
-El ejemplo completo cubre los 33 módulos (00–32), la unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) (su práctica es la 71) y las 91 prácticas. Cuando todos los módulos y prácticas estén en `completed` con nota mínima de 80 y el capstone aprobado, ejecuta `pnpm course:certificate ruta/progress.json` para generar el certificado local.
+El ejemplo completo cubre las 66 clases (00.1–32.2), la unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) (su práctica es la 71) y las 91 prácticas. Cuando todas las clases y prácticas estén en `completed` con nota mínima de 80 y el proyecto final aprobado, ejecuta `pnpm course:certificate ruta/progress.json` para generar el certificado local.
 
 Una evidencia puede ser una ruta a código, prueba, txid local, ADR o informe. Nunca registres claves, seeds, datos personales ni endpoints privados.
 
@@ -47,7 +47,7 @@ La bitácora es la evidencia que enlazas en tu `progress.json` y la materia prim
 
 El programa está diseñado para el ciclo comprender → experimentar → explicar → construir → verificar:
 
-1. **Comprender:** lee el modelo mental del módulo antes de tocar código.
+1. **Comprender:** lee el modelo mental de la unidad antes de tocar código.
 2. **Experimentar:** ejecuta el laboratorio y cambia un parámetro a propósito para ver qué se rompe.
 3. **Explicar:** escribe (o cuenta en voz alta) qué pasó y por qué; si no puedes explicarlo, no lo entendiste todavía.
 4. **Construir:** aplica el concepto en algo tuyo, aunque sea diminuto.
@@ -66,14 +66,14 @@ Sesiones cortas y frecuentes rinden más que maratones; una práctica bien regis
 Según el tiempo del que dispongas:
 
 - **Poco tiempo:** sigue la [ruta rápida](../docs/ruta-rapida.md) con lo esencial.
-- **Curso completo:** avanza módulo a módulo con el [roadmap](../ROADMAP.md).
+- **Curso completo:** avanza clase a clase con el [roadmap](../ROADMAP.md).
 - **Enfoque por objetivo:** elige una de las [rutas de aprendizaje](../learning-paths/README.md).
 
 Sé constante antes que veloz: un poco cada día, con evidencia y explicación propia, te lleva más lejos que maratones sin bitácora.
 
 ## Qué hacer cuando te atascas
 
-1. Relee el modelo mental del módulo: la mayoría de los bloqueos son conceptuales, no técnicos.
+1. Relee el modelo mental de la unidad: la mayoría de los bloqueos son conceptuales, no técnicos.
 2. Reduce el laboratorio a datos mínimos (una transacción, un bloque, un nodo) hasta que el comportamiento sea observable.
 3. Formula la pregunta por escrito con lo que esperabas, lo que ocurrió y lo que ya descartaste; a menudo la respuesta aparece al escribirla, y si no, es una pregunta lista para el instructor.
 

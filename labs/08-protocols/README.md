@@ -1,6 +1,6 @@
 # Laboratorio · Protocolos profesionales
 
-> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Módulo 08 · Tokens](../../curriculum/08-tokens/README.md) · [Catálogo de laboratorios](../CATALOG.md)
+> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 08.1–08.2 · Tokens](../../curriculum/08-tokens/README.md) · [Catálogo de laboratorios](../CATALOG.md)
 
 Tres componentes pequeños y comprobables que aparecen en casi todo protocolo real: un **token**, un **oráculo** y un **gobernador con timelock**. El objetivo no es reemplazar bibliotecas auditadas, sino poder **leer toda la lógica** de cada patrón antes de compararlo con una implementación de producción como OpenZeppelin.
 
@@ -64,13 +64,13 @@ Suite result: ok. 3 passed; 0 failed; 0 skipped
 | `testOracleRejectsStalePrice` | `FreshOracle` | Lee un precio fresco; tras `maxAge` la lectura revierte |
 | `testGovernorVotesWaitsAndExecutes` | `SimpleGovernor` | Propuesta con quorum se ejecuta solo tras el timelock |
 
-## Relación con los módulos
+## Relación con las clases
 
 Cada contrato es la versión mínima de un tema del programa:
 
-- `CourseToken` → [módulo 08 · Tokens](../../curriculum/08-tokens/README.md): estándar ERC-20, tope de emisión y administración segura.
-- `FreshOracle` → [módulo 10 · Oráculos e indexación](../../curriculum/10-oraculos-indexacion/README.md): *freshness*, autorización y por qué un precio obsoleto es un riesgo.
-- `SimpleGovernor` → [módulo 11 · DAO y gobernanza](../../curriculum/11-dao-gobernanza/README.md): ciclo propuesta-voto-ejecución y el rol del timelock.
+- `CourseToken` → [clases 08.1–08.2 · Tokens](../../curriculum/08-tokens/README.md): estándar ERC-20, tope de emisión y administración segura.
+- `FreshOracle` → [clases 10.1–10.2 · Oráculos e indexación](../../curriculum/10-oraculos-indexacion/README.md): *freshness*, autorización y por qué un precio obsoleto es un riesgo.
+- `SimpleGovernor` → [clases 11.1–11.2 · DAO y gobernanza](../../curriculum/11-dao-gobernanza/README.md): ciclo propuesta-voto-ejecución y el rol del timelock.
 
 ## Reto
 

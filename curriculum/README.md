@@ -2,12 +2,12 @@
 
 > [⬅️ Volver al programa](../README.md) · [📖 Bibliografía y fuentes](../docs/bibliografia.md) · [🧪 Laboratorios](../labs/CATALOG.md) · [🗺️ Roadmap](../ROADMAP.md)
 
-33 módulos progresivos (00–32), de los fundamentos criptográficos a la infraestructura
+66 clases progresivas, organizadas en 33 unidades documentales estables (00–32), de los fundamentos criptográficos a la infraestructura
 financiera programable y a la analítica de datos on-chain: criptografía, Bitcoin, Ethereum, contratos, seguridad, producción,
 y después dinero, stablecoins, MDBC, pagos, tokenización, mercados de capitales, custodia
-y regulación; y finalmente exchanges, contabilidad, reservas, auditoría y forensics. Cada módulo enlaza al siguiente y trae su
+y regulación; y finalmente exchanges, contabilidad, reservas, auditoría y forensics. Cada unidad reúne dos clases distintas, enlaza a la siguiente y trae su
 **fuente de referencia**, un **esquema visual**, un laboratorio y un reto verificable.
-Estúdialos **en orden**: cada uno asume el anterior.
+Estudia las clases **en orden**: cada una prepara la siguiente.
 
 ```mermaid
 flowchart LR
@@ -67,55 +67,59 @@ flowchart LR
 
 ## Índice
 
-| # | Módulo | Pregunta central | Fuente principal |
-|---:|---|---|---|
-| 00 | [Orientación](00-orientacion/README.md) | ¿Necesito blockchain? | Bashir · Werbach |
-| 01 | [Criptografía aplicada](01-criptografia/README.md) | ¿Cómo verificamos integridad y autoría? | Aumasson · Katz-Lindell |
-| 02 | [Sistemas distribuidos y P2P](02-sistemas-distribuidos/README.md) | ¿Cómo cooperan nodos que fallan? | Cachin · Tanenbaum |
-| 03 | [Consenso](03-consenso/README.md) | ¿Cómo se elige un historial? | Nakamoto · Castro-Liskov |
-| 04 | [Bitcoin](04-bitcoin/README.md) | ¿Cómo funciona el dinero UTXO? | Antonopoulos — *Mastering Bitcoin* |
-| 05 | [Ethereum y EVM](05-ethereum-evm/README.md) | ¿Cómo se ejecuta estado programable? | Antonopoulos/Wood — *Mastering Ethereum* |
-| 06 | [Solidity y Foundry](06-solidity-foundry/README.md) | ¿Cómo escribimos contratos comprobables? | Docs de Solidity · Foundry Book |
-| 07 | [dApps](07-dapps/README.md) | ¿Cómo conecta una interfaz con una wallet? | ethereum.org · viem |
-| 08 | [Tokens y estándares](08-tokens/README.md) | ¿Qué garantiza un estándar? | EIPs · OpenZeppelin |
-| 09 | [Seguridad y auditoría](09-seguridad/README.md) | ¿Cómo piensa un atacante? | Trail of Bits · ConsenSys |
-| 10 | [Oráculos e indexación](10-oraculos-indexacion/README.md) | ¿Cómo entra información confiable? | Chainlink · The Graph |
-| 11 | [DAO y gobernanza](11-dao-gobernanza/README.md) | ¿Cómo gobernamos protocolos? | OZ Governor · Compound |
-| 12 | [Escalabilidad y L2](12-escalabilidad/README.md) | ¿Qué se mueve fuera de L1? | Buterin · L2BEAT |
-| 13 | [Interoperabilidad](13-interoperabilidad/README.md) | ¿Cómo se conectan ecosistemas? | Cosmos IBC · Polkadot |
-| 14 | [Privacidad y ZK](14-privacidad-zk/README.md) | ¿Qué se demuestra sin revelar? | Thaler · ZKProof |
-| 15 | [Arquitectura avanzada](15-arquitectura-avanzada/README.md) | ¿Cómo llega un protocolo a producción? | ERC-4337 · Flashbots |
-| 16 | [Infraestructura y nodos](16-infraestructura-nodos/README.md) | ¿Qué máquinas y nube necesita esto? | ethereum.org · EthStaker |
-| 17 | [Blockchain en la empresa](17-blockchain-en-la-empresa/README.md) | ¿Qué gana la empresa, con qué casos y costos? | BIS · WEF · Werbach |
-| 18 | [Implementación empresarial](18-implementacion-empresarial/README.md) | ¿Cómo se integra con los sistemas existentes? | Prácticas del sector financiero |
-| 19 | [DeFi](19-defi/README.md) | ¿Cómo funciona un mercado sin intermediario? | Uniswap · Aave · BIS |
-| 20 | [Dinero, banca y liquidación](20-dinero-banca-liquidacion/README.md) | ¿Qué se mueve cuando pago? | CPMI-BIS · bancos centrales |
-| 21 | [Stablecoins](21-stablecoins/README.md) | ¿Qué sostiene la paridad y cuándo se rompe? | BIS · FSB · MiCA |
-| 22 | [Depósitos tokenizados y CBDC/MDBC](22-deposito-tokenizado-cbdc/README.md) | ¿Quién responde por cada forma de dinero digital? | BIS Innovation Hub · Banco Central de Chile |
-| 23 | [Pagos, cross-border y FX on-chain](23-pagos-fx-onchain/README.md) | ¿Por qué una transferencia internacional tarda dos días? | FSB/G20 · Banco Mundial |
-| 24 | [Tokenización y RWA](24-tokenizacion-rwa/README.md) | ¿Qué del activo viaja al token? | BIS · IOSCO · ERC-3643 |
-| 25 | [Mercados de capitales on-chain](25-mercados-capitales-onchain/README.md) | ¿Cómo se emite, negocia y liquida un valor? | CPMI-IOSCO — PFMI |
-| 26 | [Custodia, wallets institucionales e identidad](26-custodia-identidad/README.md) | ¿Quién tiene la llave y cómo se prueba quién eres? | BIPs · ERC-4337 · W3C |
-| 27 | [Regulación y cumplimiento](27-regulacion-cumplimiento/README.md) | ¿Qué obliga la norma y quién la dicta? | MiCA · GAFI · Basilea · CMF |
-| 28 | [Blockchain Data Analytics y minería de datos on-chain](28-data-analytics-onchain/README.md) | ¿Qué se puede saber —y qué no— leyendo la cadena? | Bitcoin Core · ethereum.org · EIP-20 · GAFI |
-| 29 | [Exchanges y operaciones de custodia](29-exchanges-operaciones-custodia/README.md) | ¿Dónde se ejecuta, quién firma y cuándo queda on-chain? | Bitcoin · Ethereum · NIST · IOSCO |
-| 30 | [Contabilidad blockchain y conciliación](30-contabilidad-conciliacion/README.md) | ¿Cómo se relacionan ledger, exchange y blockchain? | COSO · Bitcoin/Ethereum RPC · IFRS |
-| 31 | [Proof of Reserves, pasivos y solvencia](31-proof-reserves-solvencia/README.md) | ¿Qué demuestra una raíz Merkle y qué queda fuera? | RFC 6962 · IAASB · PCAOB |
-| 32 | [Blockchain forensics, auditoría y gobernanza](32-forensics-auditoria-gobernanza/README.md) | ¿Cómo investigamos sin convertir heurísticas en acusaciones? | NIST · GAFI · COSO |
+<!-- indice-clases:inicio -->
+| Unidad | Tema y material común | Clases | Preguntas guía | Fuente base |
+|---:|---|---|---|---|
+| 00 | [Orientación](00-orientacion/README.md) | **00.1** Qué problema intenta resolver blockchain<br>**00.2** Decidir y comunicar sin vender humo | ¿Cuándo un registro compartido necesita consenso y cuándo basta una base de datos?<br>¿Cómo se defiende una decisión técnica ante personas no técnicas? | *Mastering Blockchain* (Bashir) y *The Blockchain and the New Architecture of Trust* (Werbach) |
+| 01 | [Criptografía aplicada](01-criptografia/README.md) | **01.1** Hashes, integridad y compromisos<br>**01.2** Firmas, claves y ciclo de vida | ¿Cómo se detecta una alteración sin ocultar necesariamente el dato?<br>¿Qué prueba una firma y cómo se gobierna la clave que la produce? | *Serious Cryptography* (Aumasson) y *Introduction to Modern Cryptography* (Katz, Lindell) |
+| 02 | [Sistemas distribuidos y redes P2P](02-sistemas-distribuidos/README.md) | **02.1** Replicación, latencia y fallas<br>**02.2** Redes P2P y adversarios | ¿Qué significa mantener una verdad compartida cuando la red se parte?<br>¿Cómo se propaga información sin confiar en cada participante? | *Introduction to Reliable and Secure Distributed Programming* (Cachin, Guerraoui, Rodrigues) y *Distributed Systems* (Tanenbaum, van Steen) |
+| 03 | [Consenso](03-consenso/README.md) | **03.1** Elegir un historial válido<br>**03.2** PoW, PoS y BFT bajo amenaza | ¿Cómo acuerdan los nodos qué ocurrió sin una autoridad central?<br>¿Qué recurso impide identidades gratuitas y qué ocurre si el actor miente? | whitepaper de Bitcoin (Nakamoto) y *Practical Byzantine Fault Tolerance* (Castro, Liskov) |
+| 04 | [Bitcoin](04-bitcoin/README.md) | **04.1** UTXO y anatomía de una transacción<br>**04.2** Verificación, minería y operación segura | ¿Dónde está el saldo de Bitcoin y qué autoriza realmente una entrada?<br>¿Qué comprueba un nodo propio y qué delega un cliente ligero? | *Mastering Bitcoin* (Antonopoulos) y *Mastering the Lightning Network* (Antonopoulos, Osuntokun, Pickhardt) |
+| 05 | [Ethereum y EVM](05-ethereum-evm/README.md) | **05.1** Cuentas, estado y transacciones Ethereum<br>**05.2** EVM, ABI y costo de ejecución | ¿Cómo cambia el estado global cuando una cuenta firma una operación?<br>¿Cómo convierte la EVM una llamada en cambios de estado y consumo de gas? | *Mastering Ethereum* (Antonopoulos, Wood) y *Ethereum Yellow Paper* (Wood) |
+| 06 | [Solidity y Foundry](06-solidity-foundry/README.md) | **06.1** Diseño de contratos e invariantes<br>**06.2** Pruebas profundas con Foundry | ¿Qué debe ser siempre verdadero antes de escribir una línea de Solidity?<br>¿Cómo encontramos secuencias que una prueba feliz nunca ejecuta? | documentación de Solidity y *The Foundry Book* |
+| 07 | [Aplicaciones descentralizadas](07-dapps/README.md) | **07.1** Lecturas, RPC y estado de interfaz<br>**07.2** Firmas y experiencia transaccional | ¿Qué puede mostrar una dApp sin pedir permiso ni firma al usuario?<br>¿Cómo entiende el usuario lo que firmará y qué ocurrió después? | documentación de ethereum.org y de viem |
+| 08 | [Tokens y estándares](08-tokens/README.md) | **08.1** Estándares y derechos del token<br>**08.2** Permisos, distribución y necesidad | ¿Qué interfaz garantiza un ERC y qué derechos económicos quedan fuera?<br>¿Por qué un token técnicamente correcto puede ser un mal producto? | EIPs de Ethereum y OpenZeppelin Contracts |
+| 09 | [Seguridad y auditoría](09-seguridad/README.md) | **09.1** Modelado de amenazas y revisión manual<br>**09.2** Auditoría reproducible y remediación | ¿Qué puede romper un atacante si conoce mejor el sistema que su autor?<br>¿Cómo se demuestra que un hallazgo fue corregido sin introducir otro? | Trail of Bits *Building Secure Contracts* y ConsenSys *Smart Contract Best Practices* |
+| 10 | [Oráculos, almacenamiento e indexación](10-oraculos-indexacion/README.md) | **10.1** Oráculos y calidad del dato<br>**10.2** Eventos, indexación y disponibilidad | ¿Qué confianza entra al contrato cuando importamos un precio externo?<br>¿Cómo consultamos historia sin confundir un índice con la verdad del protocolo? | documentación de Chainlink y de The Graph |
+| 11 | [DAO y gobernanza](11-dao-gobernanza/README.md) | **11.1** Propuestas, voto y ejecución<br>**11.2** Captura y gobernanza de emergencia | ¿Cómo pasa una intención colectiva a un cambio ejecutable y demorado?<br>¿Quién puede detener el sistema y quién controla a quien controla? | OpenZeppelin Governor y Compound Governance |
+| 12 | [Escalabilidad y capas 2](12-escalabilidad/README.md) | **12.1** Familias de escalabilidad<br>**12.2** Riesgo operativo de una L2 | ¿Qué movemos fuera de L1 y qué garantía conservamos?<br>¿Puede el usuario recuperar fondos si el secuenciador o el portal fallan? | *An Incomplete Guide to Rollups* (Buterin) y L2BEAT |
+| 13 | [Interoperabilidad y ecosistemas](13-interoperabilidad/README.md) | **13.1** Mensajes y activos entre cadenas<br>**13.2** Modelo de amenazas de puentes | ¿Qué significa mover un activo si cada red mantiene su propio estado?<br>¿Qué nueva confianza introduce cada capa de interoperabilidad? | documentación de Cosmos IBC y de Polkadot (XCM) |
+| 14 | [Privacidad y zero knowledge](14-privacidad-zk/README.md) | **14.1** Compromisos y pruebas de conocimiento cero<br>**14.2** SNARK, STARK y privacidad real | ¿Cómo se demuestra una afirmación sin revelar el dato que la sostiene?<br>¿Qué compromisos cambian entre sistemas y qué metadatos siguen visibles? | *Proofs, Arguments, and Zero-Knowledge* (Thaler) y ZKProof Community Reference |
+| 15 | [Arquitectura avanzada](15-arquitectura-avanzada/README.md) | **15.1** Cuentas programables y actualizaciones<br>**15.2** MEV y arquitectura de producción | ¿Cómo añadimos recuperación y cambios sin crear una llave maestra invisible?<br>¿Qué actores pueden reordenar operaciones y cómo cambia el diseño? | ERC-4337 / EIP-7702 (abstracción de cuenta) e investigación de Flashbots (MEV) |
+| 16 | [Infraestructura y operación de nodos](16-infraestructura-nodos/README.md) | **16.1** Operar nodos con objetivos medibles<br>**16.2** Resiliencia, actualización e incidentes | ¿Qué servicio presta el nodo y qué disponibilidad necesita el negocio?<br>¿Cómo se cambia software crítico sin perder disponibilidad ni evidencia? | documentación de clientes de nodo (ethereum.org, Geth, Lighthouse) y guías de operación de EthStaker |
+| 17 | [Blockchain en la empresa: valor, casos y costos](17-blockchain-en-la-empresa/README.md) | **17.1** Valor empresarial y límites<br>**17.2** Comunicación, piloto y medición | ¿Qué coordinación mejora y qué costo nuevo introduce una red compartida?<br>¿Cómo se prueba valor sin prometer una transformación completa? | informes del BIS y el WEF, casos públicos documentados y *The Blockchain and the New Architecture of Trust* (Werbach) |
+| 18 | [Implementación empresarial end-to-end](18-implementacion-empresarial/README.md) | **18.1** Integración end-to-end<br>**18.2** Paso a producción y operación | ¿Cómo se conectan contratos, identidad, datos y sistemas heredados?<br>¿Qué debe estar listo antes de que una transacción tenga consecuencias reales? | prácticas públicas de integración del sector financiero y documentación de los componentes citados |
+| 19 | [DeFi: mercados, préstamo y riesgo on-chain](19-defi/README.md) | **19.1** AMM, liquidez y formación de precio<br>**19.2** Préstamo, colateral y riesgo DeFi | ¿Cómo fija precio un pool sin libro de órdenes?<br>¿Cómo permanece solvente un mercado sin evaluar personalmente al deudor? | documentación de los protocolos citados, investigación del BIS sobre finanzas descentralizadas y literatura académica de microestructura de mercados |
+| 20 | [Dinero, banca y liquidación](20-dinero-banca-liquidacion/README.md) | **20.1** Qué es dinero bancario<br>**20.2** Finalidad, liquidez y riesgo de liquidación | Cuando pagas, ¿qué activo se mueve y qué institución te debe?<br>¿Cuándo un pago es técnico, económico y jurídicamente final? | publicaciones del BIS y del Comité de Pagos e Infraestructuras del Mercado (CPMI), documentación del Banco Central de Chile y del Banco Central Europeo |
+| 21 | [Stablecoins](21-stablecoins/README.md) | **21.1** Modelos de stablecoin y paridad<br>**21.2** Reservas, redención y riesgo operacional | ¿Quién promete la paridad y con qué mecanismo intenta sostenerla?<br>¿Puede el tenedor convertir el token en dinero y bajo qué condiciones? | informes del BIS y del Consejo de Estabilidad Financiera (FSB), Reglamento MiCA de la Unión Europea y documentación pública de los emisores citados |
+| 22 | [Depósitos tokenizados y CBDC/MDBC](22-deposito-tokenizado-cbdc/README.md) | **22.1** Depósitos tokenizados<br>**22.2** CBDC/MDBC y diseño de política pública | ¿Qué cambia cuando el pasivo bancario se representa en un registro programable?<br>¿Qué decisiones técnicas cambian privacidad, acceso y estabilidad financiera? | BIS Innovation Hub y CPMI, informes del Banco Central de Chile, Banco Central Europeo y demás bancos centrales citados |
+| 23 | [Pagos, cross-border y FX on-chain](23-pagos-fx-onchain/README.md) | **23.1** Anatomía de un pago transfronterizo<br>**23.2** FX on-chain y pago contra pago | ¿Por qué un mensaje rápido no elimina corresponsales, FX ni cumplimiento?<br>¿Cómo se eliminan principal risk y patas descoordinadas? | hoja de ruta del G20 sobre pagos transfronterizos (FSB), publicaciones del CPMI-BIS, Banco Mundial (*Remittance Prices Worldwide*) y documentación de los sistemas citados |
+| 24 | [Tokenización y activos del mundo real (RWA)](24-tokenizacion-rwa/README.md) | **24.1** Del activo al derecho tokenizado<br>**24.2** Ciclo de vida y controles de RWA | ¿Qué posee jurídicamente quien controla el token?<br>¿Cómo se mantienen sincronizados token, activo y restricciones? | informes del BIS y de IOSCO sobre tokenización, documentación de estándares (ERC-20, ERC-1400, ERC-3643) y prácticas públicas de emisión de valores digitales |
+| 25 | [Mercados de capitales on-chain](25-mercados-capitales-onchain/README.md) | **25.1** Infraestructura del mercado de capitales<br>**25.2** Mercado tokenizado y DvP | ¿Qué hacen emisión, negociación, compensación, depósito y liquidación?<br>¿Qué elimina la atomicidad y qué funciones institucionales permanecen? | *Principles for Financial Market Infrastructures* (CPMI-IOSCO), publicaciones del BIS sobre liquidación y tokenización, y documentación pública de emisiones de valores digitales |
+| 26 | [Custodia, wallets institucionales e identidad digital](26-custodia-identidad/README.md) | **26.1** Custodia institucional de claves<br>**26.2** Identidad y autorización verificable | ¿Cómo se evita que una persona o falla única controle los activos?<br>¿Cómo demostramos atributos sin convertir la wallet en una identidad universal? | BIPs 32/39/44, ERC-4337, estándares W3C de identificadores descentralizados y credenciales verificables, y normativa de custodia y finanzas abiertas citada |
+| 27 | [Regulación y cumplimiento](27-regulacion-cumplimiento/README.md) | **27.1** Leer regulación desde la fuente<br>**27.2** Cumplimiento basado en riesgo | ¿Cómo distinguimos una obligación vigente de una guía o noticia?<br>¿Qué controles responden al riesgo sin convertir toda señal en culpabilidad? | textos normativos oficiales (Reglamento MiCA, Ley 21.521 de Chile), Recomendaciones del GAFI/FATF, estándares del Comité de Basilea y de IOSCO |
+| 28 | [Blockchain Data Analytics y minería de datos on-chain](28-data-analytics-onchain/README.md) | **28.1** Extraer y normalizar datos on-chain<br>**28.2** Grafo, anomalías y límites de atribución | ¿Cómo convertimos bloques y transacciones en un dataset reproducible?<br>¿Qué patrón observamos y qué identidad no podemos afirmar? | documentación de Bitcoin Core y de ethereum.org, especificación JSON-RPC de Ethereum, *Mastering Bitcoin* (Antonopoulos) y las guías de FATF/GAFI sobre activos virtuales |
+| 29 | [Exchanges y operaciones de custodia](29-exchanges-operaciones-custodia/README.md) | **29.1** Exchanges, custodia y libros internos<br>**29.2** Wallets operacionales y evidencia blockchain | ¿Dónde se ejecuta una operación y quién controla las claves?<br>¿Cómo vinculamos una orden interna con direcciones y transaction IDs? | documentación técnica de Bitcoin y Ethereum, estándares de gestión de claves de NIST y principios de custodia del IOSCO |
+| 30 | [Contabilidad blockchain y conciliación](30-contabilidad-conciliacion/README.md) | **30.1** Tres realidades contables<br>**30.2** Conciliación y gestión de diferencias | ¿Cómo se relacionan Internal Ledger, Exchange Reality y Blockchain State?<br>¿Qué explica una diferencia y cuándo se convierte en incidente? | principios de control interno de COSO, documentación de nodos Bitcoin/Ethereum y literatura contable sobre criptoactivos |
+| 31 | [Proof of Reserves, pasivos y solvencia](31-proof-reserves-solvencia/README.md) | **31.1** Del saldo del cliente a una prueba Merkle<br>**31.2** Del snapshot a una conclusión profesional | ¿Cómo demuestra un cliente que su saldo fue incluido sin publicar todos los saldos?<br>¿Qué falta para pasar de controlar wallets a concluir solvencia? | especificaciones de Certificate Transparency/Merkle trees, marcos de encargos de aseguramiento y publicaciones regulatorias sobre proof of reserves |
+| 32 | [Blockchain forensics, auditoría y gobernanza](32-forensics-auditoria-gobernanza/README.md) | **32.1** Forensics con evidencia reproducible<br>**32.2** Auditoría, cumplimiento y gobierno custodial | ¿Cómo investigamos flujos sin convertir heurísticas en acusaciones?<br>¿Quién autoriza, ejecuta, registra, concilia e investiga cada movimiento? | guías FATF/GAFI, estándares de evidencia digital NIST y principios de control interno COSO |
+<!-- indice-clases:fin -->
 
 > 👛 **Unidad transversal:** [Wallets desde cero: uso, seguridad y recuperación](../docs/wallets-desde-cero.md)
-> se estudia **entre el módulo 04 y el 05** y es obligatoria para principiantes: qué administra
+> se estudia **entre las clases 04.2 y 05.1** y es obligatoria para principiantes: qué administra
 > una wallet, cómo usarla con seguridad y qué hacer ante una emergencia. No lleva número
-> para no alterar la secuencia numerada; su práctica es la 71 del [catálogo](../labs/CATALOG.md).
+> como puente transversal; su práctica es la 71 del [catálogo](../labs/CATALOG.md).
 
-## Cómo está construido cada módulo
+## Cómo está construida cada pareja de clases
 
-Todos siguen la misma estructura (ver [`MODULE_TEMPLATE.md`](MODULE_TEMPLATE.md)):
+Las unidades comparten una anatomía reconocible (ver [`MODULE_TEMPLATE.md`](MODULE_TEMPLATE.md)),
+pero sus clases usan estrategias diferentes —demostración, simulación, incidente,
+taller, debate o auditoría— según el tipo de aprendizaje:
 objetivos medibles, resultados de aprendizaje, tabla de temas, modelo mental,
 **esquema visual** (diagramas Mermaid), conceptos con definiciones, **profundización**
 con casos reales y ejemplos numéricos, laboratorio guiado, reto verificable con
 criterio de aceptación, errores frecuentes, seguridad y ética, **referencias a libros
-y fuentes primarias**, y navegación al módulo anterior y siguiente.
+y fuentes primarias**, y navegación a la unidad anterior y siguiente.
 
 Para la dimensión profesional del ecosistema —cómo se construye una red, el stack,
 los equipos, las empresas y los modelos de negocio— consulta la sección
@@ -130,7 +134,7 @@ Pectra/EIP-7702) para mantener el material al día.
 
 ## Ruta recomendada
 
-| Nivel | Módulos | Resultado |
+| Nivel | Clases | Resultado |
 |---|---|---|
 | Orientación | 00 | Distinguir blockchain de una base de datos |
 | Fundamentos | 01–03 | Criptografía, redes y consenso |
@@ -143,10 +147,10 @@ Pectra/EIP-7702) para mantener el material al día.
 | Analítica de datos on-chain | 28 | Minería de datos blockchain, grafos, patrones, anomalías y sus límites |
 | Custodia, auditoría y forensics | 29–32 | Exchanges, wallets, conciliación, PoR/PoL, solvencia, forensics, gobierno y auditoría |
 
-Empieza por el [Módulo 00 · Orientación](00-orientacion/README.md).
+Empieza por la [Clase 00.1 · Qué problema intenta resolver blockchain](00-orientacion/README.md#clase-001--qué-problema-intenta-resolver-blockchain).
 
 ---
 
 ## 🧭 Navegación
 
-[🏠 Programa](../README.md) · [📖 Bibliografía](../docs/bibliografia.md) · [🧪 Laboratorios](../labs/CATALOG.md) · ➡️ [Módulo 00 · Orientación](00-orientacion/README.md)
+[🏠 Programa](../README.md) · [📖 Bibliografía](../docs/bibliografia.md) · [🧪 Laboratorios](../labs/CATALOG.md) · ➡️ [Clase 00.1 · Orientación](00-orientacion/README.md#clase-001--qué-problema-intenta-resolver-blockchain)

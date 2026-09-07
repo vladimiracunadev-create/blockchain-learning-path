@@ -1,9 +1,90 @@
 # 00 · Orientación
 
-> **Nivel:** Inicial · ⏱️ **Duración estimada:** 90 min · **Fuente:** *Mastering Blockchain* (Bashir) y *The Blockchain and the New Architecture of Trust* (Werbach)
+> **Nivel:** Inicial · ⏱️ **Duración estimada:** 2 clases de 90 min · **Fuente:** *Mastering Blockchain* (Bashir) y *The Blockchain and the New Architecture of Trust* (Werbach)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [🏠 Programa](../../README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [01 · Criptografía aplicada](../01-criptografia/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
+
+---
+
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 00.1 · Qué problema intenta resolver blockchain
+
+**Método:** diagnóstico guiado a partir de un problema, sin presentar primero la
+tecnología.
+
+La clase comienza con una orden de compra que atraviesa proveedor, transportista y
+comprador. Los tres guardan una copia y los tres pueden discrepar. Antes de pronunciar
+la palabra *blockchain*, el grupo responde cuatro preguntas: quién puede escribir,
+quién puede corregir, quién resuelve una disputa y qué daño causa una versión falsa.
+Así aparece la idea importante: una blockchain no mejora un dato por existir; cambia
+el mecanismo con que varios actores aceptan un historial.
+
+El docente contrasta el mismo proceso en una hoja compartida, una base administrada
+por un tercero y un registro replicado con consenso. Se separan **integridad**,
+**disponibilidad**, **confidencialidad** y **autoridad** porque ninguna arquitectura
+las entrega todas de la misma manera. El estudiante debe poder explicar por qué un
+hash detecta cambios, pero no convierte una afirmación falsa en verdadera.
+
+**Pregunta guía:** ¿Cuándo un registro compartido necesita consenso y cuándo basta
+una base de datos?
+
+**Núcleo conceptual:**
+
+- blockchain, DLT y registro tradicional.
+- actores, confianza y autoridad.
+- costos de replicación y verificabilidad.
+
+**Error que se desmonta:** “si varias empresas participan, hace falta blockchain”.
+Puede bastar un operador común si todos aceptan su autoridad y sus controles.
+
+**Actividad en aula:** cada equipo dibuja actores, permisos, puntos de disputa y
+consecuencias de error. Después elige una arquitectura y recibe un cambio de escenario:
+el operador quiebra, un socio abandona o un dato comercial debe permanecer privado.
+
+**Evidencia:** matriz que justifica blockchain o descarta su uso. Se aprueba si la
+conclusión se deriva de los actores y riesgos, no de una preferencia tecnológica.
+
+### Clase 00.2 · Decidir y comunicar sin vender humo
+
+**Método:** clínica de decisiones y juego de roles.
+
+Ahora el problema no es reconocer componentes, sino tomar una decisión bajo presión.
+Un equipo propone tokenizar puntos de fidelidad. Producto busca marketing; finanzas
+quiere reducir costos; seguridad teme claves perdidas; legal pregunta qué derecho
+representa el token. Cada estudiante recibe uno de esos roles y debe formular la
+pregunta que su contraparte técnica suele olvidar.
+
+Se construyen tres alternativas comparables: base de datos del emisor, registro
+permisionado entre socios y red pública con contrato. La comparación incluye operación,
+privacidad, reversibilidad, dependencia de terceros, costo total y salida del sistema.
+La descentralización se mide por dimensiones —quién desarrolla, valida, gobierna y
+puede censurar— en vez de reducirse a una etiqueta.
+
+**Pregunta guía:** ¿Cómo se defiende una decisión técnica ante personas no técnicas
+sin exagerar beneficios ni ocultar dependencias?
+
+**Núcleo conceptual:**
+
+- descentralización como espectro.
+- supuestos y trade-offs.
+- ADR y criterios de éxito.
+
+**Punto de giro:** a mitad del ejercicio se revela que una sola empresa conserva el
+derecho de anular los puntos. El grupo debe decidir si esa autoridad invalida el diseño
+o simplemente debe declararse.
+
+**Actividad en aula:** debate breve, redacción de ADR y exposición de noventa segundos
+para una audiencia no técnica. Otro equipo actúa como comité y cuestiona supuestos.
+
+**Evidencia:** ADR con alternativa elegida, dos alternativas descartadas, riesgos,
+condición de reversión y una métrica observable para el piloto.
+
+**Cierre:** si el estudiante recomienda una base de datos y puede defenderla con
+evidencia, aprendió blockchain mejor que quien la recomienda para todo.
+<!-- plan-clases:fin -->
 
 ---
 
@@ -41,7 +122,7 @@ Al finalizar, el estudiante podrá:
 
 Piensa en una blockchain como un libro contable compartido que muchas partes que no se conocen mantienen simultáneamente, donde cada página nueva referencia criptográficamente la anterior. Nadie es dueño del cuaderno y cambiar una página pasada obligaría a reescribir todas las siguientes ante la vista de todos. Esta analogía explica bien la inmutabilidad y la ausencia de un administrador único.
 
-El límite de la analogía es importante: un cuaderno compartido no dice por sí mismo qué versión es la verdadera cuando dos personas escriben a la vez, ni impide que alguien registre un dato falso pero bien formado. Resolver "cuál historia es la válida" es trabajo del consenso (módulo 03), y garantizar que el dato de entrada sea cierto es un problema externo que la cadena no resuelve.
+El límite de la analogía es importante: un cuaderno compartido no dice por sí mismo qué versión es la verdadera cuando dos personas escriben a la vez, ni impide que alguien registre un dato falso pero bien formado. Resolver "cuál historia es la válida" es trabajo del consenso (clases 03.1–03.2), y garantizar que el dato de entrada sea cierto es un problema externo que la cadena no resuelve.
 
 ## 🧩 Esquema visual
 
@@ -99,7 +180,7 @@ Todas comparten replicación y verificación criptográfica, pero difieren en el
 
 ### El árbol de decisión, aplicado a tres casos reales
 
-Las seis preguntas del módulo se vuelven útiles cuando se aplican a casos concretos y **la respuesta sale "no" la mayoría de las veces**. Eso no es un fallo del ejercicio: es el resultado honesto.
+Las seis preguntas de la unidad se vuelven útiles cuando se aplican a casos concretos y **la respuesta sale "no" la mayoría de las veces**. Eso no es un fallo del ejercicio: es el resultado honesto.
 
 La cadena de decisión, en orden. Basta un "no" para detenerse:
 
@@ -128,7 +209,7 @@ La cadena de decisión, en orden. Basta un "no" para detenerse:
 - **"Descentralizado" tiene al menos tres ejes** (Buterin): arquitectónico (cuántas máquinas), político (cuántas personas deciden) y lógico (si el sistema se comporta como una unidad). Una red con 10 000 nodos y tres desarrolladores que controlan las actualizaciones es arquitectónicamente descentralizada y políticamente centralizada. Sin especificar el eje, la palabra no informa.
 - **Una permisionada suele ser una base de datos replicada con pasos extra.** Si los participantes están autorizados y se conocen, el problema bizantino casi desaparece y el argumento se apoya en la trazabilidad compartida — que puede lograrse con logs firmados y un tercero neutral. El caso a favor existe, pero hay que defenderlo, no asumirlo.
 - **La inmutabilidad choca de frente con el derecho al olvido.** El RGPD reconoce el derecho de supresión; un dato personal on-chain no se puede borrar. Por eso el patrón correcto es guardar compromisos (hashes) on-chain y los datos fuera, donde sí se pueden eliminar.
-- **El coste de coordinación es el que decide de verdad.** Montar un consorcio exige acordar gobernanza, reparto de costes y responsabilidad legal entre competidores. Ese trabajo, no el técnico, es donde mueren la mayoría de los proyectos empresariales — la lección de TradeLens que se estudia en el módulo 17.
+- **El coste de coordinación es el que decide de verdad.** Montar un consorcio exige acordar gobernanza, reparto de costes y responsabilidad legal entre competidores. Ese trabajo, no el técnico, es donde mueren la mayoría de los proyectos empresariales — la lección de TradeLens que se estudia en las clases 17.1–17.2.
 
 </details>
 
@@ -136,7 +217,7 @@ La cadena de decisión, en orden. Basta un "no" para detenerse:
 
 > 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
 
-Este módulo es de análisis: no ejecuta código. Construirás una matriz de decisión para tres casos.
+Esta unidad de clases es de análisis: no ejecuta código. Construirás una matriz de decisión para tres casos.
 
 1. Para cada caso responde las seis preguntas de decisión: (a) ¿hay múltiples escritores independientes?, (b) ¿existe una autoridad confiable disponible?, (c) ¿se necesita resistencia a la censura?, (d) ¿quién corrige errores?, (e) ¿qué datos jamás deberían ser públicos?, (f) ¿el beneficio supera el costo de operar una red distribuida?
 2. Aplica las preguntas al **registro académico** de una universidad.
@@ -170,7 +251,7 @@ Redacta una recomendación de una página por cada uno de los tres casos, respon
 
 ## 🛡️ Seguridad y ética
 
-- Trabaja siempre en entorno local o testnet; en este módulo no se usan claves ni fondos reales.
+- Trabaja siempre en entorno local o testnet; en esta unidad de clases no se usan claves ni fondos reales.
 - No introduzcas datos personales reales en los ejercicios de análisis.
 - Reconoce que registrar datos inmutables puede entrar en conflicto con el derecho al olvido y la privacidad.
 - Evalúa el costo energético y operativo como parte de la ética de la decisión técnica.
@@ -193,4 +274,4 @@ Redacta una recomendación de una página por cada uno de los tres casos, respon
 
 ## 🧭 Navegación
 
-⬅️ [🏠 Inicio del programa](../../README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 01 · Criptografía aplicada](../01-criptografia/README.md)
+⬅️ [🏠 Inicio del programa](../../README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 01.1–01.2 · Criptografía aplicada](../01-criptografia/README.md)

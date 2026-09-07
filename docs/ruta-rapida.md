@@ -2,13 +2,13 @@
 
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [🗺️ Hoja de ruta completa](../ROADMAP.md)
 
-Ruta intensiva para quien ya tiene experiencia sólida de programación (idealmente backend) y puede dedicar **15-20 horas semanales durante 8 semanas**. Es una compresión honesta: cubre los módulos 00-18 sacrificando profundidad de práctica, no temas de seguridad. La etapa de finanzas on-chain (19-27) no entra en esta ruta: se hace después, con el ritmo del [ROADMAP](../ROADMAP.md).
+Ruta intensiva para quien ya tiene experiencia sólida de programación (idealmente backend) y puede dedicar **15-20 horas semanales durante 8 semanas**. Es una compresión honesta: cubre las clases 00.1–18.2 sacrificando profundidad de práctica, no temas de seguridad. La etapa de finanzas on-chain (19-27) no entra en esta ruta: se hace después, con el ritmo del [ROADMAP](../ROADMAP.md).
 
-**Advertencia clara**: la ruta recomendada del programa es la completa de 26 semanas descrita en [ROADMAP.md](../ROADMAP.md). Elige esta ruta solo si de verdad tienes la experiencia previa y las horas; si no, la compresión produce lagunas que se pagan caras en los módulos de seguridad y en el capstone.
+**Advertencia clara**: la ruta recomendada del programa es la completa de 26 semanas descrita en [ROADMAP.md](../ROADMAP.md). Elige esta ruta solo si de verdad tienes la experiencia previa y las horas; si no, la compresión produce lagunas que se pagan caras en las clases de seguridad y en el capstone.
 
 ## Plan de 8 semanas
 
-| Semana | Módulos | Foco | Entregable de la semana |
+| Semana | Clases | Foco | Entregable de la semana |
 |---:|---|---|---|
 | 1 | 00-03 | Orientación, criptografía, sistemas distribuidos y consenso | Cadena de hashes y árbol de Merkle funcionando; explicar PoW vs PoS por escrito |
 | 2 | 04-05 | Bitcoin (UTXO, Script) y Ethereum/EVM | Selección de UTXO resuelta; transacción en regtest; selectores ABI calculados a mano |
@@ -36,7 +36,7 @@ Al cerrar cada semana, estos comandos deben pasar. Si algo falla, no avances: la
 
 ## Qué puede saltear un dev backend (y qué arriesga)
 
-| Módulo | ¿Saltear? | Riesgo si lo haces |
+| Clases | ¿Saltear? | Riesgo si lo haces |
 |---|---|---|
 | 00 Orientación | Lectura rápida (1-2 h) | Bajo: es contexto y setup |
 | 02 Sistemas distribuidos | Parcial si ya operaste sistemas distribuidos reales | Medio: el modelo de fallas bizantinas no es el de tus microservicios |
@@ -57,9 +57,9 @@ Al cerrar cada semana, estos comandos deben pasar. Si algo falla, no avances: la
 
 La versión anterior de esta ruta era un sprint de 30 días a dedicación casi completa. Sigue siendo viable solo con jornada completa disponible:
 
-- Días 1-4: módulos 00-03 y laboratorios criptográficos.
-- Días 5-9: módulos 04-06; EVM, Solidity y Foundry.
-- Días 10-13: módulo 07 y una dApp mínima.
+- Días 1-4: clases 00.1–03.2 y laboratorios criptográficos.
+- Días 5-9: clases 04.1–06.2; EVM, Solidity y Foundry.
+- Días 10-13: clases 07.1–07.2 y una dApp mínima.
 - Días 14-18: tokens, seguridad y fuzzing.
 - Días 19-22: oráculos, indexación y gobernanza.
 - Días 23-26: L2, interoperabilidad y privacidad.
@@ -67,7 +67,7 @@ La versión anterior de esta ruta era un sprint de 30 días a dedicación casi c
 
 ## Reglas de la ruta rápida
 
-- No omitas seguridad por acelerar. Si una prueba falla o no puedes explicar un concepto, vuelve al módulo correspondiente.
-- Los checkpoints de [assessments/checkpoints.md](../assessments/checkpoints.md) aplican igual que en la ruta completa: nota ≥ 80 por módulo.
+- No omitas seguridad por acelerar. Si una prueba falla o no puedes explicar un concepto, vuelve a la unidad correspondiente.
+- Los checkpoints de [assessments/checkpoints.md](../assessments/checkpoints.md) aplican igual que en la ruta completa: nota ≥ 80 por unidad de dos clases.
 - Si al final de la semana 4 vas retrasado más de una semana, cambia a la ruta completa: es la señal de que la compresión no está funcionando para ti.
 - Otras rutas por perfil están en [learning-paths](../learning-paths/README.md).

@@ -15,9 +15,9 @@ significa que no sirvas para esto: significa que te saltaste el andamio.
 | Tu situación | Respuesta honesta |
 |---|---|
 | Sé programar (cualquier lenguaje) | Sí. Es el perfil para el que está escrito |
-| Nunca he programado | Sí para los módulos 00–03 y 17, que son conceptuales. Para los demás necesitarás aprender programación en paralelo: sin eso, los laboratorios serán copiar y pegar |
+| Nunca he programado | Sí para las clases 00.1–03.2 y 17, que son conceptuales. Para los demás necesitarás aprender programación en paralelo: sin eso, los laboratorios serán copiar y pegar |
 | Quiero invertir en criptomonedas | **No.** Este programa enseña la tecnología, no a especular. No encontrarás recomendaciones de inversión y es deliberado |
-| Soy de negocio, no técnico | Sí, por otra puerta: [módulo 00](../curriculum/00-orientacion/README.md), [módulo 17](../curriculum/17-blockchain-en-la-empresa/README.md), la [sección de industria](../industria/README.md) y [cómo explicarlo a no técnicos](explicar-blockchain-a-no-tecnicos.md) |
+| Soy de negocio, no técnico | Sí, por otra puerta: [clases 00.1–00.2](../curriculum/00-orientacion/README.md), [clases 17.1–17.2](../curriculum/17-blockchain-en-la-empresa/README.md), la [sección de industria](../industria/README.md) y [cómo explicarlo a no técnicos](explicar-blockchain-a-no-tecnicos.md) |
 
 ## Lo primero: cuatro palabras que se confunden siempre
 
@@ -39,12 +39,12 @@ No instales nada todavía. Cada cosa se necesita en un momento distinto:
 
 | Cuándo | Qué | Para qué |
 |---|---|---|
-| Módulo 00 | Nada | Es lectura y una decisión razonada |
-| Módulo 01 | [Node.js 22+](https://nodejs.org/) | Ejecutar los primeros laboratorios |
-| Módulo 06 | [Foundry](https://book.getfoundry.sh/getting-started/installation) | Escribir y probar contratos |
-| Módulo 07 | Una wallet de navegador, **en red de prueba** | Interactuar con una dApp |
+| Clases 00.1–00.2 | Nada | Es lectura y una decisión razonada |
+| Clases 01.1–01.2 | [Node.js 22+](https://nodejs.org/) | Ejecutar los primeros laboratorios |
+| Clases 06.1–06.2 | [Foundry](https://book.getfoundry.sh/getting-started/installation) | Escribir y probar contratos |
+| Clases 07.1–07.2 | Una wallet de navegador, **en red de prueba** | Interactuar con una dApp |
 
-Y una parada obligatoria en el camino: al terminar el módulo 04 (Bitcoin), estudia la
+Y una parada obligatoria en el camino: al terminar las clases 04.1–04.2 (Bitcoin), estudia la
 unidad transversal **[👛 Wallets desde cero](wallets-desde-cero.md)** antes de entrar en
 Ethereum. Ahí aprendes qué es una wallet, cómo usarla sin quemarte y qué hacer si pierdes
 el teléfono o firmas algo raro — es el manual de usuario que casi nadie lee y casi todos
@@ -58,13 +58,13 @@ todo listo. O usa la [app de escritorio](../apps/desktop/README.md) o la
 > programa funciona en redes de prueba, donde el dinero no vale nada. Es lo que
 > permite equivocarse sin consecuencias, que es como se aprende esto.
 
-## Cómo se lee un módulo
+## Cómo se estudia una clase
 
 Cada uno tiene la misma estructura. No se lee de arriba abajo de una sentada:
 
 1. **🎯 Objetivos** — mira qué vas a poder hacer al terminar.
 2. **🧠 Modelo mental** — la analogía. Empieza aquí si el tema es nuevo.
-3. **📖 Conceptos** — el vocabulario del módulo. Vuelve aquí cuando algo no encaje.
+3. **📖 Conceptos** — el vocabulario de la unidad. Vuelve aquí cuando algo no encaje.
 4. **🔬 Profundización** — el detalle. Viene en capas: la idea en llano, el
    cálculo trabajado, y un bloque plegable **🎓 Si ya dominas esto** que puedes
    saltarte sin perder nada.
@@ -73,18 +73,18 @@ Cada uno tiene la misma estructura. No se lee de arriba abajo de una sentada:
 7. **🧠 Autoevaluación** — cuatro preguntas al final. Cada opción incorrecta es un
    error frecuente real: si fallas, la explicación te dice qué releer.
 
-Al pie de cada módulo hay enlaces al **anterior** y al **siguiente**. El orden
-importa: cada módulo asume el anterior.
+Al pie de cada clase hay enlaces al **anterior** y al **siguiente**. El orden
+importa: cada clase asume el anterior.
 
 ## Cuando te atasques
 
 Te vas a atascar. Es parte del proceso, y hay un orden para salir:
 
-1. **Relee los Conceptos del módulo.** La mayoría de los atascos son una palabra que creías entender.
+1. **Relee los Conceptos de la unidad.** La mayoría de los atascos son una palabra que creías entender.
 2. **Busca el término en el [glosario](glosario.md).**
-3. **Mira los Errores frecuentes** del módulo: la tabla está ordenada por síntoma, así que busca lo que te pasa a ti.
+3. **Mira los Errores frecuentes** de la unidad: la tabla está ordenada por síntoma, así que busca lo que te pasa a ti.
 4. **Ejecuta el laboratorio y cambia un número.** Ver qué se rompe enseña más que leer la explicación otra vez.
-5. **Vuelve al módulo anterior.** Un atasco persistente casi siempre es un hueco en lo previo, no en lo actual.
+5. **Vuelve a la unidad anterior.** Un atasco persistente casi siempre es un hueco en lo previo, no en lo actual.
 6. **[Abre un issue](https://github.com/vladimiracunadev-create/blockchain-learning-path/issues).** Si algo está mal explicado, es un fallo del material y arreglarlo ayuda a quien venga detrás.
 
 ## Cuánto tiempo lleva
@@ -93,11 +93,11 @@ Te vas a atascar. Es parte del proceso, y hay un orden para salir:
 |---|---|---|
 | Recomendado | 6–10 h/semana | [26 semanas](../ROADMAP.md) |
 | Intensivo (solo si ya programas bien) | 15–20 h/semana | [8 semanas](ruta-rapida.md) |
-| Solo entender de qué va | — | Módulos 00 a 03, unas 6 horas |
+| Solo entender de qué va | — | Clases 00.1 a 03.2, unas 6 horas |
 
 ## Cinco cosas que conviene saber desde el principio
 
-1. **La mayoría de las veces, la respuesta correcta es "no uses blockchain".** El módulo 00 te enseña a llegar a esa conclusión con argumentos. No es cinismo: es criterio profesional.
+1. **La mayoría de las veces, la respuesta correcta es "no uses blockchain".** Las clases 00.1–00.2 te enseñan a llegar a esa conclusión con argumentos. No es cinismo: es criterio profesional.
 2. **Lo irreversible es irreversible.** No hay servicio de atención al cliente ni botón de deshacer. Por eso el programa insiste tanto en probar antes.
 3. **Nadie sabe todo esto.** El campo mezcla criptografía, sistemas distribuidos, economía y derecho. Quien afirme dominarlo entero, desconfía.
 4. **El material puede quedar obsoleto.** El ecosistema cambia rápido; por eso cada afirmación lleva su fuente enlazada y hay que contrastarla. Cómo se valida está explicado en la [bibliografía](bibliografia.md#-cómo-se-valida-este-contenido-y-qué-no-garantiza).
@@ -105,7 +105,7 @@ Te vas a atascar. Es parte del proceso, y hay un orden para salir:
 
 ## Siguiente paso
 
-👉 **[Módulo 00 · Orientación](../curriculum/00-orientacion/README.md)** — empieza por aquí.
+👉 **[Clases 00.1–00.2 · Orientación](../curriculum/00-orientacion/README.md)** — empieza por aquí.
 
 Si prefieres ver primero el mapa completo: [currículo](../curriculum/README.md) ·
 [roadmap de 26 semanas](../ROADMAP.md) · [rutas por perfil](../learning-paths/README.md).

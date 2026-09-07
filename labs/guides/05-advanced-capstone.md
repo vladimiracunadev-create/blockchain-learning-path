@@ -1,6 +1,6 @@
 # Guías 41–50 · Avanzado y capstone
 
-Este cuaderno cierra el programa: front-running, proxies, auditoría, gobernanza, rollups, puentes, ZK, tokenomics y el proyecto final con defensa técnica. Acompaña al módulo [arquitectura avanzada](../../curriculum/15-arquitectura-avanzada/README.md) y al capstone.
+Este cuaderno cierra el programa: front-running, proxies, auditoría, gobernanza, rollups, puentes, ZK, tokenomics y el proyecto final con defensa técnica. Acompaña a la unidad [arquitectura avanzada](../../curriculum/15-arquitectura-avanzada/README.md) y al capstone.
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 

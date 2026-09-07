@@ -1,6 +1,6 @@
 # Chile · Regulación, tributación y prevención
 
-> Navegación: [Inicio](../README.md) · [Currículo](../curriculum/README.md) · [Módulo 17 · Blockchain en la empresa](../curriculum/17-blockchain-en-la-empresa/README.md)
+> Navegación: [Inicio](../README.md) · [Currículo](../curriculum/README.md) · [Clases 17.1–17.2 · Blockchain en la empresa](../curriculum/17-blockchain-en-la-empresa/README.md)
 
 Revisado: **2026-07-29**.
 

@@ -7,7 +7,57 @@
 
 ---
 
-Hasta aquí has construido contratos, tokens y una dApp. Este módulo abre la etapa de
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 19.1 · AMM, liquidez y formación de precio
+
+**Pregunta guía:** ¿Cómo fija precio un pool sin libro de órdenes?
+
+**Enfoque pedagógico:** laboratorio numérico de AMM.
+
+Cada swap modifica reservas y precio; el arbitraje se calcula después. Las fórmulas se conectan con quién entrega valor y quién recibe comisiones.
+
+**Núcleo conceptual:**
+
+- x·y=k y reservas.
+- slippage, fees e impacto.
+- LP e impermanent loss.
+
+**Caso de trabajo:** Una orden grande mueve el precio y atrae arbitraje.
+
+**Actividad:** Calcular swaps, comisiones y pérdida impermanente con escenarios.
+
+**Comprobación formativa:** Predice cómo cambia el impacto de precio al duplicar el tamaño de la orden.
+
+**Evidencia de aprendizaje:** Hoja reproducible que explique quién gana, quién pierde y por qué.
+
+### Clase 19.2 · Préstamo, colateral y riesgo DeFi
+
+**Pregunta guía:** ¿Cómo permanece solvente un mercado sin evaluar personalmente al deudor?
+
+**Enfoque pedagógico:** simulación de shock y liquidación.
+
+Precio, latencia y liquidez cambian durante una caída. El health factor deja de ser un número de tablero y pasa a ser una carrera operacional.
+
+**Núcleo conceptual:**
+
+- LTV y health factor.
+- liquidación y oráculos.
+- composabilidad y riesgo sistémico.
+
+**Caso de trabajo:** Una caída rápida de precio vuelve insuficiente el colateral antes de liquidar.
+
+**Actividad:** Simular préstamo, shock y liquidación bajo distintas latencias.
+
+**Comprobación formativa:** ¿En qué escenario una liquidación correcta todavía deja deuda incobrable?
+
+**Evidencia de aprendizaje:** Análisis de riesgo con umbrales, dependencia de oráculo y déficit potencial.
+<!-- plan-clases:fin -->
+
+---
+
+Hasta aquí has construido contratos, tokens y una dApp. Esta unidad de clases abre la etapa de
 **finanzas on-chain** con la pregunta que sostiene todas las demás: **¿cómo funciona un
 mercado cuando nadie lleva el libro de órdenes?** Verás por dentro un creador de mercado
 automático, un mercado de préstamo con liquidaciones, y las métricas con las que se mide
@@ -193,7 +243,7 @@ ejecución que no depende de que un tribunal funcione. Cuesta **eficiencia de ca
 —hay que inmovilizar más de lo que se toma— y traslada el riesgo a un lugar nuevo: la
 **calidad del oráculo**. Un precio manipulado durante un bloque puede liquidar posiciones
 sanas o permitir tomar prestado contra colateral inflado. Es el mismo mecanismo que
-estudiaste en el [módulo 10](../10-oraculos-indexacion/README.md), aquí con dinero encima.
+estudiaste en las [clases 10.1–10.2](../10-oraculos-indexacion/README.md), aquí con dinero encima.
 
 <details>
 <summary><strong>🎓 Si ya dominas esto</strong> — los bordes que solo aparecen en producción</summary>
@@ -276,9 +326,9 @@ cifra de rendimiento presentada como esperable.
 
 ## 🛡️ Seguridad y ética
 
-- **Ningún laboratorio de este módulo toca una red.** Son simulaciones deterministas en
+- **Ningún laboratorio de esta unidad de clases toca una red.** Son simulaciones deterministas en
   Node: sin claves, sin fondos, sin RPC. Estudiar mercados no requiere operar en ellos.
-- Nada de este módulo es recomendación de inversión. Los rendimientos DeFi **no están
+- Nada de esta unidad de clases es recomendación de inversión. Los rendimientos DeFi **no están
   garantizados** y el capital puede perderse íntegro por fallo de contrato, de oráculo o
   de gobernanza, además de por precio.
 - Al analizar un protocolo, revisa siempre **quién puede cambiarlo**: una función de
@@ -297,7 +347,7 @@ cifra de rendimiento presentada como esperable.
 - MakerDAO / Sky — parámetros de colateral y liquidación: <https://docs.makerdao.com/>
 - Chainlink — datos de precio y buenas prácticas de consumo: <https://docs.chain.link/>
 - OpenZeppelin — contratos base y patrones de seguridad: <https://docs.openzeppelin.com/>
-- Módulos relacionados: [10 · Oráculos](../10-oraculos-indexacion/README.md) · [09 · Seguridad](../09-seguridad/README.md) · [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
+- Clases relacionadas: [10 · Oráculos](../10-oraculos-indexacion/README.md) · [09 · Seguridad](../09-seguridad/README.md) · [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -310,4 +360,4 @@ cifra de rendimiento presentada como esperable.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 18 · Implementación empresarial](../18-implementacion-empresarial/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 20 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md)
+⬅️ [Clases 18.1–18.2 · Implementación empresarial](../18-implementacion-empresarial/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 20.1–20.2 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md)

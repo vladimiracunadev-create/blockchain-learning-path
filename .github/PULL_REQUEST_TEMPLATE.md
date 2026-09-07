@@ -2,7 +2,7 @@
 
 ## Objetivo educativo
 
-<!-- ¿Qué aprende el estudiante con este cambio? ¿Qué módulo, laboratorio o parte del repo toca? -->
+<!-- ¿Qué aprende el estudiante con este cambio? ¿Qué clase, laboratorio o parte del repo toca? -->
 
 ## Cambios
 

@@ -47,12 +47,15 @@ function contar(directorio) {
 
 const paginas = contar(OUT);
 const modulos = readdirSync(join(ROOT, "curriculum")).filter((d) => /^\d{2}-/.test(d)).length;
+const clases = JSON.parse(
+  await import("node:fs/promises").then((fs) => fs.readFile(join(ROOT, "curriculum", "classes.json"), "utf8"))
+).flatMap((unit) => unit.classes).length;
 const modulosEnBundle = readdirSync(join(OUT, "curriculum"), { withFileTypes: true })
   .filter((e) => e.isDirectory() && /^\d{2}-/.test(e.name) && existsSync(join(OUT, "curriculum", e.name, "README.html")))
   .length;
 
 if (modulosEnBundle !== modulos) {
-  throw new Error(`El bundle tiene ${modulosEnBundle} módulos y el curso tiene ${modulos}.`);
+  throw new Error(`El bundle tiene ${modulosEnBundle} unidades y el curso tiene ${modulos}.`);
 }
 if (paginas < 50) {
   throw new Error(`El bundle solo tiene ${paginas} páginas: algo no se generó.`);
@@ -66,9 +69,10 @@ const manifiesto = {
   version,
   paginas,
   modulos: modulosEnBundle,
+  clases,
   manual: existsSync(join(OUT, "manual", "MANUAL.pdf")),
   generado: "build-app-bundle"
 };
 writeFileSync(join(OUT, "contenido.json"), JSON.stringify(manifiesto, null, 2), "utf8");
 
-console.log(`\n✅ Bundle offline: ${paginas} páginas, ${modulosEnBundle}/${modulos} módulos, manual ${manifiesto.manual ? "incluido" : "AUSENTE"}.`);
+console.log(`\n✅ Bundle offline: ${paginas} páginas, ${clases} clases en ${modulosEnBundle}/${modulos} unidades, manual ${manifiesto.manual ? "incluido" : "AUSENTE"}.`);

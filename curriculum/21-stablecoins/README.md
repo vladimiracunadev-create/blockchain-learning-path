@@ -7,11 +7,61 @@
 
 ---
 
-Una stablecoin es un token que **promete** valer siempre lo mismo. Todo el módulo consiste
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 21.1 · Modelos de stablecoin y paridad
+
+**Pregunta guía:** ¿Quién promete la paridad y con qué mecanismo intenta sostenerla?
+
+**Enfoque pedagógico:** taxonomía por promesa y mecanismo.
+
+Las stablecoins se clasifican desde el emisor, el derecho y el respaldo, no desde su ticker. Casos con igual precio nominal revelan riesgos radicalmente distintos.
+
+**Núcleo conceptual:**
+
+- respaldo fiat y reservas.
+- sobrecolateralización cripto.
+- diseño algorítmico y reflexividad.
+
+**Caso de trabajo:** Un activo de reserva pierde liquidez durante una ola de redenciones.
+
+**Actividad:** Clasificar stablecoins por emisor, activo, derecho y estabilización.
+
+**Comprobación formativa:** Explica quién absorbe la pérdida si el activo de reserva vale menos que el pasivo.
+
+**Evidencia de aprendizaje:** Ficha comparativa que separe precio observado de capacidad de redención.
+
+### Clase 21.2 · Reservas, redención y riesgo operacional
+
+**Pregunta guía:** ¿Puede el tenedor convertir el token en dinero y bajo qué condiciones?
+
+**Enfoque pedagógico:** simulacro de corrida y redención.
+
+Mercado primario, secundario, bancos y blockchain reaccionan a retiros crecientes. El precio se interpreta junto con acceso real a la redención.
+
+**Núcleo conceptual:**
+
+- calidad, duración y custodia de reservas.
+- mercado primario y secundario.
+- depeg, gates y cumplimiento.
+
+**Caso de trabajo:** El precio vuelve a uno mientras la redención directa sigue cerrada.
+
+**Actividad:** Trazar emisión y redención incluyendo bancos, custodios y blockchains.
+
+**Comprobación formativa:** ¿Puede existir paridad de mercado sin redención directa y qué la sostiene?
+
+**Evidencia de aprendizaje:** Mapa de riesgos con evidencia pública y preguntas no resueltas.
+<!-- plan-clases:fin -->
+
+---
+
+Una stablecoin es un token que **promete** valer siempre lo mismo. Las dos clases consisten
 en desmontar esa frase: quién promete, con qué respaldo, a quién se le puede exigir, en qué
 plazo, y qué pasa exactamente el día en que no puede cumplir.
 
-Con el módulo 20 en la mano ya tienes la pregunta correcta, y no es "¿está respaldada?"
+Con las clases 20.1–20.2 en la mano ya tienes la pregunta correcta, y no es "¿está respaldada?"
 sino **¿de quién es el pasivo y qué derecho tengo yo?** Un token con paridad nominal puede
 ser la deuda de una empresa, una posición sobrecolateralizada de un protocolo o un esquema
 que se sostiene solo mientras crece. El riesgo de los tres no se parece en nada, aunque
@@ -120,7 +170,7 @@ flowchart LR
 - **Participante autorizado**: entidad con derecho contractual a emitir y redimir directamente con el emisor. **Es la pieza de la que depende el arbitraje.**
 - **Atestación (*attestation*)**: informe de un tercero sobre el saldo de las reservas en una fecha. **Auditoría**: examen con opinión sobre los estados financieros. Una atestación mensual **no** es una auditoría anual.
 - **Ratio de colateralización**: valor del colateral dividido por la deuda emitida. **Ratio mínimo**: el umbral bajo el cual la posición se liquida.
-- **Módulo de estabilidad de paridad**: mecanismo que permite canjear 1:1 contra otra stablecoin, trasladando el riesgo de la primera a la segunda.
+- **Mecanismo de estabilidad de paridad**: permite canjear 1:1 contra otra stablecoin, trasladando el riesgo de la primera a la segunda.
 
 ## 🔬 Profundización
 
@@ -160,7 +210,7 @@ resolución. Las reservas existían y estaban íntegras contablemente, pero dura
 semana **no eran accesibles**, y el token cotizó por debajo de la par hasta que se aclaró
 el acceso a esos fondos. Lección exacta: la calidad del respaldo incluye **dónde está
 depositado y con qué disponibilidad**, no solo cuánto suma. Un riesgo bancario clásico
-—exactamente el que estudiaste en el módulo 20— apareció intacto dentro de un instrumento
+—exactamente el que estudiaste en las clases 20.1–20.2— apareció intacto dentro de un instrumento
 que se presentaba como ajeno a la banca.
 
 ### La cuenta de una posición sobrecolateralizada
@@ -208,7 +258,7 @@ en un escenario que el diseño no podía sobrevivir.
 <details>
 <summary><strong>🎓 Si ya dominas esto</strong> — matices que cambian la conclusión</summary>
 
-- **El módulo de estabilidad de paridad importa riesgo ajeno.** Permitir canje 1:1 contra
+- **El mecanismo de estabilidad de paridad importa riesgo ajeno.** Permitir canje 1:1 contra
   otra stablecoin traslada su riesgo al tuyo: si la otra se desancla, tu sistema absorbe la
   diferencia. Es liquidez comprada con exposición a un tercero.
 - **Congelación de saldos: control necesario y punto único de confianza.** Los emisores
@@ -221,14 +271,14 @@ en un escenario que el diseño no podía sobrevivir.
   jurisdicción.
 - **Regímenes multi-cadena y respaldo aparente.** El mismo token en varias cadenas puede
   estar respaldado de forma nativa en cada una o depender de un puente. En el segundo caso,
-  el riesgo del puente ([módulo 13](../13-interoperabilidad/README.md)) es riesgo del token,
+  el riesgo del puente ([clases 13.1–13.2](../13-interoperabilidad/README.md)) es riesgo del token,
   aunque el emisor sea impecable.
 - **La liquidez en cadena no es el respaldo.** Un pool profundo mejora la ejecución pero no
   sustituye a la redención: en tensión, la liquidez es lo primero que se retira, justo
   cuando más se necesita.
 - **Bajo MiCA, la mayoría de estos instrumentos son "fichas de dinero electrónico" (EMT) o
   "fichas referenciadas a activos" (ART)**, con obligaciones de reserva, redención a la par
-  y autorización. La categoría determina el régimen; ver [módulo 27](../27-regulacion-cumplimiento/README.md).
+  y autorización. La categoría determina el régimen; ver [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md).
 
 </details>
 
@@ -256,7 +306,7 @@ pnpm test
 ```
 
 4. **Ficha comparativa.** Amplía la tabla de las cuatro formas de dinero del
-   [módulo 20](../20-dinero-banca-liquidacion/README.md) con tres columnas: *emisor*,
+   [clases 20.1–20.2](../20-dinero-banca-liquidacion/README.md) con tres columnas: *emisor*,
    *derecho de redención* y *qué pasa si el emisor falla*. Rellénala para: un depósito
    bancario, una stablecoin fiat, una sobrecolateralizada y una algorítmica.
 
@@ -299,13 +349,14 @@ riesgo — incluida la que te parezca mejor.
   aplicables y análisis de organismos.
 - Al comunicar a usuarios no técnicos, explica siempre las tres cosas juntas: qué pasa si
   el emisor quiebra, si puedes redimir tú, y si tus saldos pueden congelarse.
-- Nada de este módulo es asesoría financiera. La clasificación jurídica de estos
+- Nada de esta unidad de clases es asesoría financiera. La clasificación jurídica de estos
   instrumentos varía por jurisdicción y cambia; consulta el
-  [módulo 27](../27-regulacion-cumplimiento/README.md) y las fuentes oficiales vigentes.
+  [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md) y las fuentes oficiales vigentes.
 
 ## 🔗 Referencias
 
-- BIS — investigación sobre stablecoins, dinero digital y estabilidad: <https://www.bis.org/>
+- Comité de Basilea — enmiendas al estándar de exposiciones a criptoactivos, reservas y redención: <https://www.bis.org/bcbs/publ/d567.pdf>
+- BIS Working Paper 1164 — información pública y corridas de stablecoins: <https://www.bis.org/publ/work1164.htm>
 - FSB — recomendaciones sobre acuerdos globales de stablecoins: <https://www.fsb.org/>
 - Reglamento (UE) 2023/1114 (MiCA) — texto consolidado en EUR-Lex: <https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32023R1114>
 - Circle — informes de reserva de USDC: <https://www.circle.com/transparency>
@@ -324,4 +375,4 @@ riesgo — incluida la que te parezca mejor.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 20 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 22 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md)
+⬅️ [Clases 20.1–20.2 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 22.1–22.2 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md)

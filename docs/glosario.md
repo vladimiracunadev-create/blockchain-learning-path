@@ -2,7 +2,11 @@
 
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📖 Bibliografía](bibliografia.md)
 
-Glosario de referencia de los términos que usan los módulos 00-28, los laboratorios y el capstone. Se privilegia el término en español con el anglicismo entre paréntesis cuando el sector lo usa de forma dominante. Para profundizar en cada tema, consulta [recursos-oficiales.md](recursos-oficiales.md).
+Glosario de referencia de las 66 clases, los laboratorios y el proyecto final. Se
+privilegia el término en español con el anglicismo entre paréntesis cuando el sector
+lo usa de forma dominante. Una definición aclara **qué es**, **qué no demuestra** y,
+cuando importa, **con qué concepto suele confundirse**. Para profundizar en cada tema,
+consulta [recursos-oficiales.md](recursos-oficiales.md).
 
 ## Fundamentos y criptografía
 
@@ -148,7 +152,7 @@ Glosario de referencia de los términos que usan los módulos 00-28, los laborat
 - **Consorcio**: grupo de organizaciones que operan una red permisionada compartida con gobernanza contractual.
 - **Tokenización**: representación de un activo o derecho como token, con el desafío central de que el vínculo legal off-chain sea exigible.
 - **Custodia**: guarda de claves por un tercero regulado; alternativa a la autocustodia con otros riesgos y obligaciones.
-- **Minería de datos blockchain**: análisis de bloques, transacciones, direcciones, tokens y eventos para hallar patrones. No produce bloques ni monedas: se distingue de la **minería de criptomonedas**, que es consenso. Ver [módulo 28](../curriculum/28-data-analytics-onchain/README.md).
+- **Minería de datos blockchain**: análisis de bloques, transacciones, direcciones, tokens y eventos para hallar patrones. No produce bloques ni monedas: se distingue de la **minería de criptomonedas**, que es consenso. Ver [clases 28.1–28.2](../curriculum/28-data-analytics-onchain/README.md).
 - **On-chain analytics**: análisis limitado a lo escrito en la cadena. **Blockchain intelligence** añade fuentes y etiquetas externas, y con ellas los juicios y su margen de error.
 - **Verdad de campo (ground truth)**: conjunto de casos cuya etiqueta real se conoce; sin ella no se puede calcular el recall de un detector, y en una cadena real casi nunca existe.
 - **Fan-in / fan-out**: convergencia de muchas direcciones en una / reparto de una a muchas. Son **indicadores**, compatibles con actividad legítima.
@@ -213,7 +217,7 @@ Glosario de referencia de los términos que usan los módulos 00-28, los laborat
 
 - **Autocustodia / custodia de tercero / custodia calificada**: quién controla la clave y quién responde ante pérdida; la última la presta una entidad autorizada con requisitos de segregación y auditoría.
 - **MPC (computación multiparte)**: varias partes calculan una firma sin que la clave completa exista nunca; la cadena ve una firma normal y la política no es visible on-chain.
-- **HSM**: módulo criptográfico que genera y usa claves sin exponerlas, con control de acceso y registro de uso.
+- **HSM (hardware security module)**: dispositivo criptográfico dedicado que genera y usa claves sin exponerlas, con control de acceso y registro de uso.
 - **Política M-de-N**: hacen falta M firmas de N firmantes. Tolera **M−1** compromisos y **N−M** pérdidas: los dos fallos son opuestos y ambos hay que dimensionarlos.
 - **Ceremonia de claves**: procedimiento presencial documentado para generar o rotar claves, con testigos, acta y respaldo verificado.
 - **Solo lectura (watch-only)**: seguimiento de saldos con la clave pública, sin capacidad de firma; imprescindible para conciliación y contabilidad.
@@ -230,9 +234,92 @@ Glosario de referencia de los términos que usan los módulos 00-28, los laborat
 - **Enfoque basado en riesgo**: asignar controles en proporción al riesgo evaluado. Aplicar el máximo a todos es caro, excluyente y desplaza la atención.
 - **Jerarquía normativa**: ley → reglamento/norma → circular → guía → consulta pública → propuesta. Solo las tres primeras obligan; confundirlas es el error más frecuente del sector.
 
+## Exchanges y operación custodial
+
+- **Exchange centralizado (CEX)**: plataforma que recibe órdenes y normalmente mantiene un subledger por cliente. Una compraventa puede liquidarse sólo en ese libro interno; que el saldo cambie no implica que exista un txid.
+- **Exchange descentralizado (DEX)**: contratos y reglas que permiten intercambiar activos mediante transacciones verificables. La interfaz, el secuenciador, el puente o las claves administrativas pueden seguir introduciendo dependencias; “DEX” no significa ausencia total de confianza.
+- **Libro de órdenes (order book)**: conjunto de ofertas de compra y venta ordenadas por precio y tiempo. Puede existir off-chain aunque la liquidación final ocurra on-chain.
+- **Motor de matching**: componente que cruza órdenes compatibles. Decide ejecución comercial; no prueba por sí mismo custodia, reserva ni liquidación blockchain.
+- **Saldo disponible / bloqueado / total**: el disponible puede retirarse o negociarse; el bloqueado respalda una orden, margen o retención; el total suma ambos según la política del sistema. Ninguno es automáticamente un saldo on-chain.
+- **Wallet ómnibus (omnibus wallet)**: dirección o conjunto de direcciones donde se mezclan operacionalmente activos atribuibles a muchos clientes mediante un ledger separado. Ver la wallet no revela por sí sola la distribución de obligaciones.
+- **Barrido (sweep)**: movimiento periódico desde direcciones de depósito hacia una wallet consolidada. Puede hacer que una dirección asignada a un cliente quede vacía sin que su saldo interno desaparezca.
+- **Batching de retiros**: agrupación de varios retiros en una transacción para reducir costo. Rompe la suposición falsa de que cada retiro corresponde a una transacción o salida única.
+- **Identificador interno de orden**: clave del sistema de exchange que permite reconstruir una operación. No debe llamarse txid salvo que identifique realmente una transacción blockchain.
+- **Prueba de control de dirección**: firma de un mensaje ligado a un desafío, o movimiento acordado, que aporta evidencia de control de una clave. No prueba propiedad jurídica, ausencia de gravámenes ni disponibilidad futura.
+- **Lista permitida de destinos (allowlist)**: conjunto de direcciones autorizadas previamente para retiro. Reduce riesgo operacional, pero su alta y modificación también necesitan control y trazabilidad.
+- **Límite de retiro**: restricción por importe, ventana temporal, activo o riesgo. Es un control de exposición; no reemplaza aprobación independiente ni monitoreo.
+
+## Contabilidad blockchain y conciliación
+
+- **Internal Ledger**: registro interno que expresa saldos, movimientos y obligaciones reconocidas por la entidad. Es evidencia de lo que el sistema contabiliza, no de que los activos existan fuera de él.
+- **Exchange Reality**: estado confirmado por un custodio o exchange tercero: disponible, bloqueado, prestado o pendiente. Es una reclamación contra ese tercero y no equivale a autocustodia.
+- **Blockchain State**: estado aceptado por una red a una altura y hash de bloque: UTXO, balances nativos o storage de contratos. Prueba existencia en el registro, no automáticamente quién controla o posee el activo.
+- **Subledger de clientes**: detalle de obligaciones por persona, cuenta, producto y activo que debe reconciliar con el mayor general sin perder granularidad.
+- **Mayor general (general ledger)**: registro contable agregado donde se reconocen activos, pasivos, patrimonio, ingresos y gastos conforme a políticas de la entidad.
+- **Conciliación**: comparación reproducible de fuentes que deberían guardar una relación definida. Una conciliación explica diferencias; no consiste en modificar una cifra hasta que coincida.
+- **Corte (cut-off)**: instante económico al que se refiere un saldo. En blockchain debe asociarse también a red, altura y hash para poder reproducirlo.
+- **Puente temporal**: movimientos identificados entre dos cortes distintos que explican cómo llevar una fuente al mismo instante de otra sin alterar los datos originales.
+- **Excepción de conciliación**: diferencia pendiente de explicación con importe, antigüedad, causa tentativa, evidencia, responsable y plazo.
+- **Aging**: antigüedad de una excepción. Ayuda a distinguir desfases normales de diferencias que escalan a incidente.
+- **Ajuste manual**: asiento autorizado que corrige un registro. Debe conservar origen, motivo, aprobador y vínculo a evidencia; usarlo para “cuadrar” sin causa destruye la pista de auditoría.
+- **Doble conteo**: incluir dos veces el mismo activo, por ejemplo como saldo en un custodio y como wallet subyacente atribuida al mismo custodio.
+- **Unidad mínima**: satoshi, wei o unidad entera del contrato. Conciliar primero en enteros evita diferencias creadas por flotantes y redondeos de interfaz.
+- **Materialidad**: magnitud y naturaleza de una diferencia capaces de influir en una decisión. Una excepción pequeña pero repetida puede ser material por indicar una falla sistémica.
+
+## Reservas, pasivos y aseguramiento
+
+- **Proof of Reserves (PoR)**: procedimientos que aportan evidencia sobre activos definidos en un corte. El término no fija por sí solo alcance, independencia ni nivel de aseguramiento.
+- **Proof of Liabilities (PoL)**: evidencia sobre obligaciones incluidas en una población. Una raíz íntegra no demuestra que la población sea completa.
+- **Hoja canónica**: representación inequívoca de cliente, activo, saldo y nonce antes de hashear. Cambiar orden, codificación o unidades debe producir otra hoja de forma predecible.
+- **Nonce de privacidad**: valor que dificulta adivinar una hoja a partir de datos previsibles. No corrige un saldo falso ni una cuenta omitida.
+- **Raíz Merkle**: compromiso compacto con todas las hojas y su orden/regla de combinación. Cambiar una hoja cambia la raíz; mantener la raíz no demuestra que nada relevante haya quedado fuera.
+- **Prueba de inclusión**: hoja y hashes hermanos necesarios para recalcular la raíz. Responde “esta hoja está incluida”, no “mi saldo es correcto” ni “todos los clientes están incluidos”.
+- **Integridad de población**: afirmación de que el conjunto contiene todos los elementos que debía contener. Es distinta de la integridad criptográfica del conjunto entregado.
+- **Saldo negativo en PoL**: registro que puede reducir artificialmente el total de pasivos si se compensa dentro del árbol. Debe justificarse o excluirse según criterios públicos.
+- **Snapshot**: fotografía de fuentes en un corte. Puede ocultar préstamos temporales, transferencias reversadas o hechos posteriores si no existen procedimientos adicionales.
+- **Window dressing**: acciones transitorias para mejorar una cifra justo al corte sin cambiar la situación económica sostenible.
+- **Gravamen (encumbrance)**: restricción, prenda o derecho de tercero sobre un activo. El saldo on-chain puede existir y, aun así, no estar libre para pagar clientes.
+- **Solvencia**: capacidad de una entidad completa para cumplir todas sus obligaciones. Requiere más que comparar algunas wallets con algunos saldos de clientes.
+- **Liquidez**: capacidad de atender pagos a tiempo sin pérdida desproporcionada. Una entidad puede ser solvente y no tener liquidez inmediata, o parecer líquida en un snapshot y ser insolvente.
+- **Procedimientos acordados (AUP)**: el profesional ejecuta procedimientos pactados y reporta hallazgos fácticos; los usuarios extraen sus conclusiones. No es una opinión de auditoría.
+- **Encargo de aseguramiento**: trabajo donde un profesional obtiene evidencia frente a criterios y expresa una conclusión con nivel y alcance definidos.
+- **Auditoría de estados financieros**: encargo sobre estados financieros como conjunto, sujeto a materialidad y normas aplicables. Un PoR acotado no se convierte en ella por usar la palabra “auditor”.
+
+## Forensics, atribución y gobierno
+
+- **Blockchain forensics**: adquisición, preservación y análisis reproducible de datos blockchain para responder una pregunta. No equivale a identificar automáticamente personas.
+- **Grafo de transacciones**: modelo de nodos y aristas para representar direcciones, UTXO, transacciones o entidades tentativas. El significado depende del modelo elegido.
+- **Fan-in / fan-out**: patrón de concentración desde muchas entradas o dispersión hacia muchas salidas. Es un indicador compatible con varias actividades legítimas o ilícitas.
+- **Peeling chain**: secuencia donde una parte se transfiere y el resto continúa a otra dirección. Puede sugerir un patrón operativo, pero no identifica por sí sola al operador.
+- **Clustering**: agrupación de direcciones mediante reglas o evidencia. Toda agrupación debe conservar la heurística, sus excepciones y una medida de confianza.
+- **Heurística de entradas comunes**: presume control común cuando varias entradas firman la misma transacción Bitcoin. CoinJoin y servicios compartidos son contraejemplos importantes.
+- **Etiqueta de dirección**: asociación producida por un proveedor, investigación o fuente pública. Debe conservar origen, fecha, nivel de confianza y corroboración.
+- **Atribución**: vínculo entre actividad on-chain y una entidad del mundo real. Necesita evidencia externa legítima; una heurística aislada no basta.
+- **Falsa atribución**: asociación incorrecta que puede provocar congelamiento, reporte o daño reputacional. Su costo exige revisión humana proporcional.
+- **Cadena de custodia de evidencia**: registro de adquisición, hash, almacenamiento, acceso, transformación y transferencia de una evidencia.
+- **Procedencia (provenance)**: fuente, versión, parámetros, corte y transformaciones que permiten evaluar y reproducir un resultado.
+- **Hecho / indicador / inferencia / hipótesis**: escalera de fuerza probatoria. Un hecho se observa en la fuente; un indicador se calcula; una inferencia interpreta; una hipótesis propone una explicación pendiente de prueba.
+- **Explicación alternativa**: causa distinta compatible con la misma evidencia. Documentarla reduce sesgo de confirmación y define qué dato adicional hace falta.
+- **Segregación de funciones**: separación entre solicitar, aprobar, firmar, registrar, conciliar e investigar para evitar que una sola persona controle y certifique su propia acción.
+- **RACI**: matriz que indica quién ejecuta, responde, es consultado e informado. No reemplaza una política de autorización, pero hace visible la responsabilidad.
+- **Control preventivo / detectivo**: el preventivo intenta impedir el error o abuso; el detectivo busca descubrirlo después. Una arquitectura robusta combina ambos.
+- **Riesgo residual**: exposición que permanece después de aplicar controles. Debe aceptarse, mitigarse más, transferirse o evitarse de forma explícita.
+
+## Confusiones que deben evitarse
+
+| No confundir | Distinción operativa |
+|---|---|
+| Saldo de interfaz ↔ activo existente | El primero es una afirmación del sistema; el segundo necesita evidencia del custodio o de la cadena. |
+| Dirección ↔ identidad | La dirección es un identificador técnico; la identidad exige atribución externa. |
+| Txid ↔ orden interna | El txid pertenece a una transacción blockchain; la orden puede vivir sólo en el exchange. |
+| Inclusión Merkle ↔ completitud | La prueba confirma una hoja dentro del conjunto; no confirma que el conjunto contenga todas las obligaciones. |
+| PoR ↔ solvencia | PoR puede cubrir activos definidos; solvencia abarca todos los activos, pasivos, derechos y riesgos de la entidad. |
+| Alerta ↔ delito | La alerta prioriza revisión; la conclusión requiere evidencia y proceso aplicable. |
+| Transparencia ↔ ausencia de privacidad | Un dato público puede seguir protegido por límites de finalidad, minimización y atribución responsable. |
+
 ## Cómo usar este glosario
 
 - Los cuestionarios de [evaluación](evaluacion.md) asumen que manejas estos términos al nivel de la definición dada.
-- Si un término te resulta opaco, el módulo correspondiente del [currículo](../curriculum/README.md) lo desarrolla con laboratorios.
+- Si un término te resulta opaco, la clase correspondiente del [currículo](../curriculum/README.md) lo desarrolla con casos y laboratorios.
 - Los términos regulatorios se desarrollan, con su rango y su fuente oficial, en [regulación](../regulation/README.md).
 - Las cifras asociadas (tarifas, TVL, número de validadores) cambian constantemente: consúltalas en vivo en las fuentes de [recursos-oficiales.md](recursos-oficiales.md).

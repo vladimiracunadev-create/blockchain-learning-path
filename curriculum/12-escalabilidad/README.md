@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 12.1 · Familias de escalabilidad
+
+**Pregunta guía:** ¿Qué movemos fuera de L1 y qué garantía conservamos?
+
+**Enfoque pedagógico:** clasificación por capas de garantía.
+
+Las soluciones se ordenan por dónde ejecutan, publican datos y liquidan. El TPS se deja para el final, cuando ya se conocen las garantías sacrificadas.
+
+**Núcleo conceptual:**
+
+- canales, sidechains y rollups.
+- ejecución, datos y liquidación.
+- fraud proofs y validity proofs.
+
+**Caso de trabajo:** Dos redes anuncian el mismo TPS pero publican datos y pruebas distintas.
+
+**Actividad:** Clasificar arquitecturas por lugar de ejecución, DA y salida.
+
+**Comprobación formativa:** Compara dos diseños con igual rendimiento pero distinta disponibilidad de datos.
+
+**Evidencia de aprendizaje:** Matriz que compare seguridad heredada, latencia, costo y operador.
+
+### Clase 12.2 · Riesgo operativo de una L2
+
+**Pregunta guía:** ¿Puede el usuario recuperar fondos si el secuenciador o el portal fallan?
+
+**Enfoque pedagógico:** simulacro de caída del secuenciador.
+
+El usuario intenta consultar, enviar y retirar mientras componentes dejan de responder. La clase verifica rutas de escape en contratos y no sólo en documentación comercial.
+
+**Núcleo conceptual:**
+
+- secuenciación y censura.
+- challenge period y escape hatch.
+- blobs, EIP-4844 y costos.
+
+**Caso de trabajo:** Un secuenciador se detiene y el usuario necesita forzar una salida.
+
+**Actividad:** Construir un mapa de dependencias y verificar mecanismos de escape.
+
+**Comprobación formativa:** ¿Puede salir el usuario sin cooperación del operador y bajo qué demora?
+
+**Evidencia de aprendizaje:** Evaluación de riesgo basada en contratos, claves y estado de madurez.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Distinguir seis familias de escalado (canales, sidechains, optimistic rollups, ZK rollups, validiums y appchains) según dónde ejecutan y dónde publican datos.
@@ -156,7 +206,7 @@ De ahí sale una propiedad contraintuitiva: **una L2 es más barata cuanto más 
 
 ## 🧪 Laboratorio guiado
 
-Este módulo es un ejercicio comparativo de análisis, sin código de repositorio. Consulta el índice de prácticas del curso en [laboratorios](../../labs/CATALOG.md).
+Esta unidad de clases es un ejercicio comparativo de análisis, sin código de repositorio. Consulta el índice de prácticas del curso en [laboratorios](../../labs/CATALOG.md).
 
 1. Elige tres soluciones de capa 2 reales de distinta familia (por ejemplo un optimistic rollup, un ZK rollup y un validium).
 2. Para cada una, abre L2BEAT y anota su categoría, su modelo de datos y sus riesgos declarados; recuerda que las cifras cambian, consúltalo en vivo.
@@ -218,4 +268,4 @@ Entrega una tabla comparativa de las tres soluciones más un informe breve que r
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 11 · DAO y gobernanza](../11-dao-gobernanza/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 13 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md)
+⬅️ [Clases 11.1–11.2 · DAO y gobernanza](../11-dao-gobernanza/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 13.1–13.2 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md)

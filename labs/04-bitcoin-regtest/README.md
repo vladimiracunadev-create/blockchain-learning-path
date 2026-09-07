@@ -1,6 +1,6 @@
 # Laboratorio · Bitcoin Core en regtest
 
-> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Módulo 04 · Bitcoin](../../curriculum/04-bitcoin/README.md) · [Catálogo de laboratorios](../CATALOG.md)
+> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 04.1–04.2 · Bitcoin](../../curriculum/04-bitcoin/README.md) · [Catálogo de laboratorios](../CATALOG.md)
 
 Laboratorio para operar un nodo **Bitcoin Core** real en modo `regtest`: una cadena privada y local donde tú decides cuándo se mina cada bloque. Practicas wallets, direcciones, transacciones y UTXOs con Bitcoin auténtico, sin coste y sin riesgo.
 
@@ -90,4 +90,4 @@ Guarda en tu bitácora: altura inicial, dirección receptora, `txid`, comisión 
 - **Nunca reutilices esta configuración en mainnet ni testnet pública**: exponer RPC con credenciales conocidas es una invitación a que te vacíen el nodo.
 - Las monedas de regtest no tienen valor; no las presentes como bitcoins reales.
 
-Fundamento conceptual en el [módulo 04 · Bitcoin](../../curriculum/04-bitcoin/README.md).
+Fundamento conceptual en las [clases 04.1–04.2 · Bitcoin](../../curriculum/04-bitcoin/README.md).

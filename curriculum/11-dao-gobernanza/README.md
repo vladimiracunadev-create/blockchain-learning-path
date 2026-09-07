@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 11.1 · Propuestas, voto y ejecución
+
+**Pregunta guía:** ¿Cómo pasa una intención colectiva a un cambio ejecutable y demorado?
+
+**Enfoque pedagógico:** simulación completa de gobernanza.
+
+Una propuesta atraviesa snapshot, voto, cola y ejecución con calldata visible. El tiempo se trata como control de seguridad y no como fricción accidental.
+
+**Núcleo conceptual:**
+
+- propuesta, snapshot y delegación.
+- quórum y umbrales.
+- timelock y ejecución.
+
+**Caso de trabajo:** Una propuesta aprobada intenta ejecutar una llamada distinta de la votada.
+
+**Actividad:** Recorrer el ciclo completo de una propuesta en entorno local.
+
+**Comprobación formativa:** ¿Cómo compruebas que la llamada ejecutada coincide exactamente con la votada?
+
+**Evidencia de aprendizaje:** Línea de tiempo con estados, responsables y calldata ejecutada.
+
+### Clase 11.2 · Captura y gobernanza de emergencia
+
+**Pregunta guía:** ¿Quién puede detener el sistema y quién controla a quien controla?
+
+**Enfoque pedagógico:** juego de captura y respuesta.
+
+Una minoría coordinada aprovecha apatía y concentración. El resto diseña límites temporales para guardianes sin crear una autoridad permanente sin control.
+
+**Núcleo conceptual:**
+
+- concentración y apatía.
+- flash-loan governance y compra de votos.
+- guardianes, pausas y salida.
+
+**Caso de trabajo:** Una minoría coordinada aprueba un cambio mientras la mayoría no participa.
+
+**Actividad:** Diseñar controles ordinarios y de emergencia con límites temporales.
+
+**Comprobación formativa:** ¿Quién puede revocar al actor de emergencia y cuánto tarda esa revocación?
+
+**Evidencia de aprendizaje:** Constitución mínima que explicite poderes, demoras, revocación y transparencia.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Describir el ciclo de vida de una propuesta: creación, votación, quorum, cola en timelock y ejecución.
@@ -168,7 +218,7 @@ Todo en un bloque. Y ahora, dónde se rompe la cadena según qué defensa esté 
 
 > 🧪 Estas prácticas están catalogadas y **resueltas paso a paso** en el [catálogo de laboratorios](../../labs/CATALOG.md).
 
-1. Abre los contratos de gobernanza y timelock del módulo, ubicados en `labs/08-protocols`, y revisa cómo se enlaza el Governor con el `TimelockController`.
+1. Abre los contratos de gobernanza y timelock de la unidad, ubicados en `labs/08-protocols`, y revisa cómo se enlaza el Governor con el `TimelockController`.
 
 2. Ejecuta la suite de pruebas con trazas para seguir una propuesta desde su creación hasta su ejecución.
 
@@ -223,4 +273,4 @@ Diseña e implementa una DAO en la que una propuesta crítica requiera votación
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 12 · Escalabilidad y capas 2](../12-escalabilidad/README.md)
+⬅️ [Clases 10.1–10.2 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 12.1–12.2 · Escalabilidad y capas 2](../12-escalabilidad/README.md)

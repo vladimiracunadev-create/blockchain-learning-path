@@ -7,7 +7,57 @@
 
 ---
 
-Hasta aquí el programa habló de protocolos; este módulo habla de **discos, memoria,
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 16.1 · Operar nodos con objetivos medibles
+
+**Pregunta guía:** ¿Qué servicio presta el nodo y qué disponibilidad necesita el negocio?
+
+**Enfoque pedagógico:** diseño desde SLO hacia infraestructura.
+
+Primero se define el servicio que necesita el negocio y su tolerancia a fallos. Recién después se eligen cliente, disco, RPC y monitoreo.
+
+**Núcleo conceptual:**
+
+- clientes, sincronización y almacenamiento.
+- RPC, límites y autenticación.
+- SLO, métricas y alertas.
+
+**Caso de trabajo:** Un RPC público saturado impide retiros aunque la cadena siga funcionando.
+
+**Actividad:** Definir SLI/SLO y desplegar un nodo o simulador observable.
+
+**Comprobación formativa:** ¿Qué métrica distingue una cadena detenida de un RPC propio saturado?
+
+**Evidencia de aprendizaje:** Runbook con capacidad, respaldo, monitoreo y criterio de escalamiento.
+
+### Clase 16.2 · Resiliencia, actualización e incidentes
+
+**Pregunta guía:** ¿Cómo se cambia software crítico sin perder disponibilidad ni evidencia?
+
+**Enfoque pedagógico:** game day de actualización.
+
+Una versión se despliega como canary y luego falla. El equipo practica rollback, comunicación y preservación de evidencia con tiempos medidos.
+
+**Núcleo conceptual:**
+
+- redundancia y diversidad de clientes.
+- gestión de secretos y red.
+- backups, upgrades y respuesta.
+
+**Caso de trabajo:** Una versión defectuosa divide la red y afecta sólo a un cliente mayoritario.
+
+**Actividad:** Planificar actualización canary y practicar recuperación documentada.
+
+**Comprobación formativa:** ¿Qué condición detiene el despliegue y quién tiene autoridad para declararla?
+
+**Evidencia de aprendizaje:** Informe de simulacro con tiempos, decisiones y acciones correctivas.
+<!-- plan-clases:fin -->
+
+---
+
+Hasta aquí el programa habló de protocolos; esta unidad de clases habla de **discos, memoria,
 máquinas y facturas**. Qué hardware necesita cada tipo de nodo, dónde corre físicamente
 (casa, datacenter o nube), con qué comandos se levanta y cómo se opera sin caerse.
 
@@ -276,4 +326,4 @@ métrica, umbral y acción del operador.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 17 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md)
+⬅️ [Clases 15.1–15.2 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 17.1–17.2 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md)

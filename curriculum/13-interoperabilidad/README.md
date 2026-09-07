@@ -7,6 +7,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 13.1 · Mensajes y activos entre cadenas
+
+**Pregunta guía:** ¿Qué significa mover un activo si cada red mantiene su propio estado?
+
+**Enfoque pedagógico:** contabilidad de un activo entre cadenas.
+
+Cada bloqueo, emisión, quema y liberación se registra en una misma tabla. El movimiento se entiende como coordinación de estados, no como transporte físico de tokens.
+
+**Núcleo conceptual:**
+
+- lock-and-mint y burn-and-mint.
+- mensajería y light clients.
+- IBC, XCM y puentes EVM.
+
+**Caso de trabajo:** Un token envuelto conserva oferta mientras el activo bloqueado desaparece.
+
+**Actividad:** Trazar emisión, bloqueo, mensaje, prueba y redención extremo a extremo.
+
+**Comprobación formativa:** Formula la invariante que evita crear más representaciones que activos respaldantes.
+
+**Evidencia de aprendizaje:** Invariante de suministro y lista de verificadores en cada frontera.
+
+### Clase 13.2 · Modelo de amenazas de puentes
+
+**Pregunta guía:** ¿Qué nueva confianza introduce cada capa de interoperabilidad?
+
+**Enfoque pedagógico:** threat modeling de un puente.
+
+Los equipos atacan relayer, verificador, claves, contratos y actualización por separado. La pérdida máxima obliga a priorizar controles en vez de enumerar amenazas.
+
+**Núcleo conceptual:**
+
+- validadores y multisig.
+- oráculos, relayers y contratos.
+- replay, pausa y actualización.
+
+**Caso de trabajo:** Una clave administrativa actualiza el verificador y habilita retiros falsos.
+
+**Actividad:** Atacar conceptualmente cinco puntos del flujo y proponer defensas.
+
+**Comprobación formativa:** Identifica la confianza dominante incluso si todos los contratos son correctos.
+
+**Evidencia de aprendizaje:** Threat model priorizado con pérdida máxima y plan de contención.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Distinguir los mecanismos de puente (lock-and-mint, burn-and-mint), los light clients, la mensajería y los atomic swaps (HTLC).
@@ -162,7 +212,7 @@ La respuesta es su modelo de seguridad, dicho en una frase:
 
 ## 🧪 Laboratorio guiado
 
-Este módulo es un ejercicio de modelado de amenazas, sin código de repositorio. Consulta el índice de prácticas del curso en [laboratorios](../../labs/CATALOG.md).
+Esta unidad de clases es un ejercicio de modelado de amenazas, sin código de repositorio. Consulta el índice de prácticas del curso en [laboratorios](../../labs/CATALOG.md).
 
 1. Elige un puente real o de referencia y describe su flujo: origen, custodia, atestación del mensaje y acuñación en destino.
 2. Dibuja el diagrama de actores y confía cada paso a alguien; marca dónde aparece una confianza añadida.
@@ -225,4 +275,4 @@ Entrega el modelo de amenazas de un puente concreto: diagrama de flujo, tabla de
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 12 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)
+⬅️ [Clases 12.1–12.2 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 14.1–14.2 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)

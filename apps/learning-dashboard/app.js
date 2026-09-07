@@ -70,7 +70,7 @@ document.querySelector("#grade").addEventListener("click", () => {
   save();
   render();
   document.querySelector("#quizResult").textContent =
-    `${progress.diagnosticScore}% · ${progress.diagnosticScore >= 80 ? "Ruta rápida disponible." : "Comienza por el módulo 00."}`;
+    `${progress.diagnosticScore}% · ${progress.diagnosticScore >= 80 ? "Ruta rápida disponible." : "Comienza por la clase 00.1."}`;
 });
 
 document.querySelector("#export").addEventListener("click", () => {
@@ -97,7 +97,7 @@ document.querySelector("#import").addEventListener("change", async (event) => {
 });
 
 document.querySelector("#reset").addEventListener("click", () => {
-  if (!confirm("¿Reiniciar módulos y diagnóstico?")) return;
+  if (!confirm("¿Reiniciar clases y diagnóstico?")) return;
   completed.clear();
   progress.diagnosticScore = null;
   save();

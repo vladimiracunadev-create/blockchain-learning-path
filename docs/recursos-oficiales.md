@@ -20,7 +20,7 @@ Catálogo curado de recursos por categoría. Revisado: 2026-07-28. Las URL y el 
 
 ## Libros de referencia
 
-Los libros del programa, con edición y capítulos recomendados por módulo, están catalogados en [bibliografia.md](bibliografia.md). Regla general: prefiere la edición más reciente (el ecosistema deja obsoletos los detalles en 2-3 años) y contrasta cualquier afirmación técnica con la especificación vigente.
+Los libros del programa, con edición y capítulos recomendados por clase, están catalogados en [bibliografia.md](bibliografia.md). Regla general: prefiere la edición más reciente (el ecosistema deja obsoletos los detalles en 2-3 años) y contrasta cualquier afirmación técnica con la especificación vigente.
 
 ## Exploradores y datos
 

@@ -100,7 +100,7 @@ Ningún equipo serio pasa del repositorio al mainnet en un paso. La secuencia es
 
 1. **Devnet interna:** red efímera controlada por el equipo, se destruye y recrea a diario; sirve para validar la configuración de génesis y los flujos de upgrade.
 2. **Testnet pública:** validadores externos, faucet, explorador; aquí aparecen los problemas de coordinación que la devnet nunca muestra (nodos desactualizados, clocks desincronizados, peers maliciosos).
-3. **Auditorías y ejercicios de caos:** auditoría de los contratos del bridge y de los módulos custom; simulacros de partición de red y de pérdida de claves antes de que ocurran con fondos reales.
+3. **Auditorías y ejercicios de caos:** auditoría de los contratos del bridge y de las clases custom; simulacros de partición de red y de pérdida de claves antes de que ocurran con fondos reales.
 4. **Génesis de mainnet:** ceremonia de génesis (en appchains, coordinación explícita de validadores), límites conservadores iniciales (caps de depósito, pausas activables) y descentralización progresiva documentada.
 5. **Operación continua:** el lanzamiento no termina el proyecto; lo convierte en un servicio 24/7 con SLOs, guardias y runbooks (véase [operación e incidentes](../docs/operacion-incidentes.md)).
 

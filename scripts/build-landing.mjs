@@ -15,6 +15,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 // Destino configurable: el sitio de Pages va a site/, el bundle de las apps a otro sitio.
 const OUT = process.env.SITE_OUT ?? "site";
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
+const classCatalog = JSON.parse(read("curriculum/classes.json"));
+const classCount = classCatalog.flatMap((unit) => unit.classes).length;
 
 // --- Datos reales del repositorio ---------------------------------------------
 
@@ -27,7 +29,8 @@ const modules = readdirSync(join(ROOT, "curriculum"))
     const h1 = read(`curriculum/${d}/README.md`).split("\n").find((l) => l.startsWith("# ")) || "";
     const title = h1.replace(/^#\s*/, "").replace(/^\d+\s*·\s*/, "").trim();
     const num = d.slice(0, 2);
-    return { num, title, emoji: MODULE_EMOJI[i] || "📦", href: `curriculum/${d}/README.md` };
+    const classes = classCatalog.find((unit) => unit.unit === num)?.classes ?? [];
+    return { num, title, classes, emoji: MODULE_EMOJI[i] || "📦", href: `curriculum/${d}/README.md` };
   });
 
 const catalog = read("labs/CATALOG.md");
@@ -43,7 +46,7 @@ const version = pkg.version;
 const REPO = "https://github.com/vladimiracunadev-create/blockchain-learning-path";
 
 const stats = [
-  [modules.length, "módulos"],
+  [classCount, "clases"],
   [practiceCount, "prácticas"],
   [industryCount, "docs de industria"],
   [adrCount, "decisiones (ADR)"],
@@ -51,7 +54,7 @@ const stats = [
 ];
 
 const features = [
-  ["📚", "Currículo completo", `${modules.length} módulos progresivos, de criptografía a custodia, auditoría y forensics, cada uno con teoría, laboratorio y verificación.`, "curriculum/README.md"],
+  ["📚", "Currículo completo", `${classCount} clases progresivas y distintas, de criptografía a custodia, auditoría y forensics, con teoría, casos, laboratorio y verificación.`, "curriculum/README.md"],
   ["🧪", "Laboratorios ejecutables", `${practiceCount} prácticas guiadas con actividad, evidencia y criterio de aceptación. Corren en local o testnet.`, "labs/CATALOG.md"],
   ["🧭", "Rutas por perfil", "Recorridos ordenados para desarrollo, arquitectura, auditoría, producto, investigación y empresa.", "learning-paths/README.md"],
   ["📜", "Solidity + Foundry", "Contratos con pruebas, fuzzing e invariantes. Vault, protocolos, token, oráculo y gobernador con timelock.", "labs/06-solidity-vault"],
@@ -76,9 +79,9 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Blockchain Learning Path — programa educativo en español</title>
-<meta name="description" content="Programa educativo en español para aprender blockchain de novato a profesional: ${modules.length} módulos, ${practiceCount} prácticas, custodia, auditoría, forensics y proyecto integrador.">
+<meta name="description" content="Programa educativo en español para aprender blockchain de novato a profesional: ${classCount} clases, ${practiceCount} prácticas, custodia, auditoría, forensics y proyecto integrador.">
 <meta property="og:title" content="Blockchain Learning Path">
-<meta property="og:description" content="${modules.length} módulos · ${practiceCount} prácticas · de novato a profesional. Blockchain, custodia, conciliación, PoR/PoL, auditoría y forensics.">
+<meta property="og:description" content="${classCount} clases · ${practiceCount} prácticas · de novato a profesional. Blockchain, custodia, conciliación, PoR/PoL, auditoría y forensics.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%93%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <style>
@@ -195,9 +198,9 @@ footer a{color:var(--acento);font-weight:600}
     ${features.map(([ic, t, d, href]) => `<a class="feat" href="${local(href)}"><div class="ic">${ic}</div><h3>${t}</h3><p>${esc(d)}</p></a>`).join("\n    ")}
   </div>
 
-  <h2 class="sec">Los ${modules.length} módulos</h2>
+  <h2 class="sec">Las ${classCount} clases</h2>
   <div class="parts">
-    ${modules.map((m) => `<a class="part" href="${local(m.href)}"><div class="num">${m.emoji}</div><div><div class="t">${esc(m.title)}</div><div class="c">Módulo ${m.num}</div></div></a>`).join("\n    ")}
+    ${modules.map((m) => `<a class="part" href="${local(m.href)}"><div class="num">${m.emoji}</div><div><div class="t">${esc(m.title)}</div><div class="c">Clases ${m.classes.map((item) => item.id).join(" y ")}</div></div></a>`).join("\n    ")}
   </div>
 
   <h2 class="sec">Cómo se aprende</h2>
@@ -233,4 +236,4 @@ footer a{color:var(--acento);font-weight:600}
 
 mkdirSync(join(ROOT, OUT), { recursive: true });
 writeFileSync(join(ROOT, OUT, "index.html"), html, "utf8");
-console.log(`${OUT}/index.html generado — ${modules.length} módulos, ${practiceCount} prácticas, v${version}`);
+console.log(`${OUT}/index.html generado — ${classCount} clases, ${practiceCount} prácticas, v${version}`);

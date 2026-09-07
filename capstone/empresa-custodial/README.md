@@ -36,4 +36,4 @@ node --test capstone/empresa-custodial/auditar.test.mjs
 
 ## Navegación
 
-[Proyecto final](../README.md) · [Módulos 29–32](../../curriculum/README.md) · [Laboratorios](../../labs/CATALOG.md)
+[Proyecto final](../README.md) · [Clases 29.1–32.2](../../curriculum/README.md) · [Laboratorios](../../labs/CATALOG.md)

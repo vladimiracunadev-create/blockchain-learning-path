@@ -2,7 +2,7 @@
 
 > [🏠 Programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [🧭 Rutas por perfil](../learning-paths/README.md) · [📊 Evaluación](evaluacion.md)
 
-Qué sabes hacer, en qué nivel, con qué módulos se aprende y **con qué evidencia se
+Qué sabes hacer, en qué nivel, con qué clases se aprende y **con qué evidencia se
 demuestra**. La última columna es la que convierte esto en una matriz útil: un nivel sin
 evidencia verificable es una opinión sobre uno mismo.
 
@@ -20,7 +20,7 @@ documento con criterio de aceptación cumplido, un contrato con sus tests.
 
 ## Competencias técnicas
 
-| Competencia | Inicial | Intermedio | Avanzado | Módulos | Evidencia |
+| Competencia | Inicial | Intermedio | Avanzado | Clases | Evidencia |
 |---|---|---|---|---|---|
 | **Criptografía aplicada** | Distingues hash de cifrado | Verificas una prueba de Merkle | Diseñas un esquema de integridad | [01](../curriculum/01-criptografia/README.md) | Prácticas 03–08 en verde |
 | **Sistemas distribuidos** | Explicas P2P y latencia | Reproduces una partición | Razonas trade-offs de consistencia | [02](../curriculum/02-sistemas-distribuidos/README.md) | Prácticas 09–10 |
@@ -36,7 +36,7 @@ documento con criterio de aceptación cumplido, un contrato con sus tests.
 
 ## Competencias financieras
 
-| Competencia | Inicial | Intermedio | Avanzado | Módulos | Evidencia |
+| Competencia | Inicial | Intermedio | Avanzado | Clases | Evidencia |
 |---|---|---|---|---|---|
 | **Microestructura y AMM** | Defines diferencial y profundidad | Calculas impacto y deslizamiento | Comparas AMM, libro y híbrido | [19](../curriculum/19-defi/README.md) | `pnpm lab:amm` |
 | **Riesgo DeFi** | Nombras los seis riesgos | Calculas factor de salud y liquidación | Auditas un protocolo con evidencia | [19](../curriculum/19-defi/README.md) | `pnpm lab:prestamo` + ficha (práctica 54) |
@@ -49,7 +49,7 @@ documento con criterio de aceptación cumplido, un contrato con sus tests.
 
 ## Competencias de seguridad, custodia y cumplimiento
 
-| Competencia | Inicial | Intermedio | Avanzado | Módulos | Evidencia |
+| Competencia | Inicial | Intermedio | Avanzado | Clases | Evidencia |
 |---|---|---|---|---|---|
 | **Modelado de amenazas** | Identificas activos y actores | Escribes un threat model completo | Priorizas por impacto y detectabilidad | [09](../curriculum/09-seguridad/README.md) · [13](../curriculum/13-interoperabilidad/README.md) | Threat model del capstone |
 | **Custodia** | Distingues los cuatro modelos | Diseñas un cuórum M-de-N | Documentas ceremonia y recuperación probada | [26](../curriculum/26-custodia-identidad/README.md) | `pnpm lab:quorum` + política |
@@ -65,7 +65,7 @@ documento con criterio de aceptación cumplido, un contrato con sus tests.
 
 | Competencia | Cómo se demuestra |
 |---|---|
-| **Decidir cuándo NO usar blockchain** | Matriz del [módulo 00](../curriculum/00-orientacion/README.md) resuelta con un caso donde la respuesta es «una base de datos» |
+| **Decidir cuándo NO usar blockchain** | Matriz de las [clases 00.1–00.2](../curriculum/00-orientacion/README.md) resuelta con un caso donde la respuesta es «una base de datos» |
 | **Explicar a no técnicos** | Discurso de 30 segundos y manejo de objeciones ([guía](explicar-blockchain-a-no-tecnicos.md)) |
 | **Citar con trazabilidad** | Toda afirmación normativa con fuente oficial, rango y fecha |
 | **Neutralidad analítica** | Un informe tuyo donde la conclusión favorece a la alternativa tradicional |

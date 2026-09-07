@@ -49,7 +49,7 @@ Cada flecha es una **puerta de calidad** con criterio de salida explícito:
 
 ## 🔍 Descubrimiento y diseño
 
-**Descubrimiento.** La primera puerta es la más barata de cruzar en la dirección correcta: ¿este problema necesita blockchain? Aplica la matriz de decisión del módulo 00 del programa (ver [currículo](../curriculum/README.md)): múltiples partes que escriben, ausencia razonable de intermediario confiable, valor en la liquidación programable. Si la respuesta es no, el mejor entregable del proyecto es un documento que lo diga.
+**Descubrimiento.** La primera puerta es la más barata de cruzar en la dirección correcta: ¿este problema necesita blockchain? Aplica la matriz de decisión de las clases 00.1–00.2 del programa (ver [currículo](../curriculum/README.md)): múltiples partes que escriben, ausencia razonable de intermediario confiable, valor en la liquidación programable. Si la respuesta es no, el mejor entregable del proyecto es un documento que lo diga.
 
 **Diseño.** Antes de escribir Solidity se escribe la **especificación**: qué hace el sistema, qué no hace, y — crucial — qué debe ser siempre verdad. Los entregables de esta fase:
 
@@ -96,7 +96,7 @@ El lanzamiento no es binario. Las tres estrategias arquetípicas:
 | Ejemplo de uso típico | Primitivas simples y maduras (estilo Uniswap v2 core) | Protocolos de préstamo y sistemas complejos | Casi todo lanzamiento serio nuevo desde 2021 |
 | Trade-off central | Seguridad de gobernanza a cambio de rigidez total | Flexibilidad a cambio de un vector de ataque nuevo | Complejidad operacional a cambio de riesgo acotado |
 
-Herramientas del **guarded launch**: caps de depósito por usuario y globales que suben gradualmente, **timelocks** en toda función administrativa (el usuario puede salir antes de que un cambio se aplique), **multisig** con firmantes independientes y umbral razonable, **circuit breakers** (pausas automáticas ante anomalías: retiros masivos, desviación de oráculo) y feature flags para activar módulos por etapas. Cada control temporal necesita fecha de expiración o plan de remoción: un "lanzamiento guardado" permanente es simplemente un protocolo centralizado.
+Herramientas del **guarded launch**: caps de depósito por usuario y globales que suben gradualmente, **timelocks** en toda función administrativa (el usuario puede salir antes de que un cambio se aplique), **multisig** con firmantes independientes y umbral razonable, **circuit breakers** (pausas automáticas ante anomalías: retiros masivos, desviación de oráculo) y feature flags para activar componentes por etapas. Cada control temporal necesita fecha de expiración o plan de remoción: un "lanzamiento guardado" permanente es simplemente un protocolo centralizado.
 
 Checklist mínima antes del primer depósito real:
 

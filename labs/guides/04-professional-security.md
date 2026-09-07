@@ -1,6 +1,6 @@
 # Guías 31–40 · Profesional y seguridad
 
-Este cuaderno pasa de construir a atacar y defender: tokens con roles, allowance, oráculos y las vulnerabilidades clásicas con su exploit y su corrección. Acompaña a los módulos [tokens](../../curriculum/08-tokens/README.md) y [seguridad](../../curriculum/09-seguridad/README.md).
+Este cuaderno pasa de construir a atacar y defender: tokens con roles, allowance, oráculos y las vulnerabilidades clásicas con su exploit y su corrección. Acompaña a las clases [tokens](../../curriculum/08-tokens/README.md) y [seguridad](../../curriculum/09-seguridad/README.md).
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 

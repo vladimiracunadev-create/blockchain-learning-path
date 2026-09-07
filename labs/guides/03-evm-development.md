@@ -1,6 +1,6 @@
 # Guías 21–30 · EVM y desarrollo
 
-Este cuaderno entra en la máquina virtual de Ethereum: selectores, calldata, eventos, gas y el primer contrato con Foundry. Acompaña a los módulos [Ethereum y EVM](../../curriculum/05-ethereum-evm/README.md) y [Solidity y Foundry](../../curriculum/06-solidity-foundry/README.md).
+Este cuaderno entra en la máquina virtual de Ethereum: selectores, calldata, eventos, gas y el primer contrato con Foundry. Acompaña a las clases [Ethereum y EVM](../../curriculum/05-ethereum-evm/README.md) y [Solidity y Foundry](../../curriculum/06-solidity-foundry/README.md).
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 

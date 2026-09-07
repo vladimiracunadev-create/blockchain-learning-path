@@ -20,11 +20,11 @@ Un laboratorio te enseña una técnica; un proyecto te obliga a tomar decisiones
 
 ## Proyecto disponible en el repositorio
 
-| Proyecto | Módulos | Qué demuestra | Estado |
+| Proyecto | Clases | Qué demuestra | Estado |
 |---|---|---|---|
 | [Community Funding](community-funding/README.md) | 06–11 | Contrato con reembolsos, invariantes, pruebas fuzz, eventos indexables e interfaz | Base del hilo conductor |
 
-`community-funding` es el proyecto transversal del programa: crece a lo largo de los módulos 06 a 11 y conecta con la [interfaz web](../apps/community-funding-web/README.md) y el [indexador de eventos](../apps/event-indexer/README.md).
+`community-funding` es el proyecto transversal del programa: crece a lo largo de las clases 06 a 11 y conecta con la [interfaz web](../apps/community-funding-web/README.md) y el [indexador de eventos](../apps/event-indexer/README.md).
 
 ## Otras ideas de portafolio
 

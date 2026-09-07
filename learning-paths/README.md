@@ -1,6 +1,6 @@
 # Rutas por perfil profesional
 
-Todas las rutas parten del tronco común 00–05 (orientación, criptografía, sistemas distribuidos, consenso, Bitcoin y EVM), que incluye la unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) entre el módulo 04 y el 05 — obligatoria para quien nunca ha usado una wallet. A partir de ahí, cada perfil prioriza módulos, laboratorios y un entregable de portafolio distinto. Elige la ruta que mejor describa el rol al que apuntas; puedes cambiar de ruta sin perder avance, porque el registro de progreso es el mismo. Comprueba tu nivel en cada competencia con la [matriz de competencias](../docs/skills-matrix.md), que exige **evidencia reproducible** para cada casilla.
+Todas las rutas parten del tronco común 00.1–05.2 (orientación, criptografía, sistemas distribuidos, consenso, Bitcoin y EVM), que incluye la unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) entre las clases 04.2 y 05.1 — obligatoria para quien nunca ha usado una wallet. A partir de ahí, cada perfil prioriza clases, laboratorios y un entregable de portafolio distinto. Elige la ruta que mejor describa el rol al que apuntas; puedes cambiar de ruta sin perder avance, porque el registro de progreso es el mismo. Comprueba tu nivel en cada competencia con la [matriz de competencias](../docs/skills-matrix.md), que exige **evidencia reproducible** para cada casilla.
 
 ```mermaid
 flowchart TD
@@ -26,7 +26,7 @@ flowchart TD
 
 ## Resumen de las diez rutas
 
-| Perfil | Módulos prioritarios | Laboratorios clave | Entregable de portafolio | Salida laboral típica |
+| Perfil | Clases prioritarias | Laboratorios clave | Entregable de portafolio | Salida laboral típica |
 |---|---|---|---|---|
 | Desarrollo | 06–10, 12 | 21–30, 31–35 | dApp integral probada con Foundry | Smart contract / full-stack Web3 developer |
 | Arquitectura | 02–05, 10–16 | 01–10, 41–46 | ADR de plataforma con trade-offs | Arquitecto de soluciones blockchain |
@@ -90,7 +90,7 @@ flowchart TD
 - **Secuencia recomendada:** 00 y 02 para el modelo mental; 10–13 para datos, escalado e interoperabilidad; 15–16 para arquitectura e infraestructura de nodos; y como núcleo [17-blockchain-en-la-empresa](../curriculum/17-blockchain-en-la-empresa/README.md) y [18-implementacion-empresarial](../curriculum/18-implementacion-empresarial/README.md), complementados con la [sección de industria](../industria/README.md) completa (cómo se construye una blockchain, stack, roles y ciclo de vida de un proyecto).
 - **Puede aligerar:** 06 (escritura de contratos) y 14.
 - **Laboratorios clave:** prácticas 01–10 y 46–50 (arquitectura avanzada y cierre de capstone).
-- **Entregable de portafolio:** el diseño de una red permisionada o híbrida con ADR, modelo de gobernanza, plan de operación y análisis de cumplimiento estilo módulo 18.
+- **Entregable de portafolio:** el diseño de una red permisionada o híbrida con ADR, modelo de gobernanza, plan de operación y análisis de cumplimiento estilo clases 18.1–18.2.
 - **Salida laboral:** consultor blockchain, líder técnico de proyectos enterprise, arquitecto de integraciones.
 
 ## Finanzas on-chain (DeFi)
@@ -111,7 +111,7 @@ flowchart TD
 - **Laboratorios clave:** 55–57 (neteo, circuito del pago, formas de dinero), 60 (diseño de MDBC), 64–68 (junta, memorando, DvP, bono, mercado en contratos) y 69 (custodia).
 - **Entregable de portafolio:** la arquitectura de un mercado de bonos tokenizados con modelo DvP justificado por liquidez y **ninguna función tradicional huérfana**.
 - **Salida laboral:** especialista en tokenización, blockchain bancario, infraestructura de mercado.
-- **Advertencia de la ruta:** el módulo 20 es la bisagra. Saltárselo convierte los seis siguientes en vocabulario memorizado.
+- **Advertencia de la ruta:** las clases 20.1–20.2 es la bisagra. Saltárselo convierte los seis siguientes en vocabulario memorizado.
 
 ## Cumplimiento y regulación
 
@@ -132,14 +132,14 @@ flowchart TD
 
 ## Nivelación
 
-- Sin programación previa: completa ejercicios de terminal y JavaScript básico antes del módulo 05.
+- Sin programación previa: completa ejercicios de terminal y JavaScript básico antes de las clases 05.1–05.2.
 - Con experiencia general: realiza `assessments/diagnostic.json`; si alcanzas 80 %, usa la ruta rápida descrita en la documentación del programa.
 - Con experiencia EVM: comienza por seguridad, pero entrega igualmente el ADR "¿por qué blockchain?".
 
 ## Navegación
 
 - [Inicio del programa](../README.md)
-- [Currículo completo (33 módulos)](../curriculum/README.md)
+- [Currículo completo (66 clases)](../curriculum/README.md)
 - [Catálogo de laboratorios](../labs/CATALOG.md)
 - [Evaluación](../docs/evaluacion.md) · [Checkpoints](../assessments/checkpoints.md)
 - [Sección de industria](../industria/README.md) · [Roadmap](../ROADMAP.md)

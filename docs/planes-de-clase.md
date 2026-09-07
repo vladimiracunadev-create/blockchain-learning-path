@@ -2,9 +2,9 @@
 
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [👤 Kit docente](../instructor/README.md)
 
-Planes listos para instructores. Cada módulo está pensado para **dos sesiones de 90
+Planes listos para instructores. Cada unidad contiene **dos clases de 90
 minutos** más trabajo autónomo. Este documento ofrece una plantilla de sesión, el mapa
-de sesiones por módulo y planes completos de ejemplo con su minutaje. Ver también el
+de clases por unidad y planes completos de ejemplo con su minutaje. Ver también el
 [syllabus](../instructor/syllabus.md) y el [kit docente](../instructor/README.md).
 
 ## Plantilla de sesión
@@ -20,9 +20,9 @@ Toda sesión se planifica con esta tabla: objetivo, actividad, tiempo y evidenci
 | Puesta en común | 75–85 | Explicación de resultados | Corrección de errores |
 | Cierre | 85–90 | Ticket de salida | Decisión, riesgo y duda |
 
-## Mapa de sesiones por módulo
+## Mapa de las 66 clases
 
-| Módulo | Sesión A | Sesión B | Reto | Error que debe detectar |
+| Unidad | Clase A | Clase B | Reto | Error que debe detectar |
 |---:|---|---|---|---|
 | 00 | confianza y coordinación | matriz de decisión | ADR 001 | usar blockchain por moda |
 | 01 | hash y firmas | Merkle y custodia | prueba de inclusión | hash ≠ cifrado |
@@ -42,15 +42,15 @@ Toda sesión se planifica con esta tabla: objetivo, actividad, tiempo y evidenci
 | 14 | compromisos y pruebas | circuitos y metadatos | mayoría de edad | ZK = anonimato total |
 | 15 | upgrades y MEV | operación/tokenomics | arquitectura final | desplegar = terminar |
 
-Los módulos 16–18 (producción: infraestructura, empresa e implementación) usan la misma
+Las clases 16.1–18.2 (producción: infraestructura, empresa e implementación) usan la misma
 plantilla con sesiones de laboratorio de operación y estudio de casos empresariales.
 
-El [módulo 28](../curriculum/28-data-analytics-onchain/README.md) (analítica de datos on-chain) se imparte en cuatro sesiones,
+Las [clases 28.1–28.2](../curriculum/28-data-analytics-onchain/README.md) (analítica de datos on-chain) se imparten en cuatro sesiones,
 una por nivel: fundamentos del dato · adquisición y preparación · indicadores y grafos ·
 anomalías, evaluación y ética. El error que debe detectar el alumno: **confundir una dirección
 con una persona y un indicador con una prueba**.
 
-## Plan 1 · Fundamentos — Criptografía (módulo 01, Sesión A)
+## Plan 1 · Fundamentos — Criptografía (clases 01.1–01.2, Sesión A)
 
 Objetivo: distinguir hash, cifrado y firma, y explicar por qué un hash prueba integridad.
 
@@ -63,7 +63,7 @@ Objetivo: distinguir hash, cifrado y firma, y explicar por qué un hash prueba i
 | 75–85 | Puesta en común: ¿por qué no se puede "descifrar" un hash? |
 | 85–90 | Ticket de salida: un caso donde firmar ≠ cifrar |
 
-## Plan 2 · Solidity — Vault seguro (módulo 06, Sesión A)
+## Plan 2 · Solidity — Vault seguro (clases 06.1–06.2, Sesión A)
 
 Objetivo: aplicar checks-effects-interactions y escribir un test de reentrancia.
 
@@ -76,7 +76,7 @@ Objetivo: aplicar checks-effects-interactions y escribir un test de reentrancia.
 | 75–85 | Puesta en común: por qué el guard es defensa en profundidad |
 | 85–90 | Ticket de salida: invariante del Vault en una frase |
 
-## Plan 3 · Seguridad — CTF de exploits (módulo 09, Sesión A)
+## Plan 3 · Seguridad — CTF de exploits (clases 09.1–09.2, Sesión A)
 
 Objetivo: pensar como atacante y documentar un hallazgo con impacto y mitigación.
 
@@ -89,7 +89,7 @@ Objetivo: pensar como atacante y documentar un hallazgo con impacto y mitigació
 | 75–85 | Puesta en común: redactar el hallazgo (impacto, probabilidad, mitigación) |
 | 85–90 | Ticket de salida: qué control habría prevenido el exploit |
 
-## Plan 4 · Empresa — Blockchain empresarial (módulo 17, Sesión A)
+## Plan 4 · Empresa — Blockchain empresarial (clases 17.1–17.2, Sesión A)
 
 Objetivo: decidir entre red pública, permisionada o base de datos para un caso real.
 

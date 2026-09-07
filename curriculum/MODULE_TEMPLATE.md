@@ -1,24 +1,54 @@
-# NN · Nombre del módulo
+# NN · Tema de las clases NN.1–NN.2
 
 > **Nivel:** … · ⏱️ **Duración estimada:** … · **Fuente:** *Libro* (Autor) y *Libro* (Autor)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [NN · Módulo previo](../NN-slug/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [NN · Módulo siguiente](../NN-slug/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases previas](../NN-slug/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases siguientes](../NN-slug/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 <!--
   Las tres líneas de la cabecera son OBLIGATORIAS y `pnpm check` las verifica:
-  la de navegación encadena el módulo con sus vecinos (insertar uno en medio
+  la de navegación encadena la unidad de clases con sus vecinas (insertar una en medio
   rompe la cadena en silencio) y la de glosario/novatos garantiza que quien se
   atasca en cualquier punto tenga a mano el vocabulario y la guía de entrada.
 
-  Al añadir un módulo hay que actualizar TAMBIÉN:
+  Al añadir una pareja de clases hay que actualizar TAMBIÉN:
   - assessments/module-quizzes.json  → su autoevaluación (mínimo 3 preguntas)
-  - docs/bibliografia.md             → la fila de la tabla obra → módulo
+  - docs/bibliografia.md             → la fila de la tabla obra → clases
   - los vecinos                      → sus enlaces anterior/siguiente
   `pnpm check` falla si falta cualquiera de las cuatro cosas.
 -->
 
 ---
+
+## 🧭 Plan de clases
+
+### Clase NN.1 · Fundamento observable
+
+**Pregunta guía:** una pregunta que obligue a explicar causas, no a repetir una definición.
+
+**Enfoque pedagógico:** el método que mejor corresponde al tema —demostración,
+simulación, investigación de incidente, taller, debate o auditoría— y por qué se elige.
+
+Explicación clara de cómo se construye el modelo mental, qué conocimiento previo se
+activa y qué límite debe descubrir el estudiante.
+
+**Caso de trabajo:** una situación concreta con datos suficientes para razonar.
+
+**Comprobación formativa:** una pregunta breve que revele el error conceptual principal.
+
+**Evidencia de aprendizaje:** un artefacto reproducible y su criterio de aceptación.
+
+### Clase NN.2 · Aplicación y decisión
+
+Debe usar **otro método**, aumentar la dificultad y reutilizar explícitamente la
+evidencia de NN.1. No copies la estructura narrativa cambiando sustantivos: explica
+qué decisión, incidente o contradicción vuelve necesaria esta segunda clase.
+
+**Caso de trabajo:** un escenario diferente o una complicación real del primero.
+
+**Comprobación formativa:** una pregunta que exija transferir el concepto a otro contexto.
+
+**Evidencia de aprendizaje:** una decisión, implementación o informe revisable por otra persona.
 
 ---
 
@@ -103,7 +133,7 @@ Activos, actores, riesgos y mitigaciones. Reglas de laboratorio (local/testnet, 
 
 ## ✅ Criterio de dominio
 
-Evidencias necesarias para avanzar al siguiente módulo.
+Evidencias necesarias para avanzar a las clases siguientes.
 
 ---
 
@@ -111,8 +141,8 @@ Evidencias necesarias para avanzar al siguiente módulo.
 
 Cierra con una fila de navegación que enlace, con los slugs reales:
 
-- **⬅️ Módulo anterior** → `../<slug-anterior>/README.md`
+- **⬅️ Clases anteriores** → `../<slug-anterior>/README.md`
 - **📚 Índice del currículo** → `../README.md`
-- **➡️ Módulo siguiente** → `../<slug-siguiente>/README.md`
+- **➡️ Clases siguientes** → `../<slug-siguiente>/README.md`
 
-El primer módulo omite el enlace anterior y el último omite el siguiente.
+La primera pareja de clases omite el enlace anterior y la última omite el siguiente.

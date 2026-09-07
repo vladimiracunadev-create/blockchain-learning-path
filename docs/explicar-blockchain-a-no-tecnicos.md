@@ -1,11 +1,11 @@
 # 🗣️ Cómo explicar blockchain a clientes y personas que no conocen el tema
 
-> [⬅️ Volver al programa](../README.md) · [🏢 Módulo 17 · Blockchain en la empresa](../curriculum/17-blockchain-en-la-empresa/README.md) · [💼 Industria · Modelos de negocio](../industria/05-modelos-de-negocio.md)
+> [⬅️ Volver al programa](../README.md) · [🏢 Clases 17.1–17.2 · Blockchain en la empresa](../curriculum/17-blockchain-en-la-empresa/README.md) · [💼 Industria · Modelos de negocio](../industria/05-modelos-de-negocio.md)
 
 El mejor caso de negocio muere si la contraparte no lo entiende. Esta guía reúne, en un
 solo lugar, el método de comunicación que usa el sector para explicar blockchain a un
 directorio, un cliente o un familiar **sin jerga y sin prometer nada que no se pueda
-cumplir**. Es material del [módulo 17](../curriculum/17-blockchain-en-la-empresa/README.md),
+cumplir**. Es material de las [clases 17.1–17.2](../curriculum/17-blockchain-en-la-empresa/README.md),
 extraído aquí como referencia rápida.
 
 ## La regla de oro
@@ -67,7 +67,7 @@ Elige **una** analogía y menciona su límite: prometer de más destruye la cred
 
 ## 🎯 Practícalo
 
-El [reto verificable del módulo 17](../curriculum/17-blockchain-en-la-empresa/README.md)
+El [reto verificable de las clases 17.1–17.2](../curriculum/17-blockchain-en-la-empresa/README.md)
 te pide construir un caso de negocio y acompañarlo del discurso de 30 segundos, sin usar
 ninguno de los términos de la columna "No digas". Grábate explicándolo a alguien sin
 formación técnica: si lo entiende y sabe por qué le conviene, lo lograste.
@@ -76,4 +76,4 @@ formación técnica: si lo entiende y sabe por qué le conviene, lo lograste.
 
 ## 🧭 Navegación
 
-[🏠 Programa](../README.md) · [🏢 Módulo 17](../curriculum/17-blockchain-en-la-empresa/README.md) · [🏭 Industria](../industria/README.md) · [📚 Currículo](../curriculum/README.md)
+[🏠 Programa](../README.md) · [🏢 Clases 17.1–17.2](../curriculum/17-blockchain-en-la-empresa/README.md) · [🏭 Industria](../industria/README.md) · [📚 Currículo](../curriculum/README.md)

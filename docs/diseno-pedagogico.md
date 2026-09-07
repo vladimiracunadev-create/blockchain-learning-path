@@ -3,9 +3,9 @@
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📝 Evaluación](evaluacion.md)
 
 Este documento describe **cómo está diseñado el aprendizaje** del programa: el ciclo
-de trabajo de cada módulo, la taxonomía de objetivos, la construcción de una lección,
+de trabajo de cada clase, la taxonomía de objetivos, la construcción de una lección,
 el manejo de la carga cognitiva y la estrategia de evaluación. No es un temario; es la
-ingeniería instruccional que sostiene los 33 módulos.
+ingeniería instruccional que sostiene las 66 clases.
 
 ## Principios
 
@@ -29,7 +29,7 @@ Al completar el programa, el estudiante puede:
 
 ## El ciclo de aprendizaje
 
-Cada módulo recorre cinco fases. No se avanza a "construir" sin haber "experimentado",
+Cada clase recorre cinco fases. No se avanza a "construir" sin haber "experimentado",
 ni se cierra sin "verificar". El ciclo es iterativo: verificar puede devolver a comprender.
 
 ```mermaid
@@ -53,7 +53,7 @@ flowchart LR
 ## Taxonomía de objetivos
 
 Cada nivel cognitivo se mapea a un verbo observable, un tipo de actividad y una
-evidencia calificable. Un módulo maduro cubre desde recordar hasta crear.
+evidencia calificable. Una clase madura cubre desde recordar hasta crear.
 
 | Nivel | Verbo observable | Tipo de actividad | Evidencia |
 |---|---|---|---|
@@ -66,7 +66,7 @@ evidencia calificable. Un módulo maduro cubre desde recordar hasta crear.
 
 ## Construcción de una lección
 
-Cada módulo usa la plantilla de [`curriculum/MODULE_TEMPLATE.md`](../curriculum/MODULE_TEMPLATE.md).
+Cada unidad de dos clases usa la plantilla de [`curriculum/MODULE_TEMPLATE.md`](../curriculum/MODULE_TEMPLATE.md).
 Cada sección tiene un propósito instruccional explícito.
 
 | Sección | Propósito |
@@ -123,10 +123,10 @@ Reglas de aplicación:
   Inventar detalle para rellenar la plantilla es peor que no tenerla.
 
 Ejemplos aplicados: la comisión de Bitcoin en el
-[módulo 04](../curriculum/04-bitcoin/README.md), el desglose de gas en el
-[módulo 05](../curriculum/05-ethereum-evm/README.md), la lectura de trazas en el
-[módulo 06](../curriculum/06-solidity-foundry/README.md) y los decimales en el
-[módulo 07](../curriculum/07-dapps/README.md).
+[clases 04.1–04.2](../curriculum/04-bitcoin/README.md), el desglose de gas en el
+[clases 05.1–05.2](../curriculum/05-ethereum-evm/README.md), la lectura de trazas en el
+[clases 06.1–06.2](../curriculum/06-solidity-foundry/README.md) y los decimales en el
+[clases 07.1–07.2](../curriculum/07-dapps/README.md).
 
 ## Evaluación formativa y sumativa
 
@@ -134,15 +134,15 @@ Ambas conviven; ver [Evaluación](evaluacion.md) para rúbricas y umbrales.
 
 | Tipo | Cuándo | Función | Ejemplos |
 |---|---|---|---|
-| Formativa | Durante el módulo | Corregir el rumbo, dar retroalimentación | Diagnóstico, ticket de salida, revisión en pareja |
-| Sumativa | Al cerrar el módulo o etapa | Certificar dominio | Reto verificable, CTF, proyecto final |
+| Formativa | Durante la clase | Corregir el rumbo, dar retroalimentación | Diagnóstico, ticket de salida, revisión en pareja |
+| Sumativa | Al cerrar la unidad o etapa | Certificar dominio | Reto verificable, CTF, proyecto final |
 
 La retroalimentación formativa es frecuente y de bajo costo; la sumativa es escasa y
 exige evidencia reproducible.
 
 ## Casos reales y límites de la analogía
 
-- **Casos reales:** cada módulo ancla la teoría en incidentes o protocolos concretos
+- **Casos reales:** cada clase ancla la teoría en incidentes o protocolos concretos
   (reentrancia del DAO, congestión de gas, fallos de oráculo). Un modelo sin caso queda
   como abstracción inerte.
 - **Límites de la analogía:** toda analogía se presenta y luego **se rompe** de forma

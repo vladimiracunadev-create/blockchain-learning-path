@@ -7,12 +7,62 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 25.1 · Infraestructura del mercado de capitales
+
+**Pregunta guía:** ¿Qué hacen emisión, negociación, compensación, depósito y liquidación?
+
+**Enfoque pedagógico:** mapa vivo de infraestructura financiera.
+
+Cada estudiante representa bolsa, CCP, CSD, custodio o banco de liquidación. Una falla muestra qué riesgo absorbe cada institución y por qué existe.
+
+**Núcleo conceptual:**
+
+- bolsa, CCP, CSD y custodio.
+- órdenes, neteo y colateral.
+- PFMI y riesgo sistémico.
+
+**Caso de trabajo:** Una operación se negocia hoy y liquida después con exposición bilateral.
+
+**Actividad:** Asignar cada evento y riesgo a la infraestructura responsable.
+
+**Comprobación formativa:** ¿Qué función no desaparece aunque desaparezca su intermediario actual?
+
+**Evidencia de aprendizaje:** Mapa operativo que explique por qué existe cada intermediario.
+
+### Clase 25.2 · Mercado tokenizado y DvP
+
+**Pregunta guía:** ¿Qué elimina la atomicidad y qué funciones institucionales permanecen?
+
+**Enfoque pedagógico:** diseño comparado de DvP.
+
+Cuatro combinaciones de dinero y valor on/off-chain se evalúan con el mismo trade. La atomicidad se separa de custodia, finalidad legal y gobierno.
+
+**Núcleo conceptual:**
+
+- entrega contra pago.
+- dinero y valores tokenizados.
+- eventos corporativos y gobierno.
+
+**Caso de trabajo:** Un bono se entrega on-chain, pero el efectivo queda en otro sistema.
+
+**Actividad:** Comparar cuatro modelos de DvP y sus dependencias.
+
+**Comprobación formativa:** ¿Qué evidencia demuestra entrega y pago bajo el mismo corte?
+
+**Evidencia de aprendizaje:** Diseño objetivo con riesgos nuevos, heredados y controles.
+<!-- plan-clases:fin -->
+
+---
+
 Con el activo ya tokenizado, queda el sistema que lo hace circular: **emisión, negociación,
 compensación, liquidación, custodia y eventos corporativos**. Es la parte de las finanzas
 con más infraestructura acumulada, y también donde la entrega contra pago atómica ofrece el
 beneficio más medible de todo el programa: **eliminar dos días de exposición**.
 
-El módulo hace las dos mitades. Primero, cómo funciona hoy un mercado de valores y por qué
+Las dos clases cubren ambas mitades. Primero, cómo funciona hoy un mercado de valores y por qué
 cada intermediario está donde está —ninguno es gratuito y ninguno es accidental—. Después,
 qué desaparece, qué permanece y qué **aparece nuevo** al llevarlo a un registro compartido.
 
@@ -137,7 +187,7 @@ Y ahora la parte que casi nunca se cuenta, y que decide si el proyecto es viable
 participantes se netean y se liquida el saldo. Liquidar cada una bruta exige tener el
 efectivo y los valores completos en cada momento. Si esas mil operaciones suman 500 millones
 brutos pero solo 40 millones netos, la liquidación atómica **multiplica por 12,5 la liquidez
-necesaria**. Este es el intercambio real —el mismo que viste en el módulo 20 entre LBTR y
+necesaria**. Este es el intercambio real —el mismo que viste en las clases 20.1–20.2 entre LBTR y
 neto diferido, ahora en valores— y explica por qué los diseños serios de mercado tokenizado
 incorporan financiación intradía, ciclos de neteo o préstamo de valores automatizado. No es
 un detalle de implementación: es **la** decisión de arquitectura del sistema.
@@ -173,13 +223,13 @@ que por eso el mercado tradicional eligió deliberadamente no hacerlo así.
 - **Cumplimiento**: elegibilidad del inversor, sanciones, informes al supervisor.
 - **Responsabilidad ante error.** Alguien responde cuando algo sale mal; un contrato no
   indemniza.
-- **El servicio del activo** del [módulo 24](../24-tokenizacion-rwa/README.md).
+- **El servicio del activo** de las [clases 24.1–24.2](../24-tokenizacion-rwa/README.md).
 
 **Aparece, nuevo:**
 
 - **Riesgo de contrato inteligente** sobre la infraestructura misma del mercado. Un fallo
   ya no afecta a un producto: afecta al registro de titularidad.
-- **Gestión de llaves a escala institucional** ([módulo 26](../26-custodia-identidad/README.md)).
+- **Gestión de llaves a escala institucional** ([clases 26.1–26.2](../26-custodia-identidad/README.md)).
 - **Riesgo de disponibilidad de la red** y su congestión en el peor momento.
 - **MEV sobre operaciones de valores**: una orden grande visible antes de ejecutarse.
 - **La pregunta de gobernanza**: ¿quién puede actualizar los contratos que **son** el mercado?
@@ -201,7 +251,7 @@ residencia del titular, que no está en la cadena; y un reparto que itere sobre 
 titulares puede no caber en un bloque, lo que obliga al patrón de **reclamación** (el
 contrato reserva y cada titular retira) en vez de reparto activo. Son restricciones de
 ingeniería conocidas con solución conocida — pero hay que diseñarlas, y el laboratorio del
-módulo las hace explícitas.
+estas clases las hacen explícitas.
 
 > 💡 **En una frase:** la liquidación atómica no hace el mercado más barato por sí sola;
 > **cambia coste de conciliación y riesgo de contraparte por necesidad de liquidez**, y si
@@ -221,7 +271,7 @@ módulo las hace explícitas.
   técnicamente no la hace oponible en un concurso. Las infraestructuras reguladas que usan
   DLT mantienen esa designación y la anclan al evento en cadena.
 - **Trocear una orden grande es obligatorio, no opcional.** La microestructura del
-  [módulo 19](../19-defi/README.md) se aplica igual: una orden que mueve el mercado se
+  [clases 19.1–19.2](../19-defi/README.md) se aplica igual: una orden que mueve el mercado se
   ejecuta peor, y ser visible antes de ejecutarse la empeora todavía más.
 - **La fecha de registro como bloque tiene un borde.** En cadenas con finalidad
   probabilística, una reorganización cambiaría quién cobra. En un valor regulado eso es
@@ -255,7 +305,7 @@ pnpm lab:bono
 pnpm test
 ```
 
-4. **La versión en contratos.** El laboratorio integrado del módulo 22 implementa el mismo
+4. **La versión en contratos.** El laboratorio integrado de las clases 22.1–22.2 implementa el mismo
    DvP en Solidity con dinero mayorista simulado y un bono tokenizado:
 
 ```bash
@@ -302,7 +352,7 @@ actualizar los contratos y con qué control.
   reales, sin ofertas, sin fondos. Nada aquí constituye oferta ni recomendación de inversión.
 - Emitir o negociar valores está sujeto a autorización en prácticamente cualquier
   jurisdicción. Construir la infraestructura no exime de ello:
-  ver [módulo 27](../27-regulacion-cumplimiento/README.md).
+  ver [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md).
 - El contrato que **es** el mercado concentra el riesgo: auditoría externa, timelock,
   procedimiento de emergencia ensayado y separación de deberes son requisitos, no mejoras.
 - Diseña desde el principio el procedimiento de **error humano**: una operación mal
@@ -318,7 +368,7 @@ actualizar los contratos y con qué control.
 - IOSCO — mercados de valores y activos digitales: <https://www.iosco.org/>
 - Banco Central Europeo — TARGET2-Securities y liquidación de valores: <https://www.ecb.europa.eu/paym/target/t2s/html/index.en.html>
 - CMF Chile — mercado de valores y regulación aplicable: <https://www.cmfchile.cl/>
-- Módulos relacionados: [20 · Dinero y liquidación](../20-dinero-banca-liquidacion/README.md) · [24 · Tokenización y RWA](../24-tokenizacion-rwa/README.md) · [22 · Laboratorio de mercado tokenizado](../../labs/22-cbdc-mercado-tokenizado/README.md)
+- Clases relacionadas: [20 · Dinero y liquidación](../20-dinero-banca-liquidacion/README.md) · [24 · Tokenización y RWA](../24-tokenizacion-rwa/README.md) · [22 · Laboratorio de mercado tokenizado](../../labs/22-cbdc-mercado-tokenizado/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -331,4 +381,4 @@ actualizar los contratos y con qué control.
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 24 · Tokenización y RWA](../24-tokenizacion-rwa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 26 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md)
+⬅️ [Clases 24.1–24.2 · Tokenización y RWA](../24-tokenizacion-rwa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 26.1–26.2 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md)

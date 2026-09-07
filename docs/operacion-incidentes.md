@@ -98,7 +98,7 @@ Citados como referencia de proceso, no como garantía de resultado:
 
 - **Euler Finance (2023)**: tras un exploit de ~197 M USD, el equipo combinó negociación pública on-chain, presión coordinada y colaboración con investigadores; el atacante devolvió prácticamente todos los fondos en semanas. Lección: mantener canales de negociación abiertos y comunicar con disciplina puede recuperar lo que la técnica ya no puede.
 - **Curve (2023, vulnerabilidad de Vyper)**: la coordinación entre equipos, whitehats y MEV searchers permitió rescatar una parte significativa de los fondos en riesgo. Lección: las relaciones con el ecosistema de seguridad se construyen antes del incidente.
-- Como contraejemplo estudiado en el módulo de seguridad: los puentes explotados en 2021-2022 (Ronin, Wormhole, Nomad) muestran el costo de detectar tarde y de claves concentradas.
+- Como contraejemplo estudiado en las clases de seguridad: los puentes explotados en 2021-2022 (Ronin, Wormhole, Nomad) muestran el costo de detectar tarde y de claves concentradas.
 
 ## Ejercicio
 

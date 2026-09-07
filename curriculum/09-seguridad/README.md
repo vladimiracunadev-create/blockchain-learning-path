@@ -8,6 +8,56 @@
 
 ---
 
+<!-- plan-clases:inicio -->
+## 🧭 Plan de clases
+
+### Clase 09.1 · Modelado de amenazas y revisión manual
+
+**Pregunta guía:** ¿Qué puede romper un atacante si conoce mejor el sistema que su autor?
+
+**Enfoque pedagógico:** revisión ofensiva por fronteras de confianza.
+
+La clase comienza por activos y actores, no por una lista de bugs. Después sigue entradas maliciosas a través de llamadas y dependencias hasta formular un hallazgo causal.
+
+**Núcleo conceptual:**
+
+- activos, actores y fronteras de confianza.
+- reentrancy, acceso y lógica.
+- impacto, probabilidad y severidad.
+
+**Caso de trabajo:** Una función correcta aislada falla al combinarse con un token malicioso.
+
+**Actividad:** Trazar superficie de ataque y revisar una función línea por línea.
+
+**Comprobación formativa:** Describe condición, impacto y actor necesario para explotar el caso revisado.
+
+**Evidencia de aprendizaje:** Hallazgo con condición, impacto, prueba mínima y recomendación.
+
+### Clase 09.2 · Auditoría reproducible y remediación
+
+**Pregunta guía:** ¿Cómo se demuestra que un hallazgo fue corregido sin introducir otro?
+
+**Enfoque pedagógico:** laboratorio exploit-parche-retest.
+
+Un exploit local obliga a reproducir antes de opinar. El parche se somete a regresión y a una ruta alternativa para separar corrección aparente de remediación completa.
+
+**Núcleo conceptual:**
+
+- alcance y commit auditado.
+- análisis estático, fuzzing e invariantes.
+- regresión, retest y riesgo residual.
+
+**Caso de trabajo:** Un parche bloquea el exploit conocido pero deja otra ruta equivalente.
+
+**Actividad:** Explotar en local, corregir y ejecutar una prueba de regresión.
+
+**Comprobación formativa:** ¿Qué evidencia permite cerrar un hallazgo y qué riesgo puede permanecer?
+
+**Evidencia de aprendizaje:** Informe versionado con evidencia, corrección y resultado del retest.
+<!-- plan-clases:fin -->
+
+---
+
 ## 🎯 Objetivos
 
 - Reconocer las clases de vulnerabilidad más frecuentes en contratos y sus señales típicas en el código.
@@ -109,7 +159,7 @@ Trail of Bits, OpenZeppelin y las plataformas de concursos como Code4rena o Sher
 | Wormhole | 2022 | ~326 M USD | Verificación de firma defectuosa: aceptaba una función de validación obsoleta | Todo lo que "verifica" debe probarse con entradas hostiles, no solo con las válidas |
 | Euler Finance | 2023 | ~197 M USD | Una función de donación rompía el invariante de solvencia usado por la liquidación | Cada función nueva debe evaluarse contra los invariantes de todo el sistema; los fondos fueron devueltos tras negociación |
 
-Nótese el patrón: solo uno de los cuatro es "un bug de Solidity" clásico. Los otros tres son fallos de diseño, de custodia de claves o de interacción entre módulos correctos por separado.
+Nótese el patrón: solo uno de los cuatro es "un bug de Solidity" clásico. Los otros tres son fallos de diseño, de custodia de claves o de interacción entre componentes correctos por separado.
 
 ### Qué detecta cada técnica (y qué no)
 
@@ -127,7 +177,7 @@ La consecuencia práctica: un `slither .` limpio y un fuzzing en verde acotan cl
 
 ### Anatomía de un ataque de préstamo relámpago
 
-Los retos de este módulo se entienden mejor viendo cómo se combinan. Un *flash loan* no es una vulnerabilidad: es una herramienta que **elimina el capital como barrera de entrada**. Quien no tiene un millón puede operar como si lo tuviera, siempre que lo devuelva en la misma transacción.
+Los retos de esta unidad de clases se entienden mejor viendo cómo se combinan. Un *flash loan* no es una vulnerabilidad: es una herramienta que **elimina el capital como barrera de entrada**. Quien no tiene un millón puede operar como si lo tuviera, siempre que lo devuelva en la misma transacción.
 
 Eso convierte ataques que eran teóricos en ataques que cualquiera puede ejecutar.
 
@@ -231,4 +281,4 @@ Toma un contrato vulnerable de `security-challenges`, escribe una prueba mínima
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 08 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)
+⬅️ [Clases 08.1–08.2 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 10.1–10.2 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)
