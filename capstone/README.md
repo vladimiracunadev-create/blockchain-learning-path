@@ -6,6 +6,8 @@ Construye un protocolo pequeño que resuelva un problema real y permita demostra
 
 Un capstone aprobado demuestra que puedes: elegir blockchain solo cuando corresponde, escribir contratos que resisten fuzzing e invariantes, razonar sobre amenazas antes de que ocurran y comunicar todo eso a un evaluador escéptico.
 
+El programa ofrece además el caso profesional guiado **[Aurora Custody](empresa-custodial/README.md)**. Recibes ledger, wallets, transacciones y exports de exchange para demostrar activos, obligaciones, operaciones on-chain/off-chain y discrepancias. Es la opción recomendada para la línea de custodia, auditoría y forensics de los módulos 29–32.
+
 ## Requisitos mínimos
 
 1. **Protocolo con contratos probados con Foundry**, incluyendo pruebas unitarias, de integración, fuzzing e invariantes sobre las propiedades críticas del sistema. Contratos documentados con NatSpec.

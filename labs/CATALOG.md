@@ -1,8 +1,8 @@
-# 🧪 Catálogo de 83 prácticas
+# 🧪 Catálogo de 91 prácticas
 
 > [⬅️ Cuaderno de laboratorios](guides/README.md) · [📚 Currículo](../curriculum/README.md) · [🏠 Programa](../README.md)
 
-Las 83 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
+Las 91 prácticas del programa, agrupadas por bloque. Cada fila enlaza al **módulo**
 del currículo que la sustenta y a su **resolución explicada** (cómo se resuelve, el
 comando, la salida esperada y el error común).
 
@@ -160,6 +160,21 @@ datos personales.
 
 > Las prácticas 72–83 continúan la numeración sin renumerar nada: el 71 es la unidad de wallets
 > y los números 01–70 conservan su identidad en progresos, guías y registros ya existentes.
+
+## Prácticas 84–91 · Custodia, auditoría y forensics
+
+📖 Resolución explicada: [08-custodia-auditoria.md](guides/08-custodia-auditoria.md) · Teoría: módulos [29](../curriculum/29-exchanges-operaciones-custodia/README.md)–[32](../curriculum/32-forensics-auditoria-gobernanza/README.md).
+
+| # | Práctica | Nivel | Evidencia | Módulo | Resolución |
+|---:|---|---|---|---|---|
+| 84 | CEX, DEX y punto de liquidación | profesional | **auto** | [29](../curriculum/29-exchanges-operaciones-custodia/README.md) | [ver](guides/08-custodia-auditoria.md) |
+| 85 | Arquitectura hot/warm/cold y firmantes | profesional | política | [29](../curriculum/29-exchanges-operaciones-custodia/README.md) | [ver](guides/08-custodia-auditoria.md) |
+| 86 | Conciliación de tres registros | profesional | **auto** | [30](../curriculum/30-contabilidad-conciliacion/README.md) | [ver](guides/08-custodia-auditoria.md) |
+| 87 | Corte, procedencia y excepciones | profesional | **auto** | [30](../curriculum/30-contabilidad-conciliacion/README.md) | [ver](guides/08-custodia-auditoria.md) |
+| 88 | Merkle Tree de pasivos | profesional | **auto** | [31](../curriculum/31-proof-reserves-solvencia/README.md) | [ver](guides/08-custodia-auditoria.md) |
+| 89 | Assets vs liabilities | profesional | **auto** | [31](../curriculum/31-proof-reserves-solvencia/README.md) | [ver](guides/08-custodia-auditoria.md) |
+| 90 | Grafo, privacidad y falsa atribución | profesional | **auto** | [32](../curriculum/32-forensics-auditoria-gobernanza/README.md) | [ver](guides/08-custodia-auditoria.md) |
+| 91 | Caso Aurora Custody | profesional | **auto** · informe | [Capstone](../capstone/README.md) | [ver](guides/08-custodia-auditoria.md) |
 
 ---
 

@@ -2,18 +2,18 @@
 
 # ⛓️ Blockchain Learning Path
 
-## **29 módulos · 83 prácticas · de cero a la infraestructura financiera y la analítica on-chain**
+## **33 módulos · 91 prácticas · de novato a profesional en blockchain, custodia y auditoría**
 
-**Programa integral y progresivo en español: de los fundamentos técnicos de blockchain a los sistemas financieros programables — criptografía, sistemas distribuidos, Bitcoin, Ethereum/EVM, contratos, activos digitales, seguridad, L2, ZK, infraestructura y empresa; y después DeFi, dinero y liquidación, stablecoins, depósitos tokenizados, CBDC/MDBC, pagos y FX on-chain, tokenización, RWA, mercados de capitales, custodia, identidad digital y regulación. Con laboratorios ejecutables y un proyecto integrador.**
+**Programa integral y progresivo en español: fundamentos, desarrollo, seguridad, infraestructura y empresa; finanzas on-chain sin convertir el programa en un curso financiero; y una especialización profesional en exchanges, custodia, contabilidad blockchain, Proof of Reserves/Liabilities, conciliación, forensics, auditoría, gobernanza y regulación. Con laboratorios ejecutables y un caso custodial integrador.**
 
 [![CI](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/ci.yml)
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.10.1-7c5cff?style=for-the-badge)](CHANGELOG.md)
-[![Módulos](https://img.shields.io/badge/módulos-29-7c5cff?style=for-the-badge)](curriculum/README.md)
-[![Prácticas](https://img.shields.io/badge/prácticas-83-2e8b57?style=for-the-badge)](labs/CATALOG.md)
-[![Nivel](https://img.shields.io/badge/nivel-inicial%20→%20infraestructura%20financiera-e67e22?style=for-the-badge)](ROADMAP.md)
+[![Versión](https://img.shields.io/badge/versión-0.11.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Módulos](https://img.shields.io/badge/módulos-33-7c5cff?style=for-the-badge)](curriculum/README.md)
+[![Prácticas](https://img.shields.io/badge/prácticas-91-2e8b57?style=for-the-badge)](labs/CATALOG.md)
+[![Nivel](https://img.shields.io/badge/nivel-novato%20→%20profesional-e67e22?style=for-the-badge)](ROADMAP.md)
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![License](https://img.shields.io/badge/code-MIT-3fb950?style=for-the-badge)](LICENSE)
 [![Content](https://img.shields.io/badge/contenido-CC%20BY%204.0-3fb950?style=for-the-badge)](LICENSE-CONTENT)
@@ -53,7 +53,7 @@ con seguridad y qué hacer cuando algo sale mal — antes de entrar en Ethereum.
 
 ## 🎯 Qué es esto
 
-Un currículo modular y **secuencial** que cubre el espectro completo de blockchain, paso a paso, en **29 módulos numerados (00→28)** agrupados en nueve etapas, más un proyecto final. Cada módulo es una carpeta con un `README.md` que incluye:
+Un currículo modular y **secuencial** que cubre el espectro completo de blockchain, paso a paso, en **33 módulos numerados (00→32)** agrupados en diez etapas, más un proyecto final. Cada módulo es una carpeta con un `README.md` que incluye:
 
 - 🎯 **Objetivos** medibles y **resultados de aprendizaje** verificables.
 - 🗺️ **Temas** con el porqué de cada uno y **conceptos** con definiciones.
@@ -86,7 +86,7 @@ Cada etapa se apoya explícitamente en la literatura de referencia del sector; e
 
 ## 📥 Llévate el curso: apps y manual
 
-Todo el contenido —los 29 módulos, la industria, los laboratorios, la regulación, los casos reales, los ADR y el proyecto final— viaja contigo. **Las apps funcionan sin conexión**: sirven para estudiar en el metro o en un aula sin wifi.
+Todo el contenido —los 33 módulos, la industria, los laboratorios, la regulación, los casos reales, los ADR y el proyecto final— viaja contigo. **Las apps funcionan sin conexión**: sirven para estudiar en el metro o en un aula sin wifi.
 
 | Formato | Descarga | Notas |
 |---|---|---|
@@ -123,7 +123,7 @@ La charla completa dura **≈35 minutos**, así que cabe holgada en una franja d
 
 Los tres formatos salen del **mismo archivo** ([docs/presentacion.md](docs/presentacion.md)), así que el guion y las láminas no se separan a la segunda edición; las cifras del pie de cada lámina se cuentan de los archivos del repositorio, no se escriben a mano. Para regenerarlos: `pnpm build:presentacion`.
 
-## 🗂️ Los 29 módulos en nueve etapas
+## 🗂️ Los 33 módulos en diez etapas
 
 Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visual. Estúdialos **en orden**: cada módulo asume el anterior.
 
@@ -138,19 +138,29 @@ Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visua
 | **Finanzas on-chain** | [19](curriculum/19-defi/README.md)–[25](curriculum/25-mercados-capitales-onchain/README.md) | DeFi, dinero y liquidación, stablecoins, MDBC, pagos y FX, tokenización, mercados | Entender qué cambia al programar el dinero y los valores |
 | **Institucional** | [26](curriculum/26-custodia-identidad/README.md)–[27](curriculum/27-regulacion-cumplimiento/README.md) | Custodia, identidad digital, regulación y cumplimiento | Diseñar con custodia y cumplimiento desde el primer día |
 | **Analítica de datos** | [28](curriculum/28-data-analytics-onchain/README.md) | Minería de datos on-chain, grafos, patrones y detección | Analizar una cadena y defender las conclusiones con sus límites |
-| **Proyecto final** | [capstone](capstone/README.md) | Integración | Protocolo documentado, probado y desplegable |
+| **Custodia, auditoría y forensics** | [29](curriculum/29-exchanges-operaciones-custodia/README.md)–[32](curriculum/32-forensics-auditoria-gobernanza/README.md) | Exchanges, wallets, contabilidad, PoR/PoL, conciliación, forensics y gobernanza | Contrastar ledger, realidad del exchange y estado blockchain |
+| **Proyecto final** | [capstone](capstone/README.md) | Integración | Protocolo o caso custodial documentado y probado |
 
 > 👛 Entre los módulos [04](curriculum/04-bitcoin/README.md) y [05](curriculum/05-ethereum-evm/README.md) se estudia la unidad transversal **[Wallets desde cero: uso, seguridad y recuperación](docs/wallets-desde-cero.md)** — obligatoria para principiantes. No altera la numeración de los módulos.
 
 ## 🧪 Laboratorios y proyectos ejecutables
 
-- **83 prácticas** guiadas con actividad, evidencia y criterio de aceptación ([catálogo](labs/CATALOG.md)).
+- **91 prácticas** guiadas con actividad, evidencia y criterio de aceptación ([catálogo](labs/CATALOG.md)).
 - **Contratos con Foundry**: vault, protocolos, token, oráculo y gobernador con timelock, con pruebas, fuzzing e invariantes.
 - **Retos de seguridad**: contratos vulnerables y sus correcciones ([security-challenges](security-challenges/README.md)).
 - **dApp** de financiamiento comunitario (viem/TypeScript), **indexador** de eventos y **panel** de progreso.
 - **Bitcoin Core en `regtest`** y un **nodo Geth real en Docker** para operar infraestructura.
 - **Mercado tokenizado en Solidity**: dinero mayorista simulado, bono con transferencia restringida y **entrega contra pago atómica**, con 18 pruebas ([laboratorio](labs/22-cbdc-mercado-tokenizado/README.md)).
 - **Simulaciones financieras deterministas** en Node —AMM y pérdida impermanente, factor de salud, paridad de una stablecoin, coste real de una remesa, PvP, DvP, cuórum de custodia y cribado de cumplimiento— sin red, sin claves y sin fondos.
+- **Especialización custodial determinista**: CEX/DEX, tres registros, Merkle Tree de pasivos, assets vs liabilities, grafos forenses y el caso ficticio [Aurora Custody](capstone/empresa-custodial/README.md).
+
+### El principio que atraviesa la especialización
+
+```text
+Internal Ledger ≠ Exchange Reality ≠ Blockchain State
+```
+
+El ledger dice qué reconoce la empresa; el export de un exchange dice qué reconoce un tercero; la cadena muestra estado de direcciones y contratos. El trabajo profesional consiste en probar cómo se relacionan, con el mismo activo y corte, sin confundir ninguno con una auditoría completa.
 
 ```bash
 git clone https://github.com/vladimiracunadev-create/blockchain-learning-path.git
@@ -164,7 +174,7 @@ pnpm serve      # panel de seguimiento
 
 > 💻 **Sin instalar nada:** abre el repo en [GitHub Codespaces](https://codespaces.new/vladimiracunadev-create/blockchain-learning-path) — el [devcontainer](.devcontainer/devcontainer.json) deja listos Node, pnpm, Foundry y Docker.
 
-Luego empieza por [curriculum/00-orientacion](curriculum/00-orientacion/README.md). Cada una de las 83 prácticas trae su **resolución explicada** —cómo se implementa, el comando, la salida esperada y su interpretación— en el [cuaderno de laboratorios](labs/guides/README.md).
+Luego empieza por [curriculum/00-orientacion](curriculum/00-orientacion/README.md). Cada una de las 91 prácticas trae su **resolución explicada** —cómo se implementa, el comando, la salida esperada y su interpretación— en el [cuaderno de laboratorios](labs/guides/README.md).
 
 ## 💵 Del token al sistema financiero
 
@@ -199,11 +209,11 @@ El programa está listo para el aula: [guía del instructor](instructor/README.m
 
 ## 🚀 Cómo usar el programa
 
-1. **Sigue el orden.** La numeración 00→28 es secuencial por diseño: cada módulo asume el anterior.
+1. **Sigue el orden.** La numeración 00→32 es secuencial por diseño: cada módulo asume el anterior.
 2. **Aplica el ciclo** de cada módulo: comprender → experimentar → explicar → construir → verificar.
 3. **Ejecuta los laboratorios** en local (Anvil) o testnet; registra la evidencia en tu bitácora de progreso.
 4. **Haz el reto verificable** de cada módulo: ahí se fija el aprendizaje con un criterio de aceptación explícito.
-5. **Comprueba tu trabajo sin depender de nadie:** 55 de las 83 prácticas traen verificación ejecutable (`pnpm test`, `forge test`), así que estudiando solo tienes señal inmediata de si tu solución funciona. El resto produce una evidencia revisable con rúbrica.
+5. **Comprueba tu trabajo sin depender de nadie:** 62 de las 91 prácticas traen verificación ejecutable (`pnpm test`, `forge test`), así que estudiando solo tienes señal inmediata de si tu solución funciona. El resto produce una evidencia revisable con rúbrica.
 6. **Cierra con la autoevaluación** del módulo (4 preguntas al final de cada uno, también en el sitio y en las apps). Cada opción incorrecta es un error frecuente documentado en ese mismo módulo: si fallas, la explicación te dice exactamente qué releer. Al terminar el programa, el [quiz global](https://vladimiracunadev-create.github.io/blockchain-learning-path/autoevaluacion.html) repasa todo el recorrido.
 7. **Usa los libros de referencia** de cada área para profundizar, y la [matriz de competencias](docs/skills-matrix.md) para saber qué nivel has alcanzado y con qué evidencia lo demuestras.
 

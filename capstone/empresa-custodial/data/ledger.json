@@ -1,0 +1,9 @@
+{
+  "asOf": "2026-08-31T23:59:59Z",
+  "balances": [
+    { "customer": "A-101", "asset": "BTC", "amount": 120000000 },
+    { "customer": "A-102", "asset": "BTC", "amount": 80000000 },
+    { "customer": "A-101", "asset": "ETH", "amount": 7000000000 },
+    { "customer": "A-103", "asset": "USDC", "amount": 150000000000 }
+  ]
+}

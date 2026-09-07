@@ -47,7 +47,7 @@ pnpm build:presentacion
 
 **De cero a la infraestructura financiera programable, en español.**
 
-- 29 módulos secuenciales · 83 prácticas ejecutables · un proyecto final.
+- 33 módulos secuenciales · 91 prácticas · un proyecto final con caso custodial.
 - Criptografía, Bitcoin, Ethereum, contratos, seguridad, producción, dinero y regulación.
 - Web, manual en PDF y apps que **funcionan sin conexión**.
 - Material **abierto**: código MIT, contenido CC BY 4.0.
@@ -104,7 +104,7 @@ pnpm build:presentacion
 
 | Lo que hay dentro | Cuánto |
 |---|---|
-| Módulos secuenciales (00→28), en nueve etapas | **29** |
+| Módulos secuenciales (00→32), en diez etapas | **33** |
 | Prácticas guiadas con evidencia y criterio de aceptación | **83** |
 | Preguntas de autoevaluación, corregidas al instante | **117** |
 | Pruebas automatizadas que la CI ejecuta en cada cambio | **327** |
@@ -165,7 +165,7 @@ pnpm build:presentacion
 > - Marca con la voz el contraste "qué cambia / qué no cambia": es la idea que sostiene la
 >   segunda mitad del programa.
 
-## 3 · Los 29 módulos en nueve etapas
+## 3 · Los 33 módulos en diez etapas
 
 **Cada módulo asume el anterior. Se estudian en orden.**
 
@@ -189,7 +189,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 >
 > Este es el mapa completo. Denle unos segundos, porque es todo lo que vamos a recorrer.
 >
-> Veintinueve módulos, agrupados en nueve etapas, y se estudian en orden.
+> Treinta y tres módulos, agrupados en diez etapas, y se estudian en orden.
 >
 > El orden no es un capricho editorial: es una cadena de dependencias. No se puede
 > entender una stablecoin sin entender antes un token, ni un token sin entender la máquina
@@ -242,7 +242,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 >   mapa. Es la única pausa larga de la charla.
 > - Una intervención por etapa y avanza. No te enredes en ninguna: cada una tiene su
 >   propio módulo si alguien pregunta.
-> - **Este es el punto por donde se recorta si vas corto.** Di las nueve etapas en dos
+> - **Este es el punto por donde se recorta si vas corto.** Di las diez etapas en dos
 >   frases —"de fundamentos a producción, y después toda la parte financiera y
 >   regulatoria"— y salta a la lámina 4.
 > - Si el público es de banca o de sector público, alarga la etapa de finanzas on-chain y
@@ -250,14 +250,14 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 
 ## 4 · Cómo se aprende: un módulo y 83 laboratorios
 
-**Los 29 módulos tienen la misma anatomía, y ninguno se aprueba solo leyendo.**
+**Los 33 módulos tienen la misma anatomía, y ninguno se aprueba solo leyendo.**
 
 - 🎯 **Objetivos** medibles · 🗺️ **temas** con su porqué · 🧩 **esquema visual**.
 - 🧠 **Modelo mental** con su analogía y los **límites** de la analogía.
 - 🔬 **Profundización** con ejemplos numéricos · ⚠️ **errores frecuentes** (síntoma → causa).
 - 🧪 **Laboratorio guiado** y ⚡ **reto verificable** con criterio de aceptación.
 - 🔗 **Referencias** a fuentes primarias, con enlaces vivos y comprobados cada semana.
-- **83 prácticas**: 55 con verificación ejecutable (`pnpm lab:*`), el resto con rúbrica.
+- **91 prácticas**: 62 con verificación ejecutable (`pnpm lab:*`), el resto con rúbrica.
 - Contratos con **Foundry** (fuzzing e invariantes), dApp con **viem** e indexador.
 
 > **Pauta · 6 min.**
@@ -399,7 +399,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 - Contratos **vulnerables a propósito**, con su exploit ejecutable y su corrección.
 - Reentrada, control de acceso, desbordamiento y dependencia de oráculos, con **Slither** en la CI.
 - Cuatro casos reales con las cuentas hechas: **Terra/UST**, **FTX**, **puente Ronin** y **El Salvador**.
-- **327 pruebas** en cada cambio, más comprobaciones de coherencia y de enlaces vivos.
+- **343 pruebas** en cada cambio, más comprobaciones de coherencia y de enlaces vivos.
 - Los binarios se verifican **abriéndolos y contando el contenido**: un build en verde no prueba que la app lleve el curso dentro.
 
 > **Pauta · 6 min.**
@@ -558,7 +558,7 @@ Cuando el hueco es otro, esto es lo que se hace:
 
 | Tienes | Qué proyectas | Qué sacrificas |
 |---|---|---|
-| **10 min** (comité, pasillo) | 1 · 2 · 7 | La demo y el mapa; queda un solo dato: 29 módulos, 83 prácticas y todo verificado en CI |
+| **10 min** (comité, pasillo) | 1 · 2 · 7 | La demo y el mapa; queda un solo dato: 33 módulos, 91 prácticas y todo verificado en CI |
 | **20 min** | 1 · 2 · 3 (en dos frases) · 5 (solo la remesa) · 7 | La anatomía del módulo y media lámina de seguridad |
 | **35 min** (completa) | Las siete, con los tiempos de esta pauta | Nada |
 | **50 min** (clase) | Las siete, un módulo real abierto en el sitio y las dos demos | Nada; sobra tiempo para preguntas largas |
@@ -567,7 +567,7 @@ Reglas de recorte, por si hay que decidir en caliente:
 
 - **La lámina 2 no se toca nunca.** Es la que fija el encuadre; sin ella la charla parece
   una promoción de criptomonedas.
-- **La lámina 3 es la que mejor se comprime**: nueve etapas en dos frases y adelante.
+- **La lámina 3 es la que mejor se comprime**: diez etapas en dos frases y adelante.
 - **Antes de quitar la demo, quita minutos de la 4.** Quien ve ejecutarse algo recuerda la
   charla; quien solo ve viñetas, no.
 - Si te pasas de tiempo, **no aceleres: corta**. Salta a la lámina 7, di la acción concreta

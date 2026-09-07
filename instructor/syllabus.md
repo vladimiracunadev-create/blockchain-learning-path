@@ -4,7 +4,7 @@
 
 ## Descripción del curso
 
-Curso práctico e integral de tecnología blockchain que va de los fundamentos criptográficos al desarrollo profesional, la seguridad y la implementación en la empresa. El estudiante construye, prueba y despliega software real en redes locales y de prueba, y aprende a justificar decisiones de arquitectura con evidencia. El curso cubre los módulos 00–18 del [currículo](../curriculum/README.md) y culmina en un [proyecto final](../capstone/README.md). Los módulos 19–27 (finanzas on-chain, custodia y regulación) se imparten como extensión optativa de ocho semanas, y el módulo 28 (analítica de datos on-chain) como extensión de dos; ambas se detallan más abajo.
+Curso práctico e integral de tecnología blockchain que va de los fundamentos criptográficos al desarrollo profesional, la seguridad y la implementación en la empresa. El estudiante construye, prueba y despliega software real en redes locales y de prueba, y aprende a justificar decisiones de arquitectura con evidencia. El curso cubre los módulos 00–18 del [currículo](../curriculum/README.md) y culmina en un [proyecto final](../capstone/README.md). Los módulos 19–27 (finanzas on-chain, custodia y regulación), el 28 (analítica de datos) y los 29–32 (custodia, auditoría y forensics) son extensiones profesionales; no reemplazan el tronco tecnológico.
 
 ## Prerrequisitos
 
@@ -85,6 +85,15 @@ En formato intensivo de 8 semanas, agrupa las filas conceptuales y reduce el alc
 ## Módulo optativo: analítica de datos on-chain (semanas 35–36)
 
 El [módulo 28](../curriculum/28-data-analytics-onchain/README.md) cierra el programa con la lectura de datos de la propia cadena. Dos semanas: la primera cubre los niveles 1 y 2 (anatomía de bloques y transacciones en ambos modelos, adquisición por RPC con checkpoint y reorganizaciones, normalización e idempotencia; prácticas 72–75); la segunda, los niveles 3 y 4 (indicadores, eventos de token, grafos, rastreo, patrones, anomalías con precisión y recall, panel y proyecto final; prácticas 76–83). **Entregable:** el explorador analítico con su informe, incluida la sección de limitaciones y la clasificación hecho / indicador / inferencia / hipótesis, que es lo que se califica con más peso.
+
+## Especialización profesional: custodia, auditoría y forensics (semanas 37–40)
+
+| Semana | Módulo | Prácticas | Entregable |
+|---:|---|---|---|
+| 37 | 29 · Exchanges y custodia | 84–85 | Flujo CEX/DEX y política de wallets |
+| 38 | 30 · Contabilidad y conciliación | 86–87 | Tres registros y excepciones |
+| 39 | 31 · PoR/PoL y solvencia | 88–89 | Root, inclusión y conclusión acotada |
+| 40 | 32 · Forensics y gobernanza | 90–91 | Defensa de [Aurora Custody](../capstone/empresa-custodial/README.md) |
 
 ## Política de evaluación
 

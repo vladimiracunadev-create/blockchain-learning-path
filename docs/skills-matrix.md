@@ -53,6 +53,10 @@ documento con criterio de aceptación cumplido, un contrato con sus tests.
 |---|---|---|---|---|---|
 | **Modelado de amenazas** | Identificas activos y actores | Escribes un threat model completo | Priorizas por impacto y detectabilidad | [09](../curriculum/09-seguridad/README.md) · [13](../curriculum/13-interoperabilidad/README.md) | Threat model del capstone |
 | **Custodia** | Distingues los cuatro modelos | Diseñas un cuórum M-de-N | Documentas ceremonia y recuperación probada | [26](../curriculum/26-custodia-identidad/README.md) | `pnpm lab:quorum` + política |
+| **Operaciones de exchange** | Separa CEX/DEX y on/off-chain | Traza depósitos, trades y retiros | Audita autorización y liquidación | [29](../curriculum/29-exchanges-operaciones-custodia/README.md) | Prácticas 84–85 |
+| **Contabilidad y conciliación** | Reconoce los tres registros | Concilia por activo y corte | Investiga excepciones con pista de auditoría | [30](../curriculum/30-contabilidad-conciliacion/README.md) | `pnpm lab:conciliacion` |
+| **PoR, PoL y solvencia** | Explica el alcance | Verifica root e inclusión | Evalúa población, control y limitaciones | [31](../curriculum/31-proof-reserves-solvencia/README.md) | `pnpm lab:por` |
+| **Blockchain forensics** | Lee txid y grafo | Separa hecho e inferencia | Defiende atribuciones, privacidad y procedencia | [32](../curriculum/32-forensics-auditoria-gobernanza/README.md) | `pnpm lab:forensics` |
 | **Identidad digital** | Defines DID y credencial verificable | Modelas emisor, tenedor y verificador | Diseñas divulgación selectiva y revocación | [26](../curriculum/26-custodia-identidad/README.md) | Flujo de credencial (práctica 69) |
 | **Cumplimiento** | Distingues ley de propuesta | Aplicas enfoque basado en riesgo | Escribes un análisis regulatorio con incertidumbres | [27](../curriculum/27-regulacion-cumplimiento/README.md) | `pnpm lab:cumplimiento` + análisis |
 | **DevSecOps** | Ejecutas la CI del repo | Añades una comprobación nueva | Diseñas el pipeline completo con puertas | [18](../curriculum/18-implementacion-empresarial/README.md) | Workflow propio en verde |

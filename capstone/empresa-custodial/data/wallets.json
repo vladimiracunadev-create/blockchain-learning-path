@@ -1,0 +1,9 @@
+{
+  "asOf": "2026-08-31T23:59:50Z",
+  "wallets": [
+    { "network": "bitcoin-regtest", "address": "bcrt1qaurorahot", "asset": "BTC", "balance": 50000000, "tier": "hot" },
+    { "network": "bitcoin-regtest", "address": "bcrt1qauroracold", "asset": "BTC", "balance": 130000000, "tier": "cold" },
+    { "network": "ethereum-local", "address": "0xa000000000000000000000000000000000000001", "asset": "ETH", "balance": 6000000000, "tier": "warm" },
+    { "network": "ethereum-local", "address": "0xa000000000000000000000000000000000000002", "asset": "USDC", "balance": 149500000000, "tier": "hot" }
+  ]
+}

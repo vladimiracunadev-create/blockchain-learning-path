@@ -1,0 +1,6 @@
+[
+  { "txid": "tx-001", "from": "bc1qalpha", "to": "bc1qbeta", "amount": 50, "height": 101 },
+  { "txid": "tx-002", "from": "bc1qbeta", "to": "bc1qgamma", "amount": 20, "height": 102 },
+  { "txid": "tx-003", "from": "bc1qbeta", "to": "bc1qdelta", "amount": 25, "height": 102 },
+  { "txid": "tx-004", "from": "bc1qepsilon", "to": "bc1qgamma", "amount": 5, "height": 103 }
+]

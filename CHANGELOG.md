@@ -7,6 +7,19 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 *Nada pendiente.*
 
+## [0.11.0] · 2026-09-07
+
+### Añadido
+
+- Cuatro módulos profesionales sobre exchanges/custodia, contabilidad y conciliación, Proof of Reserves/Liabilities y blockchain forensics/auditoría/gobernanza.
+- Ocho prácticas (84–91) con scripts deterministas, 16 pruebas y extensiones para Bitcoin regtest/signet y Ethereum local, sin fondos reales.
+- Caso final ficticio Aurora Custody con ledger, wallets, transacciones, export de exchange y reporte reproducible.
+
+### Cambiado
+
+- Índice, roadmap, diagramas, rutas, evaluaciones, bibliografía, presentación y GitHub Pages reflejan 33 módulos y 91 prácticas.
+- El principio `Internal Ledger ≠ Exchange Reality ≠ Blockchain State` pasa a ser una competencia transversal verificable.
+
 ## [0.10.1] · 2026-08-25
 
 La presentación del programa pasa de ser un resumen a ser un **kit para exponer hoy**:

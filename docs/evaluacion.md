@@ -12,6 +12,7 @@ Este documento define cómo se mide el aprendizaje en el programa: los pesos de 
 | Laboratorios y bitácora | 30 % | Práctica guiada, reproducibilidad y reflexión escrita |
 | Proyectos de nivel | 30 % | Integración de habilidades al cierre de cada nivel |
 | Proyecto final (capstone) | 20 % | Sistema completo con modelo de amenazas y demo ([capstone](../capstone/README.md)) |
+| Especialización custodial (optativa) | Sustituye el capstone general | [Aurora Custody](../capstone/empresa-custodial/README.md): conciliación, PoR/PoL, forensics y defensa |
 
 ## Rúbrica por entrega
 
@@ -96,6 +97,18 @@ La bitácora no es burocracia: escribir por qué algo falló es la evidencia má
 - **Retos verificables**: cada módulo define un criterio de aceptación explícito (una salida esperada, una prueba que debe pasar, un invariante que debe sostenerse). El reto está aprobado cuando el criterio se cumple de forma reproducible, no cuando "parece funcionar".
 - **Por nivel**: todos los módulos del nivel aprobados más el proyecto de nivel con nota ≥ 80.
 - **Programa completo**: todos los niveles más el capstone con nota ≥ 80.
+- **Especialización 29–32**: prácticas 84–91, autoevaluaciones ≥ 75 % y defensa de Aurora Custody ≥ 80/100. Una conclusión que llame “auditoría financiera completa” al snapshot PoR no aprueba.
+
+### Rúbrica del caso custodial
+
+| Dimensión | Peso | Evidencia |
+|---|---:|---|
+| Integridad y procedencia de fuentes | 15 | Hash, corte, unidad, red y contrato |
+| Conciliación | 25 | Ledger, exchange y blockchain separados; excepciones trazables |
+| PoR/PoL | 20 | Root, inclusión, activos/pasivos y límites |
+| Forensics | 15 | Grafo reproducible, confianza y alternativas |
+| Gobernanza y controles | 15 | Segregación, cuórum, recuperación y escalamiento |
+| Comunicación profesional | 10 | Conclusión proporcional, sin falsa atribución |
 
 Un módulo con nota entre 60 y 79 puede reentregarse una vez corrigiendo las observaciones; se registra la nota de la reentrega.
 

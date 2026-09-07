@@ -31,6 +31,16 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Medir un detector, no solo ejecutarlo | Precisión, recall y falsos positivos de tu detector | ¿Por qué el recall no se puede calcular en una cadena real? |
 | Separar hecho, indicador, inferencia e hipótesis | El informe del [explorador analítico](../projects/explorador-analitico/README.md) | ¿Qué te faltaría para atribuir una dirección a una persona, y quién debería autorizarlo? |
 
+## Etapas 29–32 · Custodia, auditoría y forensics
+
+| Competencia | Evidencia mínima | Pregunta de defensa |
+|---|---|---|
+| Separar CEX/DEX de custodial/non-custodial | Prácticas 84–85 y mapa de liquidación | ¿Qué operación puede existir sin txid y por qué? |
+| Conciliar tres registros | `pnpm lab:conciliacion` + excepción documentada | ¿Qué afirma cada fuente y cuál es su corte? |
+| Evaluar reservas y pasivos | Root, prueba de inclusión y assets vs liabilities | ¿Qué no demuestra tu PoR? |
+| Investigar sin falsa atribución | Grafo y registro de confianza | ¿Dónde termina el hecho y empieza la hipótesis? |
+| Defender una revisión custodial | [Aurora Custody](../capstone/empresa-custodial/README.md) | ¿Qué discrepancia es timing y cuál es déficit? |
+
 ## Etapas 04–07 · Desarrollo
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |

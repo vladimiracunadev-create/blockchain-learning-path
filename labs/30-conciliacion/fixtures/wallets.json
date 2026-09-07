@@ -1,0 +1,9 @@
+{
+  "asOf": "2026-08-31T23:59:50Z",
+  "wallets": [
+    { "network": "bitcoin", "address": "bcrt1qhotdemo", "asset": "BTC", "balance": 50000000 },
+    { "network": "bitcoin", "address": "bcrt1qcolddemo", "asset": "BTC", "balance": 130000000 },
+    { "network": "ethereum-local", "address": "0x1000000000000000000000000000000000000001", "asset": "ETH", "balance": 6000000000 },
+    { "network": "ethereum-local", "address": "0x2000000000000000000000000000000000000002", "asset": "USDC", "balance": 149500000000 }
+  ]
+}

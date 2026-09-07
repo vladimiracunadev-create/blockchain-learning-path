@@ -1,0 +1,5 @@
+[
+  { "id": "ord-9001", "kind": "internal-trade", "asset": "BTC", "amount": 10000000, "customer": "A-101", "state": "off-chain", "txid": null },
+  { "id": "wd-9002", "kind": "withdrawal", "asset": "BTC", "amount": 5000000, "customer": "A-102", "state": "on-chain", "txid": "regtest-tx-002" },
+  { "id": "dep-9003", "kind": "deposit", "asset": "USDC", "amount": 500000000, "customer": "A-103", "state": "pending", "txid": "local-evm-tx-003" }
+]

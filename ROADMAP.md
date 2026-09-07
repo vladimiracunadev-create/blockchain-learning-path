@@ -1,4 +1,4 @@
-# 🗺️ Roadmap de 26 semanas
+# 🗺️ Roadmap progresivo: novato → intermedio → avanzado → profesional
 
 > [⬅️ Volver al programa](README.md) · [📚 Currículo](curriculum/README.md) · [🧪 Laboratorios](labs/CATALOG.md)
 
@@ -40,6 +40,17 @@ principal o de forma independiente por quien ya domine la parte técnica.
 | 34 | Custodia, identidad y regulación (módulos 26–27) | Política de custodia y análisis regulatorio |
 | 35–36 | Blockchain Data Analytics y minería de datos on-chain (módulo 28) | Explorador analítico con informe, métricas de detección y límites declarados |
 
+## Especialización: custodia, auditoría y forensics (semanas 37–40)
+
+| Semana | Nivel | Módulo | Evidencia de salida |
+|---:|---|---|---|
+| 37 | Profesional | 29 · Exchanges y operaciones de custodia | Mapa CEX/DEX y política hot/warm/cold |
+| 38 | Profesional | 30 · Contabilidad y conciliación | Conciliación `ledger ≠ exchange ≠ blockchain` |
+| 39 | Profesional | 31 · PoR, PoL y solvencia | Root Merkle, inclusión y conclusión acotada |
+| 40 | Profesional | 32 · Forensics, auditoría y gobernanza | Grafo con confianza + defensa de Aurora Custody |
+
+Esta especialización usa datos sintéticos, Bitcoin regtest/signet, Ethereum local y APIs públicas solo en lectura. No requiere fondos reales ni convierte el tronco del programa en formación exclusivamente financiera.
+
 ## Criterios para avanzar
 
 - Puedes explicar el tema sin recurrir a definiciones memorizadas.
@@ -65,7 +76,8 @@ principal o de forma independiente por quien ya domine la parte técnica.
 | 0.9.0 | etapa de finanzas on-chain e institucional: 9 módulos nuevos (19–27) sobre DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización y RWA, mercados de capitales, custodia e identidad y regulación; 20 prácticas nuevas, laboratorio de mercado tokenizado en Solidity, carpeta `regulation/`, casos reales y auditoría del programa | completada |
 | 0.9.1 | unidad transversal [Wallets desde cero](docs/wallets-desde-cero.md) (uso, seguridad y recuperación) entre los módulos 04 y 05, con la práctica 71 «Prevuelo de una transacción» (`pnpm lab:wallet-segura`, 10 pruebas) integrada en catálogo, guías, sitio, manual y apps | completada |
 | 0.10.0 | módulo 28 «Blockchain Data Analytics y minería de datos on-chain» en cuatro niveles (fundamentos, adquisición y preparación, análisis on-chain y avanzado), doce prácticas nuevas (72–83) sobre una cadena sintética determinista con verdad de campo, y el proyecto final «Explorador analítico de actividad blockchain» | completada |
-| 0.10.1 | presentación del programa lista para exponer: 7 diapositivas con demo en vivo (`pnpm lab:hash` y `pnpm lab:remesa`) y sus resultados impresos en la lámina, y pauta del expositor con cuatro anexos —comprobación previa, recortes por duración, preguntas del público y líneas que no se cruzan— | actual |
+| 0.10.1 | presentación del programa lista para exponer: 7 diapositivas con demo en vivo (`pnpm lab:hash` y `pnpm lab:remesa`) y sus resultados impresos en la lámina, y pauta del expositor con cuatro anexos —comprobación previa, recortes por duración, preguntas del público y líneas que no se cruzan— | completada |
+| 0.11.0 | línea profesional de custodia, exchanges, contabilidad blockchain, PoR/PoL, conciliación, forensics, auditoría y gobernanza; 4 módulos, 8 prácticas y caso Aurora Custody | actual |
 | 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

@@ -75,3 +75,16 @@ Banco de preguntas de **razonamiento**, no de memoria: cada una busca que argume
 6. (A) ¿Por qué el proyecto justifica su costo de mantenimiento en el tiempo?
 7. (A) ¿Qué obligaciones regulatorias podrían aplicar según la actividad real del proyecto?
 8. (A) Si tuvieras más tiempo, ¿qué harías distinto y por qué?
+
+## Custodia, contabilidad, PoR y forensics (etapas 29–32)
+
+1. Explica por qué CEX/DEX y custodial/non-custodial son dos ejes distintos.
+2. Dibuja un trade interno y un retiro; marca dónde aparece el txid.
+3. Compara multisig, MPC y HSM desde la perspectiva de auditoría.
+4. ¿Qué significa `Internal Ledger ≠ Exchange Reality ≠ Blockchain State`?
+5. Enumera los campos mínimos para un corte on-chain reproducible.
+6. ¿Qué prueba una inclusión Merkle y qué no prueba sobre la población?
+7. Diferencia PoR, PoL, cobertura del snapshot y solvencia de la entidad.
+8. Clasifica una conclusión en hecho, indicador, inferencia o hipótesis.
+9. ¿Cómo previenes falsa atribución al usar etiquetas de un proveedor?
+10. Diseña segregación entre solicitud, firma, conciliación y ajuste.

@@ -2,7 +2,7 @@
 
 > **Nivel:** Inicial → Avanzado · ⏱️ **Duración estimada:** 240 min · **Fuente:** documentación de Bitcoin Core y de ethereum.org, especificación JSON-RPC de Ethereum, *Mastering Bitcoin* (Antonopoulos) y las guías de FATF/GAFI sobre activos virtuales
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [27 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [🎓 Proyecto final](../../capstone/README.md)
+> 🧭 ⬅️ **Anterior:** [27 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [29 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -221,4 +221,4 @@ Cómo se relaciona cada obra con el resto del programa: [bibliografía central](
 
 ## 🧭 Navegación
 
-⬅️ [Módulo 27 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [🎓 Proyecto final](../../capstone/README.md)
+⬅️ [Módulo 27 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Módulo 29 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md)

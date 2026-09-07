@@ -1317,6 +1317,98 @@
           "explanation": "El hecho es la convergencia de fondos; la explicación es una hipótesis. Un fan-in se ve idéntico en una recaudación legítima y en una consolidación ilícita: presentarlo como conclusión es convertir un indicador en una acusación."
         }
       ]
+    },
+    "29-exchanges-operaciones-custodia": {
+      "titulo": "Exchanges y operaciones de custodia",
+      "preguntas": [
+        {
+          "prompt": "Un cliente compra BTC dentro de un CEX. ¿Qué evidencia on-chain debe existir necesariamente?",
+          "options": ["Una transacción por la compra", "Ninguna: puede ser un movimiento del ledger interno", "Una nueva wallet fría"],
+          "answer": 1,
+          "explanation": "La compraventa interna puede modificar solo cuentas del CEX. El depósito o retiro conecta ese ledger con la cadena."
+        },
+        {
+          "prompt": "¿Qué diferencia principal hay entre multisig y MPC para quien observa la cadena?",
+          "options": ["MPC siempre usa más firmantes", "Multisig puede exponer la política on-chain; MPC suele verse como una firma ordinaria", "Multisig no usa claves privadas"],
+          "answer": 1,
+          "explanation": "Ambos distribuyen control de formas distintas; la visibilidad y las preguntas de auditoría cambian."
+        },
+        {
+          "prompt": "¿Qué dato falta si un informe dice solo que existen 100 USDC en una dirección?",
+          "options": ["Red y contrato del token", "Nombre del navegador usado", "Precio de BTC"],
+          "answer": 0,
+          "explanation": "El símbolo no identifica un activo: red, contrato y decimales forman parte de la unidad operativa."
+        }
+      ]
+    },
+    "30-contabilidad-conciliacion": {
+      "titulo": "Contabilidad blockchain y conciliación",
+      "preguntas": [
+        {
+          "prompt": "¿Por qué no se comparan un ledger de medianoche con el saldo on-chain actual sin ajuste?",
+          "options": ["Porque blockchain no tiene hora", "Porque movimientos posteriores pueden crear diferencias de corte", "Porque el ledger nunca es útil"],
+          "answer": 1,
+          "explanation": "Toda conciliación necesita fuentes referidas a un corte comparable o un puente temporal documentado."
+        },
+        {
+          "prompt": "Hay déficit USDC y excedente BTC. ¿Puede netearse si el valor fiat total cubre?",
+          "options": ["Sí, siempre", "Solo si sube BTC", "No como conciliación por activo; requiere una conclusión y política diferentes"],
+          "answer": 2,
+          "explanation": "Activos distintos tienen derechos, liquidez y riesgos distintos. El déficit debe permanecer visible."
+        },
+        {
+          "prompt": "¿Qué representa un saldo en otro exchange?",
+          "options": ["Una wallet on-chain propia", "Una reclamación contra un tercero que necesita confirmación", "Un pasivo de clientes"],
+          "answer": 1,
+          "explanation": "El export prueba lo que el tercero declara, no una dirección propia ni control directo de claves."
+        }
+      ]
+    },
+    "31-proof-reserves-solvencia": {
+      "titulo": "Proof of Reserves, pasivos y solvencia",
+      "preguntas": [
+        {
+          "prompt": "¿Qué demuestra una prueba Merkle de inclusión válida?",
+          "options": ["Que todos los clientes fueron incluidos", "Que una hoja concreta pertenece al árbol comprometido", "Que la empresa es solvente"],
+          "answer": 1,
+          "explanation": "Inclusión no prueba completitud de la población ni existencia de activos."
+        },
+        {
+          "prompt": "Assets incluidos mayores que liabilities incluidos permiten concluir…",
+          "options": ["solvencia total", "cobertura del snapshot bajo ese alcance y corte", "auditoría sin excepciones"],
+          "answer": 1,
+          "explanation": "La conclusión debe limitarse a la entidad, fuentes, activos, pasivos, criterios y fecha revisados."
+        },
+        {
+          "prompt": "¿Por qué un saldo visible no prueba control de una wallet?",
+          "options": ["Porque las direcciones son privadas", "Porque observar una dirección no demuestra capacidad de firmar", "Porque un explorador nunca muestra saldos"],
+          "answer": 1,
+          "explanation": "Hace falta una prueba de control ligada al encargo y revisar además derechos y gravámenes."
+        }
+      ]
+    },
+    "32-forensics-auditoria-gobernanza": {
+      "titulo": "Blockchain forensics, auditoría y gobernanza",
+      "preguntas": [
+        {
+          "prompt": "Un patrón fan-out permite afirmar que una dirección pertenece a un lavador de activos?",
+          "options": ["Sí, el patrón es concluyente", "No; es un indicador compatible con varias explicaciones", "Sí, si hay más de tres salidas"],
+          "answer": 1,
+          "explanation": "La topología produce hipótesis. La atribución requiere evidencia externa, fuente y nivel de confianza."
+        },
+        {
+          "prompt": "¿Qué debe preservarse junto a un dataset forense?",
+          "options": ["Solo una captura", "Fuente, corte/bloque, herramienta, parámetros y hash", "La seed de la wallet"],
+          "answer": 1,
+          "explanation": "La procedencia y la integridad permiten reproducir y revisar la evidencia sin custodiar secretos."
+        },
+        {
+          "prompt": "¿Quién debería aprobar un ajuste material de conciliación?",
+          "options": ["La misma persona que administra la wallet, sin revisión", "Un rol independiente según la política y la segregación de funciones", "El proveedor del explorador"],
+          "answer": 1,
+          "explanation": "Solicitud, firma, conciliación y aprobación deben separarse para reducir error y abuso."
+        }
+      ]
     }
   }
 }

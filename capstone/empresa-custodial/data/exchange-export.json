@@ -1,0 +1,7 @@
+{
+  "asOf": "2026-08-31T23:59:45Z",
+  "accounts": [
+    { "venue": "LIQUIDITY-X", "asset": "BTC", "available": 25000000, "locked": 0 },
+    { "venue": "LIQUIDITY-X", "asset": "ETH", "available": 1000000000, "locked": 0 }
+  ]
+}

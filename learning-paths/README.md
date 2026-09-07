@@ -24,7 +24,7 @@ flowchart TD
   R --> C
 ```
 
-## Resumen de las nueve rutas
+## Resumen de las diez rutas
 
 | Perfil | Módulos prioritarios | Laboratorios clave | Entregable de portafolio | Salida laboral típica |
 |---|---|---|---|---|
@@ -37,6 +37,7 @@ flowchart TD
 | Finanzas on-chain (DeFi) | 06–10, 19, 21, 23 | 51–54, 58, 61–62 | Ficha de riesgo de un protocolo con cálculos | Ingeniero DeFi / analista de riesgo on-chain |
 | Banca y activos digitales | 08, 18, 20–26 | 55–57, 60, 64–69 | Arquitectura de un mercado de bonos tokenizados | Especialista en tokenización / blockchain bancario |
 | Cumplimiento y regulación | 00, 09, 20–22, 26–27 | 59, 63, 69–70 | Análisis regulatorio en dos jurisdicciones | Compliance officer de activos digitales |
+| Custodia, auditoría y forensics | 04–05, 09, 20–21, 26–32 | 69–71, 72–91 | Caso Aurora Custody | Auditor de activos digitales / analista forense |
 
 ## Desarrollo
 
@@ -118,6 +119,13 @@ flowchart TD
 - **Secuencia recomendada:** [00-orientacion](../curriculum/00-orientacion/README.md) → [09-seguridad](../curriculum/09-seguridad/README.md) para el vocabulario de riesgo → [20](../curriculum/20-dinero-banca-liquidacion/README.md)–[22](../curriculum/22-deposito-tokenizado-cbdc/README.md) → [26](../curriculum/26-custodia-identidad/README.md) y [27-regulacion-cumplimiento](../curriculum/27-regulacion-cumplimiento/README.md) a fondo, con la carpeta [`regulation/`](../regulation/README.md).
 - **Puede aligerar:** 06–07 hasta poder leer un contrato y entender qué hace; no hace falta escribirlos.
 - **Laboratorios clave:** 59 (ficha comparada), 63 (corredor de pagos), 69–70 (custodia y cribado con Regla de Viaje).
+
+## Custodia, auditoría y forensics
+
+- **Secuencia recomendada:** tronco 00–05 → seguridad 09 → dinero y stablecoins 20–21 → custodia y cumplimiento 26–27 → analítica 28 → especialización 29–32.
+- **Laboratorios clave:** 69–71 para claves y uso seguro; 72–83 para lectura de cadena; 84–91 para exchanges, conciliación, PoR/PoL, forensics y el caso final.
+- **Entregable de portafolio:** informe de [Aurora Custody](../capstone/empresa-custodial/README.md) con fuentes, conciliación, root Merkle, grafo, hallazgos, controles y limitaciones.
+- **Salida laboral:** operaciones de custodia, auditoría de activos digitales, conciliación, compliance analytics y blockchain forensics.
 - **Entregable de portafolio:** el análisis regulatorio de un producto en **dos jurisdicciones** (una de ellas Chile), con fuente oficial y fecha en cada afirmación y una sección de incertidumbres que no esté vacía.
 - **Salida laboral:** compliance officer de activos digitales, analista regulatorio fintech.
 - **Advertencia de la ruta:** el objetivo es saber preguntar y dónde buscar. Nada de esto sustituye asesoría legal profesional.
@@ -131,7 +139,7 @@ flowchart TD
 ## Navegación
 
 - [Inicio del programa](../README.md)
-- [Currículo completo (29 módulos)](../curriculum/README.md)
+- [Currículo completo (33 módulos)](../curriculum/README.md)
 - [Catálogo de laboratorios](../labs/CATALOG.md)
 - [Evaluación](../docs/evaluacion.md) · [Checkpoints](../assessments/checkpoints.md)
 - [Sección de industria](../industria/README.md) · [Roadmap](../ROADMAP.md)

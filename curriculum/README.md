@@ -2,12 +2,21 @@
 
 > [⬅️ Volver al programa](../README.md) · [📖 Bibliografía y fuentes](../docs/bibliografia.md) · [🧪 Laboratorios](../labs/CATALOG.md) · [🗺️ Roadmap](../ROADMAP.md)
 
-29 módulos progresivos (00–28), de los fundamentos criptográficos a la infraestructura
+33 módulos progresivos (00–32), de los fundamentos criptográficos a la infraestructura
 financiera programable y a la analítica de datos on-chain: criptografía, Bitcoin, Ethereum, contratos, seguridad, producción,
 y después dinero, stablecoins, MDBC, pagos, tokenización, mercados de capitales, custodia
-y regulación. Cada módulo enlaza al siguiente y trae su
+y regulación; y finalmente exchanges, contabilidad, reservas, auditoría y forensics. Cada módulo enlaza al siguiente y trae su
 **fuente de referencia**, un **esquema visual**, un laboratorio y un reto verificable.
 Estúdialos **en orden**: cada uno asume el anterior.
+
+```mermaid
+flowchart LR
+  N[NOVATO\n00–04] --> I[INTERMEDIO\n05–11]
+  I --> A[AVANZADO\n12–28]
+  A --> P[PROFESIONAL\n29–32 + caso final]
+```
+
+La última etapa especializa; no reemplaza el tronco técnico ni convierte el programa en una formación exclusivamente financiera.
 
 ## Mapa del programa
 
@@ -41,6 +50,9 @@ flowchart LR
     subgraph N8["Analítica de datos"]
         M28["28 Data Analytics on-chain"]
     end
+    subgraph N9["Custodia, auditoría y forensics"]
+        M29["29 Exchanges"] --> M30["30 Conciliación"] --> M31["31 PoR y solvencia"] --> M32["32 Forensics y auditoría"]
+    end
     M00 --> M01
     M03 --> M04
     M07 --> M08
@@ -49,7 +61,8 @@ flowchart LR
     M18 --> M19
     M25 --> M26
     M27 --> M28
-    M28 --> CAP["🎓 Capstone"]
+    M28 --> M29
+    M32 --> CAP["🎓 Caso final"]
 ```
 
 ## Índice
@@ -85,6 +98,10 @@ flowchart LR
 | 26 | [Custodia, wallets institucionales e identidad](26-custodia-identidad/README.md) | ¿Quién tiene la llave y cómo se prueba quién eres? | BIPs · ERC-4337 · W3C |
 | 27 | [Regulación y cumplimiento](27-regulacion-cumplimiento/README.md) | ¿Qué obliga la norma y quién la dicta? | MiCA · GAFI · Basilea · CMF |
 | 28 | [Blockchain Data Analytics y minería de datos on-chain](28-data-analytics-onchain/README.md) | ¿Qué se puede saber —y qué no— leyendo la cadena? | Bitcoin Core · ethereum.org · EIP-20 · GAFI |
+| 29 | [Exchanges y operaciones de custodia](29-exchanges-operaciones-custodia/README.md) | ¿Dónde se ejecuta, quién firma y cuándo queda on-chain? | Bitcoin · Ethereum · NIST · IOSCO |
+| 30 | [Contabilidad blockchain y conciliación](30-contabilidad-conciliacion/README.md) | ¿Cómo se relacionan ledger, exchange y blockchain? | COSO · Bitcoin/Ethereum RPC · IFRS |
+| 31 | [Proof of Reserves, pasivos y solvencia](31-proof-reserves-solvencia/README.md) | ¿Qué demuestra una raíz Merkle y qué queda fuera? | RFC 6962 · IAASB · PCAOB |
+| 32 | [Blockchain forensics, auditoría y gobernanza](32-forensics-auditoria-gobernanza/README.md) | ¿Cómo investigamos sin convertir heurísticas en acusaciones? | NIST · GAFI · COSO |
 
 > 👛 **Unidad transversal:** [Wallets desde cero: uso, seguridad y recuperación](../docs/wallets-desde-cero.md)
 > se estudia **entre el módulo 04 y el 05** y es obligatoria para principiantes: qué administra
@@ -124,6 +141,7 @@ Pectra/EIP-7702) para mantener el material al día.
 | Finanzas on-chain | 19–25 | DeFi, dinero y liquidación, stablecoins, MDBC, pagos, tokenización y mercados |
 | Institucional y regulación | 26–27 | Custodia, identidad digital, cumplimiento y marcos regulatorios |
 | Analítica de datos on-chain | 28 | Minería de datos blockchain, grafos, patrones, anomalías y sus límites |
+| Custodia, auditoría y forensics | 29–32 | Exchanges, wallets, conciliación, PoR/PoL, solvencia, forensics, gobierno y auditoría |
 
 Empieza por el [Módulo 00 · Orientación](00-orientacion/README.md).
 

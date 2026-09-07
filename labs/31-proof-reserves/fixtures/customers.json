@@ -1,0 +1,5 @@
+[
+  { "customer": "C-001", "asset": "BTC", "balance": 120000000, "nonce": "a1-demo" },
+  { "customer": "C-002", "asset": "BTC", "balance": 80000000, "nonce": "b2-demo" },
+  { "customer": "C-003", "asset": "BTC", "balance": 25000000, "nonce": "c3-demo" }
+]
