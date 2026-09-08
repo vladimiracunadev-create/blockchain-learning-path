@@ -7,84 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 1 · Qué problema intenta resolver blockchain
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Método:** diagnóstico guiado a partir de un problema, sin presentar primero la
-tecnología.
+### [Clase 1 · Qué problema intenta resolver blockchain](clase-01-que-problema-intenta-resolver-blockchain.md)
 
-La clase comienza con una orden de compra que atraviesa proveedor, transportista y
-comprador. Los tres guardan una copia y los tres pueden discrepar. Antes de pronunciar
-la palabra *blockchain*, el grupo responde cuatro preguntas: quién puede escribir,
-quién puede corregir, quién resuelve una disputa y qué daño causa una versión falsa.
-Así aparece la idea importante: una blockchain no mejora un dato por existir; cambia
-el mecanismo con que varios actores aceptan un historial.
+¿Cuándo un registro compartido necesita consenso y cuándo basta una base de datos?
 
-El docente contrasta el mismo proceso en una hoja compartida, una base administrada
-por un tercero y un registro replicado con consenso. Se separan **integridad**,
-**disponibilidad**, **confidencialidad** y **autoridad** porque ninguna arquitectura
-las entrega todas de la misma manera. El estudiante debe poder explicar por qué un
-hash detecta cambios, pero no convierte una afirmación falsa en verdadera.
+**Experiencia propia:** diagnóstico guiado desde el problema. **Evidencia:** Matriz de decisión que justifique blockchain o descarte su uso con criterios explícitos.
 
-**Pregunta guía:** ¿Cuándo un registro compartido necesita consenso y cuándo basta
-una base de datos?
+### [Clase 2 · Decidir y comunicar sin vender humo](clase-02-decidir-y-comunicar-sin-vender-humo.md)
 
-**Núcleo conceptual:**
+¿Cómo se defiende una decisión técnica ante personas no técnicas?
 
-- blockchain, DLT y registro tradicional.
-- actores, confianza y autoridad.
-- costos de replicación y verificabilidad.
-
-**Error que se desmonta:** “si varias empresas participan, hace falta blockchain”.
-Puede bastar un operador común si todos aceptan su autoridad y sus controles.
-
-**Actividad en aula:** cada equipo dibuja actores, permisos, puntos de disputa y
-consecuencias de error. Después elige una arquitectura y recibe un cambio de escenario:
-el operador quiebra, un socio abandona o un dato comercial debe permanecer privado.
-
-**Evidencia:** matriz que justifica blockchain o descarta su uso. Se aprueba si la
-conclusión se deriva de los actores y riesgos, no de una preferencia tecnológica.
-
-### Clase 2 · Decidir y comunicar sin vender humo
-
-**Método:** clínica de decisiones y juego de roles.
-
-Ahora el problema no es reconocer componentes, sino tomar una decisión bajo presión.
-Un equipo propone tokenizar puntos de fidelidad. Producto busca marketing; finanzas
-quiere reducir costos; seguridad teme claves perdidas; legal pregunta qué derecho
-representa el token. Cada estudiante recibe uno de esos roles y debe formular la
-pregunta que su contraparte técnica suele olvidar.
-
-Se construyen tres alternativas comparables: base de datos del emisor, registro
-permisionado entre socios y red pública con contrato. La comparación incluye operación,
-privacidad, reversibilidad, dependencia de terceros, costo total y salida del sistema.
-La descentralización se mide por dimensiones —quién desarrolla, valida, gobierna y
-puede censurar— en vez de reducirse a una etiqueta.
-
-**Pregunta guía:** ¿Cómo se defiende una decisión técnica ante personas no técnicas
-sin exagerar beneficios ni ocultar dependencias?
-
-**Núcleo conceptual:**
-
-- descentralización como espectro.
-- supuestos y trade-offs.
-- ADR y criterios de éxito.
-
-**Punto de giro:** a mitad del ejercicio se revela que una sola empresa conserva el
-derecho de anular los puntos. El grupo debe decidir si esa autoridad invalida el diseño
-o simplemente debe declararse.
-
-**Actividad en aula:** debate breve, redacción de ADR y exposición de noventa segundos
-para una audiencia no técnica. Otro equipo actúa como comité y cuestiona supuestos.
-
-**Evidencia:** ADR con alternativa elegida, dos alternativas descartadas, riesgos,
-condición de reversión y una métrica observable para el piloto.
-
-**Cierre:** si el estudiante recomienda una base de datos y puede defenderla con
-evidencia, aprendió blockchain mejor que quien la recomienda para todo.
-<!-- plan-clases:fin -->
+**Experiencia propia:** clínica de decisiones con juego de roles. **Evidencia:** ADR breve con alternativa elegida, rechazada, riesgos y métrica de validación.
+<!-- clases-independientes:fin -->
 
 ---
 

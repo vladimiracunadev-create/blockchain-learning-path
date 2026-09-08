@@ -3,7 +3,7 @@
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [🗺️ Roadmap](../ROADMAP.md)
 
 Estado honesto de lo que el repositorio entrega hoy y de lo que requiere infraestructura
-externa. El programa cubre **66 clases (1–66)** organizadas en **33 unidades estables** y **10 etapas**:
+externa. El programa cubre **66 documentos de clase (1–66)**, **33 mapas temáticos compatibles** y **10 etapas**:
 Orientación, Fundamentos, Desarrollo, Profesional, Avanzado, Producción,
 Finanzas on-chain, Institucional y regulación, y Analítica de datos on-chain.
 
@@ -13,7 +13,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 | Área | Qué incluye | Estado |
 |---|---|:---:|
-| Currículo | 66 clases (1–66) con esquemas Mermaid, casos reales, fuentes y navegación, más la unidad transversal [Wallets desde cero](wallets-desde-cero.md) | ✅ |
+| Currículo | 66 archivos de clase (1–66), cada uno con gráfico Mermaid, caso, fundamento, práctica, evidencia y fuentes; [Wallets desde cero](wallets-desde-cero.md) es guía de consulta | ✅ |
 | Rutas por perfil | Itinerarios según objetivo del estudiante | ✅ |
 | Industria | Construcción de una red, stack, equipos, empresas, negocio y ciclo de vida | ✅ |
 | Prácticas | Ochenta y tres prácticas con criterios de aceptación (55 auto-verificables) | ✅ |
@@ -23,7 +23,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | dApp y datos | Interfaz, indexador y panel educativo | ✅ |
 | Seguridad | Ofensiva autorizada y auditoría | ✅ |
 | Evaluación | Evaluaciones, progreso, certificado y kit docente | ✅ |
-| Autoevaluación | 66 comprobaciones formativas de clase + quiz global + 129 preguntas repartidas en 33 unidades | ✅ |
+| Autoevaluación | 66 comprobaciones formativas de clase + quiz global + 129 preguntas repartidas en 33 mapas temáticos | ✅ |
 | Apps offline | App de escritorio para Windows y APK de Android con todo el curso dentro | ✅ |
 | Manual en PDF | ~450 páginas con todo el contenido; se genera en cada publicación | ✅ |
 | Presentación y pauta | 7 diapositivas del programa (con demo en vivo) y pauta del expositor con guion, tiempos y 4 anexos; se generan en cada publicación | ✅ |

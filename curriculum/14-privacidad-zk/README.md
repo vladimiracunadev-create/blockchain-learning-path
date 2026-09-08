@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 29 · Compromisos y pruebas de conocimiento cero
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo se demuestra una afirmación sin revelar el dato que la sostiene?
+### [Clase 29 · Compromisos y pruebas de conocimiento cero](clase-29-compromisos-y-pruebas-de-conocimiento-cero.md)
 
-**Enfoque pedagógico:** construcción de un circuito desde lenguaje natural.
+¿Cómo se demuestra una afirmación sin revelar el dato que la sostiene?
 
-Una afirmación cotidiana se separa en entradas públicas, witness privado y restricciones. El estudiante descubre qué se demuestra exactamente antes de elegir una tecnología ZK.
+**Experiencia propia:** construcción de un circuito desde lenguaje natural. **Evidencia:** Especificación de circuito con amenaza y propiedad demostrada.
 
-**Núcleo conceptual:**
+### [Clase 30 · SNARK, STARK y privacidad real](clase-30-snark-stark-y-privacidad-real.md)
 
-- statement, witness y circuito.
-- completitud, solidez y cero conocimiento.
-- prover y verifier.
+¿Qué compromisos cambian entre sistemas y qué metadatos siguen visibles?
 
-**Caso de trabajo:** Demostrar mayoría de edad sin publicar fecha de nacimiento.
-
-**Actividad:** Separar datos públicos, privados y restricciones de un circuito sencillo.
-
-**Comprobación formativa:** Escribe una restricción cuya ausencia permitiría una prueba engañosa.
-
-**Evidencia de aprendizaje:** Especificación de circuito con amenaza y propiedad demostrada.
-
-### Clase 30 · SNARK, STARK y privacidad real
-
-**Pregunta guía:** ¿Qué compromisos cambian entre sistemas y qué metadatos siguen visibles?
-
-**Enfoque pedagógico:** comparación con fuga de metadatos.
-
-Después de comparar SNARK y STARK, el grupo intenta correlacionar horarios, direcciones y patrones. La privacidad se evalúa como sistema completo.
-
-**Núcleo conceptual:**
-
-- setup confiable y transparencia.
-- tamaño, tiempo y supuestos.
-- anonimato, vínculo y cumplimiento.
-
-**Caso de trabajo:** Una prueba oculta el monto, pero horarios y direcciones permiten correlación.
-
-**Actividad:** Comparar dos esquemas y enumerar canales laterales de información.
-
-**Comprobación formativa:** ¿Qué dato permanece visible aunque el monto se pruebe en conocimiento cero?
-
-**Evidencia de aprendizaje:** Selección argumentada que incluya costo, confianza y límites de privacidad.
-<!-- plan-clases:fin -->
+**Experiencia propia:** comparación con fuga de metadatos. **Evidencia:** Selección argumentada que incluya costo, confianza y límites de privacidad.
+<!-- clases-independientes:fin -->
 
 ---
 

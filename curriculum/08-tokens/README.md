@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 17 · Estándares y derechos del token
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué interfaz garantiza un ERC y qué derechos económicos quedan fuera?
+### [Clase 17 · Estándares y derechos del token](clase-17-estandares-y-derechos-del-token.md)
 
-**Enfoque pedagógico:** comparación de contratos con igual interfaz.
+¿Qué interfaz garantiza un ERC y qué derechos económicos quedan fuera?
 
-Dos tokens cumplen el mismo ERC pero representan promesas distintas. El estándar se aprende como compatibilidad técnica, no como garantía económica o jurídica.
+**Experiencia propia:** comparación de contratos con igual interfaz. **Evidencia:** Ficha de token con estándar, invariantes, poderes y riesgos explícitos.
 
-**Núcleo conceptual:**
+### [Clase 18 · Permisos, distribución y necesidad](clase-18-permisos-distribucion-y-necesidad.md)
 
-- ERC-20, 721, 1155 y 4626.
-- metadata frente a estado normativo.
-- suministro, mint y burn.
+¿Por qué un token técnicamente correcto puede ser un mal producto?
 
-**Caso de trabajo:** Dos tokens cumplen ERC-20, pero sólo uno representa un derecho exigible.
-
-**Actividad:** Comparar interfaces, autoridad administrativa y promesa externa.
-
-**Comprobación formativa:** Nombra una propiedad que ERC-20 garantiza y dos que deja fuera.
-
-**Evidencia de aprendizaje:** Ficha de token con estándar, invariantes, poderes y riesgos explícitos.
-
-### Clase 18 · Permisos, distribución y necesidad
-
-**Pregunta guía:** ¿Por qué un token técnicamente correcto puede ser un mal producto?
-
-**Enfoque pedagógico:** comité de diseño token/no-token.
-
-Cada propuesta debe sobrevivir alternativas de puntos, base de datos y pagos existentes. La distribución y los poderes administrativos se evalúan antes de celebrar la transferibilidad.
-
-**Núcleo conceptual:**
-
-- allowance, permit y aprobaciones.
-- concentración y distribución.
-- utilidad, gobernanza y captura de valor.
-
-**Caso de trabajo:** Un protocolo emite token antes de demostrar que necesita transferibilidad.
-
-**Actividad:** Auditar allowances y construir una matriz token/no-token.
-
-**Comprobación formativa:** ¿Qué evidencia demostraría que el token resuelve algo que una cuenta interna no resuelve?
-
-**Evidencia de aprendizaje:** Recomendación defendible con métricas, alternativas off-chain y controles.
-<!-- plan-clases:fin -->
+**Experiencia propia:** comité de diseño token/no-token. **Evidencia:** Recomendación defendible con métricas, alternativas off-chain y controles.
+<!-- clases-independientes:fin -->
 
 ---
 

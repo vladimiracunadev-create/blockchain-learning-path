@@ -1,6 +1,6 @@
 # Guías 11–20 y 71 · Consenso, Bitcoin y wallets
 
-Este cuaderno lleva del consenso (Proof of Work y sus alternativas) al modelo UTXO de Bitcoin y a un nodo local en regtest. Acompaña a las clases [consenso](../../curriculum/03-consenso/README.md) y [Bitcoin](../../curriculum/04-bitcoin/README.md). Incluye también la práctica 71 de la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md), que se estudia justo después de las clases 9–10.
+Este cuaderno lleva del consenso (Proof of Work y sus alternativas) al modelo UTXO de Bitcoin y a un nodo local en regtest. Acompaña a las clases [consenso](../../curriculum/03-consenso/README.md) y [Bitcoin](../../curriculum/04-bitcoin/README.md). Incluye la práctica 71 de la guía [Wallets desde cero](../../docs/wallets-desde-cero.md), integrada con las clases 4 y 9–11.
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 
@@ -178,7 +178,7 @@ node --test labs/04-bitcoin/utxo-selection.test.mjs
 
 ## 71 · Prevuelo de una transacción
 
-- **Objetivo:** revisar una solicitud de firma completa (red, origen, destino, contrato, función, token, monto, decimales, comisión y aprobación) antes de firmar, y detectar dos ataques clásicos: el `approve` ilimitado y el address poisoning. Es la práctica de la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
+- **Objetivo:** revisar una solicitud de firma completa (red, origen, destino, contrato, función, token, monto, decimales, comisión y aprobación) antes de firmar, y detectar dos ataques clásicos: el `approve` ilimitado y el address poisoning. Es la práctica de apoyo de [Wallets desde cero](../../docs/wallets-desde-cero.md).
 - **Cómo se resuelve:** [`prevuelo-transaccion.mjs`](../00-wallets/prevuelo-transaccion.mjs) trae tres solicitudes simuladas y deterministas (direcciones ficticias, sin red, sin claves, sin fondos) y las contrasta contra lo que el usuario esperaba firmar, control por control.
 
 ```bash

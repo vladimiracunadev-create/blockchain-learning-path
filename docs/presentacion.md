@@ -107,7 +107,7 @@ pnpm build:presentacion
 | Clases secuenciales (1→66), en diez etapas | **66** |
 | Prácticas guiadas con evidencia y criterio de aceptación | **91** |
 | Preguntas de autoevaluación, corregidas al instante | **117** |
-| Pruebas automatizadas que la CI ejecuta en cada cambio | **327** |
+| Pruebas automatizadas que la CI ejecuta en cada cambio | **345** |
 
 > **Pauta · 6 min.**
 >
@@ -146,7 +146,7 @@ pnpm build:presentacion
 > solamente leído. Cada práctica dice qué hay que hacer, qué evidencia hay que producir y
 > con qué criterio se acepta.
 >
-> Y trescientas veintisiete pruebas automatizadas. Eso significa que el material se
+> Y trescientas cuarenta y cinco pruebas automatizadas. Eso significa que el material se
 > comprueba ejecutándolo, no afirmándolo.
 >
 > Y hay un detalle que para mí es lo más importante de esta lámina: esas cifras las
@@ -286,7 +286,7 @@ Entre las clases 10 y 11 se cruza **Wallets desde cero**: uso, seguridad y recup
 > escritos como síntoma y causa. No como una lista de consejos: síntoma, y causa. Que es
 > como se depura de verdad.
 >
-> Cada pareja de clases declara además de dónde saca lo que afirma. Y hay una comprobación
+> Cada clase declara además de dónde saca lo que afirma. Y hay una comprobación
 > automática que exige un mínimo de tres enlaces a fuente primaria, porque "según
 > Antonopoulos", sin enlace, no significa nada.
 >
@@ -402,7 +402,7 @@ Entre las clases 10 y 11 se cruza **Wallets desde cero**: uso, seguridad y recup
 - Contratos **vulnerables a propósito**, con su exploit ejecutable y su corrección.
 - Reentrada, control de acceso, desbordamiento y dependencia de oráculos, con **Slither** en la CI.
 - Cuatro casos reales con las cuentas hechas: **Terra/UST**, **FTX**, **puente Ronin** y **El Salvador**.
-- **343 pruebas** en cada cambio, más comprobaciones de coherencia y de enlaces vivos.
+- **345 pruebas** en cada cambio, más comprobaciones de coherencia y de enlaces vivos.
 - Los binarios se verifican **abriéndolos y contando el contenido**: un build en verde no prueba que la app lleve el curso dentro.
 
 > **Pauta · 6 min.**
@@ -438,7 +438,7 @@ Entre las clases 10 y 11 se cruza **Wallets desde cero**: uso, seguridad y recup
 >
 > Y la segunda razón para creerle a este material es que se verifica solo.
 >
-> Trescientas veintisiete pruebas en cada cambio, comprobaciones de coherencia entre lo
+> Trescientas cuarenta y cinco pruebas en cada cambio, comprobaciones de coherencia entre lo
 > que el material dice y lo que el material tiene, y los enlaces externos revisados cada
 > semana.
 >

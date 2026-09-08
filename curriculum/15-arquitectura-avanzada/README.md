@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 31 · Cuentas programables y actualizaciones
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo añadimos recuperación y cambios sin crear una llave maestra invisible?
+### [Clase 31 · Cuentas programables y actualizaciones](clase-31-cuentas-programables-y-actualizaciones.md)
 
-**Enfoque pedagógico:** revisión de arquitectura y rollback.
+¿Cómo añadimos recuperación y cambios sin crear una llave maestra invisible?
 
-Una actualización útil se enfrenta a corrupción de storage y abuso administrativo. La clase exige procedimiento de migración y reversión junto con el patrón técnico.
+**Experiencia propia:** revisión de arquitectura y rollback. **Evidencia:** ADR con invariantes, autoridad, demora y procedimiento de emergencia.
 
-**Núcleo conceptual:**
+### [Clase 32 · MEV y arquitectura de producción](clase-32-mev-y-arquitectura-de-produccion.md)
 
-- ERC-4337 y EIP-7702.
-- proxies y storage layout.
-- roles, timelocks y migración.
+¿Qué actores pueden reordenar operaciones y cómo cambia el diseño?
 
-**Caso de trabajo:** Una actualización válida corrompe storage y bloquea retiros.
-
-**Actividad:** Diseñar cuenta recuperable y plan de upgrade con rollback.
-
-**Comprobación formativa:** ¿Qué poder conserva el administrador después del timelock y cómo se limita?
-
-**Evidencia de aprendizaje:** ADR con invariantes, autoridad, demora y procedimiento de emergencia.
-
-### Clase 32 · MEV y arquitectura de producción
-
-**Pregunta guía:** ¿Qué actores pueden reordenar operaciones y cómo cambia el diseño?
-
-**Enfoque pedagógico:** simulación de cadena de suministro de bloques.
-
-Usuarios, searchers, builders, relays y proponentes compiten por ordenar una operación. El MEV se observa como consecuencia arquitectónica y económica.
-
-**Núcleo conceptual:**
-
-- front-running y sandwich.
-- PBS, builders y relays.
-- observabilidad, costos y reducción de complejidad.
-
-**Caso de trabajo:** Una operación grande pierde valor por hacerse visible en el mempool.
-
-**Actividad:** Modelar el recorrido de una orden y sus puntos de extracción.
-
-**Comprobación formativa:** Señala dónde se hace visible la intención y quién puede beneficiarse de ella.
-
-**Evidencia de aprendizaje:** Arquitectura final con amenaza MEV, mitigación y costo residual.
-<!-- plan-clases:fin -->
+**Experiencia propia:** simulación de cadena de suministro de bloques. **Evidencia:** Arquitectura final con amenaza MEV, mitigación y costo residual.
+<!-- clases-independientes:fin -->
 
 ---
 

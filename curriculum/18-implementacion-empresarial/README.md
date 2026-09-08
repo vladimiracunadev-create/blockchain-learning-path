@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 37 · Integración end-to-end
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo se conectan contratos, identidad, datos y sistemas heredados?
+### [Clase 37 · Integración end-to-end](clase-37-integracion-end-to-end.md)
 
-**Enfoque pedagógico:** taller de secuencia e idempotencia.
+¿Cómo se conectan contratos, identidad, datos y sistemas heredados?
 
-Un timeout provoca reintentos y dobles registros entre ERP, API y cadena. Los identificadores y estados compensatorios se descubren siguiendo el evento extremo a extremo.
+**Experiencia propia:** taller de secuencia e idempotencia. **Evidencia:** Diagrama de secuencia con fuente de verdad y control por transición.
 
-**Núcleo conceptual:**
+### [Clase 38 · Paso a producción y operación](clase-38-paso-a-produccion-y-operacion.md)
 
-- límites de sistema y APIs.
-- eventos, idempotencia y reconciliación.
-- off-chain, on-chain y oráculos.
+¿Qué debe estar listo antes de que una transacción tenga consecuencias reales?
 
-**Caso de trabajo:** El ERP registra una orden dos veces al reintentar tras un timeout RPC.
-
-**Actividad:** Diseñar flujo con identificadores, reintentos y compensaciones.
-
-**Comprobación formativa:** ¿Qué componente decide si un reintento es duplicado y con qué clave?
-
-**Evidencia de aprendizaje:** Diagrama de secuencia con fuente de verdad y control por transición.
-
-### Clase 38 · Paso a producción y operación
-
-**Pregunta guía:** ¿Qué debe estar listo antes de que una transacción tenga consecuencias reales?
-
-**Enfoque pedagógico:** readiness review multidisciplinario.
-
-Tecnología, operaciones, seguridad, legal y soporte deben presentar evidencia antes del go-live. Un contrato correcto no compensa la ausencia de propietario del servicio.
-
-**Núcleo conceptual:**
-
-- entornos, despliegue y rollback.
-- seguridad, legal y soporte.
-- SLA, costos y gobierno de cambios.
-
-**Caso de trabajo:** Un contrato probado se despliega sin propietario operativo del incidente.
-
-**Actividad:** Ejecutar un readiness review multidisciplinario.
-
-**Comprobación formativa:** Nombra un bloqueo de producción que no pueda resolver el equipo de desarrollo solo.
-
-**Evidencia de aprendizaje:** Checklist firmable con responsables, evidencias y riesgos aceptados.
-<!-- plan-clases:fin -->
+**Experiencia propia:** readiness review multidisciplinario. **Evidencia:** Checklist firmable con responsables, evidencias y riesgos aceptados.
+<!-- clases-independientes:fin -->
 
 ---
 

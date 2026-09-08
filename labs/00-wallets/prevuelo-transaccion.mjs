@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Prevuelo de una transacción — práctica 71 (unidad transversal "Wallets desde cero").
+// Prevuelo de una transacción — práctica 71 (guía de apoyo "Wallets desde cero").
 //
 // Antes de firmar, una wallet muestra una solicitud: red, origen, destino,
 // contrato, función, monto, comisión y —a veces— una aprobación de tokens.

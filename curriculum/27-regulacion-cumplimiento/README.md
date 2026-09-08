@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 55 · Leer regulación desde la fuente
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo distinguimos una obligación vigente de una guía o noticia?
+### [Clase 55 · Leer regulación desde la fuente](clase-55-leer-regulacion-desde-la-fuente.md)
 
-**Enfoque pedagógico:** taller de trazabilidad normativa.
+¿Cómo distinguimos una obligación vigente de una guía o noticia?
 
-Una afirmación pasa por noticia, resumen, guía, norma y artículo. El estudiante aprende a fechar, acotar jurisdicción y reconocer autoridad competente.
+**Experiencia propia:** taller de trazabilidad normativa. **Evidencia:** Ficha normativa con alcance, vigencia y enlace primario.
 
-**Núcleo conceptual:**
+### [Clase 56 · Cumplimiento basado en riesgo](clase-56-cumplimiento-basado-en-riesgo.md)
 
-- jerarquía normativa y jurisdicción.
-- actividad, instrumento y sujeto obligado.
-- vigencia, supervisor y sanción.
+¿Qué controles responden al riesgo sin convertir toda señal en culpabilidad?
 
-**Caso de trabajo:** Un resumen comercial presenta una consulta pública como ley aprobada.
-
-**Actividad:** Trazar una afirmación hasta norma, artículo, fecha y autoridad.
-
-**Comprobación formativa:** ¿Qué dato falta para saber si el texto produce hoy una obligación exigible?
-
-**Evidencia de aprendizaje:** Ficha normativa con alcance, vigencia y enlace primario.
-
-### Clase 56 · Cumplimiento basado en riesgo
-
-**Pregunta guía:** ¿Qué controles responden al riesgo sin convertir toda señal en culpabilidad?
-
-**Enfoque pedagógico:** comité de alertas con falsos positivos.
-
-Se revisan señales con fuerza desigual y contexto incompleto. La decisión debe ser proporcional, revisable y documentada sin presentar heurísticas como culpabilidad.
-
-**Núcleo conceptual:**
-
-- KYC/KYB y debida diligencia.
-- Travel Rule y monitoreo.
-- sanciones, escalamiento y reporte.
-
-**Caso de trabajo:** Una transacción toca una dirección de riesgo por varios saltos indirectos.
-
-**Actividad:** Diseñar reglas, revisión humana y documentación de decisión.
-
-**Comprobación formativa:** ¿Qué evidencia adicional pedirías antes de escalar la alerta?
-
-**Evidencia de aprendizaje:** Matriz riesgo-control con falsos positivos, responsable y retención.
-<!-- plan-clases:fin -->
+**Experiencia propia:** comité de alertas con falsos positivos. **Evidencia:** Matriz riesgo-control con falsos positivos, responsable y retención.
+<!-- clases-independientes:fin -->
 
 ---
 
@@ -72,6 +42,9 @@ respuesta en fuente primaria, y sepas distinguir una ley de una propuesta que a�
 > verificarse en su fuente oficial en el momento de usarla.
 
 ## 🎯 Objetivos
+
+> Una alerta no es una condena y una lectura normativa no es asesoría jurídica. Aplica
+> [¿Y si cruzas la línea?](../../docs/y-si-cruzas-la-linea-blockchain.md) al escalar casos.
 
 - Distinguir por rango y efecto: ley, norma, circular, guía, consulta pública y propuesta.
 - Aplicar las cinco preguntas que determinan el régimen de un proyecto de activos digitales.

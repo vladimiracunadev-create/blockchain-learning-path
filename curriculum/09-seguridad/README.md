@@ -8,57 +8,30 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 19 · Modelado de amenazas y revisión manual
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué puede romper un atacante si conoce mejor el sistema que su autor?
+### [Clase 19 · Modelado de amenazas y revisión manual](clase-19-modelado-de-amenazas-y-revision-manual.md)
 
-**Enfoque pedagógico:** revisión ofensiva por fronteras de confianza.
+¿Qué puede romper un atacante si conoce mejor el sistema que su autor?
 
-La clase comienza por activos y actores, no por una lista de bugs. Después sigue entradas maliciosas a través de llamadas y dependencias hasta formular un hallazgo causal.
+**Experiencia propia:** revisión ofensiva por fronteras de confianza. **Evidencia:** Hallazgo con condición, impacto, prueba mínima y recomendación.
 
-**Núcleo conceptual:**
+### [Clase 20 · Auditoría reproducible y remediación](clase-20-auditoria-reproducible-y-remediacion.md)
 
-- activos, actores y fronteras de confianza.
-- reentrancy, acceso y lógica.
-- impacto, probabilidad y severidad.
+¿Cómo se demuestra que un hallazgo fue corregido sin introducir otro?
 
-**Caso de trabajo:** Una función correcta aislada falla al combinarse con un token malicioso.
-
-**Actividad:** Trazar superficie de ataque y revisar una función línea por línea.
-
-**Comprobación formativa:** Describe condición, impacto y actor necesario para explotar el caso revisado.
-
-**Evidencia de aprendizaje:** Hallazgo con condición, impacto, prueba mínima y recomendación.
-
-### Clase 20 · Auditoría reproducible y remediación
-
-**Pregunta guía:** ¿Cómo se demuestra que un hallazgo fue corregido sin introducir otro?
-
-**Enfoque pedagógico:** laboratorio exploit-parche-retest.
-
-Un exploit local obliga a reproducir antes de opinar. El parche se somete a regresión y a una ruta alternativa para separar corrección aparente de remediación completa.
-
-**Núcleo conceptual:**
-
-- alcance y commit auditado.
-- análisis estático, fuzzing e invariantes.
-- regresión, retest y riesgo residual.
-
-**Caso de trabajo:** Un parche bloquea el exploit conocido pero deja otra ruta equivalente.
-
-**Actividad:** Explotar en local, corregir y ejecutar una prueba de regresión.
-
-**Comprobación formativa:** ¿Qué evidencia permite cerrar un hallazgo y qué riesgo puede permanecer?
-
-**Evidencia de aprendizaje:** Informe versionado con evidencia, corrección y resultado del retest.
-<!-- plan-clases:fin -->
+**Experiencia propia:** laboratorio exploit-parche-retest. **Evidencia:** Informe versionado con evidencia, corrección y resultado del retest.
+<!-- clases-independientes:fin -->
 
 ---
 
 ## 🎯 Objetivos
+
+> Para separar pruebas autorizadas de intervención ilegítima, usa la guía transversal
+> [¿Y si cruzas la línea?](../../docs/y-si-cruzas-la-linea-blockchain.md).
 
 - Reconocer las clases de vulnerabilidad más frecuentes en contratos y sus señales típicas en el código.
 - Aplicar un proceso de auditoría reproducible de siete pasos, desde el alcance hasta la verificación de la corrección.

@@ -4,57 +4,27 @@
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [Clases 1–2 · Orientación](../00-orientacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 5–6 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
-> 👛 La versión de usuario de la custodia de claves está en la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
+> 👛 La guía de apoyo para uso personal y recuperación es [Wallets desde cero](../../docs/wallets-desde-cero.md); los fundamentos forman parte de la clase 4.
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 3 · Hashes, integridad y compromisos
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo se detecta una alteración sin ocultar necesariamente el dato?
+### [Clase 3 · Hashes, integridad y compromisos](clase-03-hashes-integridad-y-compromisos.md)
 
-**Enfoque pedagógico:** demostración con contraejemplos.
+¿Cómo se detecta una alteración sin ocultar necesariamente el dato?
 
-Se alteran mensajes casi idénticos para observar el efecto avalancha y luego se compara hash, cifrado y MAC. La clase avanza desde lo visible hacia las propiedades formales, sin presentar una huella como prueba de verdad.
+**Experiencia propia:** demostración con contraejemplos. **Evidencia:** Script reproducible y explicación de qué demuestra y qué no demuestra el hash.
 
-**Núcleo conceptual:**
+### [Clase 4 · Firmas, claves y ciclo de vida](clase-04-firmas-claves-y-ciclo-de-vida.md)
 
-- preimagen, colisión y efecto avalancha.
-- hash frente a cifrado.
-- árboles y pruebas de Merkle.
+¿Qué prueba una firma y cómo se gobierna la clave que la produce?
 
-**Caso de trabajo:** Verificar que un lote de documentos contables no cambió desde el cierre.
-
-**Actividad:** Construir hashes encadenados y una prueba de inclusión con datos pequeños.
-
-**Comprobación formativa:** Explica por qué conocer el hash de un contrato no demuestra que su contenido sea correcto.
-
-**Evidencia de aprendizaje:** Script reproducible y explicación de qué demuestra y qué no demuestra el hash.
-
-### Clase 4 · Firmas, claves y ciclo de vida
-
-**Pregunta guía:** ¿Qué prueba una firma y cómo se gobierna la clave que la produce?
-
-**Enfoque pedagógico:** ceremonia de claves simulada.
-
-Cada participante asume un rol en generación, firma, respaldo, rotación o revocación. Una pérdida y una filtración obligan a distinguir disponibilidad de confidencialidad y a diseñar recuperación antes del incidente.
-
-**Núcleo conceptual:**
-
-- clave privada y pública.
-- firma, verificación y dominio del mensaje.
-- generación, respaldo, rotación y revocación.
-
-**Caso de trabajo:** Una clave de tesorería sigue activa después de que su responsable deja la empresa.
-
-**Actividad:** Firmar y verificar mensajes, luego diseñar controles para pérdida y compromiso.
-
-**Comprobación formativa:** ¿Qué puede verificar una firma y qué hecho sobre la identidad del firmante necesita evidencia externa?
-
-**Evidencia de aprendizaje:** Diagrama del ciclo de vida de una clave con responsables y puntos de control.
-<!-- plan-clases:fin -->
+**Experiencia propia:** ceremonia de claves simulada. **Evidencia:** Diagrama del ciclo de vida de una clave con responsables y puntos de control.
+<!-- clases-independientes:fin -->
 
 ---
 

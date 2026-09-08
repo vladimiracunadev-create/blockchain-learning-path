@@ -4,57 +4,27 @@
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [Clases 13–14 · Solidity y Foundry](../06-solidity-foundry/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 17–18 · Tokens y estándares](../08-tokens/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
-> 👛 Si nunca has usado una wallet, estudia antes la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
+> 👛 Si nunca has usado una wallet, usa [Wallets desde cero](../../docs/wallets-desde-cero.md) como apoyo durante la clase 16.
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 15 · Lecturas, RPC y estado de interfaz
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué puede mostrar una dApp sin pedir permiso ni firma al usuario?
+### [Clase 15 · Lecturas, RPC y estado de interfaz](clase-15-lecturas-rpc-y-estado-de-interfaz.md)
 
-**Enfoque pedagógico:** depuración desde la interfaz hasta RPC.
+¿Qué puede mostrar una dApp sin pedir permiso ni firma al usuario?
 
-Una pantalla aparentemente correcta consulta red o contrato equivocados. La clase rastrea procedencia, bloque y ABI para convertir errores silenciosos en estados visibles.
+**Experiencia propia:** depuración desde la interfaz hasta RPC. **Evidencia:** Pantalla que exponga procedencia, bloque consultado y estados de error.
 
-**Núcleo conceptual:**
+### [Clase 16 · Firmas y experiencia transaccional](clase-16-firmas-y-experiencia-transaccional.md)
 
-- RPC y proveedores.
-- lecturas y simulación.
-- red, dirección y ABI.
+¿Cómo entiende el usuario lo que firmará y qué ocurrió después?
 
-**Caso de trabajo:** La interfaz consulta un contrato correcto en la red equivocada.
-
-**Actividad:** Construir lecturas tipadas y validar cadena, contrato y formato de datos.
-
-**Comprobación formativa:** Enumera tres datos que la interfaz debe mostrar para que una lectura sea verificable.
-
-**Evidencia de aprendizaje:** Pantalla que exponga procedencia, bloque consultado y estados de error.
-
-### Clase 16 · Firmas y experiencia transaccional
-
-**Pregunta guía:** ¿Cómo entiende el usuario lo que firmará y qué ocurrió después?
-
-**Enfoque pedagógico:** diseño de consentimiento transaccional.
-
-Se parte de una aprobación peligrosa presentada como acción inocua. El grupo rediseña preflight, simulación y estados posteriores para que el usuario entienda efecto y riesgo.
-
-**Núcleo conceptual:**
-
-- conexión de wallet.
-- simulación y consentimiento informado.
-- pending, confirmed, replaced y reverted.
-
-**Caso de trabajo:** Una aprobación ilimitada parece una compra simple en la interfaz.
-
-**Actividad:** Diseñar un preflight que muestre contrato, valor, permisos y efecto esperado.
-
-**Comprobación formativa:** ¿Qué debe explicarse antes de una firma aunque la simulación termine correctamente?
-
-**Evidencia de aprendizaje:** Flujo con estados recuperables y enlace verificable a la transacción.
-<!-- plan-clases:fin -->
+**Experiencia propia:** diseño de consentimiento transaccional. **Evidencia:** Flujo con estados recuperables y enlace verificable a la transacción.
+<!-- clases-independientes:fin -->
 
 ---
 

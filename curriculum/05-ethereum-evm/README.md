@@ -4,57 +4,27 @@
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [Clases 9–10 · Bitcoin](../04-bitcoin/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 13–14 · Solidity y Foundry](../06-solidity-foundry/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
-> 👛 ¿Aún no has usado una wallet? Pasa primero por la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
+> 👛 ¿Aún no has usado una wallet? Consulta [Wallets desde cero](../../docs/wallets-desde-cero.md) mientras trabajas la clase 11; no es una clase adicional.
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 11 · Cuentas, estado y transacciones Ethereum
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo cambia el estado global cuando una cuenta firma una operación?
+### [Clase 11 · Cuentas, estado y transacciones Ethereum](clase-11-cuentas-estado-y-transacciones-ethereum.md)
 
-**Enfoque pedagógico:** línea temporal de nonces.
+¿Cómo cambia el estado global cuando una cuenta firma una operación?
 
-Dos transacciones compiten por el mismo nonce y una tercera queda bloqueada. Así se conectan cuenta, mempool, reemplazo y estado sin confundir envío con ejecución.
+**Experiencia propia:** línea temporal de nonces. **Evidencia:** Secuencia firmada que explique pending, reemplazo, inclusión y finalidad.
 
-**Núcleo conceptual:**
+### [Clase 12 · EVM, ABI y costo de ejecución](clase-12-evm-abi-y-costo-de-ejecucion.md)
 
-- EOA y cuenta de contrato.
-- nonce, saldo, código y storage.
-- EIP-1559 y ciclo de transacción.
+¿Cómo convierte la EVM una llamada en cambios de estado y consumo de gas?
 
-**Caso de trabajo:** Dos transacciones con el mismo nonce compiten con tarifas distintas.
-
-**Actividad:** Inspeccionar cuentas y reemplazar una transacción en una red local.
-
-**Comprobación formativa:** Predice qué ocurre con los nonces siguientes si el primero queda pendiente.
-
-**Evidencia de aprendizaje:** Secuencia firmada que explique pending, reemplazo, inclusión y finalidad.
-
-### Clase 12 · EVM, ABI y costo de ejecución
-
-**Pregunta guía:** ¿Cómo convierte la EVM una llamada en cambios de estado y consumo de gas?
-
-**Enfoque pedagógico:** lectura guiada de una traza EVM.
-
-La clase decodifica calldata y sigue una llamada por stack, memory, storage y logs. Un revert permite comprobar qué efectos sobreviven y cuáles se deshacen.
-
-**Núcleo conceptual:**
-
-- bytecode y opcodes.
-- ABI, selector y calldata.
-- stack, memory, storage y logs.
-
-**Caso de trabajo:** Una llamada revierte después de escribir temporalmente en memoria y storage.
-
-**Actividad:** Decodificar calldata y seguir una traza de ejecución en Anvil.
-
-**Comprobación formativa:** Distingue un dato persistente, uno temporal y uno observable sólo fuera de cadena.
-
-**Evidencia de aprendizaje:** Mapa de la llamada con opcode relevante, gas y efecto persistente o revertido.
-<!-- plan-clases:fin -->
+**Experiencia propia:** lectura guiada de una traza EVM. **Evidencia:** Mapa de la llamada con opcode relevante, gas y efecto persistente o revertido.
+<!-- clases-independientes:fin -->
 
 ---
 

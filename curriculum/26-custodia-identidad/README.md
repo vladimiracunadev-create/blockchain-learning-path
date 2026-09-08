@@ -4,57 +4,27 @@
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [Clases 51–52 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 55–56 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
-> 👛 La versión para el usuario individual de este tema es la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
+> 👛 La guía [Wallets desde cero](../../docs/wallets-desde-cero.md) cubre el uso individual; estas clases llevan el mismo problema a custodia institucional.
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 53 · Custodia institucional de claves
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo se evita que una persona o falla única controle los activos?
+### [Clase 53 · Custodia institucional de claves](clase-53-custodia-institucional-de-claves.md)
 
-**Enfoque pedagógico:** ceremonia institucional de firma.
+¿Cómo se evita que una persona o falla única controle los activos?
 
-Roles separados preparan, aprueban y firman una operación mientras fallan personas y proveedores. La arquitectura se mide por pérdida máxima y recuperación.
+**Experiencia propia:** ceremonia institucional de firma. **Evidencia:** Política de firma con quórum, límites, recuperación y trazabilidad.
 
-**Núcleo conceptual:**
+### [Clase 54 · Identidad y autorización verificable](clase-54-identidad-y-autorizacion-verificable.md)
 
-- hot, warm y cold wallets.
-- multisig, MPC y HSM.
-- ceremonias, políticas y recuperación.
+¿Cómo demostramos atributos sin convertir la wallet en una identidad universal?
 
-**Caso de trabajo:** Un firmante privilegiado y un proveedor de MPC quedan indisponibles a la vez.
-
-**Actividad:** Diseñar arquitectura por niveles de riesgo y volumen.
-
-**Comprobación formativa:** ¿Qué combinación de fallas aún podría mover fondos sin autorización?
-
-**Evidencia de aprendizaje:** Política de firma con quórum, límites, recuperación y trazabilidad.
-
-### Clase 54 · Identidad y autorización verificable
-
-**Pregunta guía:** ¿Cómo demostramos atributos sin convertir la wallet en una identidad universal?
-
-**Enfoque pedagógico:** diseño de divulgación mínima.
-
-Una persona demuestra elegibilidad sin convertir su dirección en expediente público. Identidad, credencial, wallet y autorización se modelan como objetos distintos.
-
-**Núcleo conceptual:**
-
-- DID y credenciales verificables.
-- KYC, autenticación y autorización.
-- privacidad, revocación y correlación.
-
-**Caso de trabajo:** Un inversor demuestra elegibilidad sin publicar todos sus datos personales.
-
-**Actividad:** Separar identidad, credencial, wallet y permiso de transferencia.
-
-**Comprobación formativa:** ¿Qué dato puede omitirse sin impedir verificar el atributo requerido?
-
-**Evidencia de aprendizaje:** Flujo de emisión y verificación con minimización y revocación.
-<!-- plan-clases:fin -->
+**Experiencia propia:** diseño de divulgación mínima. **Evidencia:** Flujo de emisión y verificación con minimización y revocación.
+<!-- clases-independientes:fin -->
 
 ---
 

@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 9 · UTXO y anatomía de una transacción
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Dónde está el saldo de Bitcoin y qué autoriza realmente una entrada?
+### [Clase 9 · UTXO y anatomía de una transacción](clase-09-utxo-y-anatomia-de-una-transaccion.md)
 
-**Enfoque pedagógico:** autopsia de una transacción.
+¿Dónde está el saldo de Bitcoin y qué autoriza realmente una entrada?
 
-Se sigue cada entrada y salida con cantidades concretas hasta que el saldo deja de parecer un número de cuenta. El cambio y la comisión se deducen, no se memorizan.
+**Experiencia propia:** autopsia de una transacción. **Evidencia:** Trazado de cada satoshi entre entradas, salidas, cambio y comisión.
 
-**Núcleo conceptual:**
+### [Clase 10 · Verificación, minería y operación segura](clase-10-verificacion-mineria-y-operacion-segura.md)
 
-- UTXO, entradas y salidas.
-- scripts y firmas.
-- txid, cambio y comisiones.
+¿Qué comprueba un nodo propio y qué delega un cliente ligero?
 
-**Caso de trabajo:** Una wallet gasta un UTXO grande y devuelve el remanente a una dirección de cambio.
-
-**Actividad:** Leer y construir una transacción en regtest sin fondos reales.
-
-**Comprobación formativa:** Señala cuál salida pertenece al receptor, cuál podría ser cambio y qué evidencia falta para confirmarlo.
-
-**Evidencia de aprendizaje:** Trazado de cada satoshi entre entradas, salidas, cambio y comisión.
-
-### Clase 10 · Verificación, minería y operación segura
-
-**Pregunta guía:** ¿Qué comprueba un nodo propio y qué delega un cliente ligero?
-
-**Enfoque pedagógico:** laboratorio regtest con política de riesgo.
-
-El estudiante genera bloques y observa cómo una operación acumula confirmaciones. Después ajusta una política de aceptación según valor, amenaza y tolerancia a reorganizaciones.
-
-**Núcleo conceptual:**
-
-- full node y SPV.
-- mempool, confirmaciones y reorganización.
-- emisión, dificultad y Lightning.
-
-**Caso de trabajo:** Un comercio decide cuántas confirmaciones exigir según importe y riesgo.
-
-**Actividad:** Generar bloques, observar confirmaciones y provocar gasto de cambio en regtest.
-
-**Comprobación formativa:** ¿Por qué seis confirmaciones son una política y no una constante universal del protocolo?
-
-**Evidencia de aprendizaje:** Política de aceptación que relacione amenaza, monto y profundidad.
-<!-- plan-clases:fin -->
+**Experiencia propia:** laboratorio regtest con política de riesgo. **Evidencia:** Política de aceptación que relacione amenaza, monto y profundidad.
+<!-- clases-independientes:fin -->
 
 ---
 

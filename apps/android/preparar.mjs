@@ -22,8 +22,8 @@ if (!existsSync(join(BUNDLE, "index.html"))) {
 }
 
 const manifiesto = JSON.parse(readFileSync(join(BUNDLE, "contenido.json"), "utf8"));
-if (manifiesto.clases !== 66 || manifiesto.modulos !== 33) {
-  throw new Error(`El bundle declara ${manifiesto.clases} clases en ${manifiesto.modulos} unidades; se esperaban 66 en 33.`);
+if (manifiesto.clases !== 66 || manifiesto.mapasTematicos !== 33) {
+  throw new Error(`El bundle declara ${manifiesto.clases} clases y ${manifiesto.mapasTematicos} mapas; se esperaban 66 y 33.`);
 }
 
 rmSync(WWW, { recursive: true, force: true });

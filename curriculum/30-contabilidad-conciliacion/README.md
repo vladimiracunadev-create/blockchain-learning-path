@@ -6,53 +6,23 @@
 > 🧭 ⬅️ **Anterior:** [Clases 59–60 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 63–64 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md)
 
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 61 · Tres realidades contables
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo se relacionan Internal Ledger, Exchange Reality y Blockchain State?
+### [Clase 61 · Tres realidades contables](clase-61-tres-realidades-contables.md)
 
-**Enfoque pedagógico:** reconstrucción independiente de tres libros.
+¿Cómo se relacionan Internal Ledger, Exchange Reality y Blockchain State?
 
-Cada fuente se totaliza antes de reconciliar para impedir que una cifra contamine a las demás. La procedencia importa tanto como el importe.
+**Experiencia propia:** reconstrucción independiente de tres libros. **Evidencia:** Balance por fuente con dueño, timestamp, unidad y procedencia.
 
-**Núcleo conceptual:**
+### [Clase 62 · Conciliación y gestión de diferencias](clase-62-conciliacion-y-gestion-de-diferencias.md)
 
-- pasivo por cliente.
-- activo bajo custodia o en tercero.
-- estado on-chain confirmado.
+¿Qué explica una diferencia y cuándo se convierte en incidente?
 
-**Caso de trabajo:** La interfaz muestra saldo, el exchange externo otro y la wallet un tercero.
-
-**Actividad:** Reconstruir cada universo sin compensarlos prematuramente.
-
-**Comprobación formativa:** ¿Qué representa un saldo de cliente: activo de la empresa, pasivo o ambos?
-
-**Evidencia de aprendizaje:** Balance por fuente con dueño, timestamp, unidad y procedencia.
-
-### Clase 62 · Conciliación y gestión de diferencias
-
-**Pregunta guía:** ¿Qué explica una diferencia y cuándo se convierte en incidente?
-
-**Enfoque pedagógico:** war room de conciliación.
-
-Excepciones con antigüedad y causa distintas compiten por atención. El equipo separa diferencia temporal, error, pérdida y dato insuficiente.
-
-**Núcleo conceptual:**
-
-- cut-off y confirmaciones.
-- comisiones, pendientes, reorgs y unidades.
-- excepciones, aging y escalamiento.
-
-**Caso de trabajo:** Un retiro pendiente cruza el cierre y parece un déficit temporal.
-
-**Actividad:** Ejecutar conciliación por activo y clasificar cada excepción.
-
-**Comprobación formativa:** ¿Cuándo un ajuste contable corrige el registro y cuándo sólo oculta la causa?
-
-**Evidencia de aprendizaje:** Informe repetible con diferencia bruta, ajuste justificado y saldo final.
-<!-- plan-clases:fin -->
+**Experiencia propia:** war room de conciliación. **Evidencia:** Informe repetible con diferencia bruta, ajuste justificado y saldo final.
+<!-- clases-independientes:fin -->
 
 ---
 

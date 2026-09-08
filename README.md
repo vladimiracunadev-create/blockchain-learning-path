@@ -25,7 +25,7 @@
 [![viem](https://img.shields.io/badge/viem-dApps-2e8b57?style=flat-square)](apps/community-funding-web)
 [![TypeScript](https://img.shields.io/badge/TypeScript-dApp%20%26%20indexer-3178C6?style=flat-square&logo=typescript&logoColor=white)](apps)
 
-[🌱 Empieza aquí](docs/empieza-aqui.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
+[🌱 Empieza aquí](docs/empieza-aqui.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🚧 ¿Y si cruzas la línea?](docs/y-si-cruzas-la-linea-blockchain.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
 
 </div>
 
@@ -37,13 +37,14 @@
 
 ### **[👉 EMPIEZA AQUÍ](docs/empieza-aqui.md)**
 
-**No hace falta que sepas nada todavía.** Esa página te dice qué necesitas antes de arrancar, qué instalar y en qué momento, cómo se estudia una clase, qué hacer cuando te atasques — y te deja en la puerta de la [clase 1](curriculum/00-orientacion/README.md#clase-1--qué-problema-intenta-resolver-blockchain), que es por donde se empieza.
+**No hace falta que sepas nada todavía.** Esa página te dice qué necesitas antes de arrancar, qué instalar y en qué momento, cómo se estudia una clase, qué hacer cuando te atasques — y te deja en la puerta de la [clase 1](curriculum/00-orientacion/clase-01-que-problema-intenta-resolver-blockchain.md), que es por donde se empieza.
 
 Ten a mano el **[📖 glosario](docs/glosario.md)**, enlazado desde todas las clases, para cuando una palabra te frene.
 
-Y cuando llegues al final de la clase 10, pasa por la unidad transversal
-**[👛 Wallets desde cero](docs/wallets-desde-cero.md)** — qué es una wallet, cómo usarla
-con seguridad y qué hacer cuando algo sale mal — antes de entrar en Ethereum.
+Las wallets se aprenden dentro de las clases que las necesitan: claves en la 4,
+UTXO en 9–10, cuentas Ethereum en la 11, consentimiento en la 16 y custodia en
+53–54 y 59–60. **[👛 Wallets desde cero](docs/wallets-desde-cero.md)** queda como
+guía de consulta y emergencia; no añade clases ni altera la secuencia 1–66.
 
 </div>
 
@@ -53,7 +54,7 @@ con seguridad y qué hacer cuando algo sale mal — antes de entrar en Ethereum.
 
 ## 🎯 Qué es esto
 
-Un currículo **secuencial** que cubre el espectro completo de blockchain, paso a paso, en **66 clases** agrupadas por tema en 33 unidades documentales, diez etapas y un proyecto final. Cada unidad conserva una URL estable y reúne dos clases distintas con:
+Un currículo **secuencial** que cubre el espectro completo de blockchain, paso a paso, en **66 documentos de clase independientes**, diez etapas y un proyecto final. Las 33 rutas anteriores se conservan únicamente como mapas temáticos para no romper enlaces; cada clase tiene su propia URL, desarrollo y evaluación con:
 
 - 🎯 **Objetivos** medibles y **resultados de aprendizaje** verificables.
 - 🗺️ **Temas** con el porqué de cada uno y **conceptos** con definiciones.
@@ -141,7 +142,9 @@ Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visua
 | **Custodia, auditoría y forensics** | [59](curriculum/29-exchanges-operaciones-custodia/README.md)–[66](curriculum/32-forensics-auditoria-gobernanza/README.md) | Exchanges, wallets, contabilidad, PoR/PoL, conciliación, forensics y gobernanza | Contrastar ledger, realidad del exchange y estado blockchain |
 | **Proyecto final** | [capstone](capstone/README.md) | Integración | Protocolo o caso custodial documentado y probado |
 
-> 👛 Entre las clases [10](curriculum/04-bitcoin/README.md#clase-10--verificación-minería-y-operación-segura) y [11](curriculum/05-ethereum-evm/README.md#clase-11--cuentas-estado-y-transacciones-ethereum) se estudia la unidad transversal **[Wallets desde cero: uso, seguridad y recuperación](docs/wallets-desde-cero.md)** — obligatoria para principiantes y compatible con la secuencia existente.
+> 👛 **Wallets sin clases ocultas:** el contenido se integra en las clases 4, 9–11,
+> 16, 53–54 y 59–60. [Wallets desde cero](docs/wallets-desde-cero.md) es una guía
+> complementaria de consulta; el programa sigue teniendo exactamente 66 clases.
 
 ## 🧪 Laboratorios y proyectos ejecutables
 
@@ -212,7 +215,7 @@ El programa está listo para el aula: [guía del instructor](instructor/README.m
 1. **Sigue el orden.** La numeración 1→66 es secuencial por diseño: cada clase prepara la siguiente.
 2. **Aplica el ciclo** de cada clase: comprender → experimentar → explicar → construir → verificar.
 3. **Ejecuta los laboratorios** en local (Anvil) o testnet; registra la evidencia en tu bitácora de progreso.
-4. **Haz el reto verificable** de cada pareja de clases: ahí se fija el aprendizaje con un criterio de aceptación explícito.
+4. **Produce la evidencia verificable** de cada clase: ahí se fija el aprendizaje con un criterio de aceptación explícito.
 5. **Comprueba tu trabajo sin depender de nadie:** 62 de las 91 prácticas traen verificación ejecutable (`pnpm test`, `forge test`), así que estudiando solo tienes señal inmediata de si tu solución funciona. El resto produce una evidencia revisable con rúbrica.
 6. **Cierra cada clase con su comprobación formativa** y cada unidad con su autoevaluación (al menos 3 preguntas, también en el sitio y en las apps). Cada opción incorrecta corresponde a un error frecuente documentado: si fallas, la explicación te dice exactamente qué releer. Al terminar el programa, el [quiz global](https://vladimiracunadev-create.github.io/blockchain-learning-path/autoevaluacion.html) repasa todo el recorrido.
 7. **Usa los libros de referencia** de cada área para profundizar, y la [matriz de competencias](docs/skills-matrix.md) para saber qué nivel has alcanzado y con qué evidencia lo demuestras.

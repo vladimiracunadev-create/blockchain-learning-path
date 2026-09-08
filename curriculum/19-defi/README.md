@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 39 · AMM, liquidez y formación de precio
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo fija precio un pool sin libro de órdenes?
+### [Clase 39 · AMM, liquidez y formación de precio](clase-39-amm-liquidez-y-formacion-de-precio.md)
 
-**Enfoque pedagógico:** laboratorio numérico de AMM.
+¿Cómo fija precio un pool sin libro de órdenes?
 
-Cada swap modifica reservas y precio; el arbitraje se calcula después. Las fórmulas se conectan con quién entrega valor y quién recibe comisiones.
+**Experiencia propia:** laboratorio numérico de AMM. **Evidencia:** Hoja reproducible que explique quién gana, quién pierde y por qué.
 
-**Núcleo conceptual:**
+### [Clase 40 · Préstamo, colateral y riesgo DeFi](clase-40-prestamo-colateral-y-riesgo-defi.md)
 
-- x·y=k y reservas.
-- slippage, fees e impacto.
-- LP e impermanent loss.
+¿Cómo permanece solvente un mercado sin evaluar personalmente al deudor?
 
-**Caso de trabajo:** Una orden grande mueve el precio y atrae arbitraje.
-
-**Actividad:** Calcular swaps, comisiones y pérdida impermanente con escenarios.
-
-**Comprobación formativa:** Predice cómo cambia el impacto de precio al duplicar el tamaño de la orden.
-
-**Evidencia de aprendizaje:** Hoja reproducible que explique quién gana, quién pierde y por qué.
-
-### Clase 40 · Préstamo, colateral y riesgo DeFi
-
-**Pregunta guía:** ¿Cómo permanece solvente un mercado sin evaluar personalmente al deudor?
-
-**Enfoque pedagógico:** simulación de shock y liquidación.
-
-Precio, latencia y liquidez cambian durante una caída. El health factor deja de ser un número de tablero y pasa a ser una carrera operacional.
-
-**Núcleo conceptual:**
-
-- LTV y health factor.
-- liquidación y oráculos.
-- composabilidad y riesgo sistémico.
-
-**Caso de trabajo:** Una caída rápida de precio vuelve insuficiente el colateral antes de liquidar.
-
-**Actividad:** Simular préstamo, shock y liquidación bajo distintas latencias.
-
-**Comprobación formativa:** ¿En qué escenario una liquidación correcta todavía deja deuda incobrable?
-
-**Evidencia de aprendizaje:** Análisis de riesgo con umbrales, dependencia de oráculo y déficit potencial.
-<!-- plan-clases:fin -->
+**Experiencia propia:** simulación de shock y liquidación. **Evidencia:** Análisis de riesgo con umbrales, dependencia de oráculo y déficit potencial.
+<!-- clases-independientes:fin -->
 
 ---
 

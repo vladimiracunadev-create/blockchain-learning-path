@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 13 · Diseño de contratos e invariantes
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué debe ser siempre verdadero antes de escribir una línea de Solidity?
+### [Clase 13 · Diseño de contratos e invariantes](clase-13-diseno-de-contratos-e-invariantes.md)
 
-**Enfoque pedagógico:** taller de especificación antes del código.
+¿Qué debe ser siempre verdadero antes de escribir una línea de Solidity?
 
-Primero se escriben estados permitidos, transiciones e invariantes; después aparece Solidity. Esta inversión evita que la implementación dicte accidentalmente las reglas del sistema.
+**Experiencia propia:** taller de especificación antes del código. **Evidencia:** Contrato mínimo con pruebas unitarias que demuestren transiciones válidas.
 
-**Núcleo conceptual:**
+### [Clase 14 · Pruebas profundas con Foundry](clase-14-pruebas-profundas-con-foundry.md)
 
-- estado, transiciones e invariantes.
-- tipos, errores y eventos.
-- autoridad y mínima superficie.
+¿Cómo encontramos secuencias que una prueba feliz nunca ejecuta?
 
-**Caso de trabajo:** Una bóveda acepta depósitos pero pierde correspondencia entre shares y activos.
-
-**Actividad:** Escribir especificación e invariantes antes de implementar el contrato.
-
-**Comprobación formativa:** Formula una propiedad que deba cumplirse tras cualquier depósito y retiro.
-
-**Evidencia de aprendizaje:** Contrato mínimo con pruebas unitarias que demuestren transiciones válidas.
-
-### Clase 14 · Pruebas profundas con Foundry
-
-**Pregunta guía:** ¿Cómo encontramos secuencias que una prueba feliz nunca ejecuta?
-
-**Enfoque pedagógico:** caza de secuencias con fuzzing.
-
-Las pruebas felices se reemplazan por actores y llamadas aleatorias. El estudiante reduce el fallo hasta una secuencia mínima y sólo entonces corrige.
-
-**Núcleo conceptual:**
-
-- fuzzing e invariantes.
-- cheatcodes y trazas.
-- storage layout y actualizabilidad.
-
-**Caso de trabajo:** Una secuencia depósito-retiro-donación rompe una aserción contable.
-
-**Actividad:** Crear handlers y ejecutar pruebas de invariantes sobre estados aleatorios.
-
-**Comprobación formativa:** ¿Qué aporta una prueba de invariantes que no aporta repetir cientos de casos unitarios?
-
-**Evidencia de aprendizaje:** Fallo mínimo reproducible, corrección y prueba de regresión.
-<!-- plan-clases:fin -->
+**Experiencia propia:** caza de secuencias con fuzzing. **Evidencia:** Fallo mínimo reproducible, corrección y prueba de regresión.
+<!-- clases-independientes:fin -->
 
 ---
 

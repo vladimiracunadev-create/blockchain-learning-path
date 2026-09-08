@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 35 · Valor empresarial y límites
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué coordinación mejora y qué costo nuevo introduce una red compartida?
+### [Clase 35 · Valor empresarial y límites](clase-35-valor-empresarial-y-limites.md)
 
-**Enfoque pedagógico:** clínica de caso de negocio.
+¿Qué coordinación mejora y qué costo nuevo introduce una red compartida?
 
-El proceso actual se cuantifica antes de diseñar el futuro. Beneficios, costos y riesgos comparten unidades comparables para evitar promesas imposibles de medir.
+**Experiencia propia:** clínica de caso de negocio. **Evidencia:** Business case con línea base, supuestos, costos y criterio de abandono.
 
-**Núcleo conceptual:**
+### [Clase 36 · Comunicación, piloto y medición](clase-36-comunicacion-piloto-y-medicion.md)
 
-- caso de uso y actores.
-- TCO, riesgo y beneficio.
-- base de datos frente a DLT.
+¿Cómo se prueba valor sin prometer una transformación completa?
 
-**Caso de trabajo:** Varias empresas quieren compartir trazabilidad sin compartir control total.
-
-**Actividad:** Cuantificar proceso actual, fricciones y alternativas tecnológicas.
-
-**Comprobación formativa:** ¿Qué indicador demostraría que el problema existe aun sin blockchain?
-
-**Evidencia de aprendizaje:** Business case con línea base, supuestos, costos y criterio de abandono.
-
-### Clase 36 · Comunicación, piloto y medición
-
-**Pregunta guía:** ¿Cómo se prueba valor sin prometer una transformación completa?
-
-**Enfoque pedagógico:** audiencia de inversión simulada.
-
-Una PoC técnica enfrenta preguntas de adopción, soporte, legal y operación. El piloto se diseña para invalidar hipótesis, no para confirmar entusiasmo.
-
-**Núcleo conceptual:**
-
-- hipótesis y alcance.
-- PoC, piloto y producción.
-- KPIs técnicos y de negocio.
-
-**Caso de trabajo:** Una PoC exitosa no contempla integración, soporte ni responsabilidad legal.
-
-**Actividad:** Convertir una demo en plan de piloto con usuarios y métricas reales.
-
-**Comprobación formativa:** Define una condición concreta que obligaría a detener el piloto.
-
-**Evidencia de aprendizaje:** Pitch y tablero de decisión go/no-go con riesgos explícitos.
-<!-- plan-clases:fin -->
+**Experiencia propia:** audiencia de inversión simulada. **Evidencia:** Pitch y tablero de decisión go/no-go con riesgos explícitos.
+<!-- clases-independientes:fin -->
 
 ---
 

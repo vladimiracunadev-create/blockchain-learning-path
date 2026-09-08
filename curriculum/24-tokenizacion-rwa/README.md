@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 49 · Del activo al derecho tokenizado
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué posee jurídicamente quien controla el token?
+### [Clase 49 · Del activo al derecho tokenizado](clase-49-del-activo-al-derecho-tokenizado.md)
 
-**Enfoque pedagógico:** cadena de titularidad documental.
+¿Qué posee jurídicamente quien controla el token?
 
-El grupo sigue un derecho desde el activo físico hasta la wallet y vuelve durante la redención. Cada salto debe tener autoridad y remedio identificables.
+**Experiencia propia:** cadena de titularidad documental. **Evidencia:** Mapa de exigibilidad con jurisdicción, responsables y fallas posibles.
 
-**Núcleo conceptual:**
+### [Clase 50 · Ciclo de vida y controles de RWA](clase-50-ciclo-de-vida-y-controles-de-rwa.md)
 
-- activo, derecho y vehículo legal.
-- registro maestro y oráculo.
-- emisión, transferencia y redención.
+¿Cómo se mantienen sincronizados token, activo y restricciones?
 
-**Caso de trabajo:** Un token apunta a un inmueble, pero el registro legal no reconoce al tenedor.
-
-**Actividad:** Dibujar cadena de derechos desde activo físico hasta wallet.
-
-**Comprobación formativa:** ¿Qué ocurre si el token y el registro legal asignan el activo a personas distintas?
-
-**Evidencia de aprendizaje:** Mapa de exigibilidad con jurisdicción, responsables y fallas posibles.
-
-### Clase 50 · Ciclo de vida y controles de RWA
-
-**Pregunta guía:** ¿Cómo se mantienen sincronizados token, activo y restricciones?
-
-**Enfoque pedagógico:** mesa operativa de eventos corporativos.
-
-Cupón, transferencia, congelamiento y default actualizan varios registros. La clase diseña conciliaciones para que el token no se separe del derecho.
-
-**Núcleo conceptual:**
-
-- KYC, listas permitidas y transferibilidad.
-- valuación, servicing y eventos.
-- default, congelamiento y recuperación.
-
-**Caso de trabajo:** El activo paga un cupón, pero el registro de tenedores está desactualizado.
-
-**Actividad:** Diseñar eventos corporativos y conciliaciones del ciclo completo.
-
-**Comprobación formativa:** ¿Quién corrige una divergencia y qué registro prevalece?
-
-**Evidencia de aprendizaje:** Control matrix con frecuencia, evidencia y dueño de cada control.
-<!-- plan-clases:fin -->
+**Experiencia propia:** mesa operativa de eventos corporativos. **Evidencia:** Control matrix con frecuencia, evidencia y dueño de cada control.
+<!-- clases-independientes:fin -->
 
 ---
 

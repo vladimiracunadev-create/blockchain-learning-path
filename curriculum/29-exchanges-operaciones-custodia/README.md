@@ -6,53 +6,23 @@
 > 🧭 ⬅️ **Anterior:** [Clases 57–58 · Blockchain Data Analytics](../28-data-analytics-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 61–62 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md)
 
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 59 · Exchanges, custodia y libros internos
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Dónde se ejecuta una operación y quién controla las claves?
+### [Clase 59 · Exchanges, custodia y libros internos](clase-59-exchanges-custodia-y-libros-internos.md)
 
-**Enfoque pedagógico:** recorrido operativo de una orden.
+¿Dónde se ejecuta una operación y quién controla las claves?
 
-Depósito, compraventa interna y retiro se siguen por sistemas distintos. El estudiante localiza cuándo cambia una obligación y cuándo se mueve un activo on-chain.
+**Experiencia propia:** recorrido operativo de una orden. **Evidencia:** Diagrama que ubique obligación, activo, firma y evidencia por paso.
 
-**Núcleo conceptual:**
+### [Clase 60 · Wallets operacionales y evidencia blockchain](clase-60-wallets-operacionales-y-evidencia-blockchain.md)
 
-- CEX frente a DEX.
-- custodial frente a non-custodial.
-- ledger interno y operación off-chain.
+¿Cómo vinculamos una orden interna con direcciones y transaction IDs?
 
-**Caso de trabajo:** Dos clientes negocian en un CEX sin que cambie ninguna dirección on-chain.
-
-**Actividad:** Trazar depósito, trade, saldo y retiro entre sistemas.
-
-**Comprobación formativa:** ¿Qué operación altera dos saldos de clientes sin crear una transacción blockchain?
-
-**Evidencia de aprendizaje:** Diagrama que ubique obligación, activo, firma y evidencia por paso.
-
-### Clase 60 · Wallets operacionales y evidencia blockchain
-
-**Pregunta guía:** ¿Cómo vinculamos una orden interna con direcciones y transaction IDs?
-
-**Enfoque pedagógico:** investigación multi-red sin fondos reales.
-
-Txids, direcciones, UTXO y cuentas se leen en regtest y Anvil. Un retiro agrupado evita la falsa expectativa de una correspondencia uno a uno.
-
-**Núcleo conceptual:**
-
-- hot, warm y cold.
-- multisig, MPC y HSM.
-- dirección, txid, UTXO y cuenta.
-
-**Caso de trabajo:** Un retiro se agrupa con otros y su importe no coincide con una salida única.
-
-**Actividad:** Investigar transacciones en regtest y red local Ethereum.
-
-**Comprobación formativa:** ¿Qué evidencia vincula un retiro interno con una salida dentro de una transacción agrupada?
-
-**Evidencia de aprendizaje:** Expediente con fuente, corte, identificadores y explicación del batching.
-<!-- plan-clases:fin -->
+**Experiencia propia:** investigación multi-red sin fondos reales. **Evidencia:** Expediente con fuente, corte, identificadores y explicación del batching.
+<!-- clases-independientes:fin -->
 
 ---
 

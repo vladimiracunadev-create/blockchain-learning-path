@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 51 · Infraestructura del mercado de capitales
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué hacen emisión, negociación, compensación, depósito y liquidación?
+### [Clase 51 · Infraestructura del mercado de capitales](clase-51-infraestructura-del-mercado-de-capitales.md)
 
-**Enfoque pedagógico:** mapa vivo de infraestructura financiera.
+¿Qué hacen emisión, negociación, compensación, depósito y liquidación?
 
-Cada estudiante representa bolsa, CCP, CSD, custodio o banco de liquidación. Una falla muestra qué riesgo absorbe cada institución y por qué existe.
+**Experiencia propia:** mapa vivo de infraestructura financiera. **Evidencia:** Mapa operativo que explique por qué existe cada intermediario.
 
-**Núcleo conceptual:**
+### [Clase 52 · Mercado tokenizado y DvP](clase-52-mercado-tokenizado-y-dvp.md)
 
-- bolsa, CCP, CSD y custodio.
-- órdenes, neteo y colateral.
-- PFMI y riesgo sistémico.
+¿Qué elimina la atomicidad y qué funciones institucionales permanecen?
 
-**Caso de trabajo:** Una operación se negocia hoy y liquida después con exposición bilateral.
-
-**Actividad:** Asignar cada evento y riesgo a la infraestructura responsable.
-
-**Comprobación formativa:** ¿Qué función no desaparece aunque desaparezca su intermediario actual?
-
-**Evidencia de aprendizaje:** Mapa operativo que explique por qué existe cada intermediario.
-
-### Clase 52 · Mercado tokenizado y DvP
-
-**Pregunta guía:** ¿Qué elimina la atomicidad y qué funciones institucionales permanecen?
-
-**Enfoque pedagógico:** diseño comparado de DvP.
-
-Cuatro combinaciones de dinero y valor on/off-chain se evalúan con el mismo trade. La atomicidad se separa de custodia, finalidad legal y gobierno.
-
-**Núcleo conceptual:**
-
-- entrega contra pago.
-- dinero y valores tokenizados.
-- eventos corporativos y gobierno.
-
-**Caso de trabajo:** Un bono se entrega on-chain, pero el efectivo queda en otro sistema.
-
-**Actividad:** Comparar cuatro modelos de DvP y sus dependencias.
-
-**Comprobación formativa:** ¿Qué evidencia demuestra entrega y pago bajo el mismo corte?
-
-**Evidencia de aprendizaje:** Diseño objetivo con riesgos nuevos, heredados y controles.
-<!-- plan-clases:fin -->
+**Experiencia propia:** diseño comparado de DvP. **Evidencia:** Diseño objetivo con riesgos nuevos, heredados y controles.
+<!-- clases-independientes:fin -->
 
 ---
 

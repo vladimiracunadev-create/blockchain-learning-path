@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 5 · Replicación, latencia y fallas
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué significa mantener una verdad compartida cuando la red se parte?
+### [Clase 5 · Replicación, latencia y fallas](clase-05-replicacion-latencia-y-fallas.md)
 
-**Enfoque pedagógico:** simulación de red con eventos.
+¿Qué significa mantener una verdad compartida cuando la red se parte?
 
-Los equipos reciben mensajes con retrasos, duplicados y particiones. Al reconstruir el orden descubren por experiencia por qué consistencia y disponibilidad entran en tensión.
+**Experiencia propia:** simulación de red con eventos. **Evidencia:** Línea temporal que identifique estados divergentes y política de resolución.
 
-**Núcleo conceptual:**
+### [Clase 6 · Redes P2P y adversarios](clase-06-redes-p2p-y-adversarios.md)
 
-- replicación y consistencia.
-- latencia y particiones.
-- CAP y disponibilidad.
+¿Cómo se propaga información sin confiar en cada participante?
 
-**Caso de trabajo:** Dos regiones aceptan operaciones durante una interrupción de conectividad.
-
-**Actividad:** Simular mensajes retrasados, duplicados y fuera de orden entre nodos.
-
-**Comprobación formativa:** Indica qué decisión tomaría cada réplica durante una partición y qué costo tendrá al reconectar.
-
-**Evidencia de aprendizaje:** Línea temporal que identifique estados divergentes y política de resolución.
-
-### Clase 6 · Redes P2P y adversarios
-
-**Pregunta guía:** ¿Cómo se propaga información sin confiar en cada participante?
-
-**Enfoque pedagógico:** juego adversarial de topologías.
-
-Una parte del grupo propaga información y otra intenta aislar nodos o crear identidades. El aprendizaje se centra en cómo la topología y el costo de identidad cambian la seguridad.
-
-**Núcleo conceptual:**
-
-- gossip y mempool.
-- fallas bizantinas.
-- identidad Sybil y eclipse.
-
-**Caso de trabajo:** Un nodo nuevo recibe una visión sesgada de la red por vecinos controlados.
-
-**Actividad:** Modelar topologías y observar cómo cambia la propagación al retirar nodos.
-
-**Comprobación formativa:** Diferencia un fallo por caída, uno bizantino y un ataque Sybil usando el mismo escenario.
-
-**Evidencia de aprendizaje:** Informe con amenaza, supuesto de red y mitigación medible.
-<!-- plan-clases:fin -->
+**Experiencia propia:** juego adversarial de topologías. **Evidencia:** Informe con amenaza, supuesto de red y mitigación medible.
+<!-- clases-independientes:fin -->
 
 ---
 

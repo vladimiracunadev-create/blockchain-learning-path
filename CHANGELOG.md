@@ -11,10 +11,11 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 ### Añadido
 
-- Catálogo estable de **66 clases** en 33 unidades documentales, con pregunta guía, caso, actividad, evidencia y comprobación formativa propias para cada clase.
+- **66 documentos de clase independientes**, numerados de Clase 1 a Clase 66, cada uno con pregunta guía, fundamentos, gráfico pedagógico, caso, práctica, evidencia, comprobación y fuentes propias; las 33 URL históricas quedan como mapas temáticos compatibles.
 - Diseño pedagógico explícito con más de 25 estrategias distintas —simulación, autopsia, debate, ceremonia, laboratorio adversarial, conciliación y comité de aseguramiento, entre otras— para evitar clases clonadas.
 - Glosario profesional ampliado sobre exchanges, custodia, contabilidad blockchain, reservas, pasivos, solvencia, forensics, atribución y gobernanza.
 - Caso Orionx documentado con corte temporal, jerarquía de fuentes y separación explícita entre hechos, afirmaciones de parte, alegaciones e inferencias; Aurora Custody permanece como evaluación ficticia reproducible.
+- Guía transversal **«¿Y si cruzas la línea?»** para investigar robos, movimientos falsos y discrepancias sin confundir observación con intervención, heurística con atribución ni reporte con condena.
 - Comprobaciones automáticas que impiden publicar si faltan clases, se repiten identificadores, desaparece su diseño o cae la variedad pedagógica.
 
 ### Cambiado

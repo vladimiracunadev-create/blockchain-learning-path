@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 23 · Propuestas, voto y ejecución
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo pasa una intención colectiva a un cambio ejecutable y demorado?
+### [Clase 23 · Propuestas, voto y ejecución](clase-23-propuestas-voto-y-ejecucion.md)
 
-**Enfoque pedagógico:** simulación completa de gobernanza.
+¿Cómo pasa una intención colectiva a un cambio ejecutable y demorado?
 
-Una propuesta atraviesa snapshot, voto, cola y ejecución con calldata visible. El tiempo se trata como control de seguridad y no como fricción accidental.
+**Experiencia propia:** simulación completa de gobernanza. **Evidencia:** Línea de tiempo con estados, responsables y calldata ejecutada.
 
-**Núcleo conceptual:**
+### [Clase 24 · Captura y gobernanza de emergencia](clase-24-captura-y-gobernanza-de-emergencia.md)
 
-- propuesta, snapshot y delegación.
-- quórum y umbrales.
-- timelock y ejecución.
+¿Quién puede detener el sistema y quién controla a quien controla?
 
-**Caso de trabajo:** Una propuesta aprobada intenta ejecutar una llamada distinta de la votada.
-
-**Actividad:** Recorrer el ciclo completo de una propuesta en entorno local.
-
-**Comprobación formativa:** ¿Cómo compruebas que la llamada ejecutada coincide exactamente con la votada?
-
-**Evidencia de aprendizaje:** Línea de tiempo con estados, responsables y calldata ejecutada.
-
-### Clase 24 · Captura y gobernanza de emergencia
-
-**Pregunta guía:** ¿Quién puede detener el sistema y quién controla a quien controla?
-
-**Enfoque pedagógico:** juego de captura y respuesta.
-
-Una minoría coordinada aprovecha apatía y concentración. El resto diseña límites temporales para guardianes sin crear una autoridad permanente sin control.
-
-**Núcleo conceptual:**
-
-- concentración y apatía.
-- flash-loan governance y compra de votos.
-- guardianes, pausas y salida.
-
-**Caso de trabajo:** Una minoría coordinada aprueba un cambio mientras la mayoría no participa.
-
-**Actividad:** Diseñar controles ordinarios y de emergencia con límites temporales.
-
-**Comprobación formativa:** ¿Quién puede revocar al actor de emergencia y cuánto tarda esa revocación?
-
-**Evidencia de aprendizaje:** Constitución mínima que explicite poderes, demoras, revocación y transparencia.
-<!-- plan-clases:fin -->
+**Experiencia propia:** juego de captura y respuesta. **Evidencia:** Constitución mínima que explicite poderes, demoras, revocación y transparencia.
+<!-- clases-independientes:fin -->
 
 ---
 

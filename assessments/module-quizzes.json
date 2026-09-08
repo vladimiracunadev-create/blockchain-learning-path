@@ -1,6 +1,6 @@
 {
   "title": "Autoevaluación por unidad de clases",
-  "description": "Preguntas de comprobación al cierre de cada pareja de clases. Los distractores no son inventados: cada uno es un error frecuente documentado en la propia unidad, para que fallar te señale exactamente qué releer.",
+  "description": "Preguntas de comprobación de los mapas temáticos que complementan la evaluación propia de cada clase. Los distractores corresponden a errores documentados y señalan exactamente qué releer.",
   "aprobado": 75,
   "modules": {
     "00-orientacion": {

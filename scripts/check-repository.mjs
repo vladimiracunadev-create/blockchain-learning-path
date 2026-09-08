@@ -1,5 +1,6 @@
 import { access, readFile, readdir } from "node:fs/promises";
 import { dirname, extname, join, resolve } from "node:path";
+import { classFileName } from "./curriculum-lib.mjs";
 
 const required = [
   "README.md",
@@ -97,8 +98,8 @@ console.log("Guías prácticas: 91/91.");
 const classCatalog = JSON.parse(await readFile("curriculum/classes.json", "utf8"));
 const pedagogy = JSON.parse(await readFile("curriculum/pedagogy.json", "utf8"));
 
-// Las carpetas numeradas son unidades documentales estables. Cada una contiene
-// dos clases pedagógicamente distintas; separar ambos conceptos evita romper URL.
+// Las carpetas numeradas son mapas temáticos estables. Las 66 clases deben existir
+// como documentos independientes; el mapa nunca puede sustituirlas ni agruparlas.
 const moduleSlugs = (await readdir("curriculum", { withFileTypes: true }))
   .filter((entry) => entry.isDirectory() && /^\d{2}-/.test(entry.name))
   .map((entry) => entry.name)
@@ -123,10 +124,10 @@ for (const field of ["title", "question", "case", "activity", "evidence"]) {
     classErrors.push(`el campo ${field} debe ser propio y no repetirse entre las 66 clases`);
   }
 }
-const expectedPedagogy = new Set(classIds.filter((id) => !["1", "2", "63", "64"].includes(id)));
+const expectedPedagogy = new Set(classIds);
 const actualPedagogy = new Set(Object.keys(pedagogy));
 if (actualPedagogy.size !== expectedPedagogy.size || [...actualPedagogy].some((id) => !expectedPedagogy.has(id))) {
-  classErrors.push("pedagogy.json debe contener exactamente las 62 clases no artesanales");
+  classErrors.push("pedagogy.json debe contener exactamente las 66 clases");
 }
 
 for (const [index, unit] of classCatalog.entries()) {
@@ -140,25 +141,43 @@ for (const [index, unit] of classCatalog.entries()) {
   if (!new RegExp(`^# .+ · Clases ${firstId}–${secondId}$`, "m").test(text)) {
     classErrors.push(`${moduleSlugs[index]}: el título no muestra el rango ${firstId}–${secondId}`);
   }
-  if ((text.match(/<!-- plan-clases:inicio -->/g) ?? []).length !== 1 ||
-      (text.match(/<!-- plan-clases:fin -->/g) ?? []).length !== 1) {
-    classErrors.push(`${moduleSlugs[index]}: debe contener un único plan de clases delimitado`);
+  if ((text.match(/<!-- clases-independientes:inicio -->/g) ?? []).length !== 1 ||
+      (text.match(/<!-- clases-independientes:fin -->/g) ?? []).length !== 1) {
+    classErrors.push(`${moduleSlugs[index]}: debe contener un único índice de clases independientes`);
   }
-  for (const item of unit.classes) {
-    if (!text.includes(`### Clase ${item.id} · ${item.title}`)) {
-      classErrors.push(`${moduleSlugs[index]}: no contiene el encabezado de ${item.id}`);
-    }
+  for (const [pairIndex, item] of unit.classes.entries()) {
     const design = pedagogy[item.id];
-    const isHandcrafted = ["1", "2", "63", "64"].includes(item.id);
-    if (!design && !isHandcrafted) classErrors.push(`${item.id}: falta diseño pedagógico`);
+    if (!design) classErrors.push(`${item.id}: falta diseño pedagógico`);
     if (design && design.explanation.trim().split(/\s+/).length < 18) {
       classErrors.push(`${item.id}: explicación pedagógica demasiado breve`);
     }
-    if (!isHandcrafted) {
-      for (const value of [item.question, item.case, item.activity, item.evidence]) {
-        if (!text.includes(value)) classErrors.push(`${item.id}: su diseño no está sincronizado en el README`);
-      }
+    const file = join("curriculum", moduleSlugs[index], classFileName(item));
+    let classText;
+    try { classText = await readFile(file, "utf8"); }
+    catch { classErrors.push(`${item.id}: falta su documento independiente ${file}`); continue; }
+    if (!classText.startsWith(`# Clase ${item.id} · ${item.title}\n`)) {
+      classErrors.push(`${item.id}: título o archivo de clase desincronizado`);
     }
+    if (classText.trim().split(/\s+/).length < 800) {
+      classErrors.push(`${item.id}: su clase independiente tiene menos de 800 palabras`);
+    }
+    if ((classText.match(/```mermaid/g) ?? []).length < 1) {
+      classErrors.push(`${item.id}: falta un gráfico Mermaid pedagógico`);
+    }
+    if ((classText.match(/https?:\/\//g) ?? []).length < 3) {
+      classErrors.push(`${item.id}: faltan al menos tres fuentes enlazadas`);
+    }
+    for (const value of [item.question, item.case, item.activity, item.evidence, design.method, design.check]) {
+      if (!classText.includes(value)) classErrors.push(`${item.id}: su documento no contiene su diseño específico`);
+    }
+    const globalIndex = index * 2 + pairIndex;
+    const previous = classItems[globalIndex - 1];
+    const next = classItems[globalIndex + 1];
+    if (previous && !classText.includes(classFileName(previous))) classErrors.push(`${item.id}: no enlaza directamente a la clase ${previous.id}`);
+    if (next && !classText.includes(classFileName(next))) classErrors.push(`${item.id}: no enlaza directamente a la clase ${next.id}`);
+    if (!previous && !classText.includes("../../README.md")) classErrors.push("1: no enlaza al inicio del programa");
+    if (!next && !classText.includes("../../capstone/README.md")) classErrors.push("66: no enlaza al caso final");
+    if (!text.includes(`](${classFileName(item)})`)) classErrors.push(`${item.id}: el mapa temático no enlaza su clase`);
   }
   const methods = unit.classes.map((item) => pedagogy[item.id]?.method).filter(Boolean);
   if (methods.length === 2 && methods[0] === methods[1]) {
@@ -169,7 +188,7 @@ if (new Set(Object.values(pedagogy).map((item) => item.method)).size < 25) {
   classErrors.push("hay menos de 25 estrategias pedagógicas distintas");
 }
 if (classErrors.length) throw new Error(`Catálogo de clases inválido:\n${classErrors.join("\n")}`);
-console.log(`Clases: ${classIds.length} en ${classCatalog.length} unidades estables, con diseño pedagógico verificado.`);
+console.log(`Clases: ${classIds.length} documentos independientes en ${classCatalog.length} mapas temáticos, con profundidad, gráficos, fuentes y diseño propio verificados.`);
 
 // La numeración de carpeta es una decisión técnica de compatibilidad, no una
 // subdivisión pedagógica. Ningún documento vigente debe volver a enseñar 00.1–32.2
@@ -235,7 +254,7 @@ for (const slug of Object.keys(quizzes.modules)) {
   if (!moduleSlugs.includes(slug)) quizErrors.push(`${slug}: hay evaluación pero no existe la unidad`);
 }
 if (quizErrors.length) throw new Error(`Autoevaluación por unidad:\n${quizErrors.join("\n")}`);
-console.log(`Autoevaluación: ${moduleSlugs.length}/${moduleSlugs.length} unidades, ${preguntas} preguntas, más 66 comprobaciones formativas de clase.`);
+console.log(`Autoevaluación: ${moduleSlugs.length}/${moduleSlugs.length} mapas temáticos, ${preguntas} preguntas, más 66 comprobaciones formativas de clase.`);
 
 // --- Cadena anterior/siguiente entre unidades ---------------------------------
 // El curso es secuencial: si una unidad apunta a la vecina equivocada (o a ninguna),
@@ -275,7 +294,7 @@ for (const [indice, slug] of moduleSlugs.entries()) {
   }
 }
 if (cadenaErrores.length) throw new Error(`Cadena de unidades rota:\n${cadenaErrores.join("\n")}`);
-console.log(`Cadena anterior/siguiente: ${moduleSlugs.length} unidades encadenadas.`);
+console.log(`Navegación: 66 clases encadenadas directamente y ${moduleSlugs.length} mapas temáticos compatibles.`);
 
 // --- Trazabilidad de las fuentes ----------------------------------------------
 // El contenido de las clases es original, pero se apoya en obras concretas. Esa
@@ -324,7 +343,7 @@ for (const slug of moduleSlugs) {
 }
 
 if (fuentesErrores.length) throw new Error(`Fuentes no trazables:\n${fuentesErrores.join("\n")}`);
-console.log(`Fuentes: ${moduleSlugs.length} unidades / ${classIds.length} clases con fuente declarada y referencias enlazadas.`);
+console.log(`Fuentes: ${moduleSlugs.length} mapas / ${classIds.length} clases con fuente declarada y al menos tres referencias enlazadas por clase.`);
 
 // --- Recuento de pruebas declarado en la documentación ------------------------
 // La bibliografía afirma que buena parte del contenido "se comprueba ejecutándolo"

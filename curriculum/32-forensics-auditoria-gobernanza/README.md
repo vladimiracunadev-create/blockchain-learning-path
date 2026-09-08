@@ -6,57 +6,31 @@
 > 🧭 ⬅️ **Anterior:** [Clases 63–64 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [🎓 Caso final de empresa custodial](../../capstone/README.md)
 
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 65 · Forensics con evidencia reproducible
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo investigamos flujos sin convertir heurísticas en acusaciones?
+### [Clase 65 · Forensics con evidencia reproducible](clase-65-forensics-con-evidencia-reproducible.md)
 
-**Enfoque pedagógico:** expediente forense con revisión ciega.
+¿Cómo investigamos flujos sin convertir heurísticas en acusaciones?
 
-Un equipo reconstruye flujos y otro revisa sin conocer su conclusión. La cadena de custodia y las hipótesis alternativas reducen confirmación y sobreatribución.
+**Experiencia propia:** expediente forense con revisión ciega. **Evidencia:** Expediente con hashes, timestamps, fuentes y lenguaje probabilístico.
 
-**Núcleo conceptual:**
+### [Clase 66 · Auditoría, cumplimiento y gobierno custodial](clase-66-auditoria-cumplimiento-y-gobierno-custodial.md)
 
-- grafos y trazabilidad.
-- procedencia y cadena de custodia.
-- privacidad y falsa atribución.
+¿Quién autoriza, ejecuta, registra, concilia e investiga cada movimiento?
 
-**Caso de trabajo:** Una dirección recibe fondos desde un cluster etiquetado, pero la relación es indirecta.
-
-**Actividad:** Reconstruir un camino y puntuar la fuerza de cada inferencia.
-
-**Comprobación formativa:** ¿Qué parte del hallazgo es observable directamente y cuál depende de una heurística?
-
-**Evidencia de aprendizaje:** Expediente con hashes, timestamps, fuentes y lenguaje probabilístico.
-
-### Clase 66 · Auditoría, cumplimiento y gobierno custodial
-
-**Pregunta guía:** ¿Quién autoriza, ejecuta, registra, concilia e investiga cada movimiento?
-
-**Enfoque pedagógico:** simulacro de comité de control.
-
-Autorización, ejecución, registro, conciliación e investigación se reparten entre roles. Una excepción obliga a comprobar independencia y escalamiento real.
-
-**Núcleo conceptual:**
-
-- segregación de funciones.
-- gobierno de wallets y excepciones.
-- auditoría, compliance y respuesta.
-
-**Caso de trabajo:** La misma persona crea una dirección, aprueba el retiro y resuelve la alerta.
-
-**Actividad:** Diseñar RACI, controles preventivos/detectivos y escalamiento.
-
-**Comprobación formativa:** Identifica un conflicto de funciones y diseña un control preventivo y otro detectivo.
-
-**Evidencia de aprendizaje:** Programa de auditoría con objetivo, procedimiento, muestra, evidencia y conclusión.
-<!-- plan-clases:fin -->
+**Experiencia propia:** simulacro de comité de control. **Evidencia:** Programa de auditoría con objetivo, procedimiento, muestra, evidencia y conclusión.
+<!-- clases-independientes:fin -->
 
 ---
 
 ## 🎯 Objetivos
+
+> El análisis defensivo tiene límites de autoridad, privacidad y atribución. La guía
+> [¿Y si cruzas la línea?](../../docs/y-si-cruzas-la-linea-blockchain.md) los convierte en
+> decisiones verificables para incidentes y ejercicios.
 
 - Construir y leer grafos de transacciones sin convertir heurísticas en hechos.
 - Preservar procedencia, integridad, corte y cadena de custodia de la evidencia.
@@ -141,7 +115,7 @@ No hagas deanonymization de personas sin finalidad legítima y autorización. Mi
 ## 🔗 Referencias
 
 - [NIST SP 800-86, Integrating Forensic Techniques into Incident Response](https://csrc.nist.gov/pubs/sp/800/86/final)
-- [FATF Guidance for a Risk-Based Approach to Virtual Assets](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html)
+- [FATF Guidance for a Risk-Based Approach to Virtual Assets](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html)
 - [COSO Internal Control Framework](https://www.coso.org/internal-control)
 - [Bitcoin Core documentation](https://bitcoincore.org/en/doc/)
 

@@ -2,7 +2,7 @@ name: Enlaces
 
 # Un curso se degrada por link rot: las fuentes oficiales cambian de URL y el
 # material queda apuntando al vacío sin que nadie lo note. Este workflow revisa
-# los ~450 enlaces únicos del repositorio.
+# todos los enlaces incluidos en los documentos Markdown del repositorio.
 #
 # Es INFORMATIVO a propósito: que un servidor externo esté caído un martes no
 # puede romper la CI de un pull request de contenido. Cuando encuentra enlaces
@@ -15,8 +15,7 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "docs/recursos-oficiales.md"
-      - "docs/bibliografia.md"
+      - "**/*.md"
       - ".github/workflows/links.yml"
       - ".lycheeignore"
 
@@ -34,9 +33,7 @@ jobs:
       - uses: actions/checkout@v7
 
       # --accept incluye 202 porque EUR-Lex responde así a los enlaces del
-      # reglamento MiCA, y MODULE_TEMPLATE.md queda fuera porque es la plantilla
-      # de módulo: sus enlaces son marcadores (`https://…`, `../NN-slug/`) que
-      # no apuntan a ninguna parte a propósito.
+      # reglamento MiCA.
       - name: Revisar enlaces
         id: lychee
         uses: lycheeverse/lychee-action@v2
@@ -49,7 +46,6 @@ jobs:
             --accept 200,206,202,403,429
             --exclude-path node_modules
             --exclude-path site
-            --exclude-path MODULE_TEMPLATE.md
             --include-mail=false
             "**/*.md"
           output: informe-enlaces.md

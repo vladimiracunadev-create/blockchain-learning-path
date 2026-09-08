@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 25 · Familias de escalabilidad
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué movemos fuera de L1 y qué garantía conservamos?
+### [Clase 25 · Familias de escalabilidad](clase-25-familias-de-escalabilidad.md)
 
-**Enfoque pedagógico:** clasificación por capas de garantía.
+¿Qué movemos fuera de L1 y qué garantía conservamos?
 
-Las soluciones se ordenan por dónde ejecutan, publican datos y liquidan. El TPS se deja para el final, cuando ya se conocen las garantías sacrificadas.
+**Experiencia propia:** clasificación por capas de garantía. **Evidencia:** Matriz que compare seguridad heredada, latencia, costo y operador.
 
-**Núcleo conceptual:**
+### [Clase 26 · Riesgo operativo de una L2](clase-26-riesgo-operativo-de-una-l2.md)
 
-- canales, sidechains y rollups.
-- ejecución, datos y liquidación.
-- fraud proofs y validity proofs.
+¿Puede el usuario recuperar fondos si el secuenciador o el portal fallan?
 
-**Caso de trabajo:** Dos redes anuncian el mismo TPS pero publican datos y pruebas distintas.
-
-**Actividad:** Clasificar arquitecturas por lugar de ejecución, DA y salida.
-
-**Comprobación formativa:** Compara dos diseños con igual rendimiento pero distinta disponibilidad de datos.
-
-**Evidencia de aprendizaje:** Matriz que compare seguridad heredada, latencia, costo y operador.
-
-### Clase 26 · Riesgo operativo de una L2
-
-**Pregunta guía:** ¿Puede el usuario recuperar fondos si el secuenciador o el portal fallan?
-
-**Enfoque pedagógico:** simulacro de caída del secuenciador.
-
-El usuario intenta consultar, enviar y retirar mientras componentes dejan de responder. La clase verifica rutas de escape en contratos y no sólo en documentación comercial.
-
-**Núcleo conceptual:**
-
-- secuenciación y censura.
-- challenge period y escape hatch.
-- blobs, EIP-4844 y costos.
-
-**Caso de trabajo:** Un secuenciador se detiene y el usuario necesita forzar una salida.
-
-**Actividad:** Construir un mapa de dependencias y verificar mecanismos de escape.
-
-**Comprobación formativa:** ¿Puede salir el usuario sin cooperación del operador y bajo qué demora?
-
-**Evidencia de aprendizaje:** Evaluación de riesgo basada en contratos, claves y estado de madurez.
-<!-- plan-clases:fin -->
+**Experiencia propia:** simulacro de caída del secuenciador. **Evidencia:** Evaluación de riesgo basada en contratos, claves y estado de madurez.
+<!-- clases-independientes:fin -->
 
 ---
 

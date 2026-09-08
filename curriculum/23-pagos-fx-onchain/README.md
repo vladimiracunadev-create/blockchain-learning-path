@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 47 · Anatomía de un pago transfronterizo
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Por qué un mensaje rápido no elimina corresponsales, FX ni cumplimiento?
+### [Clase 47 · Anatomía de un pago transfronterizo](clase-47-anatomia-de-un-pago-transfronterizo.md)
 
-**Enfoque pedagógico:** autopsia de una remesa.
+¿Por qué un mensaje rápido no elimina corresponsales, FX ni cumplimiento?
 
-Importe, spread, tarifa, prefunding y tiempo se asignan a cada actor de la ruta. La clase identifica qué costos son tecnológicos, regulatorios o de liquidez.
+**Experiencia propia:** autopsia de una remesa. **Evidencia:** Mapa de costos que identifique qué fricción puede reducir blockchain.
 
-**Núcleo conceptual:**
+### [Clase 48 · FX on-chain y pago contra pago](clase-48-fx-on-chain-y-pago-contra-pago.md)
 
-- corresponsalía y cuentas nostro/vostro.
-- costos, prefunding y horarios.
-- mensajería frente a liquidación.
+¿Cómo se eliminan principal risk y patas descoordinadas?
 
-**Caso de trabajo:** Una remesa atraviesa dos corresponsales y tres conversiones de moneda.
-
-**Actividad:** Descomponer tiempo, tarifa y spread de una ruta realista.
-
-**Comprobación formativa:** ¿Qué costo seguiría existiendo aunque la liquidación fuera instantánea?
-
-**Evidencia de aprendizaje:** Mapa de costos que identifique qué fricción puede reducir blockchain.
-
-### Clase 48 · FX on-chain y pago contra pago
-
-**Pregunta guía:** ¿Cómo se eliminan principal risk y patas descoordinadas?
-
-**Enfoque pedagógico:** mesa de tesorería con dos monedas.
-
-Dos equipos controlan patas distintas y enfrentan horarios y variación de precio. Un swap atómico elimina una exposición pero exige liquidez y activos compatibles.
-
-**Núcleo conceptual:**
-
-- PvP y atomicidad.
-- liquidez y precio FX.
-- stablecoins, depósitos y cumplimiento.
-
-**Caso de trabajo:** Dos contrapartes intercambian monedas sin confiar en entrega posterior.
-
-**Actividad:** Simular swap atómico y comparar con liquidación secuencial.
-
-**Comprobación formativa:** Describe el estado imposible que PvP evita por construcción.
-
-**Evidencia de aprendizaje:** Cálculo de exposición antes y después, con riesgos que permanecen.
-<!-- plan-clases:fin -->
+**Experiencia propia:** mesa de tesorería con dos monedas. **Evidencia:** Cálculo de exposición antes y después, con riesgos que permanecen.
+<!-- clases-independientes:fin -->
 
 ---
 

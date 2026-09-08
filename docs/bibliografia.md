@@ -4,7 +4,7 @@
 
 Todo el contenido de este programa es **original en su redacción** y se apoya en la
 literatura de referencia del área. Aquí se listan las obras y fuentes primarias que
-sustentan cada pareja de clases. **No se reproduce el contenido de los libros**: las referencias
+sustentan cada clase independiente. **No se reproduce el contenido de los libros**: las referencias
 apuntan a las obras para que profundices en la fuente.
 
 Cuando una obra tiene varias ediciones, usa **la más reciente**: el ecosistema cambia
@@ -44,7 +44,7 @@ resiste.
 | Anatomía de bloques, extracción con reorgs, grafos, patrones y detección de anomalías | `pnpm test` — `labs/28-data-analytics` y [`projects/explorador-analitico/`](../projects/explorador-analitico/README.md) |
 | Mercado tokenizado: dinero mayorista simulado, bono y DvP atómico | `forge test` en [`labs/22-cbdc-mercado-tokenizado/`](../labs/22-cbdc-mercado-tokenizado/README.md) |
 
-Son **343 pruebas automatizadas** (305 de Node y 38 de Foundry) que la CI ejecuta en
+Son **345 pruebas automatizadas** (307 de Node y 38 de Foundry) que la CI ejecuta en
 cada cambio. Una afirmación que se contradiga con el código hace fallar el build.
 Eso es más fuerte que una cita: no apela a la autoridad de un autor, se comprueba.
 
@@ -79,7 +79,7 @@ negocio en algo que leas aquí:
 
 ## 🔗 Qué obra sustenta cada clase
 
-Cada pareja de clases declara su fuente en la cabecera. Esta tabla invierte esa
+Cada clase declara su fuente en la cabecera. Esta tabla invierte esa
 relación: te dice **dónde se usa cada obra**, para que puedas ir de la fuente a las
 clases o desde una clase a su fuente primaria. Los enlaces apuntan a la fuente oficial —cuando la obra tiene una edición
 legalmente gratuita, se enlaza esa.
@@ -114,11 +114,11 @@ legalmente gratuita, se enlaza esa.
 | [Clases 51–52 · Mercados de capitales on-chain](../curriculum/25-mercados-capitales-onchain/README.md) | [CPMI-IOSCO — *Principles for Financial Market Infrastructures*](https://www.bis.org/cpmi/publ/d101.htm) · [BCE — T2S](https://www.ecb.europa.eu/paym/target/t2s/html/index.en.html) |
 | [Clases 53–54 · Custodia e identidad](../curriculum/26-custodia-identidad/README.md) | [BIPs 32/39/44](https://github.com/bitcoin/bips) · [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337) · [W3C — DID](https://www.w3.org/TR/did-core/) y [credenciales verificables](https://www.w3.org/TR/vc-data-model-2.0/) · [NIST SP 800-57](https://csrc.nist.gov/projects/key-management) |
 | [Clases 55–56 · Regulación y cumplimiento](../curriculum/27-regulacion-cumplimiento/README.md) | [MiCA](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32023R1114) · [GAFI/FATF](https://www.fatf-gafi.org/) · [Comité de Basilea](https://www.bis.org/bcbs/) · [IOSCO](https://www.iosco.org/) · [CMF](https://www.cmfchile.cl/) y [Ley Chile](https://www.bcn.cl/leychile) |
-| [Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain](../curriculum/28-data-analytics-onchain/README.md) | [Bitcoin Core](https://bitcoincore.org/en/doc/) · [Ethereum JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) · [EIP-20](https://eips.ethereum.org/EIPS/eip-20) · [The Graph](https://thegraph.com/docs/en/) · [FATF/GAFI](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html) · Antonopoulos/Harding — [*Mastering Bitcoin* (3.ª ed., libre)](https://github.com/bitcoinbook/bitcoinbook) |
+| [Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain](../curriculum/28-data-analytics-onchain/README.md) | [Bitcoin Core](https://bitcoincore.org/en/doc/) · [Ethereum JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) · [EIP-20](https://eips.ethereum.org/EIPS/eip-20) · [The Graph](https://thegraph.com/docs/en/) · [FATF/GAFI](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html) · Antonopoulos/Harding — [*Mastering Bitcoin* (3.ª ed., libre)](https://github.com/bitcoinbook/bitcoinbook) |
 | [Clases 59–60 · Exchanges y operaciones de custodia](../curriculum/29-exchanges-operaciones-custodia/README.md) | [Bitcoin Developer Reference](https://developer.bitcoin.org/reference/) · [Ethereum Accounts](https://ethereum.org/en/developers/docs/accounts/) · [NIST SP 800-57](https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final) · [IOSCO Crypto-Asset Recommendations](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf) |
 | [Clases 61–62 · Contabilidad blockchain y conciliación](../curriculum/30-contabilidad-conciliacion/README.md) | [COSO Internal Control](https://www.coso.org/internal-control) · [Bitcoin Core RPC](https://bitcoincore.org/en/doc/) · [Ethereum JSON-RPC](https://ethereum.org/en/developers/docs/apis/json-rpc/) · [IFRS Holdings of Cryptocurrencies](https://www.ifrs.org/projects/completed-projects/2019/holdings-of-cryptocurrencies/) |
 | [Clases 63–64 · Proof of Reserves, pasivos y solvencia](../curriculum/31-proof-reserves-solvencia/README.md) | [RFC 6962](https://www.rfc-editor.org/rfc/rfc6962) · [IAASB Assurance Framework](https://www.iaasb.org/publications/international-framework-assurance-engagements-2) · [PCAOB PoR Advisory](https://pcaobus.org/news-events/news-releases/news-release-detail/office-of-the-investor-advocate-issues-investor-advisory-on-proof-of-reserve-reports) · [IOSCO](https://www.iosco.org/library/pubdocs/pdf/IOSCOPD747.pdf) |
-| [Clases 65–66 · Blockchain forensics, auditoría y gobernanza](../curriculum/32-forensics-auditoria-gobernanza/README.md) | [NIST SP 800-86](https://csrc.nist.gov/pubs/sp/800/86/final) · [FATF/GAFI](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html) · [COSO](https://www.coso.org/internal-control) · [Bitcoin Core](https://bitcoincore.org/en/doc/) |
+| [Clases 65–66 · Blockchain forensics, auditoría y gobernanza](../curriculum/32-forensics-auditoria-gobernanza/README.md) | [NIST SP 800-86](https://csrc.nist.gov/pubs/sp/800/86/final) · [FATF/GAFI](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html) · [COSO](https://www.coso.org/internal-control) · [Bitcoin Core](https://bitcoincore.org/en/doc/) |
 
 > **Obras libres.** *Mastering Bitcoin*, *Mastering Ethereum*, *Mastering the Lightning
 > Network*, *Distributed Systems*, *Proofs, Arguments, and Zero-Knowledge* y el

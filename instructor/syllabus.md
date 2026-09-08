@@ -37,7 +37,7 @@ Al finalizar, el estudiante será capaz de:
 | 5 | Consenso: PoW, PoS, BFT | 7–8 | Labs 11–12 |
 | 6 | Mini blockchain | 7–8 | Labs 13–14 |
 | 7 | Bitcoin y modelo UTXO | 9–10 | Labs 15–16 |
-| 8 | Regtest: wallet y transacciones · unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) | 9–10 + wallets | Labs 17–21 (transcript) + Lab 71 (`pnpm lab:wallet-segura`) |
+| 8 | Regtest: wallet y transacciones; apoyo de [Wallets desde cero](../docs/wallets-desde-cero.md) | 9–10 | Labs 17–21 (transcript) + Lab 71 (`pnpm lab:wallet-segura`) |
 | 9 | Ethereum y la EVM | 11–12 | Labs 22–24 |
 | 10 | Gas, storage y calldata | 11–12 | Labs 25–26 (análisis) |
 | 11 | Solidity y Foundry | 13–14 | Lab 27 |

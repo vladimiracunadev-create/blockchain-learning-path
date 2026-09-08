@@ -33,6 +33,14 @@ test("sirve los estáticos con su Content-Type", async () => {
   });
 });
 
+test("sirve módulos JavaScript con un MIME que el navegador acepta", async () => {
+  await conServidor(async (base) => {
+    const modulo = await fetch(`${base}/server.mjs`);
+    assert.equal(modulo.status, 200);
+    assert.match(modulo.headers.get("content-type"), /text\/javascript/);
+  });
+});
+
 // `fetch` normaliza "/../.." en el CLIENTE antes de enviar la petición, así que
 // con fetch nunca se prueba el guard del servidor. Un atacante no usa fetch:
 // abre un socket y escribe la ruta cruda. Eso es lo que hacemos aquí.

@@ -2,6 +2,7 @@
 
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { classFileName } from "./curriculum-lib.mjs";
 
 const catalog = JSON.parse(await readFile("curriculum/classes.json", "utf8"));
 const directories = (await readdir("curriculum", { withFileTypes: true }))
@@ -18,15 +19,13 @@ for (const [index, directory] of directories.entries()) {
   if (!title || !source || unit?.unit !== directory.slice(0, 2)) {
     throw new Error(`${directory}: no se pudo construir el índice de clases.`);
   }
-  const classes = unit.classes
-    .map((item) => `**${item.id}** ${item.title}`)
-    .join("<br>");
-  const questions = unit.classes.map((item) => item.question).join("<br>");
-  rows.push(`| [${title}](${directory}/README.md) | ${classes} | ${questions} | ${source} |`);
+  for (const item of unit.classes) {
+    rows.push(`| **${item.id}** | [${item.title}](${directory}/${classFileName(item)}) | ${item.question} | [Mapa: ${title}](${directory}/README.md) · ${source} |`);
+  }
 }
 
 const block = `<!-- indice-clases:inicio -->
-| Tema y material común | Clases | Preguntas guía | Fuente base |
+| Clase | Documento independiente | Pregunta guía | Tema y fuente base |
 |---|---|---|---|
 ${rows.join("\n")}
 <!-- indice-clases:fin -->`;
@@ -44,4 +43,4 @@ if (markerPattern.test(original)) {
   throw new Error("No se encontró el bloque del índice ni su tabla histórica.");
 }
 if (updated !== original) await writeFile(path, updated, "utf8");
-console.log(`Índice sincronizado: ${catalog.length * 2} clases en ${catalog.length} unidades.`);
+console.log(`Índice sincronizado: ${catalog.length * 2} documentos de clase y ${catalog.length} mapas temáticos.`);

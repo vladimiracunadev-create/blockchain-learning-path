@@ -14,6 +14,7 @@ writeFileSync(join(raiz, "index.html"), "<h1>Blockchain Learning Path</h1>");
 writeFileSync(join(raiz, "curriculum", "00-orientacion", "README.html"), "<h1>00 · Orientación</h1>");
 writeFileSync(join(raiz, "busqueda.json"), '[{"t":"x"}]');
 writeFileSync(join(raiz, "contenido.json"), '{"modulos":19}');
+writeFileSync(join(raiz, "diagrama.mjs"), "export default true;");
 
 async function conServidor(prueba) {
   const servidor = crearServidorDeContenido(raiz);
@@ -47,6 +48,14 @@ test("el índice de búsqueda se sirve como JSON", async () => {
     const respuesta = await fetch(`${url}/busqueda.json`);
     assert.match(respuesta.headers.get("content-type"), /application\/json/);
     assert.deepEqual(await respuesta.json(), [{ t: "x" }]);
+  });
+});
+
+test("sirve módulos JavaScript con un MIME que el navegador acepta", async () => {
+  await conServidor(async (url) => {
+    const respuesta = await fetch(`${url}/diagrama.mjs`);
+    assert.equal(respuesta.status, 200);
+    assert.match(respuesta.headers.get("content-type"), /text\/javascript/);
   });
 });
 

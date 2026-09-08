@@ -83,6 +83,7 @@ const CLASES_ESPERADAS = JSON.parse(
 const RAIZ = "assets/public/";
 const contenido = entradas.filter((e) => e.nombre.startsWith(RAIZ));
 const paginas = contenido.filter((e) => e.nombre.endsWith(".html"));
+const clasesHtml = contenido.filter((e) => /\/curriculum\/\d{2}-[^/]+\/clase-\d{2}-[^/]+\.html$/.test(`/${e.nombre}`));
 const unidades = new Set(
   contenido
     .map((e) => /^assets\/public\/curriculum\/(\d{2}-[a-z0-9-]+)\//.exec(e.nombre)?.[1])
@@ -96,9 +97,10 @@ comprobar(entradas.some((e) => e.nombre === "AndroidManifest.xml"), "es un APK c
 comprobar(entradas.some((e) => e.nombre === "classes.dex"), "incluye el código compilado (classes.dex)");
 comprobar(contenido.length > 0, `el curso está empaquetado en ${RAIZ} (${contenido.length} archivos)`);
 comprobar(paginas.length >= 80, `trae las páginas del curso (${paginas.length} HTML)`);
+comprobar(clasesHtml.length === CLASES_ESPERADAS, `trae ${clasesHtml.length}/${CLASES_ESPERADAS} documentos de clase independientes`);
 comprobar(
   unidades.size === UNIDADES_ESPERADAS,
-  `trae las ${CLASES_ESPERADAS} clases en ${UNIDADES_ESPERADAS} unidades (${unidades.size} encontradas)`
+  `trae las ${CLASES_ESPERADAS} clases y ${UNIDADES_ESPERADAS} mapas temáticos (${unidades.size} encontrados)`
 );
 comprobar(
   entradas.some((e) => e.nombre === `${RAIZ}manual/MANUAL.pdf` && e.sinComprimir > 1_000_000),
@@ -117,23 +119,31 @@ comprobar(Boolean(entradaManifiesto), "incluye el manifiesto de contenido");
 if (entradaManifiesto) {
   const manifiesto = JSON.parse(leerEntrada(entradaManifiesto).toString("utf8"));
   comprobar(
-    manifiesto.modulos === UNIDADES_ESPERADAS && manifiesto.clases === CLASES_ESPERADAS,
-    `el manifiesto declara ${CLASES_ESPERADAS} clases en ${UNIDADES_ESPERADAS} unidades`
+    manifiesto.mapasTematicos === UNIDADES_ESPERADAS && manifiesto.clases === CLASES_ESPERADAS,
+    `el manifiesto declara ${CLASES_ESPERADAS} clases y ${UNIDADES_ESPERADAS} mapas temáticos`
   );
   comprobar(manifiesto.manual === true, "el manifiesto confirma el manual incluido");
   console.log(`\n  Versión empaquetada: ${manifiesto.version}`);
 }
 
-// Una página real, descomprimida y leída: la prueba definitiva de que el HTML
-// no es un archivo vacío con el nombre correcto.
+// Una clase real, descomprimida y leída: contar 66 en el manifiesto no basta.
+const clase = entradas.find((e) => e.nombre === `${RAIZ}curriculum/09-seguridad/clase-19-modelado-de-amenazas-y-revision-manual.html`);
+comprobar(Boolean(clase), "la clase 19 independiente está en el APK");
+if (clase) {
+  const htmlClase = leerEntrada(clase).toString("utf8");
+  comprobar(htmlClase.length > 10000, `la clase 19 tiene contenido propio (${htmlClase.length} bytes)`);
+  comprobar(htmlClase.includes("Clase 19 · Modelado de amenazas"), "la clase conserva su título propio");
+  comprobar(htmlClase.includes("class=\"mermaid\""), "la clase incluye su gráfico pedagógico");
+  comprobar(htmlClase.includes("clase-18") && htmlClase.includes("clase-20"), "la clase enlaza a sus vecinas directas");
+}
+
+// El mapa temático conserva el material común y su autoevaluación.
 const unidad = entradas.find((e) => e.nombre === `${RAIZ}curriculum/09-seguridad/README.html`);
-comprobar(Boolean(unidad), "las clases 19–20 están en el APK");
+comprobar(Boolean(unidad), "el mapa temático de seguridad está en el APK");
 if (unidad) {
   const html = leerEntrada(unidad).toString("utf8");
-  comprobar(html.length > 20000, `las clases 19–20 tienen su contenido (${html.length} bytes de HTML)`);
-  comprobar(html.includes("Seguridad y auditoría"), "las clases conservan el título de su unidad");
+  comprobar(html.includes("Seguridad y auditoría"), "el mapa conserva su título");
   comprobar((html.match(/"prompt":/g) ?? []).length === 4, "la unidad lleva sus 4 preguntas de autoevaluación");
-  comprobar(html.includes('rel="prev"') && html.includes('rel="next"'), "la unidad conserva la navegación anterior/siguiente");
 }
 
 console.log(fallos.length

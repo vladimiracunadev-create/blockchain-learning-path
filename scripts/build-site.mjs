@@ -11,6 +11,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync, existsSy
 import { join, dirname, relative, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
+import { classFileName } from "./curriculum-lib.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OWNER = "vladimiracunadev-create";
@@ -45,7 +46,13 @@ const modTitle = (slug) => {
   return h1.replace(/^#\s*/, "").trim();
 };
 const curriculumSlugs = readdirSync(join(ROOT, "curriculum")).filter((d) => /^\d{2}-/.test(d)).sort();
-const curriculumHrefs = curriculumSlugs.map((s) => `curriculum/${s}/README.html`);
+const classCatalog = JSON.parse(readFileSync(join(ROOT, "curriculum", "classes.json"), "utf8"));
+const curriculumPages = classCatalog.flatMap((unit, index) => unit.classes.map((item) => ({
+  item,
+  topic: modTitle(curriculumSlugs[index]).replace(/\s*·\s*Clases\s+\d+–\d+$/, ""),
+  href: `curriculum/${curriculumSlugs[index]}/${classFileName(item).replace(/\.md$/, ".html")}`
+})));
+const curriculumHrefs = curriculumPages.map((page) => page.href);
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 
 const hasManual = existsSync(join(ROOT, "manual", "MANUAL.pdf"));
@@ -60,9 +67,9 @@ const NAV = [
   // antes que el índice del currículo.
   { t: "🌱 Empieza aquí", href: "docs/empieza-aqui.html" },
   { t: "📖 Glosario", href: "docs/glosario.html" },
-  // Unidad transversal para principiantes: se estudia entre las clases 10 y 11,
-  // pero vive fuera del currículo numerado para no alterar su secuencia.
-  { t: "👛 Wallets desde cero", href: "docs/wallets-desde-cero.html" },
+  { t: "🚧 ¿Y si cruzas la línea?", href: "docs/y-si-cruzas-la-linea-blockchain.html" },
+  // Guía de consulta: las wallets se enseñan dentro de las clases pertinentes.
+  { t: "👛 Consulta: wallets", href: "docs/wallets-desde-cero.html" },
   ...(hasManual ? [{ t: "📕 Manual (PDF)", href: "manual/MANUAL.pdf" }] : []),
   {
     t: "🎤 Presentación", href: "docs/presentacion.html",
@@ -77,7 +84,10 @@ const NAV = [
   },
   {
     t: "📚 Currículo", href: "curriculum/README.html",
-    children: curriculumSlugs.map((s) => ({ t: modTitle(s), href: `curriculum/${s}/README.html` })),
+    children: curriculumPages.map((page) => ({
+      t: `${page.item.id} · ${page.item.title}`,
+      href: page.href
+    })),
   },
   {
     t: "🏭 Industria", href: "industria/README.html",
@@ -288,7 +298,13 @@ nav.side a .done{color:#2e8b57;font-weight:700}
 <script type="module">
 import mermaid from "${BASE}assets/mermaid/mermaid.esm.min.mjs";
 const dark = (document.documentElement.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))==="dark";
-mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"loose"});
+window.__mermaidDone=false;
+mermaid.initialize({startOnLoad:false,theme:dark?"dark":"default",securityLevel:"loose"});
+try {
+  await mermaid.run({querySelector:"pre.mermaid"});
+} finally {
+  window.__mermaidDone=true;
+}
 </script>
 </head>
 <body>

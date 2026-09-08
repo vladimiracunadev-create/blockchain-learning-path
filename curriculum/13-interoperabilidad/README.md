@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 27 · Mensajes y activos entre cadenas
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué significa mover un activo si cada red mantiene su propio estado?
+### [Clase 27 · Mensajes y activos entre cadenas](clase-27-mensajes-y-activos-entre-cadenas.md)
 
-**Enfoque pedagógico:** contabilidad de un activo entre cadenas.
+¿Qué significa mover un activo si cada red mantiene su propio estado?
 
-Cada bloqueo, emisión, quema y liberación se registra en una misma tabla. El movimiento se entiende como coordinación de estados, no como transporte físico de tokens.
+**Experiencia propia:** contabilidad de un activo entre cadenas. **Evidencia:** Invariante de suministro y lista de verificadores en cada frontera.
 
-**Núcleo conceptual:**
+### [Clase 28 · Modelo de amenazas de puentes](clase-28-modelo-de-amenazas-de-puentes.md)
 
-- lock-and-mint y burn-and-mint.
-- mensajería y light clients.
-- IBC, XCM y puentes EVM.
+¿Qué nueva confianza introduce cada capa de interoperabilidad?
 
-**Caso de trabajo:** Un token envuelto conserva oferta mientras el activo bloqueado desaparece.
-
-**Actividad:** Trazar emisión, bloqueo, mensaje, prueba y redención extremo a extremo.
-
-**Comprobación formativa:** Formula la invariante que evita crear más representaciones que activos respaldantes.
-
-**Evidencia de aprendizaje:** Invariante de suministro y lista de verificadores en cada frontera.
-
-### Clase 28 · Modelo de amenazas de puentes
-
-**Pregunta guía:** ¿Qué nueva confianza introduce cada capa de interoperabilidad?
-
-**Enfoque pedagógico:** threat modeling de un puente.
-
-Los equipos atacan relayer, verificador, claves, contratos y actualización por separado. La pérdida máxima obliga a priorizar controles en vez de enumerar amenazas.
-
-**Núcleo conceptual:**
-
-- validadores y multisig.
-- oráculos, relayers y contratos.
-- replay, pausa y actualización.
-
-**Caso de trabajo:** Una clave administrativa actualiza el verificador y habilita retiros falsos.
-
-**Actividad:** Atacar conceptualmente cinco puntos del flujo y proponer defensas.
-
-**Comprobación formativa:** Identifica la confianza dominante incluso si todos los contratos son correctos.
-
-**Evidencia de aprendizaje:** Threat model priorizado con pérdida máxima y plan de contención.
-<!-- plan-clases:fin -->
+**Experiencia propia:** threat modeling de un puente. **Evidencia:** Threat model priorizado con pérdida máxima y plan de contención.
+<!-- clases-independientes:fin -->
 
 ---
 

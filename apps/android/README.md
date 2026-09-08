@@ -71,7 +71,7 @@ pnpm app:android:verify
 Abre el APK como el ZIP que es y comprueba **dentro**: que `assets/public/` no
 está vacío, que están todas las clases del currículo (el número se cuenta del
 repositorio, no se escribe a mano), que el manual PDF viaja, y que una página
-concreta conserva su título, sus 4 preguntas y sus enlaces anterior/siguiente.
+concreta conserva título, profundidad, gráfico y enlaces de clase; el mapa temático mantiene sus preguntas.
 
 Existe porque el fallo característico de estos empaquetados no es que fallen al
 compilar: es que compilan en verde, pesan lo esperado, se instalan sin error y

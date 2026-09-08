@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 45 · Depósitos tokenizados
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué cambia cuando el pasivo bancario se representa en un registro programable?
+### [Clase 45 · Depósitos tokenizados](clase-45-depositos-tokenizados.md)
 
-**Enfoque pedagógico:** comparación de balances bancarios.
+¿Qué cambia cuando el pasivo bancario se representa en un registro programable?
 
-El depósito tradicional y su representación tokenizada se colocan en el mismo balance. Así se distingue innovación de interfaz de un cambio de emisor o riesgo.
+**Experiencia propia:** comparación de balances bancarios. **Evidencia:** Tabla de derechos, pasivos, liquidación y mecanismos de conversión.
 
-**Núcleo conceptual:**
+### [Clase 46 · CBDC/MDBC y diseño de política pública](clase-46-cbdc-mdbc-y-diseno-de-politica-publica.md)
 
-- emisor bancario y convertibilidad.
-- interoperabilidad y fungibilidad.
-- balance, reservas y crédito.
+¿Qué decisiones técnicas cambian privacidad, acceso y estabilidad financiera?
 
-**Caso de trabajo:** Tokens de dos bancos valen uno nominalmente pero tienen distinto riesgo.
-
-**Actividad:** Comparar depósito tradicional, tokenizado y stablecoin bancaria.
-
-**Comprobación formativa:** ¿Qué permanece igual para el cliente cuando sólo cambia el registro tecnológico?
-
-**Evidencia de aprendizaje:** Tabla de derechos, pasivos, liquidación y mecanismos de conversión.
-
-### Clase 46 · CBDC/MDBC y diseño de política pública
-
-**Pregunta guía:** ¿Qué decisiones técnicas cambian privacidad, acceso y estabilidad financiera?
-
-**Enfoque pedagógico:** laboratorio de política pública.
-
-Cada equipo diseña una MDBC con objetivo distinto y debe defender privacidad, acceso, intermediación y resiliencia. No existe una arquitectura neutral.
-
-**Núcleo conceptual:**
-
-- retail y wholesale.
-- modelo directo, intermediado e híbrido.
-- privacidad, límites y resiliencia.
-
-**Caso de trabajo:** Una MDBC minorista compite con depósitos durante una crisis bancaria.
-
-**Actividad:** Diseñar opciones para Chile declarando objetivos y trade-offs.
-
-**Comprobación formativa:** ¿Qué decisión de diseño podría acelerar una corrida desde depósitos bancarios?
-
-**Evidencia de aprendizaje:** Memo de política con alternativas, riesgos y fuente oficial vigente.
-<!-- plan-clases:fin -->
+**Experiencia propia:** laboratorio de política pública. **Evidencia:** Memo de política con alternativas, riesgos y fuente oficial vigente.
+<!-- clases-independientes:fin -->
 
 ---
 

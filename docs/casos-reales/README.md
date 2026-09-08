@@ -6,6 +6,11 @@ Biblioteca de casos **documentados públicamente**, analizados con la misma estr
 que se puedan comparar entre sí. No están aquí para ilustrar: están para que puedas
 responder, ante un diseño nuevo, **qué control faltaba** y **en qué orden se rompió todo**.
 
+Antes de atribuir una dirección, intervenir un sistema o recomendar una respuesta, aplica
+[¿Y si cruzas la línea?](../y-si-cruzas-la-linea-blockchain.md): una guía defensiva para
+separar hecho, indicador, inferencia y alegación, preservar evidencia y reconocer cuándo
+una acción requiere autoridad legal u operativa adicional.
+
 > **Criterio de selección.** Solo casos con documentación pública abundante (resoluciones
 > judiciales, informes de organismos, comunicaciones oficiales de las entidades implicadas).
 > Ningún caso se presenta como éxito o fracaso absoluto sin evidencia, y **ninguna cifra se

@@ -7,57 +7,27 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 41 · Qué es dinero bancario
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** Cuando pagas, ¿qué activo se mueve y qué institución te debe?
+### [Clase 41 · Qué es dinero bancario](clase-41-que-es-dinero-bancario.md)
 
-**Enfoque pedagógico:** contabilidad con balances enlazados.
+Cuando pagas, ¿qué activo se mueve y qué institución te debe?
 
-Cada pago se registra simultáneamente en libros de cliente, bancos y sistema de liquidación. Esto separa el mensaje visible del activo que finalmente cancela obligaciones.
+**Experiencia propia:** contabilidad con balances enlazados. **Evidencia:** Mapa de balances que distinga mensaje, obligación y activo de liquidación.
 
-**Núcleo conceptual:**
+### [Clase 42 · Finalidad, liquidez y riesgo de liquidación](clase-42-finalidad-liquidez-y-riesgo-de-liquidacion.md)
 
-- dinero de banco central y comercial.
-- depósito como pasivo.
-- mensajería, compensación y liquidación.
+¿Cuándo un pago es técnico, económico y jurídicamente final?
 
-**Caso de trabajo:** Una transferencia aparece abonada antes de liquidarse entre bancos.
-
-**Actividad:** Registrar asientos de pagador, bancos, cámara y receptor.
-
-**Comprobación formativa:** ¿Qué pasivo disminuye y qué activo se transfiere en cada institución?
-
-**Evidencia de aprendizaje:** Mapa de balances que distinga mensaje, obligación y activo de liquidación.
-
-### Clase 42 · Finalidad, liquidez y riesgo de liquidación
-
-**Pregunta guía:** ¿Cuándo un pago es técnico, económico y jurídicamente final?
-
-**Enfoque pedagógico:** comparación cuantitativa de liquidación.
-
-La misma operación se procesa de forma bruta, neta y atómica. El grupo calcula exposición y liquidez para entender por qué velocidad y seguridad no son sinónimos.
-
-**Núcleo conceptual:**
-
-- DvP, PvP y riesgo Herstatt.
-- neteo y liquidez intradía.
-- firmeza y riesgo de crédito.
-
-**Caso de trabajo:** Una pata de una operación FX se liquida y la contraparte falla.
-
-**Actividad:** Comparar liquidación bruta, neta y atómica con cifras.
-
-**Comprobación formativa:** ¿Qué riesgo elimina PvP y cuál permanece si una contraparte es insolvente antes del intercambio?
-
-**Evidencia de aprendizaje:** Recomendación que cuantifique exposición y necesidad de liquidez.
-<!-- plan-clases:fin -->
+**Experiencia propia:** comparación cuantitativa de liquidación. **Evidencia:** Recomendación que cuantifique exposición y necesidad de liquidez.
+<!-- clases-independientes:fin -->
 
 ---
 
-Esta pareja de clases es la **bisagra** del programa. Todo lo que viene después —stablecoins,
+Estas clases forman la **bisagra** del programa. Todo lo que viene después —stablecoins,
 depósitos tokenizados, MDBC, pagos, tokenización, mercados de capitales— es una respuesta
 a problemas que solo se ven si primero entiendes **qué es el dinero que ya usas y cómo se
 mueve realmente**.

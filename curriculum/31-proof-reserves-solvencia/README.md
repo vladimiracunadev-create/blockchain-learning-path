@@ -5,61 +5,23 @@
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
 > 🧭 ⬅️ **Anterior:** [Clases 61–62 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 65–66 · Forensics, auditoría y gobernanza](../32-forensics-auditoria-gobernanza/README.md)
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 63 · Del saldo del cliente a una prueba Merkle
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Método:** laboratorio de construcción y sabotaje controlado.
+### [Clase 63 · Del saldo del cliente a una prueba Merkle](clase-63-del-saldo-del-cliente-a-una-prueba-merkle.md)
 
-La clase no comienza definiendo Proof of Reserves. Comienza con cinco clientes que
-preguntan si sus saldos aparecen en una lista sin publicar los saldos de los demás.
-El grupo normaliza cada registro, añade un nonce, calcula las hojas y construye el
-árbol hasta obtener una única raíz. Después verifica una prueba a mano antes de usar
-el script. Esto permite entender que la raíz es un **compromiso criptográfico con un
-conjunto concreto**, no un certificado general de honestidad.
+¿Cómo demuestra un cliente que su saldo fue incluido sin publicar todos los saldos?
 
-Cuando la prueba funciona, otro equipo actúa como operador adversarial: omite una
-cuenta, duplica otra, cambia la unidad, introduce saldo negativo o reutiliza una raíz
-de otro corte. Cada manipulación obliga a preguntar qué control la detectaría. El
-objetivo no es admirar el árbol, sino reconocer la diferencia entre integridad de los
-datos comprometidos e **integridad de la población** que debió entrar al árbol.
+**Experiencia propia:** laboratorio de construcción y sabotaje controlado. **Evidencia:** Raíz reproducible y verificación documentada de una inclusión y una exclusión.
 
-**Secuencia práctica:** canonizar → hashear hojas → construir niveles → publicar raíz
-→ verificar inclusión → alterar una entrada → localizar qué garantía se rompió.
+### [Clase 64 · Del snapshot a una conclusión profesional](clase-64-del-snapshot-a-una-conclusion-profesional.md)
 
-**Evidencia:** raíz reproducible, prueba válida, prueba inválida y una nota que enumere
-cuatro afirmaciones que Merkle no demuestra. No se aprueba una captura de pantalla sin
-datos de entrada y comando de reproducción.
+¿Qué falta para pasar de controlar wallets a concluir solvencia?
 
-### Clase 64 · Del snapshot a una conclusión profesional
-
-**Método:** comité de aseguramiento con contradicción de evidencia.
-
-El grupo recibe tres paquetes separados: pasivos comprometidos, wallets atribuidas a
-la entidad y confirmaciones de saldos mantenidos en terceros. Debe fijar primero un
-corte común. Luego compara activo por activo: BTC no se compensa automáticamente con
-un token ilíquido y una reclamación contra otro exchange no equivale a una wallet cuyo
-control fue demostrado.
-
-La mitad de la clase se dedica al lenguaje de la conclusión. “Las reservas existen”,
-“los activos cubren los pasivos incluidos” y “la empresa es solvente” son afirmaciones
-distintas. Para pasar de la segunda a la tercera faltan, entre otras cosas, integridad
-de todos los pasivos, derechos sobre los activos, gravámenes, valuación, hechos
-posteriores y continuidad operacional. El comité debe rechazar toda frase cuyo alcance
-sea mayor que la evidencia.
-
-**Incidente de contraste:** aparece un préstamo no incluido firmado el día anterior y
-una transferencia entrante devuelta horas después del corte. El equipo reevalúa ratio,
-propiedad, ventana temporal y riesgo de *window dressing*.
-
-**Evidencia:** papel de trabajo que reconcilie `assets vs liabilities`, describa los
-procedimientos ejecutados, separe excepción de limitación y redacte una conclusión
-acotada. Otro equipo debe poder reproducir los totales sin pedir explicaciones orales.
-
-**Cierre:** PoR puede aportar evidencia útil. Deja de ser útil cuando se presenta como
-sinónimo de auditoría financiera completa.
-<!-- plan-clases:fin -->
+**Experiencia propia:** comité de aseguramiento con evidencia contradictoria. **Evidencia:** Conclusión acotada que no confunda snapshot con auditoría financiera.
+<!-- clases-independientes:fin -->
 
 ---
 

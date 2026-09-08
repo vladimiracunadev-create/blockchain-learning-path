@@ -7,57 +7,30 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 57 · Extraer y normalizar datos on-chain
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Cómo convertimos bloques y transacciones en un dataset reproducible?
+### [Clase 57 · Extraer y normalizar datos on-chain](clase-57-extraer-y-normalizar-datos-on-chain.md)
 
-**Enfoque pedagógico:** pipeline reproducible por checkpoints.
+¿Cómo convertimos bloques y transacciones en un dataset reproducible?
 
-El dataset se extrae dos veces alrededor de una reorganización. Procedencia, bloque de corte y deduplicación convierten una descarga en evidencia analizable.
+**Experiencia propia:** pipeline reproducible por checkpoints. **Evidencia:** Dataset con esquema, bloque de corte, hash y reglas de calidad.
 
-**Núcleo conceptual:**
+### [Clase 58 · Grafo, anomalías y límites de atribución](clase-58-grafo-anomalias-y-limites-de-atribucion.md)
 
-- RPC, exploradores y procedencia.
-- UTXO frente a cuentas.
-- reorgs, duplicados y corte.
+¿Qué patrón observamos y qué identidad no podemos afirmar?
 
-**Caso de trabajo:** Dos consultas del mismo rango difieren por una reorganización reciente.
-
-**Actividad:** Construir pipeline incremental con checkpoints y validaciones.
-
-**Comprobación formativa:** ¿Qué campos permiten reproducir exactamente el conjunto observado?
-
-**Evidencia de aprendizaje:** Dataset con esquema, bloque de corte, hash y reglas de calidad.
-
-### Clase 58 · Grafo, anomalías y límites de atribución
-
-**Pregunta guía:** ¿Qué patrón observamos y qué identidad no podemos afirmar?
-
-**Enfoque pedagógico:** investigación de grafo con hipótesis rivales.
-
-Cada patrón recibe al menos dos explicaciones posibles. Precisión y recall se conectan con el costo humano de una falsa atribución.
-
-**Núcleo conceptual:**
-
-- nodos, aristas y clustering.
-- fan-in, fan-out y peeling chain.
-- precisión, recall y falsa atribución.
-
-**Caso de trabajo:** Un servicio compartido hace parecer relacionadas a personas independientes.
-
-**Actividad:** Construir grafo y clasificar hallazgos por fuerza de evidencia.
-
-**Comprobación formativa:** Reescribe una acusación como hecho, indicador, inferencia e hipótesis separados.
-
-**Evidencia de aprendizaje:** Informe que separe hecho, indicador, inferencia e hipótesis.
-<!-- plan-clases:fin -->
+**Experiencia propia:** investigación de grafo con hipótesis rivales. **Evidencia:** Informe que separe hecho, indicador, inferencia e hipótesis.
+<!-- clases-independientes:fin -->
 
 ---
 
 ## 🎯 Objetivos
+
+> Antes de atribuir identidades o recomendar medidas desde un grafo, aplica
+> [¿Y si cruzas la línea?](../../docs/y-si-cruzas-la-linea-blockchain.md).
 
 - Distinguir **minería de criptomonedas**, **minería de datos blockchain**, **blockchain analytics**, **on-chain analytics** y **blockchain intelligence**, y usar cada término donde corresponde.
 - Leer un bloque y una transacción campo por campo, en el modelo **UTXO** (Bitcoin) y en el modelo de **cuentas** (Ethereum), y explicar qué revela y qué no revela cada uno.
@@ -261,7 +234,7 @@ Fuentes primarias y documentación oficial, consultadas el **2026-08-24**:
 | Ethereum — Accounts | Ethereum Foundation | <https://ethereum.org/en/developers/docs/accounts/> | continua | Nivel 1: cuentas, nonce, saldo |
 | EIP-20 — Token Standard (evento `Transfer`) | Fabian Vogelsteller, Vitalik Buterin | <https://eips.ethereum.org/EIPS/eip-20> | 2015-11-19 | Nivel 3: eventos y métricas de token |
 | The Graph — Documentación de subgraphs | The Graph | <https://thegraph.com/docs/en/> | continua | Nivel 2: indexadores |
-| Updated Guidance for a Risk-Based Approach to Virtual Assets and VASPs | FATF/GAFI | <https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html> | 2021-10-28 | Nivel 4: riesgo, límites regulatorios |
+| Updated Guidance for a Risk-Based Approach to Virtual Assets and VASPs | FATF/GAFI | <https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html> | 2021-10-28 | Nivel 4: riesgo, límites regulatorios |
 | *Mastering Bitcoin* (3.ª ed., libre) | Andreas M. Antonopoulos, David A. Harding | <https://github.com/bitcoinbook/bitcoinbook> | 2023 | Niveles 1 y 3: UTXO, privacidad, análisis |
 | Bitcoin: A Peer-to-Peer Electronic Cash System (§10, privacidad) | Satoshi Nakamoto | <https://bitcoin.org/bitcoin.pdf> | 2008-10-31 | Nivel 1: seudonimato frente a anonimato |
 

@@ -10,6 +10,7 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { classFileName } from "./curriculum-lib.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 // Destino configurable: el sitio de Pages va a site/, el bundle de las apps a otro sitio.
@@ -22,7 +23,7 @@ const classCount = classCatalog.flatMap((unit) => unit.classes).length;
 
 // Unidades: cada carpeta curriculum/NN-* con el H1 de su README como título.
 const MODULE_EMOJI = ["🧭","🔐","🌐","🤝","₿","⟠","📜","🖥️","🪙","🛡️","🔮","🏛️","⚡","🔗","🕶️","🏗️","⚙️","🏦","🏢"];
-const modules = readdirSync(join(ROOT, "curriculum"))
+const topics = readdirSync(join(ROOT, "curriculum"))
   .filter((d) => /^\d{2}-/.test(d))
   .sort()
   .map((d, i) => {
@@ -32,6 +33,12 @@ const modules = readdirSync(join(ROOT, "curriculum"))
     const classes = classCatalog.find((unit) => unit.unit === num)?.classes ?? [];
     return { num, title, classes, emoji: MODULE_EMOJI[i] || "📦", href: `curriculum/${d}/README.md` };
   });
+const classes = topics.flatMap((topic) => topic.classes.map((item) => ({
+  ...item,
+  topic: topic.title,
+  emoji: topic.emoji,
+  href: topic.href.replace(/README\.md$/, classFileName(item))
+})));
 
 const catalog = read("labs/CATALOG.md");
 const practiceCount = (catalog.match(/^\| \d+/gm) || []).length;
@@ -200,7 +207,7 @@ footer a{color:var(--acento);font-weight:600}
 
   <h2 class="sec">Las ${classCount} clases</h2>
   <div class="parts">
-    ${modules.map((m) => `<a class="part" href="${local(m.href)}"><div class="num">${m.emoji}</div><div><div class="t">${esc(m.title)}</div><div class="c">Clases ${m.classes.map((item) => item.id).join(" y ")}</div></div></a>`).join("\n    ")}
+    ${classes.map((item) => `<a class="part" href="${local(item.href)}"><div class="num">${item.id}</div><div><div class="t">${esc(item.title)}</div><div class="c">Clase ${item.id} · ${esc(item.topic)}</div></div></a>`).join("\n    ")}
   </div>
 
   <h2 class="sec">Cómo se aprende</h2>

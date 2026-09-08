@@ -51,7 +51,7 @@ vuelve a la **clase** para la teoría. Las marcadas **auto** traen verificación
 | 20 | Multisig/descriptor en regtest | intermedio | política | [9–10](../curriculum/04-bitcoin/README.md) | [ver](guides/02-consensus-bitcoin.md) |
 | 71 | Prevuelo de una transacción (wallets) | inicial | **auto** | [Wallets desde cero](../docs/wallets-desde-cero.md) | [ver](guides/02-consensus-bitcoin.md) |
 
-> La práctica 71 pertenece a la unidad transversal
+> La práctica 71 pertenece a la guía complementaria
 > [**Wallets desde cero**](../docs/wallets-desde-cero.md), que se estudia entre los
 > clases 9–10 y 11–12. Conserva el número 71 para no renumerar las prácticas existentes.
 

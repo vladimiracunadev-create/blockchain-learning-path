@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 33 · Operar nodos con objetivos medibles
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué servicio presta el nodo y qué disponibilidad necesita el negocio?
+### [Clase 33 · Operar nodos con objetivos medibles](clase-33-operar-nodos-con-objetivos-medibles.md)
 
-**Enfoque pedagógico:** diseño desde SLO hacia infraestructura.
+¿Qué servicio presta el nodo y qué disponibilidad necesita el negocio?
 
-Primero se define el servicio que necesita el negocio y su tolerancia a fallos. Recién después se eligen cliente, disco, RPC y monitoreo.
+**Experiencia propia:** diseño desde SLO hacia infraestructura. **Evidencia:** Runbook con capacidad, respaldo, monitoreo y criterio de escalamiento.
 
-**Núcleo conceptual:**
+### [Clase 34 · Resiliencia, actualización e incidentes](clase-34-resiliencia-actualizacion-e-incidentes.md)
 
-- clientes, sincronización y almacenamiento.
-- RPC, límites y autenticación.
-- SLO, métricas y alertas.
+¿Cómo se cambia software crítico sin perder disponibilidad ni evidencia?
 
-**Caso de trabajo:** Un RPC público saturado impide retiros aunque la cadena siga funcionando.
-
-**Actividad:** Definir SLI/SLO y desplegar un nodo o simulador observable.
-
-**Comprobación formativa:** ¿Qué métrica distingue una cadena detenida de un RPC propio saturado?
-
-**Evidencia de aprendizaje:** Runbook con capacidad, respaldo, monitoreo y criterio de escalamiento.
-
-### Clase 34 · Resiliencia, actualización e incidentes
-
-**Pregunta guía:** ¿Cómo se cambia software crítico sin perder disponibilidad ni evidencia?
-
-**Enfoque pedagógico:** game day de actualización.
-
-Una versión se despliega como canary y luego falla. El equipo practica rollback, comunicación y preservación de evidencia con tiempos medidos.
-
-**Núcleo conceptual:**
-
-- redundancia y diversidad de clientes.
-- gestión de secretos y red.
-- backups, upgrades y respuesta.
-
-**Caso de trabajo:** Una versión defectuosa divide la red y afecta sólo a un cliente mayoritario.
-
-**Actividad:** Planificar actualización canary y practicar recuperación documentada.
-
-**Comprobación formativa:** ¿Qué condición detiene el despliegue y quién tiene autoridad para declararla?
-
-**Evidencia de aprendizaje:** Informe de simulacro con tiempos, decisiones y acciones correctivas.
-<!-- plan-clases:fin -->
+**Experiencia propia:** game day de actualización. **Evidencia:** Informe de simulacro con tiempos, decisiones y acciones correctivas.
+<!-- clases-independientes:fin -->
 
 ---
 

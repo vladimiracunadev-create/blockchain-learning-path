@@ -2,7 +2,8 @@
 
 > **Nivel:** Inicial · ⏱️ **Duración estimada:** 120 min · **Fuente:** BIP-32/39/44, documentación oficial de Ethereum (ethereum.org), EIP-1193/6963/712/2612 y ERC-4337
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📚 Bibliografía](bibliografia.md)
-> 🧭 **Unidad transversal** — se estudia después de las [clases 9–10 · Bitcoin](../curriculum/04-bitcoin/README.md) y antes de las [clases 11–12 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md). No altera la numeración de las clases.
+> 🧭 **Guía complementaria** — reúne en un solo lugar el contenido de wallets integrado
+> en las clases 4, 9–11, 16, 53–54 y 59–60. No es una clase, subclase ni etapa adicional.
 > 📖 [Glosario de términos](glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](empieza-aqui.md)
 
 ---

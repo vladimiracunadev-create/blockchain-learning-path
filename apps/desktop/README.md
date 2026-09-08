@@ -63,7 +63,7 @@ pnpm app:windows
 ## Verificación
 
 `smoke.js` es la prueba que importa. Arranca la app real y comprueba **dentro**
-que están el manifiesto, todas las clases del currículo, el texto de una pareja de clases, sus preguntas
+que están el manifiesto, los 66 documentos de clase, el texto y gráfico de una clase real, la evaluación temática
 de autoevaluación, los enlaces anterior/siguiente y el índice de búsqueda.
 
 Existe porque el fallo típico de estos empaquetados no es que no compilen: es que

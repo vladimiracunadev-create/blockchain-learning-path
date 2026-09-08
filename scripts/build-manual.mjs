@@ -9,6 +9,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync, cpSync } from "nod
 import { join, dirname, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
+import { classFileName } from "./curriculum-lib.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
@@ -17,7 +18,8 @@ const GH = "https://github.com/vladimiracunadev-create/blockchain-learning-path"
 const version = JSON.parse(read("package.json")).version;
 
 const curriculumSlugs = readdirSync(join(ROOT, "curriculum")).filter((d) => /^\d{2}-/.test(d)).sort();
-const classCount = JSON.parse(read("curriculum/classes.json")).flatMap((unit) => unit.classes).length;
+const classCatalog = JSON.parse(read("curriculum/classes.json"));
+const classCount = classCatalog.flatMap((unit) => unit.classes).length;
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 const adrDocs = readdirSync(join(ROOT, "adrs")).filter((f) => /^\d{3}-.*\.md$/.test(f)).sort();
 // Las cifras de la portada se calculan de los archivos reales: escritas a mano
@@ -30,10 +32,12 @@ const PARTS = [
   // imprime el manual y lo abre por el principio tiene que encontrarla ahí, igual
   // que en el sitio y en las apps.
   ["Introducción", ["README.md", "docs/empieza-aqui.md"]],
-  // La unidad transversal de wallets va donde se estudia: después de la clase 10
-  // (Bitcoin) y antes del 05 (Ethereum), igual que en el sitio y en el currículo.
-  ["Currículo", ["curriculum/README.md", ...curriculumSlugs.flatMap((s) =>
-    s.startsWith("04-") ? [`curriculum/${s}/README.md`, "docs/wallets-desde-cero.md"] : [`curriculum/${s}/README.md`])]],
+  // Cada clase es un capítulo real. Los README temáticos se conservan como mapas
+  // para no romper enlaces, pero nunca sustituyen a sus dos clases independientes.
+  ["Currículo", ["curriculum/README.md", ...curriculumSlugs.flatMap((s, index) => [
+    `curriculum/${s}/README.md`,
+    ...classCatalog[index].classes.map((item) => `curriculum/${s}/${classFileName(item)}`)
+  ])]],
   ["Industria", ["industria/README.md", ...industriaDocs.map((f) => `industria/${f}`)]],
   ["Laboratorios", ["labs/CATALOG.md", "labs/guides/01-foundations.md", "labs/guides/02-consensus-bitcoin.md",
     "labs/guides/03-evm-development.md", "labs/guides/04-professional-security.md", "labs/guides/05-advanced-capstone.md",
@@ -51,7 +55,7 @@ const PARTS = [
     "docs/mejores-practicas.md", "docs/tecnologias.md", "docs/despliegue-local.md",
     "docs/operacion-incidentes.md", "docs/threat-model-project.md", "docs/recursos-oficiales.md",
     "docs/diseno-pedagogico.md", "docs/evaluacion.md", "docs/ruta-rapida.md", "docs/chile-regulacion-tributacion.md",
-    "docs/skills-matrix.md"]],
+    "docs/skills-matrix.md", "docs/wallets-desde-cero.md"]],
   ["Evaluación y proyecto final", ["assessments/checkpoints.md", "assessments/module-question-bank.md",
     "assessments/audit-report-template.md", "learning-paths/README.md", "capstone/README.md"]],
 ];

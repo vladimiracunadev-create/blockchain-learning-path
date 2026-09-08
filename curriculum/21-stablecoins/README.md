@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 43 · Modelos de stablecoin y paridad
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Quién promete la paridad y con qué mecanismo intenta sostenerla?
+### [Clase 43 · Modelos de stablecoin y paridad](clase-43-modelos-de-stablecoin-y-paridad.md)
 
-**Enfoque pedagógico:** taxonomía por promesa y mecanismo.
+¿Quién promete la paridad y con qué mecanismo intenta sostenerla?
 
-Las stablecoins se clasifican desde el emisor, el derecho y el respaldo, no desde su ticker. Casos con igual precio nominal revelan riesgos radicalmente distintos.
+**Experiencia propia:** taxonomía por promesa y mecanismo. **Evidencia:** Ficha comparativa que separe precio observado de capacidad de redención.
 
-**Núcleo conceptual:**
+### [Clase 44 · Reservas, redención y riesgo operacional](clase-44-reservas-redencion-y-riesgo-operacional.md)
 
-- respaldo fiat y reservas.
-- sobrecolateralización cripto.
-- diseño algorítmico y reflexividad.
+¿Puede el tenedor convertir el token en dinero y bajo qué condiciones?
 
-**Caso de trabajo:** Un activo de reserva pierde liquidez durante una ola de redenciones.
-
-**Actividad:** Clasificar stablecoins por emisor, activo, derecho y estabilización.
-
-**Comprobación formativa:** Explica quién absorbe la pérdida si el activo de reserva vale menos que el pasivo.
-
-**Evidencia de aprendizaje:** Ficha comparativa que separe precio observado de capacidad de redención.
-
-### Clase 44 · Reservas, redención y riesgo operacional
-
-**Pregunta guía:** ¿Puede el tenedor convertir el token en dinero y bajo qué condiciones?
-
-**Enfoque pedagógico:** simulacro de corrida y redención.
-
-Mercado primario, secundario, bancos y blockchain reaccionan a retiros crecientes. El precio se interpreta junto con acceso real a la redención.
-
-**Núcleo conceptual:**
-
-- calidad, duración y custodia de reservas.
-- mercado primario y secundario.
-- depeg, gates y cumplimiento.
-
-**Caso de trabajo:** El precio vuelve a uno mientras la redención directa sigue cerrada.
-
-**Actividad:** Trazar emisión y redención incluyendo bancos, custodios y blockchains.
-
-**Comprobación formativa:** ¿Puede existir paridad de mercado sin redención directa y qué la sostiene?
-
-**Evidencia de aprendizaje:** Mapa de riesgos con evidencia pública y preguntas no resueltas.
-<!-- plan-clases:fin -->
+**Experiencia propia:** simulacro de corrida y redención. **Evidencia:** Mapa de riesgos con evidencia pública y preguntas no resueltas.
+<!-- clases-independientes:fin -->
 
 ---
 

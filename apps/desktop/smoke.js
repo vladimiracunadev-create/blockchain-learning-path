@@ -46,8 +46,8 @@ app.whenReady().then(async () => {
   } catch { /* se reporta abajo */ }
   comprobar(manifiesto !== null, "contenido.json presente");
   comprobar(
-    manifiesto?.modulos === UNIDADES_ESPERADAS && manifiesto?.clases === 66,
-    `el manifiesto declara 66 clases en ${UNIDADES_ESPERADAS} unidades`
+    manifiesto?.mapasTematicos === UNIDADES_ESPERADAS && manifiesto?.clases === 66,
+    `el manifiesto declara 66 clases y ${UNIDADES_ESPERADAS} mapas temáticos`
   );
   comprobar(manifiesto?.manual === true, "el manual PDF viaja dentro de la app");
 
@@ -60,23 +60,37 @@ app.whenReady().then(async () => {
   const titulo = await ventana.webContents.executeJavaScript("document.title");
   comprobar(/Blockchain Learning Path/i.test(titulo), `la portada carga (título: "${titulo}")`);
 
-  // Una pareja de clases, con su temario, su quiz y su navegación
-  await ventana.loadURL(`${url}/curriculum/09-seguridad/README.html`);
-  const unidad = await ventana.webContents.executeJavaScript(`(() => ({
+  // Una clase real, con su contenido, evaluación y navegación
+  await ventana.loadURL(`${url}/curriculum/09-seguridad/clase-19-modelado-de-amenazas-y-revision-manual.html`);
+  await ventana.webContents.executeJavaScript(`new Promise((resolve) => {
+    if (window.__mermaidDone === true) return resolve();
+    const started = Date.now();
+    const timer = setInterval(() => {
+      if (window.__mermaidDone === true || Date.now() - started > 30000) {
+        clearInterval(timer);
+        resolve();
+      }
+    }, 100);
+  })`);
+  const clase = await ventana.webContents.executeJavaScript(`(() => ({
     h1: document.querySelector("h1")?.textContent || "",
     palabras: document.body.innerText.trim().split(/\\s+/).length,
-    preguntas: document.querySelectorAll(".qm").length,
-    prev: document.querySelector(".modnav a[rel=prev]")?.getAttribute("href") || "",
-    next: document.querySelector(".modnav a[rel=next]")?.getAttribute("href") || "",
+    diagramas: document.querySelectorAll("pre.mermaid svg").length,
+    prev: [...document.querySelectorAll("main a")].some(a => a.getAttribute("href")?.includes("clase-18")),
+    next: [...document.querySelectorAll("main a")].some(a => a.getAttribute("href")?.includes("clase-20")),
     enlacesMenu: document.querySelectorAll("nav.side a").length
   }))()`);
 
-  comprobar(/Seguridad/i.test(unidad.h1), `las clases 19–20 cargan su título ("${unidad.h1}")`);
-  comprobar(unidad.palabras > 800, `las clases traen su contenido (${unidad.palabras} palabras)`);
-  comprobar(unidad.preguntas === 4, `la autoevaluación de la unidad se renderiza (${unidad.preguntas} preguntas)`);
-  comprobar(unidad.prev.includes("08-tokens"), `enlaza a las clases anteriores (${unidad.prev || "ninguno"})`);
-  comprobar(unidad.next.includes("10-oraculos"), `enlaza a las clases siguientes (${unidad.next || "ninguno"})`);
-  comprobar(unidad.enlacesMenu > 40, `el menú lateral tiene el índice completo (${unidad.enlacesMenu} enlaces)`);
+  comprobar(/Clase 19/i.test(clase.h1), `la clase 19 carga su título propio ("${clase.h1}")`);
+  comprobar(clase.palabras > 650, `la clase trae profundidad propia (${clase.palabras} palabras)`);
+  comprobar(clase.diagramas >= 1, `la clase renderiza su gráfico pedagógico (${clase.diagramas})`);
+  comprobar(clase.prev, "enlaza directamente a la clase 18");
+  comprobar(clase.next, "enlaza directamente a la clase 20");
+  comprobar(clase.enlacesMenu > 70, `el menú lateral enumera las 66 clases (${clase.enlacesMenu} enlaces)`);
+
+  await ventana.loadURL(`${url}/curriculum/09-seguridad/README.html`);
+  const preguntasTema = await ventana.webContents.executeJavaScript("document.querySelectorAll('.qm').length");
+  comprobar(preguntasTema === 4, `el mapa temático conserva su autoevaluación (${preguntasTema} preguntas)`);
 
   // El buscador depende de un fetch: bajo file:// fallaría en silencio.
   await ventana.loadURL(url);

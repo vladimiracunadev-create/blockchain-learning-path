@@ -7,53 +7,23 @@
 
 ---
 
-<!-- plan-clases:inicio -->
-## 🧭 Plan de clases
+<!-- clases-independientes:inicio -->
+## Las dos clases independientes de este tema
 
-### Clase 21 · Oráculos y calidad del dato
+Esta página conserva el mapa, los conceptos compartidos y las referencias. La enseñanza evaluable ocurre en dos documentos separados; cada uno tiene fundamento, gráfico, caso, práctica, evidencia y fuentes propios.
 
-**Pregunta guía:** ¿Qué confianza entra al contrato cuando importamos un precio externo?
+### [Clase 21 · Oráculos y calidad del dato](clase-21-oraculos-y-calidad-del-dato.md)
 
-**Enfoque pedagógico:** clínica de datos defectuosos.
+¿Qué confianza entra al contrato cuando importamos un precio externo?
 
-El contrato recibe precios viejos, extremos y con decimales distintos. Cada falla revela una validación y el costo de operar en modo degradado.
+**Experiencia propia:** clínica de datos defectuosos. **Evidencia:** Política de consumo con validaciones, umbrales y modo degradado.
 
-**Núcleo conceptual:**
+### [Clase 22 · Eventos, indexación y disponibilidad](clase-22-eventos-indexacion-y-disponibilidad.md)
 
-- spot, TWAP y agregación.
-- freshness, decimales y rangos.
-- fallback y circuit breaker.
+¿Cómo consultamos historia sin confundir un índice con la verdad del protocolo?
 
-**Caso de trabajo:** Un precio válido pero antiguo habilita una liquidación incorrecta.
-
-**Actividad:** Evaluar respuestas de oráculo normales, atrasadas y fuera de rango.
-
-**Comprobación formativa:** ¿Por qué una respuesta firmada por el oráculo todavía puede ser insegura para el caso de uso?
-
-**Evidencia de aprendizaje:** Política de consumo con validaciones, umbrales y modo degradado.
-
-### Clase 22 · Eventos, indexación y disponibilidad
-
-**Pregunta guía:** ¿Cómo consultamos historia sin confundir un índice con la verdad del protocolo?
-
-**Enfoque pedagógico:** reconstrucción después de una reorg.
-
-El índice pierde coherencia mientras el contrato conserva su estado. Reprocesar desde un checkpoint enseña que velocidad de consulta y autoridad del dato son funciones diferentes.
-
-**Núcleo conceptual:**
-
-- logs y estado on-chain.
-- indexadores y reorgs.
-- CID, IPFS y persistencia.
-
-**Caso de trabajo:** Un indexador pierde eventos durante una reorganización y muestra saldo incorrecto.
-
-**Actividad:** Reprocesar eventos desde un checkpoint y comparar contra estado RPC.
-
-**Comprobación formativa:** ¿Qué comparación detecta que el índice ya no representa el estado canónico?
-
-**Evidencia de aprendizaje:** Índice reconstruible con bloque de corte, procedencia y manejo de reorg.
-<!-- plan-clases:fin -->
+**Experiencia propia:** reconstrucción después de una reorg. **Evidencia:** Índice reconstruible con bloque de corte, procedencia y manejo de reorg.
+<!-- clases-independientes:fin -->
 
 ---
 

@@ -1,6 +1,6 @@
 # Cuaderno de prácticas
 
-El cuaderno de laboratorios reúne las **91 prácticas** del programa, organizadas en **8 cuadernos por etapa** que acompañan el avance por las 66 clases —agrupadas en 33 unidades— y la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md). Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
+El cuaderno de laboratorios reúne las **91 prácticas** del programa, organizadas en **8 cuadernos por etapa** que acompañan los 66 documentos de clase. [Wallets desde cero](../../docs/wallets-desde-cero.md) apoya transversalmente las clases que usan claves, direcciones o firmas, sin añadir clases. Cada guía especifica objetivo, evidencia y aceptación; el detalle operativo de cada laboratorio (comandos, archivos, dependencias) está en el [catálogo](../CATALOG.md).
 
 ## Los ocho cuadernos
 
