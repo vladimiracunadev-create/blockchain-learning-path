@@ -41,6 +41,15 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Investigar sin falsa atribución | Grafo y registro de confianza | ¿Dónde termina el hecho y empieza la hipótesis? |
 | Defender una revisión custodial | [Aurora Custody](../capstone/empresa-custodial/README.md) | ¿Qué discrepancia es timing y cuál es déficit? |
 
+### Puerta transversal · autorización y daño
+
+Antes de aprobar la etapa profesional, el equipo resuelve el ejercicio
+[¿Y si cruzas la línea?](../docs/y-si-cruzas-la-linea-blockchain.md#ejercicio-de-equipo--detener-preservar-escalar).
+Debe separar hecho, inferencia y alegación; identificar a las personas afectadas; aplicar
+la prueba de los cinco permisos; y rechazar cualquier intervención sin autoridad. Una
+respuesta técnicamente eficaz reprueba si implica suplantar, mover fondos ajenos, ocultar
+una diferencia o destruir evidencia.
+
 ## Clases 9–16 · Desarrollo
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |

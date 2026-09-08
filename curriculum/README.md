@@ -18,6 +18,11 @@ flowchart LR
 
 La última etapa especializa; no reemplaza el tronco técnico ni convierte el programa en una formación exclusivamente financiera.
 
+La guía transversal [¿Y si cruzas la línea?](../docs/y-si-cruzas-la-linea-blockchain.md)
+acompaña la progresión: en desarrollo distingue prueba local de explotación; en operación,
+acceso de autoridad; y en la etapa profesional, indicador de atribución y PoR de auditoría.
+No es una clase 67, sino un criterio obligatorio cuando una acción puede dañar a terceros.
+
 ## Mapa de progresión
 
 ```mermaid

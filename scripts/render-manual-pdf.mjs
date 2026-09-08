@@ -46,12 +46,21 @@ await pageObj.waitForFunction(
 const diag = await pageObj.evaluate(() => ({
   rendered: document.querySelectorAll("pre.mermaid svg").length,
   expected: document.querySelectorAll("pre.mermaid").length,
+  internalLinks: document.querySelectorAll('a[href^="#"]').length,
+  brokenInternalLinks: [...document.querySelectorAll('a[href^="#"]')]
+    .map((link) => decodeURIComponent(link.getAttribute("href").slice(1)))
+    .filter((id) => id && !document.getElementById(id)),
 }));
 console.log(`Diagramas Mermaid dibujados: ${diag.rendered}/${diag.expected}`);
 if (diag.rendered !== diag.expected) {
   await browser.close();
   throw new Error(`El manual perdió diagramas Mermaid: ${diag.rendered}/${diag.expected} renderizados.`);
 }
+if (diag.brokenInternalLinks.length) {
+  await browser.close();
+  throw new Error(`Enlaces internos rotos en el manual: ${[...new Set(diag.brokenInternalLinks)].join(", ")}`);
+}
+console.log(`Enlaces internos comprobados: ${diag.internalLinks}`);
 await new Promise((r) => setTimeout(r, 2000));
 
 await pageObj.pdf({
@@ -60,6 +69,8 @@ await pageObj.pdf({
   printBackground: true,
   margin: { top: "16mm", bottom: "16mm", left: "14mm", right: "14mm" },
   displayHeaderFooter: true,
+  outline: true,
+  tagged: true,
   headerTemplate: "<span></span>",
   footerTemplate:
     '<div style="width:100%;font-size:8px;color:#888;padding:0 14mm;display:flex;justify-content:space-between;">' +

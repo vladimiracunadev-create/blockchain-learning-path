@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.12.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versión-0.13.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
 [![Clases](https://img.shields.io/badge/clases-66-7c5cff?style=for-the-badge)](curriculum/README.md)
 [![Prácticas](https://img.shields.io/badge/prácticas-91-2e8b57?style=for-the-badge)](labs/CATALOG.md)
 [![Nivel](https://img.shields.io/badge/nivel-novato%20→%20profesional-e67e22?style=for-the-badge)](ROADMAP.md)
@@ -67,6 +67,17 @@ Un currículo **secuencial** que cubre el espectro completo de blockchain, paso 
 
 No enseña a especular: enseña a decidir **cuándo** usar la tecnología, a **construirla** con pruebas, a **llevarla a una empresa** con infraestructura y costos, y a entender **qué cambia y qué no** cuando el dinero, los pagos y los valores se vuelven programables.
 
+### 🚧 La capacidad técnica no concede permiso
+
+El programa enseña también el peso humano y legal de una acción con criptoactivos. La
+guía transversal **[¿Y si cruzas la línea?](docs/y-si-cruzas-la-linea-blockchain.md)**
+conecta wallets, contratos, custodia, PoR, forensics y cumplimiento con una pregunta
+profesional: **¿quién autorizó esta acción y qué evidencia permite defenderla?** Incluye
+conductas y daños, mitos, consecuencias, casos judiciales documentados y un ejercicio de
+equipo para detener, preservar y escalar. No entrega instrucciones para delinquir y no
+añade una clase oculta: acompaña las 66 clases donde una capacidad puede afectar a otra
+persona.
+
 ## 📚 Pauta derivada de los mejores libros
 
 Cada etapa se apoya explícitamente en la literatura de referencia del sector; el contenido es **original en su redacción** y **no reproduce** las obras.
@@ -93,7 +104,7 @@ Todo el contenido —las 66 clases, la industria, los laboratorios, la regulaci�
 |---|---|---|
 | 🖥️ **Windows** | [Instalador o portable](https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/latest) | Curso completo dentro del ejecutable · [cómo está hecha](apps/desktop/README.md) |
 | 📱 **Android** | [APK](https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/latest) | Curso completo dentro del APK · [cómo está hecha](apps/android/README.md) |
-| 📕 **Manual PDF** | [MANUAL.pdf (~650 páginas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) | También adjunto en cada release |
+| 📕 **Manual PDF** | [MANUAL.pdf (~430 páginas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) | Edición de estudio con enlaces internos; también adjunta en cada release |
 | 🌐 **Web** | [Sitio del programa](https://vladimiracunadev-create.github.io/blockchain-learning-path/) | Con buscador, progreso y autoevaluación |
 
 Las tres versiones salen del **mismo build**, así que ninguna se queda atrás. Cada binario se verifica en CI abriéndolo y contando las clases, las páginas y las preguntas que lleva dentro: un build en verde no prueba que el artefacto contenga el curso.

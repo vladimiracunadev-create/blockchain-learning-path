@@ -71,6 +71,7 @@ const features = [
   ["🏭", "Industria y negocio", "Cómo se construye una red, el stack real, los equipos, casos empresariales con éxitos y fracasos, y modelos de negocio.", "industria/README.md"],
   ["🏛️", "Decisiones de arquitectura", `${adrCount} ADR que comparan blockchain vs. base de datos, pública vs. permisionada, on/off-chain, L1/L2 y más.`, "adrs/README.md"],
   ["🔎", "Custodia y auditoría", "CEX/DEX, wallets, tres registros, PoR/PoL, Merkle Trees, conciliación, forensics y gobernanza.", "curriculum/29-exchanges-operaciones-custodia/README.md"],
+  ["🚧", "¿Y si cruzas la línea?", "Capacidad, autorización, evidencia y consecuencias: aprende a proteger sin explotar, suplantar, ocultar ni acusar sin fundamento.", "docs/y-si-cruzas-la-linea-blockchain.md"],
   ["🎓", "Proyecto integrador", "Un capstone técnico o el caso ficticio Aurora Custody con ledger, wallets, transacciones y exports.", "capstone/README.md"],
 ];
 
@@ -86,7 +87,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Blockchain Learning Path — programa educativo en español</title>
-<meta name="description" content="Programa educativo en español para aprender blockchain de novato a profesional: ${classCount} clases, ${practiceCount} prácticas, custodia, auditoría, forensics y proyecto integrador.">
+<meta name="description" content="Programa educativo en español para aprender blockchain de novato a profesional: ${classCount} clases, ${practiceCount} prácticas, custodia, auditoría, prevención de delitos, forensics y proyecto integrador.">
 <meta property="og:title" content="Blockchain Learning Path">
 <meta property="og:description" content="${classCount} clases · ${practiceCount} prácticas · de novato a profesional. Blockchain, custodia, conciliación, PoR/PoL, auditoría y forensics.">
 <meta property="og:type" content="website">

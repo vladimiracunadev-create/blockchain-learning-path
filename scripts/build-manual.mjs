@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Compila TODO el contenido del curso en un único HTML (manual/manual.html):
-// portada, índice y todos los capítulos, con diagramas Mermaid y CSS de impresión.
+// Compila una edición de estudio autocontenida en manual/manual.html: portada,
+// índice, 66 clases y material de apoyo curado, con enlaces internos y diagramas.
 // scripts/render-manual-pdf.mjs lo convierte luego en manual/MANUAL.pdf.
 //
 // Uso: node scripts/build-manual.mjs   (requiere el paquete `marked`).
@@ -31,13 +31,13 @@ const PARTS = [
   // La guía de entrada va justo después del README y antes del currículo: quien
   // imprime el manual y lo abre por el principio tiene que encontrarla ahí, igual
   // que en el sitio y en las apps.
-  ["Introducción", ["README.md", "docs/empieza-aqui.md"]],
+  ["Introducción", ["docs/empieza-aqui.md", "docs/diseno-pedagogico.md"]],
   // Cada clase es un capítulo real. Los README temáticos se conservan como mapas
   // para no romper enlaces, pero nunca sustituyen a sus dos clases independientes.
-  ["Currículo", ["curriculum/README.md", ...curriculumSlugs.flatMap((s, index) => [
-    `curriculum/${s}/README.md`,
-    ...classCatalog[index].classes.map((item) => `curriculum/${s}/${classFileName(item)}`)
-  ])]],
+  ["Currículo · 66 clases independientes", ["curriculum/README.md", ...curriculumSlugs.flatMap((s, index) =>
+    classCatalog[index].classes.map((item) => `curriculum/${s}/${classFileName(item)}`))]],
+  ["Responsabilidad, delitos y prevención", ["docs/y-si-cruzas-la-linea-blockchain.md",
+    "docs/operacion-incidentes.md", "docs/threat-model-project.md"]],
   ["Industria", ["industria/README.md", ...industriaDocs.map((f) => `industria/${f}`)]],
   ["Laboratorios", ["labs/CATALOG.md", "labs/guides/01-foundations.md", "labs/guides/02-consensus-bitcoin.md",
     "labs/guides/03-evm-development.md", "labs/guides/04-professional-security.md", "labs/guides/05-advanced-capstone.md",
@@ -53,8 +53,7 @@ const PARTS = [
   ["Documentación de referencia", [
     "docs/bibliografia.md", "docs/glosario.md", "docs/explicar-blockchain-a-no-tecnicos.md",
     "docs/mejores-practicas.md", "docs/tecnologias.md", "docs/despliegue-local.md",
-    "docs/operacion-incidentes.md", "docs/threat-model-project.md", "docs/recursos-oficiales.md",
-    "docs/diseno-pedagogico.md", "docs/evaluacion.md", "docs/ruta-rapida.md", "docs/chile-regulacion-tributacion.md",
+    "docs/recursos-oficiales.md", "docs/evaluacion.md", "docs/ruta-rapida.md", "docs/chile-regulacion-tributacion.md",
     "docs/skills-matrix.md", "docs/wallets-desde-cero.md"]],
   ["Evaluación y proyecto final", ["assessments/checkpoints.md", "assessments/module-question-bank.md",
     "assessments/audit-report-template.md", "learning-paths/README.md", "capstone/README.md"]],
@@ -62,19 +61,33 @@ const PARTS = [
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const slugId = (rel) => rel.replace(/[^a-z0-9]+/gi, "-").replace(/-+/g, "-").toLowerCase();
+const manualPaths = new Set(PARTS.flatMap(([, files]) => files));
+
+function normalizedTarget(srcRel, target) {
+  const srcDir = posix.dirname(srcRel);
+  let resolved = posix.normalize(posix.join(srcDir, target));
+  if (!posix.extname(resolved)) resolved = posix.join(resolved, "README.md");
+  return resolved;
+}
 
 // Enlaces locales → URL del sitio (Pages) para que funcionen desde el PDF.
 function rewriteLinks(md, srcRel) {
-  const srcDir = posix.dirname(srcRel);
   return md.replace(/\]\(([^)\s]+)(\s+"[^"]*")?\)/g, (m, target, title = "") => {
-    if (/^(https?:|mailto:|#)/i.test(target)) return `](${target}${title})`;
+    if (/^(https?:|mailto:)/i.test(target)) return `](${target}${title})`;
+    if (target.startsWith("#")) return `](#${slugId(srcRel)}${title})`;
     const [pathPart, anchor = ""] = target.split("#");
-    const resolved = posix.normalize(posix.join(srcDir, pathPart));
+    const resolved = normalizedTarget(srcRel, pathPart);
     const anchorPart = anchor ? `#${anchor}` : "";
+    if (manualPaths.has(resolved)) return `](#${slugId(resolved)}${title})`;
     if (resolved.endsWith(".md")) return `](${SITE}/${resolved.replace(/\.md$/, ".html")}${anchorPart}${title})`;
-    const isDir = !posix.basename(resolved).includes(".");
-    return `](${GH}/${isDir ? "tree" : "blob"}/main/${resolved}${anchorPart}${title})`;
+    return `](${GH}/blob/main/${resolved}${anchorPart}${title})`;
   });
+}
+
+function bookMarkdown(md) {
+  // La navegación web final no aporta contenido al libro y suele crear una hoja
+  // semivacía. La navegación entre clases del encabezado se conserva.
+  return md.replace(/\n(?:---\n\n)?##[^\n]*Navegación[\s\S]*$/m, "\n").trim() + "\n";
 }
 
 const chapterTitle = (rel) => (read(rel).split("\n").find((l) => l.startsWith("# ")) || rel).replace(/^#\s*/, "").trim();
@@ -94,10 +107,11 @@ for (const [part, files] of PARTS) {
   body += `<section class="part"><h1 class="parth">${esc(part)}</h1></section>`;
   for (const rel of files) {
     n++;
-    let html = marked.parse(rewriteLinks(read(rel), rel));
+    let html = marked.parse(rewriteLinks(bookMarkdown(read(rel)), rel));
     html = html.replace(/<pre><code class="language-mermaid">([\s\S]*?)<\/code><\/pre>/g,
       (mm, code) => `<pre class="mermaid">${code}</pre>`);
-    body += `<section class="chapter" id="${slugId(rel)}">${html}</section>`;
+    const className = /\/clase-\d+-/.test(rel) ? " chapter-class" : "";
+    body += `<section class="chapter${className}" id="${slugId(rel)}">${html}</section>`;
   }
 }
 
@@ -121,13 +135,17 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-
 .toc .tp{font-weight:700;margin-top:.7rem}
 .toc .tp ul{padding-left:.8cm;font-weight:400}
 .toc a{color:#1a1b26;text-decoration:none}
-.part{page-break-before:always}
+.part{break-before:page;page-break-before:always;break-after:avoid-page;page-break-after:avoid}
 .parth{background:var(--acento);color:#fff;padding:.6cm 1cm;font-size:1.9rem;border-radius:10px;margin:0 0 .4cm}
-.chapter{page-break-before:always;padding:0 .3cm}
+.chapter{padding:0 .3cm}
+.chapter-class{break-before:page;page-break-before:always}
+.part+.chapter{break-before:auto;page-break-before:auto}
 .chapter h1{font-size:1.7rem;color:#2a1b6b;border-bottom:2px solid #ddd;padding-bottom:.2rem;margin-top:.2cm}
 .chapter h2{font-size:1.28rem;margin-top:.7cm}
 .chapter h3{font-size:1.08rem}
-table{border-collapse:collapse;width:100%;margin:.4cm 0;font-size:9.5pt;page-break-inside:avoid}
+table{border-collapse:collapse;width:100%;margin:.4cm 0;font-size:9.5pt}
+thead{display:table-header-group}
+tr{break-inside:avoid;page-break-inside:avoid}
 th,td{border:1px solid #ccc;padding:.28rem .45rem;text-align:left;vertical-align:top}
 th{background:#f0edfb}
 tr:nth-child(even) td{background:#f7f6fc}
@@ -135,11 +153,12 @@ code{background:#f3f1fb;padding:.05rem .3rem;border-radius:4px;font-family:'Casc
 pre{background:#f6f5fb;border:1px solid #e2ddf3;border-radius:8px;padding:.5cm;overflow:hidden;white-space:pre-wrap;word-break:break-word;font-size:8.5pt;page-break-inside:avoid}
 pre code{background:none;padding:0}
 pre.mermaid{background:#fff;text-align:center}
-pre.mermaid svg{max-width:100%;height:auto}
+pre.mermaid svg{max-width:100%;max-height:220mm;height:auto}
 blockquote{margin:.4cm 0;padding:.2rem .8rem;border-left:4px solid var(--acento);background:#f5f3fb;color:#444}
 a{color:#4c2fb0}
 img{max-width:100%}
-h1,h2,h3{page-break-after:avoid}
+h1,h2,h3{break-after:avoid-page;page-break-after:avoid}
+p,li{orphans:3;widows:3}
 </style>
 <script type="module">
 import mermaid from "./assets/mermaid/mermaid.esm.min.mjs";

@@ -57,6 +57,12 @@ todo listo. O usa la [app de escritorio](../apps/desktop/README.md) o la
 > programa funciona en redes de prueba, donde el dinero no vale nada. Es lo que
 > permite equivocarse sin consecuencias, que es como se aprende esto.
 
+🚧 **Poder hacerlo no significa tener permiso.** Antes de firmar, investigar,
+explotar una falla o intervenir una cuenta, revisa
+[¿Y si cruzas la línea?](y-si-cruzas-la-linea-blockchain.md). Aprenderás a reconocer
+daño y posible delito, preservar evidencia y pedir autorización sin practicar sobre
+personas, sistemas o fondos reales.
+
 ## Cómo se estudia una clase
 
 Cada uno tiene la misma estructura. No se lee de arriba abajo de una sentada:

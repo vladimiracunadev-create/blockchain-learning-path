@@ -51,6 +51,11 @@ principal o de forma independiente por quien ya domine la parte técnica.
 
 Esta especialización usa datos sintéticos, Bitcoin regtest/signet, Ethereum local y APIs públicas solo en lectura. No requiere fondos reales ni convierte el tronco del programa en formación exclusivamente financiera.
 
+Al cerrar las semanas 37–40, realiza el ejercicio **[Detener, preservar,
+escalar](docs/y-si-cruzas-la-linea-blockchain.md#ejercicio-de-equipo--detener-preservar-escalar)**.
+El equipo debe distinguir capacidad técnica, permiso y evidencia, y defender qué acción
+está permitida, cuál requiere autorización y cuál se rechaza aunque sea técnicamente posible.
+
 ## Criterios para avanzar
 
 - Puedes explicar el tema sin recurrir a definiciones memorizadas.
@@ -78,7 +83,8 @@ Esta especialización usa datos sintéticos, Bitcoin regtest/signet, Ethereum lo
 | 0.10.0 | módulo 28 «Blockchain Data Analytics y minería de datos on-chain» en cuatro niveles (fundamentos, adquisición y preparación, análisis on-chain y avanzado), doce prácticas nuevas (72–83) sobre una cadena sintética determinista con verdad de campo, y el proyecto final «Explorador analítico de actividad blockchain» | completada |
 | 0.10.1 | presentación del programa lista para exponer: 7 diapositivas con demo en vivo (`pnpm lab:hash` y `pnpm lab:remesa`) y sus resultados impresos en la lámina, y pauta del expositor con cuatro anexos —comprobación previa, recortes por duración, preguntas del público y líneas que no se cruzan— | completada |
 | 0.11.0 | línea profesional de custodia, exchanges, contabilidad blockchain, PoR/PoL, conciliación, forensics, auditoría y gobernanza; 4 módulos, 8 prácticas y caso Aurora Custody | completada |
-| 0.12.0 | programa reorganizado en 66 clases con diseño pedagógico propio, glosario profesional ampliado y validación automática de variedad, fuentes y coherencia | actual |
+| 0.12.0 | programa reorganizado en 66 clases con diseño pedagógico propio, glosario profesional ampliado y validación automática de variedad, fuentes y coherencia | completada |
+| 0.13.0 | responsabilidad y prevención transversal ante delitos con criptoactivos; casos oficiales y manual PDF editado como libro con navegación interna | actual |
 | 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 

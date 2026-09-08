@@ -19,6 +19,7 @@ El programa ofrece además el caso profesional guiado **[Aurora Custody](empresa
 7. **Estimación de gas y operación**: costos aproximados de las funciones principales y qué implica operar el sistema.
 8. **Plan de infraestructura** según las clases [33–34](../curriculum/16-infraestructura-nodos/README.md): nodos requeridos, disponibilidad, monitoreo y respaldo, y cómo se opera el sistema en el tiempo.
 9. **Caso de negocio** según las clases [35–36](../curriculum/17-blockchain-en-la-empresa/README.md): problema, usuarios, propuesta de valor y viabilidad; por qué el proyecto justifica su costo y mantenimiento.
+10. **Límite de actuación** según [¿Y si cruzas la línea?](../docs/y-si-cruzas-la-linea-blockchain.md): matriz de acciones permitidas, sujetas a autorización y prohibidas; personas afectadas; evidencia que se preserva; y canal de escalamiento. La funcionalidad técnica no sustituye consentimiento ni mandato.
 
 ## Ideas de proyecto con alcance acotado
 
@@ -101,6 +102,7 @@ flowchart LR
 | ¿Cómo falla el sistema? (oráculo caído, reorg, front-running) | Modos de falla identificados en el threat model con respuesta definida |
 | ¿Cuánto cuesta usarlo y operarlo? | Estimación de gas por función y análisis de operación |
 | Muestra el peor bug que encontraste y cómo lo detectaste | Evidencia de proceso: prueba que falló, causa raíz, corrección |
+| ¿Qué podrías ejecutar técnicamente pero no estás autorizado a hacer? | Límite concreto, persona afectada, control preventivo y ruta de escalamiento |
 
 ### Preparación de la demo y defensa
 

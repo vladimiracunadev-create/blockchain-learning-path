@@ -7,6 +7,20 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 *Nada pendiente.*
 
+## [0.13.0] · 2026-09-08
+
+### Añadido
+
+- Desarrollo pedagógico de **«¿Y si cruzas la línea?»** orientado a blockchain: espejo de capacidades de doble uso, ocho familias de conductas y daños, mitos, consecuencias, casos judiciales documentados, ejercicio de decisión en equipo y rutas profesionales legítimas.
+- Casos y fuentes oficiales para enseñar el peso humano, técnico, probatorio y jurídico de apropiarse de claves, abusar de custodia, falsificar registros, presentar reservas engañosas o explotar sistemas sin autorización.
+- Comprobación automática de destinos internos y marcadores accesibles en la generación del manual.
+
+### Cambiado
+
+- El manual deja de replicar los 33 mapas temáticos junto a sus clases: conserva las **66 clases completas**, incorpora la guía ética y legal y ordena material complementario como edición de estudio.
+- Los enlaces entre contenidos incluidos en el PDF ahora permanecen dentro del propio manual; solo las referencias no incluidas y las fuentes externas abren web.
+- La composición evita portadillas, tablas y cierres aislados en páginas casi vacías, y añade estructura etiquetada y marcadores de navegación al PDF.
+
 ## [0.12.0] · 2026-09-07
 
 ### Añadido
