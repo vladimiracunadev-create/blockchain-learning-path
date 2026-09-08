@@ -1,8 +1,8 @@
 # Proyecto transversal · Community Funding
 
-> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 06.1–06.2 · Solidity y Foundry](../../curriculum/06-solidity-foundry/README.md) · [Despliegue local](../../docs/despliegue-local.md)
+> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 13–14 · Solidity y Foundry](../../curriculum/06-solidity-foundry/README.md) · [Despliegue local](../../docs/despliegue-local.md)
 
-Protocolo de **financiamiento comunitario con reembolsos**: un creador abre una campaña con una meta y una fecha límite; si se alcanza la meta puede retirar los fondos una sola vez; si vence sin alcanzarla, cada participante recupera exactamente su aporte. Es el hilo conductor del programa y crece durante las clases 06.1–11.2 conectando contrato, pruebas, [interfaz](../../apps/community-funding-web/README.md), [indexación](../../apps/event-indexer/README.md), seguridad y gobernanza.
+Protocolo de **financiamiento comunitario con reembolsos**: un creador abre una campaña con una meta y una fecha límite; si se alcanza la meta puede retirar los fondos una sola vez; si vence sin alcanzarla, cada participante recupera exactamente su aporte. Es el hilo conductor del programa y crece durante las clases 13–24 conectando contrato, pruebas, [interfaz](../../apps/community-funding-web/README.md), [indexación](../../apps/event-indexer/README.md), seguridad y gobernanza.
 
 ## Reglas del protocolo
 

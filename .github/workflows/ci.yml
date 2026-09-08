@@ -15,11 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.13.1
       - uses: actions/setup-node@v7
         with:
           node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - name: markdownlint-cli2
-        run: npx --yes markdownlint-cli2 "**/*.md"
+        run: pnpm lint:md
 
   node:
     name: Scripts y pruebas (Node)
@@ -66,7 +71,7 @@ jobs:
         run: forge coverage --report summary || true
 
   static-analysis:
-    # El módulo 09 enseña Slither; aquí la CI lo ejecuta sobre los contratos de
+    # Las clases 19–20 enseñan Slither; aquí la CI lo ejecuta sobre los contratos de
     # producción. Es informativo (no bloquea): los hallazgos se revisan, no se
     # convierten en un muro que impida avanzar. Los retos de seguridad son
     # vulnerables a propósito y se analizan en su propio laboratorio.

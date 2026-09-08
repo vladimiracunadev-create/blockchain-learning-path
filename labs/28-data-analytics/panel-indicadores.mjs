@@ -12,7 +12,7 @@
 // sin esas advertencias es la forma más común de convertir un dato correcto
 // en una conclusión falsa.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { writeFileSync } from "node:fs";
 import { transaccionesDe, logsDe, aHumano, diaDe, minutoDe, cadenaCuentas } from "./cadena-sintetica.mjs";

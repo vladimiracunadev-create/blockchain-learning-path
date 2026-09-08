@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 // Genera la landing page del programa (site/index.html) a partir de los datos
-// reales del repositorio: los módulos del currículo y su título, y los conteos
+// reales del repositorio: las unidades de clases y su título, y los conteos
 // de prácticas, ADRs y documentos. Sin dependencias externas: se ejecuta con
 // `node scripts/build-landing.mjs` tanto en local como en CI.
 //
 // La identidad visual replica la de los programas hermanos (hero con gradiente,
-// stats, grid de features y de módulos, tema claro/oscuro) en clave blockchain.
+// stats, grid de features y de clases, tema claro/oscuro) en clave blockchain.
 
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -20,14 +20,14 @@ const classCount = classCatalog.flatMap((unit) => unit.classes).length;
 
 // --- Datos reales del repositorio ---------------------------------------------
 
-// Módulos: cada carpeta curriculum/NN-* con el H1 de su README como título.
+// Unidades: cada carpeta curriculum/NN-* con el H1 de su README como título.
 const MODULE_EMOJI = ["🧭","🔐","🌐","🤝","₿","⟠","📜","🖥️","🪙","🛡️","🔮","🏛️","⚡","🔗","🕶️","🏗️","⚙️","🏦","🏢"];
 const modules = readdirSync(join(ROOT, "curriculum"))
   .filter((d) => /^\d{2}-/.test(d))
   .sort()
   .map((d, i) => {
     const h1 = read(`curriculum/${d}/README.md`).split("\n").find((l) => l.startsWith("# ")) || "";
-    const title = h1.replace(/^#\s*/, "").replace(/^\d+\s*·\s*/, "").trim();
+    const title = h1.replace(/^#\s*/, "").replace(/\s*·\s*Clases\s+\d+–\d+\s*$/, "").trim();
     const num = d.slice(0, 2);
     const classes = classCatalog.find((unit) => unit.unit === num)?.classes ?? [];
     return { num, title, classes, emoji: MODULE_EMOJI[i] || "📦", href: `curriculum/${d}/README.md` };
@@ -137,7 +137,7 @@ h2.sec{font-size:1.5rem;margin:2.8rem 0 1.1rem;font-weight:800}
 .feat .ic{font-size:1.7rem}
 .feat h3{margin:.5rem 0 .3rem;font-size:1.08rem}
 .feat p{margin:0;color:var(--muted);font-size:.92rem}
-/* Módulos */
+/* Clases */
 .parts{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem}
 .part{display:flex;gap:.75rem;align-items:center;background:var(--card);border:1px solid var(--borde);
   border-radius:12px;padding:.8rem .9rem;transition:border-color .2s,transform .08s}

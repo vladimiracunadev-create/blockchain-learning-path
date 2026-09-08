@@ -1,8 +1,8 @@
-# 26 · Custodia, wallets institucionales e identidad digital
+# Custodia, wallets institucionales e identidad digital · Clases 53–54
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** BIPs 32/39/44, ERC-4337, estándares W3C de identificadores descentralizados y credenciales verificables, y normativa de custodia y finanzas abiertas citada
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [25 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [27 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 51–52 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 55–56 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 > 👛 La versión para el usuario individual de este tema es la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
@@ -11,7 +11,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 26.1 · Custodia institucional de claves
+### Clase 53 · Custodia institucional de claves
 
 **Pregunta guía:** ¿Cómo se evita que una persona o falla única controle los activos?
 
@@ -33,7 +33,7 @@ Roles separados preparan, aprueban y firman una operación mientras fallan perso
 
 **Evidencia de aprendizaje:** Política de firma con quórum, límites, recuperación y trazabilidad.
 
-### Clase 26.2 · Identidad y autorización verificable
+### Clase 54 · Identidad y autorización verificable
 
 **Pregunta guía:** ¿Cómo demostramos atributos sin convertir la wallet en una identidad universal?
 
@@ -65,7 +65,7 @@ activo. Y la pregunta institucional no es "¿cómo la guardo?" sino la mucho má
 posible si tres personas faltan, y que todo quede auditado?**
 
 La segunda mitad de la unidad es la otra cara de la misma moneda: si el token restringe
-transferencias a inversores elegibles ([clases 24.1–24.2](../24-tokenizacion-rwa/README.md)),
+transferencias a inversores elegibles ([clases 49–50](../24-tokenizacion-rwa/README.md)),
 alguien tiene que **probar quién es quién** sin convertir cada operación en una fotocopia
 del pasaporte. Ahí entran identidad descentralizada, credenciales verificables y las
 finanzas abiertas.
@@ -250,7 +250,7 @@ usan valores de prueba conocidos y documentados como tales.
 
 ### Identidad: probar sin entregar
 
-Las clases 24.1–24.2 dejaron un requisito abierto: el token restringe transferencias a inversores
+Las clases 49–50 dejaron un requisito abierto: el token restringe transferencias a inversores
 elegibles, y alguien tiene que acreditar la elegibilidad. La solución ingenua —que cada
 plataforma recoja y almacene documentos— crea un problema serio: **cada verificador se
 convierte en un depósito de datos personales**, con su riesgo de filtración y su coste de
@@ -260,7 +260,7 @@ El modelo de credenciales verificables invierte la relación. Un **emisor** de c
 banco que ya hizo la debida diligencia, un registro público) firma una afirmación sobre una
 persona. El **tenedor** la guarda en su wallet. El **verificador** comprueba la firma del
 emisor sin contactar con él y **sin recibir el documento**. Con divulgación selectiva —o con
-las pruebas de conocimiento cero de las [clases 14.1–14.2](../14-privacidad-zk/README.md)— se puede
+las pruebas de conocimiento cero de las [clases 29–30](../14-privacidad-zk/README.md)— se puede
 demostrar "soy mayor de edad" o "soy inversor elegible" sin revelar la fecha de nacimiento ni
 el patrimonio.
 
@@ -335,7 +335,7 @@ pnpm test
    física y testigos. **Ensáyala con valores de prueba** y anota qué salió distinto del guion.
 
 4. **Flujo de credencial verificable.** Modela sobre papel la elegibilidad de un inversor
-   para el token restringido de las clases 24.1–24.2: quién emite, qué atributo se presenta, cómo se
+   para el token restringido de las clases 49–50: quién emite, qué atributo se presenta, cómo se
    revoca y qué ve el verificador. Marca explícitamente qué datos **no** llegan a la
    plataforma.
 
@@ -377,7 +377,7 @@ menos un control que detecta —no solo previene— una firma indebida.
   probar". Los ensayos se hacen con valores de prueba en redes locales.
 - La custodia de activos de terceros suele estar **regulada**. Prestar el servicio sin
   autorización puede constituir una infracción grave; consulta
-  [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md) y la norma de tu jurisdicción.
+  [clases 55–56](../27-regulacion-cumplimiento/README.md) y la norma de tu jurisdicción.
 - La identidad digital es dato personal: aplica minimización (pide solo el atributo
   necesario), limitación de finalidad y plazos de conservación. Recoger documentos "por si
   acaso" es un riesgo, no una precaución.
@@ -407,4 +407,4 @@ menos un control que detecta —no solo previene— una firma indebida.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 25.1–25.2 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 27.1–27.2 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md)
+⬅️ [Clases 51–52 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 55–56 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md)

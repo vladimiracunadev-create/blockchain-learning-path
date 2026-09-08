@@ -1,8 +1,8 @@
-# 16 · Infraestructura y operación de nodos
+# Infraestructura y operación de nodos · Clases 33–34
 
 > **Nivel:** Avanzado-Producción · ⏱️ **Duración estimada:** 180 min · **Fuente:** documentación de clientes de nodo (ethereum.org, Geth, Lighthouse) y guías de operación de EthStaker
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [17 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 31–32 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 35–36 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 16.1 · Operar nodos con objetivos medibles
+### Clase 33 · Operar nodos con objetivos medibles
 
 **Pregunta guía:** ¿Qué servicio presta el nodo y qué disponibilidad necesita el negocio?
 
@@ -32,7 +32,7 @@ Primero se define el servicio que necesita el negocio y su tolerancia a fallos. 
 
 **Evidencia de aprendizaje:** Runbook con capacidad, respaldo, monitoreo y criterio de escalamiento.
 
-### Clase 16.2 · Resiliencia, actualización e incidentes
+### Clase 34 · Resiliencia, actualización e incidentes
 
 **Pregunta guía:** ¿Cómo se cambia software crítico sin perder disponibilidad ni evidencia?
 
@@ -326,4 +326,4 @@ métrica, umbral y acción del operador.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 15.1–15.2 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 17.1–17.2 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md)
+⬅️ [Clases 31–32 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 35–36 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md)

@@ -44,7 +44,8 @@ for (const [index, directory] of directories.entries()) {
   const plan = plans[index];
   const number = directory.name.slice(0, 2);
   if (plan.unit !== number || plan.classes.length !== 2) {
-    throw new Error(`${directory.name}: se esperaban exactamente las clases ${number}.1 y ${number}.2.`);
+    const first = index * 2 + 1;
+    throw new Error(`${directory.name}: se esperaban exactamente las clases ${first} y ${first + 1}.`);
   }
 
   const path = join("curriculum", directory.name, "README.md");

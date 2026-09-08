@@ -1,8 +1,8 @@
-# 09 · Seguridad y auditoría
+# Seguridad y auditoría · Clases 19–20
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** Trail of Bits *Building Secure Contracts* y ConsenSys *Smart Contract Best Practices*
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [08 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 17–18 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 21–22 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 > 👛 Las amenazas al usuario final (drainers, approvals, address poisoning) tienen su guía de entrada en [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
@@ -11,7 +11,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 09.1 · Modelado de amenazas y revisión manual
+### Clase 19 · Modelado de amenazas y revisión manual
 
 **Pregunta guía:** ¿Qué puede romper un atacante si conoce mejor el sistema que su autor?
 
@@ -33,7 +33,7 @@ La clase comienza por activos y actores, no por una lista de bugs. Después sigu
 
 **Evidencia de aprendizaje:** Hallazgo con condición, impacto, prueba mínima y recomendación.
 
-### Clase 09.2 · Auditoría reproducible y remediación
+### Clase 20 · Auditoría reproducible y remediación
 
 **Pregunta guía:** ¿Cómo se demuestra que un hallazgo fue corregido sin introducir otro?
 
@@ -281,4 +281,4 @@ Toma un contrato vulnerable de `security-challenges`, escribe una prueba mínima
 
 ## 🧭 Navegación
 
-⬅️ [Clases 08.1–08.2 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 10.1–10.2 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)
+⬅️ [Clases 17–18 · Tokens y estándares](../08-tokens/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 21–22 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md)

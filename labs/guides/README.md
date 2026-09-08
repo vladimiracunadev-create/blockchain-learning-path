@@ -6,14 +6,14 @@ El cuaderno de laboratorios reúne las **91 prácticas** del programa, organizad
 
 | Cuaderno | Prácticas | Clases que acompaña |
 |---|---|---|
-| [Fundamentos](01-foundations.md) | 01–10 | 00–03 (orientación, criptografía, distribuidos, consenso) |
-| [Consenso y Bitcoin](02-consensus-bitcoin.md) | 11–20 | 03–04 (consenso aplicado y Bitcoin) |
-| [EVM y desarrollo](03-evm-development.md) | 21–30 | 05–07 (EVM, Solidity/Foundry, dApps) |
-| [Profesional y seguridad](04-professional-security.md) | 31–40 | 08–11 (tokens, seguridad, oráculos, DAO) |
-| [Avanzado y capstone](05-advanced-capstone.md) | 41–50 | 12–18 y proyecto final |
-| [Finanzas on-chain](06-finanzas-onchain.md) | 51–70 | 19–27 (DeFi, dinero, stablecoins, MDBC, pagos, tokenización, mercados, custodia, regulación) |
-| [Data analytics on-chain](07-data-analytics.md) | 72–83 | 28 (minería de datos blockchain, grafos, patrones, anomalías y proyecto final) |
-| [Custodia, auditoría y forensics](08-custodia-auditoria.md) | 84–91 | 29–32 y caso final custodial |
+| [Fundamentos](01-foundations.md) | 01–10 | 1–8 (orientación, criptografía, distribuidos, consenso) |
+| [Consenso y Bitcoin](02-consensus-bitcoin.md) | 11–20 | 7–10 (consenso aplicado y Bitcoin) |
+| [EVM y desarrollo](03-evm-development.md) | 21–30 | 11–16 (EVM, Solidity/Foundry, dApps) |
+| [Profesional y seguridad](04-professional-security.md) | 31–40 | 17–24 (tokens, seguridad, oráculos, DAO) |
+| [Avanzado y capstone](05-advanced-capstone.md) | 41–50 | 25–38 y proyecto final |
+| [Finanzas on-chain](06-finanzas-onchain.md) | 51–70 | 39–56 (DeFi, dinero, stablecoins, MDBC, pagos, tokenización, mercados, custodia, regulación) |
+| [Data analytics on-chain](07-data-analytics.md) | 72–83 | 57–58 (minería de datos blockchain, grafos, patrones, anomalías y proyecto final) |
+| [Custodia, auditoría y forensics](08-custodia-auditoria.md) | 84–91 | 59–66 y caso final custodial |
 
 ## Qué contiene cada guía
 

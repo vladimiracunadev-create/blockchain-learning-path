@@ -1,8 +1,8 @@
-# 25 · Mercados de capitales on-chain
+# Mercados de capitales on-chain · Clases 51–52
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** *Principles for Financial Market Infrastructures* (CPMI-IOSCO), publicaciones del BIS sobre liquidación y tokenización, y documentación pública de emisiones de valores digitales
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [24 · Tokenización y activos del mundo real](../24-tokenizacion-rwa/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [26 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 49–50 · Tokenización y activos del mundo real](../24-tokenizacion-rwa/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 53–54 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 25.1 · Infraestructura del mercado de capitales
+### Clase 51 · Infraestructura del mercado de capitales
 
 **Pregunta guía:** ¿Qué hacen emisión, negociación, compensación, depósito y liquidación?
 
@@ -32,7 +32,7 @@ Cada estudiante representa bolsa, CCP, CSD, custodio o banco de liquidación. Un
 
 **Evidencia de aprendizaje:** Mapa operativo que explique por qué existe cada intermediario.
 
-### Clase 25.2 · Mercado tokenizado y DvP
+### Clase 52 · Mercado tokenizado y DvP
 
 **Pregunta guía:** ¿Qué elimina la atomicidad y qué funciones institucionales permanecen?
 
@@ -187,7 +187,7 @@ Y ahora la parte que casi nunca se cuenta, y que decide si el proyecto es viable
 participantes se netean y se liquida el saldo. Liquidar cada una bruta exige tener el
 efectivo y los valores completos en cada momento. Si esas mil operaciones suman 500 millones
 brutos pero solo 40 millones netos, la liquidación atómica **multiplica por 12,5 la liquidez
-necesaria**. Este es el intercambio real —el mismo que viste en las clases 20.1–20.2 entre LBTR y
+necesaria**. Este es el intercambio real —el mismo que viste en las clases 41–42 entre LBTR y
 neto diferido, ahora en valores— y explica por qué los diseños serios de mercado tokenizado
 incorporan financiación intradía, ciclos de neteo o préstamo de valores automatizado. No es
 un detalle de implementación: es **la** decisión de arquitectura del sistema.
@@ -223,13 +223,13 @@ que por eso el mercado tradicional eligió deliberadamente no hacerlo así.
 - **Cumplimiento**: elegibilidad del inversor, sanciones, informes al supervisor.
 - **Responsabilidad ante error.** Alguien responde cuando algo sale mal; un contrato no
   indemniza.
-- **El servicio del activo** de las [clases 24.1–24.2](../24-tokenizacion-rwa/README.md).
+- **El servicio del activo** de las [clases 49–50](../24-tokenizacion-rwa/README.md).
 
 **Aparece, nuevo:**
 
 - **Riesgo de contrato inteligente** sobre la infraestructura misma del mercado. Un fallo
   ya no afecta a un producto: afecta al registro de titularidad.
-- **Gestión de llaves a escala institucional** ([clases 26.1–26.2](../26-custodia-identidad/README.md)).
+- **Gestión de llaves a escala institucional** ([clases 53–54](../26-custodia-identidad/README.md)).
 - **Riesgo de disponibilidad de la red** y su congestión en el peor momento.
 - **MEV sobre operaciones de valores**: una orden grande visible antes de ejecutarse.
 - **La pregunta de gobernanza**: ¿quién puede actualizar los contratos que **son** el mercado?
@@ -271,7 +271,7 @@ estas clases las hacen explícitas.
   técnicamente no la hace oponible en un concurso. Las infraestructuras reguladas que usan
   DLT mantienen esa designación y la anclan al evento en cadena.
 - **Trocear una orden grande es obligatorio, no opcional.** La microestructura del
-  [clases 19.1–19.2](../19-defi/README.md) se aplica igual: una orden que mueve el mercado se
+  [clases 39–40](../19-defi/README.md) se aplica igual: una orden que mueve el mercado se
   ejecuta peor, y ser visible antes de ejecutarse la empeora todavía más.
 - **La fecha de registro como bloque tiene un borde.** En cadenas con finalidad
   probabilística, una reorganización cambiaría quién cobra. En un valor regulado eso es
@@ -305,7 +305,7 @@ pnpm lab:bono
 pnpm test
 ```
 
-4. **La versión en contratos.** El laboratorio integrado de las clases 22.1–22.2 implementa el mismo
+4. **La versión en contratos.** El laboratorio integrado de las clases 45–46 implementa el mismo
    DvP en Solidity con dinero mayorista simulado y un bono tokenizado:
 
 ```bash
@@ -352,7 +352,7 @@ actualizar los contratos y con qué control.
   reales, sin ofertas, sin fondos. Nada aquí constituye oferta ni recomendación de inversión.
 - Emitir o negociar valores está sujeto a autorización en prácticamente cualquier
   jurisdicción. Construir la infraestructura no exime de ello:
-  ver [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md).
+  ver [clases 55–56](../27-regulacion-cumplimiento/README.md).
 - El contrato que **es** el mercado concentra el riesgo: auditoría externa, timelock,
   procedimiento de emergencia ensayado y separación de deberes son requisitos, no mejoras.
 - Diseña desde el principio el procedimiento de **error humano**: una operación mal
@@ -368,7 +368,7 @@ actualizar los contratos y con qué control.
 - IOSCO — mercados de valores y activos digitales: <https://www.iosco.org/>
 - Banco Central Europeo — TARGET2-Securities y liquidación de valores: <https://www.ecb.europa.eu/paym/target/t2s/html/index.en.html>
 - CMF Chile — mercado de valores y regulación aplicable: <https://www.cmfchile.cl/>
-- Clases relacionadas: [20 · Dinero y liquidación](../20-dinero-banca-liquidacion/README.md) · [24 · Tokenización y RWA](../24-tokenizacion-rwa/README.md) · [22 · Laboratorio de mercado tokenizado](../../labs/22-cbdc-mercado-tokenizado/README.md)
+- Clases relacionadas: [Clases 41–42 · Dinero y liquidación](../20-dinero-banca-liquidacion/README.md) · [Clases 49–50 · Tokenización y RWA](../24-tokenizacion-rwa/README.md) · [Clases 45–46 · Laboratorio de mercado tokenizado](../../labs/22-cbdc-mercado-tokenizado/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -381,4 +381,4 @@ actualizar los contratos y con qué control.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 24.1–24.2 · Tokenización y RWA](../24-tokenizacion-rwa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 26.1–26.2 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md)
+⬅️ [Clases 49–50 · Tokenización y RWA](../24-tokenizacion-rwa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 53–54 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md)

@@ -14,9 +14,9 @@
 // Límite pedagógico: se describen los dos modelos con la misma forma que usan
 // Bitcoin y Ethereum en la práctica, pero sin cubrir SegWit, EIP-1559 con
 // tarifa base + prioridad, ni contratos con lógica arbitraria: eso queda para
-// módulos posteriores.
+// clases posteriores.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { comisionUTXO, aHumano } from "./cadena-sintetica.mjs";
 import { ejecutadoDirectamente } from "../run-directo.mjs";

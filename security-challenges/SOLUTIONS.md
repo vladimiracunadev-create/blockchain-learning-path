@@ -1,6 +1,6 @@
 # Criterios de resolución
 
-> Navegación: [Retos de seguridad](README.md) · [Módulo 09 · Seguridad](../curriculum/09-seguridad/README.md) · [Inicio](../README.md)
+> Navegación: [Retos de seguridad](README.md) · [Clases 19–20 · Seguridad](../curriculum/09-seguridad/README.md) · [Inicio](../README.md)
 
 Este documento explica **cómo se razona la solución** de cada reto: el patrón de vulnerabilidad, cómo se detecta y el arreglo correcto. **No contiene exploits listos para copiar y atacar**: los snippets muestran el *patrón seguro*, no un ataque ejecutable contra terceros.
 
@@ -130,4 +130,4 @@ Usa estándares probados (slots definidos, *storage gaps*) y una herramienta que
 - Hay una **prueba de regresión** que volvería a fallar si el bug reaparece.
 - Distingues causa raíz, exploit, impacto, mitigación y **riesgo residual**.
 
-El fundamento conceptual está en el [módulo 09 · Seguridad](../curriculum/09-seguridad/README.md).
+El fundamento conceptual está en las [clases 19–20 · Seguridad](../curriculum/09-seguridad/README.md).

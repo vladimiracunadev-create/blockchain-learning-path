@@ -4,7 +4,7 @@
 // atomicidad, calcula lo que casi nunca se cuenta: la atomicidad SUPRIME EL NETEO
 // y multiplica la liquidez necesaria.
 //
-// Módulo 25 · Mercados de capitales on-chain.
+// Clases 51–52 · Mercados de capitales on-chain.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 /**
@@ -56,7 +56,7 @@ export function liquidarDvP({ vendedor, comprador, titulos, precioUnitario }) {
 /**
  * Liquidez necesaria: bruta (atómica, modelo 1 de DvP) frente a neteada.
  *
- * Este es el intercambio central del módulo: la atomicidad elimina el riesgo de
+ * Este es el intercambio central de las clases: la atomicidad elimina el riesgo de
  * contraparte y a cambio exige tener el importe íntegro en cada momento.
  */
 export function liquidezNecesaria({ operaciones, eficienciaNeteo }) {

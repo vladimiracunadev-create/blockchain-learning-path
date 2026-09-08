@@ -6,19 +6,19 @@ Construye un protocolo pequeño que resuelva un problema real y permita demostra
 
 Un capstone aprobado demuestra que puedes: elegir blockchain solo cuando corresponde, escribir contratos que resisten fuzzing e invariantes, razonar sobre amenazas antes de que ocurran y comunicar todo eso a un evaluador escéptico.
 
-El programa ofrece además el caso profesional guiado **[Aurora Custody](empresa-custodial/README.md)**. Recibes ledger, wallets, transacciones y exports de exchange para demostrar activos, obligaciones, operaciones on-chain/off-chain y discrepancias. Es la opción recomendada para la línea de custodia, auditoría y forensics de las clases 29.1–32.2.
+El programa ofrece además el caso profesional guiado **[Aurora Custody](empresa-custodial/README.md)**. Recibes ledger, wallets, transacciones y exports de exchange para demostrar activos, obligaciones, operaciones on-chain/off-chain y discrepancias. Es la opción recomendada para la línea de custodia, auditoría y forensics de las clases 59–66.
 
 ## Requisitos mínimos
 
 1. **Protocolo con contratos probados con Foundry**, incluyendo pruebas unitarias, de integración, fuzzing e invariantes sobre las propiedades críticas del sistema. Contratos documentados con NatSpec.
 2. **dApp o interfaz** accesible que permita ejercitar los flujos principales (no hace falta diseño pulido; sí estados de transacción claros y manejo de errores).
 3. **Indexador o estrategia de datos** explícita: subgraph, indexador propio, eventos + consultas RPC o equivalente, con justificación de la elección.
-4. **Documento de arquitectura** según las clases [18.1–18.2](../curriculum/18-implementacion-empresarial/README.md): contexto, ADR "¿por qué blockchain y qué alternativa se descartó?", diagrama de componentes y límites de confianza.
+4. **Documento de arquitectura** según las clases [37–38](../curriculum/18-implementacion-empresarial/README.md): contexto, ADR "¿por qué blockchain y qué alternativa se descartó?", diagrama de componentes y límites de confianza.
 5. **Threat model**: actores, superficies de ataque, privilegios administrativos declarados, plan de incidentes. Puedes apoyarte en `docs/threat-model-project.md`.
 6. **Despliegue reproducible** local y en testnet mediante scripts (quien clona el repositorio debe poder levantar todo con instrucciones de un solo documento).
 7. **Estimación de gas y operación**: costos aproximados de las funciones principales y qué implica operar el sistema.
-8. **Plan de infraestructura** según las clases [16.1–16.2](../curriculum/16-infraestructura-nodos/README.md): nodos requeridos, disponibilidad, monitoreo y respaldo, y cómo se opera el sistema en el tiempo.
-9. **Caso de negocio** según las clases [17.1–17.2](../curriculum/17-blockchain-en-la-empresa/README.md): problema, usuarios, propuesta de valor y viabilidad; por qué el proyecto justifica su costo y mantenimiento.
+8. **Plan de infraestructura** según las clases [33–34](../curriculum/16-infraestructura-nodos/README.md): nodos requeridos, disponibilidad, monitoreo y respaldo, y cómo se opera el sistema en el tiempo.
+9. **Caso de negocio** según las clases [35–36](../curriculum/17-blockchain-en-la-empresa/README.md): problema, usuarios, propuesta de valor y viabilidad; por qué el proyecto justifica su costo y mantenimiento.
 
 ## Ideas de proyecto con alcance acotado
 
@@ -47,7 +47,7 @@ Además del protocolo de financiamiento comunitario que sirve de hilo conductor 
 
 Cualquier otra idea es válida si cabe en las fases siguientes y el instructor aprueba la propuesta. Regla práctica de alcance: si no puedes enumerar las invariantes críticas en cinco líneas, el proyecto es demasiado grande.
 
-## Ideas de proyecto de finanzas on-chain (clases 19.1–27.2)
+## Ideas de proyecto de finanzas on-chain (clases 39–56)
 
 Alternativas para quien haya cursado la etapa financiera. Mismas puertas de calidad, mismo
 alcance acotado — y una exigencia añadida: **el documento debe responder qué NO cambia**
@@ -55,18 +55,18 @@ respecto de la alternativa tradicional.
 
 | Proyecto | Qué construyes | Qué demuestra |
 |---|---|---|
-| **Mercado de bono tokenizado** | Emisión, cupón por reclamación y DvP atómico sobre Anvil | Clases 24.1–25.2: liquidación atómica y eventos corporativos |
-| **Prototipo de pago transfronterizo** | Corredor con dos patas y PvP, con su análisis de coste completo | Clases 23.1–23.2: prefondeo, última milla y riesgo de principal |
-| **Stablecoin educativa sobrecolateralizada** | Emisión, oráculo, liquidación y subasta de deuda | Clases 19.1–19.2 y 21.1–21.2: colateral, paridad y procíclica |
-| **Simulación de MDBC mayorista** | Dinero de liquidación restringido a participantes + DvP | Clases 22.1–22.2: acceso, emisión y redención |
-| **Plataforma de custodia institucional** | Política M-de-N con escalones, retardos y recuperación probada | Clases 26.1–26.2: cuórum frente a compromiso **y** a pérdida |
-| **Motor de cumplimiento** | Cribado por riesgo, Regla de Viaje y trazas auditables | Clases 27.1–27.2: enfoque basado en riesgo, sin datos personales reales |
+| **Mercado de bono tokenizado** | Emisión, cupón por reclamación y DvP atómico sobre Anvil | Clases 49–52: liquidación atómica y eventos corporativos |
+| **Prototipo de pago transfronterizo** | Corredor con dos patas y PvP, con su análisis de coste completo | Clases 47–48: prefondeo, última milla y riesgo de principal |
+| **Stablecoin educativa sobrecolateralizada** | Emisión, oráculo, liquidación y subasta de deuda | Clases 39–40 y 43–44: colateral, paridad y procíclica |
+| **Simulación de MDBC mayorista** | Dinero de liquidación restringido a participantes + DvP | Clases 45–46: acceso, emisión y redención |
+| **Plataforma de custodia institucional** | Política M-de-N con escalones, retardos y recuperación probada | Clases 53–54: cuórum frente a compromiso **y** a pérdida |
+| **Motor de cumplimiento** | Cribado por riesgo, Regla de Viaje y trazas auditables | Clases 55–56: enfoque basado en riesgo, sin datos personales reales |
 
 **Requisitos adicionales para estos proyectos:**
 
 1. **Sección de qué no cambia**, explícita: qué riesgo, coste o función permanece igual que
    en el sistema tradicional.
-2. **Análisis regulatorio** con las cinco preguntas de las [clases 27.1–27.2](../curriculum/27-regulacion-cumplimiento/README.md),
+2. **Análisis regulatorio** con las cinco preguntas de las [clases 55–56](../curriculum/27-regulacion-cumplimiento/README.md),
    fuente oficial en cada afirmación y una sección de incertidumbres que no esté vacía.
 3. **Etiqueta de simulación educativa** visible: sin fondos reales, sin mainnet, sin datos
    personales, y sin sugerir que reproduce un sistema en producción de ninguna entidad.

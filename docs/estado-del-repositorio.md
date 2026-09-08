@@ -3,7 +3,7 @@
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [🗺️ Roadmap](../ROADMAP.md)
 
 Estado honesto de lo que el repositorio entrega hoy y de lo que requiere infraestructura
-externa. El programa cubre **66 clases (00.1–32.2)** organizadas en **33 unidades estables** y **10 etapas**:
+externa. El programa cubre **66 clases (1–66)** organizadas en **33 unidades estables** y **10 etapas**:
 Orientación, Fundamentos, Desarrollo, Profesional, Avanzado, Producción,
 Finanzas on-chain, Institucional y regulación, y Analítica de datos on-chain.
 
@@ -13,7 +13,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 | Área | Qué incluye | Estado |
 |---|---|:---:|
-| Currículo | 66 clases (00.1–32.2) con esquemas Mermaid, casos reales, fuentes y navegación, más la unidad transversal [Wallets desde cero](wallets-desde-cero.md) | ✅ |
+| Currículo | 66 clases (1–66) con esquemas Mermaid, casos reales, fuentes y navegación, más la unidad transversal [Wallets desde cero](wallets-desde-cero.md) | ✅ |
 | Rutas por perfil | Itinerarios según objetivo del estudiante | ✅ |
 | Industria | Construcción de una red, stack, equipos, empresas, negocio y ciclo de vida | ✅ |
 | Prácticas | Ochenta y tres prácticas con criterios de aceptación (55 auto-verificables) | ✅ |
@@ -36,21 +36,22 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
 | # | Etapa | Clases | Estado |
 |---:|---|---|:---:|
-| 1 | Orientación | 00 | ✅ |
-| 2 | Fundamentos | 01–03 | ✅ |
-| 3 | Desarrollo | 04–07 | ✅ |
-| 4 | Profesional | 08–11 | ✅ |
-| 5 | Avanzado | 12–15 | ✅ |
-| 6 | Producción | 16–18 | ✅ |
-| 7 | Finanzas on-chain | 19–25 | ✅ |
-| 8 | Institucional y regulación | 26–27 | ✅ |
-| 9 | Analítica de datos on-chain | 28 | ✅ |
+| 1 | Orientación | 1–2 | ✅ |
+| 2 | Fundamentos | 3–8 | ✅ |
+| 3 | Desarrollo | 9–16 | ✅ |
+| 4 | Profesional | 17–24 | ✅ |
+| 5 | Avanzado | 25–32 | ✅ |
+| 6 | Producción | 33–38 | ✅ |
+| 7 | Finanzas on-chain | 39–52 | ✅ |
+| 8 | Institucional y regulación | 53–56 | ✅ |
+| 9 | Analítica de datos on-chain | 57–58 | ✅ |
+| 10 | Custodia, auditoría y forensics | 59–66 | ✅ |
 
 ## Componentes del repositorio
 
 | Área | Qué incluye | Estado | Cómo verificar |
 |---|---|:---:|---|
-| `curriculum/` | Clases 00.1–32.2 y plantilla | ✅ | Abrir `curriculum/README.md` |
+| `curriculum/` | Clases 1–66 y plantilla | ✅ | Abrir `curriculum/README.md` |
 | `labs/` | Laboratorios con guía y catálogo | ✅ | Revisar `labs/CATALOG.md` |
 | `projects/` | Contratos Foundry de ejemplo | ✅ | `forge test` en el proyecto |
 | `apps/` | dApp web, indexador, panel y las dos apps offline | ✅ | Ver [despliegue local](despliegue-local.md) |

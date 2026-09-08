@@ -4,7 +4,7 @@
 // menos se analiza no es que te roben las llaves: es PERDERLAS y congelar los
 // fondos para siempre.
 //
-// Módulo 26 · Custodia, wallets institucionales e identidad.
+// Clases 53–54 · Custodia, wallets institucionales e identidad.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 /**

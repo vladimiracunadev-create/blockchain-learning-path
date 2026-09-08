@@ -1,6 +1,6 @@
 # Retos de seguridad
 
-> Navegación: [Inicio](../README.md) · [Módulo 09 · Seguridad](../curriculum/09-seguridad/README.md) · [Rúbrica](../docs/evaluacion.md) · [Criterios de revisión](SOLUTIONS.md)
+> Navegación: [Inicio](../README.md) · [Clases 19–20 · Seguridad](../curriculum/09-seguridad/README.md) · [Rúbrica](../docs/evaluacion.md) · [Criterios de revisión](SOLUTIONS.md)
 
 Colección de contratos **deliberadamente vulnerables** para estudiar cómo se rompen los sistemas y cómo se corrigen. Cada reto es un laboratorio controlado: lees el contrato, identificas la falla, escribes una prueba de concepto (PoC) que demuestra el impacto, propones una corrección mínima y verificas que la corrección la cierra.
 
@@ -87,4 +87,4 @@ Ejecuta uno solo con `forge test --match-contract ReentrancyTest`. Registra la e
 
 ## Criterios de revisión
 
-El archivo [SOLUTIONS.md](SOLUTIONS.md) contiene **criterios de revisión, no exploits para copiar**: describe qué hace correcto un PoC y una corrección, para que contrastes tu razonamiento. Intenta cada reto por tu cuenta antes de consultarlo; copiar no enseña a auditar. El fundamento conceptual está en el [módulo 09 · Seguridad](../curriculum/09-seguridad/README.md).
+El archivo [SOLUTIONS.md](SOLUTIONS.md) contiene **criterios de revisión, no exploits para copiar**: describe qué hace correcto un PoC y una corrección, para que contrastes tu razonamiento. Intenta cada reto por tu cuenta antes de consultarlo; copiar no enseña a auditar. El fundamento conceptual está en las [clases 19–20 · Seguridad](../curriculum/09-seguridad/README.md).

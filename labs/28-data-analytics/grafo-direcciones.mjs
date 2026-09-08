@@ -36,7 +36,7 @@
 // falta la lista de transferencias sin agregar, que es la que usa el
 // laboratorio 8.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { logsDe, transaccionesDe, TOPIC_TRANSFER } from "./cadena-sintetica.mjs";
 import { ejecutadoDirectamente } from "../run-directo.mjs";

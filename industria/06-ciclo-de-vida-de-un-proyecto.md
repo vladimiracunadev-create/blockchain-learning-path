@@ -49,7 +49,7 @@ Cada flecha es una **puerta de calidad** con criterio de salida explícito:
 
 ## 🔍 Descubrimiento y diseño
 
-**Descubrimiento.** La primera puerta es la más barata de cruzar en la dirección correcta: ¿este problema necesita blockchain? Aplica la matriz de decisión de las clases 00.1–00.2 del programa (ver [currículo](../curriculum/README.md)): múltiples partes que escriben, ausencia razonable de intermediario confiable, valor en la liquidación programable. Si la respuesta es no, el mejor entregable del proyecto es un documento que lo diga.
+**Descubrimiento.** La primera puerta es la más barata de cruzar en la dirección correcta: ¿este problema necesita blockchain? Aplica la matriz de decisión de las clases 1–2 del programa (ver [currículo](../curriculum/README.md)): múltiples partes que escriben, ausencia razonable de intermediario confiable, valor en la liquidación programable. Si la respuesta es no, el mejor entregable del proyecto es un documento que lo diga.
 
 **Diseño.** Antes de escribir Solidity se escribe la **especificación**: qué hace el sistema, qué no hace, y — crucial — qué debe ser siempre verdad. Los entregables de esta fase:
 

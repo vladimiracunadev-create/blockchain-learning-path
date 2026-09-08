@@ -1,6 +1,6 @@
 # Guías 51–70 · Finanzas on-chain, institucional y regulación
 
-Este cuaderno cubre la etapa que va del mercado sin intermediario a la infraestructura financiera: DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización, mercados de capitales, custodia, identidad y cumplimiento. Acompaña a las clases [19](../../curriculum/19-defi/README.md)–[27](../../curriculum/27-regulacion-cumplimiento/README.md).
+Este cuaderno cubre la etapa que va del mercado sin intermediario a la infraestructura financiera: DeFi, dinero y liquidación, stablecoins, depósitos tokenizados y MDBC, pagos y FX, tokenización, mercados de capitales, custodia, identidad y cumplimiento. Acompaña el recorrido desde las [clases 39–40](../../curriculum/19-defi/README.md) hasta las [clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md).
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 
@@ -77,7 +77,7 @@ Todas las prácticas de este bloque son **simulaciones locales**: sin red, sin c
 
 - **Objetivo:** ver el intercambio entre liquidez y riesgo en su forma pura.
 - **Cómo se resuelve:**
-  1. Con los cuatro pagos de las clases 20.1–20.2 (A→B 100, B→A 80, B→C 50, C→A 30), calcula el bruto total y las posiciones netas.
+  1. Con los cuatro pagos de las clases 41–42 (A→B 100, B→A 80, B→C 50, C→A 30), calcula el bruto total y las posiciones netas.
   2. Cuantifica la liquidez que ahorra el neteo frente a liquidar bruto.
   3. Responde por escrito: si B falla justo antes de liquidar, ¿qué operaciones se deshacen y quién asume la pérdida?
 - **Estructura de la respuesta:** tabla de posiciones netas, ahorro de liquidez y análisis del fallo de un participante.

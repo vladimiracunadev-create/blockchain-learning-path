@@ -1,6 +1,6 @@
 # Interfaz web · Community Funding
 
-> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 07.1–07.2 · dApps](../../curriculum/07-dapps/README.md) · [Despliegue local](../../docs/despliegue-local.md)
+> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 15–16 · dApps](../../curriculum/07-dapps/README.md) · [Despliegue local](../../docs/despliegue-local.md)
 
 Interfaz mínima construida con [viem](https://viem.sh/) y [Vite](https://vitejs.dev/) que interactúa con el contrato `CommunityFunding`. Demuestra el flujo profesional de una dApp: **leer estado por RPC, conectar una wallet EIP-1193, simular la llamada, solicitar la firma y esperar la confirmación**. No hay framework de UI ni librería de wallets: todo el código es legible en un solo archivo para entender qué ocurre en cada paso.
 
@@ -10,7 +10,7 @@ Interfaz mínima construida con [viem](https://viem.sh/) y [Vite](https://vitejs
 |---|---|
 | Un cliente `viem` en TypeScript/JS sobre HTML plano | Una dApp de producción con diseño pulido |
 | Un ejemplo de UX segura antes de firmar | Un gestor o custodio de claves |
-| Material para las clases 07.1–07.2 y el proyecto transversal | Un contrato desplegado en mainnet |
+| Material para las clases 15–16 y el proyecto transversal | Un contrato desplegado en mainnet |
 
 La interfaz **nunca solicita ni almacena claves privadas**: delega la firma en la wallet del navegador (`window.ethereum`).
 

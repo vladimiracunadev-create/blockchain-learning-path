@@ -1,6 +1,6 @@
 # 🇺🇸 Estados Unidos · Un marco fragmentado
 
-> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)
 
 Revisado: **2026-08-12**.
 
@@ -90,4 +90,4 @@ incorpores criterios extraídos de casos individuales sin citar la resolución**
 
 ## 🧭 Navegación
 
-[⬅️ Regulación](../README.md) · [🇪🇺 Unión Europea](../european-union/README.md) · [🌍 Comparación](../comparison/README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+[⬅️ Regulación](../README.md) · [🇪🇺 Unión Europea](../european-union/README.md) · [🌍 Comparación](../comparison/README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)

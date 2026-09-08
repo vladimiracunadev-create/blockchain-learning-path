@@ -6,7 +6,7 @@
 
 Varios participantes necesitan registrar y consultar cambios sobre un mismo conjunto de datos. La pregunta de fondo no es "¿podemos usar blockchain?" sino "¿está justificado el costo del consenso compartido?". Una blockchain replica cada escritura en todos los nodos, sacrifica rendimiento y privacidad, y complica la corrección de errores; a cambio elimina la necesidad de confiar en un operador único. Si esa confianza ya existe (o puede establecerse por contrato legal), una base de datos tradicional es casi siempre la respuesta correcta.
 
-Este ADR formaliza el árbol de decisión que el programa presenta en el módulo 00: la mayoría de los proyectos que evalúan blockchain terminan, correctamente, en una base de datos.
+Este ADR formaliza el árbol de decisión que el programa presenta en las clases 1–2: la mayoría de los proyectos que evalúan blockchain terminan, correctamente, en una base de datos.
 
 ```mermaid
 flowchart TD

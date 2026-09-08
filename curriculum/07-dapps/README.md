@@ -1,8 +1,8 @@
-# 07 · Aplicaciones descentralizadas
+# Aplicaciones descentralizadas · Clases 15–16
 
 > **Nivel:** Intermedio-Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** documentación de ethereum.org y de viem
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [06 · Solidity y Foundry](../06-solidity-foundry/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [08 · Tokens y estándares](../08-tokens/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 13–14 · Solidity y Foundry](../06-solidity-foundry/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 17–18 · Tokens y estándares](../08-tokens/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 > 👛 Si nunca has usado una wallet, estudia antes la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
@@ -11,7 +11,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 07.1 · Lecturas, RPC y estado de interfaz
+### Clase 15 · Lecturas, RPC y estado de interfaz
 
 **Pregunta guía:** ¿Qué puede mostrar una dApp sin pedir permiso ni firma al usuario?
 
@@ -33,7 +33,7 @@ Una pantalla aparentemente correcta consulta red o contrato equivocados. La clas
 
 **Evidencia de aprendizaje:** Pantalla que exponga procedencia, bloque consultado y estados de error.
 
-### Clase 07.2 · Firmas y experiencia transaccional
+### Clase 16 · Firmas y experiencia transaccional
 
 **Pregunta guía:** ¿Cómo entiende el usuario lo que firmará y qué ocurrió después?
 
@@ -302,4 +302,4 @@ Entrega una interfaz para el Vault que, antes de solicitar cualquier firma, mues
 
 ## 🧭 Navegación
 
-⬅️ [Clases 06.1–06.2 · Solidity y Foundry](../06-solidity-foundry/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 08.1–08.2 · Tokens y estándares](../08-tokens/README.md)
+⬅️ [Clases 13–14 · Solidity y Foundry](../06-solidity-foundry/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 17–18 · Tokens y estándares](../08-tokens/README.md)

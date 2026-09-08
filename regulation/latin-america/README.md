@@ -1,6 +1,6 @@
 # 🌎 América Latina · Panorama regional
 
-> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)
 
 Revisado: **2026-08-12**.
 
@@ -51,7 +51,7 @@ conocerlos permite orientarse en un país cuya norma no se ha leído nunca.
 
 - **Remesas.** Varios corredores latinoamericanos figuran entre los de mayor volumen del
   mundo y con costes elevados. Es el terreno natural del
-  [módulo 23](../../curriculum/23-pagos-fx-onchain/README.md), y también donde más se
+  [clases 47–48](../../curriculum/23-pagos-fx-onchain/README.md), y también donde más se
   comprueba que **la última milla decide el precio**.
 - **Inflación y dolarización de facto.** En países con inflación alta, la demanda de
   stablecoins referidas al dólar responde a un problema macroeconómico, no tecnológico.
@@ -72,4 +72,4 @@ consulta. Si no puedes verificarlo en fuente primaria, **no lo añadas**.
 
 ## 🧭 Navegación
 
-[⬅️ Regulación](../README.md) · [🇨🇱 Chile](../chile/README.md) · [🌍 Comparación](../comparison/README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+[⬅️ Regulación](../README.md) · [🇨🇱 Chile](../chile/README.md) · [🌍 Comparación](../comparison/README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)

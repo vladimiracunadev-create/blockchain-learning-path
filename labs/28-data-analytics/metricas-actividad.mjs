@@ -21,7 +21,7 @@
 // hubo más actividad que la anterior?), no para estimar cuántas personas o
 // cuánto valor económico real hay detrás.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 

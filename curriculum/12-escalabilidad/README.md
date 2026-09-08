@@ -1,8 +1,8 @@
-# 12 · Escalabilidad y capas 2
+# Escalabilidad y capas 2 · Clases 25–26
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** *An Incomplete Guide to Rollups* (Buterin) y L2BEAT
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [11 · DAO y gobernanza](../11-dao-gobernanza/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [13 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 23–24 · DAO y gobernanza](../11-dao-gobernanza/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 27–28 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 12.1 · Familias de escalabilidad
+### Clase 25 · Familias de escalabilidad
 
 **Pregunta guía:** ¿Qué movemos fuera de L1 y qué garantía conservamos?
 
@@ -32,7 +32,7 @@ Las soluciones se ordenan por dónde ejecutan, publican datos y liquidan. El TPS
 
 **Evidencia de aprendizaje:** Matriz que compare seguridad heredada, latencia, costo y operador.
 
-### Clase 12.2 · Riesgo operativo de una L2
+### Clase 26 · Riesgo operativo de una L2
 
 **Pregunta guía:** ¿Puede el usuario recuperar fondos si el secuenciador o el portal fallan?
 
@@ -268,4 +268,4 @@ Entrega una tabla comparativa de las tres soluciones más un informe breve que r
 
 ## 🧭 Navegación
 
-⬅️ [Clases 11.1–11.2 · DAO y gobernanza](../11-dao-gobernanza/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 13.1–13.2 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md)
+⬅️ [Clases 23–24 · DAO y gobernanza](../11-dao-gobernanza/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 27–28 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md)

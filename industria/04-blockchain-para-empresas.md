@@ -67,7 +67,7 @@ La lección de la década: las redes permisionadas resuelven la privacidad pero 
 
 ## 🧮 Matriz de decisión: cuándo sí y cuándo no
 
-Coherente con el criterio de las clases 00.1–00.2 del programa (ver [currículo](../curriculum/README.md)): la pregunta no es "¿puedo usar blockchain?" sino "¿este problema necesita un registro compartido entre partes que no se confían?".
+Coherente con el criterio de las clases 1–2 del programa (ver [currículo](../curriculum/README.md)): la pregunta no es "¿puedo usar blockchain?" sino "¿este problema necesita un registro compartido entre partes que no se confían?".
 
 - ✅ **Considera blockchain si:** hay múltiples organizaciones escribiendo en el registro, no existe (o no conviene) un intermediario neutral, se necesita liquidación programable o el activo gana valor por ser transferible 24/7 entre terceros.
 - ❌ **No la uses si:** una sola entidad controla los datos, los participantes ya confían en un operador central barato, el dato crítico nace fuera de la cadena y nadie puede verificarlo (problema del oráculo), o el volumen/latencia requerido excede lo razonable para la red elegida.

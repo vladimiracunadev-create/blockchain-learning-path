@@ -4,7 +4,7 @@
 // observable por qué la atomicidad elimina una CATEGORÍA ENTERA de riesgo — el de
 // principal — y en qué condiciones deja de aplicarse.
 //
-// Módulos 20 y 23.
+// Clases 41–42 y 47–48.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 /**

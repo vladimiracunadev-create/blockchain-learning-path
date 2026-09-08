@@ -1,8 +1,8 @@
-# 06 · Solidity y Foundry
+# Solidity y Foundry · Clases 13–14
 
 > **Nivel:** Intermedio-Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** documentación de Solidity y *The Foundry Book*
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [05 · Ethereum y EVM](../05-ethereum-evm/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [07 · Aplicaciones descentralizadas](../07-dapps/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 11–12 · Ethereum y EVM](../05-ethereum-evm/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 15–16 · Aplicaciones descentralizadas](../07-dapps/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 06.1 · Diseño de contratos e invariantes
+### Clase 13 · Diseño de contratos e invariantes
 
 **Pregunta guía:** ¿Qué debe ser siempre verdadero antes de escribir una línea de Solidity?
 
@@ -32,7 +32,7 @@ Primero se escriben estados permitidos, transiciones e invariantes; después apa
 
 **Evidencia de aprendizaje:** Contrato mínimo con pruebas unitarias que demuestren transiciones válidas.
 
-### Clase 06.2 · Pruebas profundas con Foundry
+### Clase 14 · Pruebas profundas con Foundry
 
 **Pregunta guía:** ¿Cómo encontramos secuencias que una prueba feliz nunca ejecuta?
 
@@ -301,4 +301,4 @@ Implementa (o corrige) la bóveda para que respete ambas invariantes y pase el f
 
 ## 🧭 Navegación
 
-⬅️ [Clases 05.1–05.2 · Ethereum y EVM](../05-ethereum-evm/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 07.1–07.2 · Aplicaciones descentralizadas](../07-dapps/README.md)
+⬅️ [Clases 11–12 · Ethereum y EVM](../05-ethereum-evm/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 15–16 · Aplicaciones descentralizadas](../07-dapps/README.md)

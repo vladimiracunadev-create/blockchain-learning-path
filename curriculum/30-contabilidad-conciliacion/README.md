@@ -1,15 +1,15 @@
-# 30 · Contabilidad blockchain y conciliación
+# Contabilidad blockchain y conciliación · Clases 61–62
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 180 min · **Fuente:** principios de control interno de COSO, documentación de nodos Bitcoin/Ethereum y literatura contable sobre criptoactivos
 >
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [29 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [31 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 59–60 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 63–64 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md)
 
 
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 30.1 · Tres realidades contables
+### Clase 61 · Tres realidades contables
 
 **Pregunta guía:** ¿Cómo se relacionan Internal Ledger, Exchange Reality y Blockchain State?
 
@@ -31,7 +31,7 @@ Cada fuente se totaliza antes de reconciliar para impedir que una cifra contamin
 
 **Evidencia de aprendizaje:** Balance por fuente con dueño, timestamp, unidad y procedencia.
 
-### Clase 30.2 · Conciliación y gestión de diferencias
+### Clase 62 · Conciliación y gestión de diferencias
 
 **Pregunta guía:** ¿Qué explica una diferencia y cuándo se convierte en incidente?
 
@@ -156,4 +156,4 @@ Puedes ejecutar y revisar una conciliación reproducible de tres registros, expl
 
 ## 🧭 Navegación
 
-⬅️ [Clases 29.1–29.2 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 31.1–31.2 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md)
+⬅️ [Clases 59–60 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 63–64 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md)

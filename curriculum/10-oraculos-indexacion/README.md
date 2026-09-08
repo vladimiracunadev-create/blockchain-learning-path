@@ -1,8 +1,8 @@
-# 10 · Oráculos, almacenamiento e indexación
+# Oráculos, almacenamiento e indexación · Clases 21–22
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** documentación de Chainlink y de The Graph
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [09 · Seguridad y auditoría](../09-seguridad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [11 · DAO y gobernanza](../11-dao-gobernanza/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 19–20 · Seguridad y auditoría](../09-seguridad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 23–24 · DAO y gobernanza](../11-dao-gobernanza/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 10.1 · Oráculos y calidad del dato
+### Clase 21 · Oráculos y calidad del dato
 
 **Pregunta guía:** ¿Qué confianza entra al contrato cuando importamos un precio externo?
 
@@ -32,7 +32,7 @@ El contrato recibe precios viejos, extremos y con decimales distintos. Cada fall
 
 **Evidencia de aprendizaje:** Política de consumo con validaciones, umbrales y modo degradado.
 
-### Clase 10.2 · Eventos, indexación y disponibilidad
+### Clase 22 · Eventos, indexación y disponibilidad
 
 **Pregunta guía:** ¿Cómo consultamos historia sin confundir un índice con la verdad del protocolo?
 
@@ -263,4 +263,4 @@ Especifica el consumo seguro de un oráculo de precios para un contrato hipotét
 
 ## 🧭 Navegación
 
-⬅️ [Clases 09.1–09.2 · Seguridad y auditoría](../09-seguridad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 11.1–11.2 · DAO y gobernanza](../11-dao-gobernanza/README.md)
+⬅️ [Clases 19–20 · Seguridad y auditoría](../09-seguridad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 23–24 · DAO y gobernanza](../11-dao-gobernanza/README.md)

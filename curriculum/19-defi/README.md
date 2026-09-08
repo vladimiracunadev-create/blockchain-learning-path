@@ -1,8 +1,8 @@
-# 19 · DeFi: mercados, préstamo y riesgo on-chain
+# DeFi: mercados, préstamo y riesgo on-chain · Clases 39–40
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 180 min · **Fuente:** documentación de los protocolos citados, investigación del BIS sobre finanzas descentralizadas y literatura académica de microestructura de mercados
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [18 · Implementación empresarial end-to-end](../18-implementacion-empresarial/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [20 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 37–38 · Implementación empresarial end-to-end](../18-implementacion-empresarial/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 41–42 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 19.1 · AMM, liquidez y formación de precio
+### Clase 39 · AMM, liquidez y formación de precio
 
 **Pregunta guía:** ¿Cómo fija precio un pool sin libro de órdenes?
 
@@ -32,7 +32,7 @@ Cada swap modifica reservas y precio; el arbitraje se calcula después. Las fór
 
 **Evidencia de aprendizaje:** Hoja reproducible que explique quién gana, quién pierde y por qué.
 
-### Clase 19.2 · Préstamo, colateral y riesgo DeFi
+### Clase 40 · Préstamo, colateral y riesgo DeFi
 
 **Pregunta guía:** ¿Cómo permanece solvente un mercado sin evaluar personalmente al deudor?
 
@@ -243,7 +243,7 @@ ejecución que no depende de que un tribunal funcione. Cuesta **eficiencia de ca
 —hay que inmovilizar más de lo que se toma— y traslada el riesgo a un lugar nuevo: la
 **calidad del oráculo**. Un precio manipulado durante un bloque puede liquidar posiciones
 sanas o permitir tomar prestado contra colateral inflado. Es el mismo mecanismo que
-estudiaste en las [clases 10.1–10.2](../10-oraculos-indexacion/README.md), aquí con dinero encima.
+estudiaste en las [clases 21–22](../10-oraculos-indexacion/README.md), aquí con dinero encima.
 
 <details>
 <summary><strong>🎓 Si ya dominas esto</strong> — los bordes que solo aparecen en producción</summary>
@@ -347,7 +347,7 @@ cifra de rendimiento presentada como esperable.
 - MakerDAO / Sky — parámetros de colateral y liquidación: <https://docs.makerdao.com/>
 - Chainlink — datos de precio y buenas prácticas de consumo: <https://docs.chain.link/>
 - OpenZeppelin — contratos base y patrones de seguridad: <https://docs.openzeppelin.com/>
-- Clases relacionadas: [10 · Oráculos](../10-oraculos-indexacion/README.md) · [09 · Seguridad](../09-seguridad/README.md) · [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
+- Clases relacionadas: [Clases 21–22 · Oráculos](../10-oraculos-indexacion/README.md) · [Clases 19–20 · Seguridad](../09-seguridad/README.md) · [Clases 31–32 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -360,4 +360,4 @@ cifra de rendimiento presentada como esperable.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 18.1–18.2 · Implementación empresarial](../18-implementacion-empresarial/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 20.1–20.2 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md)
+⬅️ [Clases 37–38 · Implementación empresarial](../18-implementacion-empresarial/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 41–42 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md)

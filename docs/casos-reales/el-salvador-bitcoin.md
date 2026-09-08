@@ -1,6 +1,6 @@
 # Caso · El Salvador: bitcoin de curso legal
 
-> [⬅️ Casos reales](README.md) · [📖 Clases 20.1–20.2 · Dinero y liquidación](../../curriculum/20-dinero-banca-liquidacion/README.md) · [🏠 Programa](../../README.md)
+> [⬅️ Casos reales](README.md) · [📖 Clases 41–42 · Dinero y liquidación](../../curriculum/20-dinero-banca-liquidacion/README.md) · [🏠 Programa](../../README.md)
 
 **Cuándo:** desde septiembre de 2021. **Qué:** El Salvador otorgó por ley curso legal a
 bitcoin, junto al dólar estadounidense que ya usaba, y desplegó una billetera estatal.
@@ -57,7 +57,7 @@ programas de financiamiento. Consulta sus documentos de país para la posición 
 ## Qué enseña sobre dinero
 
 Es el caso que mejor ilustra el
-[clases 20.1–20.2](../../curriculum/20-dinero-banca-liquidacion/README.md), porque somete las tres
+[clases 41–42](../../curriculum/20-dinero-banca-liquidacion/README.md), porque somete las tres
 funciones del dinero a una prueba real:
 
 | Función | Qué pasó |
@@ -92,7 +92,7 @@ salida cara **anula** el ahorro del tramo de liquidación.
 3. **La volatilidad es el obstáculo, no la tecnología.** El mismo raíl con un activo estable
    plantea preguntas distintas — y es la dirección que ha tomado la mayor parte del sector.
 4. **Una billetera custodiada estatal es un custodio.** Se le aplican todas las preguntas del
-   [clases 26.1–26.2](../../curriculum/26-custodia-identidad/README.md).
+   [clases 53–54](../../curriculum/26-custodia-identidad/README.md).
 5. **Los marcos jurídicos excepcionales se revisan.** El de este caso ya se modificó; citarlo
    sin comprobar el estado vigente produce afirmaciones falsas.
 
@@ -102,10 +102,10 @@ salida cara **anula** el ahorro del tramo de liquidación.
 - Fondo Monetario Internacional — documentos de país: <https://www.imf.org/en/Countries/SLV>
 - Banco Mundial — precios de remesas: <https://remittanceprices.worldbank.org/>
 - BIS — investigación sobre adopción de criptoactivos y pagos: <https://www.bis.org/>
-- Clases del programa: [20.1–20.2 · Dinero y liquidación](../../curriculum/20-dinero-banca-liquidacion/README.md) · [23.1–23.2 · Pagos y FX](../../curriculum/23-pagos-fx-onchain/README.md)
+- Clases del programa: [41–42 · Dinero y liquidación](../../curriculum/20-dinero-banca-liquidacion/README.md) · [47–48 · Pagos y FX](../../curriculum/23-pagos-fx-onchain/README.md)
 
 ---
 
 ## 🧭 Navegación
 
-[⬅️ Casos reales](README.md) · [📖 Clases 20.1–20.2](../../curriculum/20-dinero-banca-liquidacion/README.md) · [🏠 Programa](../../README.md)
+[⬅️ Casos reales](README.md) · [📖 Clases 41–42](../../curriculum/20-dinero-banca-liquidacion/README.md) · [🏠 Programa](../../README.md)

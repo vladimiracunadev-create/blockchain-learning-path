@@ -53,7 +53,8 @@ pnpm app:android
 ```
 
 Equivale a: generar el bundle → copiarlo a `www/` → `cap add android` →
-personalizar → `gradlew assembleDebug`.
+personalizar → wrapper Gradle multiplataforma (`gradlew.bat` en Windows,
+`./gradlew` en Linux/macOS).
 
 Si Gradle falla con `invalid source release: 21`, estás usando un JDK antiguo:
 

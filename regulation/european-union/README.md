@@ -1,6 +1,6 @@
 # 🇪🇺 Unión Europea · MiCA
 
-> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)
 
 Revisado: **2026-08-12**. · **Rango: reglamento de la Unión Europea** (aplicable directamente
 en los Estados miembros, sin necesidad de transposición).
@@ -97,4 +97,4 @@ proyecto de norma técnica (todavía no).
 
 ## 🧭 Navegación
 
-[⬅️ Regulación](../README.md) · [🌍 Comparación](../comparison/README.md) · [🇨🇱 Chile](../chile/README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+[⬅️ Regulación](../README.md) · [🌍 Comparación](../comparison/README.md) · [🇨🇱 Chile](../chile/README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)

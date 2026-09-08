@@ -28,7 +28,7 @@ Si la única función del token es financiar el proyecto, eso tiene nombre: una 
 
 ## Decisión educativa
 
-El programa recomienda por defecto **no emitir token**: cobrar en stablecoins o ETH y gestionar permisos con mecanismos simples. Si el diseño sugiere que un token podría tener sentido, el camino recomendado es **puntos off-chain primero**, midiendo si el mecanismo funciona antes de asumir la irreversibilidad de un activo transferible. Solo se justifica emitir cuando existe un mecanismo de captura de valor claro y defendible, coherente con lo trabajado en los módulos 08 y 17 del currículo.
+El programa recomienda por defecto **no emitir token**: cobrar en stablecoins o ETH y gestionar permisos con mecanismos simples. Si el diseño sugiere que un token podría tener sentido, el camino recomendado es **puntos off-chain primero**, midiendo si el mecanismo funciona antes de asumir la irreversibilidad de un activo transferible. Solo se justifica emitir cuando existe un mecanismo de captura de valor claro y defendible, coherente con lo trabajado en las clases 17–18 y 35–36 del currículo.
 
 ## Consecuencias
 

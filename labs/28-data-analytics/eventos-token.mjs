@@ -28,7 +28,7 @@
 // en la cadena para detectar esa divergencia; aquí no hay cadena real contra
 // la que contrastar.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { TOPIC_TRANSFER, DECIMALES_TOKEN, SIMBOLO_TOKEN, aHumano } from "./cadena-sintetica.mjs";
 import { ejecutadoDirectamente } from "../run-directo.mjs";

@@ -1,10 +1,10 @@
 // Stablecoins: colateralización, precio de liquidación y qué sostiene la paridad.
 //
 // Simulación determinista: sin red, sin claves, sin fondos. El laboratorio
-// demuestra la tesis del módulo — la paridad no la sostiene el respaldo, la
+// demuestra la tesis de las clases — la paridad no la sostiene el respaldo, la
 // sostiene la POSIBILIDAD REAL DE REDIMIR.
 //
-// Módulo 21 · Stablecoins.
+// Clases 43–44 · Stablecoins.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 /**

@@ -2,7 +2,7 @@
 //
 // Un build en verde no prueba nada: el instalador puede pesar 90 MB, tener la
 // versión correcta, instalarse sin un error... y abrir una ventana vacía porque
-// el bundle no se copió. Esto arranca la app real, carga la portada y un módulo,
+// el bundle no se copió. Esto arranca la app real, carga la portada y una clase,
 // y comprueba el contenido en el DOM. Si algo falta, sale con código 1.
 //
 // Uso: electron apps/desktop/smoke.js
@@ -71,7 +71,7 @@ app.whenReady().then(async () => {
     enlacesMenu: document.querySelectorAll("nav.side a").length
   }))()`);
 
-  comprobar(/Seguridad/i.test(unidad.h1), `las clases 09.1–09.2 cargan su título ("${unidad.h1}")`);
+  comprobar(/Seguridad/i.test(unidad.h1), `las clases 19–20 cargan su título ("${unidad.h1}")`);
   comprobar(unidad.palabras > 800, `las clases traen su contenido (${unidad.palabras} palabras)`);
   comprobar(unidad.preguntas === 4, `la autoevaluación de la unidad se renderiza (${unidad.preguntas} preguntas)`);
   comprobar(unidad.prev.includes("08-tokens"), `enlaza a las clases anteriores (${unidad.prev || "ninguno"})`);

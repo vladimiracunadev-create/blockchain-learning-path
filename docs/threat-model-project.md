@@ -5,7 +5,7 @@
 Modelo de amenazas del proyecto integrador **Community Funding** (financiamiento
 colectivo on-chain). Estructura los activos, actores, superficie de ataque, amenazas con
 impacto y mitigación, el flujo de confianza y las invariantes de seguridad. Metodología
-alineada con [09 · Seguridad](../curriculum/09-seguridad/README.md); el proyecto se
+alineada con [Clases 19–20 · Seguridad](../curriculum/09-seguridad/README.md); el proyecto se
 describe en [Capstone](../capstone/README.md).
 
 ## Activos
@@ -100,6 +100,6 @@ prueba que falle si la mitigación se rompe en un cambio futuro.
 
 ## Recursos relacionados
 
-- [09 · Seguridad y auditoría](../curriculum/09-seguridad/README.md)
+- [Clases 19–20 · Seguridad y auditoría](../curriculum/09-seguridad/README.md)
 - [Capstone](../capstone/README.md) · [Mejores prácticas](mejores-practicas.md)
 - [Operación e incidentes](operacion-incidentes.md)

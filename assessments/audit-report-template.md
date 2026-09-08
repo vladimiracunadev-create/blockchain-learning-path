@@ -1,6 +1,6 @@
 # Plantilla · Informe de auditoría
 
-> Navegación: [Inicio](../README.md) · [Currículo](../curriculum/README.md) · [Clases 09.1–09.2 · Seguridad](../curriculum/09-seguridad/README.md) · [Retos de seguridad](../security-challenges/README.md)
+> Navegación: [Inicio](../README.md) · [Currículo](../curriculum/README.md) · [Clases 19–20 · Seguridad](../curriculum/09-seguridad/README.md) · [Retos de seguridad](../security-challenges/README.md)
 
 Plantilla profesional para redactar el informe de auditoría de tu proyecto o capstone. Copia este archivo, reemplaza los marcadores `<…>` y elimina las notas en cursiva. Un buen informe **reduce el riesgo dentro de un alcance declarado**; no promete ausencia total de vulnerabilidades.
 

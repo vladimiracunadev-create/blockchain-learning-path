@@ -2,7 +2,7 @@
 
 > **Nivel:** Inicial · ⏱️ **Duración estimada:** 120 min · **Fuente:** BIP-32/39/44, documentación oficial de Ethereum (ethereum.org), EIP-1193/6963/712/2612 y ERC-4337
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📚 Bibliografía](bibliografia.md)
-> 🧭 **Unidad transversal** — se estudia después de las [clases 04.1–04.2 · Bitcoin](../curriculum/04-bitcoin/README.md) y antes de las [clases 05.1–05.2 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md). No altera la numeración de las clases.
+> 🧭 **Unidad transversal** — se estudia después de las [clases 9–10 · Bitcoin](../curriculum/04-bitcoin/README.md) y antes de las [clases 11–12 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md). No altera la numeración de las clases.
 > 📖 [Glosario de términos](glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](empieza-aqui.md)
 
 ---
@@ -14,10 +14,10 @@ cartera digital) para una persona sin experiencia. Enseña qué es, cómo se usa
 seguridad y qué hacer cuando algo sale mal: perder el teléfono, exponer una
 credencial o firmar algo que no debías.
 
-**Prerrequisitos:** haber leído las clases [01 · Criptografía](../curriculum/01-criptografia/README.md)
-(qué es una clave y una firma) y [04 · Bitcoin](../curriculum/04-bitcoin/README.md)
+**Prerrequisitos:** haber leído [Clases 3–4 · Criptografía](../curriculum/01-criptografia/README.md)
+(qué es una clave y una firma) y [Clases 9–10 · Bitcoin](../curriculum/04-bitcoin/README.md)
 (qué es una transacción y una dirección). No hace falta conocer Ethereum: esta unidad
-se puede recorrer completa antes de las [clases 05.1–05.2](../curriculum/05-ethereum-evm/README.md).
+se puede recorrer completa antes de las [clases 11–12](../curriculum/05-ethereum-evm/README.md).
 
 > ⚠️ **Regla innegociable de toda la unidad:** ningún ejercicio usa fondos reales,
 > ninguna actividad te pedirá una seed phrase real ni una clave privada, y ningún
@@ -105,7 +105,7 @@ revisión antes de firmar**. A entrenar esa revisión se dedica el laboratorio.
 
 Ninguna es "la buena": son perfiles de riesgo distintos. La versión institucional de
 esta decisión (multisig, MPC, HSM, segregación, gobierno de claves) es el
-[clases 26.1–26.2](../curriculum/26-custodia-identidad/README.md).
+[clases 53–54](../curriculum/26-custodia-identidad/README.md).
 
 ## 🌡️ Caliente, templada y fría
 
@@ -161,7 +161,7 @@ El orden importa: **el respaldo se verifica antes de recibir nada**.
 4. **Verificar la recuperación**: restaura la wallet desde el respaldo en un entorno limpio **antes** de que custodie nada. Un respaldo no verificado es una esperanza, no un respaldo.
 5. **Recibir**: comparte tu dirección, verifica con una cantidad pequeña, confirma que llegó.
 6. **Enviar**: aplica el [prevuelo](#-laboratorio-guiado-prevuelo-de-una-transacción) completo antes de firmar.
-7. **Conectar una dApp**: conectar ≠ autorizar movimientos; revisa qué cuenta y qué red expones. El detalle técnico ([EIP-1193](https://eips.ethereum.org/EIPS/eip-1193), [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963), viem) está en las [clases 07.1–07.2](../curriculum/07-dapps/README.md).
+7. **Conectar una dApp**: conectar ≠ autorizar movimientos; revisa qué cuenta y qué red expones. El detalle técnico ([EIP-1193](https://eips.ethereum.org/EIPS/eip-1193), [EIP-6963](https://eips.ethereum.org/EIPS/eip-6963), viem) está en las [clases 15–16](../curriculum/07-dapps/README.md).
 8. **Revisar cada firma**: qué tipo de solicitud es (sección siguiente) y qué efecto puede tener.
 9. **Desconectar** la dApp al terminar la sesión.
 10. **Revocar permisos** periódicamente: las aprobaciones de tokens sobreviven a la desconexión y siguen vigentes hasta que las revocas con otra transacción.
@@ -411,15 +411,15 @@ Fuentes primarias, consultadas el 2026-08-24:
 
 - **Cuentas inteligentes (ERC-4337):** la cuenta es un contrato; la "wallet" firma
   `UserOperations` que un bundler lleva a la cadena. Cambia qué significa "clave":
-  la lógica de validación es programable. Profundiza en las [clases 15.1–15.2](../curriculum/15-arquitectura-avanzada/README.md).
+  la lógica de validación es programable. Profundiza en las [clases 31–32](../curriculum/15-arquitectura-avanzada/README.md).
 - **Passkeys:** firmas WebAuthn (curva P-256) como autenticador de una cuenta
   inteligente; el respaldo pasa a depender del ecosistema de passkeys del usuario.
 - **Recuperación social:** guardianes (personas o dispositivos) que pueden rotar la
   clave de la cuenta; el diseño de quórum y de plazos es lo que la hace segura o inútil.
 - **Multisig:** política M-de-N explícita on-chain; simúlala con `pnpm lab:quorum`
-  y estudia la versión institucional en las [clases 26.1–26.2](../curriculum/26-custodia-identidad/README.md).
+  y estudia la versión institucional en las [clases 53–54](../curriculum/26-custodia-identidad/README.md).
 - **MPC:** firma por cómputo multiparte; sin seed estándar, la clave completa nunca
-  existe. Comparación con HSM y multisig en las [clases 26.1–26.2](../curriculum/26-custodia-identidad/README.md).
+  existe. Comparación con HSM y multisig en las [clases 53–54](../curriculum/26-custodia-identidad/README.md).
 - **Hardware:** el valor no es la caja, es el **canal de confirmación**: una pantalla
   independiente del equipo comprometido. Su límite: lo que esa pantalla no puede mostrar.
 - **Derivación HD fina:** gap limit, cuentas endurecidas (`'`), xpub/xprv y por qué
@@ -433,10 +433,10 @@ Fuentes primarias, consultadas el 2026-08-24:
 
 ## 🧭 Navegación
 
-Vienes de: ⬅️ [Clases 04.1–04.2 · Bitcoin](../curriculum/04-bitcoin/README.md) · Sigue con: ➡️ [Clases 05.1–05.2 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md)
+Vienes de: ⬅️ [Clases 9–10 · Bitcoin](../curriculum/04-bitcoin/README.md) · Sigue con: ➡️ [Clases 11–12 · Ethereum y EVM](../curriculum/05-ethereum-evm/README.md)
 
-Profundiza después: [07 · dApps](../curriculum/07-dapps/README.md) (conexión wallet-dApp con viem) ·
-[09 · Seguridad](../curriculum/09-seguridad/README.md) (cómo piensa un atacante) ·
-[26 · Custodia institucional e identidad](../curriculum/26-custodia-identidad/README.md) (multisig, MPC, HSM, ERC-4337)
+Profundiza después: [Clases 15–16 · dApps](../curriculum/07-dapps/README.md) (conexión wallet-dApp con viem) ·
+[Clases 19–20 · Seguridad](../curriculum/09-seguridad/README.md) (cómo piensa un atacante) ·
+[Clases 53–54 · Custodia institucional e identidad](../curriculum/26-custodia-identidad/README.md) (multisig, MPC, HSM, ERC-4337)
 
 [📚 Índice del currículo](../curriculum/README.md) · [🧪 Catálogo de prácticas](../labs/CATALOG.md) · [🏠 Programa](../README.md)

@@ -1,14 +1,14 @@
-# 31 · Proof of Reserves, pasivos y solvencia
+# Proof of Reserves, pasivos y solvencia · Clases 63–64
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 2 clases de 105 min · **Fuente:** especificaciones de Certificate Transparency/Merkle trees, marcos de encargos de aseguramiento y publicaciones regulatorias sobre proof of reserves
 >
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [30 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [32 · Forensics, auditoría y gobernanza](../32-forensics-auditoria-gobernanza/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 61–62 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 65–66 · Forensics, auditoría y gobernanza](../32-forensics-auditoria-gobernanza/README.md)
 
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 31.1 · Del saldo del cliente a una prueba Merkle
+### Clase 63 · Del saldo del cliente a una prueba Merkle
 
 **Método:** laboratorio de construcción y sabotaje controlado.
 
@@ -32,7 +32,7 @@ datos comprometidos e **integridad de la población** que debió entrar al árbo
 cuatro afirmaciones que Merkle no demuestra. No se aprueba una captura de pantalla sin
 datos de entrada y comando de reproducción.
 
-### Clase 31.2 · Del snapshot a una conclusión profesional
+### Clase 64 · Del snapshot a una conclusión profesional
 
 **Método:** comité de aseguramiento con contradicción de evidencia.
 
@@ -153,4 +153,4 @@ Puedes verificar criptográficamente inclusión y, al mismo tiempo, explicar con
 
 ## 🧭 Navegación
 
-⬅️ [Clases 30.1–30.2 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 32.1–32.2 · Forensics, auditoría y gobernanza](../32-forensics-auditoria-gobernanza/README.md)
+⬅️ [Clases 61–62 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 65–66 · Forensics, auditoría y gobernanza](../32-forensics-auditoria-gobernanza/README.md)

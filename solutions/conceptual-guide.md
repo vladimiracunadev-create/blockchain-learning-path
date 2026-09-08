@@ -20,41 +20,41 @@ Este directorio no es un solucionario para copiar. Entrega **criterios de revisi
 
 ## Qué debe demostrar una solución correcta, por nivel
 
-### Fundamentos (módulos 00–03, prácticas 01–10)
+### Fundamentos (clases 1–8, prácticas 01–10)
 
 - **Demuestra:** que distingues qué garantiza cada primitiva (hash, firma, Merkle, consenso) y qué no; que puedes predecir un resultado antes de ejecutarlo.
 - **Errores que invalidan:** atribuir a una primitiva garantías que no da ("el hash prueba que es verdad"); ejecutar sin hipótesis previa; confundir replicación con consenso.
 - **Autoverificación:** ¿puedo explicar qué se rompe si cambio un byte de la entrada, un participante miente o la raíz aceptada es otra?
 
-### Desarrollo (módulos 04–07, prácticas 11–30)
+### Desarrollo (clases 9–16, prácticas 11–30)
 
 - **Demuestra:** transacciones y contratos que manejas de punta a punta: construcción, firma, inclusión, estados de error; separación entre hechos on-chain e inferencias.
 - **Errores que invalidan:** pruebas que solo cubren el camino feliz; ignorar reverts y estados intermedios; asignar identidad a direcciones por intuición.
 - **Autoverificación:** ¿mi prueba falla si introduzco el bug a propósito? ¿Sé cuánto gas consume y por qué?
 
-### Profesional (módulos 08–11, prácticas 31–40)
+### Profesional (clases 17–24, prácticas 31–40)
 
 - **Demuestra:** invariantes formuladas como propiedades del sistema y verificadas con fuzzing; privilegios administrativos declarados y mitigados; análisis de incentivos, no solo de código.
 - **Errores que invalidan:** invariantes triviales ("el total es un número"); confiar en un oráculo por estar firmado; multisig o timelock presentados como solución total.
 - **Autoverificación:** ¿qué puede hacer el rol más privilegiado y qué pasa si su clave se compromete? ¿Encontró el fuzzer algo que yo no vi?
 
-### Avanzado y producción (módulos 12–18, prácticas 41–50 y capstone)
+### Avanzado y producción (clases 25–38, prácticas 41–50 y capstone)
 
 - **Demuestra:** que identificas las nuevas suposiciones de confianza que introduce cada capa (secuenciador, puente, prover, comité); decisiones de arquitectura con alternativa descartada por escrito.
 - **Errores que invalidan:** tratar un rollup o puente como "gratis" en confianza; ADR sin alternativa real; despliegue que solo funciona en tu máquina.
 - **Autoverificación:** ¿puede otra persona reproducir mi despliegue desde el README? ¿Mi threat model condicionó alguna decisión o es decorativo?
 
-## Tabla rápida por grupo de módulos
+## Tabla rápida por grupo de clases
 
 | Grupo | Tu solución está bien si... | Revísala si... |
 |---|---|---|
-| 00–03 fundamentos | Predices el resultado antes de ejecutar y explicas los límites de cada primitiva | Solo describes lo que salió en pantalla |
-| 04–05 Bitcoin y EVM | Conservas valor en UTXO y explicas cada campo de una transacción | Hay "saldo perdido" o campos que no sabes justificar |
-| 06–07 desarrollo | Las pruebas fallan cuando insertas el bug intencionalmente | La suite pasa incluso con el contrato roto |
-| 08–09 tokens y seguridad | Declaraste privilegios y el fuzzer corrió sobre invariantes reales | El "análisis de seguridad" es una lista de patrones sin aplicar |
-| 10–11 oráculos y DAO | Analizaste captura, obsolescencia e incentivos de gobernanza | Asumes que firmado = correcto o que votar = legítimo |
-| 12–14 escalado y ZK | Enumeraste las suposiciones de confianza nuevas de cada capa | Presentas L2, puentes o ZK como mejora sin costo |
-| 15–18 arquitectura y empresa | Hay ADR con alternativa descartada y despliegue reproducible | La decisión es "porque blockchain" y solo corre en tu equipo |
+| 1–8 · fundamentos | Predices el resultado antes de ejecutar y explicas los límites de cada primitiva | Solo describes lo que salió en pantalla |
+| 9–12 · Bitcoin y EVM | Conservas valor en UTXO y explicas cada campo de una transacción | Hay "saldo perdido" o campos que no sabes justificar |
+| 13–16 · desarrollo | Las pruebas fallan cuando insertas el bug intencionalmente | La suite pasa incluso con el contrato roto |
+| 17–20 · tokens y seguridad | Declaraste privilegios y el fuzzer corrió sobre invariantes reales | El "análisis de seguridad" es una lista de patrones sin aplicar |
+| 21–24 · oráculos y DAO | Analizaste captura, obsolescencia e incentivos de gobernanza | Asumes que firmado = correcto o que votar = legítimo |
+| 25–30 · escalado y ZK | Enumeraste las suposiciones de confianza nuevas de cada capa | Presentas L2, puentes o ZK como mejora sin costo |
+| 31–38 · arquitectura y empresa | Hay ADR con alternativa descartada y despliegue reproducible | La decisión es "porque blockchain" y solo corre en tu equipo |
 
 ## Cómo comparar sin autoengañarte
 

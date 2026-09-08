@@ -1,8 +1,8 @@
-# 03 · Consenso
+# Consenso · Clases 7–8
 
 > **Nivel:** Intermedio · ⏱️ **Duración estimada:** 120 min · **Fuente:** whitepaper de Bitcoin (Nakamoto) y *Practical Byzantine Fault Tolerance* (Castro, Liskov)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [02 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [04 · Bitcoin](../04-bitcoin/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 5–6 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 9–10 · Bitcoin](../04-bitcoin/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 03.1 · Elegir un historial válido
+### Clase 7 · Elegir un historial válido
 
 **Pregunta guía:** ¿Cómo acuerdan los nodos qué ocurrió sin una autoridad central?
 
@@ -32,7 +32,7 @@ Se entregan bloques fuera de orden y cada equipo aplica la regla de selección. 
 
 **Evidencia de aprendizaje:** Explicación causal de cuándo una operación se considera suficientemente final.
 
-### Clase 03.2 · PoW, PoS y BFT bajo amenaza
+### Clase 8 · PoW, PoS y BFT bajo amenaza
 
 **Pregunta guía:** ¿Qué recurso impide identidades gratuitas y qué ocurre si el actor miente?
 
@@ -259,4 +259,4 @@ Completa la tabla de dificultad frente a intentos y tiempo con al menos tres niv
 
 ## 🧭 Navegación
 
-⬅️ [Clases 02.1–02.2 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 04.1–04.2 · Bitcoin](../04-bitcoin/README.md)
+⬅️ [Clases 5–6 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 9–10 · Bitcoin](../04-bitcoin/README.md)

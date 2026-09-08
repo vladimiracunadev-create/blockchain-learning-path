@@ -21,11 +21,11 @@ Cada caso responde, en este orden: **contexto** · **problema** · **arquitectur
 
 | Caso | Qué enseña | Clases |
 |---|---|---|
-| [Orionx · ledger, custodia y estado blockchain](orionx-descalce-custodia.md) | Un descalce en investigación exige separar registros, atribución y niveles de certeza | [29–32](../../curriculum/29-exchanges-operaciones-custodia/README.md) |
-| [Terra/UST · colapso de una stablecoin algorítmica](terra-ust.md) | La reflexividad no es un fallo de implementación: es el mecanismo | [21](../../curriculum/21-stablecoins/README.md) · [19](../../curriculum/19-defi/README.md) |
-| [FTX · custodia, segregación e integración vertical](ftx-custodia.md) | La quiebra no fue tecnológica: fue de controles y de separación de funciones | [26](../../curriculum/26-custodia-identidad/README.md) · [27](../../curriculum/27-regulacion-cumplimiento/README.md) |
-| [Puente Ronin · compromiso de validadores](ronin-puente.md) | Un puente es tan seguro como su cuórum, y la detección importa tanto como la prevención | [13](../../curriculum/13-interoperabilidad/README.md) · [26](../../curriculum/26-custodia-identidad/README.md) |
-| [El Salvador · bitcoin de curso legal](el-salvador-bitcoin.md) | Adoptar una moneda por ley no produce adopción por uso | [20](../../curriculum/20-dinero-banca-liquidacion/README.md) · [23](../../curriculum/23-pagos-fx-onchain/README.md) |
+| [Orionx · ledger, custodia y estado blockchain](orionx-descalce-custodia.md) | Un descalce en investigación exige separar registros, atribución y niveles de certeza | [59–66](../../curriculum/29-exchanges-operaciones-custodia/README.md) |
+| [Terra/UST · colapso de una stablecoin algorítmica](terra-ust.md) | La reflexividad no es un fallo de implementación: es el mecanismo | [43–44](../../curriculum/21-stablecoins/README.md) · [39–40](../../curriculum/19-defi/README.md) |
+| [FTX · custodia, segregación e integración vertical](ftx-custodia.md) | La quiebra no fue tecnológica: fue de controles y de separación de funciones | [53–54](../../curriculum/26-custodia-identidad/README.md) · [55–56](../../curriculum/27-regulacion-cumplimiento/README.md) |
+| [Puente Ronin · compromiso de validadores](ronin-puente.md) | Un puente es tan seguro como su cuórum, y la detección importa tanto como la prevención | [27–28](../../curriculum/13-interoperabilidad/README.md) · [53–54](../../curriculum/26-custodia-identidad/README.md) |
+| [El Salvador · bitcoin de curso legal](el-salvador-bitcoin.md) | Adoptar una moneda por ley no produce adopción por uso | [41–42](../../curriculum/20-dinero-banca-liquidacion/README.md) · [47–48](../../curriculum/23-pagos-fx-onchain/README.md) |
 
 ## Cómo usarlos
 

@@ -1,8 +1,8 @@
-# 20 · Dinero, banca y liquidación
+# Dinero, banca y liquidación · Clases 41–42
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 180 min · **Fuente:** publicaciones del BIS y del Comité de Pagos e Infraestructuras del Mercado (CPMI), documentación del Banco Central de Chile y del Banco Central Europeo
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [19 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [21 · Stablecoins](../21-stablecoins/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 39–40 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 43–44 · Stablecoins](../21-stablecoins/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 20.1 · Qué es dinero bancario
+### Clase 41 · Qué es dinero bancario
 
 **Pregunta guía:** Cuando pagas, ¿qué activo se mueve y qué institución te debe?
 
@@ -32,7 +32,7 @@ Cada pago se registra simultáneamente en libros de cliente, bancos y sistema de
 
 **Evidencia de aprendizaje:** Mapa de balances que distinga mensaje, obligación y activo de liquidación.
 
-### Clase 20.2 · Finalidad, liquidez y riesgo de liquidación
+### Clase 42 · Finalidad, liquidez y riesgo de liquidación
 
 **Pregunta guía:** ¿Cuándo un pago es técnico, económico y jurídicamente final?
 
@@ -105,7 +105,7 @@ Al finalizar, el estudiante podrá:
 | 7 | Neto diferido vs. bruto en tiempo real | El intercambio entre liquidez y riesgo, en su forma pura |
 | 8 | Finalidad: técnica, económica y jurídica | La confusión más cara del sector |
 | 9 | Riesgo de contraparte, riesgo de liquidación y Herstatt | El problema que DvP y PvP existen para resolver |
-| 10 | Dinero programable: qué es y qué no | Prepara las clases 21.1–21.2 y 22.1–22.2 |
+| 10 | Dinero programable: qué es y qué no | Prepara las clases 43–44 y 45–46 |
 
 ## 🧠 Modelo mental
 
@@ -220,7 +220,7 @@ De ahí la existencia de los sistemas **LBTR**: liquidan una a una, al instante,
 de banco central, eliminando ese intervalo. El coste es que cada banco necesita tener
 reservas suficientes en todo momento — liquidez inmovilizada que no rinde. **Liquidez
 contra riesgo: ese es el intercambio, y no tiene solución óptima, solo elecciones.**
-Cuando en las clases 22.1–22.2 se hable de MDBC mayorista, la pregunta será exactamente esta,
+Cuando en las clases 45–46 se hable de MDBC mayorista, la pregunta será exactamente esta,
 formulada de nuevo.
 
 ### Las tres finalidades, y por qué confundirlas es caro
@@ -246,7 +246,7 @@ tradicionales son lentos porque su tecnología es antigua". Lo primero omite la 
 jurídica; lo segundo confunde latencia técnica con ventanas de firmeza, cumplimiento,
 horarios de banco central y gestión de liquidez.
 
-### Riesgo Herstatt: el problema que ordena las clases 23.1–23.2 y 25.1–25.2
+### Riesgo Herstatt: el problema que ordena las clases 47–48 y 51–52
 
 Un banco de Fráncfort vende dólares contra marcos a un banco de Nueva York. Paga los marcos
 por la mañana, hora europea. Los dólares deben llegar por la tarde, hora de Nueva York.
@@ -258,7 +258,7 @@ respuesta del sector fue estructural —mecanismos de **pago contra pago (PvP)**
 divisas y de **entrega contra pago (DvP)** para valores— y es exactamente el problema que
 la atomicidad de un contrato inteligente resuelve de forma natural. Ese es, sin
 exageración, **el argumento técnico más sólido a favor de la tokenización**, y por eso los
-clases 23.1–23.2 y 25.1–25.2 lo desarrollan con laboratorios ejecutables.
+clases 47–48 y 51–52 lo desarrollan con laboratorios ejecutables.
 
 > 💡 **En una frase:** compensar es ponerse de acuerdo en cuánto; liquidar es moverlo; y
 > ser firme es que la ley diga que ya no se puede deshacer — tres cosas distintas que solo
@@ -305,10 +305,10 @@ clases 23.1–23.2 y 25.1–25.2 lo desarrollan con laboratorios ejecutables.
 
 3. **Ficha de las cuatro formas de dinero.** Para efectivo, depósito, dinero electrónico y
    reservas, completa: emisor, de quién es el pasivo, quién puede tenerlo, qué pasa si el
-   emisor quiebra, y si es programable. Guárdala: las clases 21.1–21.2 y 22.1–22.2 le añaden tres
+   emisor quiebra, y si es programable. Guárdala: las clases 43–44 y 45–46 le añaden tres
    columnas más.
 
-4. Anticipo ejecutable del problema Herstatt, que resolverás en las clases 23.1–23.2:
+4. Anticipo ejecutable del problema Herstatt, que resolverás en las clases 47–48:
 
 ```bash
 pnpm lab:pvp
@@ -363,7 +363,7 @@ problema que **no** se resuelve cambiando la tecnología de registro.
 - Banco Central Europeo — explicación del dinero y de TARGET: <https://www.ecb.europa.eu/paym/target/html/index.en.html>
 - Banco Central de Chile — sistemas de pago y LBTR: <https://www.bcentral.cl/>
 - Banco de Inglaterra — *Money creation in the modern economy* (boletín trimestral): <https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy>
-- Clases relacionadas: [19 · DeFi](../19-defi/README.md) · [21 · Stablecoins](../21-stablecoins/README.md) · [23 · Pagos y FX on-chain](../23-pagos-fx-onchain/README.md)
+- Clases relacionadas: [Clases 39–40 · DeFi](../19-defi/README.md) · [Clases 43–44 · Stablecoins](../21-stablecoins/README.md) · [Clases 47–48 · Pagos y FX on-chain](../23-pagos-fx-onchain/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -376,4 +376,4 @@ problema que **no** se resuelve cambiando la tecnología de registro.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 19.1–19.2 · DeFi](../19-defi/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 21.1–21.2 · Stablecoins](../21-stablecoins/README.md)
+⬅️ [Clases 39–40 · DeFi](../19-defi/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 43–44 · Stablecoins](../21-stablecoins/README.md)

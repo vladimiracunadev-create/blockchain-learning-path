@@ -112,7 +112,7 @@ for (const s of slides) {
   const cuerpoPauta = texto.replace(/\*\*Pauta\s*·\s*\d+\s*min\.?\*\*\s*/, "");
 
   // Guion e indicaciones son DOS COSAS DISTINTAS y se componen distinto. Mezclar
-  // "di esta frase" con "abre el módulo 01 en el sitio" en el mismo párrafo es lo
+  // "di esta frase" con "abre las clases 3–4 en el sitio" en el mismo párrafo es lo
   // que hace que quien expone se pierda leyendo en voz alta: el ojo no distingue
   // lo que hay que pronunciar de lo que hay que hacer.
   const partes = /###\s+Guion\s*\n([\s\S]*?)\n###\s+Indicaciones\s*\n([\s\S]*)$/.exec(cuerpoPauta);

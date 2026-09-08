@@ -37,7 +37,7 @@
 // para que la idempotencia sobreviva a un cierre a mitad de escritura; eso
 // queda fuera del alcance de este laboratorio.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { diaDe, transaccionesDe } from "./cadena-sintetica.mjs";
 import { ejecutadoDirectamente } from "../run-directo.mjs";

@@ -1,8 +1,8 @@
-# 18 · Implementación empresarial end-to-end
+# Implementación empresarial end-to-end · Clases 37–38
 
 > **Nivel:** Avanzado-Producción · ⏱️ **Duración estimada:** 180 min · **Fuente:** prácticas públicas de integración del sector financiero y documentación de los componentes citados
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [17 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [19 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 35–36 · Blockchain en la empresa: valor, casos y costos](../17-blockchain-en-la-empresa/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 39–40 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 18.1 · Integración end-to-end
+### Clase 37 · Integración end-to-end
 
 **Pregunta guía:** ¿Cómo se conectan contratos, identidad, datos y sistemas heredados?
 
@@ -32,7 +32,7 @@ Un timeout provoca reintentos y dobles registros entre ERP, API y cadena. Los id
 
 **Evidencia de aprendizaje:** Diagrama de secuencia con fuente de verdad y control por transición.
 
-### Clase 18.2 · Paso a producción y operación
+### Clase 38 · Paso a producción y operación
 
 **Pregunta guía:** ¿Qué debe estar listo antes de que una transacción tenga consecuencias reales?
 
@@ -119,7 +119,7 @@ flowchart TD
     Q --> MW["Middleware blockchain:<br>construye y simula la tx"]
     MW --> SIG["Firma: KMS, HSM o MPC"]
     SIG --> MW
-    MW --> RPC["Nodos propios + contingencia<br>clases 16.1–16.2"]
+    MW --> RPC["Nodos propios + contingencia<br>clases 33–34"]
     RPC --> NET["Red: L2 publica o permisionada"]
     NET --> IDX["Indexador de eventos"]
     IDX --> DB["Base de datos de lectura"]
@@ -155,7 +155,7 @@ flowchart LR
 
 | Componente | Construir | Comprar | Criterio |
 |---|---|---|---|
-| Nodos / RPC | Flota propia (clases 16.1–16.2) | Alchemy, Infura, QuickNode | Volumen, privacidad, SLA |
+| Nodos / RPC | Flota propia (clases 33–34) | Alchemy, Infura, QuickNode | Volumen, privacidad, SLA |
 | Firma / custodia | HSM propio + política | Fireblocks, BitGo, custodio regulado | Licencias, monto, seguro |
 | Indexación | Indexador propio (como el del repo) | The Graph, proveedores de datos | Complejidad y latencia |
 | Contratos | Equipo propio + auditoría | Plantillas auditadas (OpenZeppelin) | Cuán estándar es el caso |
@@ -175,14 +175,14 @@ flowchart LR
 
 | Fase | Semanas | Entregable verificable |
 |---|---|---|
-| 1 · Descubrimiento | 1-4 | Matriz de las clases 00.1–00.2 respondida con evidencia; elección de red; ADRs |
+| 1 · Descubrimiento | 1-4 | Matriz de las clases 1–2 respondida con evidencia; elección de red; ADRs |
 | 2 · Diseño | 5-8 | Spec con invariantes, threat model, plan de custodia e integración |
 | 3 · Construcción | 9-16 | Contratos probados y fuzzeados; middleware + firma; todo en testnet |
 | 4 · Endurecimiento | 17-20 | Auditoría externa, correcciones verificadas, pre-producción completa |
 | 5 · Lanzamiento acotado | 21-24 | Mainnet con caps, monitoreo y runbook ensayado |
 | 6 · Operación | 25+ | Ampliación gradual de límites, post-mortems, métricas de negocio |
 
-Las fases 1-2 son las más baratas y las más determinantes: los fracasos de las clases 17.1–17.2
+Las fases 1-2 son las más baratas y las más determinantes: los fracasos de las clases 35–36
 (TradeLens, ASX) se gestaron ahí, no en el código.
 
 ### Una operación real, paso a paso, y dónde se rompe cada una
@@ -290,7 +290,7 @@ pnpm build:web
 ## 📝 Reto verificable
 
 Escribe el **documento de arquitectura** de una implementación empresarial para el caso
-de negocio que construiste en las clases 17.1–17.2: diagrama de siete capas adaptado, tabla
+de negocio que construiste en las clases 35–36: diagrama de siete capas adaptado, tabla
 build vs. buy con justificación por componente, plan de ambientes con qué valida cada
 uno, plan de fases con entregables, y la operación segura (límites iniciales, política
 de firma M-de-N, tres runbooks nombrados).
@@ -309,7 +309,7 @@ lanzamiento tienen números concretos.
 | El lanzamiento se retrasa por la auditoría | Se agendó tarde; las firmas serias se reservan desde la fase de diseño |
 | La primera firma multisig falla en producción | No hubo pre-producción con ceremonia ensayada |
 | Un bug drena más de lo tolerable | Sin caps de guarded launch; los límites se definen antes de mainnet |
-| "Multi-región lo vemos después" | La contingencia RPC y la réplica se diseñan el día uno (clases 16.1–16.2) |
+| "Multi-región lo vemos después" | La contingencia RPC y la réplica se diseñan el día uno (clases 33–34) |
 
 ## 🛡️ Seguridad y ética
 
@@ -339,4 +339,4 @@ lanzamiento tienen números concretos.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 17.1–17.2 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 19.1–19.2 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md)
+⬅️ [Clases 35–36 · Blockchain en la empresa](../17-blockchain-en-la-empresa/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 39–40 · DeFi: mercados, préstamo y riesgo on-chain](../19-defi/README.md)

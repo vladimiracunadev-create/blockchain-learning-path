@@ -1,15 +1,15 @@
-# 32 · Blockchain forensics, auditoría y gobernanza
+# Blockchain forensics, auditoría y gobernanza · Clases 65–66
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 210 min · **Fuente:** guías FATF/GAFI, estándares de evidencia digital NIST y principios de control interno COSO
 >
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [31 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [🎓 Caso final de empresa custodial](../../capstone/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 63–64 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [🎓 Caso final de empresa custodial](../../capstone/README.md)
 
 
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 32.1 · Forensics con evidencia reproducible
+### Clase 65 · Forensics con evidencia reproducible
 
 **Pregunta guía:** ¿Cómo investigamos flujos sin convertir heurísticas en acusaciones?
 
@@ -31,7 +31,7 @@ Un equipo reconstruye flujos y otro revisa sin conocer su conclusión. La cadena
 
 **Evidencia de aprendizaje:** Expediente con hashes, timestamps, fuentes y lenguaje probabilístico.
 
-### Clase 32.2 · Auditoría, cumplimiento y gobierno custodial
+### Clase 66 · Auditoría, cumplimiento y gobierno custodial
 
 **Pregunta guía:** ¿Quién autoriza, ejecuta, registra, concilia e investiga cada movimiento?
 
@@ -151,4 +151,4 @@ Puedes sostener una conclusión con evidencia reproducible, cuantificar su incer
 
 ## 🧭 Navegación
 
-⬅️ [Clases 31.1–31.2 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [🎓 Caso final de empresa custodial](../../capstone/README.md)
+⬅️ [Clases 63–64 · Proof of Reserves y solvencia](../31-proof-reserves-solvencia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [🎓 Caso final de empresa custodial](../../capstone/README.md)

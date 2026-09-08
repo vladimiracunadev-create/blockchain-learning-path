@@ -4,7 +4,7 @@
 // falta para entender un AMM cabe en una ecuación; lo que cuesta entender son
 // sus consecuencias, y esas se ven con números.
 //
-// Módulo 19 · DeFi: mercados, préstamo y riesgo on-chain.
+// Clases 39–40 · DeFi: mercados, préstamo y riesgo on-chain.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 /**

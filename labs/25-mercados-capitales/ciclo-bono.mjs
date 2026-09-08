@@ -4,7 +4,7 @@
 // restricciones reales que los diagramas conceptuales omiten — la retención
 // fiscal ocurre FUERA de la cadena y el reparto masivo puede no caber en un bloque.
 //
-// Módulos 24 y 25.
+// Clases 49–52.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 /**

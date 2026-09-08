@@ -1,11 +1,11 @@
 // Cumplimiento: enfoque basado en riesgo y Regla de Viaje.
 //
 // Simulación determinista y con datos ficticios: sin red, sin claves, sin datos
-// personales reales. Muestra las dos ideas centrales del módulo — los controles
+// personales reales. Muestra las dos ideas centrales de las clases — los controles
 // se asignan EN PROPORCIÓN AL RIESGO, y la Regla de Viaje no tiene destinatario
 // cuando la contraparte es una wallet autoalojada.
 //
-// Módulo 27 · Regulación y cumplimiento.
+// Clases 55–56 · Regulación y cumplimiento.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 const PESOS = {

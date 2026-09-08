@@ -1,8 +1,8 @@
-# 21 · Stablecoins
+# Stablecoins · Clases 43–44
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 180 min · **Fuente:** informes del BIS y del Consejo de Estabilidad Financiera (FSB), Reglamento MiCA de la Unión Europea y documentación pública de los emisores citados
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [20 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [22 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 41–42 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 45–46 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 21.1 · Modelos de stablecoin y paridad
+### Clase 43 · Modelos de stablecoin y paridad
 
 **Pregunta guía:** ¿Quién promete la paridad y con qué mecanismo intenta sostenerla?
 
@@ -32,7 +32,7 @@ Las stablecoins se clasifican desde el emisor, el derecho y el respaldo, no desd
 
 **Evidencia de aprendizaje:** Ficha comparativa que separe precio observado de capacidad de redención.
 
-### Clase 21.2 · Reservas, redención y riesgo operacional
+### Clase 44 · Reservas, redención y riesgo operacional
 
 **Pregunta guía:** ¿Puede el tenedor convertir el token en dinero y bajo qué condiciones?
 
@@ -61,7 +61,7 @@ Una stablecoin es un token que **promete** valer siempre lo mismo. Las dos clase
 en desmontar esa frase: quién promete, con qué respaldo, a quién se le puede exigir, en qué
 plazo, y qué pasa exactamente el día en que no puede cumplir.
 
-Con las clases 20.1–20.2 en la mano ya tienes la pregunta correcta, y no es "¿está respaldada?"
+Con las clases 41–42 en la mano ya tienes la pregunta correcta, y no es "¿está respaldada?"
 sino **¿de quién es el pasivo y qué derecho tengo yo?** Un token con paridad nominal puede
 ser la deuda de una empresa, una posición sobrecolateralizada de un protocolo o un esquema
 que se sostiene solo mientras crece. El riesgo de los tres no se parece en nada, aunque
@@ -210,7 +210,7 @@ resolución. Las reservas existían y estaban íntegras contablemente, pero dura
 semana **no eran accesibles**, y el token cotizó por debajo de la par hasta que se aclaró
 el acceso a esos fondos. Lección exacta: la calidad del respaldo incluye **dónde está
 depositado y con qué disponibilidad**, no solo cuánto suma. Un riesgo bancario clásico
-—exactamente el que estudiaste en las clases 20.1–20.2— apareció intacto dentro de un instrumento
+—exactamente el que estudiaste en las clases 41–42— apareció intacto dentro de un instrumento
 que se presentaba como ajeno a la banca.
 
 ### La cuenta de una posición sobrecolateralizada
@@ -271,14 +271,14 @@ en un escenario que el diseño no podía sobrevivir.
   jurisdicción.
 - **Regímenes multi-cadena y respaldo aparente.** El mismo token en varias cadenas puede
   estar respaldado de forma nativa en cada una o depender de un puente. En el segundo caso,
-  el riesgo del puente ([clases 13.1–13.2](../13-interoperabilidad/README.md)) es riesgo del token,
+  el riesgo del puente ([clases 27–28](../13-interoperabilidad/README.md)) es riesgo del token,
   aunque el emisor sea impecable.
 - **La liquidez en cadena no es el respaldo.** Un pool profundo mejora la ejecución pero no
   sustituye a la redención: en tensión, la liquidez es lo primero que se retira, justo
   cuando más se necesita.
 - **Bajo MiCA, la mayoría de estos instrumentos son "fichas de dinero electrónico" (EMT) o
   "fichas referenciadas a activos" (ART)**, con obligaciones de reserva, redención a la par
-  y autorización. La categoría determina el régimen; ver [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md).
+  y autorización. La categoría determina el régimen; ver [clases 55–56](../27-regulacion-cumplimiento/README.md).
 
 </details>
 
@@ -306,7 +306,7 @@ pnpm test
 ```
 
 4. **Ficha comparativa.** Amplía la tabla de las cuatro formas de dinero del
-   [clases 20.1–20.2](../20-dinero-banca-liquidacion/README.md) con tres columnas: *emisor*,
+   [clases 41–42](../20-dinero-banca-liquidacion/README.md) con tres columnas: *emisor*,
    *derecho de redención* y *qué pasa si el emisor falla*. Rellénala para: un depósito
    bancario, una stablecoin fiat, una sobrecolateralizada y una algorítmica.
 
@@ -351,7 +351,7 @@ riesgo — incluida la que te parezca mejor.
   el emisor quiebra, si puedes redimir tú, y si tus saldos pueden congelarse.
 - Nada de esta unidad de clases es asesoría financiera. La clasificación jurídica de estos
   instrumentos varía por jurisdicción y cambia; consulta el
-  [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md) y las fuentes oficiales vigentes.
+  [clases 55–56](../27-regulacion-cumplimiento/README.md) y las fuentes oficiales vigentes.
 
 ## 🔗 Referencias
 
@@ -375,4 +375,4 @@ riesgo — incluida la que te parezca mejor.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 20.1–20.2 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 22.1–22.2 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md)
+⬅️ [Clases 41–42 · Dinero, banca y liquidación](../20-dinero-banca-liquidacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 45–46 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md)

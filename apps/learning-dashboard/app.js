@@ -70,7 +70,7 @@ document.querySelector("#grade").addEventListener("click", () => {
   save();
   render();
   document.querySelector("#quizResult").textContent =
-    `${progress.diagnosticScore}% · ${progress.diagnosticScore >= 80 ? "Ruta rápida disponible." : "Comienza por la clase 00.1."}`;
+    `${progress.diagnosticScore}% · ${progress.diagnosticScore >= 80 ? "Ruta rápida disponible." : "Comienza por la clase 1."}`;
 });
 
 document.querySelector("#export").addEventListener("click", () => {

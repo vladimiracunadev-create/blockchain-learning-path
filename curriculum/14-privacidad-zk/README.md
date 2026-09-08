@@ -1,8 +1,8 @@
-# 14 · Privacidad y zero knowledge
+# Privacidad y zero knowledge · Clases 29–30
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** *Proofs, Arguments, and Zero-Knowledge* (Thaler) y ZKProof Community Reference
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [13 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [15 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 27–28 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 31–32 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 14.1 · Compromisos y pruebas de conocimiento cero
+### Clase 29 · Compromisos y pruebas de conocimiento cero
 
 **Pregunta guía:** ¿Cómo se demuestra una afirmación sin revelar el dato que la sostiene?
 
@@ -32,7 +32,7 @@ Una afirmación cotidiana se separa en entradas públicas, witness privado y res
 
 **Evidencia de aprendizaje:** Especificación de circuito con amenaza y propiedad demostrada.
 
-### Clase 14.2 · SNARK, STARK y privacidad real
+### Clase 30 · SNARK, STARK y privacidad real
 
 **Pregunta guía:** ¿Qué compromisos cambian entre sistemas y qué metadatos siguen visibles?
 
@@ -278,4 +278,4 @@ Entrega el diseño conceptual completo de la prueba de mayoría de edad: enuncia
 
 ## 🧭 Navegación
 
-⬅️ [Clases 13.1–13.2 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 15.1–15.2 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
+⬅️ [Clases 27–28 · Interoperabilidad y ecosistemas](../13-interoperabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 31–32 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)

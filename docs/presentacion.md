@@ -104,7 +104,7 @@ pnpm build:presentacion
 
 | Lo que hay dentro | Cuánto |
 |---|---|
-| Clases secuenciales (00.1→32.2), en diez etapas | **66** |
+| Clases secuenciales (1→66), en diez etapas | **66** |
 | Prácticas guiadas con evidencia y criterio de aceptación | **91** |
 | Preguntas de autoevaluación, corregidas al instante | **117** |
 | Pruebas automatizadas que la CI ejecuta en cada cambio | **327** |
@@ -124,7 +124,7 @@ pnpm build:presentacion
 > las partes confían entre ellas y si nadie necesita verificar nada por su cuenta, una
 > base de datos de toda la vida es más barata, más rápida y más fácil de operar.
 >
-> Eso no es una opinión mía para quedar bien: es literalmente la clase 00.1, la primera
+> Eso no es una opinión mía para quedar bien: es literalmente la clase 1, la primera
 > que hace todo el mundo.
 >
 > A partir de ahí, el programa hace cuatro cosas.
@@ -171,17 +171,18 @@ pnpm build:presentacion
 
 | Etapa | Clases | Foco |
 |---|---|---|
-| **Orientación** | 00 | ¿Necesito blockchain? |
-| **Fundamentos** | 01–03 | Criptografía, redes P2P, consenso |
-| **Desarrollo** | 04–07 | Bitcoin, EVM, Solidity, dApps |
-| **Profesional** | 08–11 | Tokens, seguridad, oráculos, DAO |
-| **Avanzado** | 12–15 | L2, interoperabilidad, ZK, arquitectura |
-| **Producción** | 16–18 | Infraestructura, empresa, implementación |
-| **Finanzas on-chain** | 19–25 | DeFi, dinero, stablecoins, MDBC, pagos, tokenización |
-| **Institucional** | 26–27 | Custodia, identidad digital, regulación |
-| **Analítica de datos** | 28 | Minería de datos on-chain, grafos, patrones, anomalías |
+| **Orientación** | 1–2 | ¿Necesito blockchain? |
+| **Fundamentos** | 3–8 | Criptografía, redes P2P, consenso |
+| **Desarrollo** | 9–16 | Bitcoin, EVM, Solidity, dApps |
+| **Profesional** | 17–24 | Tokens, seguridad, oráculos, DAO |
+| **Avanzado** | 25–32 | L2, interoperabilidad, ZK, arquitectura |
+| **Producción** | 33–38 | Infraestructura, empresa, implementación |
+| **Finanzas on-chain** | 39–52 | DeFi, dinero, stablecoins, MDBC, pagos, tokenización |
+| **Institucional** | 53–56 | Custodia, identidad digital, regulación |
+| **Analítica de datos** | 57–58 | Minería de datos on-chain, grafos, patrones, anomalías |
+| **Custodia y auditoría** | 59–66 | Exchanges, conciliación, PoR/PoL, forensics y gobernanza |
 
-Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperación.
+Entre las clases 10 y 11 se cruza **Wallets desde cero**: uso, seguridad y recuperación.
 
 > **Pauta · 6 min.**
 >
@@ -225,11 +226,11 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 > internacionales—. Y una idea que atraviesa toda esta etapa: el cumplimiento no es un
 > trámite que se añade al final, es una restricción de diseño.
 >
-> Y la novena etapa, las clases 28.1 y 28.2: leer la propia cadena como fuente de datos.
+> Y la novena etapa, las clases 57 y 58: leer la propia cadena como fuente de datos.
 > Grafos, patrones, detección de anomalías. Y sobre todo, saber qué no se puede concluir:
 > una dirección no es una persona, y un patrón no es una prueba.
 >
-> Me falta una línea, la de abajo, que parece menor y no lo es. Entre las clases 04.2 y
+> Me falta una línea, la de abajo, que parece menor y no lo es. Entre las clases 10 y
 > el cinco hay una unidad sobre wallets: qué son, cómo se usan sin perder los fondos y qué
 > hacer cuando algo sale mal.
 >
@@ -309,7 +310,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 >
 > ### Indicaciones
 >
-> - Abre una clase real en el sitio —la 01.1 de criptografía sirve— y recórrela con el
+> - Abre una clase real en el sitio —la 3 de criptografía sirve— y recórrela con el
 >   cursor mientras hablas las intervenciones 3 a 7.
 > - Detente físicamente en dos sitios de la pantalla: **límites de la analogía** y
 >   **errores frecuentes**. Son las dos secciones que venden el material.
@@ -468,7 +469,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 - Cada ruta termina en un **entregable de portafolio**: dApp probada, ADR, informe de auditoría, ficha de riesgo.
 - **Proyecto final**: protocolo probado, dApp, datos, arquitectura, modelo de amenazas y caso de negocio.
 - **Llévatelo entero**: sitio web, manual PDF de ~400 páginas, app de Windows y APK de Android, sin conexión.
-- **Empieza hoy:** abre *Empieza aquí* → haz el diagnóstico → clase 00.1 y `pnpm lab:hash`.
+- **Empieza hoy:** abre *Empieza aquí* → haz el diagnóstico → clase 1 y `pnpm lab:hash`.
 - `github.com/vladimiracunadev-create/blockchain-learning-path`
 
 > **Pauta · 5 min.**
@@ -511,7 +512,7 @@ Entre el 04 y el 05 se cruza **Wallets desde cero**: uso, seguridad y recuperaci
 > de cada archivo, para que puedan comprobar que descargaron lo que se publicó.
 >
 > Y cómo se empieza hoy: abren la página "Empieza aquí", hacen el diagnóstico, y entran al
-> clase 00.1. El primer laboratorio son dos comandos.
+> clase 1. El primer laboratorio son dos comandos.
 >
 > El enlace está en pantalla y lo dejo ahí mientras respondemos preguntas.
 >
@@ -541,7 +542,7 @@ Nada de esto es opcional si la charla es hoy. En orden, con el proyector ya cone
 4. **Ensaya la demo una vez**, en silencio, antes de que entre el público: `pnpm lab:hash`
    y `pnpm lab:remesa`. La primera ejecución de Node siempre tarda más, y ese silencio se
    hace eterno en público.
-5. **Pestañas abiertas y en este orden**: el sitio del programa, la clase 01.1, el catálogo
+5. **Pestañas abiertas y en este orden**: el sitio del programa, la clase 3, el catálogo
    de laboratorios y el caso de FTX. Cierra todo lo demás.
 6. **Plan B sin wifi**: ten descargados `PRESENTACION.pdf` y `MANUAL.pdf`, y la app de
    escritorio o el APK instalados. Si la sala se queda sin red y tú sigues, acabas de
@@ -585,7 +586,7 @@ para decirse en voz alta, no para leerse:
 | ¿Esto enseña a invertir o a hacer trading? | No, y es deliberado. Enseña a decidir si la tecnología aplica, a construirla con pruebas y a operarla. No hay una sola recomendación de compra en todo el material |
 | ¿No estará obsoleto en seis meses? | Los fundamentos —hash, firmas, consenso, UTXO, EVM— llevan años estables. Lo que cambia rápido está fechado y con fuente, y hay un historial de cambios: el Merge, Dencun y Pectra ya están incorporados |
 | ¿Cuánto tiempo lleva? | El plan es de 26 semanas a ritmo de curso, y hay una ruta rápida para quien ya programa. Nadie tiene que hacerlo entero: las rutas por perfil recortan a lo que necesitas |
-| ¿Necesito saber programar? | Para las clases 00.1–05.2, no. Desde la 06.1 hace falta JavaScript básico. Y hay rutas —producto, cumplimiento— que llegan al final sin escribir contratos |
+| ¿Necesito saber programar? | Para las clases 1–12, no. Desde la 13 hace falta JavaScript básico. Y hay rutas —producto, cumplimiento— que llegan al final sin escribir contratos |
 | ¿Por qué en español? | Porque casi todo el material serio del área está en inglés, y eso deja fuera a mucha gente que sí puede hacer este trabajo. Los términos técnicos se mantienen en inglés y se traducen la primera vez que aparecen |
 | ¿Quién garantiza que esto sigue vivo? | La integración continua: pruebas en cada cambio, enlaces externos revisados cada semana y las cifras del material comprobadas contra los archivos. Si algo se rompe, no se publica |
 | ¿Puedo usarlo en mi institución o en mi empresa? | Sí, sin pedir permiso: código MIT y contenido CC BY 4.0, citando la fuente. Hay guía del instructor, syllabus, rúbricas y checklist de laboratorios |
@@ -616,5 +617,5 @@ aunque la pregunta invite a cruzarlas:
 
 Y una tentación que no es una promesa pero se le parece: **no vendas blockchain a quien no
 la necesita**. Si alguien del público describe un problema que se resuelve con una base de
-datos, díselo. Es literalmente la primera lección de la clase 00.1, y hacerlo en directo vale
+datos, díselo. Es literalmente la primera lección de la clase 1, y hacerlo en directo vale
 más que las siete láminas juntas.

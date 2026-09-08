@@ -4,7 +4,7 @@
 // aceptando bloques, y luego el enlace vuelve. La pregunta que responde: al
 // reconectar, ¿qué historia sobrevive y qué transacciones se pierden?
 //
-// Es la demostración ejecutable del teorema CAP del módulo 02: durante la
+// Es la demostración ejecutable del teorema CAP de las clases 5–6: durante la
 // partición, seguir aceptando escrituras (disponibilidad) tiene un precio, y ese
 // precio se paga al reconciliar.
 //

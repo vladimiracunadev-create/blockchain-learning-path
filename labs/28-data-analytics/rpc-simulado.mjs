@@ -15,7 +15,7 @@
 // por contrato, diferencias entre clientes de nodo, ni la diversidad de formatos
 // entre proveedores. Es un simulador pedagógico, no un cliente de producción.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { cadenaCuentas, hashDe, prng, SEMILLA_POR_DEFECTO } from "./cadena-sintetica.mjs";
 

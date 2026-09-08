@@ -1,8 +1,8 @@
-# 23 · Pagos, cross-border y FX on-chain
+# Pagos, cross-border y FX on-chain · Clases 47–48
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 180 min · **Fuente:** hoja de ruta del G20 sobre pagos transfronterizos (FSB), publicaciones del CPMI-BIS, Banco Mundial (*Remittance Prices Worldwide*) y documentación de los sistemas citados
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [22 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [24 · Tokenización y activos del mundo real](../24-tokenizacion-rwa/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 45–46 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 49–50 · Tokenización y activos del mundo real](../24-tokenizacion-rwa/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 23.1 · Anatomía de un pago transfronterizo
+### Clase 47 · Anatomía de un pago transfronterizo
 
 **Pregunta guía:** ¿Por qué un mensaje rápido no elimina corresponsales, FX ni cumplimiento?
 
@@ -32,7 +32,7 @@ Importe, spread, tarifa, prefunding y tiempo se asignan a cada actor de la ruta.
 
 **Evidencia de aprendizaje:** Mapa de costos que identifique qué fricción puede reducir blockchain.
 
-### Clase 23.2 · FX on-chain y pago contra pago
+### Clase 48 · FX on-chain y pago contra pago
 
 **Pregunta guía:** ¿Cómo se eliminan principal risk y patas descoordinadas?
 
@@ -64,7 +64,7 @@ clases.
 
 Después verás qué parte de ese problema resuelve realmente una liquidación on-chain, cuál
 no toca en absoluto, y dónde aparece el argumento más limpio de todo el programa: el pago
-contra pago atómico, que elimina por construcción el riesgo Herstatt de las clases 20.1–20.2.
+contra pago atómico, que elimina por construcción el riesgo Herstatt de las clases 41–42.
 
 ## 🎯 Objetivos
 
@@ -207,7 +207,7 @@ países con menos flujo cuestan más, y no tiene nada que ver con la tecnología
 | Horario y días hábiles | **Sí** | La tesorería debe operar 24×7; el problema se traslada |
 | Tramos intermedios | **Sí** | Aparece un tramo nuevo: entrada y salida a moneda local |
 | Riesgo de liquidación (Herstatt) | **Sí, si hay PvP atómico** | Solo si ambas patas están en el mismo entorno de ejecución |
-| Cumplimiento, sanciones, KYC | **No** | Idéntico o mayor; ver [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md) |
+| Cumplimiento, sanciones, KYC | **No** | Idéntico o mayor; ver [clases 55–56](../27-regulacion-cumplimiento/README.md) |
 | Conversión a moneda local | **No** | La última milla sigue siendo un negocio local con su margen |
 | Protección al consumidor | **No, y empeora** | La irreversibilidad elimina el contracargo |
 | Transparencia del precio | **Parcialmente** | Solo si se publica el tipo aplicado, no únicamente la comisión |
@@ -222,7 +222,7 @@ análisis serio compara **el total**, no el tramo que mejora.
 
 ### PvP: el argumento limpio
 
-Las clases 20.1–20.2 dejaron planteado el riesgo Herstatt: entregas tu moneda, no recibes la otra,
+Las clases 41–42 dejaron planteado el riesgo Herstatt: entregas tu moneda, no recibes la otra,
 pierdes el **principal** completo. La respuesta tradicional son mecanismos de liquidación
 que retienen ambas patas y solo las liberan cuando las dos están presentes — un tercero de
 confianza especializado, que funciona muy bien y cuya cobertura no es universal: quedan
@@ -238,7 +238,7 @@ Sus condiciones, que hay que decir con la misma claridad:
 
 1. **Ambas patas deben estar en el mismo entorno de ejecución.** Si una moneda está
    tokenizada y la otra sigue en un sistema bancario clásico, no hay atomicidad: hay un
-   puente, y con él vuelve el riesgo ([clases 13.1–13.2](../13-interoperabilidad/README.md)).
+   puente, y con él vuelve el riesgo ([clases 27–28](../13-interoperabilidad/README.md)).
 2. **La atomicidad es técnica, la firmeza es jurídica.** Que la transacción sea atómica no
    la hace oponible a un tercero; eso depende de la norma aplicable, como viste en el 20.
 3. **Alguien debe aportar la liquidez de las dos monedas.** La atomicidad elimina el riesgo
@@ -260,7 +260,7 @@ Sus condiciones, que hay que decir con la misma claridad:
   optimizar el tramo equivocado.
 - **MEV en FX on-chain es real.** Una operación grande contra un pool es visible antes de
   ejecutarse y puede ser sandwicheada. Las mitigaciones —subastas por lotes, envío privado,
-  liquidación por intención— son las de las [clases 15.1–15.2](../15-arquitectura-avanzada/README.md)
+  liquidación por intención— son las de las [clases 31–32](../15-arquitectura-avanzada/README.md)
   aplicadas al mercado de divisas.
 - **El tipo del oráculo no es el tipo al que puedes operar.** Un precio de referencia no
   garantiza ejecución a ese precio con tu tamaño. Confundir referencia con ejecutable es el
@@ -343,7 +343,7 @@ verdad general.
   reales sobre personas concretas.
 - Los pagos transfronterizos están sujetos a sanciones y prevención de lavado. Diseñar un
   corredor que las evite no es innovación: es un delito. El cumplimiento se diseña desde el
-  primer día ([clases 27.1–27.2](../27-regulacion-cumplimiento/README.md)).
+  primer día ([clases 55–56](../27-regulacion-cumplimiento/README.md)).
 - La irreversibilidad traslada el riesgo de fraude al pagador. En productos minoristas eso
   exige un mecanismo de disputa explícito y comunicado antes de la primera operación.
 - Nada aquí es asesoría financiera ni recomendación de operar con divisas.
@@ -356,7 +356,7 @@ verdad general.
 - CLS — liquidación PvP en divisas: <https://www.cls-group.com/>
 - SWIFT — qué es y qué hace la mensajería financiera: <https://www.swift.com/>
 - Banco Central de Chile — sistemas de pago: <https://www.bcentral.cl/>
-- Clases relacionadas: [20 · Dinero y liquidación](../20-dinero-banca-liquidacion/README.md) · [22 · MDBC](../22-deposito-tokenizado-cbdc/README.md) · [25 · Mercados de capitales](../25-mercados-capitales-onchain/README.md)
+- Clases relacionadas: [Clases 41–42 · Dinero y liquidación](../20-dinero-banca-liquidacion/README.md) · [Clases 45–46 · MDBC](../22-deposito-tokenizado-cbdc/README.md) · [Clases 51–52 · Mercados de capitales](../25-mercados-capitales-onchain/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -369,4 +369,4 @@ verdad general.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 22.1–22.2 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 24.1–24.2 · Tokenización y activos del mundo real](../24-tokenizacion-rwa/README.md)
+⬅️ [Clases 45–46 · Depósitos tokenizados y CBDC/MDBC](../22-deposito-tokenizado-cbdc/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 49–50 · Tokenización y activos del mundo real](../24-tokenizacion-rwa/README.md)

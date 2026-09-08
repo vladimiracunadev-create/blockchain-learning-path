@@ -64,7 +64,7 @@ async function markdownFiles(directory) {
 
 const broken = [];
 for (const file of await markdownFiles(process.cwd())) {
-  // La plantilla de módulo se excluye a propósito: sus rutas están escritas
+  // La plantilla curricular se excluye a propósito: sus rutas están escritas
   // para el sitio donde acabará copiada (curriculum/NN-slug/), no para su
   // ubicación actual, y sus destinos son marcadores de posición.
   if (file.endsWith("MODULE_TEMPLATE.md")) continue;
@@ -113,13 +113,17 @@ if (classCatalog.length !== moduleSlugs.length) {
 if (classIds.length !== 66 || new Set(classIds).size !== 66) {
   classErrors.push(`se esperaban 66 identificadores únicos y existen ${new Set(classIds).size}/${classIds.length}`);
 }
+const expectedClassIds = Array.from({ length: 66 }, (_, index) => String(index + 1));
+if (classIds.some((id, index) => id !== expectedClassIds[index])) {
+  classErrors.push("los identificadores deben formar la secuencia simple y ordenada 1–66");
+}
 for (const field of ["title", "question", "case", "activity", "evidence"]) {
   const values = classItems.map((item) => item[field]?.trim()).filter(Boolean);
   if (values.length !== classItems.length || new Set(values).size !== classItems.length) {
     classErrors.push(`el campo ${field} debe ser propio y no repetirse entre las 66 clases`);
   }
 }
-const expectedPedagogy = new Set(classIds.filter((id) => !["00.1", "00.2", "31.1", "31.2"].includes(id)));
+const expectedPedagogy = new Set(classIds.filter((id) => !["1", "2", "63", "64"].includes(id)));
 const actualPedagogy = new Set(Object.keys(pedagogy));
 if (actualPedagogy.size !== expectedPedagogy.size || [...actualPedagogy].some((id) => !expectedPedagogy.has(id))) {
   classErrors.push("pedagogy.json debe contener exactamente las 62 clases no artesanales");
@@ -132,6 +136,10 @@ for (const [index, unit] of classCatalog.entries()) {
     continue;
   }
   const text = await readFile(join("curriculum", moduleSlugs[index], "README.md"), "utf8");
+  const [firstId, secondId] = unit.classes.map((item) => item.id);
+  if (!new RegExp(`^# .+ · Clases ${firstId}–${secondId}$`, "m").test(text)) {
+    classErrors.push(`${moduleSlugs[index]}: el título no muestra el rango ${firstId}–${secondId}`);
+  }
   if ((text.match(/<!-- plan-clases:inicio -->/g) ?? []).length !== 1 ||
       (text.match(/<!-- plan-clases:fin -->/g) ?? []).length !== 1) {
     classErrors.push(`${moduleSlugs[index]}: debe contener un único plan de clases delimitado`);
@@ -141,7 +149,7 @@ for (const [index, unit] of classCatalog.entries()) {
       classErrors.push(`${moduleSlugs[index]}: no contiene el encabezado de ${item.id}`);
     }
     const design = pedagogy[item.id];
-    const isHandcrafted = ["00.1", "00.2", "31.1", "31.2"].includes(item.id);
+    const isHandcrafted = ["1", "2", "63", "64"].includes(item.id);
     if (!design && !isHandcrafted) classErrors.push(`${item.id}: falta diseño pedagógico`);
     if (design && design.explanation.trim().split(/\s+/).length < 18) {
       classErrors.push(`${item.id}: explicación pedagógica demasiado breve`);
@@ -162,6 +170,35 @@ if (new Set(Object.values(pedagogy).map((item) => item.method)).size < 25) {
 }
 if (classErrors.length) throw new Error(`Catálogo de clases inválido:\n${classErrors.join("\n")}`);
 console.log(`Clases: ${classIds.length} en ${classCatalog.length} unidades estables, con diseño pedagógico verificado.`);
+
+// La numeración de carpeta es una decisión técnica de compatibilidad, no una
+// subdivisión pedagógica. Ningún documento vigente debe volver a enseñar 00.1–32.2
+// ni llamar “módulos” a las clases. Se preservan solo archivos históricos y el uso
+// técnico de “módulos Diamond” en el ADR correspondiente.
+const terminologyErrors = [];
+for (const file of await markdownFiles(process.cwd())) {
+  const normalized = file.replaceAll("\\", "/");
+  if (normalized.includes("/docs/audit/") ||
+      normalized.endsWith("/CHANGELOG.md") ||
+      normalized.endsWith("/ROADMAP.md") ||
+      normalized.endsWith("/adrs/004-inmutabilidad-upgrades.md")) continue;
+  const content = await readFile(file, "utf8");
+  if (/\bclases?\s+\d{2}\.[12]\b/i.test(content)) {
+    terminologyErrors.push(`${file}: conserva numeración de clase con subdivisión`);
+  }
+  if (/\bmódulos?\b/i.test(content)) {
+    terminologyErrors.push(`${file}: conserva la terminología módulo`);
+  }
+  for (const match of content.matchAll(/\[(\d{2})\]\([^)]*curriculum\/(\d{2})-[^)]*\)/g)) {
+    if (match[1] === match[2]) {
+      terminologyErrors.push(`${file}: muestra el identificador interno ${match[1]} como si fuera una clase`);
+    }
+  }
+}
+if (terminologyErrors.length) {
+  throw new Error(`Terminología pedagógica incoherente:\n${terminologyErrors.join("\n")}`);
+}
+console.log("Numeración y terminología: secuencia visible 1–66, sin subdivisiones vigentes.");
 
 // --- Autoevaluación por unidad ------------------------------------------------
 // Un quiz con una respuesta correcta fuera de rango o con opciones repetidas no
@@ -200,9 +237,9 @@ for (const slug of Object.keys(quizzes.modules)) {
 if (quizErrors.length) throw new Error(`Autoevaluación por unidad:\n${quizErrors.join("\n")}`);
 console.log(`Autoevaluación: ${moduleSlugs.length}/${moduleSlugs.length} unidades, ${preguntas} preguntas, más 66 comprobaciones formativas de clase.`);
 
-// --- Cadena anterior/siguiente entre módulos ---------------------------------
-// El curso es secuencial: si un módulo apunta al vecino equivocado (o a ninguno),
-// el alumno se salta contenido sin enterarse. Insertar un módulo nuevo en medio
+// --- Cadena anterior/siguiente entre unidades ---------------------------------
+// El curso es secuencial: si una unidad apunta a la vecina equivocada (o a ninguna),
+// el alumno se salta contenido sin enterarse. Insertar una unidad nueva en medio
 // rompe esta cadena en silencio, así que se comprueba en cada `pnpm check`.
 const cadenaErrores = [];
 for (const [indice, slug] of moduleSlugs.entries()) {
@@ -220,8 +257,8 @@ for (const [indice, slug] of moduleSlugs.entries()) {
     if (!cabecera.includes(siguiente)) cadenaErrores.push(`${slug}: la cabecera no enlaza al siguiente (${siguiente})`);
   }
 
-  // Glosario y guía de novatos accesibles desde CUALQUIER módulo: quien se atasca
-  // en el módulo 12 no debería tener que volver al README para encontrarlos.
+  // Glosario y guía de novatos accesibles desde CUALQUIER unidad: quien se atasca
+  // en las clases 25–26 no debería tener que volver al README para encontrarlos.
   if (!texto.includes("../../docs/glosario.md")) {
     cadenaErrores.push(`${slug}: no enlaza el glosario`);
   }
@@ -241,12 +278,12 @@ if (cadenaErrores.length) throw new Error(`Cadena de unidades rota:\n${cadenaErr
 console.log(`Cadena anterior/siguiente: ${moduleSlugs.length} unidades encadenadas.`);
 
 // --- Trazabilidad de las fuentes ----------------------------------------------
-// El contenido de los módulos es original, pero se apoya en obras concretas. Esa
-// afirmación solo vale algo si el lector PUEDE IR A COMPROBARLA: cada módulo debe
+// El contenido de las clases es original, pero se apoya en obras concretas. Esa
+// afirmación solo vale algo si el lector PUEDE IR A COMPROBARLA: cada unidad debe
 // declarar su fuente y ofrecer enlaces a fuente primaria, y la bibliografía debe
 // decir dónde se usa cada obra.
 //
-// Sin esto, un módulo podría afirmar cualquier cosa "según Antonopoulos" y nadie
+// Sin esto, una clase podría afirmar cualquier cosa "según Antonopoulos" y nadie
 // tendría forma de contrastarlo. El workflow de enlaces comprueba además, cada
 // semana, que esas URL siguen vivas.
 const MINIMO_REFERENCIAS = 3;
@@ -274,7 +311,7 @@ for (const slug of moduleSlugs) {
   }
 }
 // Suelo de profundidad. No mide calidad —eso no se automatiza— pero sí impide la
-// regresión silenciosa: un módulo cuya profundización se queda en cuatro líneas
+// regresión silenciosa: una unidad cuya profundización se queda en cuatro líneas
 // deja de enseñar el "por qué" y vuelve a ser una lista de definiciones.
 const MINIMO_PROFUNDIZACION = 400;
 for (const slug of moduleSlugs) {

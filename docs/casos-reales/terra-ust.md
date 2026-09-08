@@ -1,6 +1,6 @@
 # Caso · Terra/UST: colapso de una stablecoin algorítmica
 
-> [⬅️ Casos reales](README.md) · [📖 Clases 21.1–21.2 · Stablecoins](../../curriculum/21-stablecoins/README.md) · [🏠 Programa](../../README.md)
+> [⬅️ Casos reales](README.md) · [📖 Clases 43–44 · Stablecoins](../../curriculum/21-stablecoins/README.md) · [🏠 Programa](../../README.md)
 
 **Cuándo:** mayo de 2022. **Qué:** una stablecoin algorítmica referida al dólar (UST) y su
 token volátil asociado (LUNA) perdieron la paridad y prácticamente todo su valor en pocos
@@ -64,7 +64,7 @@ El rendimiento ofrecido sobre depósitos en UST era muy superior al que generaba
 activo subyacente, porque **no procedía de un activo subyacente**: se financiaba con
 reservas del propio ecosistema. Un rendimiento sostenido por encima del mercado, sin una
 fuente identificable, **es la señal de riesgo, no el atractivo**. La pregunta que había que
-hacerse —y que las [clases 19.1–19.2](../../curriculum/19-defi/README.md) obligan a hacerse— es
+hacerse —y que las [clases 39–40](../../curriculum/19-defi/README.md) obligan a hacerse— es
 siempre la misma: **¿de dónde sale este rendimiento y quién lo paga?**
 
 ## Qué control habría cambiado el resultado
@@ -109,10 +109,10 @@ jurisdicciones; su resultado **no forma parte de este análisis**.
 - BIS — investigación sobre stablecoins y su estabilidad: <https://www.bis.org/>
 - FSB — recomendaciones sobre acuerdos globales de stablecoins: <https://www.fsb.org/>
 - FMI — análisis de dinero digital y estabilidad financiera: <https://www.imf.org/en/Topics/fintech>
-- Clases del programa: [21.1–21.2 · Stablecoins](../../curriculum/21-stablecoins/README.md) · [19.1–19.2 · DeFi](../../curriculum/19-defi/README.md)
+- Clases del programa: [43–44 · Stablecoins](../../curriculum/21-stablecoins/README.md) · [39–40 · DeFi](../../curriculum/19-defi/README.md)
 
 ---
 
 ## 🧭 Navegación
 
-[⬅️ Casos reales](README.md) · [📖 Clases 21.1–21.2](../../curriculum/21-stablecoins/README.md) · [🏠 Programa](../../README.md)
+[⬅️ Casos reales](README.md) · [📖 Clases 43–44](../../curriculum/21-stablecoins/README.md) · [🏠 Programa](../../README.md)

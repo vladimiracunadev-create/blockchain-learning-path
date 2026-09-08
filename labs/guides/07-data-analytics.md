@@ -1,6 +1,6 @@
 # Guías 72–83 · Blockchain Data Analytics y minería de datos on-chain
 
-Este cuaderno resuelve las doce prácticas de las [clases 28.1–28.2](../../curriculum/28-data-analytics-onchain/README.md), que llevan de leer un bloque campo por campo a entregar un explorador analítico con su informe y sus limitaciones.
+Este cuaderno resuelve las doce prácticas de las [clases 57–58](../../curriculum/28-data-analytics-onchain/README.md), que llevan de leer un bloque campo por campo a entregar un explorador analítico con su informe y sus limitaciones.
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 
@@ -27,7 +27,7 @@ Cada práctica se resuelve con la misma estructura: **objetivo**, **cómo se res
 
 ## 72 · Anatomía de un bloque campo por campo
 
-- **Nivel:** inicial · **Duración:** 20 min · **Requisitos previos:** clases [01.1–01.2](../../curriculum/01-criptografia/README.md) y [04.1–04.2](../../curriculum/04-bitcoin/README.md).
+- **Nivel:** inicial · **Duración:** 20 min · **Requisitos previos:** clases [3–4](../../curriculum/01-criptografia/README.md) y [9–10](../../curriculum/04-bitcoin/README.md).
 - **Objetivo:** explicar qué significa cada campo de un bloque en los dos modelos, y qué información **no** contiene un bloque.
 - **Cómo se resuelve:** [`anatomia-bloque.mjs`](../28-data-analytics/anatomia-bloque.mjs) recorre un bloque UTXO y uno de cuentas y devuelve, por cada campo, un objeto `{campo, valor, significa}`. `resumenBloqueUTXO` y `resumenBloqueCuentas` calculan lo que **no** es un campo del bloque: comisión total y ocupación.
 
@@ -78,7 +78,7 @@ expone que el valor nativo es 0 en una transacción de token.
 
 ## 74 · Extracción por RPC con checkpoint y reorganización
 
-- **Nivel:** intermedio · **Duración:** 35 min · **Requisitos previos:** clases [10.1–10.2](../../curriculum/10-oraculos-indexacion/README.md) y [16.1–16.2](../../curriculum/16-infraestructura-nodos/README.md).
+- **Nivel:** intermedio · **Duración:** 35 min · **Requisitos previos:** clases [21–22](../../curriculum/10-oraculos-indexacion/README.md) y [33–34](../../curriculum/16-infraestructura-nodos/README.md).
 - **Objetivo:** extraer datos como se hace de verdad: por rangos, reanudable, tolerante a fallos y consciente de las reorganizaciones.
 - **Cómo se resuelve:** [`extraccion-rpc.mjs`](../28-data-analytics/extraccion-rpc.mjs) usa el [nodo simulado](../28-data-analytics/rpc-simulado.mjs). `extraerRango` pagina respetando el truncamiento del proveedor; `extraerConReintentos` sobrevive a un `ErrorRPC` transitorio; `extractorConCheckpoint` reanuda sin releer; `detectarReorganizacion` compara **hashes**, no números, y devuelve los bloques huérfanos.
 
@@ -143,7 +143,7 @@ Criterio de aceptación: OK — las direcciones nuevas (59) no superan a las act
 
 ## 77 · Eventos de un contrato de token
 
-- **Nivel:** intermedio · **Duración:** 30 min · **Requisitos previos:** clases [05.1–05.2](../../curriculum/05-ethereum-evm/README.md) y [08.1–08.2](../../curriculum/08-tokens/README.md).
+- **Nivel:** intermedio · **Duración:** 30 min · **Requisitos previos:** clases [11–12](../../curriculum/05-ethereum-evm/README.md) y [17–18](../../curriculum/08-tokens/README.md).
 - **Objetivo:** decodificar a mano un evento `Transfer` y reconstruir tenencias desde los logs.
 - **Cómo se resuelve:** [`eventos-token.mjs`](../28-data-analytics/eventos-token.mjs) comprueba `topics[0]` contra la firma real de `Transfer(address,address,uint256)`, recorta el relleno de 32 bytes de `topics[1]`/`topics[2]`, parsea el importe con `BigInt` y contrasta el resultado con el campo ya decodificado del generador.
 
@@ -294,4 +294,4 @@ ninguna afirmación atribuye identidad.
 ## 🧭 Navegación
 
 - Anterior: [Guías 51–70 · Finanzas on-chain](06-finanzas-onchain.md)
-- [Cuaderno de laboratorios](README.md) · [Catálogo](../CATALOG.md) · [Currículo](../../curriculum/README.md) · [Clases 28.1–28.2](../../curriculum/28-data-analytics-onchain/README.md)
+- [Cuaderno de laboratorios](README.md) · [Catálogo](../CATALOG.md) · [Currículo](../../curriculum/README.md) · [Clases 57–58](../../curriculum/28-data-analytics-onchain/README.md)

@@ -60,7 +60,7 @@ const NAV = [
   // antes que el índice del currículo.
   { t: "🌱 Empieza aquí", href: "docs/empieza-aqui.html" },
   { t: "📖 Glosario", href: "docs/glosario.html" },
-  // Unidad transversal para principiantes: se estudia entre los módulos 04 y 05,
+  // Unidad transversal para principiantes: se estudia entre las clases 10 y 11,
   // pero vive fuera del currículo numerado para no alterar su secuencia.
   { t: "👛 Wallets desde cero", href: "docs/wallets-desde-cero.html" },
   ...(hasManual ? [{ t: "📕 Manual (PDF)", href: "manual/MANUAL.pdf" }] : []),
@@ -359,16 +359,16 @@ mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"
 </html>`;
 }
 
-// --- Autoevaluación al cierre de cada módulo ----------------------------------
-// Cada página de módulo termina con sus propias preguntas. La corrección ocurre
-// en el navegador y el resultado se guarda en localStorage por módulo, así que
+// --- Autoevaluación al cierre de cada unidad de clases -------------------------
+// Cada página temática termina con sus propias preguntas. La corrección ocurre
+// en el navegador y el resultado se guarda por unidad, así que
 // el sitio sigue siendo estático y funciona igual dentro de las apps offline.
 const QUIZZES = existsSync(join(ROOT, "assessments", "module-quizzes.json"))
   ? JSON.parse(readFileSync(join(ROOT, "assessments", "module-quizzes.json"), "utf8"))
   : { modules: {}, aprobado: 75 };
 
-// Barra "anterior / siguiente" al pie de cada módulo. Se genera a partir del
-// orden real de las carpetas, así que añadir un módulo reenlaza la cadena sola:
+// Barra "anterior / siguiente" al pie de cada unidad. Se genera a partir del
+// orden real de las carpetas, así que añadir una unidad reenlaza la cadena sola:
 // no hay que acordarse de editar los vecinos.
 function navDeModulo(rel) {
   const match = /^curriculum\/(\d{2}-[a-z0-9-]+)\/README\.md$/.exec(rel);

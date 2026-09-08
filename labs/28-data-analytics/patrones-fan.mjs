@@ -31,7 +31,7 @@
 //                  cadena (KYC, orden judicial, contexto) puede acercar una
 //                  hipótesis a un hecho.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 

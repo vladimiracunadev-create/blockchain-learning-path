@@ -4,7 +4,7 @@ import { evaluarPosicion, margenDeCaida, liquidar } from "./prestamo-factor-salu
 
 const base = { cantidadColateral: 1, precioColateral: 2_000, deuda: 1_200, umbralLiquidacion: 0.8 };
 
-test("calcula factor de salud y precio de liquidación del ejemplo del módulo", () => {
+test("calcula factor de salud y precio de liquidación del ejemplo de la clase", () => {
   const p = evaluarPosicion(base);
   assert.ok(Math.abs(p.factorSalud - 1.3333) < 0.0001);
   assert.equal(p.precioLiquidacion, 1_500);

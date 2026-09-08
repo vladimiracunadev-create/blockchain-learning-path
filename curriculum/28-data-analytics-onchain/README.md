@@ -1,8 +1,8 @@
-# 28 · Blockchain Data Analytics y minería de datos on-chain
+# Blockchain Data Analytics y minería de datos on-chain · Clases 57–58
 
 > **Nivel:** Inicial → Avanzado · ⏱️ **Duración estimada:** 240 min · **Fuente:** documentación de Bitcoin Core y de ethereum.org, especificación JSON-RPC de Ethereum, *Mastering Bitcoin* (Antonopoulos) y las guías de FATF/GAFI sobre activos virtuales
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [27 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [29 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 55–56 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 59–60 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 28.1 · Extraer y normalizar datos on-chain
+### Clase 57 · Extraer y normalizar datos on-chain
 
 **Pregunta guía:** ¿Cómo convertimos bloques y transacciones en un dataset reproducible?
 
@@ -32,7 +32,7 @@ El dataset se extrae dos veces alrededor de una reorganización. Procedencia, bl
 
 **Evidencia de aprendizaje:** Dataset con esquema, bloque de corte, hash y reglas de calidad.
 
-### Clase 28.2 · Grafo, anomalías y límites de atribución
+### Clase 58 · Grafo, anomalías y límites de atribución
 
 **Pregunta guía:** ¿Qué patrón observamos y qué identidad no podemos afirmar?
 
@@ -154,7 +154,7 @@ flowchart LR
 
 ### Nivel 1 — Fundamentos: qué hay dentro y qué nunca estuvo
 
-La primera confusión que hay que desmontar es de vocabulario. **Minar criptomonedas** es competir por proponer el siguiente bloque y cobrar por ello: es una actividad de consenso, estudiada en las [clases 03.1–03.2](../03-consenso/README.md). **Minar datos** de una blockchain es leer lo ya escrito para encontrar regularidades: es una actividad de análisis, y no produce ni una sola moneda. Comparten el verbo por herencia histórica del inglés *mining*, y nada más.
+La primera confusión que hay que desmontar es de vocabulario. **Minar criptomonedas** es competir por proponer el siguiente bloque y cobrar por ello: es una actividad de consenso, estudiada en las [clases 7–8](../03-consenso/README.md). **Minar datos** de una blockchain es leer lo ya escrito para encontrar regularidades: es una actividad de análisis, y no produce ni una sola moneda. Comparten el verbo por herencia histórica del inglés *mining*, y nada más.
 
 Un bloque contiene una cabecera (altura o número, hash propio, hash del bloque anterior, marca de tiempo, y en la EVM el gas usado y el límite) y una lista ordenada de transacciones. El **encadenamiento** por el hash previo es lo que hace que alterar un bloque antiguo invalide todos los posteriores. Dos campos se malinterpretan sistemáticamente. El primero es la **marca de tiempo**: la declara quien propone el bloque, dentro de un margen tolerado; es una aproximación útil para agregar por día, y una fuente de error si se usa para afirmar el orden exacto de dos hechos separados por segundos. El segundo son las **confirmaciones**: no son un sello de validez sino una medida de coste de reversión. Seis confirmaciones no significan "ya es definitivo"; significan "revertirlo ahora saldría muy caro".
 
@@ -164,7 +164,7 @@ Sobre la privacidad, el término correcto es **seudonimato**, no anonimato. Una 
 
 ### Nivel 2 — Adquisición y preparación: donde se pierden los datos
 
-Hay cuatro fuentes y cada una impone su sesgo. Un **nodo propio** da el dato de primera mano y control total, a cambio de operarlo y almacenarlo ([clases 16.1–16.2](../16-infraestructura-nodos/README.md)). Una **API de explorador** es cómoda y trae datos ya enriquecidos, pero introduce una dependencia, límites de tarifa y decisiones ajenas sobre qué es una "transferencia". Un **indexador** ([clases 10.1–10.2](../10-oraculos-indexacion/README.md)) devuelve datos consultables por evento, pero solo los que alguien decidió indexar. La **mempool** ofrece lo que aún no se ha confirmado: útil para estudiar comportamiento y latencia, peligroso para contar dinero, porque lo pendiente puede no ocurrir nunca.
+Hay cuatro fuentes y cada una impone su sesgo. Un **nodo propio** da el dato de primera mano y control total, a cambio de operarlo y almacenarlo ([clases 33–34](../16-infraestructura-nodos/README.md)). Una **API de explorador** es cómoda y trae datos ya enriquecidos, pero introduce una dependencia, límites de tarifa y decisiones ajenas sobre qué es una "transferencia". Un **indexador** ([clases 21–22](../10-oraculos-indexacion/README.md)) devuelve datos consultables por evento, pero solo los que alguien decidió indexar. La **mempool** ofrece lo que aún no se ha confirmado: útil para estudiar comportamiento y latencia, peligroso para contar dinero, porque lo pendiente puede no ocurrir nunca.
 
 La extracción real es siempre **paginada y reanudable**. Un proveedor trunca las respuestas: pedir mil bloques puede devolver diez sin que eso sea un error, y un extractor que asume que recibió todo lo que pidió se salta bloques en silencio. Por eso se guarda un **checkpoint** (el último bloque consolidado) y se reanuda desde ahí, y por eso los reintentos deben ser **idempotentes**: si el mismo bloque llega dos veces, el almacén no puede duplicarlo. La clave primaria natural (el hash de la transacción) resuelve la mitad del problema; la otra mitad es la **reorganización**, en la que un bloque ya guardado deja de existir y otro ocupa su altura. Detectarla es comparar el `hashPrevio` del bloque nuevo con el hash que uno ya tiene almacenado; ignorarla significa contar transacciones que la cadena definitiva nunca incluyó.
 
@@ -193,7 +193,7 @@ El techo del método es la **atribución**. El agrupamiento de direcciones se ap
 - **Análisis entre cadenas**: seguimiento conceptual por puentes; la correspondencia entre el depósito en la cadena A y la emisión en la B es una **inferencia por correlación de importe y tiempo**, no una continuidad verificable.
 - **Privacidad**: mezcladores, CoinJoin y cadenas con privacidad nativa; qué se degrada del análisis y por qué existe una tensión legítima entre privacidad financiera y supervisión.
 - **Forense**: cadena de custodia de la evidencia, reproducibilidad del análisis, versionado de datos y umbrales, y el papel de un perito que debe poder ser contrainterrogado sobre su método.
-- **Regulación**: cómo encaja esto con el enfoque basado en riesgo, la Regla de Viaje y la protección de datos personales, tratado en las [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md).
+- **Regulación**: cómo encaja esto con el enfoque basado en riesgo, la Regla de Viaje y la protección de datos personales, tratado en las [clases 55–56](../27-regulacion-cumplimiento/README.md).
 
 </details>
 
@@ -271,4 +271,4 @@ Cómo se relaciona cada obra con el resto del programa: [bibliografía central](
 
 ## 🧭 Navegación
 
-⬅️ [Clases 27.1–27.2 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 29.1–29.2 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md)
+⬅️ [Clases 55–56 · Regulación y cumplimiento](../27-regulacion-cumplimiento/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 59–60 · Exchanges y operaciones de custodia](../29-exchanges-operaciones-custodia/README.md)

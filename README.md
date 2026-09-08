@@ -37,11 +37,11 @@
 
 ### **[👉 EMPIEZA AQUÍ](docs/empieza-aqui.md)**
 
-**No hace falta que sepas nada todavía.** Esa página te dice qué necesitas antes de arrancar, qué instalar y en qué momento, cómo se estudia una clase, qué hacer cuando te atasques — y te deja en la puerta de la [clase 00.1](curriculum/00-orientacion/README.md#clase-001--qué-problema-intenta-resolver-blockchain), que es por donde se empieza.
+**No hace falta que sepas nada todavía.** Esa página te dice qué necesitas antes de arrancar, qué instalar y en qué momento, cómo se estudia una clase, qué hacer cuando te atasques — y te deja en la puerta de la [clase 1](curriculum/00-orientacion/README.md#clase-1--qué-problema-intenta-resolver-blockchain), que es por donde se empieza.
 
 Ten a mano el **[📖 glosario](docs/glosario.md)**, enlazado desde todas las clases, para cuando una palabra te frene.
 
-Y cuando llegues al final de la clase 04.2, pasa por la unidad transversal
+Y cuando llegues al final de la clase 10, pasa por la unidad transversal
 **[👛 Wallets desde cero](docs/wallets-desde-cero.md)** — qué es una wallet, cómo usarla
 con seguridad y qué hacer cuando algo sale mal — antes de entrar en Ethereum.
 
@@ -53,7 +53,7 @@ con seguridad y qué hacer cuando algo sale mal — antes de entrar en Ethereum.
 
 ## 🎯 Qué es esto
 
-Un currículo **secuencial** que cubre el espectro completo de blockchain, paso a paso, en **66 clases** agrupadas en 33 unidades documentales (00→32), diez etapas y un proyecto final. Cada unidad conserva una URL estable y reúne dos clases distintas con:
+Un currículo **secuencial** que cubre el espectro completo de blockchain, paso a paso, en **66 clases** agrupadas por tema en 33 unidades documentales, diez etapas y un proyecto final. Cada unidad conserva una URL estable y reúne dos clases distintas con:
 
 - 🎯 **Objetivos** medibles y **resultados de aprendizaje** verificables.
 - 🗺️ **Temas** con el porqué de cada uno y **conceptos** con definiciones.
@@ -129,19 +129,19 @@ Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visua
 
 | Etapa | Clases | Foco | Resultado |
 |---|---|---|---|
-| **Orientación** | [00.1–00.2](curriculum/00-orientacion/README.md) | ¿Necesito blockchain? | Distinguir blockchain de una base de datos |
-| **Fundamentos** | [01.1](curriculum/01-criptografia/README.md)–[03.2](curriculum/03-consenso/README.md) | Criptografía, redes P2P, consenso | Entender qué hace verificable a una cadena |
-| **Desarrollo** | [04.1](curriculum/04-bitcoin/README.md)–[07.2](curriculum/07-dapps/README.md) | Bitcoin, EVM, Solidity, dApps | Crear y probar contratos y una dApp |
-| **Profesional** | [08.1](curriculum/08-tokens/README.md)–[11.2](curriculum/11-dao-gobernanza/README.md) | Tokens, seguridad, oráculos, DAO | Diseñar protocolos seguros y gobernados |
-| **Avanzado** | [12.1](curriculum/12-escalabilidad/README.md)–[15.2](curriculum/15-arquitectura-avanzada/README.md) | L2, interoperabilidad, ZK, arquitectura | Auditar, investigar y decidir arquitectura |
-| **Producción** | [16.1](curriculum/16-infraestructura-nodos/README.md)–[18.2](curriculum/18-implementacion-empresarial/README.md) | Infraestructura, empresa, implementación | Llevar la tecnología a una empresa real |
-| **Finanzas on-chain** | [19.1](curriculum/19-defi/README.md)–[25.2](curriculum/25-mercados-capitales-onchain/README.md) | DeFi, dinero y liquidación, stablecoins, MDBC, pagos y FX, tokenización, mercados | Entender qué cambia al programar el dinero y los valores |
-| **Institucional** | [26.1](curriculum/26-custodia-identidad/README.md)–[27.2](curriculum/27-regulacion-cumplimiento/README.md) | Custodia, identidad digital, regulación y cumplimiento | Diseñar con custodia y cumplimiento desde el primer día |
-| **Analítica de datos** | [28.1–28.2](curriculum/28-data-analytics-onchain/README.md) | Minería de datos on-chain, grafos, patrones y detección | Analizar una cadena y defender las conclusiones con sus límites |
-| **Custodia, auditoría y forensics** | [29.1](curriculum/29-exchanges-operaciones-custodia/README.md)–[32.2](curriculum/32-forensics-auditoria-gobernanza/README.md) | Exchanges, wallets, contabilidad, PoR/PoL, conciliación, forensics y gobernanza | Contrastar ledger, realidad del exchange y estado blockchain |
+| **Orientación** | [1–2](curriculum/00-orientacion/README.md) | ¿Necesito blockchain? | Distinguir blockchain de una base de datos |
+| **Fundamentos** | [3](curriculum/01-criptografia/README.md)–[8](curriculum/03-consenso/README.md) | Criptografía, redes P2P, consenso | Entender qué hace verificable a una cadena |
+| **Desarrollo** | [9](curriculum/04-bitcoin/README.md)–[16](curriculum/07-dapps/README.md) | Bitcoin, EVM, Solidity, dApps | Crear y probar contratos y una dApp |
+| **Profesional** | [17](curriculum/08-tokens/README.md)–[24](curriculum/11-dao-gobernanza/README.md) | Tokens, seguridad, oráculos, DAO | Diseñar protocolos seguros y gobernados |
+| **Avanzado** | [25](curriculum/12-escalabilidad/README.md)–[32](curriculum/15-arquitectura-avanzada/README.md) | L2, interoperabilidad, ZK, arquitectura | Auditar, investigar y decidir arquitectura |
+| **Producción** | [33](curriculum/16-infraestructura-nodos/README.md)–[38](curriculum/18-implementacion-empresarial/README.md) | Infraestructura, empresa, implementación | Llevar la tecnología a una empresa real |
+| **Finanzas on-chain** | [39](curriculum/19-defi/README.md)–[52](curriculum/25-mercados-capitales-onchain/README.md) | DeFi, dinero y liquidación, stablecoins, MDBC, pagos y FX, tokenización, mercados | Entender qué cambia al programar el dinero y los valores |
+| **Institucional** | [53](curriculum/26-custodia-identidad/README.md)–[56](curriculum/27-regulacion-cumplimiento/README.md) | Custodia, identidad digital, regulación y cumplimiento | Diseñar con custodia y cumplimiento desde el primer día |
+| **Analítica de datos** | [57–58](curriculum/28-data-analytics-onchain/README.md) | Minería de datos on-chain, grafos, patrones y detección | Analizar una cadena y defender las conclusiones con sus límites |
+| **Custodia, auditoría y forensics** | [59](curriculum/29-exchanges-operaciones-custodia/README.md)–[66](curriculum/32-forensics-auditoria-gobernanza/README.md) | Exchanges, wallets, contabilidad, PoR/PoL, conciliación, forensics y gobernanza | Contrastar ledger, realidad del exchange y estado blockchain |
 | **Proyecto final** | [capstone](capstone/README.md) | Integración | Protocolo o caso custodial documentado y probado |
 
-> 👛 Entre las clases [04.2](curriculum/04-bitcoin/README.md#clase-042--verificación-minería-y-operación-segura) y [05.1](curriculum/05-ethereum-evm/README.md#clase-051--cuentas-estado-y-transacciones-ethereum) se estudia la unidad transversal **[Wallets desde cero: uso, seguridad y recuperación](docs/wallets-desde-cero.md)** — obligatoria para principiantes y compatible con la secuencia existente.
+> 👛 Entre las clases [10](curriculum/04-bitcoin/README.md#clase-10--verificación-minería-y-operación-segura) y [11](curriculum/05-ethereum-evm/README.md#clase-11--cuentas-estado-y-transacciones-ethereum) se estudia la unidad transversal **[Wallets desde cero: uso, seguridad y recuperación](docs/wallets-desde-cero.md)** — obligatoria para principiantes y compatible con la secuencia existente.
 
 ## 🧪 Laboratorios y proyectos ejecutables
 
@@ -178,7 +178,7 @@ Luego empieza por [curriculum/00-orientacion](curriculum/00-orientacion/README.m
 
 ## 💵 Del token al sistema financiero
 
-La segunda mitad del programa (clases [19.1](curriculum/19-defi/README.md#clase-191--amm-liquidez-y-formación-de-precio)–[27.2](curriculum/27-regulacion-cumplimiento/README.md#clase-272--cumplimiento-basado-en-riesgo)) construye el puente que casi siempre falta:
+La segunda mitad del programa (clases [39](curriculum/19-defi/README.md#clase-39--amm-liquidez-y-formación-de-precio)–[56](curriculum/27-regulacion-cumplimiento/README.md#clase-56--cumplimiento-basado-en-riesgo)) construye el puente que casi siempre falta:
 
 ```text
 Finanzas tradicionales → infraestructura financiera digital → blockchain → finanzas on-chain
@@ -201,7 +201,7 @@ Se apoya en dos recursos propios: la carpeta de **[regulación](regulation/READM
 
 ## 🏭 La industria por dentro
 
-Además del currículo, la sección [Industria](industria/README.md) es la lectura profesional extendida: cómo se **construye** una red, el **stack** real del ecosistema, cómo trabajan y se **comunican** los equipos, **casos empresariales** (éxitos y fracasos) y **modelos de negocio**. Y para llevarlo a la práctica, las clases 16.1–18.2 lo convierten en laboratorios: infraestructura real, caso de negocio con costos e implementación end-to-end. Incluye una guía dedicada de [**cómo explicar blockchain a clientes y personas no técnicas**](docs/explicar-blockchain-a-no-tecnicos.md): discurso de 30 segundos, traducción de jerga y manejo de objeciones.
+Además del currículo, la sección [Industria](industria/README.md) es la lectura profesional extendida: cómo se **construye** una red, el **stack** real del ecosistema, cómo trabajan y se **comunican** los equipos, **casos empresariales** (éxitos y fracasos) y **modelos de negocio**. Y para llevarlo a la práctica, las clases 33–38 lo convierten en laboratorios: infraestructura real, caso de negocio con costos e implementación end-to-end. Incluye una guía dedicada de [**cómo explicar blockchain a clientes y personas no técnicas**](docs/explicar-blockchain-a-no-tecnicos.md): discurso de 30 segundos, traducción de jerga y manejo de objeciones.
 
 ## 👩‍🏫 Para instructores
 
@@ -209,7 +209,7 @@ El programa está listo para el aula: [guía del instructor](instructor/README.m
 
 ## 🚀 Cómo usar el programa
 
-1. **Sigue el orden.** La numeración 00.1→32.2 es secuencial por diseño: cada clase prepara la siguiente.
+1. **Sigue el orden.** La numeración 1→66 es secuencial por diseño: cada clase prepara la siguiente.
 2. **Aplica el ciclo** de cada clase: comprender → experimentar → explicar → construir → verificar.
 3. **Ejecuta los laboratorios** en local (Anvil) o testnet; registra la evidencia en tu bitácora de progreso.
 4. **Haz el reto verificable** de cada pareja de clases: ahí se fija el aprendizaje con un criterio de aceptación explícito.
@@ -267,7 +267,7 @@ citados pertenecen a sus autores, organismos emisores y titulares.
 
 **Hecho para quien quiere entender el sistema completo, no solo el token de moda.**
 
-[⬆️ Empezar por la clase 00.1](curriculum/00-orientacion/README.md#clase-001--qué-problema-intenta-resolver-blockchain) ·
+[⬆️ Empezar por la clase 1](curriculum/00-orientacion/README.md#clase-1--qué-problema-intenta-resolver-blockchain) ·
 [🌐 Sitio de estudio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) ·
 [📖 Glosario](docs/glosario.md) ·
 [📕 Programa completo en PDF](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) ·

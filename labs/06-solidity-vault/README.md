@@ -1,6 +1,6 @@
 # Laboratorio · Learning Vault
 
-> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 06.1–06.2 · Solidity y Foundry](../../curriculum/06-solidity-foundry/README.md) · [Catálogo de laboratorios](../CATALOG.md)
+> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 13–14 · Solidity y Foundry](../../curriculum/06-solidity-foundry/README.md) · [Catálogo de laboratorios](../CATALOG.md)
 
 Contrato deliberadamente pequeño para practicar los fundamentos de Solidity con Foundry: **estado, eventos, errores tipados, checks-effects-interactions (CEI), defensa de reentrancia y fuzzing**. Cabe entero en la cabeza, así que puedes concentrarte en el método —cómo se prueban propiedades— en lugar de en la lógica de negocio.
 
@@ -68,4 +68,4 @@ Una prueba unitaria comprueba un caso que tú elegiste; una prueba **fuzz** gene
 3. Explica el efecto del ETH forzado mediante `selfdestruct` sobre la invariante de contabilidad.
 4. Añade pausado con roles usando una librería consolidada y prueba que un usuario sin rol no puede pausar.
 
-No despliegues este ejemplo con fondos reales. Fundamento en las [clases 06.1–06.2 · Solidity y Foundry](../../curriculum/06-solidity-foundry/README.md).
+No despliegues este ejemplo con fondos reales. Fundamento en las [clases 13–14 · Solidity y Foundry](../../curriculum/06-solidity-foundry/README.md).

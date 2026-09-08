@@ -19,7 +19,7 @@ async function discover(directory) {
 }
 
 // `projects/` alberga sobre todo contratos (que prueba Foundry), pero también el
-// proyecto final del módulo 28, que es JavaScript. Sin incluirlo aquí, sus
+// proyecto final de las clases 57–58, que es JavaScript. Sin incluirlo aquí, sus
 // pruebas se contarían en `pnpm check` y no se ejecutarían nunca: la peor
 // combinación posible, porque la cifra prometida dejaría de estar respaldada.
 const testFiles = [...await discover("labs"), ...await discover("apps"), ...await discover("projects"), ...await discover("capstone")].sort();

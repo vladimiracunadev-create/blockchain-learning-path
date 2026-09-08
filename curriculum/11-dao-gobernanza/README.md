@@ -1,8 +1,8 @@
-# 11 · DAO y gobernanza
+# DAO y gobernanza · Clases 23–24
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** OpenZeppelin Governor y Compound Governance
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [10 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [12 · Escalabilidad y capas 2](../12-escalabilidad/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 21–22 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 25–26 · Escalabilidad y capas 2](../12-escalabilidad/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 11.1 · Propuestas, voto y ejecución
+### Clase 23 · Propuestas, voto y ejecución
 
 **Pregunta guía:** ¿Cómo pasa una intención colectiva a un cambio ejecutable y demorado?
 
@@ -32,7 +32,7 @@ Una propuesta atraviesa snapshot, voto, cola y ejecución con calldata visible. 
 
 **Evidencia de aprendizaje:** Línea de tiempo con estados, responsables y calldata ejecutada.
 
-### Clase 11.2 · Captura y gobernanza de emergencia
+### Clase 24 · Captura y gobernanza de emergencia
 
 **Pregunta guía:** ¿Quién puede detener el sistema y quién controla a quien controla?
 
@@ -273,4 +273,4 @@ Diseña e implementa una DAO en la que una propuesta crítica requiera votación
 
 ## 🧭 Navegación
 
-⬅️ [Clases 10.1–10.2 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 12.1–12.2 · Escalabilidad y capas 2](../12-escalabilidad/README.md)
+⬅️ [Clases 21–22 · Oráculos, almacenamiento e indexación](../10-oraculos-indexacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 25–26 · Escalabilidad y capas 2](../12-escalabilidad/README.md)

@@ -4,7 +4,7 @@
 // Simulación determinista: sin red, sin claves, sin fondos. La cifra que hay que
 // mirar a diario no se recibe por notificación — se calcula.
 //
-// Módulo 19 · DeFi: mercados, préstamo y riesgo on-chain.
+// Clases 39–40 · DeFi: mercados, préstamo y riesgo on-chain.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 /**

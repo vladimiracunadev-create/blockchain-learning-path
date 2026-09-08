@@ -16,7 +16,7 @@
 // pero no reproduce latencia de red, límites de tarifa por contrato, ni la
 // diversidad de formatos entre proveedores reales.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { ErrorRPC } from "./rpc-simulado.mjs";
 import { ejecutadoDirectamente } from "../run-directo.mjs";

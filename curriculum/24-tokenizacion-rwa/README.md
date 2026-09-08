@@ -1,8 +1,8 @@
-# 24 · Tokenización y activos del mundo real (RWA)
+# Tokenización y activos del mundo real (RWA) · Clases 49–50
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** informes del BIS y de IOSCO sobre tokenización, documentación de estándares (ERC-20, ERC-1400, ERC-3643) y prácticas públicas de emisión de valores digitales
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [23 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [25 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 47–48 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 51–52 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 24.1 · Del activo al derecho tokenizado
+### Clase 49 · Del activo al derecho tokenizado
 
 **Pregunta guía:** ¿Qué posee jurídicamente quien controla el token?
 
@@ -32,7 +32,7 @@ El grupo sigue un derecho desde el activo físico hasta la wallet y vuelve duran
 
 **Evidencia de aprendizaje:** Mapa de exigibilidad con jurisdicción, responsables y fallas posibles.
 
-### Clase 24.2 · Ciclo de vida y controles de RWA
+### Clase 50 · Ciclo de vida y controles de RWA
 
 **Pregunta guía:** ¿Cómo se mantienen sincronizados token, activo y restricciones?
 
@@ -197,7 +197,7 @@ reconoce el token como el valor tiene una junta mínima. Un inmueble tiene una j
    patrimonio del custodio? *Control: custodio regulado, segregación acreditada, seguro.*
 3. **Atestación.** ¿Quién certifica que sigue ahí, con qué frecuencia y con qué alcance?
    *Control: firma de un tercero independiente y publicación del alcance exacto — recuerda
-   la distinción atestación/auditoría de las [clases 21.1–21.2](../21-stablecoins/README.md).*
+   la distinción atestación/auditoría de las [clases 43–44](../21-stablecoins/README.md).*
 4. **Servicio.** ¿Quién cobra las rentas y las reparte? ¿Qué pasa si ese gestor desaparece?
    *Control: gestor sustituto designado por contrato y probado, no nombrado sobre el papel.*
 5. **Ejecución.** Si el deudor no paga, ¿quién demanda y con qué legitimación? *Control:
@@ -261,7 +261,7 @@ tokenizados es la evidencia práctica de esto.
   y error de conciliación. Es el mejor caso de uso real de la tokenización de crédito.
 - **Multi-cadena multiplica la junta.** Si el token vive en varias cadenas mediante puente,
   el riesgo del puente se suma al del activo. El emisor puede ser impecable y el tenedor
-  perderlo todo por el tramo intermedio ([clases 13.1–13.2](../13-interoperabilidad/README.md)).
+  perderlo todo por el tramo intermedio ([clases 27–28](../13-interoperabilidad/README.md)).
 - **La recuperación de tokens perdidos es un requisito, no una concesión.** Con valores
   nominativos, el emisor debe poder reasignar la titularidad si un inversor pierde su llave.
   Eso obliga a una función de intervención — y a gobernarla con timelock y auditoría, porque
@@ -270,7 +270,7 @@ tokenizados es la evidencia práctica de esto.
   impuestos fuera es la fuente más común de fricción operativa en emisiones reales.
 - **Fraccionar puede cambiar la calificación del instrumento.** Vender participaciones de un
   activo a inversores para obtener un rendimiento del esfuerzo de un tercero es, en muchas
-  jurisdicciones, emitir un valor, con todo lo que eso implica ([clases 27.1–27.2](../27-regulacion-cumplimiento/README.md)).
+  jurisdicciones, emitir un valor, con todo lo que eso implica ([clases 55–56](../27-regulacion-cumplimiento/README.md)).
 
 </details>
 
@@ -336,7 +336,7 @@ punto que la tokenización cree liquidez por sí sola.
 - La función de recuperación/reasignación es imprescindible y peligrosa a la vez:
   gobiérnala con multifirma, timelock y registro auditable, y publícalo.
 - Nada aquí es asesoría legal, fiscal ni de inversión. Las estructuras y su tratamiento
-  varían por jurisdicción; ver [clases 27.1–27.2](../27-regulacion-cumplimiento/README.md) y
+  varían por jurisdicción; ver [clases 55–56](../27-regulacion-cumplimiento/README.md) y
   [regulación](../../regulation/README.md).
 
 ## 🔗 Referencias
@@ -346,7 +346,7 @@ punto que la tokenización cree liquidez por sí sola.
 - ERC-1400 / ERC-1404 — estándares de token de valor: <https://eips.ethereum.org/>
 - ERC-3643 — estándar de activos permisionados con identidad: <https://www.erc3643.org/>
 - OpenZeppelin — contratos base y control de acceso: <https://docs.openzeppelin.com/>
-- Clases relacionadas: [08 · Tokens](../08-tokens/README.md) · [10 · Oráculos](../10-oraculos-indexacion/README.md) · [25 · Mercados de capitales](../25-mercados-capitales-onchain/README.md)
+- Clases relacionadas: [Clases 17–18 · Tokens](../08-tokens/README.md) · [Clases 21–22 · Oráculos](../10-oraculos-indexacion/README.md) · [Clases 51–52 · Mercados de capitales](../25-mercados-capitales-onchain/README.md)
 
 ## ✅ Criterio de dominio
 
@@ -359,4 +359,4 @@ punto que la tokenización cree liquidez por sí sola.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 23.1–23.2 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 25.1–25.2 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md)
+⬅️ [Clases 47–48 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 51–52 · Mercados de capitales on-chain](../25-mercados-capitales-onchain/README.md)

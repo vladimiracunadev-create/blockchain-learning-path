@@ -4,7 +4,7 @@
 
 ## Descripción del curso
 
-Curso práctico e integral de tecnología blockchain que va de los fundamentos criptográficos al desarrollo profesional, la seguridad y la implementación en la empresa. El estudiante construye, prueba y despliega software real en redes locales y de prueba, y aprende a justificar decisiones de arquitectura con evidencia. El curso cubre las clases 00.1–18.2 del [currículo](../curriculum/README.md) y culmina en un [proyecto final](../capstone/README.md). Las clases 19.1–27.2 (finanzas on-chain, custodia y regulación), 28.1–28.2 (analítica de datos) y 29.1–32.2 (custodia, auditoría y forensics) son extensiones profesionales; no reemplazan el tronco tecnológico.
+Curso práctico e integral de tecnología blockchain que va de los fundamentos criptográficos al desarrollo profesional, la seguridad y la implementación en la empresa. El estudiante construye, prueba y despliega software real en redes locales y de prueba, y aprende a justificar decisiones de arquitectura con evidencia. El curso cubre las clases 1–38 del [currículo](../curriculum/README.md) y culmina en un [proyecto final](../capstone/README.md). Las clases 39–56 (finanzas on-chain, custodia y regulación), 57–58 (analítica de datos) y 59–66 (custodia, auditoría y forensics) son extensiones profesionales; no reemplazan el tronco tecnológico.
 
 ## Prerrequisitos
 
@@ -28,53 +28,53 @@ Al finalizar, el estudiante será capaz de:
 
 ## Calendario de 26 semanas
 
-| Semana | Clases | Tema | Lectura | Entregable |
-|---:|---|---|---|---|
-| 1 | 00 | Orientación y decisión (blockchain vs. base de datos) | Clases 00.1–00.2 | ADR 001 |
-| 2 | 01 | Hash, cadenas de hash y Merkle | Clases 01.1–01.2 | Labs 03–06 |
-| 3 | 01 | Firmas y custodia de claves | Clases 01.1–01.2 | Labs 07–08 + checkpoint |
-| 4 | 02 | Sistemas distribuidos y P2P | Clases 02.1–02.2 | Labs 09–10 |
-| 5 | 03 | Consenso: PoW, PoS, BFT | Clases 03.1–03.2 | Labs 11–12 |
-| 6 | 03 | Mini blockchain | Clases 03.1–03.2 | Labs 13–14 |
-| 7 | 04 | Bitcoin y modelo UTXO | Clases 04.1–04.2 | Labs 15–16 |
-| 8 | 04 | Regtest: wallet y transacciones · unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) | Clases 04.1–04.2 + unidad de wallets | Labs 17–21 (transcript) + Lab 71 (`pnpm lab:wallet-segura`) |
-| 9 | 05 | Ethereum y la EVM | Clases 05.1–05.2 | Labs 22–24 |
-| 10 | 05 | Gas, storage y calldata | Clases 05.1–05.2 | Labs 25–26 (análisis) |
-| 11 | 06 | Solidity y Foundry | Clases 06.1–06.2 | Lab 27 |
-| 12 | 06 | Vault: fuzzing e invariantes | Clases 06.1–06.2 | Lab 28 (Vault) |
-| 13 | 07 | dApps: lectura y wallet | Clases 07.1–07.2 | Labs 29–31 |
-| 14 | 08 | Tokens: ERC-20 y roles | Clases 08.1–08.2 | Labs 32–33 |
-| 15 | 08 | ERC-721 y estándares | Clases 08.1–08.2 | Labs 34–36 (protocolo) |
-| 16 | 09 | Seguridad: reentrancia y control de acceso | Clases 09.1–09.2 | Retos 01–02 |
-| 17 | 09 | Oráculos, firmas y proxies | Clases 09.1–09.2 | Retos 03–06 |
-| 18 | 09 | Auditoría e informe | Clases 09.1–09.2 | Informe de auditoría |
-| 19 | 10 | Oráculos e indexación | Clases 10.1–10.2 | Labs 37–40 |
-| 20 | 11 | DAO y gobernanza | Clases 11.1–11.2 | ADR |
-| 21 | 12 | Escalabilidad y L2 | Clases 12.1–12.2 | Comparativa L2 |
-| 22 | 13 | Interoperabilidad y puentes | Clases 13.1–13.2 | ADR 005 |
-| 23 | 14.1–15.2 | Privacidad, ZK y arquitectura | Clases 14.1–15.2 | Defensa de diseño |
-| 24 | 16.1–17.2 | Infraestructura de nodos y empresa | Clases 16.1–17.2 | Plan + caso de negocio |
-| 25 | 18 | Implementación empresarial | Clases 18.1–18.2 | Documento de arquitectura |
-| 26 | Capstone | Proyecto final | [Capstone](../capstone/README.md) | Demo y defensa |
+| Semana | Tema | Clases | Entregable |
+|---:|---|---:|---|
+| 1 | Orientación y decisión (blockchain vs. base de datos) | 1–2 | ADR 001 |
+| 2 | Hash, cadenas de hash y Merkle | 3–4 | Labs 03–06 |
+| 3 | Firmas y custodia de claves | 3–4 | Labs 07–08 + checkpoint |
+| 4 | Sistemas distribuidos y P2P | 5–6 | Labs 09–10 |
+| 5 | Consenso: PoW, PoS, BFT | 7–8 | Labs 11–12 |
+| 6 | Mini blockchain | 7–8 | Labs 13–14 |
+| 7 | Bitcoin y modelo UTXO | 9–10 | Labs 15–16 |
+| 8 | Regtest: wallet y transacciones · unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) | 9–10 + wallets | Labs 17–21 (transcript) + Lab 71 (`pnpm lab:wallet-segura`) |
+| 9 | Ethereum y la EVM | 11–12 | Labs 22–24 |
+| 10 | Gas, storage y calldata | 11–12 | Labs 25–26 (análisis) |
+| 11 | Solidity y Foundry | 13–14 | Lab 27 |
+| 12 | Vault: fuzzing e invariantes | 13–14 | Lab 28 (Vault) |
+| 13 | dApps: lectura y wallet | 15–16 | Labs 29–31 |
+| 14 | Tokens: ERC-20 y roles | 17–18 | Labs 32–33 |
+| 15 | ERC-721 y estándares | 17–18 | Labs 34–36 (protocolo) |
+| 16 | Seguridad: reentrancia y control de acceso | 19–20 | Retos 01–02 |
+| 17 | Oráculos, firmas y proxies | 19–20 | Retos 03–06 |
+| 18 | Auditoría e informe | 19–20 | Informe de auditoría |
+| 19 | Oráculos e indexación | 21–22 | Labs 37–40 |
+| 20 | DAO y gobernanza | 23–24 | ADR |
+| 21 | Escalabilidad y L2 | 25–26 | Comparativa L2 |
+| 22 | Interoperabilidad y puentes | 27–28 | ADR 005 |
+| 23 | Privacidad, ZK y arquitectura | 29–32 | Defensa de diseño |
+| 24 | Infraestructura de nodos y empresa | 33–36 | Plan + caso de negocio |
+| 25 | Implementación empresarial | 37–38 | Documento de arquitectura |
+| 26 | Proyecto final | — | [Capstone](../capstone/README.md) · demo y defensa |
 
 ## Extensión optativa: finanzas on-chain e institucional (semanas 27–34)
 
-Ocho semanas adicionales que cubren las clases 19.1–27.2. Se pueden impartir como continuación
+Ocho semanas adicionales que cubren las clases 39–56. Se pueden impartir como continuación
 del curso o como asignatura independiente para perfiles del sector financiero, que en tal
-caso necesitan al menos las clases 00.1–08.2 como prerrequisito.
+caso necesitan al menos las clases 1–18 como prerrequisito.
 
-| Semana | Clases | Tema | Lectura | Entregable |
-|---|---|---|---|---|
-| 27 | 19 | DeFi: AMM, préstamo, liquidación y riesgo | Clases 19.1–19.2 | Labs 51–54 |
-| 28 | 20 | Dinero, banca, compensación y liquidación | Clases 20.1–20.2 | Labs 55–57 + informe |
-| 29 | 21 | Stablecoins: respaldo, redención y desanclaje | Clases 21.1–21.2 | Labs 58–59 |
-| 30 | 22 | Depósitos tokenizados y CBDC/MDBC | Clases 22.1–22.2 | Lab 60 + lab 68 (Foundry) |
-| 31 | 23 | Pagos, cross-border y FX on-chain | Clases 23.1–23.2 | Labs 61–63 |
-| 32 | 24 | Tokenización y activos del mundo real | Clases 24.1–24.2 | Labs 64–65 |
-| 33 | 25 | Mercados de capitales on-chain | Clases 25.1–25.2 | Labs 66–67 + arquitectura |
-| 34 | 26.1–27.2 | Custodia, identidad, regulación y cumplimiento | Clases 26.1–27.2 | Labs 69–70 + análisis regulatorio |
+| Semana | Tema | Clases | Entregable |
+|---:|---|---:|---|
+| 27 | DeFi: AMM, préstamo, liquidación y riesgo | 39–40 | Labs 51–54 |
+| 28 | Dinero, banca, compensación y liquidación | 41–42 | Labs 55–57 + informe |
+| 29 | Stablecoins: respaldo, redención y desanclaje | 43–44 | Labs 58–59 |
+| 30 | Depósitos tokenizados y CBDC/MDBC | 45–46 | Lab 60 + lab 68 (Foundry) |
+| 31 | Pagos, cross-border y FX on-chain | 47–48 | Labs 61–63 |
+| 32 | Tokenización y activos del mundo real | 49–50 | Labs 64–65 |
+| 33 | Mercados de capitales on-chain | 51–52 | Labs 66–67 + arquitectura |
+| 34 | Custodia, identidad, regulación y cumplimiento | 53–56 | Labs 69–70 + análisis regulatorio |
 
-**Nota para el instructor.** Las clases 20.1–20.2 son la bisagra de todo el bloque: sin ellas, los
+**Nota para el instructor.** Las clases 41–42 son la bisagra de todo el bloque: sin ellas, los
 siguientes se aprenden como vocabulario. Si hay que recortar, recorta en cualquier otro
 sitio. Y advierte desde la primera sesión que el material **no es asesoría financiera,
 legal ni tributaria**, y que toda afirmación regulatoria debe verificarse en su fuente
@@ -84,16 +84,16 @@ En formato intensivo de 8 semanas, agrupa las filas conceptuales y reduce el alc
 
 ## Extensión optativa: analítica de datos on-chain (semanas 35–36)
 
-Las [clases 28.1–28.2](../curriculum/28-data-analytics-onchain/README.md) cierran el programa con la lectura de datos de la propia cadena. Dos semanas: la primera cubre los niveles 1 y 2 (anatomía de bloques y transacciones en ambos modelos, adquisición por RPC con checkpoint y reorganizaciones, normalización e idempotencia; prácticas 72–75); la segunda, los niveles 3 y 4 (indicadores, eventos de token, grafos, rastreo, patrones, anomalías con precisión y recall, panel y proyecto final; prácticas 76–83). **Entregable:** el explorador analítico con su informe, incluida la sección de limitaciones y la clasificación hecho / indicador / inferencia / hipótesis, que es lo que se califica con más peso.
+Las [clases 57–58](../curriculum/28-data-analytics-onchain/README.md) cierran el programa con la lectura de datos de la propia cadena. Dos semanas: la primera cubre los niveles 1 y 2 (anatomía de bloques y transacciones en ambos modelos, adquisición por RPC con checkpoint y reorganizaciones, normalización e idempotencia; prácticas 72–75); la segunda, los niveles 3 y 4 (indicadores, eventos de token, grafos, rastreo, patrones, anomalías con precisión y recall, panel y proyecto final; prácticas 76–83). **Entregable:** el explorador analítico con su informe, incluida la sección de limitaciones y la clasificación hecho / indicador / inferencia / hipótesis, que es lo que se califica con más peso.
 
 ## Especialización profesional: custodia, auditoría y forensics (semanas 37–40)
 
 | Semana | Clases | Prácticas | Entregable |
 |---:|---|---|---|
-| 37 | 29 · Exchanges y custodia | 84–85 | Flujo CEX/DEX y política de wallets |
-| 38 | 30 · Contabilidad y conciliación | 86–87 | Tres registros y excepciones |
-| 39 | 31 · PoR/PoL y solvencia | 88–89 | Root, inclusión y conclusión acotada |
-| 40 | 32 · Forensics y gobernanza | 90–91 | Defensa de [Aurora Custody](../capstone/empresa-custodial/README.md) |
+| 37 | 59–60 · Exchanges y custodia | 84–85 | Flujo CEX/DEX y política de wallets |
+| 38 | 61–62 · Contabilidad y conciliación | 86–87 | Tres registros y excepciones |
+| 39 | 63–64 · PoR/PoL y solvencia | 88–89 | Root, inclusión y conclusión acotada |
+| 40 | 65–66 · Forensics y gobernanza | 90–91 | Defensa de [Aurora Custody](../capstone/empresa-custodial/README.md) |
 
 ## Política de evaluación
 

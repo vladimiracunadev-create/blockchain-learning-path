@@ -12,7 +12,7 @@ const directories = (await readdir("curriculum", { withFileTypes: true }))
 const rows = [];
 for (const [index, directory] of directories.entries()) {
   const text = await readFile(join("curriculum", directory, "README.md"), "utf8");
-  const title = text.match(/^#\s+\d+\s+·\s+(.+)$/m)?.[1];
+  const title = text.match(/^#\s+(.+)\s+·\s+Clases\s+\d+–\d+$/m)?.[1];
   const source = text.match(/\*\*Fuente:\*\*\s+(.+)$/m)?.[1];
   const unit = catalog[index];
   if (!title || !source || unit?.unit !== directory.slice(0, 2)) {
@@ -22,12 +22,12 @@ for (const [index, directory] of directories.entries()) {
     .map((item) => `**${item.id}** ${item.title}`)
     .join("<br>");
   const questions = unit.classes.map((item) => item.question).join("<br>");
-  rows.push(`| ${unit.unit} | [${title}](${directory}/README.md) | ${classes} | ${questions} | ${source} |`);
+  rows.push(`| [${title}](${directory}/README.md) | ${classes} | ${questions} | ${source} |`);
 }
 
 const block = `<!-- indice-clases:inicio -->
-| Unidad | Tema y material común | Clases | Preguntas guía | Fuente base |
-|---:|---|---|---|---|
+| Tema y material común | Clases | Preguntas guía | Fuente base |
+|---|---|---|---|
 ${rows.join("\n")}
 <!-- indice-clases:fin -->`;
 

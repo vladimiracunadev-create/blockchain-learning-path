@@ -1,6 +1,6 @@
 # 🌍 Comparación de marcos regulatorios
 
-> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)
 
 Revisado: **2026-08-12**.
 
@@ -47,7 +47,7 @@ Cuatro constantes que permiten orientarse en una jurisdicción que no se conoce:
 
 ## Cómo usar esta tabla en un proyecto
 
-1. Responde las **cinco preguntas** del [módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md).
+1. Responde las **cinco preguntas** de las [clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md).
 2. Localiza tu actividad en la fila correspondiente de cada jurisdicción a la que te dirijas.
 3. Ve a la **fuente oficial** de esa jurisdicción — esta tabla te dice dónde mirar, no qué
    dice la norma.

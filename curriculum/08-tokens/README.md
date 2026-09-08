@@ -1,8 +1,8 @@
-# 08 · Tokens y estándares
+# Tokens y estándares · Clases 17–18
 
 > **Nivel:** Intermedio-Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** EIPs de Ethereum y OpenZeppelin Contracts
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [07 · Aplicaciones descentralizadas](../07-dapps/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [09 · Seguridad y auditoría](../09-seguridad/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 15–16 · Aplicaciones descentralizadas](../07-dapps/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 19–20 · Seguridad y auditoría](../09-seguridad/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 08.1 · Estándares y derechos del token
+### Clase 17 · Estándares y derechos del token
 
 **Pregunta guía:** ¿Qué interfaz garantiza un ERC y qué derechos económicos quedan fuera?
 
@@ -32,7 +32,7 @@ Dos tokens cumplen el mismo ERC pero representan promesas distintas. El estánda
 
 **Evidencia de aprendizaje:** Ficha de token con estándar, invariantes, poderes y riesgos explícitos.
 
-### Clase 08.2 · Permisos, distribución y necesidad
+### Clase 18 · Permisos, distribución y necesidad
 
 **Pregunta guía:** ¿Por qué un token técnicamente correcto puede ser un mal producto?
 
@@ -197,7 +197,7 @@ El titular "firmó algo y perdió todo" suena a descuido. Casi nunca lo es: es u
 <summary><strong>🎓 Si ya dominas esto</strong> — el detalle que separa un token correcto de uno que rompe integraciones</summary>
 
 - **`permit` no está en todos los tokens y su ausencia se detecta tarde.** USDC en Ethereum lo implementa; muchos tokens antiguos no. Un contrato que asume `permit` falla con esos tokens en producción, no en los tests, donde se usa un mock que sí lo tiene.
-- **Los tokens con hooks reintroducen la reentrancia en el estándar.** ERC-777 y ERC-1155 llaman al receptor durante la transferencia; si tu contrato actualiza estado después de transferir, ese hook puede reentrar. Es la lección de las clases 09.1–09.2 llegando por la puerta de los estándares.
+- **Los tokens con hooks reintroducen la reentrancia en el estándar.** ERC-777 y ERC-1155 llaman al receptor durante la transferencia; si tu contrato actualiza estado después de transferir, ese hook puede reentrar. Es la lección de las clases 19–20 llegando por la puerta de los estándares.
 - **ERC-4626 tiene un ataque de inflación conocido.** El primer depositante puede donar activos directamente a la bóveda para inflar el precio por *share* y hacer que los depósitos pequeños siguientes redondeen a cero shares. Las mitigaciones son los *virtual shares* o sembrar un depósito inicial en el despliegue.
 - **`decimals` no forma parte del núcleo del ERC-20**, es de la extensión de metadatos. Tratarlo como garantizado es la causa del error de escala más caro que se comete en integraciones.
 - **Renunciar a la propiedad no siempre es más seguro.** Un `renounceOwnership` deja el contrato sin nadie que pueda pausar ante un incidente. La decisión correcta depende de si el mayor riesgo es el administrador o el bug — y conviene argumentarla, no imitarla.
@@ -270,4 +270,4 @@ Implementa un token educativo ERC-20 apoyado en OpenZeppelin con: suministro má
 
 ## 🧭 Navegación
 
-⬅️ [Clases 07.1–07.2 · Aplicaciones descentralizadas](../07-dapps/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 09.1–09.2 · Seguridad y auditoría](../09-seguridad/README.md)
+⬅️ [Clases 15–16 · Aplicaciones descentralizadas](../07-dapps/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 19–20 · Seguridad y auditoría](../09-seguridad/README.md)

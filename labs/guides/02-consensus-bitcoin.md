@@ -1,6 +1,6 @@
 # Guías 11–20 y 71 · Consenso, Bitcoin y wallets
 
-Este cuaderno lleva del consenso (Proof of Work y sus alternativas) al modelo UTXO de Bitcoin y a un nodo local en regtest. Acompaña a las clases [consenso](../../curriculum/03-consenso/README.md) y [Bitcoin](../../curriculum/04-bitcoin/README.md). Incluye también la práctica 71 de la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md), que se estudia justo después de las clases 04.1–04.2.
+Este cuaderno lleva del consenso (Proof of Work y sus alternativas) al modelo UTXO de Bitcoin y a un nodo local en regtest. Acompaña a las clases [consenso](../../curriculum/03-consenso/README.md) y [Bitcoin](../../curriculum/04-bitcoin/README.md). Incluye también la práctica 71 de la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md), que se estudia justo después de las clases 9–10.
 
 > [⬅️ Cuaderno de laboratorios](README.md) · [🧪 Catálogo](../CATALOG.md) · [📚 Currículo](../../curriculum/README.md)
 

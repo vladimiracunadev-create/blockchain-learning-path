@@ -1,6 +1,6 @@
 # ⚖️ Regulación de activos digitales
 
-> [🏠 Programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📖 Módulo 27 · Regulación y cumplimiento](../curriculum/27-regulacion-cumplimiento/README.md)
+> [🏠 Programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [📖 Clases 55–56 · Regulación y cumplimiento](../curriculum/27-regulacion-cumplimiento/README.md)
 
 Revisado: **2026-08-12**.
 
@@ -13,7 +13,7 @@ Revisado: **2026-08-12**.
 ## Cómo leer estos documentos
 
 Cada página aplica la misma disciplina, que es lo que el
-[módulo 27](../curriculum/27-regulacion-cumplimiento/README.md) enseña:
+[clases 55–56](../curriculum/27-regulacion-cumplimiento/README.md) enseñan:
 
 1. **Rango declarado siempre.** Ley, reglamento, circular, guía, consulta pública o
    propuesta. Nunca se presenta una propuesta como derecho vigente.
@@ -75,4 +75,4 @@ relevante. Al actualizarlo:
 
 ## 🧭 Navegación
 
-[🏠 Programa](../README.md) · [📖 Módulo 27](../curriculum/27-regulacion-cumplimiento/README.md) · [🇨🇱 Chile](chile/README.md) · [🌍 Comparación](comparison/README.md)
+[🏠 Programa](../README.md) · [📖 Clases 55–56](../curriculum/27-regulacion-cumplimiento/README.md) · [🇨🇱 Chile](chile/README.md) · [🌍 Comparación](comparison/README.md)

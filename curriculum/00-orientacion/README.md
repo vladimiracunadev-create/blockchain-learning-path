@@ -1,8 +1,8 @@
-# 00 · Orientación
+# Orientación · Clases 1–2
 
 > **Nivel:** Inicial · ⏱️ **Duración estimada:** 2 clases de 90 min · **Fuente:** *Mastering Blockchain* (Bashir) y *The Blockchain and the New Architecture of Trust* (Werbach)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [🏠 Programa](../../README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [01 · Criptografía aplicada](../01-criptografia/README.md)
+> 🧭 ⬅️ **Anterior:** [🏠 Programa](../../README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 3–4 · Criptografía aplicada](../01-criptografia/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 00.1 · Qué problema intenta resolver blockchain
+### Clase 1 · Qué problema intenta resolver blockchain
 
 **Método:** diagnóstico guiado a partir de un problema, sin presentar primero la
 tecnología.
@@ -47,7 +47,7 @@ el operador quiebra, un socio abandona o un dato comercial debe permanecer priva
 **Evidencia:** matriz que justifica blockchain o descarta su uso. Se aprueba si la
 conclusión se deriva de los actores y riesgos, no de una preferencia tecnológica.
 
-### Clase 00.2 · Decidir y comunicar sin vender humo
+### Clase 2 · Decidir y comunicar sin vender humo
 
 **Método:** clínica de decisiones y juego de roles.
 
@@ -122,7 +122,7 @@ Al finalizar, el estudiante podrá:
 
 Piensa en una blockchain como un libro contable compartido que muchas partes que no se conocen mantienen simultáneamente, donde cada página nueva referencia criptográficamente la anterior. Nadie es dueño del cuaderno y cambiar una página pasada obligaría a reescribir todas las siguientes ante la vista de todos. Esta analogía explica bien la inmutabilidad y la ausencia de un administrador único.
 
-El límite de la analogía es importante: un cuaderno compartido no dice por sí mismo qué versión es la verdadera cuando dos personas escriben a la vez, ni impide que alguien registre un dato falso pero bien formado. Resolver "cuál historia es la válida" es trabajo del consenso (clases 03.1–03.2), y garantizar que el dato de entrada sea cierto es un problema externo que la cadena no resuelve.
+El límite de la analogía es importante: un cuaderno compartido no dice por sí mismo qué versión es la verdadera cuando dos personas escriben a la vez, ni impide que alguien registre un dato falso pero bien formado. Resolver "cuál historia es la válida" es trabajo del consenso (clases 7–8), y garantizar que el dato de entrada sea cierto es un problema externo que la cadena no resuelve.
 
 ## 🧩 Esquema visual
 
@@ -209,7 +209,7 @@ La cadena de decisión, en orden. Basta un "no" para detenerse:
 - **"Descentralizado" tiene al menos tres ejes** (Buterin): arquitectónico (cuántas máquinas), político (cuántas personas deciden) y lógico (si el sistema se comporta como una unidad). Una red con 10 000 nodos y tres desarrolladores que controlan las actualizaciones es arquitectónicamente descentralizada y políticamente centralizada. Sin especificar el eje, la palabra no informa.
 - **Una permisionada suele ser una base de datos replicada con pasos extra.** Si los participantes están autorizados y se conocen, el problema bizantino casi desaparece y el argumento se apoya en la trazabilidad compartida — que puede lograrse con logs firmados y un tercero neutral. El caso a favor existe, pero hay que defenderlo, no asumirlo.
 - **La inmutabilidad choca de frente con el derecho al olvido.** El RGPD reconoce el derecho de supresión; un dato personal on-chain no se puede borrar. Por eso el patrón correcto es guardar compromisos (hashes) on-chain y los datos fuera, donde sí se pueden eliminar.
-- **El coste de coordinación es el que decide de verdad.** Montar un consorcio exige acordar gobernanza, reparto de costes y responsabilidad legal entre competidores. Ese trabajo, no el técnico, es donde mueren la mayoría de los proyectos empresariales — la lección de TradeLens que se estudia en las clases 17.1–17.2.
+- **El coste de coordinación es el que decide de verdad.** Montar un consorcio exige acordar gobernanza, reparto de costes y responsabilidad legal entre competidores. Ese trabajo, no el técnico, es donde mueren la mayoría de los proyectos empresariales — la lección de TradeLens que se estudia en las clases 35–36.
 
 </details>
 
@@ -274,4 +274,4 @@ Redacta una recomendación de una página por cada uno de los tres casos, respon
 
 ## 🧭 Navegación
 
-⬅️ [🏠 Inicio del programa](../../README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 01.1–01.2 · Criptografía aplicada](../01-criptografia/README.md)
+⬅️ [🏠 Inicio del programa](../../README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 3–4 · Criptografía aplicada](../01-criptografia/README.md)

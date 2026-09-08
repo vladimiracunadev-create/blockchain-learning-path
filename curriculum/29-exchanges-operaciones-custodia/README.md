@@ -1,15 +1,15 @@
-# 29 · Exchanges y operaciones de custodia
+# Exchanges y operaciones de custodia · Clases 59–60
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 180 min · **Fuente:** documentación técnica de Bitcoin y Ethereum, estándares de gestión de claves de NIST y principios de custodia del IOSCO
 >
 > [⬅️ Currículo](../README.md) · [🌱 Empieza aquí](../../docs/empieza-aqui.md) · [📖 Glosario](../../docs/glosario.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [28 · Blockchain Data Analytics](../28-data-analytics-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [30 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 57–58 · Blockchain Data Analytics](../28-data-analytics-onchain/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 61–62 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md)
 
 
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 29.1 · Exchanges, custodia y libros internos
+### Clase 59 · Exchanges, custodia y libros internos
 
 **Pregunta guía:** ¿Dónde se ejecuta una operación y quién controla las claves?
 
@@ -31,7 +31,7 @@ Depósito, compraventa interna y retiro se siguen por sistemas distintos. El est
 
 **Evidencia de aprendizaje:** Diagrama que ubique obligación, activo, firma y evidencia por paso.
 
-### Clase 29.2 · Wallets operacionales y evidencia blockchain
+### Clase 60 · Wallets operacionales y evidencia blockchain
 
 **Pregunta guía:** ¿Cómo vinculamos una orden interna con direcciones y transaction IDs?
 
@@ -155,4 +155,4 @@ Puedes revisar una arquitectura de exchange sin asumir que interfaz, custodia y 
 
 ## 🧭 Navegación
 
-⬅️ [Clases 28.1–28.2 · Blockchain Data Analytics](../28-data-analytics-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 30.1–30.2 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md)
+⬅️ [Clases 57–58 · Blockchain Data Analytics](../28-data-analytics-onchain/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 61–62 · Contabilidad blockchain y conciliación](../30-contabilidad-conciliacion/README.md)

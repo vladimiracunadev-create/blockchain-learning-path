@@ -1,8 +1,8 @@
-# 15 · Arquitectura avanzada
+# Arquitectura avanzada · Clases 31–32
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** ERC-4337 / EIP-7702 (abstracción de cuenta) e investigación de Flashbots (MEV)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [16 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 29–30 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 33–34 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 15.1 · Cuentas programables y actualizaciones
+### Clase 31 · Cuentas programables y actualizaciones
 
 **Pregunta guía:** ¿Cómo añadimos recuperación y cambios sin crear una llave maestra invisible?
 
@@ -32,7 +32,7 @@ Una actualización útil se enfrenta a corrupción de storage y abuso administra
 
 **Evidencia de aprendizaje:** ADR con invariantes, autoridad, demora y procedimiento de emergencia.
 
-### Clase 15.2 · MEV y arquitectura de producción
+### Clase 32 · MEV y arquitectura de producción
 
 **Pregunta guía:** ¿Qué actores pueden reordenar operaciones y cómo cambia el diseño?
 
@@ -294,4 +294,4 @@ Entrega un documento de arquitectura del proyecto integrador que incluya: proble
 
 ## 🧭 Navegación
 
-⬅️ [Clases 14.1–14.2 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 16.1–16.2 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md)
+⬅️ [Clases 29–30 · Privacidad y zero knowledge](../14-privacidad-zk/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 33–34 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md)

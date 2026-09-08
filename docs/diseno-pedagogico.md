@@ -123,10 +123,10 @@ Reglas de aplicación:
   Inventar detalle para rellenar la plantilla es peor que no tenerla.
 
 Ejemplos aplicados: la comisión de Bitcoin en el
-[clases 04.1–04.2](../curriculum/04-bitcoin/README.md), el desglose de gas en el
-[clases 05.1–05.2](../curriculum/05-ethereum-evm/README.md), la lectura de trazas en el
-[clases 06.1–06.2](../curriculum/06-solidity-foundry/README.md) y los decimales en el
-[clases 07.1–07.2](../curriculum/07-dapps/README.md).
+[clases 9–10](../curriculum/04-bitcoin/README.md), el desglose de gas en el
+[clases 11–12](../curriculum/05-ethereum-evm/README.md), la lectura de trazas en el
+[clases 13–14](../curriculum/06-solidity-foundry/README.md) y los decimales en el
+[clases 15–16](../curriculum/07-dapps/README.md).
 
 ## Evaluación formativa y sumativa
 

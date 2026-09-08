@@ -20,6 +20,7 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 ### Cambiado
 
 - Todo el contenido vigente se presenta como **clases**, preservando las 33 rutas y unidades existentes para no romper enlaces, imágenes, diagramas, laboratorios ni progreso.
+- La numeración pedagógica es ahora una secuencia única y visible de **Clase 1 a Clase 66**; los identificadores históricos de carpeta ya no se presentan como subdivisiones de clase.
 - Se ordenaron y profundizaron las explicaciones, fuentes y alcance de cada clase; el laboratorio PoR y el caso Aurora Custody quedaron integrados en la progresión novato → intermedio → avanzado → profesional.
 - Landing, GitHub Pages, manual, presentación, apps offline, evaluaciones, certificado, CI y documentación del instructor reflejan las 66 clases.
 - Fuentes regulatorias y técnicas verificadas contra documentación primaria vigente, incluidas Ethereum Pectra/EIP-7702, FATF/GAFI, BIS/Basilea e ISRS 4400 (Revisada).

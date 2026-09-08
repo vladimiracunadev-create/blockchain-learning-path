@@ -12,7 +12,7 @@ Gracias por querer mejorar **Blockchain Learning Path**. Este es un programa **e
 4. Ejecuta `pnpm check`, `pnpm test` y `pnpm lint:js`.
 5. En el PR explica qué aprende el estudiante, cómo se prueba y qué riesgos existen.
 
-Si añades o reordenas un **módulo**, `pnpm check` te avisará de dos cosas que es fácil olvidar: que el módulo necesita su **autoevaluación** en `assessments/module-quizzes.json`, y que la **cadena anterior/siguiente** de sus vecinos ha quedado rota.
+Si añades o reordenas una **clase**, `pnpm check` te avisará de dos cosas que es fácil olvidar: que su unidad temática necesita una **autoevaluación** en `assessments/module-quizzes.json`, y que la **cadena anterior/siguiente** de sus vecinas ha quedado rota.
 
 Los cambios de dependencias deben justificar necesidad, mantenimiento, licencia y superficie de ataque.
 

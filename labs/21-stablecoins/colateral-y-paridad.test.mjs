@@ -4,7 +4,7 @@ import { evaluarPosicion, liquidarPosicion, simularParidad, coberturaReserva } f
 
 const base = { cantidadColateral: 2, precioColateral: 2_000, emitido: 2_000, ratioMinimo: 1.5 };
 
-test("reproduce el cálculo del módulo: ratio 200 % y liquidación en 1 500", () => {
+test("reproduce el cálculo de la clase: ratio 200 % y liquidación en 1 500", () => {
   const p = evaluarPosicion(base);
   assert.equal(p.ratio, 2);
   assert.equal(p.precioLiquidacion, 1_500);

@@ -5,7 +5,7 @@
 Guía para levantar el sistema completo en local: nodo Anvil, contrato desplegado con
 Foundry, interfaz web e indexador de eventos. Cada fase indica **qué hace**, el **comando**,
 la **salida esperada** y su **verificación**. El desarrollo de la dApp se estudia en
-[07 · dApps](../curriculum/07-dapps/README.md).
+[Clases 15–16 · dApps](../curriculum/07-dapps/README.md).
 
 ## Flujo local
 
@@ -120,6 +120,6 @@ Verificación: no queda ninguna clave privada en `.env` ni en el historial de la
 
 ## Recursos relacionados
 
-- [07 · dApps](../curriculum/07-dapps/README.md)
+- [Clases 15–16 · dApps](../curriculum/07-dapps/README.md)
 - [Modelo de amenazas del proyecto](threat-model-project.md)
 - [Operación e incidentes](operacion-incidentes.md)

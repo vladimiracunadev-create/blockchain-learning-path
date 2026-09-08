@@ -4,7 +4,7 @@
 // descomposición del Banco Mundial — comisión explícita MÁS margen de cambio,
 // que es la partida que casi nunca se compara.
 //
-// Módulo 23 · Pagos, cross-border y FX on-chain.
+// Clases 47–48 · Pagos, cross-border y FX on-chain.
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 
 /**

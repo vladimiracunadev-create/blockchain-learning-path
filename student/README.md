@@ -28,7 +28,7 @@ La estructura del archivo (fragmento abreviado del ejemplo):
 }
 ```
 
-El ejemplo completo cubre las 66 clases (00.1–32.2), la unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) (su práctica es la 71) y las 91 prácticas. Cuando todas las clases y prácticas estén en `completed` con nota mínima de 80 y el proyecto final aprobado, ejecuta `pnpm course:certificate ruta/progress.json` para generar el certificado local.
+El ejemplo completo cubre las 66 clases (1–66), la unidad transversal [Wallets desde cero](../docs/wallets-desde-cero.md) (su práctica es la 71) y las 91 prácticas. Cuando todas las clases y prácticas estén en `completed` con nota mínima de 80 y el proyecto final aprobado, ejecuta `pnpm course:certificate ruta/progress.json` para generar el certificado local.
 
 Una evidencia puede ser una ruta a código, prueba, txid local, ADR o informe. Nunca registres claves, seeds, datos personales ni endpoints privados.
 

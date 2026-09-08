@@ -1,8 +1,8 @@
-# 04 · Bitcoin
+# Bitcoin · Clases 9–10
 
 > **Nivel:** Intermedio · ⏱️ **Duración estimada:** 150 min · **Fuente:** *Mastering Bitcoin* (Antonopoulos) y *Mastering the Lightning Network* (Antonopoulos, Osuntokun, Pickhardt)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [03 · Consenso](../03-consenso/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [05 · Ethereum y EVM](../05-ethereum-evm/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 7–8 · Consenso](../03-consenso/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 11–12 · Ethereum y EVM](../05-ethereum-evm/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 04.1 · UTXO y anatomía de una transacción
+### Clase 9 · UTXO y anatomía de una transacción
 
 **Pregunta guía:** ¿Dónde está el saldo de Bitcoin y qué autoriza realmente una entrada?
 
@@ -32,7 +32,7 @@ Se sigue cada entrada y salida con cantidades concretas hasta que el saldo deja 
 
 **Evidencia de aprendizaje:** Trazado de cada satoshi entre entradas, salidas, cambio y comisión.
 
-### Clase 04.2 · Verificación, minería y operación segura
+### Clase 10 · Verificación, minería y operación segura
 
 **Pregunta guía:** ¿Qué comprueba un nodo propio y qué delega un cliente ligero?
 
@@ -304,4 +304,4 @@ Documenta el análisis de una transacción pública en un texto breve: identific
 > transversal [Wallets desde cero: uso, seguridad y recuperación](../../docs/wallets-desde-cero.md) —
 > qué administra una wallet, cómo firmar sin quemarte y qué hacer en una emergencia.
 
-⬅️ [Clases 03.1–03.2 · Consenso](../03-consenso/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 05.1–05.2 · Ethereum y EVM](../05-ethereum-evm/README.md)
+⬅️ [Clases 7–8 · Consenso](../03-consenso/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 11–12 · Ethereum y EVM](../05-ethereum-evm/README.md)

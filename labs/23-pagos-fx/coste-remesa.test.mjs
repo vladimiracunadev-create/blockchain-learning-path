@@ -10,7 +10,7 @@ const tradicional = {
   costeRetirada: 0.5
 };
 
-test("reproduce la descomposición del módulo: 12 USD, el 6 % del importe", () => {
+test("reproduce la descomposición de la clase: 12 USD, el 6 % del importe", () => {
   const r = costeRemesa(tradicional);
   assert.equal(r.total, 12);
   assert.equal(r.costeRelativo, 0.06);

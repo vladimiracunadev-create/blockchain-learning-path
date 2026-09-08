@@ -1,8 +1,8 @@
 # 🔎 Explorador analítico de actividad blockchain
 
-> Navegación: [🏠 Programa](../../README.md) · [📚 Clases 28.1–28.2 · Data Analytics on-chain](../../curriculum/28-data-analytics-onchain/README.md) · [🧪 Catálogo de prácticas](../../labs/CATALOG.md) · [📖 Glosario](../../docs/glosario.md)
+> Navegación: [🏠 Programa](../../README.md) · [📚 Clases 57–58 · Data Analytics on-chain](../../curriculum/28-data-analytics-onchain/README.md) · [🧪 Catálogo de prácticas](../../labs/CATALOG.md) · [📖 Glosario](../../docs/glosario.md)
 
-Proyecto final de las [clases 28.1–28.2](../../curriculum/28-data-analytics-onchain/README.md) (**práctica 83**).
+Proyecto final de las [clases 57–58](../../curriculum/28-data-analytics-onchain/README.md) (**práctica 83**).
 Integra en una sola herramienta lo construido en los once laboratorios previos: importar un
 dataset, consultar bloques y transacciones, buscar direcciones, calcular indicadores, construir
 el grafo, filtrar, detectar patrones, dibujar los resultados y **exportar un informe que
@@ -102,4 +102,4 @@ exactamente el mismo informe.
 
 ## 🧭 Navegación
 
-[🏠 Programa](../../README.md) · [📚 Clases 28.1–28.2](../../curriculum/28-data-analytics-onchain/README.md) · [🧪 Cuaderno del bloque](../../labs/guides/07-data-analytics.md) · [🎓 Capstone](../../capstone/README.md)
+[🏠 Programa](../../README.md) · [📚 Clases 57–58](../../curriculum/28-data-analytics-onchain/README.md) · [🧪 Cuaderno del bloque](../../labs/guides/07-data-analytics.md) · [🎓 Capstone](../../capstone/README.md)

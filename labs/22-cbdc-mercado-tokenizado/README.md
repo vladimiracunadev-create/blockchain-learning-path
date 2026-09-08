@@ -1,6 +1,6 @@
 # Laboratorio · Mercado tokenizado con dinero mayorista simulado
 
-> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 22.1–22.2 · Depósitos tokenizados y CBDC/MDBC](../../curriculum/22-deposito-tokenizado-cbdc/README.md) · [Clases 25.1–25.2 · Mercados de capitales](../../curriculum/25-mercados-capitales-onchain/README.md) · [Catálogo de laboratorios](../CATALOG.md)
+> Navegación: [Inicio](../../README.md) · [Currículo](../../curriculum/README.md) · [Clases 45–46 · Depósitos tokenizados y CBDC/MDBC](../../curriculum/22-deposito-tokenizado-cbdc/README.md) · [Clases 51–52 · Mercados de capitales](../../curriculum/25-mercados-capitales-onchain/README.md) · [Catálogo de laboratorios](../CATALOG.md)
 
 ⚠️ **USO EDUCATIVO EXCLUSIVAMENTE.** Estos contratos **no son, no reproducen ni pretenden
 reproducir** ningún sistema real: ni una moneda digital de banco central de Chile o de
@@ -75,13 +75,13 @@ Es tan importante como lo que sí hace, y es materia de examen:
 
 1. **Firmeza jurídica.** La atomicidad es técnica. Que la transferencia sea oponible a un
    tercero —o en un concurso— lo determina la norma del sistema, no el contrato
-   ([clases 20.1–20.2](../../curriculum/20-dinero-banca-liquidacion/README.md)).
+   ([clases 41–42](../../curriculum/20-dinero-banca-liquidacion/README.md)).
 2. **Liquidez.** El modelo 1 de DvP **suprime el neteo**: exige el importe íntegro en cada
    operación. El coste está calculado en `pnpm lab:dvp`.
 3. **Retención fiscal.** El cupón se paga bruto. La retención depende de la residencia del
    titular, que no está en la cadena.
 4. **Identidad.** La elegibilidad es una lista en el contrato. En un sistema real sería una
-   credencial verificable ([clases 26.1–26.2](../../curriculum/26-custodia-identidad/README.md)).
+   credencial verificable ([clases 53–54](../../curriculum/26-custodia-identidad/README.md)).
 5. **Gobernanza y actualización.** No hay timelock ni multifirma sobre el emisor: en
    producción, quien puede emitir y excluir participantes es el mayor riesgo del sistema.
 6. **Préstamo de valores.** Sin él, un vendedor sin títulos produce fallo de entrega — como
@@ -102,4 +102,4 @@ Es tan importante como lo que sí hace, y es materia de examen:
 
 ## 🧭 Navegación
 
-[🧪 Catálogo de laboratorios](../CATALOG.md) · [📚 Clases 22.1–22.2](../../curriculum/22-deposito-tokenizado-cbdc/README.md) · [📚 Clases 25.1–25.2](../../curriculum/25-mercados-capitales-onchain/README.md) · [🏠 Programa](../../README.md)
+[🧪 Catálogo de laboratorios](../CATALOG.md) · [📚 Clases 45–46](../../curriculum/22-deposito-tokenizado-cbdc/README.md) · [📚 Clases 51–52](../../curriculum/25-mercados-capitales-onchain/README.md) · [🏠 Programa](../../README.md)

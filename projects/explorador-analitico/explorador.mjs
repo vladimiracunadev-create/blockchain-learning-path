@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Explorador analítico de actividad blockchain — proyecto final del módulo 28.
+// Explorador analítico de actividad blockchain — proyecto final de las clases 57–58.
 //
 // Integra en una sola herramienta lo aprendido en los once laboratorios previos:
 // importa un dataset, consulta bloques, transacciones y direcciones, filtra por
@@ -22,7 +22,7 @@
 //   node projects/explorador-analitico/explorador.mjs --direccion 0x9002ed11…
 //   node projects/explorador-analitico/explorador.mjs --informe informe.md
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { writeFileSync } from "node:fs";
 import { ejecutadoDirectamente } from "../../labs/run-directo.mjs";
@@ -118,7 +118,7 @@ export function observacionesConComision(transferencias, comisionPorHash) {
   }));
 }
 
-/** Crea el explorador sobre el dataset sintético del módulo. */
+/** Crea el explorador sobre el dataset sintético de estas clases. */
 export function crearExplorador({ semilla } = {}) {
   const datos = dataset(semilla == null ? {} : { semilla });
   const transferencias = transferenciasDeCadena(datos.cuentas);
@@ -258,7 +258,7 @@ export function construirInforme(explorador, filtro = {}) {
   const lineas = [
     "# Informe de actividad on-chain (dataset sintético)",
     "",
-    `> Generado por el **Explorador analítico de actividad blockchain**, proyecto final del módulo 28.`,
+    `> Generado por el **Explorador analítico de actividad blockchain**, proyecto final de las clases 57–58.`,
     `> Dataset determinista con semilla \`${explorador.datos.semilla}\`. Sin red, sin claves y sin fondos.`,
     "",
     "## 1. Consulta",

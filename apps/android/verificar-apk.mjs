@@ -127,10 +127,10 @@ if (entradaManifiesto) {
 // Una página real, descomprimida y leída: la prueba definitiva de que el HTML
 // no es un archivo vacío con el nombre correcto.
 const unidad = entradas.find((e) => e.nombre === `${RAIZ}curriculum/09-seguridad/README.html`);
-comprobar(Boolean(unidad), "las clases 09.1–09.2 están en el APK");
+comprobar(Boolean(unidad), "las clases 19–20 están en el APK");
 if (unidad) {
   const html = leerEntrada(unidad).toString("utf8");
-  comprobar(html.length > 20000, `las clases 09.1–09.2 tienen su contenido (${html.length} bytes de HTML)`);
+  comprobar(html.length > 20000, `las clases 19–20 tienen su contenido (${html.length} bytes de HTML)`);
   comprobar(html.includes("Seguridad y auditoría"), "las clases conservan el título de su unidad");
   comprobar((html.match(/"prompt":/g) ?? []).length === 4, "la unidad lleva sus 4 preguntas de autoevaluación");
   comprobar(html.includes('rel="prev"') && html.includes('rel="next"'), "la unidad conserva la navegación anterior/siguiente");

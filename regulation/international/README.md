@@ -1,6 +1,6 @@
 # 🌐 Estándares internacionales
 
-> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)
 
 Revisado: **2026-08-12**.
 
@@ -62,12 +62,12 @@ criptoactivos sin respaldo.
 
 Fuente: <https://www.bis.org/bcbs/>
 
-## CPMI: los principios que ordenan el módulo 25
+## CPMI: los principios que ordenan las clases 51–52
 
 Los *Principles for Financial Market Infrastructures* (CPMI-IOSCO) son la referencia sobre
 riesgo de liquidación, **firmeza**, entrega contra pago, gestión de incumplimientos y
 gobierno de una infraestructura. Cualquier diseño de mercado tokenizado serio se evalúa
-contra ellos, y por eso el [módulo 25](../../curriculum/25-mercados-capitales-onchain/README.md)
+contra ellos, y por eso las [clases 51–52](../../curriculum/25-mercados-capitales-onchain/README.md)
 los usa como rúbrica.
 
 Fuente: <https://www.bis.org/cpmi/publ/d101.htm>
@@ -88,7 +88,7 @@ Dos líneas relevantes: recomendaciones sobre **acuerdos globales de stablecoins
 redención, reservas, gestión de riesgos y cooperación transfronteriza— y la **hoja de ruta
 del G20 para pagos transfronterizos**, cuyo diagnóstico de cuatro fricciones (coste,
 velocidad, acceso y transparencia) se usa como rúbrica en el
-[módulo 23](../../curriculum/23-pagos-fx-onchain/README.md).
+[clases 47–48](../../curriculum/23-pagos-fx-onchain/README.md).
 
 Fuente: <https://www.fsb.org/>
 
@@ -114,4 +114,4 @@ Fuente: <https://www.fsb.org/>
 
 ## 🧭 Navegación
 
-[⬅️ Regulación](../README.md) · [🌍 Comparación](../comparison/README.md) · [🇨🇱 Chile](../chile/README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+[⬅️ Regulación](../README.md) · [🌍 Comparación](../comparison/README.md) · [🇨🇱 Chile](../chile/README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)

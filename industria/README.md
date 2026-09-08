@@ -42,11 +42,11 @@ flowchart LR
 
 Esta sección es la **lectura profesional extendida** del programa. La versión con
 laboratorios y retos verificables vive en el currículo: las clases
-[16 · Infraestructura y nodos](../curriculum/16-infraestructura-nodos/README.md),
-[17 · Blockchain en la empresa](../curriculum/17-blockchain-en-la-empresa/README.md) y
-[18 · Implementación empresarial](../curriculum/18-implementacion-empresarial/README.md).
+[Clases 33–34 · Infraestructura y nodos](../curriculum/16-infraestructura-nodos/README.md),
+[Clases 35–36 · Blockchain en la empresa](../curriculum/17-blockchain-en-la-empresa/README.md) y
+[Clases 37–38 · Implementación empresarial](../curriculum/18-implementacion-empresarial/README.md).
 
-- **Si vienes del currículo:** léela tras las clases 09.1–09.2 (Seguridad); da contexto de industria a las clases avanzadas.
+- **Si vienes del currículo:** léela tras las clases 19–20 (Seguridad); da contexto de industria a las clases avanzadas.
 - **Si eres decisor o consultor:** empieza por [04 · Blockchain para empresas](04-blockchain-para-empresas.md) y [05 · Modelos de negocio](05-modelos-de-negocio.md).
 - **Si buscas empleo en el sector:** [03 · Equipos y roles](03-equipos-roles-y-metodologia.md) mapea los puestos y sus habilidades; el [currículo](../curriculum/README.md) te da la ruta técnica.
 - **Si vas a lanzar un protocolo:** [06 · Ciclo de vida](06-ciclo-de-vida-de-un-proyecto.md) es tu checklist, junto al [capstone](../capstone/README.md).

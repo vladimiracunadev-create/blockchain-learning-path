@@ -1,5 +1,5 @@
 // Cadena sintética determinista: la materia prima de TODOS los laboratorios del
-// módulo 28 (Blockchain Data Analytics y minería de datos on-chain).
+// clases 57–58 (Blockchain Data Analytics y minería de datos on-chain).
 //
 // Por qué sintética y no una cadena real:
 //
@@ -19,7 +19,7 @@
 // el CÓDIGO y el MÉTODO, no las conclusiones sobre el mundo real. Los umbrales
 // que aquí funcionan no se trasladan tal cual a datos reales.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { createHash } from "node:crypto";
 
@@ -27,7 +27,7 @@ import { createHash } from "node:crypto";
 // `Math.random()` haría irreproducible el dataset (y el repositorio prohíbe la
 // aleatoriedad no sembrada en material que se verifica en CI). mulberry32 es un
 // PRNG de 32 bits, corto y suficiente para datos de práctica: NO es apto para
-// criptografía, y esa distinción se enseña en el módulo 01.
+// criptografía, y esa distinción se enseña en las clases 3–4.
 export function prng(semilla) {
   let estado = semilla >>> 0;
   return function siguiente() {
@@ -232,7 +232,7 @@ export function cadenaCuentas({ semilla = SEMILLA_POR_DEFECTO, bloques = 60 } = 
         gasUsado,
         precioGas,
         // La comisión efectiva es gasUsado × precioGas: por eso "gas" y "comisión"
-        // no son sinónimos, y confundirlos es un error frecuente del módulo 05.
+        // no son sinónimos, y confundirlos es un error frecuente de las clases 11–12.
         comision: gasUsado * precioGas,
         estado: 1,
         tipo,
@@ -415,7 +415,7 @@ export const diaDe = (marcaTiempo) => new Date(marcaTiempo * 1000).toISOString()
 export const minutoDe = (marcaTiempo) => new Date(marcaTiempo * 1000).toISOString().slice(0, 16).replace("T", " ");
 
 /**
- * Dataset completo del módulo. Es la única función que los laboratorios necesitan
+ * Dataset completo de las clases. Es la única función que los laboratorios necesitan
  * llamar: devuelve las dos cadenas y la verdad de campo con la misma semilla.
  */
 export function dataset({ semilla = SEMILLA_POR_DEFECTO } = {}) {

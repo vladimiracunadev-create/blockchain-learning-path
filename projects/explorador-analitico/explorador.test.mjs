@@ -120,7 +120,7 @@ test("la evaluación recupera las tres anomalías plantadas y declara sus falsos
   const { evaluacionAnomalias } = explorador.patrones();
   assert.equal(evaluacionAnomalias.verdaderosPositivos, 3);
   assert.equal(evaluacionAnomalias.recall, 1);
-  // Recall perfecto con precisión imperfecta: el compromiso que el módulo enseña.
+  // Recall perfecto con precisión imperfecta: el compromiso que enseñan las clases 57–58.
   assert.ok(evaluacionAnomalias.precision > 0 && evaluacionAnomalias.precision < 1);
   assert.ok(evaluacionAnomalias.falsosPositivos > 0);
 });

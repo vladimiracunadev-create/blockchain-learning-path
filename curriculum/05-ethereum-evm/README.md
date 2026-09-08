@@ -1,8 +1,8 @@
-# 05 · Ethereum y EVM
+# Ethereum y EVM · Clases 11–12
 
 > **Nivel:** Intermedio · ⏱️ **Duración estimada:** 150 min · **Fuente:** *Mastering Ethereum* (Antonopoulos, Wood) y *Ethereum Yellow Paper* (Wood)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [04 · Bitcoin](../04-bitcoin/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [06 · Solidity y Foundry](../06-solidity-foundry/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 9–10 · Bitcoin](../04-bitcoin/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 13–14 · Solidity y Foundry](../06-solidity-foundry/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 > 👛 ¿Aún no has usado una wallet? Pasa primero por la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
@@ -11,7 +11,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 05.1 · Cuentas, estado y transacciones Ethereum
+### Clase 11 · Cuentas, estado y transacciones Ethereum
 
 **Pregunta guía:** ¿Cómo cambia el estado global cuando una cuenta firma una operación?
 
@@ -33,7 +33,7 @@ Dos transacciones compiten por el mismo nonce y una tercera queda bloqueada. As�
 
 **Evidencia de aprendizaje:** Secuencia firmada que explique pending, reemplazo, inclusión y finalidad.
 
-### Clase 05.2 · EVM, ABI y costo de ejecución
+### Clase 12 · EVM, ABI y costo de ejecución
 
 **Pregunta guía:** ¿Cómo convierte la EVM una llamada en cambios de estado y consumo de gas?
 
@@ -332,4 +332,4 @@ Sigue una transacción de principio a fin: firma en la wallet, propagación, inc
 
 ## 🧭 Navegación
 
-⬅️ [Clases 04.1–04.2 · Bitcoin](../04-bitcoin/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 06.1–06.2 · Solidity y Foundry](../06-solidity-foundry/README.md)
+⬅️ [Clases 9–10 · Bitcoin](../04-bitcoin/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 13–14 · Solidity y Foundry](../06-solidity-foundry/README.md)

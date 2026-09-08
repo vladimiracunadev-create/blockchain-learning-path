@@ -6,10 +6,10 @@ Esta guía explica cómo llevar el programa a un aula real: cómo planificarlo s
 
 ## Cómo usar el programa
 
-El material está diseñado para dos formatos. Ambos cubren las clases 00.1–18.2 y el proyecto final; cambia el ritmo, no el alcance. La etapa de finanzas on-chain e institucional (clases 19.1–27.2) se imparte como [extensión optativa de ocho semanas](syllabus.md).
+El material está diseñado para dos formatos. Ambos cubren las clases 1–38 y el proyecto final; cambia el ritmo, no el alcance. La etapa de finanzas on-chain e institucional (clases 39–56) se imparte como [extensión optativa de ocho semanas](syllabus.md).
 
 - **Semestre largo (24–26 semanas).** Una sesión conceptual y una de laboratorio por semana. Es el formato de referencia del [programa académico](syllabus.md). Deja espacio para checkpoints, retroalimentación y una defensa amplia del capstone.
-- **Intensivo (8 semanas).** Entre cuatro y seis clases por semana, laboratorios seleccionados y proyecto final reducido en alcance. Prioriza fundamentos (00.1–06.2), seguridad (09.1–09.2) y un proyecto acotado; convierte las clases avanzadas (12.1–18.2) en lecturas guiadas.
+- **Intensivo (8 semanas).** Entre cuatro y seis clases por semana, laboratorios seleccionados y proyecto final reducido en alcance. Prioriza fundamentos (1–14), seguridad (19–20) y un proyecto acotado; convierte las clases avanzadas (25–38) en lecturas guiadas.
 
 En cualquier formato mantén el ciclo pedagógico: comprender, experimentar, explicar, construir y verificar. El detalle didáctico está en [diseño pedagógico](../docs/diseno-pedagogico.md) y [planes de clase](../docs/planes-de-clase.md).
 
@@ -62,18 +62,18 @@ Primero corrige el modelo mental, después la implementación. Un resultado corr
 
 | Clases | Tema | Duración sugerida | Entregable |
 |---|---|---:|---|
-| 00–01 | Orientación y criptografía | 3 sesiones | ADR + checkpoint |
-| 02–03 | Distribuidos y consenso | 3 sesiones | mini blockchain |
-| 04 | Bitcoin y UTXO | 2 sesiones | transcript regtest |
-| 05 | Ethereum y EVM | 2 sesiones | análisis de transacción |
-| 06 | Solidity y Foundry | 3 sesiones | Vault con invariantes |
-| 07 | dApps | 2 sesiones | interfaz accesible |
-| 08 | Tokens y estándares | 2 sesiones | protocolo con roles |
-| 09 | Seguridad | 3 sesiones | informe de auditoría |
-| 10–11 | Oráculos, indexación y DAO | 2 sesiones | ADR |
-| 12–13 | Escalabilidad e interoperabilidad | 2 sesiones | comparativa L2 |
-| 14–15 | Privacidad y arquitectura | 2 sesiones | defensa de diseño |
-| 16–18 | Infraestructura y empresa | 3 sesiones | plan + caso de negocio |
+| 1–4 | Orientación y criptografía | 3 sesiones | ADR + checkpoint |
+| 5–8 | Distribuidos y consenso | 3 sesiones | mini blockchain |
+| 9–10 | Bitcoin y UTXO | 2 sesiones | transcript regtest |
+| 11–12 | Ethereum y EVM | 2 sesiones | análisis de transacción |
+| 13–14 | Solidity y Foundry | 3 sesiones | Vault con invariantes |
+| 15–16 | dApps | 2 sesiones | interfaz accesible |
+| 17–18 | Tokens y estándares | 2 sesiones | protocolo con roles |
+| 19–20 | Seguridad | 3 sesiones | informe de auditoría |
+| 21–24 | Oráculos, indexación y DAO | 2 sesiones | ADR |
+| 25–28 | Escalabilidad e interoperabilidad | 2 sesiones | comparativa L2 |
+| 29–32 | Privacidad y arquitectura | 2 sesiones | defensa de diseño |
+| 33–38 | Infraestructura y empresa | 3 sesiones | plan + caso de negocio |
 | Capstone | Proyecto final | 2 sesiones | demo y defensa |
 
 ## Enlaces útiles

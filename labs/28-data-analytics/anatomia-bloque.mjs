@@ -16,7 +16,7 @@
 // misma forma que uno real, no la implementación de una blockchain real (no
 // hay validación de prueba de trabajo/participación, ni verificación de firmas).
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { comisionUTXO } from "./cadena-sintetica.mjs";
 import { ejecutadoDirectamente } from "../run-directo.mjs";

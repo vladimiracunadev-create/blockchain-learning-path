@@ -16,7 +16,7 @@
 // quedaron sin marcar. Cualquier cifra de "recall" sobre datos reales que no
 // venga de una auditoría exhaustiva es, como mucho, una estimación optimista.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { transaccionesDe, logsDe, aHumano, cadenaCuentas } from "./cadena-sintetica.mjs";
 import { ejecutadoDirectamente } from "../run-directo.mjs";

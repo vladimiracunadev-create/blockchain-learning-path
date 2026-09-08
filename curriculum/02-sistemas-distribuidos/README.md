@@ -1,8 +1,8 @@
-# 02 · Sistemas distribuidos y redes P2P
+# Sistemas distribuidos y redes P2P · Clases 5–6
 
 > **Nivel:** Inicial-Intermedio · ⏱️ **Duración estimada:** 120 min · **Fuente:** *Introduction to Reliable and Secure Distributed Programming* (Cachin, Guerraoui, Rodrigues) y *Distributed Systems* (Tanenbaum, van Steen)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [01 · Criptografía aplicada](../01-criptografia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [03 · Consenso](../03-consenso/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 3–4 · Criptografía aplicada](../01-criptografia/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 7–8 · Consenso](../03-consenso/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 02.1 · Replicación, latencia y fallas
+### Clase 5 · Replicación, latencia y fallas
 
 **Pregunta guía:** ¿Qué significa mantener una verdad compartida cuando la red se parte?
 
@@ -32,7 +32,7 @@ Los equipos reciben mensajes con retrasos, duplicados y particiones. Al reconstr
 
 **Evidencia de aprendizaje:** Línea temporal que identifique estados divergentes y política de resolución.
 
-### Clase 02.2 · Redes P2P y adversarios
+### Clase 6 · Redes P2P y adversarios
 
 **Pregunta guía:** ¿Cómo se propaga información sin confiar en cada participante?
 
@@ -145,7 +145,7 @@ flowchart TD
 
 Una blockchain pública de tipo Nakamoto elige, en la práctica, **disponibilidad con consistencia eventual**: durante una partición, cada mitad de la red sigue produciendo bloques sobre su propia vista, y al reunificarse la regla de elección de cadena descarta una de las ramas — eso es un **reorg**. Los nodos que consideraban confirmadas las transacciones de la rama perdedora ven cómo vuelven al mempool. Por eso la finalidad de Bitcoin es probabilística: más profundidad, menos probabilidad de reversión, pero nunca cero.
 
-Caso real verificable: el 25 de mayo de 2022, la Beacon Chain de Ethereum sufrió un **reorg de 7 bloques** — siete bloques ya propuestos fueron descartados de la cadena canónica. No hubo ataque: fue una consecuencia de la propagación desigual entre clientes actualizados y no actualizados en la implementación del boost del fork choice. La lección de sistemas distribuidos es doble: (1) incluso sin adversarios, la latencia y la heterogeneidad de clientes bastan para producir divergencias temporales; (2) el protocolo se diseña para que esas divergencias se resuelvan solas — la capa de finalidad (checkpoints de Casper FFG, clases 03.1–03.2) marca el punto tras el cual un reorg ya no es una molestia sino una catástrofe económica. Análisis técnico: <https://barnabe.substack.com/p/pos-ethereum-reorg>.
+Caso real verificable: el 25 de mayo de 2022, la Beacon Chain de Ethereum sufrió un **reorg de 7 bloques** — siete bloques ya propuestos fueron descartados de la cadena canónica. No hubo ataque: fue una consecuencia de la propagación desigual entre clientes actualizados y no actualizados en la implementación del boost del fork choice. La lección de sistemas distribuidos es doble: (1) incluso sin adversarios, la latencia y la heterogeneidad de clientes bastan para producir divergencias temporales; (2) el protocolo se diseña para que esas divergencias se resuelvan solas — la capa de finalidad (checkpoints de Casper FFG, clases 7–8) marca el punto tras el cual un reorg ya no es una molestia sino una catástrofe económica. Análisis técnico: <https://barnabe.substack.com/p/pos-ethereum-reorg>.
 
 ### Modelos de sincronía y por qué FLP no condena el consenso
 
@@ -169,7 +169,7 @@ Crear una identidad en una red P2P abierta es gratis; por eso el voto "un nodo, 
 | Proof of Stake | Capital bloqueado en el protocolo | Comprar y arriesgar una fracción grande del stake, expuesta a slashing | El propio ataque destruye el valor del capital atacante; costo interno |
 | Identidad (PoA, consorcios) | Autorización verificada fuera de cadena | Corromper o suplantar a los miembros autorizados | No sirve para redes abiertas; reintroduce una autoridad de admisión |
 
-La conclusión conecta con las clases 03.1–03.2: el mecanismo de consenso no "elige al mejor", solo hace que fingir ser muchos resulte más caro que el beneficio esperado del ataque.
+La conclusión conecta con las clases 7–8: el mecanismo de consenso no "elige al mejor", solo hace que fingir ser muchos resulte más caro que el beneficio esperado del ataque.
 
 ### CAP con un ejemplo que se puede seguir a mano
 
@@ -272,4 +272,4 @@ Entrega el diseño de la red de cinco nodos con los cuatro escenarios simulados 
 
 ## 🧭 Navegación
 
-⬅️ [Clases 01.1–01.2 · Criptografía aplicada](../01-criptografia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 03.1–03.2 · Consenso](../03-consenso/README.md)
+⬅️ [Clases 3–4 · Criptografía aplicada](../01-criptografia/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 7–8 · Consenso](../03-consenso/README.md)

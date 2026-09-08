@@ -34,7 +34,7 @@
 // honestos, con los mismos datos, pueden llegar a porcentajes de "fondos
 // marcados" distintos solo por haber elegido un criterio de reparto distinto.
 //
-// Módulo 28 · Blockchain Data Analytics y minería de datos on-chain.
+// Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain.
 
 import { ejecutadoDirectamente } from "../run-directo.mjs";
 

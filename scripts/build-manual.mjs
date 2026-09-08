@@ -21,7 +21,7 @@ const classCount = JSON.parse(read("curriculum/classes.json")).flatMap((unit) =>
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 const adrDocs = readdirSync(join(ROOT, "adrs")).filter((f) => /^\d{3}-.*\.md$/.test(f)).sort();
 // Las cifras de la portada se calculan de los archivos reales: escritas a mano
-// envejecen al primer módulo o práctica que se añada.
+// envejecen al primer bloque de clases o práctica que se añada.
 const practiceCount = (read("labs/CATALOG.md").match(/^\| \d+ \|/gm) ?? []).length;
 
 // Manifiesto ordenado del manual: partes → capítulos (rutas .md del repo).
@@ -30,7 +30,7 @@ const PARTS = [
   // imprime el manual y lo abre por el principio tiene que encontrarla ahí, igual
   // que en el sitio y en las apps.
   ["Introducción", ["README.md", "docs/empieza-aqui.md"]],
-  // La unidad transversal de wallets va donde se estudia: después del módulo 04
+  // La unidad transversal de wallets va donde se estudia: después de la clase 10
   // (Bitcoin) y antes del 05 (Ethereum), igual que en el sitio y en el currículo.
   ["Currículo", ["curriculum/README.md", ...curriculumSlugs.flatMap((s) =>
     s.startsWith("04-") ? [`curriculum/${s}/README.md`, "docs/wallets-desde-cero.md"] : [`curriculum/${s}/README.md`])]],

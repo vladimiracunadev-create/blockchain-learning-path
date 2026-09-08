@@ -1,8 +1,8 @@
-# 17 · Blockchain en la empresa: valor, casos y costos
+# Blockchain en la empresa: valor, casos y costos · Clases 35–36
 
 > **Nivel:** Avanzado-Producción · ⏱️ **Duración estimada:** 150 min · **Fuente:** informes del BIS y el WEF, casos públicos documentados y *The Blockchain and the New Architecture of Trust* (Werbach)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [16 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [18 · Implementación empresarial end-to-end](../18-implementacion-empresarial/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 33–34 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 37–38 · Implementación empresarial end-to-end](../18-implementacion-empresarial/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 17.1 · Valor empresarial y límites
+### Clase 35 · Valor empresarial y límites
 
 **Pregunta guía:** ¿Qué coordinación mejora y qué costo nuevo introduce una red compartida?
 
@@ -32,7 +32,7 @@ El proceso actual se cuantifica antes de diseñar el futuro. Beneficios, costos 
 
 **Evidencia de aprendizaje:** Business case con línea base, supuestos, costos y criterio de abandono.
 
-### Clase 17.2 · Comunicación, piloto y medición
+### Clase 36 · Comunicación, piloto y medición
 
 **Pregunta guía:** ¿Cómo se prueba valor sin prometer una transformación completa?
 
@@ -179,19 +179,19 @@ flowchart TD
 
 | Servicio | Qué resuelve | Ejemplos | Cuándo contratarlo |
 |---|---|---|---|
-| Nodo/RPC gestionado | Acceso a la red sin operar nodos | Alchemy, Infura, QuickNode | Siempre al inicio; nodo propio al crecer (clases 16.1–16.2) |
+| Nodo/RPC gestionado | Acceso a la red sin operar nodos | Alchemy, Infura, QuickNode | Siempre al inicio; nodo propio al crecer (clases 33–34) |
 | Custodia / MPC | Claves institucionales con póliza y licencia | Fireblocks, BitGo, custodios bancarios | Cuando hay fondos de terceros o tesorería relevante |
 | KYT / analítica | Cumplimiento y monitoreo de fondos | Chainalysis, TRM, Elliptic | Obligatorio según actividad y jurisdicción |
 | Auditoría de contratos | Revisión externa pre-lanzamiento | Firmas especializadas + contests | Siempre antes de mainnet; se agenda con meses |
 | Tokenización como servicio | Emisión regulada de RWA | Securitize y equivalentes locales | Cuando el activo exige registro regulado |
-| Rollup/red como servicio | Cadena propia sin equipo de protocolo | Conduit, Caldera y similares | Casos que justifican appchain (revisa las clases 12.1–12.2) |
+| Rollup/red como servicio | Cadena propia sin equipo de protocolo | Conduit, Caldera y similares | Casos que justifican appchain (revisa las clases 25–26) |
 
 ### Costos asociados: el presupuesto completo
 
 Partidas para un proyecto mediano de 6 meses (órdenes de magnitud del mercado —
 **consulta precios en vivo**): el **equipo** (6-8 personas) domina el costo; **auditoría
 externa** 30.000-150.000+ USD según alcance; **infraestructura** 500-5.000+ USD/mes
-(clases 16.1–16.2); **custodia** fijo mensual + variable; **KYT/cumplimiento** suscripción
+(clases 33–34); **custodia** fijo mensual + variable; **KYT/cumplimiento** suscripción
 anual; **gas** marginal en L2 post-EIP-4844, relevante en L1. El error clásico:
 presupuestar solo el desarrollo y descubrir auditoría y cumplimiento a mitad de camino.
 
@@ -300,7 +300,7 @@ Análisis de caso con plantilla, sobre fuentes primarias:
 1. Elige un caso de la tabla (éxito o fracaso) y localiza dos fuentes primarias (anuncio oficial, informe del regulador, documentación del producto).
 2. Completa la ficha: problema de negocio → mecanismo del beneficio → evidencia medible → costos visibles → riesgos y consideraciones → estado actual (verifícalo en vivo).
 3. Aplica el flujo de decisión del esquema visual: ¿habrías aprobado el proyecto con la información de su época?
-4. Contrasta con la matriz de las clases 00.1–00.2: ¿este caso necesitaba blockchain o una base de datos?
+4. Contrasta con la matriz de las clases 1–2: ¿este caso necesitaba blockchain o una base de datos?
 5. Presenta la ficha en una página, como si fuera para un comité de inversión.
 
 ## 📝 Reto verificable
@@ -355,4 +355,4 @@ usa ninguno de los términos de la columna "No digas".
 
 ## 🧭 Navegación
 
-⬅️ [Clases 16.1–16.2 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 18.1–18.2 · Implementación empresarial](../18-implementacion-empresarial/README.md)
+⬅️ [Clases 33–34 · Infraestructura y operación de nodos](../16-infraestructura-nodos/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 37–38 · Implementación empresarial](../18-implementacion-empresarial/README.md)

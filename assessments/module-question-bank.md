@@ -10,7 +10,7 @@ Banco de preguntas de **razonamiento**, no de memoria: cada una busca que argume
 - **Quiz entre pares:** una persona pregunta y la otra defiende; luego se intercambian. Las preguntas abiertas se evalúan por la calidad del razonamiento, no por coincidir con una clave.
 - Una respuesta objetiva mal fundamentada sigue siendo incorrecta: exige la demostración, no solo el resultado.
 
-## Fundamentos (etapas 01–03)
+## Fundamentos (clases 3–8)
 
 1. (A) ¿Qué cambia en la confianza al pasar de una base de datos firmada a una blockchain?
 2. (A) ¿Por qué una firma válida no demuestra que el firmante comprendió lo que firmaba?
@@ -21,7 +21,7 @@ Banco de preguntas de **razonamiento**, no de memoria: cada una busca que argume
 7. (A) ¿En qué escenario un timestamp de bloque es una fuente de aleatoriedad insegura?
 8. (A) Si dos nodos honestos ven cadenas distintas, ¿qué regla decide cuál prevalece y por qué?
 
-## Bitcoin y EVM (etapas 04–05)
+## Bitcoin y EVM (clases 9–12)
 
 1. (O) Demuestra la conservación de valor en una transacción UTXO con inputs y outputs concretos.
 2. (A) ¿Por qué se dice que una wallet no "contiene" bitcoins?
@@ -32,7 +32,7 @@ Banco de preguntas de **razonamiento**, no de memoria: cada una busca que argume
 7. (A) ¿Qué implica para la privacidad reutilizar una misma dirección en Bitcoin?
 8. (O) ¿Cuál es la diferencia de coste de gas entre `SSTORE` de un slot nuevo y uno ya usado, y por qué?
 
-## Desarrollo y seguridad (etapas 06–09)
+## Desarrollo y seguridad (clases 13–20)
 
 1. (A) Escribe tres invariantes de un contrato **antes** de implementarlo.
 2. (O) ¿Por qué CEI no resuelve por sí solo toda forma de reentrancia?
@@ -45,7 +45,7 @@ Banco de preguntas de **razonamiento**, no de memoria: cada una busca que argume
 9. (A) ¿Qué distingue una corrección mínima de una reescritura al arreglar una vulnerabilidad?
 10. (O) En un ataque de reentrancia clásico, ¿qué línea concreta habilita el drenaje?
 
-## Tokens, oráculos y gobernanza (etapas 08, 10, 11)
+## Tokens, oráculos y gobernanza (clases 17–18 y 21–24)
 
 1. (A) ¿Qué derecho real representa el token de tu proyecto? ¿Existe ese derecho sin el token?
 2. (O) ¿Por qué un oráculo debe rechazar datos más viejos que cierto `maxAge`?
@@ -56,7 +56,7 @@ Banco de preguntas de **razonamiento**, no de memoria: cada una busca que argume
 7. (O) ¿Por qué `mint` sin un `cap` verificable rompe la escasez declarada del token?
 8. (A) ¿Cuándo un proyecto **no** necesita un token propio?
 
-## Avanzado (etapas 12–15)
+## Avanzado (clases 25–32)
 
 1. (A) ¿Qué supuesto de confianza añade un rollup optimista frente a la L1?
 2. (A) ¿Dónde está el punto único de falla de un puente y cómo lo mitigas?
@@ -65,7 +65,7 @@ Banco de preguntas de **razonamiento**, no de memoria: cada una busca que argume
 5. (A) ¿Cuándo justifica una appchain su coste frente a desplegar en una L2 existente?
 6. (A) ¿Qué comprometes al elegir disponibilidad de datos fuera de la L1?
 
-## Producto y operación (etapas 16–18)
+## Producto y operación (clases 33–38)
 
 1. (A) ¿Quién puede censurar, pausar, actualizar o retirar fondos en tu sistema?
 2. (A) ¿Cuál es el costo total de operar el sistema frente a una alternativa sin blockchain?
@@ -76,7 +76,7 @@ Banco de preguntas de **razonamiento**, no de memoria: cada una busca que argume
 7. (A) ¿Qué obligaciones regulatorias podrían aplicar según la actividad real del proyecto?
 8. (A) Si tuvieras más tiempo, ¿qué harías distinto y por qué?
 
-## Custodia, contabilidad, PoR y forensics (etapas 29–32)
+## Custodia, contabilidad, PoR y forensics (clases 59–66)
 
 1. Explica por qué CEX/DEX y custodial/non-custodial son dos ejes distintos.
 2. Dibuja un trade interno y un retiro; marca dónde aparece el txid.

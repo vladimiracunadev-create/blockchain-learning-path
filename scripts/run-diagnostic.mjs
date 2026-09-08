@@ -20,4 +20,4 @@ for (const [index, question] of assessment.questions.entries()) {
 }
 terminal.close();
 const score = Math.round(correct / assessment.questions.length * 100);
-console.log(`Resultado: ${score}% · ${score >= assessment.passingScore ? "puedes considerar la ruta rápida" : "comienza por la clase 00.1"}.`);
+console.log(`Resultado: ${score}% · ${score >= assessment.passingScore ? "puedes considerar la ruta rápida" : "comienza por la clase 1"}.`);

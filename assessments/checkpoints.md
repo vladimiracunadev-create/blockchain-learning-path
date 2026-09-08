@@ -8,14 +8,14 @@ Puntos de control por etapa del programa. Cada checkpoint define **qué debes po
 
 Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin ayuda y responder la pregunta de autoevaluación con un argumento, no con una definición memorizada.
 
-## Etapa 00 · Orientación
+## Clases 1–2 · Orientación
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |
 |---|---|---|
 | Explicar cuándo blockchain aporta valor y cuándo no | Un caso propio con la alternativa descartada | ¿Qué problema resuelve mejor una base de datos firmada? |
 | Preparar el entorno de trabajo | Repositorio clonado, herramientas instaladas | ¿Puedes reproducir el entorno en otra máquina? |
 
-## Etapas 01–03 · Fundamentos
+## Clases 3–8 · Fundamentos
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |
 |---|---|---|
@@ -23,7 +23,7 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Demostrar manipulación en la mini cadena | Bloque alterado y verificación que falla | ¿Por qué cambiar un bloque invalida los siguientes? |
 | Comparar mecanismos de consenso con criterios claros | Tabla con cuatro criterios (coste Sybil, finalidad, etc.) | ¿Cómo afecta una partición a seguridad y vivacidad? |
 
-## Etapa 28 · Analítica de datos on-chain
+## Clases 57–58 · Analítica de datos on-chain
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |
 |---|---|---|
@@ -31,7 +31,7 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Medir un detector, no solo ejecutarlo | Precisión, recall y falsos positivos de tu detector | ¿Por qué el recall no se puede calcular en una cadena real? |
 | Separar hecho, indicador, inferencia e hipótesis | El informe del [explorador analítico](../projects/explorador-analitico/README.md) | ¿Qué te faltaría para atribuir una dirección a una persona, y quién debería autorizarlo? |
 
-## Etapas 29–32 · Custodia, auditoría y forensics
+## Clases 59–66 · Custodia, auditoría y forensics
 
 | Competencia | Evidencia mínima | Pregunta de defensa |
 |---|---|---|
@@ -41,7 +41,7 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Investigar sin falsa atribución | Grafo y registro de confianza | ¿Dónde termina el hecho y empieza la hipótesis? |
 | Defender una revisión custodial | [Aurora Custody](../capstone/empresa-custodial/README.md) | ¿Qué discrepancia es timing y cuál es déficit? |
 
-## Etapas 04–07 · Desarrollo
+## Clases 9–16 · Desarrollo
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |
 |---|---|---|
@@ -50,7 +50,7 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Implementar el Vault y demostrar sus invariantes | Suite verde con fuzzing | ¿Por qué CEI no basta sin una guarda de reentrancia? |
 | Conectar una interfaz que simula antes de firmar | dApp que muestra red, valor y efecto | ¿Qué error se evita simulando antes de pedir la firma? |
 
-## Etapas 08–11 · Profesional
+## Clases 17–24 · Profesional
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |
 |---|---|---|
@@ -58,7 +58,7 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Diseñar un oráculo con freshness y fallback | Contrato que rechaza datos obsoletos | ¿Cómo se manipula un precio spot con liquidez puntual? |
 | Entregar una política multisig + timelock | Gobernador con quorum y retardo de ejecución | ¿Cómo sale un usuario si la gobernanza es capturada? |
 
-## Etapas 12–15 · Avanzado
+## Clases 25–32 · Avanzado
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |
 |---|---|---|
@@ -66,7 +66,7 @@ Avanza de una etapa a la siguiente solo cuando puedas producir la evidencia sin 
 | Modelar amenazas de un puente | Threat model con actores y superficies | ¿Dónde está el punto único de falla del puente? |
 | Razonar sobre privacidad y ZK | Explicación de qué se revela y qué se prueba | ¿Qué datos quedan correlacionables pese a la privacidad técnica? |
 
-## Etapas 16–18 · Operación y empresa
+## Clases 33–38 · Operación y empresa
 
 | Qué debes poder hacer | Evidencia | Autoevaluación |
 |---|---|---|

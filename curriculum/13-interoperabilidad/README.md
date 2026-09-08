@@ -1,8 +1,8 @@
-# 13 · Interoperabilidad y ecosistemas
+# Interoperabilidad y ecosistemas · Clases 27–28
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 150 min · **Fuente:** documentación de Cosmos IBC y de Polkadot (XCM)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [12 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [14 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 25–26 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 29–30 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 13.1 · Mensajes y activos entre cadenas
+### Clase 27 · Mensajes y activos entre cadenas
 
 **Pregunta guía:** ¿Qué significa mover un activo si cada red mantiene su propio estado?
 
@@ -32,7 +32,7 @@ Cada bloqueo, emisión, quema y liberación se registra en una misma tabla. El m
 
 **Evidencia de aprendizaje:** Invariante de suministro y lista de verificadores en cada frontera.
 
-### Clase 13.2 · Modelo de amenazas de puentes
+### Clase 28 · Modelo de amenazas de puentes
 
 **Pregunta guía:** ¿Qué nueva confianza introduce cada capa de interoperabilidad?
 
@@ -275,4 +275,4 @@ Entrega el modelo de amenazas de un puente concreto: diagrama de flujo, tabla de
 
 ## 🧭 Navegación
 
-⬅️ [Clases 12.1–12.2 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 14.1–14.2 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)
+⬅️ [Clases 25–26 · Escalabilidad y capas 2](../12-escalabilidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 29–30 · Privacidad y zero knowledge](../14-privacidad-zk/README.md)

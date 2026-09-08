@@ -5,7 +5,7 @@
 Buenas prácticas de desarrollo, prueba y operación de sistemas blockchain. Cada práctica
 se describe con **qué** es, **por qué** importa y **cómo verificar** que se cumple. La
 profundización con exploits reales está en las clases
-[09 · Seguridad y auditoría](../curriculum/09-seguridad/README.md).
+[Clases 19–20 · Seguridad y auditoría](../curriculum/09-seguridad/README.md).
 
 ## Diseño
 
@@ -99,6 +99,6 @@ en este orden:
 
 ## Recursos relacionados
 
-- [09 · Seguridad y auditoría](../curriculum/09-seguridad/README.md)
+- [Clases 19–20 · Seguridad y auditoría](../curriculum/09-seguridad/README.md)
 - [Modelo de amenazas del proyecto](threat-model-project.md)
 - [Operación e incidentes](operacion-incidentes.md)

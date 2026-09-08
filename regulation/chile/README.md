@@ -1,6 +1,6 @@
 # 🇨🇱 Chile · Marco regulatorio de activos digitales y finanzas abiertas
 
-> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md)
+> [⬅️ Regulación](../README.md) · [🏠 Programa](../../README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md)
 
 Revisado: **2026-08-12**.
 
@@ -80,7 +80,7 @@ MDBC, publicando documentos de análisis y abriendo el asunto a discusión.
 
 Presentar ese análisis como decisión adoptada, o describir características de "la MDBC
 chilena" como si existiera, es exactamente el tipo de afirmación que este programa prohíbe.
-El [laboratorio del módulo 22](../../labs/22-cbdc-mercado-tokenizado/README.md) es una
+El [laboratorio de mercado tokenizado](../../labs/22-cbdc-mercado-tokenizado/README.md) es una
 **simulación educativa** y así está etiquetado: no reproduce ningún sistema del Banco Central.
 
 ## Prevención de lavado y tributación
@@ -126,4 +126,4 @@ retocar el texto.
 
 ## 🧭 Navegación
 
-[⬅️ Regulación](../README.md) · [🌍 Comparación](../comparison/README.md) · [📖 Módulo 27](../../curriculum/27-regulacion-cumplimiento/README.md) · [🏠 Programa](../../README.md)
+[⬅️ Regulación](../README.md) · [🌍 Comparación](../comparison/README.md) · [📖 Clases 55–56](../../curriculum/27-regulacion-cumplimiento/README.md) · [🏠 Programa](../../README.md)

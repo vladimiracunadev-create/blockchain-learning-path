@@ -1,6 +1,6 @@
 # Caso en desarrollo · Orionx: ledger, custodia y estado blockchain
 
-> [⬅️ Casos reales](README.md) · [📖 Clases 29.1–32.2](../../curriculum/29-exchanges-operaciones-custodia/README.md) · [🏠 Programa](../../README.md)
+> [⬅️ Casos reales](README.md) · [📖 Clases 59–66](../../curriculum/29-exchanges-operaciones-custodia/README.md) · [🏠 Programa](../../README.md)
 
 **Corte de la ficha:** 7 de septiembre de 2026. **Qué:** Orionx comunicó el cierre de sus
 operaciones después de informar un descalce entre activos registrados y activos que habría
@@ -141,10 +141,10 @@ financiera completa excedería la evidencia.
 - CMF Chile — situación de autorización y alcance de la supervisión, 4 de septiembre de 2026: <https://www.cmfchile.cl/portal/prensa/625/w4-article-113273.html>
 - La Tercera — descripción de la querella y de la reconciliación alegada: <https://www.latercera.com/pulso/noticia/las-operaciones-que-llevaron-al-abrupto-cierre-de-la-plataforma-de-criptomonedas-orionx/>
 - BioBioChile — revisión periodística de la querella y distinción entre cifras informadas: <https://www.biobiochile.cl/noticias/economia/actualidad-economica/2026/09/04/como-se-esfumaron-dineros-de-los-clientes-de-orionx-la-querella-que-apunta-a-sus-propios-fundadores.shtml>
-- Clases del programa: [29.1–29.2 · Exchanges y custodia](../../curriculum/29-exchanges-operaciones-custodia/README.md) · [30.1–30.2 · Conciliación](../../curriculum/30-contabilidad-conciliacion/README.md) · [31.1–31.2 · PoR y solvencia](../../curriculum/31-proof-reserves-solvencia/README.md) · [32.1–32.2 · Forensics y gobierno](../../curriculum/32-forensics-auditoria-gobernanza/README.md)
+- Clases del programa: [59–60 · Exchanges y custodia](../../curriculum/29-exchanges-operaciones-custodia/README.md) · [61–62 · Conciliación](../../curriculum/30-contabilidad-conciliacion/README.md) · [63–64 · PoR y solvencia](../../curriculum/31-proof-reserves-solvencia/README.md) · [65–66 · Forensics y gobierno](../../curriculum/32-forensics-auditoria-gobernanza/README.md)
 
 ---
 
 ## 🧭 Navegación
 
-[⬅️ Casos reales](README.md) · [📖 Clases 29.1–32.2](../../curriculum/29-exchanges-operaciones-custodia/README.md) · [🎓 Aurora Custody](../../capstone/empresa-custodial/README.md)
+[⬅️ Casos reales](README.md) · [📖 Clases 59–66](../../curriculum/29-exchanges-operaciones-custodia/README.md) · [🎓 Aurora Custody](../../capstone/empresa-custodial/README.md)

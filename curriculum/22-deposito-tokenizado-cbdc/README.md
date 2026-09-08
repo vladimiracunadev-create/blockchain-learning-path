@@ -1,8 +1,8 @@
-# 22 · Depósitos tokenizados y CBDC/MDBC
+# Depósitos tokenizados y CBDC/MDBC · Clases 45–46
 
 > **Nivel:** Profesional · ⏱️ **Duración estimada:** 180 min · **Fuente:** BIS Innovation Hub y CPMI, informes del Banco Central de Chile, Banco Central Europeo y demás bancos centrales citados
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [21 · Stablecoins](../21-stablecoins/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [23 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 43–44 · Stablecoins](../21-stablecoins/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 47–48 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 22.1 · Depósitos tokenizados
+### Clase 45 · Depósitos tokenizados
 
 **Pregunta guía:** ¿Qué cambia cuando el pasivo bancario se representa en un registro programable?
 
@@ -32,7 +32,7 @@ El depósito tradicional y su representación tokenizada se colocan en el mismo 
 
 **Evidencia de aprendizaje:** Tabla de derechos, pasivos, liquidación y mecanismos de conversión.
 
-### Clase 22.2 · CBDC/MDBC y diseño de política pública
+### Clase 46 · CBDC/MDBC y diseño de política pública
 
 **Pregunta guía:** ¿Qué decisiones técnicas cambian privacidad, acceso y estabilidad financiera?
 
@@ -57,7 +57,7 @@ Cada equipo diseña una MDBC con objetivo distinto y debe defender privacidad, a
 
 ---
 
-Si una stablecoin es el pasivo de una empresa, quedan dos posibilidades que las clases 20.1–20.2
+Si una stablecoin es el pasivo de una empresa, quedan dos posibilidades que las clases 41–42
 ya te preparó: que el pasivo sea **de un banco comercial** (depósito tokenizado) o **del
 banco central** (moneda digital de banco central: CBDC, o **MDBC** en la terminología que
 usa Chile).
@@ -98,7 +98,7 @@ Al finalizar, el estudiante podrá:
 | 6 | Privacidad y trazabilidad | La tensión más política del diseño |
 | 7 | Desintermediación y límites de tenencia | El riesgo macro que ordena el resto |
 | 8 | Resiliencia y pagos sin conexión | El argumento menos discutido y más sólido |
-| 9 | Interoperabilidad y liquidación mayorista | Dónde se cruza con las clases 23.1–23.2 y 25.1–25.2 |
+| 9 | Interoperabilidad y liquidación mayorista | Dónde se cruza con las clases 47–48 y 51–52 |
 | 10 | El caso de Chile: MDBC en análisis | Estado documentado, no conclusión |
 
 ## 🧠 Modelo mental
@@ -188,7 +188,7 @@ Lo que **sí** cambia, y es sustancial:
 
 1. **Liquidación programable y atómica.** El depósito puede entregarse dentro de la misma
    transacción que entrega un valor tokenizado, resolviendo el problema de entrega contra
-   pago de las [clases 20.1–20.2](../20-dinero-banca-liquidacion/README.md) sin cámara intermedia.
+   pago de las [clases 41–42](../20-dinero-banca-liquidacion/README.md) sin cámara intermedia.
 2. **Horario.** Puede operar 24×7, frente a las ventanas de los sistemas de liquidación.
    Con la contrapartida que ya conoces: la tesorería también tiene que estar disponible 24×7.
 3. **Composabilidad con lógica de negocio.** Pagos condicionados a la entrega, a un hito o
@@ -232,7 +232,7 @@ piloto que han publicado resultados lo plantean exactamente así.
 
 La MDBC **mayorista** genera mucho menos debate público y bastante más consenso técnico,
 porque no toca la relación del ciudadano con su banco. Su uso natural es lo que ya viste en
-las clases 20.1–20.2: liquidar la pata de dinero de una operación en el activo más seguro que
+las clases 41–42: liquidar la pata de dinero de una operación en el activo más seguro que
 existe, ahora dentro de la misma transacción que entrega el activo.
 
 El BIS Innovation Hub y varios bancos centrales han desarrollado experimentos públicos en
@@ -303,7 +303,7 @@ representa cada contrato, qué **no** representa y por qué es una simulación e
 2. **Tabla de las siete formas de dinero.** Completa, para efectivo, reservas, depósito,
    depósito tokenizado, dinero electrónico, stablecoin y MDBC: emisor, riesgo de crédito,
    quién puede tenerlo, disponibilidad horaria, programabilidad y qué ocurre si el emisor
-   quiebra. Es la ampliación final de la ficha que empezaste en las clases 20.1–20.2.
+   quiebra. Es la ampliación final de la ficha que empezaste en las clases 41–42.
 
 3. **Diseño de límites.** Para una MDBC minorista hipotética, propón un límite de tenencia
    y justifícalo con una cuenta: qué porcentaje de los depósitos del sistema podría migrar
@@ -378,4 +378,4 @@ sobre un país real se presenta sin fuente oficial.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 21.1–21.2 · Stablecoins](../21-stablecoins/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 23.1–23.2 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md)
+⬅️ [Clases 43–44 · Stablecoins](../21-stablecoins/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 47–48 · Pagos, cross-border y FX on-chain](../23-pagos-fx-onchain/README.md)

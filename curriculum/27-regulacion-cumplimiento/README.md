@@ -1,8 +1,8 @@
-# 27 · Regulación y cumplimiento
+# Regulación y cumplimiento · Clases 55–56
 
 > **Nivel:** Avanzado · ⏱️ **Duración estimada:** 180 min · **Fuente:** textos normativos oficiales (Reglamento MiCA, Ley 21.521 de Chile), Recomendaciones del GAFI/FATF, estándares del Comité de Basilea y de IOSCO
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [26 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [28 · Blockchain Data Analytics y minería de datos on-chain](../28-data-analytics-onchain/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 53–54 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain](../28-data-analytics-onchain/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 
 ---
@@ -10,7 +10,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 27.1 · Leer regulación desde la fuente
+### Clase 55 · Leer regulación desde la fuente
 
 **Pregunta guía:** ¿Cómo distinguimos una obligación vigente de una guía o noticia?
 
@@ -32,7 +32,7 @@ Una afirmación pasa por noticia, resumen, guía, norma y artículo. El estudian
 
 **Evidencia de aprendizaje:** Ficha normativa con alcance, vigencia y enlace primario.
 
-### Clase 27.2 · Cumplimiento basado en riesgo
+### Clase 56 · Cumplimiento basado en riesgo
 
 **Pregunta guía:** ¿Qué controles responden al riesgo sin convertir toda señal en culpabilidad?
 
@@ -404,4 +404,4 @@ es un análisis incompleto.
 
 ## 🧭 Navegación
 
-⬅️ [Clases 26.1–26.2 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 28.1–28.2 · Blockchain Data Analytics y minería de datos on-chain](../28-data-analytics-onchain/README.md)
+⬅️ [Clases 53–54 · Custodia, wallets institucionales e identidad](../26-custodia-identidad/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 57–58 · Blockchain Data Analytics y minería de datos on-chain](../28-data-analytics-onchain/README.md)

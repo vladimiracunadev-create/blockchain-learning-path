@@ -1,6 +1,6 @@
 # Caso · FTX: custodia, segregación e integración vertical
 
-> [⬅️ Casos reales](README.md) · [📖 Clases 26.1–26.2 · Custodia e identidad](../../curriculum/26-custodia-identidad/README.md) · [🏠 Programa](../../README.md)
+> [⬅️ Casos reales](README.md) · [📖 Clases 53–54 · Custodia e identidad](../../curriculum/26-custodia-identidad/README.md) · [🏠 Programa](../../README.md)
 
 **Cuándo:** noviembre de 2022. **Qué:** una de las mayores plataformas de intercambio de
 criptoactivos del mundo se declaró en concurso tras revelarse que **los fondos de clientes
@@ -110,10 +110,10 @@ siempre**.
 - FSB — trabajo sobre riesgos de los mercados de criptoactivos: <https://www.fsb.org/>
 - Departamento de Justicia de EE. UU. — comunicados sobre el procedimiento penal: <https://www.justice.gov/>
 - SEC — acciones relacionadas: <https://www.sec.gov/>
-- Clases del programa: [26.1–26.2 · Custodia](../../curriculum/26-custodia-identidad/README.md) · [27.1–27.2 · Regulación](../../curriculum/27-regulacion-cumplimiento/README.md)
+- Clases del programa: [53–54 · Custodia](../../curriculum/26-custodia-identidad/README.md) · [55–56 · Regulación](../../curriculum/27-regulacion-cumplimiento/README.md)
 
 ---
 
 ## 🧭 Navegación
 
-[⬅️ Casos reales](README.md) · [📖 Clases 26.1–26.2](../../curriculum/26-custodia-identidad/README.md) · [🏠 Programa](../../README.md)
+[⬅️ Casos reales](README.md) · [📖 Clases 53–54](../../curriculum/26-custodia-identidad/README.md) · [🏠 Programa](../../README.md)

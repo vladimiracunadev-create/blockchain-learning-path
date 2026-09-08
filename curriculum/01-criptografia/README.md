@@ -1,8 +1,8 @@
-# 01 · Criptografía aplicada
+# Criptografía aplicada · Clases 3–4
 
 > **Nivel:** Inicial · ⏱️ **Duración estimada:** 120 min · **Fuente:** *Serious Cryptography* (Aumasson) y *Introduction to Modern Cryptography* (Katz, Lindell)
 > [⬅️ Currículo](../README.md) · [📚 Bibliografía](../../docs/bibliografia.md)
-> 🧭 ⬅️ **Anterior:** [00 · Orientación](../00-orientacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [02 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)
+> 🧭 ⬅️ **Anterior:** [Clases 1–2 · Orientación](../00-orientacion/README.md) · [📚 Índice](../README.md) · ➡️ **Siguiente:** [Clases 5–6 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)
 > 📖 [Glosario de términos](../../docs/glosario.md) · 🌱 [¿Nuevo en esto? Empieza aquí](../../docs/empieza-aqui.md)
 > 👛 La versión de usuario de la custodia de claves está en la unidad transversal [Wallets desde cero](../../docs/wallets-desde-cero.md).
 
@@ -11,7 +11,7 @@
 <!-- plan-clases:inicio -->
 ## 🧭 Plan de clases
 
-### Clase 01.1 · Hashes, integridad y compromisos
+### Clase 3 · Hashes, integridad y compromisos
 
 **Pregunta guía:** ¿Cómo se detecta una alteración sin ocultar necesariamente el dato?
 
@@ -33,7 +33,7 @@ Se alteran mensajes casi idénticos para observar el efecto avalancha y luego se
 
 **Evidencia de aprendizaje:** Script reproducible y explicación de qué demuestra y qué no demuestra el hash.
 
-### Clase 01.2 · Firmas, claves y ciclo de vida
+### Clase 4 · Firmas, claves y ciclo de vida
 
 **Pregunta guía:** ¿Qué prueba una firma y cómo se gobierna la clave que la produce?
 
@@ -92,7 +92,7 @@ Al finalizar, el estudiante podrá:
 
 Imagina un sello de lacre sobre un sobre. El hash es como una huella del contenido: si alguien altera una sola letra, la huella cambia por completo (efecto avalancha) y se nota la manipulación. La firma digital es como un sello personal imposible de falsificar sin tu anillo (clave privada), que cualquiera puede reconocer con la impronta pública. El árbol de Merkle es como un índice que permite probar que una carta está dentro de un archivo enorme mostrando solo unos pocos sellos, sin abrir todas las cajas.
 
-El límite de la analogía es que ninguna de estas primitivas decide qué historia es la verdadera. El hash detecta cambios pero no dice cuál versión debe prevalecer; la firma prueba quién autorizó un mensaje pero no si ese mensaje es la transacción correcta del sistema. Ordenar y validar el historial es tarea del consenso (clases 03.1–03.2), no de la criptografía por sí sola.
+El límite de la analogía es que ninguna de estas primitivas decide qué historia es la verdadera. El hash detecta cambios pero no dice cuál versión debe prevalecer; la firma prueba quién autorizó un mensaje pero no si ese mensaje es la transacción correcta del sistema. Ordenar y validar el historial es tarea del consenso (clases 7–8), no de la criptografía por sí sola.
 
 ## 🧩 Esquema visual
 
@@ -281,4 +281,4 @@ Toma un conjunto de transacciones, construye su raíz de Merkle, altera una tran
 
 ## 🧭 Navegación
 
-⬅️ [Clases 00.1–00.2 · Orientación](../00-orientacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 02.1–02.2 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)
+⬅️ [Clases 1–2 · Orientación](../00-orientacion/README.md) · [📚 Índice del currículo](../README.md) · ➡️ [Clases 5–6 · Sistemas distribuidos y redes P2P](../02-sistemas-distribuidos/README.md)
