@@ -37,7 +37,7 @@ conocerlos permite orientarse en un país cuya norma no se ha leído nunca.
 | **Chile** | [CMF](https://www.cmfchile.cl/) · [Banco Central](https://www.bcentral.cl/) · [UAF](https://www.uaf.cl/) · [SII](https://www.sii.cl/) — desarrollado en [regulación chilena](../chile/README.md) |
 | **Argentina** | [CNV](https://www.argentina.gob.ar/cnv) · [BCRA](https://www.bcra.gob.ar/) |
 | **Brasil** | [Banco Central do Brasil](https://www.bcb.gov.br/) · [CVM](https://www.gov.br/cvm/) |
-| **Colombia** | [Superintendencia Financiera](https://www.superfinanciera.gov.co/) · [Banco de la República](https://www.banrep.gov.co/) |
+| **Colombia** | [Superintendencia Financiera](https://www.superfinanciera.gov.co/) · [Banco de la República](https://www.banrep.gov.co/es/sistemas-pago) |
 | **México** | [CNBV](https://www.gob.mx/cnbv) · [Banco de México](https://www.banxico.org.mx/) |
 | **Perú** | [SBS](https://www.sbs.gob.pe/) · [SMV](https://www.gob.pe/smv) |
 | **Uruguay** | [Banco Central del Uruguay](https://www.bcu.gub.uy/) |

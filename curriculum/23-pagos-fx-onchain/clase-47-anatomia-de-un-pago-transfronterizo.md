@@ -83,7 +83,7 @@ Vuelve al caso inicial, elige el error más peligroso y describe una comprobaci�
 ## Fuentes para comprobar y ampliar
 
 - FSB — hoja de ruta del G20 para pagos transfronterizos: <https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/cross-border-payments/>
-- BIS/CPMI — pagos transfronterizos e infraestructuras: <https://www.bis.org/cpmi/index.htm>
+- BIS/CPMI — pagos transfronterizos e infraestructuras: <https://www.bis.org/committees/cpmi/overview>
 - Banco Mundial — *Remittance Prices Worldwide* (metodología y datos): <https://remittanceprices.worldbank.org/>
 - CLS — liquidación PvP en divisas: <https://www.cls-group.com/>
 - SWIFT — qué es y qué hace la mensajería financiera: <https://www.swift.com/>

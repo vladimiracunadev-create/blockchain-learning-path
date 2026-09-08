@@ -124,7 +124,7 @@ Para aprobar debes conectar el hecho observado con el concepto correcto, descart
 ## Fuentes para comprobar y ampliar
 
 - BIS Innovation Hub — proyectos sobre MDBC, liquidación y tokenización: <https://www.bis.org/about/bisih/about.htm>
-- BIS/CPMI — trabajos sobre monedas digitales de banco central: <https://www.bis.org/cpmi/index.htm>
+- BIS/CPMI — trabajos sobre monedas digitales de banco central: <https://www.bis.org/committees/cpmi/overview>
 - Banco Central de Chile — publicaciones e información institucional (MDBC): <https://www.bcentral.cl/>
 - Banco Central Europeo — proyecto del euro digital: <https://www.ecb.europa.eu/euro/digital_euro/html/index.es.html>
 - Banco de Inglaterra — trabajo sobre la libra digital: <https://www.bankofengland.co.uk/the-digital-pound>

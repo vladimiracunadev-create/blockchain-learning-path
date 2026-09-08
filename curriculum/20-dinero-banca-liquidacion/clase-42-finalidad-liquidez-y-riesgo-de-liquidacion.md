@@ -125,7 +125,7 @@ Vuelve al caso inicial, elige el error más peligroso y describe una comprobaci�
 
 ## Fuentes para comprobar y ampliar
 
-- BIS — Comité de Pagos e Infraestructuras del Mercado (CPMI), publicaciones sobre sistemas de pago y liquidación: <https://www.bis.org/cpmi/index.htm>
+- BIS — Comité de Pagos e Infraestructuras del Mercado (CPMI), publicaciones sobre sistemas de pago y liquidación: <https://www.bis.org/committees/cpmi/overview>
 - BIS — *Principles for Financial Market Infrastructures* (PFMI), CPMI-IOSCO: <https://www.bis.org/cpmi/publ/d101.htm>
 - Banco Central Europeo — explicación del dinero y de TARGET: <https://www.ecb.europa.eu/paym/target/html/index.en.html>
 - Banco Central de Chile — sistemas de pago y LBTR: <https://www.bcentral.cl/>

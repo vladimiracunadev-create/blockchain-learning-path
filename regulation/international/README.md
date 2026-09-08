@@ -105,7 +105,7 @@ Fuente: <https://www.fsb.org/>
 
 - GAFI/FATF: <https://www.fatf-gafi.org/>
 - BIS: <https://www.bis.org/> · Innovation Hub: <https://www.bis.org/about/bisih/about.htm>
-- Comité de Basilea: <https://www.bis.org/bcbs/> · CPMI: <https://www.bis.org/cpmi/index.htm>
+- Comité de Basilea: <https://www.bis.org/bcbs/> · CPMI: <https://www.bis.org/committees/cpmi/overview>
 - IOSCO: <https://www.iosco.org/>
 - FSB: <https://www.fsb.org/>
 - FMI: <https://www.imf.org/en/Topics/fintech> · Banco Mundial: <https://remittanceprices.worldbank.org/>

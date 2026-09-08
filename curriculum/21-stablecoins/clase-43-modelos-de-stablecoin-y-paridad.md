@@ -115,7 +115,7 @@ Vuelve al caso inicial, elige el error más peligroso y describe una comprobaci�
 
 ## Fuentes para comprobar y ampliar
 
-- Comité de Basilea — enmiendas al estándar de exposiciones a criptoactivos, reservas y redención: <https://www.bis.org/bcbs/publ/d567.pdf>
+- Comité de Basilea — enmiendas al estándar de exposiciones a criptoactivos, reservas y redención: <https://www.bis.org/publications/202212-standards-prudential-treatment-cryptoasset-exposures>
 - BIS Working Paper 1164 — información pública y corridas de stablecoins: <https://www.bis.org/publ/work1164.htm>
 - FSB — recomendaciones sobre acuerdos globales de stablecoins: <https://www.fsb.org/>
 - Reglamento (UE) 2023/1114 (MiCA) — texto consolidado en EUR-Lex: <https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32023R1114>

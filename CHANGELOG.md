@@ -20,6 +20,7 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 - El manual deja de replicar los 33 mapas temáticos junto a sus clases: conserva las **66 clases completas**, incorpora la guía ética y legal y ordena material complementario como edición de estudio.
 - Los enlaces entre contenidos incluidos en el PDF ahora permanecen dentro del propio manual; solo las referencias no incluidas y las fuentes externas abren web.
 - La composición evita portadillas, tablas y cierres aislados en páginas casi vacías, y añade estructura etiquetada y marcadores de navegación al PDF.
+- Se renovaron URL oficiales obsoletas o inestables de BIS/CPMI, BCBS, IAASB, PCAOB, Banco de la República y la bibliografía de criptografía en mapas y clases, después de revisar los 3.257 enlaces del material.
 
 ## [0.12.0] · 2026-09-07
 
