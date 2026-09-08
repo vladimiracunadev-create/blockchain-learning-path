@@ -25,7 +25,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | Evaluación | Evaluaciones, progreso, certificado y kit docente | ✅ |
 | Autoevaluación | 66 comprobaciones formativas de clase + quiz global + 129 preguntas repartidas en 33 mapas temáticos | ✅ |
 | Apps offline | App de escritorio para Windows y APK de Android con todo el curso dentro | ✅ |
-| Manual en PDF | ~450 páginas con todo el contenido; se genera en cada publicación | ✅ |
+| Manual en PDF | ~650 páginas con todo el contenido; se genera en cada publicación | ✅ |
 | Presentación y pauta | 7 diapositivas del programa (con demo en vivo) y pauta del expositor con guion, tiempos y 4 anexos; se generan en cada publicación | ✅ |
 | Regulación | Chile, MiCA, EE. UU., LatAm y estándares internacionales, con rango normativo y fuente | ✅ |
 | Casos reales | Terra/UST, FTX, puente Ronin y El Salvador, con estructura fija de análisis | ✅ |

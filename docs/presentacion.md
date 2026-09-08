@@ -468,7 +468,7 @@ Entre las clases 10 y 11 se cruza **Wallets desde cero**: uso, seguridad y recup
 - **Rutas por perfil:** desarrollo, arquitectura, auditoría, producto, investigación, empresa, DeFi, banca y cumplimiento.
 - Cada ruta termina en un **entregable de portafolio**: dApp probada, ADR, informe de auditoría, ficha de riesgo.
 - **Proyecto final**: protocolo probado, dApp, datos, arquitectura, modelo de amenazas y caso de negocio.
-- **Llévatelo entero**: sitio web, manual PDF de ~400 páginas, app de Windows y APK de Android, sin conexión.
+- **Llévatelo entero**: sitio web, manual PDF de ~650 páginas, app de Windows y APK de Android, sin conexión.
 - **Empieza hoy:** abre *Empieza aquí* → haz el diagnóstico → clase 1 y `pnpm lab:hash`.
 - `github.com/vladimiracunadev-create/blockchain-learning-path`
 
@@ -499,7 +499,7 @@ Entre las clases 10 y 11 se cruza **Wallets desde cero**: uso, seguridad y recup
 > Si la respuesta honesta es que bastaba una base de datos, el proyecto sigue siendo
 > válido. Lo que se evalúa es el razonamiento, no la tecnología elegida.
 >
-> Y llévenselo entero. Está el sitio web, un manual en PDF de unas cuatrocientas páginas,
+> Y llévenselo entero. Está el sitio web, un manual en PDF de unas seiscientas cincuenta páginas,
 > la aplicación de Windows y el APK de Android.
 >
 > Las aplicaciones funcionan sin conexión, que es lo que importa en un aula sin wifi o en
