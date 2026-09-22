@@ -58,6 +58,13 @@ Antes de buscar en ninguna norma, respóndelas. Determinan qué régimen es siqu
 4. **¿Dónde estás tú y dónde están tus clientes?** El régimen suele seguir al cliente.
 5. **¿Qué riesgo generas?** Lavado, mercado, consumidor, sistémico.
 
+Para activos de videojuego, añade una secuencia antes de concluir: ¿es transferible?,
+¿existe mercado externo o cash-out?, ¿hay custodia o intermediación?, ¿se comunica
+expectativa de beneficio?, ¿hay azar? Cada “sí” puede acercar reglas sobre activos
+virtuales, AML, valores, consumo, tributación o juego, según hechos y jurisdicción.
+[Andes Quest Assets](../docs/andes-quest-activos-tokenizados.md#cash-out-y-árbol-regulatorio)
+aplica el árbol sin convertirlo en asesoría legal.
+
 ## Regla de mantenimiento
 
 Este material se revisa **al menos una vez al año** y siempre que se detecte un cambio

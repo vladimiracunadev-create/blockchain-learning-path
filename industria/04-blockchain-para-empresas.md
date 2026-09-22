@@ -17,6 +17,14 @@ Una blockchain **no** hace que los datos sean "verdaderos", ni abarata por sí s
 
 Lo que suele ser humo: "blockchain para trazabilidad" cuando el problema real es que alguien miente al ingresar los datos (el problema del oráculo no se resuelve con hashes), "blockchain interna" de una sola empresa (eso es una base de datos con pasos extra) y proyectos donde el incentivo para que los competidores compartan infraestructura nunca existió. Kevin Werbach lo resume bien: la blockchain es una **nueva arquitectura de confianza**, no un reemplazo universal de las existentes.
 
+El mismo filtro aplica a economías virtuales. El caso ficticio
+[Andes Quest Assets](../docs/andes-quest-activos-tokenizados.md) obliga a comparar
+una skin en PostgreSQL con un NFT, y un saldo `GEM` con ERC-20. Si solo el operador
+escribe, lee, revierte y arbitra el inventario, una base suele resolver mejor el
+problema. El token empieza a tener sentido cuando hay una necesidad autorizada de
+propiedad verificable o settlement entre partes que no comparten operador, y aun
+así no transporta copyright ni semántica de gameplay.
+
 ## 📊 Casos reales: éxitos operativos y fracasos instructivos
 
 La mejor vacuna contra el marketing es estudiar casos con estado verificable. Esta tabla mezcla deliberadamente éxitos y fracasos, porque ambos enseñan:

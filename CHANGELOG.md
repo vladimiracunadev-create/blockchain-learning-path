@@ -7,6 +7,21 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 *Nada pendiente.*
 
+## [0.14.0] · 2026-09-22
+
+### Añadido
+
+- Caso transversal ficticio **Andes Quest Assets**: compara inventario PostgreSQL, transferencias internas, ERC-20/721/1155, marketplace y puente, con decisiones explícitas sobre propiedad, entitlement, metadata, custodia, interoperabilidad, privacidad, operación y regulación.
+- Laboratorio local Foundry con `GameAsset`, ocho pruebas de autoridad, supply, transferencias, metadata y approvals, más una reconciliación determinista off-chain/on-chain con tres pruebas de Node.
+- Siete preguntas de razonamiento sobre propiedad intelectual, entitlement, permisos globales, interoperabilidad, persistencia, elección de base de datos y ERC-1155.
+
+### Cambiado
+
+- Clases 17–18, glosario, industria, regulación, bibliografía, manual, portal y apps enlazan el caso sin crear clases ocultas ni duplicar la explicación de los estándares.
+- CI incorpora el contrato del laboratorio a Foundry y Slither; la release y el About describen el nuevo alcance sin presentar activos tokenizados como inversión.
+- Se integran las actualizaciones automatizadas de dependencias ya verificadas y se eleva el mínimo a Node.js 22.12 por Mermaid 12, preservando la lista explícita de builds permitidos en pnpm.
+- Se preservan sin cambios las referencias históricas y licencias hasta `v0.13.0`.
+
 ## [0.13.0] · 2026-09-08
 
 ### Añadido

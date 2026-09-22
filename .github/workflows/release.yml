@@ -186,10 +186,10 @@ jobs:
           body: |
             Programa completo en español, de los fundamentos de blockchain a la
             práctica profesional: 66 clases, 91 prácticas y proyecto final. Esta
-            versión profundiza custodia, conciliación, Proof of Reserves/Liabilities,
-            auditoría y blockchain forensics, e incorpora «¿Y si cruzas la línea?»
-            para enseñar autorización, evidencia, consecuencias y prevención de delitos
-            sin perder la progresión técnica general.
+            versión incorpora Andes Quest Assets para comparar inventario off-chain,
+            entitlement, ERC-20/721/1155, marketplace e interoperabilidad sin asumir
+            que tokenizar sea una mejora, con laboratorio Foundry y reconciliación
+            local sin red pública, claves reales ni dinero.
 
             ## Descargas
 

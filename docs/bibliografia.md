@@ -44,7 +44,7 @@ resiste.
 | Anatomía de bloques, extracción con reorgs, grafos, patrones y detección de anomalías | `pnpm test` — `labs/28-data-analytics` y [`projects/explorador-analitico/`](../projects/explorador-analitico/README.md) |
 | Mercado tokenizado: dinero mayorista simulado, bono y DvP atómico | `forge test` en [`labs/22-cbdc-mercado-tokenizado/`](../labs/22-cbdc-mercado-tokenizado/README.md) |
 
-Son **345 pruebas automatizadas** (307 de Node y 38 de Foundry) que la CI ejecuta en
+Son **356 pruebas automatizadas** (310 de Node y 46 de Foundry) que la CI ejecuta en
 cada cambio. Una afirmación que se contradiga con el código hace fallar el build.
 Eso es más fuerte que una cita: no apela a la autoridad de un autor, se comprueba.
 
@@ -148,7 +148,9 @@ legalmente gratuita, se enlaza esa.
 
 - **Bitcoin** — Nakamoto, *Bitcoin: A Peer-to-Peer Electronic Cash System* (2008): <https://bitcoin.org/bitcoin.pdf>
 - **Ethereum** — Buterin, *Ethereum Whitepaper*: <https://ethereum.org/whitepaper/> · Wood, *Yellow Paper*: <https://ethereum.github.io/yellowpaper/paper.pdf>
-- **Estándares (EIP/ERC)** — <https://eips.ethereum.org/> — en especial ERC-20, ERC-721, ERC-1155, ERC-4626 (bóvedas), ERC-2612 (permit), ERC-4337 y EIP-7702 (abstracción de cuenta), EIP-1559 (comisiones) y EIP-4844 (blobs).
+- **Estándares (EIP/ERC)** — <https://eips.ethereum.org/> — en especial ERC-20, ERC-721, ERC-1155, ERC-4626 (bóvedas), ERC-2612 (permit), ERC-2981 (royalties), ERC-4337 y EIP-7702 (abstracción de cuenta), EIP-1559 (comisiones) y EIP-4844 (blobs). Aplicación comparada: [Andes Quest Assets](andes-quest-activos-tokenizados.md).
+- **IPFS · content addressing** — <https://docs.ipfs.tech/concepts/content-addressing/> — distingue direccionamiento por contenido de disponibilidad persistente de metadata y assets.
+- **OpenZeppelin Contracts · tokens** — <https://docs.openzeppelin.com/contracts/> — implementaciones mantenidas y extensiones de referencia; el contrato mínimo del laboratorio se limita deliberadamente a aprendizaje local.
 - **Registro de vulnerabilidades** — SWC Registry: <https://swcregistry.io/> · Solodit / informes de auditoría públicos.
 
 ## Actualidad del ecosistema (hitos recientes)

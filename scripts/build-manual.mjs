@@ -31,7 +31,8 @@ const PARTS = [
   // La guía de entrada va justo después del README y antes del currículo: quien
   // imprime el manual y lo abre por el principio tiene que encontrarla ahí, igual
   // que en el sitio y en las apps.
-  ["Introducción", ["docs/empieza-aqui.md", "docs/diseno-pedagogico.md"]],
+  ["Introducción", ["docs/empieza-aqui.md", "docs/diseno-pedagogico.md",
+    "docs/andes-quest-activos-tokenizados.md"]],
   // Cada clase es un capítulo real. Los README temáticos se conservan como mapas
   // para no romper enlaces, pero nunca sustituyen a sus dos clases independientes.
   ["Currículo · 66 clases independientes", ["curriculum/README.md", ...curriculumSlugs.flatMap((s, index) =>
@@ -42,7 +43,8 @@ const PARTS = [
   ["Laboratorios", ["labs/CATALOG.md", "labs/guides/01-foundations.md", "labs/guides/02-consensus-bitcoin.md",
     "labs/guides/03-evm-development.md", "labs/guides/04-professional-security.md", "labs/guides/05-advanced-capstone.md",
     "labs/guides/06-finanzas-onchain.md", "labs/guides/07-data-analytics.md",
-    "labs/22-cbdc-mercado-tokenizado/README.md", "projects/explorador-analitico/README.md"]],
+    "labs/22-cbdc-mercado-tokenizado/README.md", "labs/23-andes-quest-assets/README.md",
+    "projects/explorador-analitico/README.md"]],
   ["Regulación", ["regulation/README.md", "regulation/chile/README.md", "regulation/european-union/README.md",
     "regulation/united-states/README.md", "regulation/latin-america/README.md", "regulation/international/README.md",
     "regulation/comparison/README.md"]],

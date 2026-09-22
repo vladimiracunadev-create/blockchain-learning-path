@@ -46,6 +46,16 @@ Al finalizar, el estudiante podrá:
 5. **Explicar** cómo `permit` (ERC-2612) y la abstracción de cuenta mejoran la UX sin sacrificar seguridad.
 6. **Modelar** un escenario de emisión con el simulador de tokenomics del repositorio.
 
+## Caso transversal · Andes Quest Assets
+
+[Andes Quest Assets](../../docs/andes-quest-activos-tokenizados.md) aplica estos
+estándares a `GEM`, `SKIN_DRAGON_001`, `SWORD_EPIC_01`, `LAND_PLOT_42` y
+`BATTLE_PASS_2026`. La secuencia parte en PostgreSQL, habilita transferencias
+internas y solo después evalúa token, mercado externo y puente. En cada fase
+compara propiedad, entitlement, custodia, latencia, privacidad, coste, gobierno y
+regulación. El [laboratorio Foundry](../../labs/23-andes-quest-assets/README.md)
+demuestra localmente que ownership on-chain no garantiza derecho de uso.
+
 ## 🗺️ Temas
 
 | # | Tema | Por qué importa |

@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.13.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versión-0.14.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
 [![Clases](https://img.shields.io/badge/clases-66-7c5cff?style=for-the-badge)](curriculum/README.md)
 [![Prácticas](https://img.shields.io/badge/prácticas-91-2e8b57?style=for-the-badge)](labs/CATALOG.md)
 [![Nivel](https://img.shields.io/badge/nivel-novato%20→%20profesional-e67e22?style=for-the-badge)](ROADMAP.md)
@@ -25,7 +25,7 @@
 [![viem](https://img.shields.io/badge/viem-dApps-2e8b57?style=flat-square)](apps/community-funding-web)
 [![TypeScript](https://img.shields.io/badge/TypeScript-dApp%20%26%20indexer-3178C6?style=flat-square&logo=typescript&logoColor=white)](apps)
 
-[🌱 Empieza aquí](docs/empieza-aqui.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🚧 ¿Y si cruzas la línea?](docs/y-si-cruzas-la-linea-blockchain.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
+[🌱 Empieza aquí](docs/empieza-aqui.md) · [🎮 Andes Quest Assets](docs/andes-quest-activos-tokenizados.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🚧 ¿Y si cruzas la línea?](docs/y-si-cruzas-la-linea-blockchain.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
 
 </div>
 
@@ -51,6 +51,13 @@ guía de consulta y emergencia; no añade clases ni altera la secuencia 1–66.
 ---
 
 > **Blockchain no es sinónimo de criptomoneda.** En este recorrido aprenderás cuándo una cadena de bloques aporta valor, cuándo una base de datos tradicional es mejor y cómo construir —y llevar a producción— sistemas descentralizados de forma responsable.
+
+El caso transversal **[Andes Quest Assets](docs/andes-quest-activos-tokenizados.md)**
+lleva esa decisión a activos de videojuego: compara inventario PostgreSQL,
+transferencia interna, ERC-20/721/1155, marketplace y puente sin presentar NFT ni
+play-to-earn como mejoras automáticas. Incluye un
+[laboratorio local con Foundry](labs/23-andes-quest-assets/README.md), sin red pública,
+claves reales ni dinero.
 
 ## 🎯 Qué es esto
 
@@ -160,7 +167,8 @@ Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visua
 ## 🧪 Laboratorios y proyectos ejecutables
 
 - **91 prácticas** guiadas con actividad, evidencia y criterio de aceptación ([catálogo](labs/CATALOG.md)).
-- **Contratos con Foundry**: vault, protocolos, token, oráculo y gobernador con timelock, con pruebas, fuzzing e invariantes.
+- **Contratos con Foundry**: vault, protocolos, token, activos de juego, oráculo y gobernador con timelock, con pruebas, fuzzing e invariantes.
+- **Andes Quest Assets**: caso y laboratorio que comparan inventario off-chain, entitlement, ERC-20/721/1155, metadata, marketplace, custodia, indexación y regulación sin asumir que tokenizar mejora el juego ([caso](docs/andes-quest-activos-tokenizados.md) · [lab](labs/23-andes-quest-assets/README.md)).
 - **Retos de seguridad**: contratos vulnerables y sus correcciones ([security-challenges](security-challenges/README.md)).
 - **dApp** de financiamiento comunitario (viem/TypeScript), **indexador** de eventos y **panel** de progreso.
 - **Bitcoin Core en `regtest`** y un **nodo Geth real en Docker** para operar infraestructura.

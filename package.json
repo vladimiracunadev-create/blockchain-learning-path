@@ -1,11 +1,11 @@
 {
   "name": "blockchain-learning-path",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "private": true,
   "description": "Ruta práctica en español para aprender blockchain desde nivel inicial hasta producción",
   "packageManager": "pnpm@10.13.1",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.12"
   },
   "scripts": {
     "check": "node scripts/check-repository.mjs && node scripts/check-workflows.mjs",
@@ -34,6 +34,7 @@
     "lab:tx": "node labs/07-dapps/tx-lifecycle.mjs",
     "lab:montos": "node labs/07-dapps/token-amounts.mjs",
     "lab:tokenomics": "node labs/15-tokenomics/supply-simulator.mjs",
+    "lab:game-assets": "node labs/23-andes-quest-assets/entitlement.mjs",
     "lab:amm": "node labs/19-defi/amm-producto-constante.mjs",
     "lab:prestamo": "node labs/19-defi/prestamo-factor-salud.mjs",
     "lab:peg": "node labs/21-stablecoins/colateral-y-paridad.mjs",

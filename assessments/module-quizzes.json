@@ -405,6 +405,76 @@
           ],
           "answer": 1,
           "explanation": "Cien shares no son cien activos salvo al inicio. Las conversiones se hacen con `convertToAssets` y `convertToShares`, nunca a ojo."
+        },
+        {
+          "prompt": "Una wallet posee `SKIN_DRAGON_001` como ERC-721. ¿Qué puede concluirse sobre el copyright?",
+          "options": [
+            "La wallet adquiere automáticamente copyright y marca",
+            "Solo se prueba ownership del token; copyright, marca y licencia dependen de acuerdos separados",
+            "El copyright pertenece siempre al marketplace"
+          ],
+          "answer": 1,
+          "explanation": "El contrato registra owner y transferencias. Los derechos intelectuales y comerciales no aparecen por inferencia: deben concederse en una licencia."
+        },
+        {
+          "prompt": "La cadena dice que la wallet posee NFT #42, pero el juego rechaza su uso. ¿Cuál es la explicación rigurosa?",
+          "options": [
+            "La blockchain está necesariamente equivocada",
+            "Token ownership y game entitlement son estados distintos que deben reconciliarse",
+            "Todo NFT debe funcionar aunque la cuenta esté suspendida"
+          ],
+          "answer": 1,
+          "explanation": "El backend puede exigir cuenta activa, licencia, temporada, asset permitido y metadata disponible. Ownership no elimina esas reglas."
+        },
+        {
+          "prompt": "¿Qué riesgo específico añade `setApprovalForAll` en una colección gaming?",
+          "options": [
+            "El operador puede mover todas las unidades autorizadas, no solo una",
+            "El owner pierde el copyright de forma automática",
+            "La metadata se vuelve inmutable"
+          ],
+          "answer": 0,
+          "explanation": "La autorización global facilita marketplaces, pero amplía el radio de impacto de un operador malicioso o comprometido."
+        },
+        {
+          "prompt": "Un NFT se lleva mediante bridge a otra aplicación. ¿Qué se vuelve interoperable automáticamente?",
+          "options": [
+            "Modelo 3D, físicas, balance, licencia y gameplay",
+            "Solo la representación de ownership; la semántica requiere acuerdos e integración",
+            "Todo el servidor original del juego"
+          ],
+          "answer": 1,
+          "explanation": "Una cadena puede transportar una prueba de propiedad. Cada consumidor debe acordar formato, significado, reglas y licencia."
+        },
+        {
+          "prompt": "El token existe, pero cerraron el juego y el servidor de metadata. ¿Qué conserva necesariamente el usuario?",
+          "options": [
+            "El derecho a operar el juego completo",
+            "El copyright y los archivos fuente",
+            "El estado on-chain del token, que puede haber perdido metadata y utilidad"
+          ],
+          "answer": 2,
+          "explanation": "Persistencia del registro no equivale a disponibilidad del archivo, soporte del juego, licencia o utilidad."
+        },
+        {
+          "prompt": "¿Cuándo suele ser mejor mantener GEM en una base de datos?",
+          "options": [
+            "Cuando un operador confiable necesita baja latencia, privacidad, reversión y soporte",
+            "Nunca: ERC-20 siempre es superior",
+            "Solo cuando GEM no tiene nombre"
+          ],
+          "answer": 0,
+          "explanation": "Sin necesidad real de coordinación externa, la base ofrece menor coste y más capacidad de recuperación y moderación."
+        },
+        {
+          "prompt": "ERC-1155 es preferible a ERC-721 en todos los inventarios porque…",
+          "options": [
+            "La afirmación es falsa: lote y contrato único deben compararse con identidad, tooling y semántica",
+            "ERC-1155 concede copyright",
+            "ERC-1155 no usa gas"
+          ],
+          "answer": 0,
+          "explanation": "ERC-1155 puede modelar fungibles y no fungibles juntos, pero la elección sigue dependiendo del caso y de sus integraciones."
         }
       ]
     },

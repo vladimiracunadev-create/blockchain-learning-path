@@ -78,9 +78,16 @@ consulta [recursos-oficiales.md](recursos-oficiales.md).
 
 ## Tokens y DeFi
 
+- **Activo de videojuego (game asset)**: dato o recurso que el juego reconoce —moneda, item, skin, terreno o pase—; puede vivir en una base de datos o estar vinculado a un token.
+- **Activo tokenizado**: representación on-chain de un activo o derecho; el token no prueba por sí solo que el vínculo jurídico, la licencia o el servicio externo sigan vigentes.
+- **Entitlement (derecho de uso)**: autorización del backend para que una cuenta use una función o activo. Puede depender de licencia, temporada, estado de la cuenta y reglas actuales, aunque la wallet posea un token.
+- **Moneda virtual**: unidad contable de una plataforma. Puede ser *soft currency* ganada en el juego o *premium currency* adquirida; no necesita blockchain para existir.
 - **ERC-20**: estándar de tokens fungibles (saldos, `transfer`, `approve`).
 - **ERC-721**: estándar de tokens no fungibles (NFT), un identificador único por token.
 - **ERC-1155**: estándar multi-token que combina fungibles y no fungibles en un solo contrato.
+- **Metadata de token**: documento, normalmente JSON, al que apunta una URI y que describe nombre, atributos e imágenes; su disponibilidad y mutabilidad son distintas de la existencia del token.
+- **Marketplace**: sistema de listing, cancelación, pago y transferencia entre vendedor y comprador; requiere approvals y añade fraude, custodia y posibles efectos regulatorios.
+- **Royalty (ERC-2981)**: información sobre receptor e importe sugerido de una regalía; el estándar no obliga a todos los mercados a pagarla.
 - **ERC-4626**: estándar de bóvedas (vaults) tokenizadas que reciben un activo y emiten participaciones; base de mucha contabilidad DeFi.
 - **Stablecoin**: token diseñado para mantener paridad con un activo (habitualmente USD), con respaldo fiat, cripto-colateralizado o algorítmico (este último con historial de fracasos, como UST en 2022).
 - **AMM (automated market maker)**: intercambio que fija precios con una fórmula sobre reservas (por ejemplo x·y=k) en lugar de un libro de órdenes.
@@ -131,6 +138,7 @@ consulta [recursos-oficiales.md](recursos-oficiales.md).
 - **Canal de estado (state channel)**: acuerdo fuera de cadena entre partes que solo liquida on-chain al abrir y cerrar.
 - **Cadena lateral (sidechain)**: cadena independiente conectada a otra por un puente, con su propia seguridad (no hereda la de la L1).
 - **Puente (bridge)**: mecanismo para mover activos o mensajes entre cadenas; históricamente el componente más explotado del ecosistema.
+- **Interoperabilidad de activos**: acuerdo técnico y jurídico sobre identificador, formato, licencia y significado. Transportar ownership no hace que un NFT funcione automáticamente en otro juego.
 - **Cliente ligero (light client)**: verificador que valida cabeceras y pruebas sin almacenar todo el estado; base de los puentes con menos confianza.
 - **Compromiso (commitment)**: valor que fija datos sin revelarlos y puede abrirse después (por ejemplo, una raíz de Merkle o un compromiso de Pedersen).
 - **Fragmentación de liquidez**: dispersión de activos y usuarios entre múltiples L2 y cadenas, con costos de experiencia y capital.
@@ -152,6 +160,7 @@ consulta [recursos-oficiales.md](recursos-oficiales.md).
 - **Consorcio**: grupo de organizaciones que operan una red permisionada compartida con gobernanza contractual.
 - **Tokenización**: representación de un activo o derecho como token, con el desafío central de que el vínculo legal off-chain sea exigible.
 - **Custodia**: guarda de claves por un tercero regulado; alternativa a la autocustodia con otros riesgos y obligaciones.
+- **Wallet embebida (embedded wallet)**: wallet integrada en una aplicación para ocultar parte de la complejidad de claves y gas; su proveedor y recuperación deben formar parte del modelo de custodia.
 - **Minería de datos blockchain**: análisis de bloques, transacciones, direcciones, tokens y eventos para hallar patrones. No produce bloques ni monedas: se distingue de la **minería de criptomonedas**, que es consenso. Ver [clases 57–58](../curriculum/28-data-analytics-onchain/README.md).
 - **On-chain analytics**: análisis limitado a lo escrito en la cadena. **Blockchain intelligence** añade fuentes y etiquetas externas, y con ellas los juicios y su margen de error.
 - **Verdad de campo (ground truth)**: conjunto de casos cuya etiqueta real se conoce; sin ella no se puede calcular el recall de un detector, y en una cadena real casi nunca existe.

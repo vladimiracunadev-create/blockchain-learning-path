@@ -29,7 +29,9 @@ const required = [
   "docs/casos-reales/README.md",
   "docs/audit/README.md",
   "docs/skills-matrix.md",
-  "labs/22-cbdc-mercado-tokenizado/src/DvPSettlement.sol"
+  "labs/22-cbdc-mercado-tokenizado/src/DvPSettlement.sol",
+  "docs/andes-quest-activos-tokenizados.md",
+  "labs/23-andes-quest-assets/src/GameAsset.sol"
 ];
 
 for (const file of required) await access(join(process.cwd(), file));

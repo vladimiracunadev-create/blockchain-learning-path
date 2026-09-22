@@ -86,6 +86,23 @@ El titular "firmó algo y perdió todo" suena a descuido. Casi nunca lo es: es u
 
 </details>
 
+## Aplicación transversal · Andes Quest Assets
+
+La misma skin puede ser una fila de inventario, un entitlement interno, un ERC-721
+o una unidad ERC-1155. Ninguna representación concede por sí sola copyright ni
+garantiza que otro juego entienda el modelo, la textura, los stats o la licencia.
+En el caso [Andes Quest Assets](../../docs/andes-quest-activos-tokenizados.md),
+`GEM` permite contrastar un saldo PostgreSQL con ERC-20;
+`SKIN_DRAGON_001` separa token ownership de game entitlement; y
+`100 × POTION`, `10 × KEY`, `1 × SKIN` obliga a justificar ERC-1155 frente a
+ERC-721. La decisión comienza por el derecho que se quiere representar, no por
+el estándar que resulta atractivo.
+
+El [laboratorio local](../../labs/23-andes-quest-assets/README.md) convierte la
+diferencia en una prueba: la wallet puede seguir siendo owner de `#42` mientras
+el backend rechaza el entitlement por cuenta suspendida, licencia vencida o
+metadata no disponible.
+
 ## Demostración de aprendizaje
 
 **Entregable:** Ficha de token con estándar, invariantes, poderes y riesgos explícitos.

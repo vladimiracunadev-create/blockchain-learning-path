@@ -51,6 +51,21 @@ sequenceDiagram
   R-->>E: acepta, cuestiona o pide evidencia
 ```
 
+## Aplicación transversal · permisos y mercado de Andes Quest
+
+Para vender `SKIN_DRAGON_001`, un marketplace puede recibir `approve` sobre una
+unidad o `setApprovalForAll` sobre toda la colección. El segundo flujo reduce
+fricción y multiplica el impacto de una firma maliciosa: un operador comprometido
+podría mover todos los assets autorizados. Un permit para `GEM` agrega `nonce` y
+`deadline`; no convierte en seguro un consentimiento incomprendido.
+
+El caso [Andes Quest Assets](../../docs/andes-quest-activos-tokenizados.md) sigue
+el flujo seller → approval → marketplace → payment + transfer, explica que
+ERC-2981 comunica una royalty pero no fuerza su pago, y compara esa arquitectura
+con una transferencia reversible dentro de la base del operador. Antes de abrir
+mercado externo hay que decidir custodia, cancelación, fraude, gas, privacidad,
+cash-out, reconciliación y respuesta a incidentes.
+
 ## Demostración de aprendizaje
 
 **Entregable:** Recomendación defendible con métricas, alternativas off-chain y controles.
