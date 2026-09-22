@@ -75,8 +75,9 @@ contract GameAsset {
         if (to == address(0)) revert ZeroAddress();
         address owner = ownerOf(tokenId);
         if (owner != from) revert WrongFrom();
-        if (msg.sender != owner && msg.sender != getApproved[tokenId]
-            && !isApprovedForAll[owner][msg.sender]) revert Unauthorized();
+        if (msg.sender != owner && msg.sender != getApproved[tokenId] && !isApprovedForAll[owner][msg.sender]) {
+            revert Unauthorized();
+        }
 
         delete getApproved[tokenId];
         _ownerOf[tokenId] = to;
