@@ -16,7 +16,7 @@
 [![Nivel](https://img.shields.io/badge/nivel-novato%20→%20profesional-e67e22?style=for-the-badge)](ROADMAP.md)
 [![Idioma](https://img.shields.io/badge/idioma-español-blue?style=for-the-badge)](README.md)
 [![License](https://img.shields.io/badge/code-MIT-3fb950?style=for-the-badge)](LICENSE)
-[![Content](https://img.shields.io/badge/contenido-CC%20BY%204.0-3fb950?style=for-the-badge)](LICENSE-CONTENT)
+[![Content](https://img.shields.io/badge/contenido-CC%20BY--NC--SA%204.0-3fb950?style=for-the-badge)](LICENSE-CONTENT)
 
 [![Node.js](https://img.shields.io/badge/Node.js-LTS-339933?style=flat-square&logo=nodedotjs&logoColor=white)](package.json)
 [![pnpm](https://img.shields.io/badge/pnpm-workspace-F69220?style=flat-square&logo=pnpm&logoColor=white)](pnpm-workspace.yaml)
@@ -269,11 +269,21 @@ Consulta la [guía de contribución](CONTRIBUTING.md), el [código de conducta](
 
 La madurez técnica no se demuestra usando blockchain en todo, sino sabiendo **cuándo aporta valor, cuándo una base de datos es mejor, y cómo llevar a producción con seguridad** aquello que sí lo justifica.
 
-## 📄 Licencia
+## Licencias y propiedad intelectual
 
-Código bajo **[MIT](LICENSE)** y contenido educativo bajo **[CC BY 4.0](LICENSE-CONTENT)** —
-úsalo, modifícalo y compártelo citando la fuente. Las obras, normas, protocolos y servicios
-citados pertenecen a sus autores, organismos emisores y titulares.
+Este es un programa público de aprendizaje creado por **Vladimir Acuña** ([GitHub: vladimiracunadev-create](https://github.com/vladimiracunadev-create)). La licencia depende del componente y de la versión consultada:
+
+| Componente | Licencia | Uso comercial | Atribución |
+|---|---|---|---|
+| Código original, scripts, contratos y configuración técnica | [MIT](LICENSE) | Permitido según MIT | Conservar aviso de copyright y licencia |
+| Currículo, clases, explicaciones, ejercicios, rutas, casos redactados y diagramas educativos originales de esta distribución | [CC BY-NC-SA 4.0](LICENSE-CONTENT) | No bajo esta oferta; consultar [historial](docs/LICENSING_HISTORY.md) para permisos anteriores | Vladimir Acuña, enlace al repositorio y a la licencia, e indicar cambios |
+| Datos de ejemplo y metadatos | [Según inventario](DATA_LICENSES.md) | Depende del conjunto y de permisos históricos | Según el inventario y licencia aplicable |
+| Icono, diagramas, manual y otros activos | [Según inventario](ASSET_LICENSES.md) | Depende del activo y de permisos históricos | Según el inventario y licencia aplicable |
+| Dependencias, obras y marcas ajenas | [Licencias y titulares propios](THIRD_PARTY_NOTICES.md) | Según sus titulares | Según sus condiciones |
+
+La política nueva se incorpora después de `v0.13.0`. Las ofertas [MIT y CC BY 4.0 anteriores](docs/LICENSING_HISTORY.md) no se revocan; las copias históricas pueden seguir usándose bajo ellas. La licencia de contenido se limita a la expresión original sobre la que Vladimir Acuña tiene derechos. El [nombre y la identidad](TRADEMARKS.md) no se conceden automáticamente como marca.
+
+Blockchain, Bitcoin, Ethereum, estándares, protocolos y documentación externa corresponden a sus respectivos proyectos y titulares. Las fuentes se citan para estudiar la materia, sin atribuir su propiedad al autor del programa.
 
 ---
 

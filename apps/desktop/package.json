@@ -18,7 +18,7 @@
   "build": {
     "appId": "dev.vladimiracuna.blockchainlearningpath",
     "productName": "Blockchain Learning Path",
-    "copyright": "Código MIT · Contenido CC BY 4.0 · Vladimir Acuña",
+    "copyright": "Código MIT · Contenido original CC BY-NC-SA 4.0 · Vladimir Acuña · permisos históricos conservados",
     "directories": {
       "output": "dist",
       "buildResources": "build"

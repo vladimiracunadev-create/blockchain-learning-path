@@ -1,3 +1,32 @@
-Except where otherwise indicated, educational text and diagrams in this
-repository are licensed under Creative Commons Attribution 4.0 International.
-https://creativecommons.org/licenses/by/4.0/
+Licencia del contenido educativo original: CC BY-NC-SA 4.0
+
+Copyright (c) 2026 Vladimir Acuña
+GitHub: https://github.com/vladimiracunadev-create
+
+Desde la incorporación de esta política (22 de septiembre de 2026), Vladimir
+Acuña ofrece bajo Creative Commons Atribución-NoComercial-CompartirIgual 4.0
+Internacional el contenido educativo original del repositorio sobre el que tiene
+derechos para hacerlo: currículo, textos de clase, explicaciones, ejercicios,
+rutas, casos redactados, guías, evaluaciones, documentación pedagógica y
+diagramas originales. La licencia también cubre la expresión educativa original
+en JSON y en los manuales, presentaciones, sitio y aplicaciones derivados de
+esas fuentes; no cambia la licencia del código que los genera o ejecuta.
+
+Texto legal completo: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es
+Resumen: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+
+La atribución debe mencionar «Vladimir Acuña», enlazar al repositorio y a esta
+licencia, e indicar las modificaciones cuando corresponda. Las adaptaciones
+compartidas deben respetar CompartirIgual. «NoComercial» tiene el significado
+definido por la licencia, no una prohibición general de estudiar el material en
+una organización; los casos dudosos requieren evaluación concreta.
+
+Esta oferta no retira los permisos MIT ni CC BY 4.0 concedidos sobre material
+publicado antes de esta política. Una copia anterior puede seguir utilizándose
+bajo los términos que le correspondían, incluso para fines comerciales. Quien
+sea titular de material original puede ofrecerlo bajo varias licencias. Véase
+docs/LICENSING_HISTORY.md para el alcance temporal y las excepciones.
+
+No quedan relicenciados el software, los datos y activos con licencia propia,
+las contribuciones de terceros, las citas ni las obras externas enlazadas.
+Véanse LICENSE, DATA_LICENSES.md, ASSET_LICENSES.md y THIRD_PARTY_NOTICES.md.

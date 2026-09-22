@@ -50,7 +50,7 @@ pnpm build:presentacion
 - 66 clases secuenciales · 91 prácticas · un proyecto final con caso custodial.
 - Criptografía, Bitcoin, Ethereum, contratos, seguridad, producción, dinero y regulación.
 - Web, manual en PDF y apps que **funcionan sin conexión**.
-- Material **abierto**: código MIT, contenido CC BY 4.0.
+- Material público: código MIT y contenido educativo original de esta distribución bajo CC BY-NC-SA 4.0; se conservan los permisos históricos.
 
 > **Pauta · 2 min.**
 >
@@ -72,9 +72,9 @@ pnpm build:presentacion
 > Está disponible en la web, en un manual en PDF, y en dos aplicaciones —una de Windows y
 > una de Android— que funcionan sin conexión.
 >
-> Y es material abierto: el código con licencia MIT y el contenido con Creative Commons.
-> Cualquiera de ustedes puede llevárselo a su aula o a su equipo sin pedirme permiso,
-> citando la fuente.
+> El código sigue bajo MIT. El contenido educativo original de esta distribución se ofrece bajo CC BY-NC-SA 4.0; los permisos históricos continúan según el historial de licencias.
+> Pueden usar cada componente en su aula o equipo conforme a la licencia de la versión
+> elegida, con la atribución y las demás condiciones que correspondan.
 >
 > Vamos a estar treinta y cinco minutos.
 >
@@ -89,8 +89,8 @@ pnpm build:presentacion
 >   una sola frase, y sigue. Nadie vino a oír tu currículum.
 > - Elige **una** de las dos versiones finales —la 8 o la 9— y cúmplela el resto de la
 >   charla. Prometer preguntas al final y luego aceptarlas a mitad rompe el tiempo.
-> - Si el público es institucional, haz una pausa de medio segundo después de decir
->   "sin pedirme permiso": es el dato que les cambia la conversación.
+> - Si el público es institucional, haz una pausa después de explicar que cada versión
+>   declara condiciones de uso claras: es el dato que les cambia la conversación.
 > - No entres todavía en el mapa de clases. Aquí solo se abre la puerta.
 
 ## 2 · Qué enseña, y qué no
@@ -589,7 +589,7 @@ para decirse en voz alta, no para leerse:
 | ¿Necesito saber programar? | Para las clases 1–12, no. Desde la 13 hace falta JavaScript básico. Y hay rutas —producto, cumplimiento— que llegan al final sin escribir contratos |
 | ¿Por qué en español? | Porque casi todo el material serio del área está en inglés, y eso deja fuera a mucha gente que sí puede hacer este trabajo. Los términos técnicos se mantienen en inglés y se traducen la primera vez que aparecen |
 | ¿Quién garantiza que esto sigue vivo? | La integración continua: pruebas en cada cambio, enlaces externos revisados cada semana y las cifras del material comprobadas contra los archivos. Si algo se rompe, no se publica |
-| ¿Puedo usarlo en mi institución o en mi empresa? | Sí, sin pedir permiso: código MIT y contenido CC BY 4.0, citando la fuente. Hay guía del instructor, syllabus, rúbricas y checklist de laboratorios |
+| ¿Puedo usarlo en mi institución o en mi empresa? | El código MIT permite uso comercial; el contenido educativo original de esta distribución sigue CC BY-NC-SA 4.0. Estudiarlo internamente no equivale por sí solo a explotarlo comercialmente. Para redistribución comercial del contenido, revisa la licencia de la versión usada y el historial de permisos. Hay guía del instructor, syllabus, rúbricas y checklist de laboratorios. |
 | ¿Y la regulación de mi país? | Hay una carpeta de regulación con Chile, MiCA, Estados Unidos, LatAm y estándares internacionales, y cada afirmación declara su rango, su fuente oficial y su fecha. No sustituye a un abogado, y así está escrito |
 | ¿Da certificado? | El propio repositorio genera un certificado de progreso a partir de la evidencia de los laboratorios. No es una acreditación oficial y no lo presentamos como tal |
 | ¿Cuánto cuesta? | Nada. Y las obras de referencia clave tienen edición legalmente gratuita, así que se puede seguir entero sin comprar un libro |

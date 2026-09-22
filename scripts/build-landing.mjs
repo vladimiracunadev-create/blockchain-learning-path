@@ -223,7 +223,7 @@ footer a{color:var(--acento);font-weight:600}
 
 <footer>
   <div class="wrap">
-    <p><strong>Blockchain Learning Path</strong> · v${version} · Código <a href="${REPO}/blob/main/LICENSE">MIT</a> · Contenido <a href="${REPO}/blob/main/LICENSE-CONTENT">CC BY 4.0</a></p>
+    <p><strong>Blockchain Learning Path</strong> · v${version} · Código <a href="${REPO}/blob/main/LICENSE">MIT</a> · Contenido original <a href="${REPO}/blob/main/LICENSE-CONTENT">CC BY-NC-SA 4.0</a> · <a href="${REPO}/blob/main/docs/LICENSING_HISTORY.md">permisos históricos</a></p>
     <p>Hecho por <a href="https://github.com/vladimiracunadev-create">Vladimir Acuña</a> · <a href="${REPO}">Repositorio</a> · <a href="manual/MANUAL.pdf">Manual (PDF)</a> · <a href="presentacion/PRESENTACION.pdf">Presentación</a> · <a href="presentacion/PAUTA.pdf">Pauta</a> · <a href="ROADMAP.html">Roadmap</a> · <a href="industria/README.html">Industria</a> · <a href="labs/CATALOG.html">Laboratorios</a></p>
   </div>
 </footer>

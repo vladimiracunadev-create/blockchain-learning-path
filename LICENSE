@@ -1,3 +1,13 @@
+SCOPE NOTICE
+
+This MIT License applies to the original software code in this repository,
+including scripts, contracts, tests, technical configuration, and code examples,
+except where a file or third-party notice states otherwise. Educational content,
+data, assets, trademarks, and third-party material are governed by
+LICENSE-CONTENT, DATA_LICENSES.md, ASSET_LICENSES.md, TRADEMARKS.md, and
+THIRD_PARTY_NOTICES.md. Previously granted permissions remain in effect as
+explained in docs/LICENSING_HISTORY.md.
+
 MIT License
 
 Copyright (c) 2026 Vladimir Acuña

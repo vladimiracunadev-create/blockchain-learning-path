@@ -442,7 +442,7 @@ ${bloquesAnexo}
 
 <p style="margin-top:26px;font-size:11pt;color:#5b5b73;border-top:2px solid #ddd9f2;padding-top:12px">
 Generado desde <code>docs/presentacion.md</code> · v${version} ·
-${SITE.replace("https://", "")} · Código MIT · Contenido CC BY 4.0
+${SITE.replace("https://", "")} · Código MIT · Contenido original CC BY-NC-SA 4.0 · Licencias históricas conservadas
 </p>
 </body>
 </html>`;
