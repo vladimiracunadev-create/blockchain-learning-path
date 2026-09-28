@@ -127,6 +127,8 @@ const NAV = [
       ["Orionx · caso en desarrollo", "docs/casos-reales/orionx-descalce-custodia.html"],
       ["Terra/UST", "docs/casos-reales/terra-ust.html"],
       ["FTX y la custodia", "docs/casos-reales/ftx-custodia.html"],
+      ["Celsius · préstamo y custodia", "docs/casos-reales/celsius-prestamo-custodia.html"],
+      ["OneCoin · evidencia tecnológica", "docs/casos-reales/onecoin-evidencia-tecnologica.html"],
       ["Puente Ronin", "docs/casos-reales/ronin-puente.html"],
       ["El Salvador y bitcoin", "docs/casos-reales/el-salvador-bitcoin.html"],
     ].map(([t, href]) => ({ t, href })),

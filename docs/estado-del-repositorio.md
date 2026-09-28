@@ -28,7 +28,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | Manual en PDF | ~430 páginas: 66 clases completas y material curado, sin duplicar los 33 mapas temáticos; se genera en cada publicación | ✅ |
 | Presentación y pauta | 7 diapositivas del programa (con demo en vivo) y pauta del expositor con guion, tiempos y 4 anexos; se generan en cada publicación | ✅ |
 | Regulación | Chile, MiCA, EE. UU., LatAm y estándares internacionales, con rango normativo y fuente | ✅ |
-| Casos reales | Terra/UST, FTX, puente Ronin y El Salvador, con estructura fija de análisis | ✅ |
+| Casos reales | Orionx, Terra/UST, FTX, Celsius, OneCoin, puente Ronin y El Salvador, con estructura fija de análisis | ✅ |
 | Bibliografía | Libros de referencia por área e hitos del ecosistema | ✅ |
 | CI y publicación | Lint (Markdown, JS y Solidity), pruebas Node y Foundry, escaneo de secretos, CodeQL, vigilancia de enlaces externos, sitio en GitHub Pages y binarios verificados por contenido | ✅ |
 

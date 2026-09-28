@@ -359,7 +359,7 @@ es un análisis incompleto.
 - CMF Chile — Ley Fintech, registro de prestadores y Sistema de Finanzas Abiertas: <https://www.cmfchile.cl/>
 - UAF Chile — prevención de lavado de activos: <https://www.uaf.cl/>
 - Biblioteca del Congreso Nacional de Chile — texto de la Ley 21.521: <https://www.bcn.cl/leychile>
-- Documentos del programa: [regulación comparada](../../regulation/README.md) · [Chile](../../regulation/chile/README.md) · [casos reales](../../docs/casos-reales/README.md)
+- Documentos del programa: [regulación comparada](../../regulation/README.md) · [Chile](../../regulation/chile/README.md) · [casos reales](../../docs/casos-reales/README.md) · [OneCoin y evidencia tecnológica](../../docs/casos-reales/onecoin-evidencia-tecnologica.md)
 
 > **Nota de vigencia (septiembre de 2026):** la guía GAFI de 2021 sigue siendo una
 > referencia específica para VASP, pero debe leerse junto con las revisiones de 2025

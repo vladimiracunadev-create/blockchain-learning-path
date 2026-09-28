@@ -1,115 +1,167 @@
-# Caso · Terra/UST: colapso de una stablecoin algorítmica
+# Caso · Terra/UST: fragilidad económica, reservas e intervención
 
 > [⬅️ Casos reales](README.md) · [📖 Clases 43–44 · Stablecoins](../../curriculum/21-stablecoins/README.md) · [🏠 Programa](../../README.md)
 
-**Cuándo:** mayo de 2022. **Qué:** una stablecoin algorítmica referida al dólar (UST) y su
-token volátil asociado (LUNA) perdieron la paridad y prácticamente todo su valor en pocos
-días.
+**Hechos principales:** mayo de 2021–mayo de 2022. **Jurisdicción citada:**
+Estados Unidos, Distrito Sur de Nueva York (civil y penal). **Corte de esta
+ficha:** 28 de septiembre de 2026.
 
-> **Alcance.** Este análisis se limita al **mecanismo** y a lo que enseña sobre diseño. Las
-> responsabilidades individuales y su calificación jurídica son objeto de procedimientos en
-> varias jurisdicciones y **no se juzgan aquí**.
+> **Estado probatorio.** La pérdida de paridad de UST demuestra fragilidad del
+> mecanismo, no fraude por sí sola. Por separado, un jurado declaró civilmente
+> responsables a Terraform Labs y Do Kwon por fraude en abril de 2024; Kwon se
+> declaró culpable de delitos federales en agosto de 2025 y fue sentenciado a 15
+> años el 11 de diciembre de 2025. Esta ficha no convierte toda decisión técnica
+> fallida en conducta fraudulenta: identifica las declaraciones y manipulaciones
+> acreditadas en esos procedimientos.
 
 ## Contexto
 
-UST no estaba respaldada por reservas externas. Su estabilidad dependía de un mecanismo de
-canje con LUNA: **1 UST siempre podía canjearse por 1 dólar en LUNA**, y viceversa. Si UST
-cotizaba por debajo de la par, un arbitrajista la compraba barata, la canjeaba por LUNA y
-vendía — retirando UST del mercado y **emitiendo LUNA**.
+TerraUSD (UST) buscaba mantener un valor de un dólar mediante conversión con LUNA:
+un UST podía canjearse por un dólar de LUNA, y viceversa. Anchor Protocol ofrecía
+un rendimiento cercano al 20 % anual sobre depósitos de UST, impulsando demanda.
+En 2022 la Luna Foundation Guard (LFG) mantenía criptoactivos externos, incluido
+bitcoin, con el propósito declarado de defender la paridad.
 
-Sobre ese mecanismo se había construido demanda mediante un protocolo de depósito que
-ofrecía un rendimiento muy superior al de mercado sobre saldos en UST. Esa demanda no
-procedía del uso de UST como medio de pago, sino del rendimiento ofrecido.
+## El problema
 
-## El problema de diseño
+El sistema combinó tres capas que no deben llamarse «reserva» como si fueran lo
+mismo:
 
-El mecanismo es **reflexivo**: el respaldo de UST era, en última instancia, **el valor de
-mercado de LUNA**, y el valor de LUNA dependía de la confianza en el sistema del que UST
-formaba parte. El respaldo y lo respaldado eran, en el fondo, la misma cosa.
+| Capa | Función | Límite |
+|---|---|---|
+| **Respaldo ordinario** | Activo externo que permite redimir a la par bajo un derecho exigible | UST no ofrecía una reserva ordinaria 1:1 ni una redención equivalente a un depósito |
+| **Mecanismo endógeno** | Quema/emisión entre UST y LUNA para incentivar arbitraje | Su capacidad dependía del precio y liquidez de LUNA, parte del mismo ecosistema |
+| **Reserva de defensa** | Activos de LFG para intervenir en mercado en situaciones de tensión | Era finita, discrecional y distinta de un derecho individual de redención |
+| **Intervención externa** | Compras de un tercero para sostener el precio | Puede restaurar temporalmente el precio sin probar que el algoritmo lo hizo |
+
+## Arquitectura
 
 ```mermaid
 flowchart LR
-    D["Duda sobre el sistema"] --> V["Ventas de UST"]
-    V --> P["UST bajo la par"]
-    P --> C["Canje UST -> LUNA"]
-    C --> E["Emision masiva de LUNA"]
-    E --> B["Precio de LUNA se hunde"]
-    B --> M["Hace falta emitir aun mas LUNA<br>por cada UST canjeada"]
-    M --> D
+    U[UST bajo la par] --> C[Canje de UST por 1 USD de LUNA]
+    C --> Q[Quema UST y emite LUNA]
+    Q --> V[Venta de LUNA]
+    V --> P[Menor precio y profundidad de LUNA]
+    P --> M[Hace falta emitir más LUNA por cada UST]
+    M --> Q
+    D[Reserva de defensa LFG] -. intervención finita .-> U
+    E[Compras externas] -. apoyo de mercado, no algoritmo .-> U
 ```
 
-Mientras la demanda crecía, el bucle funcionaba y el diseño parecía elegante. En una caída
-sostenida, **cada canje empeoraba las condiciones del siguiente**. La retroalimentación era
-positiva en la dirección equivocada, y ninguna intervención podía detenerla sin un respaldo
-externo del que el sistema carecía por definición.
+La cadena podía ejecutar correctamente el canje y, aun así, amplificar el problema.
+Eso es fragilidad económica. Una compra externa no cambia la especificación del
+protocolo, pero sí cambia la explicación causal de por qué volvió la paridad.
+
+## Economía
+
+La demanda de UST estaba fuertemente vinculada al rendimiento subvencionado de
+Anchor. Cuando salen depósitos, el canje crea oferta de LUNA; si su precio cae,
+cada dólar de UST exige emitir más unidades de LUNA. El respaldo y lo respaldado
+se vuelven reflexivos. Los activos externos de LFG podían comprar tiempo, pero no
+convertían automáticamente cada UST en una reclamación 1:1 contra esos activos.
 
 ## Qué falló y en qué orden
 
-1. **Retiradas significativas** en el principal mercado de UST reducen su profundidad.
-2. **UST pierde la paridad.** El descuento inicial es pequeño.
-3. **Se activa el canje masivo** a LUNA, que es el mecanismo previsto.
-4. **LUNA se emite en cantidades crecientes** y su precio cae.
-5. La caída de LUNA obliga a emitir **aún más** por cada UST canjeada.
-6. Un intento de defensa con reservas externas adquiridas previamente resulta insuficiente
-   frente al volumen de salidas.
-7. En cuestión de días, **ambos activos pierden prácticamente todo su valor**.
+1. El ecosistema creció con el incentivo de Anchor y con la promesa de estabilidad
+   algorítmica.
+2. En mayo de 2021 UST perdió temporalmente la paridad. Kwon admitió después que
+   una firma de negociación compró grandes cantidades de UST por acuerdo con él;
+   presentar la recuperación como obra exclusiva del algoritmo fue engañoso.
+3. LFG se lanzó en enero de 2022 y acumuló una reserva de defensa externa.
+4. En mayo de 2022 las ventas de UST superaron la profundidad disponible.
+5. El canje previsto emitió cantidades crecientes de LUNA y reforzó la caída.
+6. La reserva de defensa y otras intervenciones no restablecieron una paridad
+   sostenible; UST y LUNA colapsaron.
+7. Los procedimientos posteriores acreditaron declaraciones falsas sobre la
+   estabilidad, la intervención de 2021 y otros usos de la tecnología de Terraform.
 
-**Ningún paso fue un error de implementación.** El sistema hizo exactamente lo que su
-especificación decía. Falló el **diseño económico**, en un escenario que el mecanismo no
-podía sobrevivir.
+## Cronología fechada
 
-## Economía: el rendimiento como señal
-
-El rendimiento ofrecido sobre depósitos en UST era muy superior al que generaba ningún
-activo subyacente, porque **no procedía de un activo subyacente**: se financiaba con
-reservas del propio ecosistema. Un rendimiento sostenido por encima del mercado, sin una
-fuente identificable, **es la señal de riesgo, no el atractivo**. La pregunta que había que
-hacerse —y que las [clases 39–40](../../curriculum/19-defi/README.md) obligan a hacerse— es
-siempre la misma: **¿de dónde sale este rendimiento y quién lo paga?**
-
-## Qué control habría cambiado el resultado
-
-| Control | Por qué habría importado |
+| Fecha | Hecho y calificación |
 |---|---|
-| **Respaldo externo real y verificable** | El canje habría tenido a qué acudir sin emitir más del token reflexivo |
-| **Redención directa contra un activo ajeno al sistema** | Rompe el bucle: el arbitraje deja de presionar al respaldo |
-| **Límites al volumen de canje por periodo** | Amortigua, pero no resuelve: retrasa la espiral |
-| **Comunicación honesta del mecanismo** | Muchos tenedores no sabían que no había respaldo externo |
-| **No condicionar la demanda a un rendimiento subvencionado** | La demanda desaparece cuando desaparece el subsidio |
+| Septiembre de 2020 | Terraform anuncia UST y el canje UST/LUNA |
+| Mayo de 2021 | Primera pérdida relevante de paridad; una firma externa interviene por acuerdo con Kwon, según su posterior declaración de culpabilidad |
+| Enero de 2022 | Se anuncia LFG como entidad de defensa y acumulación de reservas externas |
+| 7–13 de mayo de 2022 | UST pierde la paridad, se acelera la emisión de LUNA y colapsa el sistema |
+| 16 de febrero de 2023 | La SEC presenta su demanda; sus cargos eran alegaciones en esa fecha |
+| 5 de abril de 2024 | Jurado federal declara responsables civilmente a Terraform y Kwon por fraude |
+| 12 de junio de 2024 | Se dicta el acuerdo y sentencia civil final con remedios económicos |
+| 12 de agosto de 2025 | Kwon se declara culpable de conspiración y fraude electrónico |
+| 11 de diciembre de 2025 | Kwon recibe sentencia penal de 15 años |
 
-Los tres primeros describen, en realidad, **otro instrumento**: uno con respaldo. Esa es la
-conclusión incómoda del caso — el fallo no era corregible con parámetros.
+## Fraude acreditado no equivale a pérdida de paridad
+
+| Observación | Conclusión legítima | Conclusión que no se sigue sola |
+|---|---|---|
+| UST cotiza bajo un dólar | El mecanismo o la liquidez no sostuvieron el precio | Que alguien cometió fraude |
+| Se emite LUNA durante la redención | El protocolo aplica su regla reflexiva | Que la emisión fue oculta o ilícita |
+| Un tercero compra UST | Hubo apoyo externo al precio | Que el algoritmo restauró por sí solo la paridad |
+| Existe bitcoin en LFG | Hay una reserva de defensa declarada | Que cada tenedor posee un derecho 1:1 sobre ella |
+| Una autoridad presenta cargos | Hay alegaciones formalizadas | Que ya existe condena |
+| Declaración de culpabilidad y sentencia | Se acreditaron delitos admitidos y sancionados | Que todo fallo técnico de Terra fue delictivo |
+
+## Controles y límites
+
+| Control | Qué detecta o reduce | Qué no detecta por sí solo |
+|---|---|---|
+| Prueba de estrés de redenciones | Espiral de emisión, profundidad necesaria y puntos de ruptura | Declaraciones falsas a inversores |
+| Inventario verificable de LFG | Existencia, control y movimientos de activos declarados | Derecho de redención individual o suficiencia futura |
+| Atribución del retorno de paridad | Separa algoritmo, reserva y compras externas | Intención fraudulenta sin evidencia adicional |
+| Revelación de subsidios de Anchor | Fuente y duración del rendimiento | Riesgo total de mercado y ejecución |
+| Gobierno de la reserva | Quién decide, límites y conflictos | Que el precio vaya a sostenerse |
+| Auditoría con periodo y alcance | Contrasta representaciones definidas | Garantía integral o permanente |
 
 ## Regulación
 
-El episodio influyó de forma visible en el trabajo regulatorio posterior sobre stablecoins.
-Los marcos que se han desarrollado desde entonces —entre ellos
-[MiCA](../../regulation/european-union/README.md) y las recomendaciones del
-[FSB](../../regulation/international/README.md)— insisten en tres puntos que este caso
-ilumina: **reserva efectiva**, **derecho de redención a la par** e **información al público**
-sobre el mecanismo de estabilización.
+El procedimiento civil de la SEC trató ofertas de criptoactivos y fraude; el
+procedimiento penal trató fraude electrónico, de valores y de materias primas. Los
+marcos de stablecoins suelen exigir transparencia de reservas, gobernanza, gestión
+de liquidez y redención. Aplicarlos requiere clasificar el instrumento y la
+jurisdicción: llamar «stablecoin» a un token no crea por sí solo un depósito ni una
+reclamación contra una reserva.
 
-Los procedimientos judiciales y administrativos derivados siguen en curso en varias
-jurisdicciones; su resultado **no forma parte de este análisis**.
+## Ejercicio guiado
+
+Trabaja offline con una hoja de cálculo o papel. Parte de un escenario **ficticio**:
+1 000 UST sintéticos, LUNA a 10 unidades monetarias, profundidad máxima de venta de
+50 LUNA por ronda y reserva de defensa de 200 unidades monetarias.
+
+1. Calcula cuánta LUNA se emite al redimir 100 UST si LUNA vale 10, luego 5 y luego 1.
+2. Decide qué rondas exceden la profundidad y explica la realimentación.
+3. Separa tres eventos: canje algorítmico, venta de reserva y compra externa.
+4. Clasifica qué evidencia demostraría cada evento y qué conclusión seguiría abierta.
+5. Repite con la reserva agotada; no uses precios o wallets reales.
+
+### Respuestas orientadoras
+
+- Se emiten 10, 20 y 100 LUNA respectivamente. La tercera ronda excede la
+  profundidad ficticia y puede agravar el descenso del precio.
+- Vender la reserva de defensa puede absorber ventas hasta 200 unidades, pero no
+  concede a cada tenedor una redención ordinaria ni elimina el bucle endógeno.
+- Una compra externa puede explicar una recuperación observada. Sin registros de
+  mercado y acuerdos no debe atribuirse esa recuperación solo al algoritmo.
+- El ejercicio detecta fragilidad y dependencia de liquidez; no prueba engaño,
+  intención, control secreto ni destino de fondos.
 
 ## Lecciones
 
-1. **Una stablecoin sin respaldo externo no tiene respaldo.** Un token del mismo sistema no
-   puede respaldar a otro token del mismo sistema.
-2. **Los mecanismos reflexivos funcionan hasta que dejan de funcionar, y entonces lo hacen
-   de golpe.** No hay degradación suave.
-3. **Un rendimiento superior al de mercado, sin fuente identificable, es la advertencia.**
-4. **"Funcionó durante mucho tiempo" no es evidencia de solidez** en un sistema cuya
-   estabilidad depende del crecimiento.
-5. **La claridad de la comunicación es un control de riesgo.** Muchos tenedores creían que
-   había reservas.
+1. La pérdida de paridad es un resultado económico; fraude exige evidencia adicional.
+2. Respaldo ordinario, reserva de defensa e intervención externa tienen derechos,
+   incentivos y evidencias diferentes.
+3. Un mecanismo puede ejecutar exactamente su código y ser económicamente frágil.
+4. Si un tercero restaura el precio, la comunicación debe atribuir la causa real.
+5. La cronología procesal evita presentar una acusación como condena o una pérdida
+   como prueba automática de delito.
 
 ## Referencias
 
-- BIS — investigación sobre stablecoins y su estabilidad: <https://www.bis.org/>
-- FSB — recomendaciones sobre acuerdos globales de stablecoins: <https://www.fsb.org/>
-- FMI — análisis de dinero digital y estabilidad financiera: <https://www.imf.org/en/Topics/fintech>
-- Clases del programa: [43–44 · Stablecoins](../../curriculum/21-stablecoins/README.md) · [39–40 · DeFi](../../curriculum/19-defi/README.md)
+Todas fueron consultadas el **28 de septiembre de 2026**.
+
+- [DOJ, SDNY · Do Kwon se declara culpable](https://www.justice.gov/usao-sdny/pr/do-kwon-pleads-guilty-fraud) — EE. UU.; hechos 2018–2022; declaración 12-08-2025; publicación 12-08-2025.
+- [DOJ, SDNY · expediente de víctimas *United States v. Kwon*, 23 Cr. 151](https://www.justice.gov/usao-sdny/united-states-v-kwon-23-cr-151-pae-terraform-labs-fraud) — EE. UU.; sentencia 11-12-2025; actualización publicada 12-12-2025 y página actualizada 13-01-2026.
+- [SEC · veredicto y acuerdo final contra Terraform y Kwon](https://www.sec.gov/newsroom/press-releases/2024-73) — EE. UU.; veredicto 05-04-2024; publicación 13-06-2024.
+- [SEC · sentencia final, caso 1:23-cv-1346](https://www.sec.gov/files/terraform-labs-pte-ltd-do-hyeong-kwon-final-judgment.pdf) — EE. UU.; documento presentado 12-06-2024.
+- [SEC · distribución a inversores perjudicados](https://www.sec.gov/enforcement-litigation/distributions-harmed-investors/sec-v-terraform-labs-pte-ltd-do-hyeong-kwon-no-23-cv-1346-jsr-sdny) — EE. UU.; estado de liquidación y documentos; actualizada 18-09-2025.
 
 ---
 

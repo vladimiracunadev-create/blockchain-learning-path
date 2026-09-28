@@ -49,7 +49,8 @@ const PARTS = [
     "regulation/united-states/README.md", "regulation/latin-america/README.md", "regulation/international/README.md",
     "regulation/comparison/README.md"]],
   ["Casos reales", ["docs/casos-reales/README.md", "docs/casos-reales/orionx-descalce-custodia.md", "docs/casos-reales/terra-ust.md",
-    "docs/casos-reales/ftx-custodia.md", "docs/casos-reales/ronin-puente.md",
+    "docs/casos-reales/ftx-custodia.md", "docs/casos-reales/celsius-prestamo-custodia.md",
+    "docs/casos-reales/onecoin-evidencia-tecnologica.md", "docs/casos-reales/ronin-puente.md",
     "docs/casos-reales/el-salvador-bitcoin.md"]],
   ["Decisiones de arquitectura (ADR)", ["adrs/README.md", ...adrDocs.map((f) => `adrs/${f}`)]],
   ["Documentación de referencia", [

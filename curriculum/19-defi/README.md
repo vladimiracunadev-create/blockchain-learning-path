@@ -317,6 +317,7 @@ cifra de rendimiento presentada como esperable.
 - MakerDAO / Sky — parámetros de colateral y liquidación: <https://docs.makerdao.com/>
 - Chainlink — datos de precio y buenas prácticas de consumo: <https://docs.chain.link/>
 - OpenZeppelin — contratos base y patrones de seguridad: <https://docs.openzeppelin.com/>
+- Caso real desarrollado: [Celsius · préstamo, custodia e información](../../docs/casos-reales/celsius-prestamo-custodia.md)
 - Clases relacionadas: [Clases 21–22 · Oráculos](../10-oraculos-indexacion/README.md) · [Clases 19–20 · Seguridad](../09-seguridad/README.md) · [Clases 31–32 · Arquitectura avanzada](../15-arquitectura-avanzada/README.md)
 
 ## ✅ Criterio de dominio

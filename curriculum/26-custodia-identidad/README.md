@@ -364,7 +364,7 @@ menos un control que detecta —no solo previene— una firma indebida.
 - Safe — multifirma para tesorerías: <https://docs.safe.global/>
 - NIST — gestión de claves criptográficas (SP 800-57): <https://csrc.nist.gov/projects/key-management>
 - CMF Chile — Ley Fintech y Sistema de Finanzas Abiertas: <https://www.cmfchile.cl/>
-- Documento del programa: [regulación chilena](../../regulation/chile/README.md) · [caso real de custodia](../../docs/casos-reales/ftx-custodia.md)
+- Documentos del programa: [regulación chilena](../../regulation/chile/README.md) · [FTX](../../docs/casos-reales/ftx-custodia.md) · [Celsius](../../docs/casos-reales/celsius-prestamo-custodia.md)
 
 ## ✅ Criterio de dominio
 
