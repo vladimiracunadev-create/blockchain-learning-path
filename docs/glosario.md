@@ -103,6 +103,17 @@ consulta [recursos-oficiales.md](recursos-oficiales.md).
 - **TVL (total value locked)**: valor total depositado en un protocolo; métrica de adopción (consúltala en vivo en DefiLlama), no de seguridad.
 - **RWA (real-world assets)**: activos del mundo real (deuda, inmuebles, fondos) representados como tokens on-chain.
 - **Tokenomics**: diseño económico de un token: emisión, distribución, incentivos y sumideros de demanda.
+- **Memecoin**: token cuya coordinación se apoya principalmente en un meme, símbolo o fenómeno cultural; la atención no concede por sí sola utilidad, derechos ni liquidez.
+- **Community token**: token orientado a pertenencia, acceso o gobernanza de una comunidad; se evalúa por reglas, distribución y poderes, no por la etiqueta.
+- **Social token**: token que articula una relación entre un colectivo y su audiencia; puede dar acceso o participación, pero no implica derecho económico automático.
+- **Creator token**: social token ligado a una persona creadora y a acceso, contenido o experiencias; concentra además riesgo reputacional y de continuidad.
+- **Utility token**: token necesario para una función verificable de un producto; si stablecoins, puntos o una cuenta interna resuelven lo mismo, su necesidad no está demostrada.
+- **Capitalización de mercado (market cap)**: precio marginal por suministro circulante. Es una valoración aritmética, no el dinero aportado ni disponible para retirar.
+- **Valoración totalmente diluida (FDV)**: precio marginal por suministro máximo o futuro. Supone que todo podría valorarse al precio actual, algo especialmente frágil con poca liquidez.
+- **Bonding curve**: función que relaciona cantidad y precio, normalmente para emisión o redención primaria; comparte la idea de curva con un AMM, pero no es sinónimo de pool secundario.
+- **Impacto en precio**: cambio de precio causado por la propia operación al modificar las reservas o consumir profundidad.
+- **Deslizamiento (slippage)**: diferencia entre el precio esperado y el ejecutado; puede incluir impacto, movimientos previos y tolerancia configurada.
+- **Drawdown**: caída porcentual desde un máximo observado hasta un valor posterior.
 
 ## Seguridad
 
@@ -124,6 +135,12 @@ consulta [recursos-oficiales.md](recursos-oficiales.md).
 - **Interruptor de pausa (circuit breaker / pause)**: facultad de detener funciones críticas ante un incidente; ver [operacion-incidentes.md](operacion-incidentes.md).
 - **Runbook**: procedimiento operativo escrito y ensayado para responder a un tipo de incidente.
 - **Modelo de amenazas**: análisis sistemático de quién puede atacar qué, cómo y con qué impacto.
+- **Pump-and-dump**: promoción coordinada que atrae compras a un mercado pequeño seguida de ventas de quienes acumularon antes; estudiarlo no autoriza participar.
+- **Rug pull**: retirada de liquidez o abuso de privilegios del contrato/proyecto que deja a otras personas sin una salida razonable.
+- **Insider**: actor con asignación, información o acceso previo no disponible en igualdad de condiciones; su existencia exige divulgación y controles de conflicto.
+- **Sniper**: bot que intenta comprar en los primeros bloques o transacciones para explotar ventaja de orden; se mitiga con mecanismos uniformes, no con más slippage.
+- **Wash trading / volumen falso**: operaciones circulares o coordinadas que aparentan actividad sin cambio económico neto; las heurísticas detectan patrones, no intención probada.
+- **FOMO (fear of missing out)**: presión emocional por miedo a quedar fuera, explotada mediante urgencia, escasez o promesas de subidas.
 - **KYT (know your transaction)**: monitoreo de transacciones para detectar fondos vinculados a actividades ilícitas; contraparte transaccional del KYC.
 
 ## Escalabilidad e interoperabilidad

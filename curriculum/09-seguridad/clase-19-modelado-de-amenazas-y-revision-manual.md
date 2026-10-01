@@ -74,6 +74,20 @@ Eso convierte ataques que eran teóricos en ataques que cualquiera puede ejecuta
 
 > 💡 **En una frase:** los ataques caros de verdad no rompen el código, rompen un supuesto. Escribe los supuestos de tu contrato antes de escribir el contrato.
 
+### Amenazas de un lanzamiento de baja liquidez
+
+El threat model no termina en Solidity. Un token técnicamente correcto puede fallar por
+mercado, operación o comunicación. En un lanzamiento simulado revisa: *pump-and-dump*,
+retiro de liquidez o privilegios de *rug pull*, asignaciones de insiders, snipers y bots,
+concentración, volumen circular o *wash trading*, FOMO, phishing y wallet drainers.
+
+Las señales —compras en el primer bloque, top-N alto, ida y vuelta rápida, promoción
+urgente, mint o upgrade bajo una sola clave— son **indicadores**, no prueba automática de
+fraude. El control combina transparencia de asignaciones y promociones, vesting,
+multisig/timelock, simulación de firmas, approvals acotadas, monitoreo y una ruta de
+incidentes. La matriz completa está en la
+[guía transversal](../../docs/economia-token-viral.md#7-riesgos-señal-límite-y-prevención).
+
 <details>
 <summary><strong>🎓 Si ya dominas esto</strong> — método de auditoría, más allá del catálogo de bugs</summary>
 
@@ -132,6 +146,8 @@ Aplica la guía transversal [¿Y si cruzas la línea?](../../docs/y-si-cruzas-la
 - SWC Registry, *Smart Contract Weakness Classification* — <https://swcregistry.io/>
 - *Damn Vulnerable DeFi* — <https://www.damnvulnerabledefi.xyz/>
 - Fuente primaria: EIP-155, *Simple replay attack protection* — <https://eips.ethereum.org/EIPS/eip-155>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
+- FTC, *What To Know About Cryptocurrency and Scams* — <https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams>
 
 Consulta además la [bibliografía razonada](../../docs/bibliografia.md), que declara procedencia y uso.
 

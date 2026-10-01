@@ -62,6 +62,7 @@ respecto de la alternativa tradicional.
 | **Simulación de MDBC mayorista** | Dinero de liquidación restringido a participantes + DvP | Clases 45–46: acceso, emisión y redención |
 | **Plataforma de custodia institucional** | Política M-de-N con escalones, retardos y recuperación probada | Clases 53–54: cuórum frente a compromiso **y** a pérdida |
 | **Motor de cumplimiento** | Cribado por riesgo, Regla de Viaje y trazas auditables | Clases 55–56: enfoque basado en riesgo, sin datos personales reales |
+| **Economía de token viral sintético** | ERC-20 local, narrativa, lanzamiento y mercado simulados, analítica y post-mortem | Clases 17–20, 39 y 57–58: contrato, liquidez, riesgo y límites causales |
 
 **Requisitos adicionales para estos proyectos:**
 
@@ -73,6 +74,50 @@ respecto de la alternativa tradicional.
    personales, y sin sugerir que reproduce un sistema en producción de ninguna entidad.
 4. **Ninguna proyección de rentabilidad.** Un capstone que prometa rendimientos no aprueba,
    por bien construido que esté.
+
+## Modalidad integrada · economía de token viral en pruebas
+
+Esta modalidad no crea un “curso memecoin” ni autoriza un lanzamiento real. Integra las
+mismas puertas de calidad del capstone con la
+[guía transversal](../docs/economia-token-viral.md) y los laboratorios existentes.
+
+```mermaid
+flowchart LR
+  A["Concepto"] --> B["Tokenomics"] --> C["Token local"] --> D["Identidad y narrativa"]
+  D --> E["Lanzamiento simulado"] --> F["Crecimiento social sintético"]
+  F --> G["Actividad on-chain"] --> H["Precio y liquidez"] --> I["Riesgos"] --> J["Post-mortem"]
+```
+
+### Entregables obligatorios
+
+1. **Concepto y categoría:** distingue memecoin, community, social, creator o utility;
+   declara qué función verificable existe y qué alternativa sin token se descartó.
+2. **Tokenomics:** supply máximo/circulante, decimals, asignación, vesting, concentración,
+   autoridades y conflictos de interés.
+3. **Token en local:** `CourseToken` o una extensión mínima probada con Foundry; mint,
+   pausa, transferencias, eventos, balances y holders reproducibles. Nada de mainnet.
+4. **Identidad y narrativa:** mensajes ficticios sin promesa de rentabilidad, compensaciones
+   y responsables declarados.
+5. **Lanzamiento simulado:** condiciones iniciales del pool, participantes ficticios y
+   línea temporal. No bots de compra, snipers ni promoción real.
+6. **Crecimiento social sintético:** audiencia y búsquedas generadas como datos de prueba;
+   no se compran interacciones ni se contacta a personas.
+7. **Actividad y mercado:** wallets, holders, eventos, volumen bruto/económico, market cap,
+   FDV, liquidez, slippage, impacto, máximo y drawdown.
+8. **Riesgos:** pump-and-dump, rug pull, insiders, snipers, bots, concentración, fake
+   volume/wash trading, FOMO, manipulación, phishing y drainers, con señal y control.
+9. **Post-mortem:** separa hecho, indicador, inferencia e hipótesis; la correlación entre
+   contenido y actividad no se presenta como causalidad.
+
+### Criterios de salida
+
+- `forge test` y las pruebas Node pasan en verde.
+- El informe demuestra numéricamente `market cap ≠ liquidez ≠ dinero retirable`.
+- La subida y caída usan solo datos sintéticos reproducibles, nunca cifras atribuidas a un
+  token real sin fuente.
+- No existe integración mainnet, uso de fondos reales ni código para manipulación de
+  mercado.
+- Otra persona puede repetir el experimento y obtener la misma serie y conclusiones.
 
 ## Fases y entregables
 

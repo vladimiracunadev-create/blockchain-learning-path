@@ -10,6 +10,7 @@ contract CourseToken {
     uint256 public totalSupply;
     address public owner;
     address public pendingOwner;
+    bool public paused;
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
 
@@ -18,11 +19,15 @@ contract CourseToken {
     error CapExceeded();
     error InsufficientBalance();
     error InsufficientAllowance();
+    error TransfersPaused();
+    error TransfersNotPaused();
 
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
     event OwnershipTransferStarted(address indexed owner, address indexed pendingOwner);
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event Paused(address indexed account);
+    event Unpaused(address indexed account);
 
     constructor(uint256 maximumSupply) {
         if (maximumSupply == 0) revert CapExceeded();
@@ -52,11 +57,26 @@ contract CourseToken {
 
     function mint(address to, uint256 amount) external {
         if (msg.sender != owner) revert Unauthorized();
+        if (paused) revert TransfersPaused();
         if (to == address(0)) revert ZeroAddress();
         if (totalSupply + amount > cap) revert CapExceeded();
         totalSupply += amount;
         balanceOf[to] += amount;
         emit Transfer(address(0), to, amount);
+    }
+
+    function pause() external {
+        if (msg.sender != owner) revert Unauthorized();
+        if (paused) revert TransfersPaused();
+        paused = true;
+        emit Paused(msg.sender);
+    }
+
+    function unpause() external {
+        if (msg.sender != owner) revert Unauthorized();
+        if (!paused) revert TransfersNotPaused();
+        paused = false;
+        emit Unpaused(msg.sender);
     }
 
     function proposeOwner(address next) external {
@@ -75,6 +95,7 @@ contract CourseToken {
     }
 
     function _transfer(address from, address to, uint256 amount) private {
+        if (paused) revert TransfersPaused();
         if (to == address(0)) revert ZeroAddress();
         uint256 balance = balanceOf[from];
         if (balance < amount) revert InsufficientBalance();

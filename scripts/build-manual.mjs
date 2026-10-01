@@ -32,7 +32,7 @@ const PARTS = [
   // imprime el manual y lo abre por el principio tiene que encontrarla ahí, igual
   // que en el sitio y en las apps.
   ["Introducción", ["docs/empieza-aqui.md", "docs/diseno-pedagogico.md",
-    "docs/andes-quest-activos-tokenizados.md"]],
+    "docs/andes-quest-activos-tokenizados.md", "docs/economia-token-viral.md"]],
   // Cada clase es un capítulo real. Los README temáticos se conservan como mapas
   // para no romper enlaces, pero nunca sustituyen a sus dos clases independientes.
   ["Currículo · 66 clases independientes", ["curriculum/README.md", ...curriculumSlugs.flatMap((s, index) =>

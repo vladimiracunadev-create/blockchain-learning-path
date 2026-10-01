@@ -142,7 +142,7 @@ pnpm build:presentacion
 >
 > Sobre los números de la tabla, no los voy a leer todos. Me quedo con dos.
 >
-> Ochenta y tres prácticas. Eso significa que nadie termina este programa habiendo
+> Noventa y una prácticas. Eso significa que nadie termina este programa habiendo
 > solamente leído. Cada práctica dice qué hay que hacer, qué evidencia hay que producir y
 > con qué criterio se acepta.
 >
@@ -293,7 +293,7 @@ Entre las clases 10 y 11 se cruza **Wallets desde cero**: uso, seguridad y recup
 > Y como varias de esas obras tienen edición legalmente gratuita, el programa se puede
 > seguir entero sin comprar un solo libro.
 >
-> Luego están las ochenta y tres prácticas. Cincuenta y cinco se verifican solas, con un
+> Luego están las noventa y una prácticas. Sesenta y dos se verifican solas, con un
 > comando. Las demás producen una evidencia que se revisa con una rúbrica.
 >
 > Esa mezcla es deliberada. Hay cosas que una máquina verifica mejor que una persona: un

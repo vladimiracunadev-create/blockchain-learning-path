@@ -9,6 +9,11 @@ y regulación; y finalmente exchanges, contabilidad, reservas, auditoría y fore
 **fundamento**, **fuente de referencia**, **gráfico pedagógico**, práctica y evidencia verificable. Las 33 carpetas son mapas temáticos de compatibilidad, no clases agrupadas.
 Estudia las clases **en orden**: cada una prepara la siguiente.
 
+La modalidad transversal [Economía de un token viral](../docs/economia-token-viral.md)
+no añade clases ni altera la secuencia: integra creación y tokenomics en 17–18, amenazas
+en 19–20, liquidez y mercado en 39, actividad y causalidad en 57–58, y post-mortem en el
+capstone. Todo se ejecuta con EVM local y datos sintéticos, sin lanzamiento real.
+
 ```mermaid
 flowchart LR
   N["NOVATO<br/>Clases 1–10"] --> I["INTERMEDIO<br/>Clases 11–24"]

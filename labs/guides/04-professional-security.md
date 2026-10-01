@@ -36,11 +36,13 @@ Cada vulnerabilidad se demuestra dos veces: un PoC que la explota y un parche co
 - **Objetivo:** verificar suministro, roles y transferencia de un token.
 - **Cómo se resuelve:**
   1. Ejecuta las pruebas del token en `labs/08-protocols`.
-  2. Comprueba el suministro inicial, que solo el rol autorizado acuña/quema y que las transferencias respetan balances.
-  3. Anota qué ocurre cuando una cuenta sin rol intenta una acción privilegiada (revert).
-- **Estructura de la respuesta:** salida de pruebas + tabla `acción | rol requerido | resultado sin rol`.
-- **Criterio de aceptación:** verifica suministro, roles y transferencia con pruebas que pasan.
+  2. Comprueba metadata, cap, supply, que solo la autoridad autorizada acuña y que las transferencias respetan balances.
+  3. Sigue los eventos `Transfer` para reconstruir holders y usa la traza de Foundry como explorer local.
+  4. Anota qué ocurre cuando una cuenta sin rol intenta pausar y qué operaciones bloquea la pausa global.
+- **Estructura de la respuesta:** salida de pruebas + tabla `acción | autoridad | evento | resultado sin rol`.
+- **Criterio de aceptación:** verifica supply, decimals, mint authority, pausa, transferencias y balances con pruebas que pasan.
 - **Error común:** conceder mint a cualquiera → inflación no controlada.
+- **Comparación de red:** SPL Token puede tener *freeze authority* por cuenta; ERC-20 no la define. No llames equivalentes a una pausa global y a un congelamiento selectivo.
 
 ## 33 · Allowance y permit
 

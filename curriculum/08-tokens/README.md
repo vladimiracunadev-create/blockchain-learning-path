@@ -33,6 +33,8 @@ Esta página conserva el mapa, los conceptos compartidos y las referencias. La e
 - Explicar el modelo de allowances, el riesgo del approve infinito y la alternativa de firmas con ERC-2612 (`permit`).
 - Implementar un token educativo apoyado en una biblioteca auditada, documentando autoridad de mint/burn, suministro máximo y controles de emergencia.
 - Analizar la distribución y concentración inicial de un suministro y justificar por qué el token debe existir.
+- Distinguir memecoin, community token, social token, creator token y utility token sin convertir etiquetas de marketing en derechos.
+- Distinguir memecoin, community token, social token, creator token y utility token sin convertir etiquetas de marketing en derechos.
 - Ubicar la abstracción de cuenta (ERC-4337 y EIP-7702, activo desde Pectra en 2025) dentro de la experiencia de usuario de un token.
 
 ## 📚 Resultados de aprendizaje
@@ -45,6 +47,7 @@ Al finalizar, el estudiante podrá:
 4. **Diseñar** metadata coherente para un ERC-721/1155 y explicar las royalties con ERC-2981.
 5. **Explicar** cómo `permit` (ERC-2612) y la abstracción de cuenta mejoran la UX sin sacrificar seguridad.
 6. **Modelar** un escenario de emisión con el simulador de tokenomics del repositorio.
+7. **Documentar** un ciclo de creación y lanzamiento simulado sin prometer rentabilidad ni ocultar autoridades.
 
 ## Caso transversal · Andes Quest Assets
 
@@ -68,6 +71,8 @@ demuestra localmente que ownership on-chain no garantiza derecho de uso.
 | 6 | Bóvedas ERC-4626 | Unifica la contabilidad de bóvedas tokenizadas y evita errores de conversión. |
 | 7 | Abstracción de cuenta | ERC-4337 y EIP-7702 permiten cuentas programables y patrocinio de gas. |
 | 8 | Autoridad y suministro | Quién puede mintar, quemar o pausar determina el poder real sobre el token. |
+| 9 | Narrativa y categoría | Memecoin, community, social, creator y utility describen propuestas distintas, no garantías de valor. |
+| 9 | Narrativa y categoría | Memecoin, community, social, creator y utility describen propuestas distintas, no garantías de valor. |
 
 ## 🧠 Modelo mental
 
@@ -204,6 +209,28 @@ forge test -vv
 
 4. Localiza en el código de prueba una llamada a `permit` y verifica cómo la firma sustituye a una transacción de `approve`.
 
+5. Recorre el laboratorio integrado de creación, adquisición y mercado ficticio:
+
+```bash
+pnpm lab:token-viral
+node --test labs/15-tokenomics/viral-token-cycle.test.mjs
+```
+
+Relaciona cada fila con un estado observable: supply, nuevas wallets, holders, reservas,
+precio, market cap, FDV, liquidez, volumen y drawdown. La guía completa está en
+[Economía de un token viral](../../docs/economia-token-viral.md).
+
+5. Recorre el laboratorio integrado de creación, adquisición y mercado ficticio:
+
+```bash
+pnpm lab:token-viral
+node --test labs/15-tokenomics/viral-token-cycle.test.mjs
+```
+
+Relaciona cada fila con un estado observable: supply, nuevas wallets, holders, reservas,
+precio, market cap, FDV, liquidez, volumen y drawdown. La guía completa está en
+[Economía de un token viral](../../docs/economia-token-viral.md).
+
 ## 📝 Reto verificable
 
 Implementa un token educativo ERC-20 apoyado en OpenZeppelin con: suministro máximo fijo, roles separados para mint y pausa, función de recuperación de tokens enviados por error y documentación de la autoridad de cada rol.
@@ -239,6 +266,9 @@ Implementa un token educativo ERC-20 apoyado en OpenZeppelin con: suministro má
 - OpenZeppelin, *Contracts — documentación* — <https://docs.openzeppelin.com/contracts/>
 - Antonopoulos & Wood, *Mastering Ethereum*, cap. sobre tokens — <https://github.com/ethereumbook/ethereumbook>
 - Fuente primaria: ERC-2612, *`permit` — aprobaciones firmadas (712)* — <https://eips.ethereum.org/EIPS/eip-2612>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
 
 ## ✅ Criterio de dominio
 

@@ -32,6 +32,18 @@ Los indicadores básicos son cuenta, volumen y comisiones. Todos son correctos y
 
 El salto cualitativo es pasar de contar a **modelar la red**. Cada dirección es un nodo, cada transferencia una arista dirigida y con peso; entonces se pueden hacer preguntas que la tabla no admite: ¿por dónde pasó este dinero?, ¿qué direcciones forman una comunidad?, ¿qué nodo es un cuello de botella? El grado de entrada y salida distingue de un vistazo a un **coleccionista** (muchas entradas) de un **distribuidor** (muchas salidas), y un nodo con grado altísimo suele ser un servicio con miles de clientes, no un sospechoso. El análisis temporal añade la dimensión que más discrimina: fondos que entran y salen en minutos, actividad concentrada en franjas horarias, o el patrón de **pelado** en el que un saldo va dejando migajas mientras el grueso avanza.
 
+### Viralidad, volumen y causalidad
+
+En el [caso sintético de token viral](../../docs/economia-token-viral.md#6-caso-sintético-atención-máximo-y-drawdown),
+un video aparece antes de que suban búsquedas, wallets, volumen y precio. La correlación
+temporal es observable; la causalidad no. El precio pudo impulsar el video, una campaña
+pagada pudo impulsar ambos o bots pudieron inflar las métricas.
+
+El análisis separa volumen bruto de volumen económico y marca circularidad compatible con
+*wash trading*. Incluso una ida y vuelta rápida tiene alternativas legítimas, como arbitraje
+o MEV. Por eso el hallazgo correcto es “patrón compatible con”, acompañado de procedencia,
+umbral y explicaciones rivales, nunca una acusación automática.
+
 ### Nivel 4 — Análisis avanzado: detectar, medir y no pasarse de la raya
 
 Detectar anomalías es proponer una definición de "normal" y medir la distancia. El z-score (media y desviación) es intuitivo pero **frágil**: la propia anomalía infla la media y se auto-oculta. La regla de Tukey sobre mediana e intercuartil resiste mucho mejor los valores extremos. Ambos son transparentes, y esa transparencia vale más que la sofisticación: un detector que no puede explicar por qué marcó algo no se puede defender ante quien lo cuestiona ni corregir cuando se equivoca.
@@ -99,6 +111,7 @@ Aplica la guía transversal [¿Y si cruzas la línea?](../../docs/y-si-cruzas-la
 - Updated Guidance for a Risk-Based Approach to Virtual Assets and VASPs — <https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html>
 - *Mastering Bitcoin* (3.ª ed., libre) — <https://github.com/bitcoinbook/bitcoinbook>
 - Bitcoin: A Peer-to-Peer Electronic Cash System (§10, privacidad) — <https://bitcoin.org/bitcoin.pdf>
+- NIST/SEMATECH, *Correlation does not imply causation* — <https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm>
 
 Consulta además la [bibliografía razonada](../../docs/bibliografia.md), que declara procedencia y uso.
 

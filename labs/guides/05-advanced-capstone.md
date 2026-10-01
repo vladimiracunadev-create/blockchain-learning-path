@@ -16,7 +16,7 @@ Aquí integras todo lo anterior en decisiones de arquitectura y en un producto d
 | 46 | Comparación de rollups | ADR | optimista vs. ZK, 6 ejes |
 | 47 | Modelo de amenazas de puente | threat model | lock/mint + burn/release |
 | 48 | Prueba ZK conceptual | diseño | mayoría de edad |
-| 49 | Simulación de emisión y concentración | auto | `pnpm lab:tokenomics` |
+| 49 | Simulación de emisión, mercado y concentración | auto | `pnpm lab:tokenomics` + `pnpm lab:token-viral` |
 | 50 | Capstone y defensa técnica | producto | todas las puertas del capstone |
 
 ## 41 · Front-running y commit-reveal
@@ -107,13 +107,14 @@ Aquí integras todo lo anterior en decisiones de arquitectura y en un producto d
 - **Criterio de aceptación:** identifica emisor, witness, señales públicas, revocación y metadata.
 - **Error común:** exponer la fecha como señal pública → deja de ser conocimiento cero.
 
-## 49 · Simulación de emisión y concentración
+## 49 · Simulación de emisión, mercado y concentración
 
-- **Objetivo:** proyectar suministro y reparto bajo emisión compuesta.
-- **Cómo se resuelve:** `simulate` en [`supply-simulator.mjs`](../15-tokenomics/supply-simulator.mjs) valida que las asignaciones sumen 1 y proyecta `initial * (1 + inflación)^año`, repartiendo por tenedor.
+- **Objetivo:** proyectar suministro y reparto, y luego separar valoración, liquidez y actividad en un lanzamiento ficticio.
+- **Cómo se resuelve:** `simulate` en [`supply-simulator.mjs`](../15-tokenomics/supply-simulator.mjs) valida que las asignaciones sumen 1 y proyecta `initial * (1 + inflación)^año`, repartiendo por tenedor. [`viral-token-cycle.mjs`](../15-tokenomics/viral-token-cycle.mjs) lleva ese diseño a un AMM sintético con compras, ventas, holders, market cap, FDV, liquidez, volumen y drawdown.
 
 ```bash
 pnpm lab:tokenomics
+pnpm lab:token-viral
 ```
 
 ```text
@@ -131,8 +132,9 @@ pnpm lab:tokenomics
 - Cada tenedor recibe `supply × su share`; las proporciones (50/20/30) se mantienen aunque el suministro crezca.
 - Si las asignaciones no suman 1, `simulate` lanza `"Las asignaciones deben sumar 1"`.
 - Verificación: `node --test labs/15-tokenomics/supply-simulator.test.mjs` comprueba que con 100 al 10% en 2 años el suministro es 121 y que un reparto inválido lanza error.
-- **Reto:** cambia emisión y asignación; calcula concentración (share del mayor tenedor) y dilución de los demás.
-- **Criterio de aceptación:** relaciona la inflación con la dilución y el reparto con la concentración.
+- Verificación viral: `node --test labs/15-tokenomics/viral-token-cycle.test.mjs` comprueba `market cap ≠ liquidez`, salida real bajo impacto, subida sintética, drawdown y advertencia causal.
+- **Reto:** cambia emisión y asignación; calcula concentración y dilución. Luego duplica la liquidez inicial sin cambiar el supply y compara impacto, máximo y drawdown.
+- **Criterio de aceptación:** relaciona inflación con dilución, reparto con concentración y profundidad con impacto; nunca presenta market cap como dinero ingresado o retirable.
 - **Error común:** asignaciones que no suman 1 → la simulación aborta antes de proyectar.
 
 ## 50 · Capstone y defensa técnica

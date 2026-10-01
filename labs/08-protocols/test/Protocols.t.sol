@@ -28,6 +28,27 @@ contract ProtocolsTest is Test {
         token.mint(alice, 51 ether);
     }
 
+    function testTokenPauseDocumentsEmergencyAuthority() public {
+        CourseToken token = new CourseToken(100 ether);
+        token.mint(alice, 50 ether);
+
+        vm.prank(alice);
+        vm.expectRevert(CourseToken.Unauthorized.selector);
+        token.pause();
+
+        token.pause();
+        vm.prank(alice);
+        vm.expectRevert(CourseToken.TransfersPaused.selector);
+        token.transfer(bob, 1 ether);
+        vm.expectRevert(CourseToken.TransfersPaused.selector);
+        token.mint(bob, 1 ether);
+
+        token.unpause();
+        vm.prank(alice);
+        token.transfer(bob, 1 ether);
+        assertEq(token.balanceOf(bob), 1 ether);
+    }
+
     function testOracleRejectsStalePrice() public {
         FreshOracle oracle = new FreshOracle(alice, 1 hours);
         vm.prank(alice);

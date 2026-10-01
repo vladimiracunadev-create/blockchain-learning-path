@@ -31,7 +31,9 @@ const required = [
   "docs/skills-matrix.md",
   "labs/22-cbdc-mercado-tokenizado/src/DvPSettlement.sol",
   "docs/andes-quest-activos-tokenizados.md",
-  "labs/23-andes-quest-assets/src/GameAsset.sol"
+  "labs/23-andes-quest-assets/src/GameAsset.sol",
+  "docs/economia-token-viral.md",
+  "labs/15-tokenomics/viral-token-cycle.mjs"
 ];
 
 for (const file of required) await access(join(process.cwd(), file));

@@ -127,6 +127,8 @@ Criterio de aceptación: OK — recargar el mismo lote no cambió el tamaño del
 - **Nivel:** intermedio · **Duración:** 30 min · **Requisitos previos:** práctica 75.
 - **Objetivo:** calcular los indicadores básicos y saber exactamente qué miden.
 - **Cómo se resuelve:** [`metricas-actividad.mjs`](../28-data-analytics/metricas-actividad.mjs) calcula direcciones activas y nuevas, volumen y comisiones por periodo, y `concentracion()` la cuota del top-N con un índice **HHI** documentado.
+- **Extensión viral:** contrasta audiencia, búsquedas, nuevas wallets y volumen de `pnpm lab:token-viral`. Informa la correlación, pero enumera al menos tres causas alternativas antes de formular una conclusión.
+- **Límite obligatorio:** volumen bruto incluye la actividad circular plantada; nuevas wallets no equivalen a personas ni prueban adopción.
 
 ```bash
 pnpm lab:metricas-onchain

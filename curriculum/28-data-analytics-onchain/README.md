@@ -48,6 +48,7 @@ Al finalizar, el estudiante podrá:
 2. **Comparar** una transacción UTXO y una de cuentas, identificando dónde vive el saldo, cómo se deduce la comisión y dónde está el importe de un token.
 3. **Implementar** un extractor idempotente con checkpoint que sobreviva a un fallo transitorio y a una reorganización de cadena.
 4. **Calcular** direcciones activas, volumen, comisiones y concentración, y **defender** por qué las cifras no equivalen a "usuarios" ni a "actividad económica".
+5. **Contrastar** métricas sociales y on-chain sin convertir correlación temporal en causalidad.
 5. **Construir** un grafo de direcciones y rastrear el recorrido de unos fondos, declarando el criterio de atribución empleado.
 6. **Medir** un detector de anomalías con precisión y recall sobre una verdad de campo, y razonar el compromiso al mover el umbral.
 7. **Redactar** una conclusión analítica separando lo observado de lo inferido, con sus limitaciones explícitas.
@@ -147,6 +148,11 @@ La preparación termina en **normalización y validación**: unificar unidades (
 
 Los indicadores básicos son cuenta, volumen y comisiones. Todos son correctos y todos se malinterpretan. **Direcciones activas** no es "usuarios": una persona puede tener cientos de direcciones y un servicio puede atender a miles con una sola. **Direcciones nuevas** no es "adopción": crear una dirección es gratis y no requiere permiso. El **volumen** incluye auto-transferencias, cambio, movimientos internos de servicios y reequilibrios, así que sobreestima sistemáticamente la actividad económica. Las **comisiones** sí son un indicador honesto de demanda de espacio en bloque, porque cuestan dinero real. La **concentración** (cuota del top-N, índice de Herfindahl o Gini) mide desigualdad de tenencia entre *direcciones*, no entre *personas*: un exchange con una dirección enorme distorsiona la lectura por completo.
 
+Cuando una pieza de contenido, las búsquedas y el volumen cambian a la vez, el orden
+temporal permite formular hipótesis, no cerrarlas. El análisis necesita procedencia,
+contrafactual, variables de confusión y explicaciones rivales. Esta disciplina se aplica
+en el [caso sintético de economía viral](../../docs/economia-token-viral.md).
+
 El salto cualitativo es pasar de contar a **modelar la red**. Cada dirección es un nodo, cada transferencia una arista dirigida y con peso; entonces se pueden hacer preguntas que la tabla no admite: ¿por dónde pasó este dinero?, ¿qué direcciones forman una comunidad?, ¿qué nodo es un cuello de botella? El grado de entrada y salida distingue de un vistazo a un **coleccionista** (muchas entradas) de un **distribuidor** (muchas salidas), y un nodo con grado altísimo suele ser un servicio con miles de clientes, no un sospechoso. El análisis temporal añade la dimensión que más discrimina: fondos que entran y salen en minutos, actividad concentrada en franjas horarias, o el patrón de **pelado** en el que un saldo va dejando migajas mientras el grueso avanza.
 
 ### Nivel 4 — Análisis avanzado: detectar, medir y no pasarse de la raya
@@ -237,6 +243,7 @@ Fuentes primarias y documentación oficial, consultadas el **2026-08-24**:
 | Updated Guidance for a Risk-Based Approach to Virtual Assets and VASPs | FATF/GAFI | <https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html> | 2021-10-28 | Nivel 4: riesgo, límites regulatorios |
 | *Mastering Bitcoin* (3.ª ed., libre) | Andreas M. Antonopoulos, David A. Harding | <https://github.com/bitcoinbook/bitcoinbook> | 2023 | Niveles 1 y 3: UTXO, privacidad, análisis |
 | Bitcoin: A Peer-to-Peer Electronic Cash System (§10, privacidad) | Satoshi Nakamoto | <https://bitcoin.org/bitcoin.pdf> | 2008-10-31 | Nivel 1: seudonimato frente a anonimato |
+| Correlation does not imply causation | NIST/SEMATECH | <https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm> | consulta vigente | Nivel 3: causalidad y contrafactual |
 
 Cómo se relaciona cada obra con el resto del programa: [bibliografía central](../../docs/bibliografia.md).
 

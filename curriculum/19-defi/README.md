@@ -43,6 +43,7 @@ mercado sin nadie a quien reclamar, sin horario de cierre y sin interruptor.
 - Determinar el factor de salud de una posición y el precio exacto que la liquida.
 - Comparar libro de órdenes, AMM y mercado híbrido con criterios de microestructura.
 - Identificar los seis riesgos estructurales de un protocolo DeFi y su control asociado.
+- Separar market cap, FDV, liquidez, volumen y efectivo retirable en mercados pequeños.
 
 ## 📚 Resultados de aprendizaje
 
@@ -134,6 +135,9 @@ sequenceDiagram
 - **Préstamo relámpago (*flash loan*)**: préstamo sin colateral que debe devolverse **en la misma transacción**. Si no se devuelve, la transacción entera revierte y es como si nunca hubiera ocurrido.
 - **TVL (*total value locked*)**: valor depositado en un protocolo. Mide tamaño, **no** solvencia ni seguridad.
 - **APY / APR**: rendimiento anualizado con y sin capitalización. Ambos son **históricos o proyectados**, nunca prometidos.
+- **Market cap**: precio marginal por suministro circulante; valoración, no caja ni capital aportado.
+- **FDV**: precio marginal por suministro máximo o totalmente diluido; hipótesis especialmente frágil si falta liquidez.
+- **Bonding curve**: función precio-cantidad usada habitualmente en emisión o redención primaria; no es sinónimo de AMM secundario.
 
 ## 🔬 Profundización
 

@@ -61,6 +61,7 @@ Al finalizar, el estudiante podrá:
 | 5 | Manipulación de oráculo | Un precio spot barato de mover habilita ataques, a veces vía flash loan. |
 | 6 | `delegatecall` y upgrades | Ejecutar código externo sobre el propio almacenamiento puede corromper el estado. |
 | 7 | DoS y agotamiento de gas | Bucles no acotados o dependencias externas pueden bloquear funciones críticas. |
+| 8 | Abuso de lanzamiento y mercado | Rug pull, insiders, snipers, bots, wash trading, FOMO y drainers combinan riesgo técnico, económico y social. |
 | 8 | Firmas y replay | Firmas sin `nonce` o sin `chainId` se reutilizan en otra cadena o transacción. |
 
 ## 🧠 Modelo mental
@@ -108,6 +109,8 @@ flowchart LR
 - **Fuzzing**: generación de entradas aleatorias para violar una propiedad; Echidna y el fuzzer de Foundry son herramientas habituales.
 - **Análisis estático**: inspección del código sin ejecutarlo para detectar patrones peligrosos; Slither y Mythril son ejemplos.
 - **Impacto y probabilidad**: dimensiones para clasificar un hallazgo y priorizar su corrección.
+- **Rug pull / pump-and-dump**: retirada o abuso de control y promoción coordinada seguida de ventas; se estudian para detectar y prevenir, nunca para ejecutarlos.
+- **Wash trading**: actividad circular que aparenta volumen sin cambio económico neto; una heurística on-chain no prueba por sí sola la intención.
 
 ## 🔬 Profundización
 
@@ -243,6 +246,12 @@ Toma un contrato vulnerable de `security-challenges`, escribe una prueba mínima
 - SWC Registry, *Smart Contract Weakness Classification* — <https://swcregistry.io/>
 - *Damn Vulnerable DeFi* — <https://www.damnvulnerabledefi.xyz/>
 - Fuente primaria: EIP-155, *Simple replay attack protection* — <https://eips.ethereum.org/EIPS/eip-155>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
+- FTC, *What To Know About Cryptocurrency and Scams* — <https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
+- FTC, *What To Know About Cryptocurrency and Scams* — <https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
+- FTC, *What To Know About Cryptocurrency and Scams* — <https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams>
 
 ## ✅ Criterio de dominio
 

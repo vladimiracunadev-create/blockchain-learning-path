@@ -36,6 +36,7 @@ resiste.
 | Reentrancia, control de acceso, oráculo, replay, front-running, colisión de storage | `forge test` en [`security-challenges/`](../security-challenges/README.md) — cada reto trae su **exploit** y su **fix** |
 | Contratos de bóveda, gobernanza y financiamiento | `forge test` en `labs/` y `projects/` |
 | AMM, pérdida impermanente, factor de salud y liquidación | `pnpm test` — `labs/19-defi` |
+| Token viral sintético: market cap, FDV, liquidez, holders, volumen y drawdown | `pnpm test` — `labs/15-tokenomics` |
 | Colateral, paridad y cobertura accesible de reservas | `pnpm test` — `labs/21-stablecoins` |
 | Coste de una remesa, prefondeo y pago contra pago atómico | `pnpm test` — `labs/23-pagos-fx` |
 | Entrega contra pago, liquidez del neteo y ciclo de un bono | `pnpm test` — `labs/25-mercados-capitales` |
@@ -44,7 +45,7 @@ resiste.
 | Anatomía de bloques, extracción con reorgs, grafos, patrones y detección de anomalías | `pnpm test` — `labs/28-data-analytics` y [`projects/explorador-analitico/`](../projects/explorador-analitico/README.md) |
 | Mercado tokenizado: dinero mayorista simulado, bono y DvP atómico | `forge test` en [`labs/22-cbdc-mercado-tokenizado/`](../labs/22-cbdc-mercado-tokenizado/README.md) |
 
-Son **356 pruebas automatizadas** (310 de Node y 46 de Foundry) que la CI ejecuta en
+Son **363 pruebas automatizadas** (316 de Node y 47 de Foundry) que la CI ejecuta en
 cada cambio. Una afirmación que se contradiga con el código hace fallar el build.
 Eso es más fuerte que una cita: no apela a la autoridad de un autor, se comprueba.
 

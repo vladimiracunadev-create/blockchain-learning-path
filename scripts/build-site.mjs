@@ -67,6 +67,7 @@ const NAV = [
   // antes que el índice del currículo.
   { t: "🌱 Empieza aquí", href: "docs/empieza-aqui.html" },
   { t: "🎮 Andes Quest Assets", href: "docs/andes-quest-activos-tokenizados.html" },
+  { t: "📣 Economía de token viral", href: "docs/economia-token-viral.html" },
   { t: "📖 Glosario", href: "docs/glosario.html" },
   { t: "🚧 ¿Y si cruzas la línea?", href: "docs/y-si-cruzas-la-linea-blockchain.html" },
   // Guía de consulta: las wallets se enseñan dentro de las clases pertinentes.
@@ -108,6 +109,7 @@ const NAV = [
       { t: "Explorador analítico (proyecto)", href: "projects/explorador-analitico/README.html" },
       { t: "Mercado tokenizado (Foundry)", href: "labs/22-cbdc-mercado-tokenizado/README.html" },
       { t: "Andes Quest Assets (Foundry)", href: "labs/23-andes-quest-assets/README.html" },
+      { t: "Token viral (simulación)", href: "docs/economia-token-viral.html" },
     ],
   },
   {

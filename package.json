@@ -34,6 +34,7 @@
     "lab:tx": "node labs/07-dapps/tx-lifecycle.mjs",
     "lab:montos": "node labs/07-dapps/token-amounts.mjs",
     "lab:tokenomics": "node labs/15-tokenomics/supply-simulator.mjs",
+    "lab:token-viral": "node labs/15-tokenomics/viral-token-cycle.mjs",
     "lab:game-assets": "node labs/23-andes-quest-assets/entitlement.mjs",
     "lab:amm": "node labs/19-defi/amm-producto-constante.mjs",
     "lab:prestamo": "node labs/19-defi/prestamo-factor-salud.mjs",

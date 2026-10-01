@@ -39,6 +39,8 @@ Todas las prácticas de este bloque son **simulaciones locales**: sin red, sin c
 - **Salida esperada:** tabla con pago, precio efectivo e impacto para 1, 5, 10 y 25 ETH.
 - **Criterio de aceptación:** explicas por qué el impacto no es lineal y qué implica para una orden institucional.
 - **Error común:** llamar «comisión» al impacto de la curva → son dos costes distintos y solo uno depende del protocolo.
+- **Extensión de mercado pequeño:** ejecuta `pnpm lab:token-viral` y explica con una fila concreta por qué market cap, FDV, liquidez marcada y reserva cotizada son cuatro cifras diferentes.
+- **Criterio adicional:** calcula cuánto sale al vender el 10 % del supply del ejemplo y contrástalo con `10 % × market cap`; la diferencia es impacto, no “dinero desaparecido”.
 
 ## 52 · Pérdida impermanente y su compensación
 

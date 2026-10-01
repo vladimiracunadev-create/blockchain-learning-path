@@ -49,6 +49,28 @@ pequeñas frente a la reserva, pésimo para una operación institucional. La res
 sector —pools concentrados, agregadores que trocean la orden entre varios mercados— no
 elimina la curva, la administra.
 
+### Market cap no es liquidez ni caja retirable
+
+El precio marginal del pool multiplicado por el suministro circulante produce el
+**market cap**; multiplicado por el suministro máximo, el **FDV**. Ambas son valoraciones
+aritméticas: aplican a todas las unidades el precio de una operación infinitesimal. No
+demuestran cuánto capital entró ni cuánto podría salir.
+
+En un pool con 100 000 TOKEN y 5 000 USDC, el precio marginal es 0,05. Si circulan
+1 000 000 TOKEN, el market cap es 50 000, mientras la liquidez marcada de ambos lados es
+10 000 y solo hay 5 000 USDC de reserva. Vender 100 000 TOKEN no retira 5 000: sin
+comisión retira 2 500, porque la venta mueve la curva.
+
+```text
+MARKET CAP ≠ LIQUIDEZ
+MARKET CAP ≠ DINERO DISPONIBLE PARA RETIRAR
+FDV ≠ CAPITAL INVERTIDO
+```
+
+Una **bonding curve** también relaciona cantidad y precio, pero suele gobernar emisión o
+redención primaria. Un AMM de dos reservas gobierna intercambio secundario. Comparten la
+idea de curva; no deben confundirse ni esconder quién conserva el activo cotizado.
+
 ### Pérdida impermanente: el coste que no aparece en el panel
 
 Depositas 10 ETH y 20 000 USDC (valor total 40 000 USD con ETH a 2 000). El precio de ETH
@@ -77,6 +99,9 @@ hace un proveedor de liquidez, y casi nunca se le presenta así. Un panel que an
 **Método propio:** laboratorio numérico de AMM.
 
 **Actividad:** Calcular swaps, comisiones y pérdida impermanente con escenarios.
+
+Extensión: ejecuta `pnpm lab:token-viral` y comprueba cómo una valoración de millones
+puede coexistir con liquidez dos órdenes de magnitud menor y colapsar cuando llegan ventas.
 
 Trabaja en entorno local, regtest, signet o testnet según corresponda. Conserva entradas, comandos, salidas y bloque o instante de corte. Una captura aislada no demuestra reproducibilidad.
 

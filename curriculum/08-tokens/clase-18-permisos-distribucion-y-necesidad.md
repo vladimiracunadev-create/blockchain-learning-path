@@ -36,6 +36,29 @@ Allowance y `permit` resuelven autorización delegada, no justifican que exista 
 
 La distribución cambia la seguridad económica. Concentración, calendarios de desbloqueo, liquidez y delegación pueden convertir una gobernanza formalmente abierta en control efectivo de pocos actores. La evidencia de utilidad no es volumen de mercado; es una función que el sistema no podría cumplir con una cuenta interna o un derecho contractual convencional.
 
+### Memecoin, community, social, creator y utility
+
+Las etiquetas describen el centro de una narrativa, no una garantía técnica. Una
+**memecoin** se coordina alrededor de humor o cultura; un **community token**, alrededor
+de reglas y pertenencia colectivas; un **social token**, alrededor de una audiencia; un
+**creator token**, alrededor de una persona creadora; y un **utility token**, alrededor
+de una función necesaria del producto. Un mismo activo puede mezclar varias.
+
+La prueba de utilidad es contrafactual: si el producto funciona igual con puntos,
+stablecoin o una cuenta interna, la transferibilidad del token necesita una justificación
+adicional. Ninguna de las cinco etiquetas demuestra derechos sobre ingresos, devolución,
+precio mínimo ni rentabilidad. La [guía transversal](../../docs/economia-token-viral.md)
+conecta esta taxonomía con lanzamiento, comunidad, mercado y post-mortem sin convertirla
+en recomendación de inversión.
+
+### Narrativa responsable
+
+Una narrativa puede explicar identidad, propósito y reglas de participación. No puede
+ocultar asignaciones, vesting, pagos a promotores, autoridades administrativas ni riesgos.
+El documento de lanzamiento simulado debe separar afirmaciones verificables, aspiraciones
+y prohibiciones: nunca promete precio, “salida” ni riqueza, y conserva quién aprobó cada
+mensaje.
+
 ## Gráfico pedagógico
 
 Recorre el gráfico en voz alta: identifica supuestos, transformaciones y el punto exacto donde aparece evidencia.
@@ -100,6 +123,9 @@ Vuelve al caso inicial, elige el error más peligroso y describe una comprobaci�
 - OpenZeppelin, *Contracts — documentación* — <https://docs.openzeppelin.com/contracts/>
 - Antonopoulos & Wood, *Mastering Ethereum*, cap. sobre tokens — <https://github.com/ethereumbook/ethereumbook>
 - Fuente primaria: ERC-2612, *`permit` — aprobaciones firmadas (712)* — <https://eips.ethereum.org/EIPS/eip-2612>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
+- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
 
 Consulta además la [bibliografía razonada](../../docs/bibliografia.md), que declara procedencia y uso.
 

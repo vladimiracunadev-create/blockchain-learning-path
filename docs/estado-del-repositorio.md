@@ -5,7 +5,8 @@
 Estado honesto de lo que el repositorio entrega hoy y de lo que requiere infraestructura
 externa. El programa cubre **66 documentos de clase (1–66)**, **33 mapas temáticos compatibles** y **10 etapas**:
 Orientación, Fundamentos, Desarrollo, Profesional, Avanzado, Producción,
-Finanzas on-chain, Institucional y regulación, y Analítica de datos on-chain.
+Finanzas on-chain, Institucional y regulación, Analítica de datos on-chain, y Custodia,
+auditoría y forensics.
 
 Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 
@@ -16,7 +17,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | Currículo | 66 archivos de clase (1–66), cada uno con gráfico Mermaid, caso, fundamento, práctica, evidencia y fuentes; [Wallets desde cero](wallets-desde-cero.md) es guía de consulta | ✅ |
 | Rutas por perfil | Itinerarios según objetivo del estudiante | ✅ |
 | Industria | Construcción de una red, stack, equipos, empresas, negocio y ciclo de vida | ✅ |
-| Prácticas | Ochenta y tres prácticas con criterios de aceptación (55 auto-verificables) | ✅ |
+| Prácticas | 91 prácticas con criterios de aceptación (62 auto-verificables) | ✅ |
 | Laboratorios | Automáticos sin dependencias y laboratorios Foundry | ✅ |
 | Bitcoin regtest | Entorno de práctica UTXO | ✅ |
 | Contratos de ejemplo | Token, oráculo, gobernanza, Vault y financiamiento | ✅ |
@@ -29,6 +30,7 @@ Leyenda: ✅ disponible · 🚧 parcial o requiere operación externa.
 | Presentación y pauta | 7 diapositivas del programa (con demo en vivo) y pauta del expositor con guion, tiempos y 4 anexos; se generan en cada publicación | ✅ |
 | Regulación | Chile, MiCA, EE. UU., LatAm y estándares internacionales, con rango normativo y fuente | ✅ |
 | Casos reales | Orionx, Terra/UST, FTX, Celsius, OneCoin, puente Ronin y El Salvador, con estructura fija de análisis | ✅ |
+| Economía de token viral | Guía transversal, token EVM local y simulación sintética de narrativa, mercado, riesgos y post-mortem | ✅ |
 | Bibliografía | Libros de referencia por área e hitos del ecosistema | ✅ |
 | CI y publicación | Lint (Markdown, JS y Solidity), pruebas Node y Foundry, escaneo de secretos, CodeQL, vigilancia de enlaces externos, sitio en GitHub Pages y binarios verificados por contenido | ✅ |
 

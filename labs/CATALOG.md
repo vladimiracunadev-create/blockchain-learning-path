@@ -103,7 +103,7 @@ vuelve a la **clase** para la teoría. Las marcadas **auto** traen verificación
 | 46 | Comparación de rollups | avanzado | ADR | [25–26](../curriculum/12-escalabilidad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 47 | Modelo de amenazas de puente | avanzado | threat model | [27–28](../curriculum/13-interoperabilidad/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 48 | Prueba ZK conceptual | avanzado | diseño | [29–30](../curriculum/14-privacidad-zk/README.md) | [ver](guides/05-advanced-capstone.md) |
-| 49 | Simulación de emisión y concentración | avanzado | **auto** | [31–32](../curriculum/15-arquitectura-avanzada/README.md) | [ver](guides/05-advanced-capstone.md) |
+| 49 | Simulación de emisión, mercado y concentración | avanzado | **auto** | [17–18](../curriculum/08-tokens/README.md), [39](../curriculum/19-defi/README.md) y [57–58](../curriculum/28-data-analytics-onchain/README.md) | [ver](guides/05-advanced-capstone.md) |
 | 50 | Capstone y defensa técnica | avanzado | producto | [Capstone](../capstone/README.md) | [ver](guides/05-advanced-capstone.md) |
 
 ## Prácticas 51–70 · Finanzas on-chain, institucional y regulación

@@ -103,6 +103,20 @@ diferencia en una prueba: la wallet puede seguir siendo owner de `#42` mientras
 el backend rechaza el entitlement por cuenta suspendida, licencia vencida o
 metadata no disponible.
 
+## Aplicación transversal · creación de un token viral de prueba
+
+La [guía de economía de un token viral](../../docs/economia-token-viral.md) reutiliza
+el `CourseToken` del repositorio para recorrer contrato, supply, decimals, metadata,
+autoridad de mint, pausa, transferencias, eventos y holders. La distinción entre redes
+es parte del ejercicio: SPL Token tiene una *freeze authority* capaz de congelar cuentas;
+ERC-20 no define esa facultad. Este laboratorio EVM usa una pausa global visible, no
+finge equivalencia ni añade una lista negra oculta.
+
+Cuando una wallet adquiere el activo en un AMM, no “entra dinero al market cap”. Cambian
+dos balances del pool, se emite un `Transfer`, sube el saldo de la wallet y el cociente de
+reservas produce un nuevo precio marginal. El indexador reconstruye holders desde eventos;
+el contrato solo conserva saldos por dirección.
+
 ## Demostración de aprendizaje
 
 **Entregable:** Ficha de token con estándar, invariantes, poderes y riesgos explícitos.

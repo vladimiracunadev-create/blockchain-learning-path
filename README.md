@@ -25,7 +25,7 @@
 [![viem](https://img.shields.io/badge/viem-dApps-2e8b57?style=flat-square)](apps/community-funding-web)
 [![TypeScript](https://img.shields.io/badge/TypeScript-dApp%20%26%20indexer-3178C6?style=flat-square&logo=typescript&logoColor=white)](apps)
 
-[🌱 Empieza aquí](docs/empieza-aqui.md) · [🎮 Andes Quest Assets](docs/andes-quest-activos-tokenizados.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🚧 ¿Y si cruzas la línea?](docs/y-si-cruzas-la-linea-blockchain.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
+[🌱 Empieza aquí](docs/empieza-aqui.md) · [🎮 Andes Quest Assets](docs/andes-quest-activos-tokenizados.md) · [📣 Economía de token viral](docs/economia-token-viral.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🚧 ¿Y si cruzas la línea?](docs/y-si-cruzas-la-linea-blockchain.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
 
 </div>
 
@@ -58,6 +58,12 @@ transferencia interna, ERC-20/721/1155, marketplace y puente sin presentar NFT n
 play-to-earn como mejoras automáticas. Incluye un
 [laboratorio local con Foundry](labs/23-andes-quest-assets/README.md), sin red pública,
 claves reales ni dinero.
+
+La modalidad transversal **[Economía de un token viral](docs/economia-token-viral.md)**
+integra las clases existentes de tokens, seguridad, AMM y analítica: creación local de un
+ERC-20, narrativa responsable, lanzamiento y crecimiento social sintéticos, actividad
+on-chain, liquidez, market cap/FDV, subida y drawdown, riesgos y post-mortem. No añade un
+curso paralelo, no toca mainnet y no enseña manipulación de mercado.
 
 ## 🎯 Qué es esto
 
@@ -174,6 +180,7 @@ Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visua
 - **Bitcoin Core en `regtest`** y un **nodo Geth real en Docker** para operar infraestructura.
 - **Mercado tokenizado en Solidity**: dinero mayorista simulado, bono con transferencia restringida y **entrega contra pago atómica**, con 18 pruebas ([laboratorio](labs/22-cbdc-mercado-tokenizado/README.md)).
 - **Simulaciones financieras deterministas** en Node —AMM y pérdida impermanente, factor de salud, paridad de una stablecoin, coste real de una remesa, PvP, DvP, cuórum de custodia y cribado de cumplimiento— sin red, sin claves y sin fondos.
+- **Ciclo de token viral sintético**: audiencia, búsquedas, nuevas wallets, holders, volumen, market cap, FDV, liquidez, máximo y drawdown con el principio verificable `MARKET CAP ≠ LIQUIDEZ ≠ DINERO RETIRABLE` ([guía](docs/economia-token-viral.md) · `pnpm lab:token-viral`).
 - **Especialización custodial determinista**: CEX/DEX, tres registros, Merkle Tree de pasivos, assets vs liabilities, grafos forenses y el caso ficticio [Aurora Custody](capstone/empresa-custodial/README.md).
 
 ### El principio que atraviesa la especialización
