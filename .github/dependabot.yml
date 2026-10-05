@@ -1,6 +1,8 @@
 version: 2
 updates:
-  # Dependencias de npm/pnpm del monorepo (dApp, indexador, panel).
+  # Dependencias pnpm del monorepo (dApp, indexador, panel).
+  # GitHub exige el identificador "npm" para npm, yarn y pnpm; el lockfile
+  # canónico del repositorio sigue siendo pnpm-lock.yaml.
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -9,9 +11,8 @@ updates:
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
-      - "npm"
     groups:
-      npm:
+      pnpm:
         patterns:
           - "*"
 
