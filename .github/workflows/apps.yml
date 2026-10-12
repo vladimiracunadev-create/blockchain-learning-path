@@ -23,7 +23,12 @@ on:
   pull_request:
     paths:
       - "apps/**"
+      - "curriculum/**"
+      - "scripts/build-site.mjs"
+      - "scripts/build-landing.mjs"
       - "scripts/build-app-bundle.mjs"
+      - "scripts/build-icons.mjs"
+      - "assessments/**"
       - ".github/workflows/apps.yml"
   workflow_dispatch:
 
