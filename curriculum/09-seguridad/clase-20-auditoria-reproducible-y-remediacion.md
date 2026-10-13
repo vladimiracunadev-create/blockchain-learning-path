@@ -46,6 +46,12 @@ Ninguna herramienta cubre todo el espectro; una auditoría seria las apila porqu
 
 La consecuencia práctica: un `slither .` limpio y un fuzzing en verde acotan clases enteras de errores, pero el caso Euler demuestra que el fallo puede vivir en la interacción entre funciones individualmente correctas, territorio exclusivo de los invariantes bien elegidos y de la revisión humana.
 
+### Dónde encaja la verificación formal
+
+La verificación formal formula una propiedad y comprueba, mediante razonamiento simbólico o una prueba matemática, que se cumple para los estados cubiertos por un modelo. El SMTChecker del compilador de Solidity puede detectar aserciones violables y condiciones aritméticas sin enumerar manualmente cada entrada. Herramientas especializadas permiten expresar reglas de protocolo más ricas.
+
+La garantía siempre tiene borde: prueba **la propiedad escrita**, sobre **el código y los supuestos modelados**, con las limitaciones declaradas por la herramienta. No demuestra que la especificación represente la intención económica, que un oráculo sea honesto ni que el despliegue use el bytecode revisado. La evidencia profesional incluye propiedad, versión de herramienta, resultado, supuestos, funciones fuera de alcance y una prueba o revisión complementaria.
+
 ### Alcance, reproducción y cierre de hallazgos
 
 Una auditoría empieza por fijar repositorio, commit, contratos, dependencias, compilador y supuestos excluidos. Sin ese corte, un informe correcto puede aplicarse a código distinto. Cada hallazgo contiene condición, recorrido explotable, impacto, severidad y prueba mínima. Herramientas estáticas amplían cobertura, pero no sustituyen revisar lógica económica, privilegios y composición.
@@ -88,6 +94,7 @@ Aplica la guía transversal [¿Y si cruzas la línea?](../../docs/y-si-cruzas-la
 - ConsenSys, *Smart Contract Best Practices* — <https://consensysdiligence.github.io/smart-contract-best-practices/>
 - SWC Registry, *Smart Contract Weakness Classification* — <https://swcregistry.io/>
 - *Damn Vulnerable DeFi* — <https://www.damnvulnerabledefi.xyz/>
+- Solidity, *SMTChecker and Formal Verification* — <https://docs.soliditylang.org/en/latest/smtchecker.html>
 - Fuente primaria: EIP-155, *Simple replay attack protection* — <https://eips.ethereum.org/EIPS/eip-155>
 
 Consulta además la [bibliografía razonada](../../docs/bibliografia.md), que declara procedencia y uso.

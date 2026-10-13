@@ -63,6 +63,7 @@ Al finalizar, el estudiante podrá:
 | 7 | DoS y agotamiento de gas | Bucles no acotados o dependencias externas pueden bloquear funciones críticas. |
 | 8 | Abuso de lanzamiento y mercado | Rug pull, insiders, snipers, bots, wash trading, FOMO y drainers combinan riesgo técnico, económico y social. |
 | 8 | Firmas y replay | Firmas sin `nonce` o sin `chainId` se reutilizan en otra cadena o transacción. |
+| 9 | Verificación formal | Demuestra propiedades matemáticas bajo supuestos explícitos; no sustituye especificación, revisión ni pruebas de integración. |
 
 ## 🧠 Modelo mental
 

@@ -25,7 +25,7 @@
 [![viem](https://img.shields.io/badge/viem-dApps-2e8b57?style=flat-square)](apps/community-funding-web)
 [![TypeScript](https://img.shields.io/badge/TypeScript-dApp%20%26%20indexer-3178C6?style=flat-square&logo=typescript&logoColor=white)](apps)
 
-[🌱 Empieza aquí](docs/empieza-aqui.md) · [🎮 Andes Quest Assets](docs/andes-quest-activos-tokenizados.md) · [📣 Economía de token viral](docs/economia-token-viral.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🚧 ¿Y si cruzas la línea?](docs/y-si-cruzas-la-linea-blockchain.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por perfil](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
+[🌱 Empieza aquí](docs/empieza-aqui.md) · [🎮 Andes Quest Assets](docs/andes-quest-activos-tokenizados.md) · [📣 Economía de token viral](docs/economia-token-viral.md) · [📖 Glosario](docs/glosario.md) · [🌐 Sitio](https://vladimiracunadev-create.github.io/blockchain-learning-path/) · [📕 Manual (PDF)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) · [🎤 Presentación](#-presenta-el-programa-hoy-diapositivas-demo-y-pauta) · [📥 Apps](#-llévate-el-curso-apps-y-manual) · [📚 Currículo](curriculum/README.md) · [🏭 Industria](industria/README.md) · [🧪 Laboratorios](labs/CATALOG.md) · [⚖️ Regulación](regulation/README.md) · [📁 Casos reales](docs/casos-reales/README.md) · [🚧 ¿Y si cruzas la línea?](docs/y-si-cruzas-la-linea-blockchain.md) · [🎯 Competencias](docs/skills-matrix.md) · [🗺️ Roadmap](ROADMAP.md) · [🧭 Rutas por rol](learning-paths/README.md) · [🤝 Contribuir](CONTRIBUTING.md) · [🔐 Seguridad](SECURITY.md)
 
 </div>
 
@@ -117,7 +117,7 @@ Todo el contenido —las 66 clases, la industria, los laboratorios, la regulaci�
 |---|---|---|
 | 🖥️ **Windows** | [Instalador o portable](https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/latest) | Curso completo dentro del ejecutable · [cómo está hecha](apps/desktop/README.md) |
 | 📱 **Android** | [APK](https://github.com/vladimiracunadev-create/blockchain-learning-path/releases/latest) | Curso completo dentro del APK · [cómo está hecha](apps/android/README.md) |
-| 📕 **Manual PDF** | [MANUAL.pdf (~430 páginas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) | Edición de estudio con enlaces internos; también adjunta en cada release |
+| 📕 **Manual PDF** | [MANUAL.pdf (~500 páginas)](https://vladimiracunadev-create.github.io/blockchain-learning-path/manual/MANUAL.pdf) | Edición de estudio con clases, rutas profesionales y enlaces internos; también adjunta en cada release |
 | 🌐 **Web** | [Sitio del programa](https://vladimiracunadev-create.github.io/blockchain-learning-path/) | Con buscador, progreso y autoevaluación |
 
 Las tres versiones salen del **mismo build**, así que ninguna se queda atrás. Cada binario se verifica en CI abriéndolo y contando las clases, las páginas y las preguntas que lleva dentro: un build en verde no prueba que el artefacto contenga el curso.
@@ -248,9 +248,15 @@ El programa está listo para el aula: [guía del instructor](instructor/README.m
 
 Plan completo en el [ROADMAP de 26 semanas](ROADMAP.md) · ruta intensiva en [docs/ruta-rapida.md](docs/ruta-rapida.md).
 
-## 🧭 Rutas por perfil profesional
+## 🧭 Rutas de aprendizaje por rol profesional
 
-Recorridos ordenados para **desarrollo, arquitectura, auditoría, producto, investigación y empresa**: elige el tuyo en [learning-paths](learning-paths/README.md).
+Las [13 rutas profesionales](learning-paths/README.md) convierten el currículo común en recorridos verificables para las familias de **desarrollo; arquitectura e ingeniería; infraestructura y operaciones; seguridad; finanzas digitales; gobernanza; cumplimiento; producto, gestión y consultoría; investigación y datos; y educación**.
+
+Cada ficha declara denominaciones habituales, propósito, trabajo cotidiano, prerrequisitos, competencias, herramientas, clases obligatorias y complementarias, prácticas esenciales y avanzadas, cinco niveles de desempeño y un proyecto de portafolio con rúbrica. La [matriz de trazabilidad](learning-paths/TRACEABILITY.md) conecta **rol → competencia → clase → laboratorio → evidencia → evaluación** usando los identificadores reales, sin copiar físicamente recursos.
+
+Puedes recorrer las 66 clases completas o elegir una ruta sin perder el tronco común. El sitio y las aplicaciones muestran el progreso de cada ruta a partir de las clases marcadas como leídas; ese dato permanece local y funciona offline.
+
+> Completar una ruta es **capacitación** y puede demostrar competencias mediante evidencias. No equivale a certificación oficial, seniority, experiencia laboral real ni promesa de empleo. Consulta también el [inventario de cargos y consolidaciones](learning-paths/ROLE_INVENTORY.md).
 
 ## ✅ Calidad y CI
 

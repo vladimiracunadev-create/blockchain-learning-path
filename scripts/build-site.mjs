@@ -47,6 +47,7 @@ const modTitle = (slug) => {
 };
 const curriculumSlugs = readdirSync(join(ROOT, "curriculum")).filter((d) => /^\d{2}-/.test(d)).sort();
 const classCatalog = JSON.parse(readFileSync(join(ROOT, "curriculum", "classes.json"), "utf8"));
+const professionalRoles = JSON.parse(readFileSync(join(ROOT, "learning-paths", "roles.json"), "utf8")).roles;
 const curriculumPages = classCatalog.flatMap((unit, index) => unit.classes.map((item) => ({
   item,
   topic: modTitle(curriculumSlugs[index]).replace(/\s*·\s*Clases\s+\d+–\d+$/, ""),
@@ -94,6 +95,13 @@ const NAV = [
   {
     t: "🏭 Industria", href: "industria/README.html",
     children: industriaDocs.map((f) => ({ t: fileTitle(`industria/${f}`), href: `industria/${f.replace(/\.md$/, ".html")}` })),
+  },
+  {
+    t: "🧭 Rutas profesionales", href: "learning-paths/README.html",
+    children: [
+      { t: "Matriz de trazabilidad", href: "learning-paths/TRACEABILITY.html" },
+      ...professionalRoles.map((role) => ({ t: role.name, href: `learning-paths/roles/${role.slug}.html` })),
+    ],
   },
   {
     t: "🧪 Laboratorios", href: "labs/CATALOG.html",
@@ -163,7 +171,6 @@ const NAV = [
     t: "🎓 Más", href: "capstone/README.html",
     children: [
       ["Capstone", "capstone/README.html"],
-      ["Rutas por perfil", "learning-paths/README.html"],
       ["Guía del estudiante", "student/README.html"],
       ["Para instructores", "instructor/README.html"],
       ["Roadmap", "ROADMAP.html"],
@@ -274,6 +281,9 @@ main a{word-break:break-word}
 nav.side a .done{color:#2e8b57;font-weight:700}
 .readbtn{display:inline-flex;align-items:center;gap:.4rem;margin:.2rem 0 1rem;padding:.4rem .9rem;border-radius:999px;border:1px solid var(--borde);background:var(--bg2);color:var(--txt);font-size:.9rem;cursor:pointer}
 .readbtn.on{background:#2e8b57;color:#fff;border-color:#2e8b57}
+.route-progress{margin:1rem 0;padding:.8rem 1rem;border:1px solid var(--borde);border-radius:12px;background:var(--bg2);color:var(--muted)}
+.route-progress .bar{height:9px;background:var(--bg);border:1px solid var(--borde);border-radius:99px;overflow:hidden;margin-top:.45rem}
+.route-progress .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--acento),#2e8b57);width:0}
 .qm{border:1px solid var(--borde);border-radius:12px;padding:.9rem 1rem;margin:0 0 .9rem;background:var(--card)}
 .qm legend{font-weight:600;padding:0 .4rem;line-height:1.4}
 .qm-op{display:block;padding:.45rem .6rem;margin:.25rem 0;border:1px solid var(--borde);border-radius:8px;cursor:pointer;background:var(--bg)}
@@ -345,6 +355,12 @@ try {
     });
     var n=CURR.filter(function(h){return done.indexOf(h)>=0;}).length;
     var p=document.getElementById('prog'); if(p){ p.hidden=false; document.getElementById('progn').textContent=n+"/"+CURR.length; document.getElementById('progbar').style.width=(100*n/CURR.length)+"%"; }
+    document.querySelectorAll('.route-progress[data-route-classes]').forEach(function(box){
+      var required=(box.getAttribute('data-route-classes')||"").split(',').filter(Boolean);
+      var completed=required.filter(function(h){return done.indexOf(h)>=0;}).length;
+      var percent=required.length ? Math.round(100*completed/required.length) : 0;
+      box.innerHTML='<strong>Progreso local de esta ruta: '+completed+'/'+required.length+' clases ('+percent+'%)</strong><div class="bar" aria-label="Progreso de la ruta"><i style="width:'+percent+'%"></i></div><small>Se calcula sólo en este dispositivo con las clases marcadas como leídas.</small>';
+    });
   }
   // Botón "leído" en páginas de contenido (no en la portada).
   var btn=document.getElementById('readbtn');

@@ -5,7 +5,22 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 ## [No publicado]
 
-*Nada pendiente.*
+### Añadido
+
+- Fuente canónica y generador validado para 13 rutas de aprendizaje por rol profesional, con fichas de 26 campos, cinco niveles de desempeño, proyectos integradores y matrices rol–competencia–clase–laboratorio–evidencia–evaluación.
+- Inventario que consolida cargos y especializaciones sin inventar demanda laboral, más guía comparativa de ecosistemas y lenguajes con cobertura y brechas explícitas.
+- Auditoría técnica y curricular 2026-10-12, contraste con Chile DAO y Modern Cybersecurity Program, inventario de dependencias, compatibilidad y criterios de cierre.
+
+### Cambiado
+
+- README, matriz de competencias, industria, roadmap, landing, sitio, aplicaciones offline y manual incorporan la dimensión profesional sin duplicar las 66 clases ni las 91 prácticas.
+- El progreso por ruta reutiliza el almacenamiento local existente; no añade cuenta, telemetría ni dependencia de red.
+- Seguridad explica el alcance de la verificación formal y analítica on-chain exige validación humana de la IA asistida.
+
+### Corregido
+
+- Se elimina contenido regulatorio desplazado de la antigua ruta de custodia al regenerar las rutas desde una única fuente.
+- Se sustituyen afirmaciones laborales no sustentadas por responsabilidades y entregables observables.
 
 ## [0.14.0] · 2026-09-22
 

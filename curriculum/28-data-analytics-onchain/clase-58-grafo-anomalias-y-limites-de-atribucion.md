@@ -55,7 +55,7 @@ El techo del método es la **atribución**. El agrupamiento de direcciones se ap
 <details>
 <summary>🎓 Si ya dominas esto</summary>
 
-- **Aprendizaje automático aplicado**: clasificación supervisada de direcciones por rasgos (grado, importes, ritmo temporal) y no supervisada para agrupar comportamiento. El obstáculo real no es el modelo: es el **etiquetado**, escaso, sesgado y caro. Un modelo entrenado con etiquetas de un solo proveedor aprende las decisiones de ese proveedor.
+- **IA y aprendizaje automático aplicados**: clasificación supervisada de direcciones por rasgos (grado, importes, ritmo temporal), agrupamiento no supervisado y asistentes generativos para proponer consultas, reglas o hipótesis. El obstáculo real no es el modelo: es el **etiquetado**, escaso, sesgado y caro. Toda salida se trata como candidato: una persona valida la consulta contra el esquema, reproduce el resultado, contrasta hipótesis rivales y conserva datos, versión, prompt o parámetros. Un modelo entrenado con etiquetas de un solo proveedor aprende las decisiones de ese proveedor; un asistente puede inventar campos o causalidad con la misma fluidez con que redacta una consulta correcta.
 - **Desequilibrio de clases**: lo ilícito es una fracción diminuta del total, así que la exactitud (*accuracy*) es una métrica inútil — marcar "todo legítimo" acierta el 99,9 %. Se usan precisión-recall, área bajo la curva PR y matrices de coste asimétrico.
 - **Comportamiento coordinado**: detección de sincronía temporal y de estructuras repetidas (*structuring*) sin caer en el sesgo de confirmación.
 - **Análisis entre cadenas**: seguimiento conceptual por puentes; la correspondencia entre el depósito en la cadena A y la emisión en la B es una **inferencia por correlación de importe y tiempo**, no una continuidad verificable.
@@ -112,6 +112,7 @@ Aplica la guía transversal [¿Y si cruzas la línea?](../../docs/y-si-cruzas-la
 - *Mastering Bitcoin* (3.ª ed., libre) — <https://github.com/bitcoinbook/bitcoinbook>
 - Bitcoin: A Peer-to-Peer Electronic Cash System (§10, privacidad) — <https://bitcoin.org/bitcoin.pdf>
 - NIST/SEMATECH, *Correlation does not imply causation* — <https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm>
+- NIST, *AI Risk Management Framework* — <https://www.nist.gov/itl/ai-risk-management-framework>
 
 Consulta además la [bibliografía razonada](../../docs/bibliografia.md), que declara procedencia y uso.
 

@@ -2,7 +2,7 @@
 
 > [⬅️ Volver al programa](README.md) · [📚 Currículo](curriculum/README.md) · [🧪 Laboratorios](labs/CATALOG.md)
 
-Dedica entre 6 y 10 horas semanales. Cada bloque termina con una evidencia verificable.
+La secuencia semanal es una referencia de facilitación, no un semestre ni una duración obligatoria. Avanza por evidencia: cada bloque termina con un resultado verificable y puede recorrerse al ritmo que permita demostrarlo.
 
 | Semanas | Contenido | Evidencia |
 |---|---|---|
@@ -55,6 +55,12 @@ Al cerrar las semanas 37–40, realiza el ejercicio **[Detener, preservar,
 escalar](docs/y-si-cruzas-la-linea-blockchain.md#ejercicio-de-equipo--detener-preservar-escalar)**.
 El equipo debe distinguir capacidad técnica, permiso y evidencia, y defender qué acción
 está permitida, cuál requiere autorización y cuál se rechaza aunque sea técnicamente posible.
+
+## Capa de especialización por rol profesional
+
+Las [rutas por rol](learning-paths/README.md) se superponen a esta progresión sin reemplazarla ni imponer otra duración. Cada persona puede completar el programa entero o seleccionar una función profesional, sus clases obligatorias, prácticas esenciales, cinco niveles de desempeño y proyecto integrador. La [matriz de trazabilidad](learning-paths/TRACEABILITY.md) mantiene visible qué competencia tiene evidencia y cuál conserva una brecha.
+
+La ampliación profesional sigue fases incrementales: inventario y fuentes; investigación; brechas; actualización; profundización; fichas y proyectos por rol; integración web/apps/manual; validación; y cierre documentado. Las decisiones que impliquen servicios pagados, telemetría, cuentas o cambios incompatibles quedan fuera hasta contar con autorización explícita.
 
 ## Criterios para avanzar
 

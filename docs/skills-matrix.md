@@ -6,6 +6,12 @@ Qué sabes hacer, en qué nivel, con qué clases se aprende y **con qué evidenc
 demuestra**. La última columna es la que convierte esto en una matriz útil: un nivel sin
 evidencia verificable es una opinión sobre uno mismo.
 
+## Fuente canónica y relación con las rutas profesionales
+
+Esta matriz conserva cuatro niveles de dominio transversal para autoevaluar cada competencia. Las rutas profesionales añaden una vista de desempeño en cinco etapas —Fundamental, Aplicado, Autónomo, Avanzado y Profesional integrador— sin sustituirla. La relación canónica entre roles, clases, prácticas, evidencias y evaluaciones vive en [`learning-paths/roles.json`](../learning-paths/roles.json) y se publica en la [matriz profesional de trazabilidad](../learning-paths/TRACEABILITY.md).
+
+Una competencia sólo cuenta como cubierta si existe contenido suficiente y una evidencia razonable para evaluarla. La simple aparición de un término no acredita dominio.
+
 ## Cómo leerla
 
 | Nivel | Significa |

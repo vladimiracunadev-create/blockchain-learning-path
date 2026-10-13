@@ -7,21 +7,31 @@
 
 ## 🧩 Los roles reales del sector
 
-El organigrama de un equipo blockchain se parece al de una empresa de software con tres diferencias: la seguridad es un rol de primera línea (no un consultor trimestral), existe gente dedicada a diseñar incentivos económicos, y varios roles trabajan de cara a comunidades públicas. La tabla resume los roles que aparecen en las ofertas reales del sector:
+El organigrama de un equipo blockchain se parece al de una empresa de software, pero el peso de seguridad, incentivos y coordinación pública cambia según el producto y la organización. La tabla resume funciones observables en documentación técnica y ofertas de empleadores; no infiere demanda, salario ni facilidad de entrada:
 
-| Rol | Responsabilidad principal | Habilidades clave | Nota de mercado |
+| Rol | Responsabilidad principal | Habilidades clave | Entregable verificable |
 |---|---|---|---|
-| Protocol engineer | Clientes de nodo, consenso, redes P2P, upgrades de protocolo | Go/Rust, sistemas distribuidos, criptografía aplicada | Pocos puestos, barrera alta, muy bien pagados |
-| Smart contract engineer | Diseño e implementación de contratos y sus tests | Solidity/Vyper, Foundry, patrones de seguridad, gas | El rol de entrada más común al sector |
-| Security engineer / auditor | Revisión de código, fuzzing, modelado de amenazas, auditorías | Exploits históricos, invariantes, Slither/Echidna | Demanda crónica superior a la oferta |
-| Frontend web3 | Interfaces que firman transacciones reales | TypeScript, React, viem/wagmi, UX de wallets | Un bug de frontend puede firmar la transacción equivocada: no es "solo UI" |
-| Infra / DevOps | Nodos, RPC, indexers, CI/CD, observabilidad | Kubernetes, Terraform, operación de nodos 24/7 | Transferible casi 1:1 desde DevOps tradicional |
-| Researcher | Consenso, criptografía, MEV, diseño de mecanismos | Matemáticas, papers, prototipos | Concentrado en fundaciones y equipos core |
-| Tokenomics / mechanism designer | Incentivos, emisión, gobernanza económica | Teoría de juegos, modelado, finanzas | Escaso; a menudo el fundador lo hace mal solo |
-| Product manager | Priorización con restricciones únicas (inmutabilidad, gobernanza) | PM clásico + entender qué NO se puede iterar | Los ciclos de release no se parecen a Web2 |
-| DevRel | Documentación, ejemplos, soporte a integradores | Escribir código y comunicarlo en público | Puerta de entrada frecuente para perfiles mixtos |
-| Business development | Integraciones, partnerships, listados | Red de contactos del ecosistema | En cripto, las integraciones son también técnicas |
-| Legal / compliance | Regulación por jurisdicción, estructura de entidades | MiCA (UE), normativa de valores por país | Involucrado desde el diseño del token, no después |
+| Protocol engineer | Clientes de nodo, consenso, redes P2P, upgrades de protocolo | Go/Rust, sistemas distribuidos, criptografía aplicada | Especificación, implementación y pruebas de compatibilidad |
+| Smart contract engineer | Diseño e implementación de contratos y sus tests | Solidity/Vyper, Foundry, patrones de seguridad, gas | Contrato reproducible con invariantes y pruebas |
+| Security engineer / auditor | Revisión de código, fuzzing, modelado de amenazas, auditorías | Exploits históricos, invariantes, Slither/Echidna | Hallazgo reproducible, severidad y remediación |
+| Frontend web3 | Interfaces que preparan y solicitan firmas | TypeScript, React, viem/wagmi, UX de wallets | Flujo que hace explícitos red, contrato, permisos y resultado |
+| Infra / DevOps | Nodos, RPC, indexers, CI/CD, observabilidad | Kubernetes, Terraform, operación de nodos | Despliegue, SLO, alertas y recuperación probada |
+| Researcher | Consenso, criptografía, MEV, diseño de mecanismos | Matemáticas, papers, prototipos | Pregunta, método, prototipo y límites reproducibles |
+| Tokenomics / mechanism designer | Incentivos, emisión, gobernanza económica | Teoría de juegos, modelado, finanzas | Modelo con supuestos, simulación y análisis de sensibilidad |
+| Product manager | Priorización con restricciones de inmutabilidad y gobernanza | Producto + comprensión del ciclo on-chain | Requisitos, criterios de aceptación y plan de lanzamiento |
+| DevRel | Documentación, ejemplos, soporte a integradores | Escribir código y comunicarlo en público | Tutorial probado y feedback trazable hacia producto |
+| Business development | Integraciones y alianzas | Descubrimiento, negociación y lectura técnica | Propuesta con viabilidad, riesgos y responsables |
+| Legal / compliance | Regulación por jurisdicción y estructura de entidades | Fuentes oficiales y análisis de actividad | Matriz de obligaciones con rango, fecha e incertidumbre |
+
+Las [rutas por rol profesional](../learning-paths/README.md) convierten estas funciones en recorridos formativos. El [inventario de cargos](../learning-paths/ROLE_INVENTORY.md) explica qué denominaciones se consolidaron y por qué.
+
+## Tres usos distintos de la palabra “rol”
+
+- **Rol de construcción del programa:** especialista que investiga, escribe o valida material; es una responsabilidad editorial.
+- **Rol profesional de aprendizaje:** función laboral objetivo descrita por competencias y evidencias; no es una promesa de contratación.
+- **Rol de proyecto:** responsabilidad temporal asumida en un laboratorio, bootcamp o capstone, como revisor, operador o responsable de incidentes.
+
+Un mismo nombre puede aparecer en las tres categorías, pero completar una actividad de proyecto no acredita experiencia laboral en ese cargo.
 
 ## 📡 Cómo se comunican los equipos: remoto, async y en público
 
@@ -64,7 +74,7 @@ Dentro de las empresas del sector, el equivalente son los **design docs** y los 
 
 En Web2, un bug en producción se corrige con un deploy; el costo del error es acotado y reversible. En contratos inteligentes, el código desplegado es inmutable por defecto y custodia fondos: **el costo del error es instantáneo, público e irreversible**. La historia del sector — de The DAO (2016) a los cientos de millones drenados cada año que documentan las firmas de seguridad — es la factura de equipos que trasladaron hábitos de Web2 sin adaptarlos.
 
-La metodología estándar que la industria destiló de esos fracasos:
+Una secuencia de controles recomendada para sistemas que gestionan valor es:
 
 1. **Especificación:** qué hace el sistema, qué no hace, quién puede hacer qué.
 2. **Invariantes:** propiedades que deben cumplirse siempre ("nadie retira más de lo que depositó"), escritas antes que el código.

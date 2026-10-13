@@ -14,8 +14,11 @@ on:
     paths:
       - "apps/**"
       - "curriculum/**"
+      - "learning-paths/**"
+      - "scripts/build-professional-paths.mjs"
       - "scripts/build-site.mjs"
       - "scripts/build-landing.mjs"
+      - "scripts/build-manual.mjs"
       - "scripts/build-app-bundle.mjs"
       - "scripts/build-icons.mjs"
       - "assessments/**"
@@ -24,8 +27,11 @@ on:
     paths:
       - "apps/**"
       - "curriculum/**"
+      - "learning-paths/**"
+      - "scripts/build-professional-paths.mjs"
       - "scripts/build-site.mjs"
       - "scripts/build-landing.mjs"
+      - "scripts/build-manual.mjs"
       - "scripts/build-app-bundle.mjs"
       - "scripts/build-icons.mjs"
       - "assessments/**"

@@ -22,6 +22,7 @@ const classCatalog = JSON.parse(read("curriculum/classes.json"));
 const classCount = classCatalog.flatMap((unit) => unit.classes).length;
 const industriaDocs = readdirSync(join(ROOT, "industria")).filter((f) => /^\d{2}-.*\.md$/.test(f)).sort();
 const adrDocs = readdirSync(join(ROOT, "adrs")).filter((f) => /^\d{3}-.*\.md$/.test(f)).sort();
+const roleDocs = readdirSync(join(ROOT, "learning-paths", "roles")).filter((f) => f.endsWith(".md")).sort();
 // Las cifras de la portada se calculan de los archivos reales: escritas a mano
 // envejecen al primer bloque de clases o práctica que se añada.
 const practiceCount = (read("labs/CATALOG.md").match(/^\| \d+ \|/gm) ?? []).length;
@@ -40,6 +41,8 @@ const PARTS = [
   ["Responsabilidad, delitos y prevención", ["docs/y-si-cruzas-la-linea-blockchain.md",
     "docs/operacion-incidentes.md", "docs/threat-model-project.md"]],
   ["Industria", ["industria/README.md", ...industriaDocs.map((f) => `industria/${f}`)]],
+  ["Rutas de aprendizaje por rol profesional", ["learning-paths/README.md", "learning-paths/ROLE_INVENTORY.md",
+    "learning-paths/TRACEABILITY.md", ...roleDocs.map((f) => `learning-paths/roles/${f}`)]],
   ["Laboratorios", ["labs/CATALOG.md", "labs/guides/01-foundations.md", "labs/guides/02-consensus-bitcoin.md",
     "labs/guides/03-evm-development.md", "labs/guides/04-professional-security.md", "labs/guides/05-advanced-capstone.md",
     "labs/guides/06-finanzas-onchain.md", "labs/guides/07-data-analytics.md",
@@ -55,11 +58,11 @@ const PARTS = [
   ["Decisiones de arquitectura (ADR)", ["adrs/README.md", ...adrDocs.map((f) => `adrs/${f}`)]],
   ["Documentación de referencia", [
     "docs/bibliografia.md", "docs/glosario.md", "docs/explicar-blockchain-a-no-tecnicos.md",
-    "docs/mejores-practicas.md", "docs/tecnologias.md", "docs/despliegue-local.md",
+    "docs/mejores-practicas.md", "docs/tecnologias.md", "docs/ecosistemas-y-lenguajes.md", "docs/despliegue-local.md",
     "docs/recursos-oficiales.md", "docs/evaluacion.md", "docs/ruta-rapida.md", "docs/chile-regulacion-tributacion.md",
     "docs/skills-matrix.md", "docs/wallets-desde-cero.md"]],
   ["Evaluación y proyecto final", ["assessments/checkpoints.md", "assessments/module-question-bank.md",
-    "assessments/audit-report-template.md", "learning-paths/README.md", "capstone/README.md"]],
+    "assessments/audit-report-template.md", "capstone/README.md"]],
 ];
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

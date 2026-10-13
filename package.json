@@ -8,10 +8,11 @@
     "node": ">=22.12"
   },
   "scripts": {
-    "check": "node scripts/check-repository.mjs && node scripts/check-workflows.mjs",
+    "check": "node scripts/build-professional-paths.mjs --check && node scripts/check-repository.mjs && node scripts/check-workflows.mjs",
     "lint:js": "eslint .",
     "lint:md": "markdownlint-cli2 \"**/*.md\"",
     "build:landing": "node scripts/build-landing.mjs",
+    "build:paths": "node scripts/build-professional-paths.mjs",
     "build:site": "node scripts/build-site.mjs",
     "build:manual": "node scripts/build-manual.mjs && node scripts/render-manual-pdf.mjs",
     "build:presentacion": "node scripts/build-presentation.mjs && node scripts/render-presentation-pdf.mjs",

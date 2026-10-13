@@ -18,6 +18,7 @@ const OUT = process.env.SITE_OUT ?? "site";
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
 const classCatalog = JSON.parse(read("curriculum/classes.json"));
 const classCount = classCatalog.flatMap((unit) => unit.classes).length;
+const roleCount = JSON.parse(read("learning-paths/roles.json")).roles.length;
 
 // --- Datos reales del repositorio ---------------------------------------------
 
@@ -55,6 +56,7 @@ const REPO = "https://github.com/vladimiracunadev-create/blockchain-learning-pat
 const stats = [
   [classCount, "clases"],
   [practiceCount, "prácticas"],
+  [roleCount, "rutas profesionales"],
   [industryCount, "docs de industria"],
   [adrCount, "decisiones (ADR)"],
   [docCount, "documentos"],
@@ -63,7 +65,7 @@ const stats = [
 const features = [
   ["📚", "Currículo completo", `${classCount} clases progresivas y distintas, de criptografía a custodia, auditoría y forensics, con teoría, casos, laboratorio y verificación.`, "curriculum/README.md"],
   ["🧪", "Laboratorios ejecutables", `${practiceCount} prácticas guiadas con actividad, evidencia y criterio de aceptación. Corren en local o testnet.`, "labs/CATALOG.md"],
-  ["🧭", "Rutas por perfil", "Recorridos ordenados para desarrollo, arquitectura, auditoría, producto, investigación y empresa.", "learning-paths/README.md"],
+  ["🧭", "Rutas por rol profesional", `${roleCount} recorridos con competencias, clases, laboratorios, evidencias, evaluación y proyecto integrador, sin duplicar el currículo.`, "learning-paths/README.md"],
   ["📜", "Solidity + Foundry", "Contratos con pruebas, fuzzing e invariantes. Vault, protocolos, token, oráculo y gobernador con timelock.", "labs/06-solidity-vault"],
   ["🛡️", "Retos de seguridad", "Contratos vulnerables y sus correcciones: reentrancy, control de acceso, overflow y más, con criterios de revisión.", "security-challenges/README.md"],
   ["🧩", "dApp e indexador", "Aplicación de financiamiento comunitario con viem/TypeScript e indexador de eventos con checkpoint.", "apps/community-funding-web"],

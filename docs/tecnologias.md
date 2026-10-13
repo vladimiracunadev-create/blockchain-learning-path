@@ -1,5 +1,6 @@
 # Mapa de tecnologías
 
+> Para comparar modelos de ejecución y no confundir una mención con dominio, consulta también [Ecosistemas y lenguajes: guía de contraste](ecosistemas-y-lenguajes.md).
 > [⬅️ Volver al programa](../README.md) · [📚 Currículo](../curriculum/README.md) · [🏭 Stack tecnológico](../industria/02-stack-tecnologico.md)
 
 Mapa de tecnologías por capa: para cada necesidad, la tecnología principal del programa,

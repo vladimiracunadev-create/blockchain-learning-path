@@ -15,6 +15,7 @@ decisiones que se tomaron a partir de él. Está aquí para que cualquiera pueda
 | [Contenido obsoleto](OUTDATED_CONTENT.md) | ¿Qué estaba desactualizado o impreciso? |
 | [Arquitectura propuesta](PROPOSED_ARCHITECTURE.md) | ¿Qué forma tiene el programa ahora y por qué esa? |
 | [Plan de migración](MIGRATION_PLAN.md) | ¿Cómo se ejecutó sin romper nada? |
+| [Rutas profesionales · auditoría 2026-10-12](PROFESSIONAL_PATHS_2026-10-12.md) | ¿Cómo se investigaron, consolidaron, mapearon e integraron roles sin duplicar el currículo? |
 
 ## Resumen en cinco líneas
 
