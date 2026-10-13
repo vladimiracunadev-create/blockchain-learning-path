@@ -21,7 +21,7 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 - Se elimina contenido regulatorio desplazado de la antigua ruta de custodia al regenerar las rutas desde una única fuente.
 - Se sustituyen afirmaciones laborales no sustentadas por responsabilidades y entregables observables.
-- Se renuevan enlaces oficiales movidos de Maersk, FTC, BIS, Uniswap, CMF y Ethereum detectados por el control automático de enlaces.
+- Se renuevan enlaces oficiales movidos de BIS, Uniswap, CMF y Ethereum, y se documentan exclusiones exactas para dos páginas vigentes de Maersk y FTC incompatibles con el verificador automático.
 
 ## [0.14.0] · 2026-09-22
 

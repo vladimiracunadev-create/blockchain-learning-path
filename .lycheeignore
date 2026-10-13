@@ -18,3 +18,13 @@
 # desde los runners de GitHub como desde una red doméstica, en la raíz y en
 # cualquier ruta interna, mientras que en un navegador carga sin problema.
 ^https://www\.swift\.com/?$
+
+# Maersk: el comunicado oficial carga en navegador y su contenido se verificó
+# el 2026-10-13, pero el servidor corta la conexión HTTP/2 de lychee. La
+# exclusión se limita al anuncio de discontinuación de TradeLens.
+^https://www\.maersk\.com/it-it/news/articles/2022/11/29/maersk-and-ibm-to-discontinue-tradelens/?$
+
+# FTC Consumer Advice: la alerta oficial carga en navegador y su contenido se
+# verificó el 2026-10-13, pero el sitio devuelve 404 al agente automatizado de
+# lychee. La exclusión se limita a esta alerta sobre fraudes con criptomonedas.
+^https://consumer\.ftc\.gov/consumer-alerts/2022/06/spotting-ftcs-most-reported-crypto-scams/?$
