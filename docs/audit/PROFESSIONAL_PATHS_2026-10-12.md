@@ -65,7 +65,7 @@ Competencias compartidas —criptografía, threat modeling, auditoría, DevSecOp
 - [Solidity SMTChecker](https://docs.soliditylang.org/en/latest/smtchecker.html): alcance y límites de verificación formal.
 - [Avalanche Builder Hub](https://build.avax.network/), [Polkadot Docs](https://docs.polkadot.com/), [Cosmos Docs](https://docs.cosmos.network/), [Solana Docs](https://solana.com/docs), [Soroban Docs](https://developers.stellar.org/docs/build/smart-contracts/overview) y [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/): modelos no EVM.
 - [CMF — Ley Fintec 21.521](https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43333.html), [EUR-Lex — MiCA 2023/1114](https://eur-lex.europa.eu/eli/reg/2023/1114/oj) y [FATF — activos virtuales](https://www.fatf-gafi.org/en/topics/virtual-assets.html): regulación y enfoque basado en riesgo.
-- [BIS — tokenisation](https://www.bis.org/topics/tokenisation.htm) y [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework): infraestructura financiera e IA con gestión de riesgo.
+- [BIS — The tokenisation continuum](https://www.bis.org/publications/bulletin-72-tokenisation-continuum) y [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework): infraestructura financiera e IA con gestión de riesgo.
 
 ## Fase C — brechas y decisiones
 

@@ -152,7 +152,7 @@
       "gaps": ["No hay clúster Kubernetes ni validador con slashing real; la evidencia es local y segura"],
       "sources": [
         {"title": "Ethereum · Run a node", "url": "https://ethereum.org/developers/docs/nodes-and-clients/run-a-node/"},
-        {"title": "Ethereum · Monitoring", "url": "https://ethereum.org/developers/docs/nodes-and-clients/monitoring/"},
+        {"title": "Ethereum · Monitoring a node", "url": "https://ethereum.org/developers/docs/nodes-and-clients/run-a-node/#monitoring-the-node"},
         {"title": "SRE fundamentals", "url": "https://sre.google/sre-book/table-of-contents/"}
       ]
     },
@@ -373,7 +373,7 @@
       "coverage": "Completa y verificada",
       "gaps": ["Toda aplicación real exige revisión vigente y asesoría autorizada; las normas cambian"],
       "sources": [
-        {"title": "CMF Chile · Ley Fintec", "url": "https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43547.html"},
+        {"title": "CMF Chile · Ley Fintec", "url": "https://www.cmfchile.cl/portal/principal/623/w4-propertyvalue-48738.html"},
         {"title": "EUR-Lex · MiCA 2023/1114", "url": "https://eur-lex.europa.eu/eli/reg/2023/1114/oj"},
         {"title": "FATF · Virtual assets guidance", "url": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html"}
       ]
@@ -447,7 +447,7 @@
       "coverage": "Completa y verificada",
       "gaps": ["No cubre modelos ML de producción ni MLOps; IA se limita al dominio blockchain con validación humana"],
       "sources": [
-        {"title": "Ethereum JSON-RPC", "url": "https://ethereum.org/developers/apis/json-rpc/"},
+        {"title": "Ethereum JSON-RPC", "url": "https://ethereum.org/developers/docs/apis/json-rpc/"},
         {"title": "Bitcoin Core RPC", "url": "https://developer.bitcoin.org/reference/rpc/"},
         {"title": "NIST AI RMF", "url": "https://www.nist.gov/itl/ai-risk-management-framework"}
       ]

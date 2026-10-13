@@ -192,6 +192,6 @@ La cobertura sólo se considera completa cuando hay contenido suficiente y evide
 
 ## Fuentes utilizadas
 
-- [Ethereum JSON-RPC](https://ethereum.org/developers/apis/json-rpc/)
+- [Ethereum JSON-RPC](https://ethereum.org/developers/docs/apis/json-rpc/)
 - [Bitcoin Core RPC](https://developer.bitcoin.org/reference/rpc/)
 - [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)

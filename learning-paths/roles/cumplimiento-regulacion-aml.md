@@ -189,6 +189,6 @@ La cobertura sólo se considera completa cuando hay contenido suficiente y evide
 
 ## Fuentes utilizadas
 
-- [CMF Chile · Ley Fintec](https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43547.html)
+- [CMF Chile · Ley Fintec](https://www.cmfchile.cl/portal/principal/623/w4-propertyvalue-48738.html)
 - [EUR-Lex · MiCA 2023/1114](https://eur-lex.europa.eu/eli/reg/2023/1114/oj)
 - [FATF · Virtual assets guidance](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets.html)

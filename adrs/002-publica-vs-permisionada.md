@@ -51,6 +51,6 @@ Negativas:
 ## Referencias
 
 - Hyperledger Besu (documentación): <https://besu.hyperledger.org/>
-- Anuncio de discontinuación de TradeLens (Maersk, 2022): <https://www.maersk.com/news/articles/2022/11/29/maersk-and-ibm-to-discontinue-tradelens>
+- Anuncio de discontinuación de TradeLens (Maersk, 2022): <https://www.maersk.com/it-it/news/articles/2022/11/29/maersk-and-ibm-to-discontinue-tradelens/>
 - Ethereum.org, capas 2: <https://ethereum.org/en/layer-2/>
 - BIS, *The tokenisation continuum*: <https://www.bis.org/publ/bisbull72.htm>

@@ -191,5 +191,5 @@ La cobertura sólo se considera completa cuando hay contenido suficiente y evide
 ## Fuentes utilizadas
 
 - [Ethereum · Run a node](https://ethereum.org/developers/docs/nodes-and-clients/run-a-node/)
-- [Ethereum · Monitoring](https://ethereum.org/developers/docs/nodes-and-clients/monitoring/)
+- [Ethereum · Monitoring a node](https://ethereum.org/developers/docs/nodes-and-clients/run-a-node/#monitoring-the-node)
 - [SRE fundamentals](https://sre.google/sre-book/table-of-contents/)

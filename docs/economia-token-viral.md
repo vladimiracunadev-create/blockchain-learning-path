@@ -244,11 +244,11 @@ externa legítima.
 - ERC-20, interfaz, eventos y metadata opcional — <https://eips.ethereum.org/EIPS/eip-20>
 - Ethereum.org, estándar ERC-20 — <https://ethereum.org/developers/docs/standards/tokens/erc-20/>
 - OpenZeppelin, `ERC20Pausable` y control de acceso — <https://docs.openzeppelin.com/contracts/5.x/api/token/erc20>
-- Uniswap v2, AMM de producto constante y reservas — <https://docs.uniswap.org/whitepaper.pdf>
+- Uniswap v2, AMM de producto constante y reservas — <https://developers.uniswap.org/docs/protocols/v2/overview>
 - Solana, mint authority y freeze authority (comparación conceptual) — <https://solana.com/docs/tokens/basics>
 - NIST, diseño experimental y por qué correlación no implica causalidad — <https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm>
 - CFTC, advertencia sobre pump-and-dump en tokens de baja liquidez — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
-- FTC, fraudes con criptomonedas y señales de prevención — <https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams>
+- FTC, fraudes con criptomonedas y señales de prevención — <https://consumer.ftc.gov/consumer-alerts/2022/06/spotting-ftcs-most-reported-crypto-scams>
 
 ---
 
