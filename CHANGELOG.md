@@ -5,6 +5,10 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 ## [No publicado]
 
+Sin cambios pendientes.
+
+## [0.15.0] · 2026-10-30
+
 ### Añadido
 
 - **Especialización avanzada de seguridad blockchain, custodia e investigación de incidentes** ([`especializacion-seguridad-custodia/`](especializacion-seguridad-custodia/README.md)): nueve bloques de contenido profundo (firmas y criptografía asimétrica; cuentas EOA, contratos, ERC-4337, EIP-7702 y nonces; custodia hot/warm/cold, MPC, multisig, hardware y políticas de firma; delegación de permisos; rastreo en Ethereum, Bitcoin, Tron y L2; stablecoins y congelamientos; logs y eventos; pruebas de reservas) y un estudio del incidente de Binance del 29 de octubre de 2026 que separa hechos confirmados, hipótesis y desconocidos, con fecha de corte y procedimiento de actualización.

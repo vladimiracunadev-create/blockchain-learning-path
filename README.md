@@ -10,7 +10,7 @@
 [![Security](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/security.yml)
 [![Deploy Pages](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/vladimiracunadev-create/blockchain-learning-path/actions/workflows/deploy-pages.yml)
 
-[![Versión](https://img.shields.io/badge/versión-0.14.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versión-0.15.0-7c5cff?style=for-the-badge)](CHANGELOG.md)
 [![Clases](https://img.shields.io/badge/clases-66-7c5cff?style=for-the-badge)](curriculum/README.md)
 [![Prácticas](https://img.shields.io/badge/prácticas-91-2e8b57?style=for-the-badge)](labs/CATALOG.md)
 [![Nivel](https://img.shields.io/badge/nivel-novato%20→%20profesional-e67e22?style=for-the-badge)](ROADMAP.md)

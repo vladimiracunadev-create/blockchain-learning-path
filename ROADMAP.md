@@ -91,7 +91,8 @@ La ampliación profesional sigue fases incrementales: inventario y fuentes; inve
 | 0.11.0 | línea profesional de custodia, exchanges, contabilidad blockchain, PoR/PoL, conciliación, forensics, auditoría y gobernanza; 4 módulos, 8 prácticas y caso Aurora Custody | completada |
 | 0.12.0 | programa reorganizado en 66 clases con diseño pedagógico propio, glosario profesional ampliado y validación automática de variedad, fuentes y coherencia | completada |
 | 0.13.0 | responsabilidad y prevención transversal ante delitos con criptoactivos; casos oficiales y manual PDF editado como libro con navegación interna | completada |
-| 0.14.0 | Andes Quest Assets: decisión DB/on-chain, entitlement, ERC-20/721/1155, mercado, interoperabilidad y laboratorio local con reconciliación | actual |
+| 0.14.0 | Andes Quest Assets: decisión DB/on-chain, entitlement, ERC-20/721/1155, mercado, interoperabilidad y laboratorio local con reconciliación | completada |
+| 0.15.0 | rutas de aprendizaje por rol profesional y especialización avanzada de seguridad y custodia: 9 bloques, 8 laboratorios LE1–LE8 (EIP-7702, firmas, detección, rastreo multicadena, monitor para custodios), estudio del incidente de Binance de 2026 y matriz de integración de las 33 unidades, sin alterar las 66 clases ni las 91 prácticas | actual |
 | 1.0.0 | programa completo estabilizado: contenido congelado, binarios firmados y manual versionado por release | planificada |
 | 2.0.0 | LMS multiusuario, sandbox remoto y analítica docente | futuro |
 
