@@ -182,6 +182,7 @@ Cada etapa tiene su [índice de currículo](curriculum/README.md) con mapa visua
 - **Simulaciones financieras deterministas** en Node —AMM y pérdida impermanente, factor de salud, paridad de una stablecoin, coste real de una remesa, PvP, DvP, cuórum de custodia y cribado de cumplimiento— sin red, sin claves y sin fondos.
 - **Ciclo de token viral sintético**: audiencia, búsquedas, nuevas wallets, holders, volumen, market cap, FDV, liquidez, máximo y drawdown con el principio verificable `MARKET CAP ≠ LIQUIDEZ ≠ DINERO RETIRABLE` ([guía](docs/economia-token-viral.md) · `pnpm lab:token-viral`).
 - **Especialización custodial determinista**: CEX/DEX, tres registros, Merkle Tree de pasivos, assets vs liabilities, grafos forenses y el caso ficticio [Aurora Custody](capstone/empresa-custodial/README.md).
+- **Especialización avanzada de seguridad y custodia**: ocho laboratorios LE1–LE8 (billeteras de prueba, firmas, transferencias, delegación EIP-7702, detector de delegaciones, explorador, flujos entre cadenas y monitor para custodios) con su propio núcleo criptográfico en Node, sin red y sin dependencias ([especialización](especializacion-seguridad-custodia/README.md)).
 
 ### El principio que atraviesa la especialización
 
@@ -231,6 +232,19 @@ Se apoya en dos recursos propios: la carpeta de **[regulación](regulation/READM
 ## 🏭 La industria por dentro
 
 Además del currículo, la sección [Industria](industria/README.md) es la lectura profesional extendida: cómo se **construye** una red, el **stack** real del ecosistema, cómo trabajan y se **comunican** los equipos, **casos empresariales** (éxitos y fracasos) y **modelos de negocio**. Y para llevarlo a la práctica, las clases 33–38 lo convierten en laboratorios: infraestructura real, caso de negocio con costos e implementación end-to-end. Incluye una guía dedicada de [**cómo explicar blockchain a clientes y personas no técnicas**](docs/explicar-blockchain-a-no-tecnicos.md): discurso de 30 segundos, traducción de jerga y manejo de objeciones.
+
+## 🛡️ Especialización avanzada: seguridad blockchain, custodia e incidentes
+
+Después de las 66 clases, una ruta avanzada y autónoma sobre cómo se **protege, se ataca y se investiga** la custodia de activos digitales. Se apoya en un estudio de caso real y reciente —el [incidente de Binance del 29 de octubre de 2026](especializacion-seguridad-custodia/bloques/09-caso-binance-2026-10-29.md)— que **separa hechos confirmados, hipótesis y desconocidos** mientras la causa raíz sigue sin publicarse.
+
+| Qué incluye | Dónde |
+|---|---|
+| 9 bloques: firmas, cuentas y EIP-7702/ERC-4337, custodia y políticas de firma, delegación de permisos, rastreo en Ethereum/Bitcoin/Tron/L2, congelamientos, logs y pruebas de reservas | [Portada](especializacion-seguridad-custodia/README.md) |
+| 8 laboratorios ejecutables y comprobados (LE1–LE8), con soluciones | [Laboratorios](especializacion-seguridad-custodia/laboratorios/README.md) |
+| Cómo se acopla a cada una de las 33 unidades, sin cambiar la numeración | [Matriz de integración](especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md) |
+| Cuestionarios, rúbricas, banco de preguntas y glosario | [Evaluación](especializacion-seguridad-custodia/evaluacion/README.md) · [Glosario](especializacion-seguridad-custodia/glosario.md) |
+
+Conserva intactas las 66 clases y las 91 prácticas, y mantiene la autonomía del repositorio: no se fusiona con otros programas.
 
 ## 👩‍🏫 Para instructores
 

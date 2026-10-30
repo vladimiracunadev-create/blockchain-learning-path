@@ -44,8 +44,9 @@ resiste.
 | Enfoque basado en riesgo y Regla de Viaje | `pnpm test` — `labs/27-cumplimiento` |
 | Anatomía de bloques, extracción con reorgs, grafos, patrones y detección de anomalías | `pnpm test` — `labs/28-data-analytics` y [`projects/explorador-analitico/`](../projects/explorador-analitico/README.md) |
 | Mercado tokenizado: dinero mayorista simulado, bono y DvP atómico | `forge test` en [`labs/22-cbdc-mercado-tokenizado/`](../labs/22-cbdc-mercado-tokenizado/README.md) |
+| Keccak-256, ECDSA con recuperación de clave, RLP, transacciones tipo 2 y 4, delegación EIP-7702, detector de delegaciones, explorador, flujos multicadena y monitor de custodia | `pnpm test` — `labs/especializacion-seguridad` ([especialización](../especializacion-seguridad-custodia/README.md)) |
 
-Son **363 pruebas automatizadas** (316 de Node y 47 de Foundry) que la CI ejecuta en
+Son **508 pruebas automatizadas** (461 de Node y 47 de Foundry) que la CI ejecuta en
 cada cambio. Una afirmación que se contradiga con el código hace fallar el build.
 Eso es más fuerte que una cita: no apela a la autoridad de un autor, se comprueba.
 

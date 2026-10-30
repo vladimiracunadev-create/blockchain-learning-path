@@ -240,6 +240,12 @@ Toma un contrato vulnerable de `security-challenges`, escribe una prueba mínima
 - Documenta cada hallazgo de forma reproducible para que la corrección pueda verificarse de manera independiente.
 - Recuerda que las herramientas automáticas complementan, pero no reemplazan, el razonamiento sobre invariantes y privilegios.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): la delegación de permisos como superficie de ataque, la repetición de firmas y la auditoría de delegados. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 4](../../especializacion-seguridad-custodia/bloques/04-delegacion-de-permisos.md) · **Laboratorios:** [LE2](../../especializacion-seguridad-custodia/laboratorios/LE2-firmas-digitales.md) · [LE4](../../especializacion-seguridad-custodia/laboratorios/LE4-delegacion-eip7702.md) · [LE5](../../especializacion-seguridad-custodia/laboratorios/LE5-detector-delegaciones.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - Trail of Bits, *Building Secure Contracts* — <https://secure-contracts.com/>

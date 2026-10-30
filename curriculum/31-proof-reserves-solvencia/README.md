@@ -101,6 +101,12 @@ Genera un snapshot deficitario y redacta una conclusión de cinco líneas que in
 
 Publicar identificadores o saldos sin protección puede reidentificar clientes. El diseño minimiza datos, usa nonces y entrega pruebas por canal autenticado. Nunca uses una PoR promocional para afirmar más que su alcance.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): las distorsiones de una prueba de reservas, la cobertura por activo y por qué no detecta un incidente de claves. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 8](../../especializacion-seguridad-custodia/bloques/08-pruebas-de-reservas-y-sus-limites.md) · **Prácticas:** 88 y 89 del [catálogo](../../labs/CATALOG.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - [RFC 6962: Certificate Transparency y árboles Merkle](https://www.rfc-editor.org/rfc/rfc6962)

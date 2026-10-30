@@ -234,6 +234,12 @@ Toma un conjunto de transacciones, construye su raíz de Merkle, altera una tran
 - Usa siempre aleatoriedad criptográficamente segura para generar claves y nonces.
 - Recuerda que la seudonimia no es anonimato: las direcciones son trazables en cadena.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): curvas elípticas, ECDSA, el nonce de firma, la maleabilidad y qué prueba (y qué no) una firma digital. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 1](../../especializacion-seguridad-custodia/bloques/01-criptografia-asimetrica-y-firmas.md) · **Laboratorios:** [LE1](../../especializacion-seguridad-custodia/laboratorios/LE1-billeteras-de-prueba.md) · [LE2](../../especializacion-seguridad-custodia/laboratorios/LE2-firmas-digitales.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - Jean-Philippe Aumasson, *Serious Cryptography*, 2.ª ed. — <https://nostarch.com/serious-cryptography-2nd-edition>

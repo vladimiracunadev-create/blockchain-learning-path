@@ -227,6 +227,12 @@ Entrega el modelo de amenazas de un puente concreto: diagrama de flujo, tabla de
 - Documenta cada supuesto de confianza; ocultarlo es una omisión ética, no un detalle técnico.
 - Respeta las licencias y avisos de las cadenas empresariales (por ejemplo Fabric) al modelar escenarios permisionados.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): la independencia real de los validadores de un puente y el emparejamiento de sus dos extremos como inferencia. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 3](../../especializacion-seguridad-custodia/bloques/03-custodia-claves-y-politicas-de-firma.md) · [Bloque 5](../../especializacion-seguridad-custodia/bloques/05-trazabilidad-multicadena.md) · **Laboratorios:** [LE7](../../especializacion-seguridad-custodia/laboratorios/LE7-flujos-multidireccion.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - Cosmos, documentación de IBC (Inter-Blockchain Communication) — <https://ibc.cosmos.network/>

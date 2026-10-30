@@ -156,6 +156,10 @@ Pectra/EIP-7702) para mantener el material al día.
 
 Empieza por la [Clase 1 · Qué problema intenta resolver blockchain](00-orientacion/clase-01-que-problema-intenta-resolver-blockchain.md).
 
+## 🛡️ Después de las 66 clases: especialización avanzada
+
+La [especialización avanzada de seguridad y custodia](../especializacion-seguridad-custodia/README.md) profundiza criptografía de firmas, cuentas y EIP-7702, políticas de firma, delegación de permisos, rastreo multicadena, congelamientos, análisis de logs y pruebas de reservas, con ocho laboratorios y un estudio de caso real. **No añade clases ni cambia la numeración**: se acopla a las unidades existentes según su [matriz de integración](../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md), y las unidades que profundiza lo indican en su propio mapa.
+
 ---
 
 ## 🧭 Navegación

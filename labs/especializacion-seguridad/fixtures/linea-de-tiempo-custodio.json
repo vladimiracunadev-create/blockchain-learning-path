@@ -1,0 +1,180 @@
+{
+  "nota": "Líneas de tiempo sintéticas. El ataque imita la forma pública del caso estudiado (varias cadenas en minutos, una delegación) sin copiar cifras ni direcciones reales.",
+  "ataque": [
+    {
+      "id": "a1",
+      "esAtaque": true,
+      "t": 0,
+      "tipo": "salida",
+      "billetera": "hot-xrp",
+      "valorUsd": 296000,
+      "destino": "0xee00000000000000000000000000000000000001",
+      "via": "sistema"
+    },
+    {
+      "id": "a2",
+      "esAtaque": true,
+      "t": 60,
+      "tipo": "salida",
+      "billetera": "hot-sol",
+      "valorUsd": 96000,
+      "destino": "0xee00000000000000000000000000000000000002",
+      "via": "sistema"
+    },
+    {
+      "id": "a3",
+      "esAtaque": true,
+      "t": 900,
+      "tipo": "salida",
+      "billetera": "hot-btc",
+      "valorUsd": 1470000,
+      "destino": "0xee00000000000000000000000000000000000003",
+      "via": "sistema"
+    },
+    {
+      "id": "a4",
+      "esAtaque": true,
+      "t": 960,
+      "tipo": "salida",
+      "billetera": "hot-tron",
+      "valorUsd": 628000,
+      "destino": "0xee00000000000000000000000000000000000004",
+      "via": "sistema"
+    },
+    {
+      "id": "a5",
+      "esAtaque": true,
+      "t": 1200,
+      "tipo": "delegacion",
+      "billetera": "hot-eth",
+      "delegadoA": "0xde00000000000000000000000000000000000001",
+      "via": "sistema"
+    },
+    {
+      "id": "a6",
+      "esAtaque": true,
+      "t": 1400,
+      "tipo": "salida",
+      "billetera": "hot-eth",
+      "valorUsd": 2500000,
+      "destino": "0xee00000000000000000000000000000000000005",
+      "via": "sistema"
+    },
+    {
+      "id": "a7",
+      "esAtaque": true,
+      "t": 3600,
+      "tipo": "salida",
+      "billetera": "hot-eth",
+      "valorUsd": 200000,
+      "destino": "0xee00000000000000000000000000000000000005",
+      "via": "sistema"
+    }
+  ],
+  "normal": [
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n1",
+      "t": 100,
+      "tipo": "salida",
+      "billetera": "hot-eth",
+      "valorUsd": 90000,
+      "destino": "0xaa00000000000000000000000000000000000001",
+      "ticket": "OPS-1"
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n2",
+      "t": 700,
+      "tipo": "salida",
+      "billetera": "hot-btc",
+      "valorUsd": 60000,
+      "destino": "0xbb00000000000000000000000000000000000001",
+      "ticket": "OPS-2"
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n3",
+      "t": 1500,
+      "tipo": "salida",
+      "billetera": "hot-tron",
+      "valorUsd": 30000,
+      "destino": "0xc100000000000000000000000000000000000001"
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n4",
+      "t": 2400,
+      "tipo": "firma",
+      "billetera": "hot-eth",
+      "ticket": "OPS-3"
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n5",
+      "t": 3100,
+      "tipo": "salida",
+      "billetera": "hot-eth",
+      "valorUsd": 120000,
+      "destino": "0xc100000000000000000000000000000000000001"
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n6",
+      "t": 4200,
+      "tipo": "salida",
+      "billetera": "hot-sol",
+      "valorUsd": 5000,
+      "destino": "0xaa00000000000000000000000000000000000001",
+      "ticket": "OPS-4"
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n7",
+      "t": 5000,
+      "tipo": "delegacion",
+      "billetera": "hot-eth",
+      "delegadoA": "0xa900000000000000000000000000000000000001",
+      "ticket": "CHG-77"
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n8",
+      "t": 6000,
+      "tipo": "salida",
+      "billetera": "hot-xrp",
+      "valorUsd": 25000,
+      "destino": "0xaa00000000000000000000000000000000000001",
+      "ticket": "OPS-5"
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n9",
+      "t": 7000,
+      "tipo": "salida",
+      "billetera": "hot-eth",
+      "valorUsd": 150000,
+      "destino": "0xee00000000000000000000000000000000000009",
+      "comentario": "Retiro grande de un cliente institucional a un destino nuevo, aprobado por teléfono: sin ticket."
+    },
+    {
+      "esAtaque": false,
+      "via": "sistema",
+      "id": "n10",
+      "t": 8000,
+      "tipo": "nonce",
+      "billetera": "hot-eth",
+      "nonceOnchain": 41,
+      "nonceInterno": 41
+    }
+  ]
+}

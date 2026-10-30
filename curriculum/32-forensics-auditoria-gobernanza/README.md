@@ -112,6 +112,12 @@ Redacta un hallazgo sobre `bc1qbeta` con cuatro párrafos rotulados: hecho, indi
 
 No hagas deanonymization de personas sin finalidad legítima y autorización. Minimiza datos, controla acceso y conserva una pista de decisiones. Los laboratorios solo usan identidades y fondos ficticios.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): los cuatro niveles de certeza aplicados a un incidente real y un informe sin atribución de identidad. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 5](../../especializacion-seguridad-custodia/bloques/05-trazabilidad-multicadena.md) · [Bloque 9](../../especializacion-seguridad-custodia/bloques/09-caso-binance-2026-10-29.md) · **Laboratorios:** [LE5](../../especializacion-seguridad-custodia/laboratorios/LE5-detector-delegaciones.md) · [LE7](../../especializacion-seguridad-custodia/laboratorios/LE7-flujos-multidireccion.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - [NIST SP 800-86, Integrating Forensic Techniques into Incident Response](https://csrc.nist.gov/pubs/sp/800/86/final)

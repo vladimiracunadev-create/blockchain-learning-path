@@ -285,6 +285,12 @@ Sigue una transacción de principio a fin: firma en la wallet, propagación, inc
 - Los valores de base fee y de red varían minuto a minuto: consúltalo en vivo antes de concluir.
 - Recuerda que Ethereum opera bajo Proof of Stake desde The Merge; describe el consenso con precisión.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): EOA frente a contrato, transacciones tipo 2 y tipo 4, EIP-7702, los cinco tipos de nonce y la lectura de registros. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 2](../../especializacion-seguridad-custodia/bloques/02-cuentas-contratos-y-abstraccion.md) · [Bloque 7](../../especializacion-seguridad-custodia/bloques/07-analisis-de-transacciones-eventos-y-logs.md) · **Laboratorios:** [LE3](../../especializacion-seguridad-custodia/laboratorios/LE3-transferencias-simuladas.md) · [LE4](../../especializacion-seguridad-custodia/laboratorios/LE4-delegacion-eip7702.md) · [LE6](../../especializacion-seguridad-custodia/laboratorios/LE6-explorador-transacciones.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - Antonopoulos y Wood, *Mastering Ethereum*, caps. sobre la EVM y transacciones — <https://github.com/ethereumbook/ethereumbook>

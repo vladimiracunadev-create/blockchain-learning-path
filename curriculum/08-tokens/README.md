@@ -256,6 +256,12 @@ Implementa un token educativo ERC-20 apoyado en OpenZeppelin con: suministro má
 - Advierte sobre el approve infinito en cualquier interfaz y ofrece aprobaciones acotadas o mediante `permit`.
 - Evalúa la concentración del suministro: un token con utilidad real y distribución transparente es más defendible que uno especulativo.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): `approve`, `setApprovalForAll`, `permit` y la falsificación del evento `Transfer`. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 4](../../especializacion-seguridad-custodia/bloques/04-delegacion-de-permisos.md) · [Bloque 7](../../especializacion-seguridad-custodia/bloques/07-analisis-de-transacciones-eventos-y-logs.md) · **Laboratorios:** [LE5](../../especializacion-seguridad-custodia/laboratorios/LE5-detector-delegaciones.md) · [LE6](../../especializacion-seguridad-custodia/laboratorios/LE6-explorador-transacciones.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - Ethereum Foundation, *EIPs — Ethereum Improvement Proposals* — <https://eips.ethereum.org/>

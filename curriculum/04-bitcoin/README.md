@@ -252,6 +252,12 @@ Documenta el análisis de una transacción pública en un texto breve: identific
 - Trata la custodia propia con responsabilidad; una seed phrase perdida es dinero perdido y una filtrada es robo.
 - Las cifras de comisiones y dificultad cambian constantemente: consúltalo en vivo antes de concluir.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): UTXO frente a cuentas, multisig y Taproot, cadenas de pelado y la heurística de entradas comunes. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 3](../../especializacion-seguridad-custodia/bloques/03-custodia-claves-y-politicas-de-firma.md) · [Bloque 5](../../especializacion-seguridad-custodia/bloques/05-trazabilidad-multicadena.md) · **Laboratorios:** [LE7](../../especializacion-seguridad-custodia/laboratorios/LE7-flujos-multidireccion.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - Antonopoulos, *Mastering Bitcoin*, 3.ª ed., cap. sobre transacciones y UTXO — <https://github.com/bitcoinbook/bitcoinbook>

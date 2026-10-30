@@ -1,0 +1,390 @@
+{
+  "nota": "Datos 100 % sintéticos con unidades de valor ('u'). El patrón imita lo descrito públicamente (recolección, intercambio, puente, cadena de pelado, polvo semilla, congelamientos) sin copiar ninguna dirección real.",
+  "activos": {
+    "USDT-LAB": {
+      "congelable": true,
+      "emisor": "Emisor USDT-Lab",
+      "mecanismo": "lista de bloqueo en el contrato del emisor"
+    },
+    "ETH": {
+      "congelable": false,
+      "mecanismo": "ninguno: sin emisor ni función de bloqueo"
+    },
+    "BTC": {
+      "congelable": false,
+      "mecanismo": "ninguno"
+    },
+    "TRX": {
+      "congelable": false,
+      "mecanismo": "ninguno"
+    }
+  },
+  "etiquetas": {
+    "eth:deposito-exchange-A": {
+      "tipo": "deposito-exchange",
+      "nota": "Etiqueta hipotética de la práctica; en un caso real vendría de una fuente con fecha y confianza."
+    },
+    "eth:dex": {
+      "tipo": "intercambio-descentralizado"
+    },
+    "tron:protocolo-prestamo": {
+      "tipo": "protocolo-defi"
+    },
+    "tron:semilla": {
+      "tipo": "desconocida"
+    }
+  },
+  "saldosIniciales": [
+    {
+      "direccion": "eth:origen-hot",
+      "activo": "USDT-LAB",
+      "monto": 1000,
+      "contaminado": true
+    },
+    {
+      "direccion": "eth:origen-hot",
+      "activo": "ETH",
+      "monto": 500,
+      "contaminado": true
+    },
+    {
+      "direccion": "tron:origen-hot",
+      "activo": "USDT-LAB",
+      "monto": 600,
+      "contaminado": true
+    },
+    {
+      "direccion": "btc:origen-hot",
+      "activo": "BTC",
+      "monto": 1000,
+      "contaminado": true
+    },
+    {
+      "direccion": "eth:hop-1",
+      "activo": "ETH",
+      "monto": 100,
+      "contaminado": false
+    },
+    {
+      "direccion": "tron:semilla",
+      "activo": "TRX",
+      "monto": 3,
+      "contaminado": false
+    }
+  ],
+  "transferencias": [
+    {
+      "id": "f01",
+      "t": 5,
+      "cadena": "tron",
+      "desde": "tron:semilla",
+      "hasta": "tron:hop-a",
+      "activo": "TRX",
+      "monto": 1,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f02",
+      "t": 6,
+      "cadena": "tron",
+      "desde": "tron:semilla",
+      "hasta": "tron:hop-b",
+      "activo": "TRX",
+      "monto": 1,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f03",
+      "t": 7,
+      "cadena": "tron",
+      "desde": "tron:semilla",
+      "hasta": "tron:hop-c",
+      "activo": "TRX",
+      "monto": 1,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f04",
+      "t": 12,
+      "cadena": "btc",
+      "desde": "btc:origen-hot",
+      "hasta": "btc:p1",
+      "activo": "BTC",
+      "monto": 900,
+      "tipo": "transferencia",
+      "txid": "btc-1"
+    },
+    {
+      "id": "f05",
+      "t": 12,
+      "cadena": "btc",
+      "desde": "btc:origen-hot",
+      "hasta": "btc:hoja-1",
+      "activo": "BTC",
+      "monto": 100,
+      "tipo": "transferencia",
+      "txid": "btc-1"
+    },
+    {
+      "id": "f06",
+      "t": 13,
+      "cadena": "btc",
+      "desde": "btc:p1",
+      "hasta": "btc:p2",
+      "activo": "BTC",
+      "monto": 800,
+      "tipo": "transferencia",
+      "txid": "btc-2"
+    },
+    {
+      "id": "f07",
+      "t": 13,
+      "cadena": "btc",
+      "desde": "btc:p1",
+      "hasta": "btc:hoja-2",
+      "activo": "BTC",
+      "monto": 100,
+      "tipo": "transferencia",
+      "txid": "btc-2"
+    },
+    {
+      "id": "f08",
+      "t": 14,
+      "cadena": "btc",
+      "desde": "btc:p2",
+      "hasta": "btc:p3",
+      "activo": "BTC",
+      "monto": 700,
+      "tipo": "transferencia",
+      "txid": "btc-3"
+    },
+    {
+      "id": "f09",
+      "t": 14,
+      "cadena": "btc",
+      "desde": "btc:p2",
+      "hasta": "btc:hoja-3",
+      "activo": "BTC",
+      "monto": 100,
+      "tipo": "transferencia",
+      "txid": "btc-3"
+    },
+    {
+      "id": "f10",
+      "t": 15,
+      "cadena": "btc",
+      "desde": "btc:p3",
+      "hasta": "btc:p4",
+      "activo": "BTC",
+      "monto": 600,
+      "tipo": "transferencia",
+      "txid": "btc-4"
+    },
+    {
+      "id": "f11",
+      "t": 15,
+      "cadena": "btc",
+      "desde": "btc:p3",
+      "hasta": "btc:hoja-4",
+      "activo": "BTC",
+      "monto": 100,
+      "tipo": "transferencia",
+      "txid": "btc-4"
+    },
+    {
+      "id": "f12",
+      "t": 10,
+      "cadena": "eth",
+      "desde": "eth:origen-hot",
+      "hasta": "eth:coleccion",
+      "activo": "USDT-LAB",
+      "monto": 1000,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f13",
+      "t": 11,
+      "cadena": "eth",
+      "desde": "eth:origen-hot",
+      "hasta": "eth:coleccion",
+      "activo": "ETH",
+      "monto": 500,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f14",
+      "t": 20,
+      "cadena": "eth",
+      "tipo": "swap",
+      "desde": "eth:coleccion",
+      "via": "eth:dex",
+      "hasta": "eth:hop-1",
+      "activo": "USDT-LAB",
+      "monto": 325,
+      "activoSalida": "ETH",
+      "montoSalida": 285
+    },
+    {
+      "id": "f15",
+      "t": 30,
+      "cadena": "eth",
+      "desde": "eth:coleccion",
+      "hasta": "eth:parada-1",
+      "activo": "USDT-LAB",
+      "monto": 175,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f16",
+      "t": 40,
+      "cadena": "eth",
+      "desde": "eth:hop-1",
+      "hasta": "eth:hop-2",
+      "activo": "ETH",
+      "monto": 150,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f17",
+      "t": 41,
+      "cadena": "eth",
+      "desde": "eth:hop-1",
+      "hasta": "eth:deposito-exchange-A",
+      "activo": "ETH",
+      "monto": 200,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f18",
+      "t": 50,
+      "cadena": "eth",
+      "desde": "eth:hop-2",
+      "hasta": "puente:b1",
+      "activo": "ETH",
+      "monto": 150,
+      "tipo": "puente-salida",
+      "refId": "b1"
+    },
+    {
+      "id": "f19",
+      "t": 58,
+      "cadena": "l2a",
+      "desde": "puente:b1",
+      "hasta": "l2a:hop-3",
+      "activo": "ETH",
+      "monto": 149,
+      "tipo": "puente-entrada",
+      "refId": "b1"
+    },
+    {
+      "id": "f20",
+      "t": 70,
+      "cadena": "l2a",
+      "desde": "l2a:hop-3",
+      "hasta": "l2a:hop-4",
+      "activo": "ETH",
+      "monto": 149,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f21",
+      "t": 80,
+      "cadena": "eth",
+      "desde": "eth:coleccion",
+      "hasta": "eth:parada-2",
+      "activo": "ETH",
+      "monto": 400,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f22",
+      "t": 15,
+      "cadena": "tron",
+      "desde": "tron:origen-hot",
+      "hasta": "tron:hop-a",
+      "activo": "USDT-LAB",
+      "monto": 600,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f23",
+      "t": 25,
+      "cadena": "tron",
+      "desde": "tron:hop-a",
+      "hasta": "tron:hop-b",
+      "activo": "USDT-LAB",
+      "monto": 300,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f24",
+      "t": 26,
+      "cadena": "tron",
+      "desde": "tron:hop-a",
+      "hasta": "tron:hop-c",
+      "activo": "USDT-LAB",
+      "monto": 300,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f25",
+      "t": 35,
+      "cadena": "tron",
+      "desde": "tron:hop-b",
+      "hasta": "tron:protocolo-prestamo",
+      "activo": "USDT-LAB",
+      "monto": 300,
+      "tipo": "deposito-defi"
+    },
+    {
+      "id": "f26",
+      "t": 45,
+      "cadena": "tron",
+      "desde": "tron:hop-c",
+      "hasta": "tron:hop-d",
+      "activo": "USDT-LAB",
+      "monto": 200,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f27",
+      "t": 46,
+      "cadena": "tron",
+      "desde": "tron:hop-c",
+      "hasta": "tron:parada-t",
+      "activo": "USDT-LAB",
+      "monto": 100,
+      "tipo": "transferencia"
+    },
+    {
+      "id": "f28",
+      "t": 90,
+      "cadena": "eth",
+      "tipo": "congelamiento",
+      "desde": "eth:coleccion",
+      "activo": "USDT-LAB",
+      "monto": 500,
+      "emisor": "Emisor USDT-Lab"
+    },
+    {
+      "id": "f29",
+      "t": 95,
+      "cadena": "eth",
+      "tipo": "congelamiento",
+      "desde": "eth:parada-1",
+      "activo": "USDT-LAB",
+      "monto": 100,
+      "emisor": "Emisor USDT-Lab"
+    },
+    {
+      "id": "f30",
+      "t": 96,
+      "cadena": "tron",
+      "tipo": "congelamiento",
+      "desde": "tron:parada-t",
+      "activo": "USDT-LAB",
+      "monto": 100,
+      "emisor": "Emisor USDT-Lab"
+    }
+  ]
+}

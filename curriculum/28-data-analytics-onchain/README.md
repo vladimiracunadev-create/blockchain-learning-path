@@ -227,6 +227,12 @@ Esta unidad de clases enseña técnicas de doble uso: las mismas que protegen a 
 - **Etiqueta cada afirmación** como hecho, indicador, inferencia o hipótesis. Es la diferencia entre un informe técnico y una acusación.
 - El proyecto final es **material educativo**: no es una herramienta certificada para acusar, bloquear ni identificar a nadie.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): rastreo multicadena, propagación de contaminación (poison, haircut, FIFO) y lectura de eventos y trazas. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 5](../../especializacion-seguridad-custodia/bloques/05-trazabilidad-multicadena.md) · [Bloque 7](../../especializacion-seguridad-custodia/bloques/07-analisis-de-transacciones-eventos-y-logs.md) · **Laboratorios:** [LE6](../../especializacion-seguridad-custodia/laboratorios/LE6-explorador-transacciones.md) · [LE7](../../especializacion-seguridad-custodia/laboratorios/LE7-flujos-multidireccion.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 Fuentes primarias y documentación oficial, consultadas el **2026-08-24**:

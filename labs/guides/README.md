@@ -15,6 +15,8 @@ El cuaderno de laboratorios reúne las **91 prácticas** del programa, organizad
 | [Data analytics on-chain](07-data-analytics.md) | 72–83 | 57–58 (minería de datos blockchain, grafos, patrones, anomalías y proyecto final) |
 | [Custodia, auditoría y forensics](08-custodia-auditoria.md) | 84–91 | 59–66 y caso final custodial |
 
+> **Laboratorios de la especialización.** Los ocho laboratorios LE1–LE8 de la [especialización de seguridad y custodia](../../especializacion-seguridad-custodia/laboratorios/README.md) llevan su propia guía y **no forman parte** de estas 91 prácticas ni alteran su numeración.
+
 ## Qué contiene cada guía
 
 Cada práctica dentro de un cuaderno sigue la misma estructura:

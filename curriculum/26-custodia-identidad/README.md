@@ -355,6 +355,12 @@ menos un control que detecta —no solo previene— una firma indebida.
   recuperación excluye a quien más protección necesita, y esa exclusión es una decisión de
   diseño aunque no se haya tomado conscientemente.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): MPC, multisig, HSM y hardware wallets, políticas de firma, y EIP-7702 y ERC-4337 en custodia. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 3](../../especializacion-seguridad-custodia/bloques/03-custodia-claves-y-politicas-de-firma.md) · [Bloque 4](../../especializacion-seguridad-custodia/bloques/04-delegacion-de-permisos.md) · **Laboratorios:** [LE8](../../especializacion-seguridad-custodia/laboratorios/LE8-monitor-riesgos-custodio.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - BIP-32 (derivación jerárquica), BIP-39 (mnemónicas) y BIP-44 (rutas): <https://github.com/bitcoin/bips>

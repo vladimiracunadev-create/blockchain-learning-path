@@ -112,6 +112,12 @@ Dibuja tres flujos —depósito, trade interno y retiro— e identifica para cad
 
 No pegues claves privadas ni seed phrases en scripts, tickets o evidencias. Usa únicamente cuentas locales desechables. Toda atribución de una dirección debe expresar fuente, confianza y finalidad legítima.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): arquitectura hot, warm y cold, topes de exposición, detección y un caso de estudio real. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 3](../../especializacion-seguridad-custodia/bloques/03-custodia-claves-y-politicas-de-firma.md) · [Bloque 9](../../especializacion-seguridad-custodia/bloques/09-caso-binance-2026-10-29.md) · **Laboratorios:** [LE8](../../especializacion-seguridad-custodia/laboratorios/LE8-monitor-riesgos-custodio.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - [Bitcoin Developer Reference](https://developer.bitcoin.org/reference/)

@@ -1,0 +1,108 @@
+{
+  "nota": "Política y saldos 100 % sintéticos (USD de laboratorio).",
+  "billeteras": {
+    "hot-eth": {
+      "cadena": "eth",
+      "nivel": "hot",
+      "saldoUsd": 2500000,
+      "topeUsd": 250000,
+      "limiteHoraUsd": 200000,
+      "destinosPermitidos": [
+        "0xaa00000000000000000000000000000000000001",
+        "0xbb00000000000000000000000000000000000001",
+        "0xc100000000000000000000000000000000000001"
+      ]
+    },
+    "hot-btc": {
+      "cadena": "btc",
+      "nivel": "hot",
+      "saldoUsd": 1470000,
+      "topeUsd": 150000,
+      "limiteHoraUsd": 120000,
+      "destinosPermitidos": [
+        "0xaa00000000000000000000000000000000000001",
+        "0xbb00000000000000000000000000000000000001"
+      ]
+    },
+    "hot-tron": {
+      "cadena": "tron",
+      "nivel": "hot",
+      "saldoUsd": 628000,
+      "topeUsd": 80000,
+      "limiteHoraUsd": 60000,
+      "destinosPermitidos": [
+        "0xaa00000000000000000000000000000000000001",
+        "0xbb00000000000000000000000000000000000001",
+        "0xc100000000000000000000000000000000000001"
+      ]
+    },
+    "hot-xrp": {
+      "cadena": "xrp",
+      "nivel": "hot",
+      "saldoUsd": 296000,
+      "topeUsd": 40000,
+      "limiteHoraUsd": 30000,
+      "destinosPermitidos": [
+        "0xaa00000000000000000000000000000000000001",
+        "0xbb00000000000000000000000000000000000001"
+      ]
+    },
+    "hot-sol": {
+      "cadena": "sol",
+      "nivel": "hot",
+      "saldoUsd": 96000,
+      "topeUsd": 15000,
+      "limiteHoraUsd": 10000,
+      "destinosPermitidos": [
+        "0xaa00000000000000000000000000000000000001",
+        "0xbb00000000000000000000000000000000000001"
+      ]
+    }
+  },
+  "delegacionesAprobadas": [
+    "0xa900000000000000000000000000000000000001"
+  ],
+  "latenciaDeteccionSegundos": 30,
+  "ventanaVelocidadSegundos": 3600,
+  "ventanaCorrelacionSegundos": 1800,
+  "minimoCadenasCorrelacionadas": 3,
+  "variantes": {
+    "solo-alertas": {
+      "frenoDeEmergencia": false,
+      "pausaCon": [],
+      "aplicarTopes": false
+    },
+    "base": {
+      "frenoDeEmergencia": true,
+      "pausaCon": [
+        "R-DEL",
+        "R-CORR",
+        "R-FIRMA",
+        "R-NONCE"
+      ],
+      "aplicarTopes": false
+    },
+    "estricta": {
+      "frenoDeEmergencia": true,
+      "pausaCon": [
+        "R-DEL",
+        "R-CORR",
+        "R-FIRMA",
+        "R-NONCE",
+        "R-DEST",
+        "R-VEL"
+      ],
+      "aplicarTopes": false
+    },
+    "base-con-topes": {
+      "frenoDeEmergencia": true,
+      "pausaCon": [
+        "R-DEL",
+        "R-CORR",
+        "R-FIRMA",
+        "R-NONCE"
+      ],
+      "aplicarTopes": true
+    }
+  }
+}

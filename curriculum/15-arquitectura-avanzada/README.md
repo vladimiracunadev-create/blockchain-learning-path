@@ -243,6 +243,12 @@ Entrega un documento de arquitectura del proyecto integrador que incluya: proble
 - Reconoce el impacto del MEV en los usuarios y prioriza diseños que reduzcan la extracción a su costa.
 - Considera el cumplimiento legal y la privacidad desde el diseño, no como un añadido posterior.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): cuentas programables: ERC-4337, EIP-7702 y recuperación sin llave maestra invisible. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 2](../../especializacion-seguridad-custodia/bloques/02-cuentas-contratos-y-abstraccion.md) · **Laboratorios:** [LE4](../../especializacion-seguridad-custodia/laboratorios/LE4-delegacion-eip7702.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - ERC-4337, Account Abstraction Using Alt Mempool — <https://eips.ethereum.org/EIPS/eip-4337>

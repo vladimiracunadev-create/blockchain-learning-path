@@ -121,6 +121,25 @@ const NAV = [
     ],
   },
   {
+    t: "🛡️ Especialización de seguridad", href: "especializacion-seguridad-custodia/README.html",
+    children: [
+      ["Matriz de integración", "especializacion-seguridad-custodia/MATRIZ-INTEGRACION.html"],
+      ["1 · Criptografía y firmas", "especializacion-seguridad-custodia/bloques/01-criptografia-asimetrica-y-firmas.html"],
+      ["2 · Cuentas, 4337 y 7702", "especializacion-seguridad-custodia/bloques/02-cuentas-contratos-y-abstraccion.html"],
+      ["3 · Custodia y políticas de firma", "especializacion-seguridad-custodia/bloques/03-custodia-claves-y-politicas-de-firma.html"],
+      ["4 · Delegación de permisos", "especializacion-seguridad-custodia/bloques/04-delegacion-de-permisos.html"],
+      ["5 · Trazabilidad multicadena", "especializacion-seguridad-custodia/bloques/05-trazabilidad-multicadena.html"],
+      ["6 · Stablecoins y congelamiento", "especializacion-seguridad-custodia/bloques/06-stablecoins-congelamiento-y-recuperacion.html"],
+      ["7 · Transacciones, eventos y logs", "especializacion-seguridad-custodia/bloques/07-analisis-de-transacciones-eventos-y-logs.html"],
+      ["8 · Pruebas de reservas", "especializacion-seguridad-custodia/bloques/08-pruebas-de-reservas-y-sus-limites.html"],
+      ["9 · Caso Binance 2026 (caso vivo)", "especializacion-seguridad-custodia/bloques/09-caso-binance-2026-10-29.html"],
+      ["Laboratorios LE1–LE8", "especializacion-seguridad-custodia/laboratorios/README.html"],
+      ["Evaluación y rúbricas", "especializacion-seguridad-custodia/evaluacion/README.html"],
+      ["Glosario de la especialización", "especializacion-seguridad-custodia/glosario.html"],
+      ["Guía del instructor", "especializacion-seguridad-custodia/GUIA-DEL-INSTRUCTOR.html"],
+    ].map(([t, href]) => ({ t, href })),
+  },
+  {
     t: "⚖️ Regulación", href: "regulation/README.html",
     children: [
       ["Chile", "regulation/chile/README.html"],

@@ -1,0 +1,727 @@
+{
+  "contexto": {
+    "nota": "Datos 100 % sintéticos. Direcciones, hashes y montos (USD sintéticos) no corresponden a ninguna entidad real.",
+    "etiquetas": {
+      "0xcc00000000000000000000000000000000000001": {
+        "tipo": "custodio-hot",
+        "entidad": "Custodio Lab"
+      },
+      "0xcc00000000000000000000000000000000000002": {
+        "tipo": "custodio-hot",
+        "entidad": "Custodio Lab"
+      },
+      "0x1100000000000000000000000000000000000001": {
+        "tipo": "usuario"
+      },
+      "0x1100000000000000000000000000000000000002": {
+        "tipo": "usuario"
+      },
+      "0x1100000000000000000000000000000000000003": {
+        "tipo": "usuario"
+      },
+      "0x1100000000000000000000000000000000000004": {
+        "tipo": "usuario"
+      },
+      "0x1100000000000000000000000000000000000005": {
+        "tipo": "usuario"
+      }
+    },
+    "delegados": {
+      "0xa900000000000000000000000000000000000001": {
+        "nombre": "cuenta-inteligente-estandar",
+        "edadHoras": 4000,
+        "verificado": true,
+        "aprobado": true
+      },
+      "0xa900000000000000000000000000000000000002": {
+        "nombre": "lote-corporativo",
+        "edadHoras": 2500,
+        "verificado": true,
+        "aprobado": true
+      },
+      "0xaa00000000000000000000000000000000000001": {
+        "nombre": "dapp-nueva-legitima",
+        "edadHoras": 30,
+        "verificado": true,
+        "aprobado": false
+      },
+      "0xde00000000000000000000000000000000000001": {
+        "nombre": "desconocido",
+        "edadHoras": 5,
+        "verificado": false,
+        "aprobado": false
+      },
+      "0xde00000000000000000000000000000000000002": {
+        "nombre": "desconocido",
+        "edadHoras": 2,
+        "verificado": false,
+        "aprobado": false
+      }
+    },
+    "relayersConocidos": [
+      "0x7e00000000000000000000000000000000000001"
+    ],
+    "saldoUsdAntes": {
+      "0xcc00000000000000000000000000000000000001": 2500000,
+      "0xcc00000000000000000000000000000000000002": 900000,
+      "0x1100000000000000000000000000000000000001": 12000,
+      "0x1100000000000000000000000000000000000002": 8000,
+      "0x1100000000000000000000000000000000000003": 30000,
+      "0x1100000000000000000000000000000000000004": 5000,
+      "0x1100000000000000000000000000000000000005": 20000
+    }
+  },
+  "observaciones": [
+    {
+      "id": "b1",
+      "verdad": "benigna",
+      "txHash": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "cadena": "eth-lab",
+      "timestamp": 1000,
+      "remitente": "0x1100000000000000000000000000000000000001",
+      "fondeoRemitente": {
+        "origen": "exchange",
+        "edadHoras": 900
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000001",
+          "delegadoA": "0xa900000000000000000000000000000000000001",
+          "nonce": 5,
+          "chainId": "31337",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [],
+      "horasActiva": 400
+    },
+    {
+      "id": "b2",
+      "verdad": "benigna",
+      "txHash": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "cadena": "eth-lab",
+      "timestamp": 1100,
+      "remitente": "0x7e00000000000000000000000000000000000001",
+      "fondeoRemitente": {
+        "origen": "relayer-conocido",
+        "edadHoras": 5000
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000002",
+          "delegadoA": "0xa900000000000000000000000000000000000002",
+          "nonce": 0,
+          "chainId": "31337",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [],
+      "horasActiva": 300
+    },
+    {
+      "id": "b3",
+      "verdad": "benigna",
+      "txHash": "0x0000000000000000000000000000000000000000000000000000000000000003",
+      "cadena": "eth-lab",
+      "timestamp": 1200,
+      "remitente": "0x1100000000000000000000000000000000000003",
+      "fondeoRemitente": {
+        "origen": "exchange",
+        "edadHoras": 700
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000003",
+          "delegadoA": "0xa900000000000000000000000000000000000001",
+          "nonce": 9,
+          "chainId": "0",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [],
+      "horasActiva": 200
+    },
+    {
+      "id": "b4",
+      "verdad": "benigna",
+      "txHash": "0x0000000000000000000000000000000000000000000000000000000000000004",
+      "cadena": "eth-lab",
+      "timestamp": 1300,
+      "remitente": "0xcc00000000000000000000000000000000000002",
+      "fondeoRemitente": {
+        "origen": "propio",
+        "edadHoras": 9000
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000002",
+          "delegadoA": "0xa900000000000000000000000000000000000001",
+          "nonce": 44,
+          "chainId": "31337",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [],
+      "horasActiva": 60,
+      "ticketDeCambio": "CHG-0042"
+    },
+    {
+      "id": "b5",
+      "verdad": "benigna",
+      "txHash": "0x0000000000000000000000000000000000000000000000000000000000000005",
+      "cadena": "eth-lab",
+      "timestamp": 1400,
+      "remitente": "0x0b00000000000000000000000000000000000003",
+      "fondeoRemitente": {
+        "origen": "exchange",
+        "edadHoras": 400
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000004",
+          "delegadoA": "0xaa00000000000000000000000000000000000001",
+          "nonce": 2,
+          "chainId": "31337",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [],
+      "horasActiva": 50,
+      "comentario": "Falso positivo previsto: dapp legítima nueva, patrocinada por un tercero."
+    },
+    {
+      "id": "b6",
+      "verdad": "benigna",
+      "txHash": "0x0000000000000000000000000000000000000000000000000000000000000006",
+      "cadena": "eth-lab",
+      "timestamp": 1500,
+      "remitente": "0x1100000000000000000000000000000000000005",
+      "fondeoRemitente": {
+        "origen": "exchange",
+        "edadHoras": 800
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000005",
+          "delegadoA": "0x0000000000000000000000000000000000000000",
+          "nonce": 14,
+          "chainId": "31337",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [],
+      "horasActiva": 0,
+      "comentario": "Revocación: devuelve la cuenta a EOA."
+    },
+    {
+      "id": "m1",
+      "verdad": "maliciosa",
+      "txHash": "0x000000000000000000000000000000000000000000000000000000000000000b",
+      "cadena": "eth-lab",
+      "timestamp": 5000,
+      "remitente": "0x0b00000000000000000000000000000000000001",
+      "fondeoRemitente": {
+        "origen": "mezclador",
+        "edadHoras": 20
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1075,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1074,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1073,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1072,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1071,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1070,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1069,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1068,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1067,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1066,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1065,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1064,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1063,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1062,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1061,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1060,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1059,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1058,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1057,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1056,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1055,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1054,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1053,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1052,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1051,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1050,
+          "chainId": "31337",
+          "aplicada": true
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1049,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1048,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1047,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1046,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1045,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1044,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1043,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1042,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1041,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1040,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1039,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1038,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1037,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1036,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1035,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1034,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1033,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1032,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1031,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1030,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1029,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1028,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1027,
+          "chainId": "31337",
+          "aplicada": false
+        },
+        {
+          "autoridad": "0xcc00000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 1026,
+          "chainId": "31337",
+          "aplicada": false
+        }
+      ],
+      "salidasPosteriores": [
+        {
+          "desde": "0xcc00000000000000000000000000000000000001",
+          "timestamp": 5204,
+          "valorUsd": 2400000
+        }
+      ],
+      "horasActiva": 3,
+      "comentario": "Patrón del caso estudiado: 50 firmas de una misma cuenta de custodia, enviadas por un tercero recién fondeado."
+    },
+    {
+      "id": "m2",
+      "verdad": "maliciosa",
+      "txHash": "0x000000000000000000000000000000000000000000000000000000000000000c",
+      "cadena": "eth-lab",
+      "timestamp": 6000,
+      "remitente": "0x0b00000000000000000000000000000000000002",
+      "fondeoRemitente": {
+        "origen": "mezclador",
+        "edadHoras": 6
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000001",
+          "delegadoA": "0xde00000000000000000000000000000000000002",
+          "nonce": 6,
+          "chainId": "31337",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [
+        {
+          "desde": "0x1100000000000000000000000000000000000001",
+          "timestamp": 6020,
+          "valorUsd": 11500
+        }
+      ],
+      "horasActiva": 30,
+      "comentario": "Autorización inducida por engaño a un usuario."
+    },
+    {
+      "id": "m3a",
+      "verdad": "maliciosa",
+      "txHash": "0x000000000000000000000000000000000000000000000000000000000000000d",
+      "cadena": "eth-lab",
+      "timestamp": 7000,
+      "remitente": "0x0b00000000000000000000000000000000000002",
+      "fondeoRemitente": {
+        "origen": "mezclador",
+        "edadHoras": 10
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000002",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 3,
+          "chainId": "0",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [
+        {
+          "desde": "0x1100000000000000000000000000000000000002",
+          "timestamp": 7050,
+          "valorUsd": 7000
+        }
+      ],
+      "horasActiva": 20
+    },
+    {
+      "id": "m3b",
+      "verdad": "maliciosa",
+      "txHash": "0x000000000000000000000000000000000000000000000000000000000000000e",
+      "cadena": "l2-a-lab",
+      "timestamp": 7010,
+      "remitente": "0x0b00000000000000000000000000000000000002",
+      "fondeoRemitente": {
+        "origen": "mezclador",
+        "edadHoras": 10
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000002",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 3,
+          "chainId": "0",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [
+        {
+          "desde": "0x1100000000000000000000000000000000000002",
+          "timestamp": 7040,
+          "valorUsd": 600
+        }
+      ],
+      "horasActiva": 20,
+      "comentario": "La MISMA firma con chain id 0 reutilizada en otra red."
+    },
+    {
+      "id": "m3c",
+      "verdad": "maliciosa",
+      "txHash": "0x000000000000000000000000000000000000000000000000000000000000000f",
+      "cadena": "l2-b-lab",
+      "timestamp": 7020,
+      "remitente": "0x0b00000000000000000000000000000000000002",
+      "fondeoRemitente": {
+        "origen": "mezclador",
+        "edadHoras": 10
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000002",
+          "delegadoA": "0xde00000000000000000000000000000000000001",
+          "nonce": 3,
+          "chainId": "0",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [],
+      "horasActiva": 20,
+      "comentario": "Tercera red: aún sin salida, delegación latente."
+    },
+    {
+      "id": "m4",
+      "verdad": "maliciosa",
+      "txHash": "0x0000000000000000000000000000000000000000000000000000000000000010",
+      "cadena": "eth-lab",
+      "timestamp": 8000,
+      "remitente": "0x1100000000000000000000000000000000000003",
+      "fondeoRemitente": {
+        "origen": "propio",
+        "edadHoras": 3000
+      },
+      "autorizaciones": [
+        {
+          "autoridad": "0x1100000000000000000000000000000000000003",
+          "delegadoA": "0xde00000000000000000000000000000000000002",
+          "nonce": 10,
+          "chainId": "31337",
+          "aplicada": true
+        }
+      ],
+      "salidasPosteriores": [],
+      "horasActiva": 48,
+      "comentario": "Clave comprometida; el atacante delega y espera."
+    }
+  ]
+}

@@ -38,7 +38,18 @@ const required = [
   "docs/andes-quest-activos-tokenizados.md",
   "labs/23-andes-quest-assets/src/GameAsset.sol",
   "docs/economia-token-viral.md",
-  "labs/15-tokenomics/viral-token-cycle.mjs"
+  "labs/15-tokenomics/viral-token-cycle.mjs",
+  "especializacion-seguridad-custodia/README.md",
+  "especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md",
+  "especializacion-seguridad-custodia/glosario.md",
+  "especializacion-seguridad-custodia/GUIA-DEL-INSTRUCTOR.md",
+  "especializacion-seguridad-custodia/bloques/09-caso-binance-2026-10-29.md",
+  "especializacion-seguridad-custodia/laboratorios/README.md",
+  "especializacion-seguridad-custodia/evaluacion/README.md",
+  "especializacion-seguridad-custodia/evaluacion/rubricas.md",
+  "especializacion-seguridad-custodia/evaluacion/banco-de-preguntas.md",
+  "especializacion-seguridad-custodia/evaluacion/quiz.json",
+  "labs/especializacion-seguridad/nucleo/red-lab.mjs"
 ];
 
 for (const file of required) await access(join(process.cwd(), file));
@@ -417,6 +428,186 @@ if (Number(readmeAuto[1]) !== practicasAuto) {
   );
 }
 console.log(`Prácticas auto-verificadas: ${practicasAuto}/91, coincide con el README.`);
+
+// --- Especialización avanzada de seguridad y custodia -------------------------
+// La especialización vive FUERA de las 33 unidades y de las 91 prácticas para no
+// alterar su numeración. Justamente por eso necesita su propio guardián: nada de lo
+// anterior la vigila. Cada cifra que declara se contrasta con los archivos, y la
+// matriz de integración se cruza con los README de las unidades que dice ampliar.
+const ESP = "especializacion-seguridad-custodia";
+const LABS_ESP = "labs/especializacion-seguridad";
+const espErrores = [];
+const leer = (ruta) => readFile(ruta, "utf8");
+const palabras = (texto) => texto.trim().split(/\s+/).filter(Boolean).length;
+
+// 1. Nueve bloques de contenido, cada uno con profundidad, gráfico, fuentes y cierre.
+const archivosBloques = (await readdir(join(ESP, "bloques"))).filter((n) => /^\d{2}-.*\.md$/.test(n)).sort();
+if (archivosBloques.length !== 9 || archivosBloques.some((n, i) => Number(n.slice(0, 2)) !== i + 1)) {
+  espErrores.push(`se esperaban 9 bloques numerados 01–09 y hay ${archivosBloques.join(", ")}`);
+}
+for (const nombre of archivosBloques) {
+  const texto = await leer(join(ESP, "bloques", nombre));
+  if (palabras(texto) < 1200) espErrores.push(`${nombre}: solo ${palabras(texto)} palabras (mínimo 1200)`);
+  if (!/```mermaid/.test(texto)) espErrores.push(`${nombre}: falta un gráfico Mermaid`);
+  if ((texto.match(/https?:\/\//g) ?? []).length < 3) espErrores.push(`${nombre}: faltan al menos tres fuentes enlazadas`);
+  if (!texto.includes("## ✅ Criterio de dominio")) espErrores.push(`${nombre}: falta el criterio de dominio`);
+  if (!/## 🧭 Navegación/.test(texto)) espErrores.push(`${nombre}: falta la navegación`);
+}
+
+// 2. El caso estudia con honestidad: tres categorías, fecha de corte, desconocidos y procedimiento de actualización.
+const casoTexto = await leer(join(ESP, "bloques", "09-caso-binance-2026-10-29.md"));
+for (const frase of ["## Lo que se sabe: hechos confirmados", "## Lo que se sospecha: hipótesis", "## Lo que no se sabe: desconocidos",
+  "30 de octubre de 2026", "## Cómo actualizar este estudio", "## Discrepancias entre fuentes"]) {
+  if (!casoTexto.includes(frase)) espErrores.push(`el caso Binance perdió «${frase}»`);
+}
+const hipotesis = casoTexto.match(/^\| H\d+ \|/gm) ?? [];
+const desconocidos = casoTexto.match(/^\| U\d+ \|/gm) ?? [];
+if (hipotesis.length < 4) espErrores.push(`el caso declara ${hipotesis.length} hipótesis (mínimo 4)`);
+if (desconocidos.length < 8) espErrores.push(`el caso declara ${desconocidos.length} desconocidos (mínimo 8)`);
+if (!/no atribuye conducta a ninguna persona/i.test(casoTexto)) espErrores.push("el caso debe declarar que no atribuye conducta a ninguna persona");
+
+// 3. Ocho laboratorios: guía completa, código, pruebas, y cifras que coinciden con el código.
+const SECCIONES_LAB = ["Prerrequisitos", "Teoría", "Instrucciones", "Código comentado", "Pruebas", "Resultados esperados", "Ejercicios adicionales", "Soluciones"];
+const archivosLabs = (await readdir(join(ESP, "laboratorios"))).filter((n) => /^LE\d-.*\.md$/.test(n)).sort();
+if (archivosLabs.length !== 8) espErrores.push(`se esperaban 8 guías LE1–LE8 y hay ${archivosLabs.length}`);
+const codigosLabs = (await readdir(LABS_ESP)).filter((n) => /^le\d-.*\.mjs$/.test(n) && !n.endsWith(".test.mjs")).sort();
+const labsReadme = await leer(join(ESP, "laboratorios", "README.md"));
+const scriptsPackage = JSON.parse(await leer("package.json")).scripts;
+let pruebasLabs = 0;
+for (const guia of archivosLabs) {
+  const n = guia.slice(2, 3);
+  const texto = await leer(join(ESP, "laboratorios", guia));
+  let cursor = -1;
+  for (const seccion of SECCIONES_LAB) {
+    const posicion = texto.indexOf(`\n## ${seccion}\n`);
+    if (posicion === -1) espErrores.push(`${guia}: falta la sección «${seccion}»`);
+    else if (posicion < cursor) espErrores.push(`${guia}: «${seccion}» está fuera de orden`);
+    else cursor = posicion;
+  }
+  const codigo = codigosLabs.find((c) => c.startsWith(`le${n}-`));
+  if (!codigo) { espErrores.push(`${guia}: no existe su código le${n}-*.mjs`); continue; }
+  const pruebas = ((await leer(join(LABS_ESP, codigo.replace(/\.mjs$/, ".test.mjs")))).match(/^test\(/gm) ?? []).length;
+  pruebasLabs += pruebas;
+  const declaradas = /\*\*Pruebas:\*\* (\d+)/.exec(texto);
+  if (!declaradas || Number(declaradas[1]) !== pruebas) {
+    espErrores.push(`${guia}: declara ${declaradas?.[1] ?? "ninguna"} pruebas y el código tiene ${pruebas}`);
+  }
+  if (pruebas < 5) espErrores.push(`${guia}: solo ${pruebas} pruebas (mínimo 5)`);
+  const comando = scriptsPackage[`lab:le${n}`];
+  if (!comando || !comando.includes(codigo)) espErrores.push(`${guia}: package.json no define «lab:le${n}» hacia ${codigo}`);
+  if (!labsReadme.includes(`pnpm lab:le${n}`)) espErrores.push(`el índice de laboratorios no menciona pnpm lab:le${n}`);
+}
+const nucleoPruebas = (await Promise.all(["nucleo.test.mjs", "red-lab.test.mjs"].map((f) => leer(join(LABS_ESP, "nucleo", f)))))
+  .reduce((suma, t) => suma + (t.match(/^test\(/gm) ?? []).length, 0);
+const nucleoDeclarado = /núcleo criptográfico compartido[^\n]*tiene (\d+) pruebas/.exec(labsReadme);
+if (!nucleoDeclarado || Number(nucleoDeclarado[1]) !== nucleoPruebas) {
+  espErrores.push(`laboratorios/README.md declara ${nucleoDeclarado?.[1] ?? "ninguna"} pruebas del núcleo y existen ${nucleoPruebas}`);
+}
+
+// 4. Autonomía: los laboratorios solo importan módulos de Node y archivos propios del repositorio.
+async function archivosJs(directorio) {
+  const salida = [];
+  for (const e of await readdir(directorio, { withFileTypes: true })) {
+    const ruta = join(directorio, e.name);
+    if (e.isDirectory()) salida.push(...await archivosJs(ruta));
+    else if (e.name.endsWith(".mjs")) salida.push(ruta);
+  }
+  return salida;
+}
+for (const archivo of await archivosJs(LABS_ESP)) {
+  const codigo = await leer(archivo);
+  for (const m of codigo.matchAll(/(?:^|\n)\s*(?:import|export)\s[^;]*?from\s+["']([^"']+)["']/g)) {
+    if (!m[1].startsWith(".") && !m[1].startsWith("node:")) {
+      espErrores.push(`${archivo}: importa «${m[1]}», pero la especialización no tiene dependencias externas`);
+    }
+  }
+  if (/\b(?:fetch|XMLHttpRequest|WebSocket)\b/.test(codigo) && !archivo.includes("le6-explorador-transacciones")) {
+    espErrores.push(`${archivo}: usa red, y solo LE6 (modo en vivo opcional) puede hacerlo`);
+  }
+}
+for (const fixture of ["delegaciones-observadas.json", "flujos-multicadena.json", "politica-custodio.json", "linea-de-tiempo-custodio.json"]) {
+  const datos = JSON.parse(await leer(join(LABS_ESP, "fixtures", fixture)));
+  const nota = datos.nota ?? datos.contexto?.nota ?? "";
+  if (!/sint[ée]tic/i.test(nota)) espErrores.push(`fixtures/${fixture}: debe declararse sintético`);
+}
+
+// 5. Matriz de integración: 33 unidades, tres niveles, recuento coherente y unidades que de verdad enlazan.
+const matriz = await leer(join(ESP, "MATRIZ-INTEGRACION.md"));
+const filasMatriz = matriz.split("\n").filter((l) => l.startsWith("| [") && l.includes("curriculum/"));
+const nivelesMatriz = { "Ampliación directa": 0, Complemento: 0, Contexto: 0 };
+const vistas = new Set();
+for (const fila of filasMatriz) {
+  const slug = /curriculum\/(\d{2}-[a-z0-9-]+)\/README\.md/.exec(fila)?.[1];
+  const nivel = Object.keys(nivelesMatriz).find((n) => fila.split("|")[2]?.trim() === n);
+  if (!slug || !nivel) { espErrores.push(`matriz: fila ilegible → ${fila.slice(0, 60)}`); continue; }
+  if (vistas.has(slug)) espErrores.push(`matriz: la unidad ${slug} aparece dos veces`);
+  vistas.add(slug);
+  nivelesMatriz[nivel] += 1;
+  const readmeUnidad = await leer(join("curriculum", slug, "README.md"));
+  const enlaza = readmeUnidad.includes(ESP);
+  if (nivel === "Ampliación directa" && !enlaza) espErrores.push(`matriz: ${slug} es «Ampliación directa» pero su README no enlaza la especialización`);
+  if (nivel !== "Ampliación directa" && enlaza) espErrores.push(`matriz: ${slug} enlaza la especialización pero la matriz lo marca «${nivel}»`);
+}
+for (const slug of moduleSlugs) if (!vistas.has(slug)) espErrores.push(`matriz: falta la unidad ${slug}`);
+const recuento = /\*\*Recuento:\*\* (\d+) unidades con ampliación directa, (\d+) de complemento y (\d+) de contexto/.exec(matriz);
+if (!recuento || Number(recuento[1]) !== nivelesMatriz["Ampliación directa"] || Number(recuento[2]) !== nivelesMatriz.Complemento || Number(recuento[3]) !== nivelesMatriz.Contexto) {
+  espErrores.push(`matriz: el recuento declarado (${recuento?.slice(1).join("/") ?? "ninguno"}) no coincide con la tabla (${Object.values(nivelesMatriz).join("/")})`);
+}
+
+// 6. Evaluación: los identificadores que usa la matriz existen, y el cuestionario es válido.
+const rubricas = await leer(join(ESP, "evaluacion", "rubricas.md"));
+const quiz = JSON.parse(await leer(join(ESP, "evaluacion", "quiz.json")));
+const idsUsados = new Set(matriz.match(/`(?:Q\d|R-LE\d|R-CASO|R-PROY)`/g)?.map((s) => s.slice(1, -1)));
+for (const id of idsUsados) {
+  const definido = id.startsWith("Q") ? Boolean(quiz.bloques[id]) : new RegExp(`${id.replace("-", "\\-")}\\b`).test(rubricas);
+  if (!definido) espErrores.push(`la matriz usa «${id}», que no está definido en la evaluación`);
+}
+let preguntasEsp = 0;
+for (let b = 1; b <= 9; b += 1) {
+  const bloque = quiz.bloques[`Q${b}`];
+  if (!bloque) { espErrores.push(`quiz: falta Q${b}`); continue; }
+  if (bloque.preguntas.length < 4) espErrores.push(`quiz Q${b}: solo ${bloque.preguntas.length} preguntas (mínimo 4)`);
+  bloque.preguntas.forEach((p, i) => {
+    preguntasEsp += 1;
+    if (!Number.isInteger(p.respuesta) || p.respuesta < 0 || p.respuesta >= p.opciones.length) espErrores.push(`quiz Q${b}.${i + 1}: la respuesta apunta fuera de las opciones`);
+    if (new Set(p.opciones).size !== p.opciones.length) espErrores.push(`quiz Q${b}.${i + 1}: opciones repetidas`);
+    if (!p.explicacion) espErrores.push(`quiz Q${b}.${i + 1}: sin explicación`);
+  });
+}
+const evalReadme = await leer(join(ESP, "evaluacion", "README.md"));
+const preguntasDeclaradas = /(\d+) preguntas autocorregibles/.exec(evalReadme);
+if (!preguntasDeclaradas || Number(preguntasDeclaradas[1]) !== preguntasEsp) {
+  espErrores.push(`evaluacion/README.md declara ${preguntasDeclaradas?.[1] ?? "ninguna"} preguntas y quiz.json tiene ${preguntasEsp}`);
+}
+for (const id of ["R-LE1", "R-LE2", "R-LE3", "R-LE4", "R-LE5", "R-LE6", "R-LE7", "R-LE8", "R-CASO", "R-PROY"]) {
+  if (!new RegExp(`${id}\\b`).test(rubricas)) espErrores.push(`rubricas.md no define ${id}`);
+}
+
+// 7. Glosario y higiene: términos clave presentes y ningún valor con forma de clave privada en los documentos.
+const glosarioEsp = await leer(join(ESP, "glosario.md"));
+if ((glosarioEsp.match(/^- \*\*/gm) ?? []).length < 60) espErrores.push("el glosario de la especialización tiene menos de 60 términos");
+for (const termino of ["EIP-7702", "ERC-4337", "Nonce de cuenta", "Prueba de reservas", "Congelamiento", "Heurística de entradas comunes", "Política de firma"]) {
+  if (!glosarioEsp.includes(`**${termino}`) && !glosarioEsp.toLowerCase().includes(`**${termino.toLowerCase()}`)) espErrores.push(`el glosario no define «${termino}»`);
+}
+const TOPIC_TRANSFER_DOC = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
+async function mdDe(directorio) {
+  const salida = [];
+  for (const e of await readdir(directorio, { withFileTypes: true })) {
+    const ruta = join(directorio, e.name);
+    if (e.isDirectory()) salida.push(...await mdDe(ruta));
+    else if (e.name.endsWith(".md")) salida.push(ruta);
+  }
+  return salida;
+}
+for (const archivo of await mdDe(ESP)) {
+  const texto = await leer(archivo);
+  for (const valor of texto.match(/0x[0-9a-fA-F]{64}\b/g) ?? []) {
+    if (valor.toLowerCase() !== TOPIC_TRANSFER_DOC) espErrores.push(`${archivo}: contiene ${valor.slice(0, 12)}…, un valor con forma de clave privada o hash sin justificar`);
+  }
+}
+
+if (espErrores.length) throw new Error(`Especialización de seguridad y custodia:\n${espErrores.join("\n")}`);
+console.log(`Especialización: ${archivosBloques.length} bloques, ${archivosLabs.length} laboratorios con ${pruebasLabs} pruebas (más ${nucleoPruebas} del núcleo), matriz de ${vistas.size} unidades (${Object.values(nivelesMatriz).join("/")}), ${preguntasEsp} preguntas y caso con ${hipotesis.length} hipótesis y ${desconocidos.length} desconocidos.`);
 
 // --- Coherencia de versión ----------------------------------------------------
 // La versión vive en el package.json raíz. Cualquier otro sitio que la declare

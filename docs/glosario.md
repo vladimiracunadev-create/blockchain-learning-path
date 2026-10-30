@@ -6,7 +6,9 @@ Glosario de referencia de las 66 clases, los laboratorios y el proyecto final. S
 privilegia el término en español con el anglicismo entre paréntesis cuando el sector
 lo usa de forma dominante. Una definición aclara **qué es**, **qué no demuestra** y,
 cuando importa, **con qué concepto suele confundirse**. Para profundizar en cada tema,
-consulta [recursos-oficiales.md](recursos-oficiales.md).
+consulta [recursos-oficiales.md](recursos-oficiales.md). Los términos de seguridad
+avanzada, custodia, EIP-7702 y rastreo de incidentes tienen su propio
+[glosario de la especialización](../especializacion-seguridad-custodia/glosario.md).
 
 ## Fundamentos y criptografía
 

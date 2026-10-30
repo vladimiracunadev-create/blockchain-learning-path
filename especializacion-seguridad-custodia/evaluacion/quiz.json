@@ -1,0 +1,545 @@
+{
+  "nota": "Cuestionarios autocorregibles de la especialización. La respuesta correcta se indica por índice; la explicación enseña también al acertar.",
+  "bloques": {
+    "Q1": {
+      "titulo": "Criptografía asimétrica y firmas digitales",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué indicio visible delata que dos firmas ECDSA con la misma clave comparten el nonce k?",
+          "opciones": [
+            "Se firmaron en el mismo bloque",
+            "Tienen el mismo valor r",
+            "Tienen la misma longitud",
+            "Usan el mismo bit v"
+          ],
+          "respuesta": 1,
+          "explicacion": "Con el mismo k, r = x(k·G) es idéntico. Restar las ecuaciones de s permite despejar k y luego la clave privada."
+        },
+        {
+          "pregunta": "Una transacción de Ethereum no lleva campo «remitente» porque…",
+          "opciones": [
+            "se mantiene secreto por privacidad",
+            "se deduce del nonce",
+            "el remitente se recupera de la firma (r, s, v)",
+            "lo añade el primer nodo que la propaga"
+          ],
+          "respuesta": 2,
+          "explicacion": "ecrecover devuelve la clave pública que firmó; la dirección se calcula de ella. Por eso «firmar» y «ser la dirección» son lo mismo."
+        },
+        {
+          "pregunta": "¿Qué impide la regla low-s (s ≤ n/2) de EIP-2?",
+          "opciones": [
+            "Que se firme dos veces el mismo mensaje",
+            "Que la clave pública sea visible",
+            "Que el nonce k sea determinista",
+            "Que un tercero fabrique una firma gemela válida a partir de la original"
+          ],
+          "respuesta": 3,
+          "explicacion": "(r, s) y (r, n − s) validan el mismo mensaje; Ethereum solo acepta una forma para que la firma tenga una única representación."
+        },
+        {
+          "pregunta": "Un contrato recupera con ecrecover la dirección de una firma y la acepta como autorizada. ¿Qué comprobación falta?",
+          "opciones": [
+            "Compararla con la dirección esperada",
+            "Verificar la longitud del mensaje",
+            "Comprobar que v sea 27",
+            "Calcular el hash dos veces"
+          ],
+          "respuesta": 0,
+          "explicacion": "ecrecover siempre devuelve alguna dirección. Verificar es comparar con la esperada."
+        },
+        {
+          "pregunta": "¿Qué debe incluir lo firmado para que no se reutilice en otra cadena ni dos veces?",
+          "opciones": [
+            "La clave pública del firmante",
+            "Cadena, contrato destino, nonce y caducidad",
+            "Solo el importe",
+            "Solo un nonce"
+          ],
+          "respuesta": 1,
+          "explicacion": "Sin cadena sirve en otra red; sin nonce, dos veces; sin caducidad, siempre; sin contrato, en otro contrato."
+        }
+      ]
+    },
+    "Q2": {
+      "titulo": "Cuentas EOA, contratos y abstracción de cuentas",
+      "preguntas": [
+        {
+          "pregunta": "Tras aplicarse con éxito una tupla EIP-7702, ¿qué ocurre con la cuenta autoridad?",
+          "opciones": [
+            "Se convierte en un contrato con otra dirección",
+            "Su saldo se transfiere al delegado",
+            "Su código pasa a ser 0xef0100 más el delegado y su nonce avanza en uno",
+            "Pierde su clave privada"
+          ],
+          "respuesta": 2,
+          "explicacion": "La cuenta conserva dirección, clave y saldo; cambia su código (designador de 23 bytes) y se incrementa su nonce."
+        },
+        {
+          "pregunta": "¿Por qué un monitor de «transacciones enviadas por la billetera» no ve una delegación ajena?",
+          "opciones": [
+            "Las delegaciones son privadas",
+            "Se registran solo en L2",
+            "No cambian el nonce",
+            "La autorización viaja en una transacción enviada por otra cuenta"
+          ],
+          "respuesta": 3,
+          "explicacion": "La autoridad solo aporta una firma; quien envía la transacción tipo 4 y paga el gas es el operador."
+        },
+        {
+          "pregunta": "Una cuenta firma su propia autorización con el nonce actual de su transacción. ¿Qué ocurre?",
+          "opciones": [
+            "Queda inerte: el nonce del remitente ya avanzó y debía firmar nonce + 1",
+            "Se aplica dos veces",
+            "Revierte la transacción completa",
+            "Se aplica solo en otra cadena"
+          ],
+          "respuesta": 0,
+          "explicacion": "El nonce del remitente se incrementa antes de procesar las autorizaciones; la tupla con el nonce antiguo se omite."
+        },
+        {
+          "pregunta": "El nonce de una UserOperation de ERC-4337 tiene…",
+          "opciones": [
+            "un hash del calldata",
+            "una clave de 192 bits y una secuencia de 64 bits (carriles)",
+            "un único contador de 64 bits",
+            "solo la dirección del bundler"
+          ],
+          "respuesta": 1,
+          "explicacion": "Cada clave es un carril con su propio contador, de modo que operaciones independientes no se bloquean."
+        },
+        {
+          "pregunta": "Una autorización con chain_id = 0 se filtra. ¿Qué riesgo añade?",
+          "opciones": [
+            "Caduca en una hora",
+            "Solo afecta a Bitcoin",
+            "Puede aplicarse en cualquier red donde el nonce coincida",
+            "Cambia la clave privada"
+          ],
+          "respuesta": 2,
+          "explicacion": "El valor 0 hace la firma válida en todas las cadenas a la vez."
+        }
+      ]
+    },
+    "Q3": {
+      "titulo": "Custodia, claves y políticas de firma",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué control reduce la pérdida tanto si se robó la clave como si se abusó del servicio de firma?",
+          "opciones": [
+            "El freno de emergencia automático",
+            "La lista de destinos en la aplicación",
+            "Un mayor número de aprobadores",
+            "El tope de saldo en la billetera caliente"
+          ],
+          "respuesta": 3,
+          "explicacion": "El freno solo actúa sobre lo que pasa por tus sistemas; el tope acota el valor expuesto en ambos casos."
+        },
+        {
+          "pregunta": "¿Por qué MPC no protege contra un orquestador comprometido?",
+          "opciones": [
+            "Protege los fragmentos de la clave, pero el orquestador decide cuándo se firma",
+            "MPC no usa criptografía",
+            "La clave vive entera en un servidor",
+            "MPC solo funciona en Bitcoin"
+          ],
+          "respuesta": 0,
+          "explicacion": "MPC evita la exfiltración de una clave completa, no el abuso del flujo de firma."
+        },
+        {
+          "pregunta": "Un cuórum 3 de 5 con las cinco claves en el mismo proveedor y con el mismo administrador ofrece…",
+          "opciones": [
+            "más seguridad que un HSM",
+            "una seguridad equivalente a un único firmante, porque comparten el punto de compromiso",
+            "tres firmantes independientes",
+            "resistencia a cualquier compromiso del proveedor"
+          ],
+          "respuesta": 1,
+          "explicacion": "La independencia real es la de máquina, red, administrador y proveedor, no el número de claves."
+        },
+        {
+          "pregunta": "¿Dónde debe vivir la política de firma?",
+          "opciones": [
+            "Solo en el manual de procedimientos",
+            "En la interfaz del aprobador",
+            "En la capa de firma, que decide antes de producir la firma",
+            "En la aplicación que solicita la firma"
+          ],
+          "respuesta": 2,
+          "explicacion": "La aplicación es justo lo que un atacante puede comprometer."
+        },
+        {
+          "pregunta": "Al rotar una clave, además de generar la nueva, hay que…",
+          "opciones": [
+            "borrar el historial de transacciones",
+            "publicar la clave antigua",
+            "cambiar el nombre de la cuenta",
+            "revocar las delegaciones y aprobaciones que concedió la anterior"
+          ],
+          "respuesta": 3,
+          "explicacion": "Rotar la clave sin revocar lo que ya había autorizado deja el permiso intacto."
+        }
+      ]
+    },
+    "Q4": {
+      "titulo": "Riesgos de la delegación de permisos",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué delegación cede más poder?",
+          "opciones": [
+            "La delegación de código EIP-7702",
+            "Un approve acotado a un importe",
+            "Un permit con caducidad",
+            "Un rol de solo lectura"
+          ],
+          "respuesta": 0,
+          "explicacion": "Cede el comportamiento completo de la cuenta, incluidos los activos que lleguen después."
+        },
+        {
+          "pregunta": "¿Por qué un permit es más difícil de detectar que un approve?",
+          "opciones": [
+            "Se firma con Schnorr",
+            "Es una firma fuera de cadena y no deja evento hasta que se usa",
+            "No tiene nonce",
+            "Solo funciona en L2"
+          ],
+          "respuesta": 1,
+          "explicacion": "El approve emite Approval al ejecutarse; el permit no deja rastro hasta que alguien lo gasta."
+        },
+        {
+          "pregunta": "¿Qué diferencia en el control de acceso separa un delegado seguro de uno hostil?",
+          "opciones": [
+            "El tamaño del bytecode",
+            "La red en que se despliega",
+            "Quién puede ordenarle ejecutar acciones en nombre de la cuenta",
+            "El lenguaje en que está escrito"
+          ],
+          "respuesta": 2,
+          "explicacion": "En LE4 la diferencia entre LoteSeguro y el delegado hostil es una línea de control de acceso."
+        },
+        {
+          "pregunta": "Un detector puntúa igual una dApp nueva legítima y una delegación maliciosa discreta. ¿Qué los separa?",
+          "opciones": [
+            "Un umbral más alto",
+            "El número de transacciones del remitente",
+            "La hora del bloque",
+            "Información externa, como la confirmación del titular por un canal independiente"
+          ],
+          "respuesta": 3,
+          "explicacion": "Ningún umbral los separa; el detector produce una cola de revisión, no veredictos."
+        },
+        {
+          "pregunta": "¿Cuál NO es un rasgo que hace peligrosa una delegación?",
+          "opciones": [
+            "Que esté escrita en Solidity",
+            "La persistencia",
+            "La invisibilidad",
+            "La reproducibilidad entre redes"
+          ],
+          "respuesta": 0,
+          "explicacion": "Los cinco rasgos son amplitud, persistencia, invisibilidad, transferibilidad y reproducibilidad entre redes."
+        }
+      ]
+    },
+    "Q5": {
+      "titulo": "Rastreabilidad multicadena",
+      "preguntas": [
+        {
+          "pregunta": "¿Por qué el ETH movido por un contrato no aparece como evento Transfer?",
+          "opciones": [
+            "Solo se emiten en L2",
+            "No es un evento de contrato: hace falta la traza interna o reconstruir por saldos",
+            "ETH es un ERC-20 oculto",
+            "Los nodos descartan esos eventos"
+          ],
+          "respuesta": 1,
+          "explicacion": "Los eventos los emite el contrato que decide hacerlo; el ETH se mueve sin ellos."
+        },
+        {
+          "pregunta": "Tres métodos de propagación dan 50, 111 y 150 para la misma dirección. ¿Cómo se informa?",
+          "opciones": [
+            "Con el máximo, por cautela",
+            "Con el mínimo, por prudencia",
+            "Como un rango, nombrando el método y el supuesto de cada uno",
+            "Con el promedio de los tres"
+          ],
+          "respuesta": 2,
+          "explicacion": "Ningún método es la verdad: son convenciones. El rango es la respuesta honesta."
+        },
+        {
+          "pregunta": "¿Qué distingue a un indicador de un hecho?",
+          "opciones": [
+            "Un indicador está verificado en cadena",
+            "Un indicador es una declaración oficial",
+            "Un indicador es una etiqueta de exchange",
+            "Un indicador es un patrón observable que sugiere algo sin demostrarlo"
+          ],
+          "respuesta": 3,
+          "explicacion": "Un hecho se verifica en el registro; un indicador, como una cadena de pelado, solo sugiere."
+        },
+        {
+          "pregunta": "El emparejamiento entre la salida y la entrada de un puente es…",
+          "opciones": [
+            "una inferencia basada en importe, tiempo e identificador",
+            "un hecho verificable en cadena",
+            "una prueba de identidad",
+            "siempre de confianza alta"
+          ],
+          "respuesta": 0,
+          "explicacion": "No hay un enlace verificable entre ambas cadenas; puede haber candidatos ambiguos."
+        },
+        {
+          "pregunta": "Una dirección recibió fondos de otra. ¿Qué se puede concluir sobre su titular?",
+          "opciones": [
+            "Que ambas son de un exchange",
+            "Nada sobre su identidad: la proximidad no prueba relación ni autoría",
+            "Que ambas son de la misma persona",
+            "Que la segunda es cómplice"
+          ],
+          "respuesta": 1,
+          "explicacion": "Una dirección no es una persona; un vínculo de una transferencia no prueba relación."
+        }
+      ]
+    },
+    "Q6": {
+      "titulo": "Stablecoins, congelamientos y recuperación",
+      "preguntas": [
+        {
+          "pregunta": "¿Por qué no se puede congelar ETH por protocolo?",
+          "opciones": [
+            "Es anónimo",
+            "Está en varias cadenas",
+            "No existe un emisor ni una función de bloqueo",
+            "Es demasiado caro"
+          ],
+          "respuesta": 2,
+          "explicacion": "El congelamiento exige un emisor con una lista de bloqueo en el contrato."
+        },
+        {
+          "pregunta": "¿Qué diferencia hay entre congelar y restituir?",
+          "opciones": [
+            "Son sinónimos",
+            "Restituir es automático al congelar",
+            "Congelar devuelve los fondos",
+            "Congelar inmoviliza; restituir exige otra decisión, como quemar y reemitir al titular legítimo"
+          ],
+          "respuesta": 3,
+          "explicacion": "El fondo queda inmovilizado; devolverlo requiere respaldo judicial o de autoridades."
+        },
+        {
+          "pregunta": "El reloj de la defensa en un congelamiento incluye…",
+          "opciones": [
+            "detectar, identificar direcciones, contactar al emisor y que este bloquee",
+            "solo esperar al informe forense",
+            "solo cerrar el exchange",
+            "solo notificar a los clientes"
+          ],
+          "respuesta": 0,
+          "explicacion": "Cada minuto de retraso se traduce en valor convertido a activos no congelables."
+        },
+        {
+          "pregunta": "Un emisor bloquea 100 de los 175 que había en una dirección. ¿Qué implica?",
+          "opciones": [
+            "Que se recuperó todo",
+            "Quedan 75 movibles o ya movidos: hay que solicitar el resto de inmediato",
+            "Que el resto está a salvo",
+            "Que la dirección ya no existe"
+          ],
+          "respuesta": 1,
+          "explicacion": "Un congelamiento parcial inmoviliza solo lo que seguía ahí en el momento de la orden."
+        },
+        {
+          "pregunta": "¿Por qué el congelamiento es un control compensatorio y no preventivo?",
+          "opciones": [
+            "Es automático",
+            "Evita el robo",
+            "Actúa después del hecho y solo sobre lo que sigue en forma congelable",
+            "Lo ejecuta el atacante"
+          ],
+          "respuesta": 2,
+          "explicacion": "No sustituye al tope de saldo ni a la política de firma."
+        }
+      ]
+    },
+    "Q7": {
+      "titulo": "Análisis de transacciones, eventos y logs",
+      "preguntas": [
+        {
+          "pregunta": "Antes de fiarte de un evento Transfer debes comprobar…",
+          "opciones": [
+            "que tiene tres topics",
+            "que su valor es mayor que cero",
+            "que está en un bloque par",
+            "que lo emitió el token esperado y que coincide con la variación de saldos"
+          ],
+          "respuesta": 3,
+          "explicacion": "Cualquier contrato puede emitir un Transfer falso."
+        },
+        {
+          "pregunta": "Una cuenta cambió su código por EIP-7702. ¿Cómo lo detectas?",
+          "opciones": [
+            "Leyendo eth_getCode (0xef0100…) y el salto de nonce sin transacción propia",
+            "Con un evento CodeChanged",
+            "Mirando sus tokens",
+            "No se puede detectar"
+          ],
+          "respuesta": 0,
+          "explicacion": "La delegación de código no emite ningún evento."
+        },
+        {
+          "pregunta": "¿Qué informa el RPC básico de una tupla de autorización?",
+          "opciones": [
+            "Nada de ella",
+            "Solo que está en la lista, no si se aplicó",
+            "Si se aplicó siempre",
+            "Quién la pagó"
+          ],
+          "respuesta": 1,
+          "explicacion": "El efecto se infiere contrastando con el código actual de la cuenta."
+        },
+        {
+          "pregunta": "¿Por qué analizar «latest» puede dar conclusiones inestables?",
+          "opciones": [
+            "No incluye logs",
+            "Solo existe en testnets",
+            "Una reorganización puede revertir bloques recientes",
+            "Es más lento"
+          ],
+          "respuesta": 2,
+          "explicacion": "Conviene distinguir latest, safe y finalized."
+        },
+        {
+          "pregunta": "El topics[0] de un evento ERC-20 Transfer es…",
+          "opciones": [
+            "la dirección del emisor",
+            "el monto",
+            "el número de bloque",
+            "el hash Keccak-256 de la firma del evento"
+          ],
+          "respuesta": 3,
+          "explicacion": "Es keccak256(\"Transfer(address,address,uint256)\"), el mismo cálculo que un selector de función."
+        }
+      ]
+    },
+    "Q8": {
+      "titulo": "Pruebas de reservas y sus límites",
+      "preguntas": [
+        {
+          "pregunta": "La firma de desafío de una prueba de reservas acredita…",
+          "opciones": [
+            "control de la clave en ese instante, no titularidad ni disponibilidad",
+            "que los fondos son propios",
+            "que no hay deudas",
+            "que la entidad es solvente"
+          ],
+          "respuesta": 0,
+          "explicacion": "Control no es titularidad: los fondos pueden estar prestados o pignorados."
+        },
+        {
+          "pregunta": "¿Por qué un cliente incluido en el árbol no detecta que se omitió a otro?",
+          "opciones": [
+            "Las pruebas caducan",
+            "Cada cliente solo verifica su propia hoja contra la raíz",
+            "La raíz es secreta",
+            "El árbol es binario"
+          ],
+          "respuesta": 1,
+          "explicacion": "La completitud del conjunto no la puede ver ninguna hoja individual."
+        },
+        {
+          "pregunta": "¿Por qué la cobertura debe calcularse por activo?",
+          "opciones": [
+            "Porque lo exige Bitcoin",
+            "Para ocultar saldos",
+            "Un déficit en un activo no se compensa con el sobrante de otro",
+            "Por comodidad contable"
+          ],
+          "respuesta": 2,
+          "explicacion": "La promesa al cliente de USDC no se cumple con BTC."
+        },
+        {
+          "pregunta": "¿Por qué una prueba de reservas no habría detectado el incidente estudiado?",
+          "opciones": [
+            "Estaba mal hecha",
+            "No usa firmas",
+            "Solo audita pasivos",
+            "Mide control y cobertura en un instante, no la seguridad operativa ni cambios en minutos"
+          ],
+          "respuesta": 3,
+          "explicacion": "Responde a otra pregunta: no es un control de detección."
+        },
+        {
+          "pregunta": "Un comunicado dice «cubriremos todas las pérdidas». ¿Qué es?",
+          "opciones": [
+            "Una declaración de capacidad, no una prueba de ella",
+            "Una prueba de solvencia",
+            "Un hecho verificable",
+            "Una auditoría"
+          ],
+          "respuesta": 0,
+          "explicacion": "Hace falta evidencia de cobertura por activo y del mecanismo de absorción."
+        }
+      ]
+    },
+    "Q9": {
+      "titulo": "Estudio de caso: incidente de Binance",
+      "preguntas": [
+        {
+          "pregunta": "A la fecha de corte, la causa raíz del incidente es…",
+          "opciones": [
+            "conocida por las firmas de análisis",
+            "un desconocido: no hay informe técnico publicado",
+            "un hecho confirmado por Binance",
+            "una hipótesis refutada"
+          ],
+          "respuesta": 1,
+          "explicacion": "Binance anunció un informe técnico posterior; mientras no exista, U1 sigue abierta."
+        },
+        {
+          "pregunta": "La atribución a un grupo norcoreano es…",
+          "opciones": [
+            "una declaración oficial de Binance",
+            "una hipótesis descartada",
+            "una evaluación de terceros con alta confianza declarada, no confirmada por Binance",
+            "un hecho confirmado en cadena"
+          ],
+          "respuesta": 2,
+          "explicacion": "TRM dice «alta confianza»; Chainalysis «evalúa». Es una hipótesis con respaldo, no un hecho."
+        },
+        {
+          "pregunta": "Los montos 5 500, 6 300, 6 360 y 6 400 millones se explican por…",
+          "opciones": [
+            "errores de redondeo",
+            "fraude de las firmas de análisis",
+            "que hubo cuatro incidentes",
+            "diferencias de valoración, de activos incluidos y de momento del corte"
+          ],
+          "respuesta": 3,
+          "explicacion": "Cada cifra mide algo distinto; hay que preguntar qué mide, a qué precio y a qué hora."
+        },
+        {
+          "pregunta": "¿Qué observación pesa más a favor de un compromiso de la infraestructura de firma?",
+          "opciones": [
+            "Nueve cadenas con transferencias firmadas normales en unos 30 minutos, sin delegación",
+            "Que se usó Tornado Cash",
+            "Que Ethereum tiene EIP-7702",
+            "Que se congelaron fondos"
+          ],
+          "respuesta": 0,
+          "explicacion": "EIP-7702 solo explica Ethereum; las otras nueve cadenas apuntan a algo común."
+        },
+        {
+          "pregunta": "Un dato que circula en prensa pero que no encuentras en una fuente primaria se registra como…",
+          "opciones": [
+            "desconocido resuelto",
+            "no verificado",
+            "hecho",
+            "hipótesis"
+          ],
+          "respuesta": 1,
+          "explicacion": "Es el caso del supuesto «contenedor de servicio»: no figura en el artículo original consultado."
+        }
+      ]
+    }
+  }
+}

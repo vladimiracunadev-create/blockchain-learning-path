@@ -7,12 +7,17 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 ### Añadido
 
+- **Especialización avanzada de seguridad blockchain, custodia e investigación de incidentes** ([`especializacion-seguridad-custodia/`](especializacion-seguridad-custodia/README.md)): nueve bloques de contenido profundo (firmas y criptografía asimétrica; cuentas EOA, contratos, ERC-4337, EIP-7702 y nonces; custodia hot/warm/cold, MPC, multisig, hardware y políticas de firma; delegación de permisos; rastreo en Ethereum, Bitcoin, Tron y L2; stablecoins y congelamientos; logs y eventos; pruebas de reservas) y un estudio del incidente de Binance del 29 de octubre de 2026 que separa hechos confirmados, hipótesis y desconocidos, con fecha de corte y procedimiento de actualización.
+- **Ocho laboratorios ejecutables LE1–LE8** en `labs/especializacion-seguridad/` (billeteras de prueba, firmas, transferencias, delegación EIP-7702 en una red de laboratorio, detector de delegaciones, explorador de transacciones, análisis de flujos multicadena y monitor de riesgos para custodios), con núcleo criptográfico propio sin dependencias (Keccak-256, secp256k1 con recuperación de clave, RLP, transacciones tipo 2 y 4) comprobado contra vectores públicos, y 145 pruebas nuevas. Comandos `pnpm lab:le1` a `pnpm lab:le8`.
+- Matriz de integración de las 33 unidades (13 con ampliación directa, 13 de complemento y 7 de contexto), 45 preguntas autocorregibles, rúbricas, banco de preguntas abiertas, glosario, guía del instructor y validación automática en `pnpm check`.
+
 - Fuente canónica y generador validado para 13 rutas de aprendizaje por rol profesional, con fichas de 26 campos, cinco niveles de desempeño, proyectos integradores y matrices rol–competencia–clase–laboratorio–evidencia–evaluación.
 - Inventario que consolida cargos y especializaciones sin inventar demanda laboral, más guía comparativa de ecosistemas y lenguajes con cobertura y brechas explícitas.
 - Auditoría técnica y curricular 2026-10-12, contraste con Chile DAO y Modern Cybersecurity Program, inventario de dependencias, compatibilidad y criterios de cierre.
 
 ### Cambiado
 
+- Las 13 unidades con ampliación directa, el índice del currículo, el catálogo de laboratorios, el glosario, la bibliografía, los casos reales, el README y el menú del sitio enlazan la especialización **sin alterar** las 66 clases, las 91 prácticas ni su numeración. La bibliografía actualiza el recuento de pruebas (508: 461 de Node y 47 de Foundry).
 - README, matriz de competencias, industria, roadmap, landing, sitio, aplicaciones offline y manual incorporan la dimensión profesional sin duplicar las 66 clases ni las 91 prácticas.
 - El progreso por ruta reutiliza el almacenamiento local existente; no añade cuenta, telemetría ni dependencia de red.
 - Seguridad explica el alcance de la verificación formal y analítica on-chain exige validación humana de la IA asistida.

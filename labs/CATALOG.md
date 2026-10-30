@@ -176,6 +176,21 @@ datos personales.
 | 90 | Grafo, privacidad y falsa atribución | profesional | **auto** | [65–66](../curriculum/32-forensics-auditoria-gobernanza/README.md) | [ver](guides/08-custodia-auditoria.md) |
 | 91 | Caso Aurora Custody | profesional | **auto** · informe | [Capstone](../capstone/README.md) | [ver](guides/08-custodia-auditoria.md) |
 
+## Laboratorios de la especialización avanzada (LE1–LE8)
+
+Ocho laboratorios adicionales de la [especialización de seguridad y custodia](../especializacion-seguridad-custodia/README.md). Se identifican como **LE1–LE8** para **no alterar** la numeración 01–91 de las prácticas ni las cifras que el repositorio valida. Todos son ejecutables, deterministas, sin red y con pruebas automáticas.
+
+| Lab | Qué construyes | Comando | Guía |
+|---|---|---|---|
+| LE1 | Billeteras de prueba | `pnpm lab:le1` | [ver](../especializacion-seguridad-custodia/laboratorios/LE1-billeteras-de-prueba.md) |
+| LE2 | Firmas digitales: verificar, maleabilidad, repetición y fuga por nonce | `pnpm lab:le2` | [ver](../especializacion-seguridad-custodia/laboratorios/LE2-firmas-digitales.md) |
+| LE3 | Transferencias entre direcciones controladas | `pnpm lab:le3` | [ver](../especializacion-seguridad-custodia/laboratorios/LE3-transferencias-simuladas.md) |
+| LE4 | Delegación EIP-7702 en una red de laboratorio | `pnpm lab:le4` | [ver](../especializacion-seguridad-custodia/laboratorios/LE4-delegacion-eip7702.md) |
+| LE5 | Detector de delegaciones sospechosas | `pnpm lab:le5` | [ver](../especializacion-seguridad-custodia/laboratorios/LE5-detector-delegaciones.md) |
+| LE6 | Explorador de transacciones públicas | `pnpm lab:le6` | [ver](../especializacion-seguridad-custodia/laboratorios/LE6-explorador-transacciones.md) |
+| LE7 | Análisis de flujos entre múltiples direcciones | `pnpm lab:le7` | [ver](../especializacion-seguridad-custodia/laboratorios/LE7-flujos-multidireccion.md) |
+| LE8 | Monitor de riesgos para custodios | `pnpm lab:le8` | [ver](../especializacion-seguridad-custodia/laboratorios/LE8-monitor-riesgos-custodio.md) |
+
 ---
 
 ## 🧭 Navegación

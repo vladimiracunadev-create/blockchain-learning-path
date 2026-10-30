@@ -323,6 +323,12 @@ riesgo — incluida la que te parezca mejor.
   instrumentos varía por jurisdicción y cambia; consulta el
   [clases 55–56](../27-regulacion-cumplimiento/README.md) y las fuentes oficiales vigentes.
 
+## 🛡️ Especialización de seguridad y custodia
+
+Esta unidad se profundiza en la [especialización avanzada](../../especializacion-seguridad-custodia/README.md): listas de bloqueo, quemar y reemitir, y la carrera entre congelar y convertir. No añade clases ni altera la numeración.
+
+**Bloques:** [Bloque 6](../../especializacion-seguridad-custodia/bloques/06-stablecoins-congelamiento-y-recuperacion.md) · **Laboratorios:** [LE7](../../especializacion-seguridad-custodia/laboratorios/LE7-flujos-multidireccion.md) · [Matriz de integración](../../especializacion-seguridad-custodia/MATRIZ-INTEGRACION.md)
+
 ## 🔗 Referencias
 
 - Comité de Basilea — enmiendas al estándar de exposiciones a criptoactivos, reservas y redención: <https://www.bis.org/publications/202212-standards-prudential-treatment-cryptoasset-exposures>
