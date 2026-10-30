@@ -28,3 +28,9 @@
 # verificó el 2026-10-13, pero el sitio devuelve 404 al agente automatizado de
 # lychee. La exclusión se limita a esta alerta sobre fraudes con criptomonedas.
 ^https://consumer\.ftc\.gov/consumer-alerts/2022/06/spotting-ftcs-most-reported-crypto-scams/?$
+
+# SERNAC (Chile): la portada oficial responde HTTP 200 en menos de un segundo desde
+# una red normal (tres intentos el 2026-10-30), pero agota el tiempo de espera de 30 s
+# desde los runners de GitHub en ejecuciones consecutivas (issue 31 y una ejecución
+# manual posterior). La exclusión se limita a esta portada.
+^https://www\.sernac\.cl/?$
