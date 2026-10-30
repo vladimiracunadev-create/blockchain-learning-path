@@ -1,0 +1,12 @@
+{
+  "nota": "Clases cuya redacción se mantiene A MANO. El generador (scripts/sync-class-plans.mjs) no las sobrescribe porque su contenido difiere de lo que produciría a partir del README de su unidad, que es lo único que el generador lee. Si una clase se cura a mano, debe registrarse aquí con su motivo; si no, 'pnpm check' detecta la divergencia. Para devolver una clase al generador, traslada primero sus pasajes al README de la unidad y elimínala de esta lista.",
+  "clases": {
+    "17": "Secciones «Aplicación transversal» (Andes Quest Assets y creación de un token viral de prueba), añadidas a mano en 10dcf53 y 824c345.",
+    "18": "Sección «Aplicación transversal · permisos y mercado de Andes Quest», «Memecoin, community, social, creator y utility» y «Narrativa responsable», añadidas a mano en 824c345.",
+    "19": "Subsección «Amenazas de un lanzamiento de baja liquidez» (modelo de amenazas de mercado), añadida a mano en 824c345.",
+    "20": "Subsección «Dónde encaja la verificación formal» y su referencia a SMTChecker, añadidas a mano en dbe1c31 (rutas profesionales).",
+    "39": "Subsección «Market cap no es liquidez ni caja retirable», añadida a mano en 824c345.",
+    "57": "Reparto curado de la profundización con la clase 58: el generador colocaría aquí «Nivel 3 — Análisis on-chain», que la versión curada ubica en la 58.",
+    "58": "Conserva «Nivel 3 — Análisis on-chain», «Viralidad, volumen y causalidad» y la formulación «IA y aprendizaje automático aplicados» con validación humana y referencia al NIST AI RMF (dbe1c31)."
+  }
+}

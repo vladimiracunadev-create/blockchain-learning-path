@@ -5,7 +5,10 @@ y el versionado [SemVer](https://semver.org/lang/es/).
 
 ## [No publicado]
 
-Sin cambios pendientes.
+### Corregido
+
+- El generador de clases (`scripts/sync-class-plans.mjs`) **ya no deshace** el contenido redactado a mano de las clases 17, 18, 19, 20, 39, 57 y 58 (secciones de aplicación transversal, subsecciones de amenazas y verificación formal, y el reparto curado de la analítica on-chain). Esas clases se registran con su motivo en `curriculum/clases-curadas.json`, y `pnpm check` ejecuta ahora el generador en modo `--check` para detectar cualquier divergencia futura entre lo generado y lo que hay en disco.
+- Se eliminan referencias duplicadas de la CFTC y la FTC en las unidades de tokens y seguridad.
 
 ## [0.15.0] · 2026-10-30
 

@@ -1,4 +1,5 @@
 import { access, readFile, readdir } from "node:fs/promises";
+import { spawnSync } from "node:child_process";
 import { dirname, extname, join, resolve } from "node:path";
 import { classFileName } from "./curriculum-lib.mjs";
 
@@ -209,6 +210,23 @@ if (new Set(Object.values(pedagogy).map((item) => item.method)).size < 25) {
 }
 if (classErrors.length) throw new Error(`Catálogo de clases inválido:\n${classErrors.join("\n")}`);
 console.log(`Clases: ${classIds.length} documentos independientes en ${classCatalog.length} mapas temáticos, con profundidad, gráficos, fuentes y diseño propio verificados.`);
+
+// --- Generador de clases frente a lo que hay en disco --------------------------
+// Las clases se generan desde el README de cada unidad, salvo las registradas como
+// curadas a mano. Sin esta comprobación, una edición manual de una clase generada se
+// perdía en silencio en la siguiente regeneración (ocurrió con siete clases).
+const curadasRegistro = JSON.parse(await readFile("curriculum/clases-curadas.json", "utf8")).clases;
+const curadasErrores = [];
+for (const [id, motivo] of Object.entries(curadasRegistro)) {
+  if (!classIds.includes(id)) curadasErrores.push(`clases-curadas.json: la clase ${id} no existe`);
+  if (typeof motivo !== "string" || motivo.trim().split(/\s+/).length < 6) {
+    curadasErrores.push(`clases-curadas.json: la clase ${id} necesita un motivo (al menos seis palabras)`);
+  }
+}
+const sincronizacion = spawnSync(process.execPath, ["scripts/sync-class-plans.mjs", "--check"], { encoding: "utf8" });
+if (sincronizacion.status !== 0) curadasErrores.push((sincronizacion.stderr || sincronizacion.stdout).trim());
+if (curadasErrores.length) throw new Error(`Clases y generador:\n${curadasErrores.join("\n")}`);
+console.log(`Generador: ${classIds.length - Object.keys(curadasRegistro).length} clases generadas coinciden con el disco y ${Object.keys(curadasRegistro).length} están registradas como curadas a mano.`);
 
 // La numeración de carpeta es una decisión técnica de compatibilidad, no una
 // subdivisión pedagógica. Ningún documento vigente debe volver a enseñar 00.1–32.2

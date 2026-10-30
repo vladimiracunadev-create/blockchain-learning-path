@@ -14,6 +14,8 @@ Gracias por querer mejorar **Blockchain Learning Path**. Este es un programa **e
 
 Si añades o reordenas una **clase**, `pnpm check` te avisará de dos cosas que es fácil olvidar: que su unidad temática necesita una **autoevaluación** en `assessments/module-quizzes.json`, y que la **cadena anterior/siguiente** de sus vecinas ha quedado rota.
 
+**Dónde se edita el texto de una clase.** Las clases se generan desde el README de su unidad con `pnpm sync:classes`. Si necesitas redactar una clase a mano porque añade pasajes que no están en ese README, registra su número y el motivo en `curriculum/clases-curadas.json`: el generador deja de tocarla. Si editas a mano una clase *no* registrada, `pnpm check` falla y te lo dice, en lugar de que tu edición se pierda en la próxima regeneración.
+
 Los cambios de dependencias deben justificar necesidad, mantenimiento, licencia y superficie de ataque.
 
 Rellena la [plantilla de pull request](.github/PULL_REQUEST_TEMPLATE.md). La CI ejecuta el lint de Markdown, JavaScript y Solidity, las validaciones del repositorio (`pnpm check`), las pruebas (`pnpm test`) y las de contratos con Foundry; el workflow de seguridad escanea secretos con `gitleaks` en cada push.

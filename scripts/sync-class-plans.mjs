@@ -4,8 +4,29 @@ import { readFile, readdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { classFileName } from "./curriculum-lib.mjs";
 
+// Genera las 66 clases desde el README de cada unidad.
+//
+//   node scripts/sync-class-plans.mjs            escribe las clases
+//   node scripts/sync-class-plans.mjs --check    no escribe: falla si lo generado difiere de lo que hay en disco
+//
+// Las clases listadas en curriculum/clases-curadas.json se redactan A MANO y el
+// generador no las toca. Existe porque varias clases recibieron pasajes que no están
+// en el README de su unidad; regenerarlas los habría borrado en silencio. El modo
+// --check cierra el hueco contrario: una clase generada que alguien edite a mano sin
+// registrarla como curada hace fallar `pnpm check`, en vez de perderse en la próxima
+// regeneración.
+
+const comprobar = process.argv.includes("--check");
 const catalog = JSON.parse(await readFile("curriculum/classes.json", "utf8"));
 const pedagogy = JSON.parse(await readFile("curriculum/pedagogy.json", "utf8"));
+const curadas = new Set(Object.keys(JSON.parse(await readFile("curriculum/clases-curadas.json", "utf8")).clases));
+const desfasadas = [];
+
+async function escribir(ruta, contenido) {
+  if (!comprobar) return writeFile(ruta, contenido, "utf8");
+  const actual = await readFile(ruta, "utf8").catch(() => null);
+  if (actual !== contenido) desfasadas.push(ruta);
+}
 const directories = (await readdir("curriculum", { withFileTypes: true }))
   .filter((entry) => entry.isDirectory() && /^\d{2}-/.test(entry.name))
   .sort((a, b) => a.name.localeCompare(b.name));
@@ -174,7 +195,8 @@ for (const [unitIndex, directory] of directories.entries()) {
     const previousLink = previous ? `../${previous.directory}/${classFileName(previous)}` : "../../README.md";
     const nextLink = next ? `../${next.directory}/${classFileName(next)}` : "../../capstone/README.md";
     const content = `# Clase ${item.id} · ${item.title}\n\n> **Clase independiente ${item.id} de 66** · **Nivel:** ${level} · **Fuente base:** ${sourceHeader}\n>\n> [⬅️ Clase anterior](${previousLink}) · [📚 Índice de las 66 clases](../README.md) · [🗂️ Mapa del tema](README.md) · [➡️ Clase siguiente](${nextLink})\n\n${coreSections(item, design, foundations[pairIndex], globalIndex)}\n\n## Fuentes para comprobar y ampliar\n\n${refs}\n\nConsulta además la [bibliografía razonada](../../docs/bibliografia.md), que declara procedencia y uso.\n\n## Cierre de la clase\n\nResponde otra vez la pregunta guía sin mirar notas. Si tu respuesta no menciona evidencia, supuesto y límite, todavía describe el tema pero no lo domina. Continúa solo cuando otra persona pueda reproducir tu entregable.\n`;
-    await writeFile(join("curriculum", directory.name, classFileName(item)), content, "utf8");
+    if (curadas.has(item.id)) continue;
+    await escribir(join("curriculum", directory.name, classFileName(item)), content);
   }
 
   const list = unit.classes.map((item) => {
@@ -185,7 +207,19 @@ for (const [unitIndex, directory] of directories.entries()) {
   const marker = /<!-- (?:plan-clases|clases-independientes):inicio -->[\s\S]*?<!-- (?:plan-clases|clases-independientes):fin -->/;
   if (!marker.test(readme)) throw new Error(`${readmePath}: no se encontró el bloque de clases.`);
   const updated = readme.replace(marker, block);
-  if (updated !== readme) await writeFile(readmePath, updated, "utf8");
+  if (updated !== readme) await escribir(readmePath, updated);
 }
 
-console.log(`Clases generadas: ${allClasses.length} documentos independientes dentro de ${catalog.length} mapas temáticos.`);
+if (comprobar) {
+  if (desfasadas.length) {
+    console.error([
+      `Clases desfasadas respecto al generador (${desfasadas.length}):`,
+      ...desfasadas.map((ruta) => `  ${ruta}`),
+      "Si la edición fue deliberada, registra la clase en curriculum/clases-curadas.json; si no, ejecuta: node scripts/sync-class-plans.mjs"
+    ].join("\n"));
+    process.exit(1);
+  }
+  console.log(`Clases sincronizadas: ${allClasses.length - curadas.size} generadas coinciden con el disco; ${curadas.size} curadas a mano.`);
+} else {
+  console.log(`Clases generadas: ${allClasses.length - curadas.size} documentos (más ${curadas.size} curadas a mano) dentro de ${catalog.length} mapas temáticos.`);
+}

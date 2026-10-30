@@ -124,8 +124,6 @@ Vuelve al caso inicial, elige el error más peligroso y describe una comprobaci�
 - Antonopoulos & Wood, *Mastering Ethereum*, cap. sobre tokens — <https://github.com/ethereumbook/ethereumbook>
 - Fuente primaria: ERC-2612, *`permit` — aprobaciones firmadas (712)* — <https://eips.ethereum.org/EIPS/eip-2612>
 - CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
-- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
-- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
 
 Consulta además la [bibliografía razonada](../../docs/bibliografia.md), que declara procedencia y uso.
 

@@ -255,10 +255,6 @@ Esta unidad se profundiza en la [especialización avanzada](../../especializacio
 - Fuente primaria: EIP-155, *Simple replay attack protection* — <https://eips.ethereum.org/EIPS/eip-155>
 - CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
 - FTC, *Spotting the FTC’s most reported crypto scams* — <https://consumer.ftc.gov/consumer-alerts/2022/06/spotting-ftcs-most-reported-crypto-scams>
-- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
-- FTC, *Spotting the FTC’s most reported crypto scams* — <https://consumer.ftc.gov/consumer-alerts/2022/06/spotting-ftcs-most-reported-crypto-scams>
-- CFTC, *Customer Advisory: Beware Virtual Currency Pump-and-Dump Schemes* — <https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/beware_virtual_currency_pump_dump.html>
-- FTC, *Spotting the FTC’s most reported crypto scams* — <https://consumer.ftc.gov/consumer-alerts/2022/06/spotting-ftcs-most-reported-crypto-scams>
 
 ## ✅ Criterio de dominio
 
