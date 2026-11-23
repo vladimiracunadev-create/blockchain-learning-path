@@ -10,10 +10,10 @@
     "apk": "node compilar.mjs"
   },
   "dependencies": {
-    "@capacitor/android": "^8.6.0",
-    "@capacitor/core": "^8.6.0"
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/core": "^8.6.2"
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.6.0"
+    "@capacitor/cli": "^8.6.2"
   }
 }
